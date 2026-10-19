@@ -15,3 +15,7 @@ A first-time visitor to the README is welcomed and told they are free to try thi
 ## The greeting's wording
 
 The line reads exactly: "New here? Welcome — feel free to try anything out."
+
+## Where the line goes in the README
+
+After the existing description line, separated from it by one blank line, so it renders as a paragraph of its own and is read after what the repository is.
