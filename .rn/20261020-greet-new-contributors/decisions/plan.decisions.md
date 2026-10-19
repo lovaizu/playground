@@ -7,3 +7,7 @@
 - status: running
 - artifact-language: English
 - conversation-language: Japanese
+
+## What the work is for
+
+A first-time visitor to the README is welcomed and told they are free to try things out here, in keeping with the README's note that this is a playground for experimenting.
