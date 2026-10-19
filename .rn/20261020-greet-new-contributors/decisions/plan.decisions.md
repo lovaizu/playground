@@ -15,3 +15,7 @@ Welcome people who come to the repository for the first time, and tell them it i
 ## Wording and place of the greeting
 
 After the description on line 2 of README.md, with a blank line between, add the line "Welcome, new contributors — feel free to try anything here."
+
+## The CONTRIBUTING file the greeting names
+
+Add a new file CONTRIBUTING.md at the top of the repository, and have the greeting link to it.
