@@ -19,3 +19,7 @@ After the description on line 2 of README.md, with a blank line between, add the
 ## The CONTRIBUTING file the greeting names
 
 Add a new file CONTRIBUTING.md at the top of the repository, and have the greeting link to it.
+
+## What CONTRIBUTING.md says
+
+Under the heading "Contributing", three short points: anyone may make a branch and try anything freely; changes are sent as pull requests; nothing here is meant to last.
