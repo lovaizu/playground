@@ -20,5 +20,12 @@
    "decisions": ".rn/20261020-greet-new-contributors/decisions/plan.decisions.md"
   }
  ],
- "constraints": []
+ "constraints": [
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  }
+ ]
 }
