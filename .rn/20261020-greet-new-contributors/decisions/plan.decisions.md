@@ -14,7 +14,7 @@ Welcome people who come to the repository for the first time, and tell them they
 
 ## Wording and place of the greeting
 
-Add one line to `README.md`, after the description line and separated from it by a blank line: "Welcome, new contributors! Feel free to try anything here."
+Add one line to `README.md`, after the description line and separated from it by a blank line: "Welcome, new contributors! Feel free to try anything here, and see [CONTRIBUTING.md](CONTRIBUTING.md) to get started."
 
 ## Naming the CONTRIBUTING file
 
