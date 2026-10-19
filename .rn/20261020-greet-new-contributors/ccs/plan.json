@@ -1,0 +1,24 @@
+{
+ "focal_entities": [
+  {
+   "deliverable": ".rn/20261020-greet-new-contributors/steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what they will get and why, and rn's conductor in any later conversation, carrying the work on without asking them again"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "A first-time visitor to the README is welcomed and told they are free to try things out here, in keeping with the README's note that this is a playground for experimenting."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/var/folders/zj/0c6h912s23vgw2sktr16cqyr0000gn/T/rn-flow-zg0i09vp/rn/checklists/session/plan.md"
+  },
+  {
+   "decisions": ".rn/20261020-greet-new-contributors/decisions/plan.decisions.md"
+  }
+ ],
+ "constraints": []
+}
