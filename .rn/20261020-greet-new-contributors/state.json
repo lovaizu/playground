@@ -1,6 +1,5 @@
 {
- "stage": "plan",
- "signoff": "plan",
+ "stage": "documents",
  "shown": {
   "plan": {
    "/var/folders/zj/0c6h912s23vgw2sktr16cqyr0000gn/T/rn-flow-s9hbuu4a/rn/checklists/session/plan.md F-1": "Good: Shape: set by the trial's stand-in, on the plan whose AC1 is: The README holds a line greeting new contributors that names the CONTRIBUTING file. (.rn/20261020-greet-new-contributors/steering.md:1-19)",
