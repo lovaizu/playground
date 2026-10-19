@@ -7,3 +7,7 @@
 - status: running
 - artifact-language: English
 - conversation-language: Japanese
+
+## What the work is for
+
+Welcome people who come to the repository for the first time, and tell them they are free to try anything here.
