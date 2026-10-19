@@ -19,3 +19,7 @@ Add one line to `README.md`, after the description line and separated from it by
 ## Naming the CONTRIBUTING file
 
 Add a new `CONTRIBUTING.md` at the top of the repository, and have the greeting link to it.
+
+## What CONTRIBUTING.md says
+
+A short how-to-start only: under a heading, a few lines saying to make a branch, try anything, and open a pull request, and that nothing here is meant to last, so there is no need to be careful.
