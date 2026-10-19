@@ -1,5 +1,5 @@
 {
- "stage": "plan",
+ "stage": "asking",
  "signoff": "plan",
  "shown": {
   "plan": {
@@ -26,5 +26,6 @@
    "/var/folders/zj/0c6h912s23vgw2sktr16cqyr0000gn/T/rn-flow-s9hbuu4a/rn/checklists/usability.md B-6": "Good in each part: .rn/20261020-greet-new-contributors/steering.md:1-12: Still true later: set by the trial's stand-in, on the plan whose AC1 is: The README holds a line greeting new contributors. (in this part) (.rn/20261020-greet-new-contributors/steering.md:1-12); .rn/20261020-greet-new-contributors/steering.md:13-16: Still true later: set by the trial's stand-in, on the plan whose AC1 is: The README holds a line greeting new contributors. (in this part) (.rn/20261020-greet-new-contributors/steering.md:13-16); .rn/20261020-greet-new-contributors/steering.md:17-18: Still true later: set by the trial's stand-in, on the plan whose AC1 is: The README holds a line greeting new contributors. (in this part) (.rn/20261020-greet-new-contributors/steering.md:17-18); .rn/20261020-greet-new-contributors/steering.md:19-19: Still true later: set by the trial's stand-in, on the plan whose AC1 is: The README holds a line greeting new contributors. (in this part) (.rn/20261020-greet-new-contributors/steering.md:19-19)",
    "/var/folders/zj/0c6h912s23vgw2sktr16cqyr0000gn/T/rn-flow-s9hbuu4a/rn/checklists/usability.md B-7": "Good: Said in one place: set by the trial's stand-in, on the plan whose AC1 is: The README holds a line greeting new contributors. (.rn/20261020-greet-new-contributors/steering.md:1-19)"
   }
- }
+ },
+ "feedback": "the greeting should name the CONTRIBUTING file too"
 }
