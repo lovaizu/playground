@@ -11,3 +11,7 @@
 ## What the work is for
 
 Welcome people who come to the repository for the first time, and tell them it is a place where they can feel free to try things.
+
+## Wording and place of the greeting
+
+After the description on line 2 of README.md, with a blank line between, add the line "Welcome, new contributors — feel free to try anything here."
