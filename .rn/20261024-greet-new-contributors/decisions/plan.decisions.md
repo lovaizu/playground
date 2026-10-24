@@ -12,6 +12,10 @@ conversation-language: Japanese
 
 The README greets new contributors and points them to the CONTRIBUTING file, so someone who comes to contribute knows where to start; asked for as new contributors and confirmed at the plan sign-off feedback.
 
+## The CONTRIBUTING file
+
+This work makes a short CONTRIBUTING.md at the top of the repository, so the README's pointer leads to a file that is there; what it says is decided with the documents after the plan sign-off.
+
 ## What shows the work is done
 
 The README has, right below its description, one line that greets people who come for the first time and tells them they are free to try things, so a newcomer meets it within the first lines; one line, as asked, since a section would weigh too much in a two-line README.
