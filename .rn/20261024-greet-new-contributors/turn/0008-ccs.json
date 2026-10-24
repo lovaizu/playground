@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "learnings"
+  },
+  {
+   "stage": "plan"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "What L5 rests on: The repository has no CONTRIBUTING file (git ls-files shows README.md alone); the orchestrator saw it, in its conversation, and asked no point on whether the line should point to contribution guidance"
+  }
+ ]
+}
