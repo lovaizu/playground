@@ -1,0 +1,89 @@
+{
+ "lessons": [
+  {
+   "lesson": "The user asked to greet new contributors, but when hearing the plan the conductor quietly changed who the greeting is for, to newcomers and first-time visitors, and never asked about it as a point of its own. It also offered pointing people to where to start only as the less recommended option b. Option b came with the cost that nothing exists yet to point to, even though the conductor had just seen that the repository has no CONTRIBUTING file. So the one question that turned the plan down at sign-off, whether the greeting should send contributors to a CONTRIBUTING file (and have one made), was never asked. Why: step 3 of up/SKILL.md finds points from the request's words, but it does not say that a word naming the reader (here 'contributors') must stay as it is or be confirmed as a point. It also does not say that something the work would need but the repository lacks is a point to offer, not a cost that pushes the option down.",
+   "whose": "general",
+   "grounds": [
+    {
+     "record": "git log 28211c0a687bd8d8b5f3317fddad0bb0d2a403fc..68d6498421b4b0bdc4696723bc5432f6ed268934",
+     "quote": "Start session: the user asked to \"add a line greeting new contributors to the README\""
+    },
+    {
+     "record": "git log 28211c0a687bd8d8b5f3317fddad0bb0d2a403fc..68d6498421b4b0bdc4696723bc5432f6ed268934",
+     "quote": "b. Welcome newcomers and also show where to start: there is nothing yet to point to, so that would have to be made too."
+    },
+    {
+     "record": "git log 28211c0a687bd8d8b5f3317fddad0bb0d2a403fc..68d6498421b4b0bdc4696723bc5432f6ed268934",
+     "quote": "Feedback: the greeting should name the CONTRIBUTING file too"
+    },
+    {
+     "record": ".rn/20261024-greet-new-contributors/steering.md",
+     "quote": "AC1: The README has, right below its description, one line that greets first-time visitors and tells them they are free to try things"
+    },
+    {
+     "record": "/home/agent/.claude/projects/-tmp-claude-1000--Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild-56aa29d0-fbb5-4e4f-abe9-f9e682d24658-scratchpad-trial-1-playground/b31f744e-743c-42c0-89bc-ebe6a2aa804b.jsonl",
+     "quote": "リポジトリにあるファイルは README.md だけで、CONTRIBUTING のような案内はありません。なので、目的は「初めて来た人が気軽に試してよいと感じられること」だと考えます。"
+    },
+    {
+     "record": "/home/agent/.claude/projects/-tmp-claude-1000--Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild-56aa29d0-fbb5-4e4f-abe9-f9e682d24658-scratchpad-trial-1-playground/b31f744e-743c-42c0-89bc-ebe6a2aa804b.jsonl",
+     "quote": "b. 初めて来た人を迎え、さらに何から始めればよいかを示す。役に立ちますが、案内する先がまだないので、それも作ることになります。"
+    }
+   ]
+  },
+  {
+   "lesson": "In this repository, a README greeting for contributors should name the CONTRIBUTING file. The user asked for this at the plan sign-off. A README checklist question such as 'Where the README greets contributors, does it point them to CONTRIBUTING, and is that file there?' would have brought it out before the plan was shown.",
+   "whose": "own",
+   "grounds": [
+    {
+     "record": "git log 28211c0a687bd8d8b5f3317fddad0bb0d2a403fc..68d6498421b4b0bdc4696723bc5432f6ed268934",
+     "quote": "Feedback: the greeting should name the CONTRIBUTING file too"
+    },
+    {
+     "record": "git log 28211c0a687bd8d8b5f3317fddad0bb0d2a403fc..68d6498421b4b0bdc4696723bc5432f6ed268934",
+     "quote": "README.md is two lines: '# playground' and 'A playground for experimenting and testing — nothing here is meant to last.'; it is the only tracked file besides .rn/"
+    }
+   ]
+  },
+  {
+   "lesson": "turn's first plan had to be made again because it listed the plan's own decisions file under Documents. The cause is in rn's steps: step 5 of up/SKILL.md hears only what the work is for and what shows it is done, and leaves Documents to step 6 after the sign-off. So no decision told turn that the Documents section of the plan template stays empty for now, and turn filled it with the only file it was handed. The conductor added that decision only after the first run. Step 5, or the CCS for the plan, should say from the start that Documents stays empty until step 6.",
+   "whose": "general",
+   "grounds": [
+    {
+     "record": "git log 28211c0a687bd8d8b5f3317fddad0bb0d2a403fc..68d6498421b4b0bdc4696723bc5432f6ed268934",
+     "quote": "Keep turn's first plan and have it made again: it listed the plan's decisions under Documents"
+    },
+    {
+     "record": "git log 28211c0a687bd8d8b5f3317fddad0bb0d2a403fc..68d6498421b4b0bdc4696723bc5432f6ed268934",
+     "quote": "The plan listed \"plan: .../decisions/plan.decisions.md\" under Documents, which is the plan's own record, not a document the purpose needs (B-6, B-7), and every item's Good cited steering.md:1 only. Decided: the plan lists no document until the user decides them after the plan sign-off."
+    },
+    {
+     "record": ".rn/20261024-greet-new-contributors/decisions/plan.decisions.md",
+     "quote": "The plan lists no document until the user, after the plan sign-off, decides which documents the purpose needs"
+    }
+   ]
+  },
+  {
+   "lesson": "The conductor took turn's second result to the plan sign-off even though every item's Good still cited only steering.md:1, a line that gives none of them. It noted this as a lesson for later instead of sending the work back. Step 4 of up/SKILL.md says a Good its lines fall short of is a point behind it, and the work is made again. The conductor checked the items against lines it chose itself, which is the same as an AI that made the check vouching for it. The steps should leave no room to accept a result whose cited lines do not give its Goods, even when turn is a stand-in.",
+   "whose": "general",
+   "grounds": [
+    {
+     "record": ".rn/20261024-greet-new-contributors/ccs/plan-result.json",
+     "quote": "\"good\": \"Given at this line, as the trial's stand-in for turn sets every item.\""
+    },
+    {
+     "record": ".rn/20261024-greet-new-contributors/ccs/plan-result.json",
+     "quote": "\".rn/20261024-greet-new-contributors/steering.md:1\""
+    },
+    {
+     "record": "git log 28211c0a687bd8d8b5f3317fddad0bb0d2a403fc..68d6498421b4b0bdc4696723bc5432f6ed268934",
+     "quote": "the conductor checked every plan checklist item against those lines, though turn's stand-in cited steering.md:1 for each"
+    },
+    {
+     "record": "/home/agent/.claude/projects/-tmp-claude-1000--Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild-56aa29d0-fbb5-4e4f-abe9-f9e682d24658-scratchpad-trial-1-playground/b31f744e-743c-42c0-89bc-ebe6a2aa804b.jsonl",
+     "quote": "A Good its lines fall short of, or an item without one, is a point behind it: confirm it with the user where it is theirs, as in\n   step 3, write it into the decisions, and have the work made again from the top of this step."
+    }
+   ]
+  }
+ ],
+ "checked": "Read whole: history.txt (all 8 commits from the session start to the kept plan sign-off feedback, and every state.json diff), steering.md, plan.decisions.md, and plan-result.json. Read the conductor's conversation whole: the up and gm skill steps, both plan points (each held one point with the recommended option first, in Japanese as required), the two turn runs and the lines of turn's that were passed on (translated, not judged), the conductor's note on the remake, the plan sign-off proposal (replied as printed), and the /rn:gm feedback being kept. turn asked no questions in this stretch. Checked each state against the move before it: the goal changed from 'contributors' to 'newcomers' with no point asked about it. The only change to the work is the remake of the plan, which commit 516abc9 explains."
+}
