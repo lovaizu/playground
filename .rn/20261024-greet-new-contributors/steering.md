@@ -17,4 +17,7 @@ G1: The README greets new contributors and points them to the CONTRIBUTING file,
 
 ## Documents
 
+- readme: README.md
+- contributing: CONTRIBUTING.md
+
 ## Tasks
