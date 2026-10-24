@@ -1,0 +1,43 @@
+{
+ "focal_entities": [
+  {
+   "deliverable": ".rn/checklists/contributing.md"
+  },
+  {
+   "audience": "whoever makes a CONTRIBUTING file for this repository and whoever judges it"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "making and judging a CONTRIBUTING file from which a new contributor makes their first change and sends it as a pull request"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/56aa29d0-fbb5-4e4f-abe9-f9e682d24658/scratchpad/trial-1/rn/checklists/checklist.md"
+  },
+  {
+   "source": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/56aa29d0-fbb5-4e4f-abe9-f9e682d24658/scratchpad/trial-1/rn/checklists/usability.md"
+  },
+  {
+   "source": ".rn/20261024-greet-new-contributors/steering.md"
+  },
+  {
+   "decisions": ".rn/20261024-greet-new-contributors/decisions/checklist-contributing.decisions.md"
+  }
+ ],
+ "constraints": [
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/56aa29d0-fbb5-4e4f-abe9-f9e682d24658/scratchpad/trial-1/rn/checklists/fix.md"
+  }
+ ]
+}
