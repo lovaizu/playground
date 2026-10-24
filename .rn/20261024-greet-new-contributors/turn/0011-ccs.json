@@ -31,6 +31,9 @@
   },
   {
    "decision": "The CONTRIBUTING file: A short CONTRIBUTING.md is made, and the README's greeting line links to it, so a newcomer has somewhere real to read how to join in"
+  },
+  {
+   "decision": "What CONTRIBUTING.md says: CONTRIBUTING.md says two things alone: a newcomer may try things freely, and a change goes in by making a branch and opening a pull request"
   }
  ]
 }
