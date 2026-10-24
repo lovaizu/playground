@@ -5,6 +5,31 @@
   },
   {
    "stage": "plan"
+  },
+  {
+   "deliverable": ".rn/20261024-greet-new-contributors/turn/0012-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  },
+  {
+   "serves": "G1: A first-time contributor learns they are welcome to try things freely here, so they find it easy to join in."
+  },
+  {
+   "serves": "AC1: The README gains one line that tells a newcomer both that they are welcome and that they may try things freely, and its two existing lines stay as they are."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -37,6 +62,15 @@
   },
   {
    "decision": "T1 after AC1 changed: T1 is opened again, unticked from step 2: its completion criterion and its checks cover AC1's link to CONTRIBUTING.md as well as the two points, so the new AC1 is checked before the sign-off"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/fix.md"
   }
  ]
 }
