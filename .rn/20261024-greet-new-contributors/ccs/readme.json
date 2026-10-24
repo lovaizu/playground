@@ -1,0 +1,40 @@
+{
+ "focal_entities": [
+  {
+   "deliverable": "README.md"
+  },
+  {
+   "audience": "a new contributor meeting this repository for the first time, with only what a newcomer has"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "learning from the README's first lines what the repository is and that CONTRIBUTING.md is where to start, and opening it from the link"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/56aa29d0-fbb5-4e4f-abe9-f9e682d24658/scratchpad/trial-1/rn/checklists/product/readme.md"
+  },
+  {
+   "source": ".rn/20261024-greet-new-contributors/steering.md"
+  },
+  {
+   "decisions": ".rn/20261024-greet-new-contributors/decisions/readme.decisions.md"
+  }
+ ],
+ "constraints": [
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/56aa29d0-fbb5-4e4f-abe9-f9e682d24658/scratchpad/trial-1/rn/checklists/fix.md"
+  }
+ ]
+}
