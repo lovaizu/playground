@@ -18,7 +18,7 @@ This work makes a short CONTRIBUTING.md at the top of the repository, so the REA
 
 ## What shows the work is done
 
-The README has, right below its description, one line that greets people who come for the first time and tells them they are free to try things, so a newcomer meets it within the first lines; one line, as asked, since a section would weigh too much in a two-line README.
+The README has, right below its description, one line that greets new contributors, and its link opens CONTRIBUTING.md, so a new contributor meets the greeting within the first lines and reaches the file it points to.
 
 ## Documents
 
