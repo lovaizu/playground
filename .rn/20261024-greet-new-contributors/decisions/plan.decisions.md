@@ -31,3 +31,7 @@ The work has no UX document, since a README line and a short CONTRIBUTING.md hol
 ## Document readme
 
 README.md is the document readme, of kind readme, so the greeting line is made and checked for the README's own readers.
+
+## Document contributing
+
+CONTRIBUTING.md is the document contributing, of kind contributing, made to the checklist .rn/checklists/contributing.md, which is made first, so the file is made and checked for someone coming to contribute rather than for a newcomer to a product.
