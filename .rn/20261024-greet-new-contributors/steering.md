@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/5
 stage: plan
-signoff: none
+signoff: plan
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -28,7 +28,7 @@ G1: A first-time contributor learns they are welcome to try things freely here, 
 
 ## Next
 
-Step 9 of /rn:up on plan: stop at the plan sign-off
+Wait at the plan sign-off for the user's answer: /rn:ty to approve, /rn:gm <feedback> to ask for a change.
 
 ## Open
 
