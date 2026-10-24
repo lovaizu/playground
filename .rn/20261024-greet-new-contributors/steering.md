@@ -16,7 +16,4 @@ G1: Newcomers who come to the repository for the first time should feel welcome 
 
 ## Documents
 
-- plan: .rn/20261024-greet-new-contributors/decisions/plan.decisions.md
-
 ## Tasks
-

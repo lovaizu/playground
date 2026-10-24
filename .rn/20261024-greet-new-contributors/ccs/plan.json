@@ -25,6 +25,12 @@
  ],
  "constraints": [
   {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
    "fix": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/56aa29d0-fbb5-4e4f-abe9-f9e682d24658/scratchpad/trial-1/rn/checklists/fix.md"
   }
  ]
