@@ -27,7 +27,7 @@
    "decision": "How a task names what it serves: Each task line ends exactly \"Serves <G1, or the criteria by ID>.\", such as \"Serves G1.\", with nothing after it, as rn's scripts read it"
   },
   {
-   "decision": "Wording of AC1: AC1 stays as the plan has it: one new README line telling a newcomer they are welcome and may try things freely, the two existing lines unchanged"
+   "decision": "Wording of AC1: AC1 says the one new README line welcomes a newcomer, says they may try things freely and links to CONTRIBUTING.md, the two existing lines unchanged; AC2 says CONTRIBUTING.md holds the two points alone"
   },
   {
    "decision": "The CONTRIBUTING file: A short CONTRIBUTING.md is made, and the README's greeting line links to it, so a newcomer has somewhere real to read how to join in"
