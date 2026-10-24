@@ -10,6 +10,9 @@
  "constraints": [
   {
    "decision": "What filing issues easier is for: A newcomer to the repository can file an issue without getting lost, with what is needed filled in"
+  },
+  {
+   "decision": "What is made: Only two GitHub issue forms, a bug report and a feature request, each with its main fields required, and blank issues turned off; no README guide, nothing else"
   }
  ]
 }
