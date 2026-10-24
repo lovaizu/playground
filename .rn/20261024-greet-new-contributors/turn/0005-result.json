@@ -1,0 +1,87 @@
+{
+ "work": [
+  ".rn/20261024-greet-new-contributors/turn/0005-steering.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "F-1",
+   "good": "The plan follows the template from its title to its tasks: the title on line 1, the G1 line on line 3, the Acceptance criteria heading with AC1 on lines 5-7, and the Tasks heading with T1, its completion criterion and its four numbered steps on lines 9-18. The front matter, Next and Open are not in this part; rn's scripts write them, as the template for this part ends at the tasks.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:1-18"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-1",
+   "good": "G1 states the user's purpose and its reason: a first-time contributor learns they are welcome to try things freely here, so they find it easy to join in. The reason is the user's own and is not a restatement of the goal.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:3-3"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-2",
+   "good": "AC1 is the one criterion for the whole goal: a README with one new line saying both that the newcomer is welcome and that they may try things freely, with the two existing lines unchanged, can be answered yes or no by reading README.md. It names no library or build method. The reason in G1, finding it easy to join in, follows from the two points that AC1 states, as the decisions set out.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:3-3",
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:7-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-3",
+   "good": "T1's result is the approved wording of AC1, which the user reads at the plan sign-off. Its completion criterion checks that wording against both points and the two existing README lines by reading README.md, so nothing it needs is left to a later task.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:11-13"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-4",
+   "good": "Each step says what to do toward T1's completion criterion: step 1 names README.md and the two lines to read, with the user to confirm; step 2 names the design as work plan, kind plan, with no path, and its check; step 3 traces that design; step 4 makes AC1 as work plan, kind plan, and checks it against the two points. None is the template's words alone.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:15-18"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-8",
+   "good": "T1 starts with step 1, which reads README.md and confirms with the user what AC1 must say, so the maker does not choose what is the user's to decide. Step 2 designs the check and step 3 traces that design on paper by a reader who is not its designer, before the making in step 4.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:15-18"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-5",
+   "good": "The plan stage needs criteria for the whole goal, and they are given: AC1 at line 7 states both points of G1 and the two existing lines. T1 at line 11 serves G1 and brings AC1 about through its completion criterion at line 13, so no ID a task names is left as unmet as before, and no build-stage task is made yet.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:3-3",
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:7-7",
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:11-13"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-6",
+   "good": "Each line is read by a reader who needs it: the goal and AC1 for the user at the sign-off, and T1 with its completion criterion and steps for the orchestrator. The plan holds no commit-message history, no decision text from the call and no session state, which rn's scripts write.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:1-18"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-7",
+   "good": "Each line reads the same to every reader: G1, AC1 and T1 each name one thing; T1 ends with exactly 'Serves G1.'; the terms work, kind and plan are used as the call names them; README.md is the one file named; no ID names a second thing, and G1, AC1 and T1 keep the meaning they had in the earlier versions on this branch.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:3-3",
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:7-7",
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:11-11",
+    ".rn/20261024-greet-new-contributors/turn/0005-steering.md:16-18"
+   ]
+  }
+ ],
+ "lessons": [],
+ "checked": "Read the work at each Good's lines against its item."
+}
