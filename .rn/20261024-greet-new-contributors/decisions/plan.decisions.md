@@ -27,3 +27,7 @@ The plan lists no document until the user, after the plan sign-off, decides whic
 ## No UX document
 
 The work has no UX document, since a README line and a short CONTRIBUTING.md hold no flow of use for a reader to get through.
+
+## Document readme
+
+README.md is the document readme, of kind readme, so the greeting line is made and checked for the README's own readers.
