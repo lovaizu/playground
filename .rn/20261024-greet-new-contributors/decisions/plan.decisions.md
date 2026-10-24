@@ -23,3 +23,7 @@ The README has, right below its description, one line that greets new contributo
 ## Documents
 
 The plan lists no document until the user, after the plan sign-off, decides which documents the purpose needs; these decisions are the plan's own record, not a document the purpose needs, so listing them would tell the conductor a document is there to make.
+
+## No UX document
+
+The work has no UX document, since a README line and a short CONTRIBUTING.md hold no flow of use for a reader to get through.
