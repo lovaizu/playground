@@ -1,0 +1,31 @@
+{
+ "focal_entities": [
+  {
+   "deliverable": ".rn/20261024-greet-new-contributors/steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's conductor in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/56aa29d0-fbb5-4e4f-abe9-f9e682d24658/scratchpad/trial-1/rn/checklists/session/plan.md"
+  },
+  {
+   "decisions": ".rn/20261024-greet-new-contributors/decisions/plan.decisions.md"
+  }
+ ],
+ "constraints": [
+  {
+   "fix": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/56aa29d0-fbb5-4e4f-abe9-f9e682d24658/scratchpad/trial-1/rn/checklists/fix.md"
+  }
+ ]
+}
