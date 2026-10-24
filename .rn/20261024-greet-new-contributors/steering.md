@@ -11,8 +11,8 @@ conversation-language: Japanese
 
 ## Next
 
-Step 3 of /rn:up on plan: settle the shortfall in Open, then step 4 on plan again
+Step 4 of /rn:up on plan: have the plan made again for the shortfall in Open
 
 ## Open
 
-- Call 0002, B-4 at 0002-steering.md:16,18: T1's design and making steps name the path of call 0002's own file and the kind document, while a plan-stage task's calls are made on work plan, kind plan, with no path; a later call would be made on the wrong kind and a file that is no longer the latest.
+- Call 0003, F-1 at 0003-steering.md:11: rn.py state --put 0003 refused it: expected T1 to end `Serves <G1, or the criteria by ID>.`, found `... Serves G1, reaching AC1.`
