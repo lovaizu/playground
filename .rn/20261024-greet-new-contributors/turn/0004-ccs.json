@@ -1,0 +1,30 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "plan"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "What the greeting is for: A first-time contributor learns they are welcome to try things freely here, so they find it easy to join in"
+  },
+  {
+   "decision": "What shows it done: The README gains one line that tells a newcomer both that they are welcome and that they may try things freely; its two existing lines stay as they are"
+  },
+  {
+   "decision": "Tasks of the plan stage: The plan stage's tasks serve G1 and reach the acceptance criteria; adding the line to README.md is left to the build stage"
+  },
+  {
+   "decision": "How the goal's reason is checked: Joining in follows from the two points getting across, so AC1 alone checks the goal and no criterion of its own is added for it"
+  },
+  {
+   "decision": "Calls of a plan-stage task: A plan-stage task's design and making steps name work plan, kind plan, with no path, as rn's calls make the plan"
+  },
+  {
+   "decision": "How a task names what it serves: Each task line ends exactly \"Serves <G1, or the criteria by ID>.\", such as \"Serves G1.\", with nothing after it, as rn's scripts read it"
+  }
+ ]
+}
