@@ -1,1 +1,8 @@
-{}
+{"episodic_trace": [{"fact": "The user asked: \"add a line greeting new contributors to the README\""}, {"fact": "Session .rn/20261024-greet-new-contributors on branch greet-new-contributors from main; draft PR https://github.com/lovaizu/playground/pull/4"}, {"fact": "README.md is two lines: '# playground' and 'A playground for experimenting and testing — nothing here is meant to last.'; it is the only tracked file besides .rn/"}],
+ "semantic_gist": [{"gist": "The user writes requests in English but converses in Japanese per their global instructions"}],
+ "focal_entities": [{"stage": "plan"}, {"work": "plan"}],
+ "goal_orientation": [{"goal": "add a line greeting new contributors to the README"}],
+ "constraints": [{"conversation-language": "Japanese"}, {"artifact-language": "English"}, {"rule": "one point to decide per message"}],
+ "predictive_cue": [{"next": "Step 5: hear the plan's points (step 3 on work plan), starting with what the work is for"}],
+ "uncertainty_signal": [{"open": "the plan's goal, done criteria and the greeting's wording and place are not yet decided"}],
+ "retrieved_artifacts": [{"read": ".rn/20261024-greet-new-contributors/decisions/plan.decisions.md"}, {"read": "README.md"}]}
