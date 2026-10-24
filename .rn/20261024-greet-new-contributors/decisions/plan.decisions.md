@@ -22,7 +22,7 @@ The README has, right below its description, one line that greets new contributo
 
 ## Documents
 
-The plan lists no document until the user, after the plan sign-off, decides which documents the purpose needs; these decisions are the plan's own record, not a document the purpose needs, so listing them would tell the conductor a document is there to make.
+The plan lists the documents readme (README.md) and contributing (CONTRIBUTING.md) alone, in that order; the plan's own decisions are its record, not a document the purpose needs.
 
 ## No UX document
 
@@ -35,3 +35,7 @@ README.md is the document readme, of kind readme, so the greeting line is made a
 ## Document contributing
 
 CONTRIBUTING.md is the document contributing, of kind contributing, made to the checklist .rn/checklists/contributing.md, which is made first, so the file is made and checked for someone coming to contribute rather than for a newcomer to a product.
+
+## No architecture document
+
+The work has no architecture document, since two documents and no code hold no parts for a later builder to see.
