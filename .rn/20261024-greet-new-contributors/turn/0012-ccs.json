@@ -1,0 +1,42 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "plan"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "What the greeting is for: A first-time contributor learns they are welcome to try things freely here, so they find it easy to join in"
+  },
+  {
+   "decision": "What shows it done: AC1: the README gains one line that tells a newcomer they are welcome and may try things freely and links to CONTRIBUTING.md, its two existing lines as they are; AC2: CONTRIBUTING.md says the two points alone"
+  },
+  {
+   "decision": "Tasks of the plan stage: The plan stage's tasks serve G1 and reach the acceptance criteria; adding the line to README.md is left to the build stage"
+  },
+  {
+   "decision": "How the goal's reason is checked: AC1 checks that the welcome and trying freely get across, and AC2 that a newcomer learns how to join in; together they check the goal, with no criterion added for it"
+  },
+  {
+   "decision": "Calls of a plan-stage task: A plan-stage task's design and making steps name work plan, kind plan, with no path, as rn's calls make the plan"
+  },
+  {
+   "decision": "How a task names what it serves: Each task line ends exactly \"Serves <G1, or the criteria by ID>.\", such as \"Serves G1.\", with nothing after it, as rn's scripts read it"
+  },
+  {
+   "decision": "Wording of AC1: AC1 says the one new README line welcomes a newcomer, says they may try things freely and links to CONTRIBUTING.md, the two existing lines unchanged; AC2 says CONTRIBUTING.md holds the two points alone"
+  },
+  {
+   "decision": "The CONTRIBUTING file: A short CONTRIBUTING.md is made, and the README's greeting line links to it, so a newcomer has somewhere real to read how to join in"
+  },
+  {
+   "decision": "What CONTRIBUTING.md says: CONTRIBUTING.md says two things alone: a newcomer may try things freely, and a change goes in by making a branch and opening a pull request"
+  },
+  {
+   "decision": "T1 after AC1 changed: T1 is opened again, unticked from step 2: its completion criterion and its checks cover AC1's link to CONTRIBUTING.md as well as the two points, so the new AC1 is checked before the sign-off"
+  }
+ ]
+}
