@@ -13,6 +13,9 @@
   },
   {
    "decision": "What is made: Only two GitHub issue forms, a bug report and a feature request, each with its main fields required, and blank issues turned off; no README guide, nothing else"
+  },
+  {
+   "decision": "What shows it done: Before merge: both forms and the config follow GitHub's syntax, GitHub renders each as a form on the branch, main fields marked required; after merge the user checks the new-issue page"
   }
  ]
 }
