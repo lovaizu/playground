@@ -1,0 +1,84 @@
+{
+ "work": [
+  ".rn/20261024-greet-new-contributors/turn/0001-steering.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "F-1",
+   "good": "The steering body follows the template: title, G1, Acceptance criteria with AC1, Tasks with T1 and its four numbered steps, same headings and IDs. Front matter is written by rn's scripts, and Learnings, Next and Open are left out since nothing shows a shortfall and rn's scripts write Next and Open.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:1-18"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-1",
+   "good": "G1 states the user's purpose and why: a first-time contributor knows they are welcome and may try things freely, so they are willing to join in.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:3-3"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-2",
+   "good": "AC1 names the two points of the goal, checkable by reading README.md for one new line with both points and the two existing lines unchanged. The reason, willingness to join in, is not checked by any criterion.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:3-3",
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:7-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-3",
+   "good": "T1 is one result, the new README line, accepted by its completion criterion checked by reading README.md; nothing it needs is left to a later task.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:11-13"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-4",
+   "good": "Each step says what to do toward T1's completion criterion: reading README.md and confirming wording, designing the line as a document work, tracing it, and making it checked by reading the file.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:15-18"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-8",
+   "good": "Step 1 reads README.md and confirms the wording with the user before any design, and step 3 traces the design before the making in step 4.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:15-15",
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:17-17"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-5",
+   "good": "The one task T1 names AC1 and its result makes AC1 met, the only criterion for this stage.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:7-7",
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:11-11"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-6",
+   "good": "Each line is used by its reader: G1 and AC1 give the purpose and the check, T1 and its steps give the work, with no fact said in two places.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:3-18"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md",
+   "item": "B-7",
+   "good": "The IDs G1, AC1 and T1 each name one thing and T1 serves AC1, which the plan holds; the README line and the two existing lines are named the same way throughout.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0001-steering.md:3-11"
+   ]
+  }
+ ],
+ "lessons": [],
+ "checked": "Read the work at each Good's lines against its item."
+}

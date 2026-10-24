@@ -5,6 +5,25 @@
   },
   {
    "stage": "plan"
+  },
+  {
+   "deliverable": ".rn/20261024-greet-new-contributors/turn/0001-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -13,6 +32,15 @@
   },
   {
    "decision": "What shows it done: The README gains one line that tells a newcomer both that they are welcome and that they may try things freely; its two existing lines stay as they are"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/fix.md"
   }
  ]
 }
