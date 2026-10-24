@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/5
 stage: plan
-signoff: plan
+signoff: none
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -28,8 +28,8 @@ G1: A first-time contributor learns they are welcome to try things freely here, 
 
 ## Next
 
-Wait at the plan sign-off for the user's answer: /rn:ty to approve, /rn:gm <feedback> to ask for a change.
+Step 10 of /rn:up on plan: find the point behind the feedback
 
 ## Open
 
-None.
+- the greeting should name the CONTRIBUTING file too
