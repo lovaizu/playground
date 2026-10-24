@@ -1,0 +1,49 @@
+{
+ "work": [
+  ".rn/20261024-greet-new-contributors/turn/0010-steering.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "F-1",
+   "good": "The work follows the template: a \"## Learnings\" heading on line 1, then one bullet per learning numbered L1 to L5 with nothing else in the list, each bullet giving what happened and where it would make later work better.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0010-steering.md:1-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-1",
+   "good": "Each learning quotes the records' words with whose words they are and where: L1 and L2 quote commit messages of call 0001 (f9bf0c6, c49a817), L3 and L4 quote commits 1c258e5 and 44a4de6, and L5 quotes the user's feedback (c1df59f) and the orchestrator's decision that gives its cause.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0010-steering.md:3-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-2",
+   "good": "Each learning names where its change goes: L1 says turn's check of B-2 would test each part of the goal's reason, L2 to L4 say the making of a plan would hold its tasks to B-5, B-4 and F-1 as their checks ask, all for rn's makers, and L5 names the user's repository and the plan checklist question that would have kept the CONTRIBUTING question from being missed.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0010-steering.md:3-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-3",
+   "good": "Each learning holds one thing for the user to decide: a separate cause for each of L1 to L5, none repeating another, and none resting on an earlier learning.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0010-steering.md:3-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-4",
+   "good": "Every shortfall of the stretch comes as a learning: the B-2 and B-5 shortfalls of call 0001 (L1, L2), the path and kind of call 0002 (L3), the refused Serves line of call 0003 (L4), and the user's change sent back at the plan sign-off (L5).",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0010-steering.md:3-7"
+   ]
+  }
+ ],
+ "lessons": [],
+ "checked": "Read the work at each Good's lines against its item."
+}

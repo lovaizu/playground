@@ -5,6 +5,121 @@
   },
   {
    "stage": "plan"
+  },
+  {
+   "deliverable": ".rn/20261024-greet-new-contributors/turn/0010-steering.md"
+  },
+  {
+   "audience": "the user deciding each learning once the finished work is approved"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/history.txt"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/steering.md"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0001-ccs.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0001-result.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0001-steering.md"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0002-ccs.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0002-result.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0002-steering.md"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0003-ccs.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0003-result.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0003-steering.md"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0004-ccs.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0004-result.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0004-steering.md"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0005-ccs.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0005-result.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0005-steering.md"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0006-ccs.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0006-result.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0006-steering.md"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0007-ccs.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0007-result.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0007-steering.md"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0008-ccs.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0008-result.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0008-steering.md"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0009-ccs.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0009-result.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0009-steering.md"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/record/.rn/20261024-greet-new-contributors/turn/0010-ccs.json"
+  },
+  {
+   "has": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.git/rn/conversations/b4265473-9794-4895-863b-ecdd83dc32cf.txt"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "deciding where each learning goes: their checklists, an issue to rn's makers, both, or neither"
+  },
+  {
+   "serves": "G1: A first-time contributor learns they are welcome to try things freely here, so they find it easy to join in."
+  },
+  {
+   "serves": "AC1: The README gains one line that tells a newcomer both that they are welcome and that they may try things freely, and its two existing lines stay as they are."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md"
   }
  ],
  "constraints": [
@@ -13,6 +128,15 @@
   },
   {
    "decision": "Which shortfalls the learnings hold: Every shortfall of the stretch is learnt in this call, those of calls 0001 to 0003 included, as no earlier learnings call was put into the steering"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/fix.md"
   }
  ]
 }
