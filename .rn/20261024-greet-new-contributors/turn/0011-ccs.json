@@ -18,7 +18,7 @@
    "decision": "Tasks of the plan stage: The plan stage's tasks serve G1 and reach the acceptance criteria; adding the line to README.md is left to the build stage"
   },
   {
-   "decision": "How the goal's reason is checked: Joining in follows from the two points getting across, so AC1 alone checks the goal and no criterion of its own is added for it"
+   "decision": "How the goal's reason is checked: AC1 checks that the welcome and trying freely get across, and AC2 that a newcomer learns how to join in; together they check the goal, with no criterion added for it"
   },
   {
    "decision": "Calls of a plan-stage task: A plan-stage task's design and making steps name work plan, kind plan, with no path, as rn's calls make the plan"
