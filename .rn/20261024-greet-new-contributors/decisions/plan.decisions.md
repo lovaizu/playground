@@ -10,7 +10,7 @@ conversation-language: Japanese
 
 ## What the work is for
 
-The README greets new contributors and points them to the CONTRIBUTING file, so someone who comes to contribute knows where to start; asked for as new contributors and confirmed at the plan sign-off feedback.
+The README greets new contributors and points them to the CONTRIBUTING file, so someone who comes to contribute knows where to start.
 
 ## The CONTRIBUTING file
 
