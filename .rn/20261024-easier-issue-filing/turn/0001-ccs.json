@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "plan"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "What filing issues easier is for: A newcomer to the repository can file an issue without getting lost, with what is needed filled in"
+  }
+ ]
+}
