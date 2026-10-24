@@ -10,7 +10,7 @@ conversation-language: Japanese
 
 ## What the work is for
 
-The README greets people who come to the repository for the first time and tells them they are free to try things here, so a newcomer feels welcome to experiment, in keeping with the README's word that nothing here is meant to last.
+The README greets new contributors and points them to the CONTRIBUTING file, so someone who comes to contribute knows where to start; asked for as new contributors and confirmed at the plan sign-off feedback.
 
 ## What shows the work is done
 
