@@ -1,0 +1,18 @@
+{
+ "focal_entities": [
+  {
+   "work": "learnings"
+  },
+  {
+   "stage": "plan"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "What L5 rests on: L5 gives its cause: the orchestrator saw the repository has no CONTRIBUTING file (git ls-files shows README.md alone; its conversation says so) and asked the user no point on whether the line should point to contribution guidance"
+  },
+  {
+   "decision": "Which shortfalls the learnings hold: Every shortfall of the stretch is learnt in this call, those of calls 0001 to 0003 included, as no earlier learnings call was put into the steering"
+  }
+ ]
+}
