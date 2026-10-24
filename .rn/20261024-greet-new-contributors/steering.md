@@ -33,4 +33,4 @@ Step 4 of /rn:up on learnings: have the learnings made again for the shortfall i
 ## Open
 
 - the greeting should name the CONTRIBUTING file too
-- Call 0007, B-1 at 0007-steering.md:7: L5 says the records do not show why AC1 left CONTRIBUTING out, but the orchestrator's conversation, line 295, says the README has no CONTRIBUTING or other guidance, and git ls-files shows no CONTRIBUTING file; the orchestrator saw that and asked no point on it.
+- Call 0008, B-4 and B-3 at 0008-steering.md:3: it leaves out call 0007's L1 to L4, the shortfalls of calls 0001 to 0003, as learnt already, but call 0007 was never put into the steering, so they are learnt nowhere.

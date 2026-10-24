@@ -1,0 +1,3 @@
+## Learnings
+
+- L1: At the plan sign-off the user sent the plan back with "the greeting should name the CONTRIBUTING file too" (commit c1df59f), and call 0007's L5 said "the records do not show why AC1 left CONTRIBUTING out"; but the orchestrator's decision in this call says "The repository has no CONTRIBUTING file (git ls-files shows README.md alone); the orchestrator saw it, in its conversation, and asked no point on whether the line should point to contribution guidance", so the cause was a question the plan stage did not put to the user; for the user's repository, at the plan stage: the plan checklist could ask which existing files the README line names, so the user settles that at the plan sign-off.

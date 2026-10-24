@@ -1,0 +1,49 @@
+{
+ "work": [
+  ".rn/20261024-greet-new-contributors/turn/0008-steering.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "F-1",
+   "good": "The work follows the template: a \"## Learnings\" heading on line 1, then one bullet, L1, in the template's form of what happened and where it would make later work better. Numbering starts at L1.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0008-steering.md:1-3"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-1",
+   "good": "L1 quotes the user's feedback at the plan sign-off (commit c1df59f), the words of call 0007's L5 (the records do not show why AC1 left CONTRIBUTING out), and the orchestrator's decision in this call, each saying whose words they are and where. The cause it gives is the question the plan stage did not put to the user, shown by the orchestrator's words that it saw no CONTRIBUTING file and asked no point, not a guess.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0008-steering.md:3-3"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-2",
+   "good": "L1 names the change that would have made later work better: the plan checklist could ask which existing files the README line names, so the user settles that at the plan sign-off. It is for the user's repository alone, the plan stage named as the kind of work, with the question its checklist would ask.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0008-steering.md:3-3"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-3",
+   "good": "The stretch has one learning, L1: the held-back shortfall of call 0007's L5 with its one cause (a plan-stage question not put to the user) and its one change. It does not repeat L1 to L4 of call 0007, which were learnt already.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0008-steering.md:3-3"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-4",
+   "good": "The shortfall the records show for this stretch, the user's change sent back at the plan sign-off, is learnt in L1, which holds call 0007's L5 that was held back. No other shortfall of the stretch appears in the records read.",
+   "lines": [
+    ".rn/20261024-greet-new-contributors/turn/0008-steering.md:3-3"
+   ]
+  }
+ ],
+ "lessons": [],
+ "checked": "Read the work at each Good's lines against its item."
+}
