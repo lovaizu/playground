@@ -33,4 +33,4 @@ Step 4 of /rn:up on learnings: have the learnings made again for the shortfall i
 ## Open
 
 - the greeting should name the CONTRIBUTING file too
-- Call 0008, B-4 and B-3 at 0008-steering.md:3: it leaves out call 0007's L1 to L4, the shortfalls of calls 0001 to 0003, as learnt already, but call 0007 was never put into the steering, so they are learnt nowhere.
+- Call 0009, B-1 at 0009-steering.md:7: L5 says the records do not show why the plan left CONTRIBUTING out and gives no cause, against the call's decision "What L5 rests on", which gives it: the orchestrator saw there is no CONTRIBUTING file and asked no point on it.
