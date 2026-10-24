@@ -1,0 +1,49 @@
+{
+ "work": [
+  ".rn/20261024-greet-new-contributors/turn/0007-steering.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "F-1",
+   "good": "The work follows the template: a \"## Learnings\" heading, then one bullet per learning, L1 to L5, each in the template's form of what happened and where it would make later work better. Numbering starts at L1 as the format asks.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0007-steering.md:1-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-1",
+   "good": "Each learning quotes the records' own words and says whose they are and where: L1 quotes turn's words in commit f9bf0c6, L2 to L4 the commit messages of calls 0001 to 0003, L5 the user's feedback in commit c1df59f. L5 says the records do not show its cause, rather than guessing one.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0007-steering.md:3-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-2",
+   "good": "Each learning names the change that would make later work better and where it goes: L1 to L4 are for rn's makers, each with the change to its checklist check or making step; L5 is for the user's repository, with the plan checklist question that would ask which files the README line names.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0007-steering.md:3-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-3",
+   "good": "Each learning is one thing for the user to decide: L1 (B-2 of turn's check), L2 (a build task in the plan stage), L3 (the path and kind of a plan-stage task), L4 (the form of the Serves line) and L5 (the user's feedback at the sign-off) each have a separate cause and go to one place.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0007-steering.md:3-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/rn/checklists/session/learnings.md",
+   "item": "B-4",
+   "good": "Every shortfall the stretch's records show is learnt: the B-2 and B-5 shortfalls of call 0001, the path and kind shortfall of call 0002, the F-1 refusal of call 0003, and the user's change sent back at the plan sign-off; no other shortfall is shown in the records.",
+   "lines": [
+    "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild/43c0165e-d4c8-456a-bae8-4a96db5efb41/scratchpad/flow2/playground/.rn/20261024-greet-new-contributors/turn/0007-steering.md:3-7"
+   ]
+  }
+ ],
+ "lessons": [],
+ "checked": "Read the work at each Good's lines against its item."
+}

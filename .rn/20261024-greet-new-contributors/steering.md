@@ -28,8 +28,9 @@ G1: A first-time contributor learns they are welcome to try things freely here, 
 
 ## Next
 
-Step 10 of /rn:up on plan: find the point behind the feedback
+Step 4 of /rn:up on learnings: have the learnings made again for the shortfall in Open, then Step 10 of /rn:up on plan: find the point behind the feedback
 
 ## Open
 
 - the greeting should name the CONTRIBUTING file too
+- Call 0007, B-1 at 0007-steering.md:7: L5 says the records do not show why AC1 left CONTRIBUTING out, but the orchestrator's conversation, line 295, says the README has no CONTRIBUTING or other guidance, and git ls-files shows no CONTRIBUTING file; the orchestrator saw that and asked no point on it.
