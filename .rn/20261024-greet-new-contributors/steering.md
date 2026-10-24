@@ -36,8 +36,9 @@ G1: A first-time contributor learns they are welcome to try things freely here, 
 
 ## Next
 
-Step 10 of /rn:up on plan: find the point behind the feedback
+Step 3 of /rn:up on plan: settle how T1 covers AC1's link to CONTRIBUTING.md, then step 4 on plan again
 
 ## Open
 
 - the greeting should name the CONTRIBUTING file too
+- Call 0011's B-3 and B-7 fall short at .rn/20261024-greet-new-contributors/turn/0011-steering.md:12-19: T1's completion criterion says AC1 "says both points" and step 4 checks it "against the two points", leaving out AC1's link to CONTRIBUTING.md, and T1 stays ticked though AC1 changed
