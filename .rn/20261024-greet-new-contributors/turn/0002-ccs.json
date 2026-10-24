@@ -16,6 +16,9 @@
   },
   {
    "decision": "Tasks of the plan stage: The plan stage's tasks serve G1 and reach the acceptance criteria; adding the line to README.md is left to the build stage"
+  },
+  {
+   "decision": "How the goal's reason is checked: Joining in follows from the two points getting across, so AC1 alone checks the goal and no criterion of its own is added for it"
   }
  ]
 }
