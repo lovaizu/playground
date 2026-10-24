@@ -1,0 +1,71 @@
+{
+ "lessons": [
+  {
+   "lesson": "When the conductor rewrote the decisions entry 'What the work is for' after the feedback, it wrote into the entry how the decision was reached ('asked for as new contributors and confirmed at the plan sign-off feedback'). turn carried that into G1, so the plan broke B-6 and had to be made a second time. The entry should hold only what is decided. How it was reached already lives in the commit message, which said it in its 'Answer:' line. Nothing in rn's steps told the conductor to keep the history out of a decisions entry, which is why the same slip can happen in anyone's session.",
+   "whose": "general",
+   "grounds": [
+    {
+     "record": "/home/agent/.claude/projects/-tmp-claude-1000--Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild-56aa29d0-fbb5-4e4f-abe9-f9e682d24658-scratchpad-trial-1-playground/b31f744e-743c-42c0-89bc-ebe6a2aa804b.jsonl",
+     "quote": "new=\\\"## What the work is for\\\\n\\\\nThe README greets new contributors and points them to the CONTRIBUTING file, so someone who comes to contribute knows where to start; asked for as new contributors and confirmed at the plan sign-off feedback.\\\\n\\\""
+    },
+    {
+     "record": "git log ce8297866d9500818d0b2c353da1e97bb4fdf792..efd86bc9c341744fadbf20ee442d3745593dfac3",
+     "quote": "Keep turn's plan and have it made again: G1 said how it was reached, which the decisions and commits keep (B-6)"
+    },
+    {
+     "record": "git log ce8297866d9500818d0b2c353da1e97bb4fdf792..efd86bc9c341744fadbf20ee442d3745593dfac3",
+     "quote": "Answer: the point behind it was who the greeting is for; the request said new contributors, which had been widened to newcomers unasked."
+    }
+   ]
+  },
+  {
+   "lesson": "The plan sign-off was shown to the user in English, even though the conversation language is Japanese. The conductor showed what `rn.py proposal plan` printed as it was. That text is also the sign-off commit message, so it is in the artifact language. The skill tells the conductor both to use what rn.py prints as printed and to say everything to the user in the conversation language, and at a sign-off these two rules clash. rn should give the conductor the proposal in the conversation language for the user, separate from the commit message, or tell it to translate the proposal before showing it.",
+   "whose": "general",
+   "grounds": [
+    {
+     "record": "/home/agent/.claude/projects/-tmp-claude-1000--Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild-56aa29d0-fbb5-4e4f-abe9-f9e682d24658-scratchpad-trial-1-playground/b31f744e-743c-42c0-89bc-ebe6a2aa804b.jsonl",
+     "quote": "[text] Plan sign-off\nThe plan is on the draft pull request: https://github.com/lovaizu/playground/pull/4"
+    },
+    {
+     "record": "/home/agent/.claude/projects/-tmp-claude-1000--Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild-56aa29d0-fbb5-4e4f-abe9-f9e682d24658-scratchpad-trial-1-playground/b31f744e-743c-42c0-89bc-ebe6a2aa804b.jsonl",
+     "quote": "Use what it prints as printed; where it stops, it prints what went wrong and what to do;"
+    },
+    {
+     "record": "/home/agent/.claude/projects/-tmp-claude-1000--Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild-56aa29d0-fbb5-4e4f-abe9-f9e682d24658-scratchpad-trial-1-playground/b31f744e-743c-42c0-89bc-ebe6a2aa804b.jsonl",
+     "quote": "Everything you say to the user is in the state's\n`conversation-language`, everything you write to the repository, such as a commit message, in its\n`artifact-language`."
+    },
+    {
+     "record": ".rn/20261024-greet-new-contributors/steering.md",
+     "quote": "conversation-language: Japanese"
+    }
+   ]
+  },
+  {
+   "lesson": "turn's result cited steering.md:1, a front-matter line, as the Good for every plan item on both runs. Its own 'checked' said 'no run: a stand-in'. rn's step says such a result goes back to turn, but turn would return the same result every time, and rn's steps give no way out of that loop. The conductor had to make up a way on: it checked lines 11, 15 and 16 itself and asked the user whether its own check could stand. So the plan reached the sign-off with no check by a second AI. rn's steps should say what the conductor does when turn's result cannot give the Good it claims and making the work again would not change that.",
+   "whose": "general",
+   "grounds": [
+    {
+     "record": ".rn/20261024-greet-new-contributors/ccs/plan-result.json",
+     "quote": "\"good\": \"Given at this line, as the trial's stand-in for turn sets every item.\""
+    },
+    {
+     "record": ".rn/20261024-greet-new-contributors/ccs/plan-result.json",
+     "quote": "\"checked\": \"no run: a stand-in\""
+    },
+    {
+     "record": "git log ce8297866d9500818d0b2c353da1e97bb4fdf792..efd86bc9c341744fadbf20ee442d3745593dfac3",
+     "quote": "{\"open\": \"turn's stand-in cites steering.md:1 for every Good; such a result goes back to turn\"}"
+    },
+    {
+     "record": "git log ce8297866d9500818d0b2c353da1e97bb4fdf792..efd86bc9c341744fadbf20ee442d3745593dfac3",
+     "quote": "turn's stand-in cites steering.md:1 for every Good and would on every run."
+    },
+    {
+     "record": "/home/agent/.claude/projects/-tmp-claude-1000--Users-kiyo-work-lovaizu-ccpm--claude-worktrees-writ-rebuild-56aa29d0-fbb5-4e4f-abe9-f9e682d24658-scratchpad-trial-1-playground/b31f744e-743c-42c0-89bc-ebe6a2aa804b.jsonl",
+     "quote": "ただし、これは作った側の確かめで、別の AI による確かめではありません。"
+    }
+   ]
+  }
+ ],
+ "checked": "Read all of record file 1 (the history from 84b1ab4 to efd86bc and every state.json change), record files 2 to 4 (steering.md, plan.decisions.md, plan-result.json) and the whole conversation (file 5). Checked each message the conductor sent the user. The three decision messages (point 1 goal, point 2 making CONTRIBUTING.md, point 3 done criterion) and the stand-in decision each held one point with the recommended option first. Checked that each state followed from the move before it: the goal, CONTRIBUTING and done entries match the user's 'a' answers. Checked that each change to steering.md matches a turn run. No question was asked back by turn while it ran. The earlier widening of 'new contributors' to newcomers was learnt in the stretch before, so it is not repeated here. The user's 'yes' after being asked to clear the conversation and type /rn:up was taken as 'go on' and said so to the user, so it is not counted as a slip."
+}
