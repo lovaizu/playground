@@ -1,0 +1,136 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "F-1",
+      "good": "The headings are the template's, in its order: the name, an opening under no heading, Example, Why tidy-downloads, Requirements, Installation, Documentation, Development, License. The opening's first sentence gives the idea (each file sorted into a folder for its kind, every move shown first, nothing deleted, renamed, overwritten or changed, the last move able to be put back); the next gives the gain with the kind of thing that gives it (a command typed in a terminal; you open the folder for the kind in place of searching one long list); the last says whom it is for. Each list item in Why and Requirements is one sentence that stands alone, with its explanation after a blank line and indented, and none is bold. Each section opens with its main point.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:1-133"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-1",
+      "good": "From the opening alone I can place myself: it is for people on macOS or Linux who type commands in a terminal and whose Downloads folder fills up. I gain finding a download by opening Images, Documents or Archives in place of searching one long list, and it is a terminal command that gives it. The first sentence also gives what sets it apart from just any sorter: every move shown before it is made, no file deleted, renamed, overwritten or changed, and the last move able to be put back.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:3-8"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-2",
+      "good": "The example is my own kind of work: a Downloads folder holding a photo, a zip, a PDF and a file with no extension, plus a folder I made earlier. It goes in the order I would act: I preview and see each file's folder and the one file that stays and why; I move and see what moved and what was left; I see the folders it made and where I now find the photo; I undo and see each file moved back and the empty folders removed. What the tool prints is shown in console blocks at each step, not described. It also shows how to run it on another folder.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:10-63"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-3",
+      "good": "Each item sets what tidy-downloads gives against doing it by hand or with an mv script: one command against dragging each file; seeing every destination first against mv moving as it runs; never moving onto a file of the same name against mv overwriting unless told not to; every file of the last move put back in one command against a file manager's undo taking back one drag at a time and mv having none. No benefit that every way gives comes first or is mixed in among them.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:65-77"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-4",
+      "places": [
+        "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:92-120"
+      ],
+      "did": "On the remade README, the Requirements were still clear, and line 114 now names ~/.bash_profile for bash on macOS, which answers the shell-file point from my last reading. I ran the Installation commands as written again, in a throwaway HOME made with mktemp -d. `mkdir -p ~/.local/bin` worked. `curl -fsSL https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads -o ~/.local/bin/tidy-downloads` still fails with `curl: (22) The requested URL returned error: 404`, exit 22, and writes no file. `chmod +x ~/.local/bin/tidy-downloads` fails with `No such file or directory`, and `command -v tidy-downloads` prints nothing. The browser route opens the same 404 address. On GitHub, lovaizu/playground main still holds only `Initial commit`. The local repository still holds only README.md and docs/ux.md, with no tidy-downloads file.",
+      "lacking": "I still cannot install the tool, so I cannot run the Example or check that its output matches the README. The download address returns 404, and the README gives no other way to get the tool and does not say it is not yet published."
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-5",
+      "places": [
+        "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:122-133"
+      ],
+      "did": "I followed each place again on the remade README. Its lines 122-133 are unchanged apart from line numbers. `tidy-downloads --help`: no tool to run (see B-4). https://github.com/lovaizu/playground/commits/main opens, but via the GitHub API it holds only `Initial commit`, with nothing of tidy-downloads. `docs/architecture.md` is not in the repository (docs/ holds only ux.md), and https://github.com/lovaizu/playground/blob/main/docs/architecture.md returns 404. The license is named as MIT in the README; there is no LICENSE file.",
+      "lacking": "None of the ways on leads anywhere I can use. Fuller use, through --help, needs a tool I cannot get. The commit history named for what changed in each version holds nothing of the tool. The Development link goes to a file that does not exist, so someone joining the builders has no way in. Only the license is named in the README itself."
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-6",
+      "parts": [
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:1-9",
+          "good": "Read once from the top, it gives what the tool does, how it is used and whom it is for. The one term of its own, 'folder named for its kind', comes with examples (Images, Documents, Archives) where it is first used.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:3-8"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:10-64",
+          "good": "The folder's contents come before the first command, so each output line can be read against them. 'Other' and why invoice.pdf stays are explained right under the block where they first appear. Each command and its output is in its own console block. Each case named is told with what happens: folders it made, subfolders left as they are, a second undo moving nothing.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:12-63"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:65-78",
+          "good": "Each item puts the tool's behaviour next to the other way within the same sentence or the indented explanation under it, so I need nothing from later.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:67-77"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:79-91",
+          "good": "Each requirement comes with how to tell whether I have it or how to get it: python3 --version, python.org or another way, curl or a browser instead.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:81-90"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:92-121",
+          "good": "The steps come in the order I do them, each command in a block to copy: fetch and make runnable, check, add to PATH if the check prints nothing. Each other route is told where it applies: another PATH folder, no curl, and for bash ~/.bashrc on Linux or ~/.bash_profile on macOS in place of ~/.zshrc.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:94-120"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:122-126",
+          "good": "Two sentences, each naming a place: --help for every way to run it, and the commit history at an address for what changed.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:124-125"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:127-130",
+          "good": "One sentence naming the one entrance.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:129"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:131-133",
+          "good": "One sentence naming the license.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:133"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-7",
+      "good": "Each sentence adds something new toward my choice or first result. The opening gives the idea and the gain. The Example shows it in use. Why repeats the preview, no-overwrite and undo points only to set each against hand-dragging, a file manager or mv, which nothing else in the README does. Installation points back to the Example for first use instead of repeating its steps. There is no history of decisions, nothing aimed at a reviewer, and no fuller use beyond the first result.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:1-133"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-8",
+      "places": [
+        "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:16-56",
+        "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:98",
+        "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:124-125",
+        "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:129"
+      ],
+      "did": "I set the opening's and Why's promises beside the later lines again and found no clash. Line 76 now claims only a one-command undo of the whole last move, against a file manager's one drag at a time and mv's none, which holds, so my last point is answered. One name is still kept for each thing. I ran the install again (see B-4) and still got a 404 with no tool, and I followed the Documentation and Development links again (see B-5).",
+      "lacking": "I still cannot check any statement about what the tool does or prints, because the tool cannot be had. The README states as fact what I find untrue or cannot test: the download address, the Example's output, that --help shows every way to run it, that the commit history records what changed in each version, and that docs/architecture.md is there."
+    }
+  ]
+}

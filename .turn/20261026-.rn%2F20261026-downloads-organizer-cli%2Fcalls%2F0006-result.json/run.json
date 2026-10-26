@@ -122,9 +122,55 @@
     }
    ],
    "answer": "The user's answers, each kept as a decision of t2.2:\n1. Where the file is fetched from: a newcomer fetches the tool's one file with curl straight from the main branch of github.com/lovaizu/playground (raw.githubusercontent.com/lovaizu/playground/main/<path>), usable once this work is merged. The file's language: a Python 3 script, so Python 3 is what the user needs beforehand (on macOS it may need installing first).\n2. License: MIT, with a LICENSE file in the repository. Where the README sends the reader on: fuller use is what `tidy-downloads --help` shows; what changed is the commit history at https://github.com/lovaizu/playground/commits/main; Development links docs/architecture.md (made by a later task of this plan); no other document is made.\n3. What the README is checked against now: docs/ux.md and these decisions; its install and example are run for real once the tool is built."
+  },
+  {
+   "questions": [
+    {
+     "question": "What is the tool's one file called, and where in github.com/lovaizu/playground does it sit? The decision gives the download address as raw.githubusercontent.com/lovaizu/playground/main/<path> but leaves <path> open, and neither the CCS nor docs/ux.md names the file. Without it the README's curl line cannot be written, so a newcomer cannot install the tool from the README alone; the later task that builds the tool must then put the file at the same place.",
+     "recommended": "A file named tidy-downloads, with no extension, at the root of the repository, fetched from https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads, since this branch already makes the root README the tool's README and a file named as the command is copied onto the PATH as it is, with no renaming step.",
+     "items": [
+      {
+       "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+       "item": "B-4"
+      }
+     ]
+    }
+   ],
+   "answer": "The user's answer, kept as decision \"The file's name and place\" of t2.2: the tool's one file is tidy-downloads, with no extension, at the root of the repository, fetched from https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads."
   }
  ],
- "back": [],
+ "back": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-4",
+   "places": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:92-120"
+   ],
+   "did": "On the remade README, the Requirements were still clear, and line 114 now names ~/.bash_profile for bash on macOS, which answers the shell-file point from my last reading. I ran the Installation commands as written again, in a throwaway HOME made with mktemp -d. `mkdir -p ~/.local/bin` worked. `curl -fsSL https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads -o ~/.local/bin/tidy-downloads` still fails with `curl: (22) The requested URL returned error: 404`, exit 22, and writes no file. `chmod +x ~/.local/bin/tidy-downloads` fails with `No such file or directory`, and `command -v tidy-downloads` prints nothing. The browser route opens the same 404 address. On GitHub, lovaizu/playground main still holds only `Initial commit`. The local repository still holds only README.md and docs/ux.md, with no tidy-downloads file.",
+   "lacking": "I still cannot install the tool, so I cannot run the Example or check that its output matches the README. The download address returns 404, and the README gives no other way to get the tool and does not say it is not yet published."
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-5",
+   "places": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:122-133"
+   ],
+   "did": "I followed each place again on the remade README. Its lines 122-133 are unchanged apart from line numbers. `tidy-downloads --help`: no tool to run (see B-4). https://github.com/lovaizu/playground/commits/main opens, but via the GitHub API it holds only `Initial commit`, with nothing of tidy-downloads. `docs/architecture.md` is not in the repository (docs/ holds only ux.md), and https://github.com/lovaizu/playground/blob/main/docs/architecture.md returns 404. The license is named as MIT in the README; there is no LICENSE file.",
+   "lacking": "None of the ways on leads anywhere I can use. Fuller use, through --help, needs a tool I cannot get. The commit history named for what changed in each version holds nothing of the tool. The Development link goes to a file that does not exist, so someone joining the builders has no way in. Only the license is named in the README itself."
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-8",
+   "places": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:16-56",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:98",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:124-125",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:129"
+   ],
+   "did": "I set the opening's and Why's promises beside the later lines again and found no clash. Line 76 now claims only a one-command undo of the whole last move, against a file manager's one drag at a time and mv's none, which holds, so my last point is answered. One name is still kept for each thing. I ran the install again (see B-4) and still got a 404 with no tool, and I followed the Documentation and Development links again (see B-5).",
+   "lacking": "I still cannot check any statement about what the tool does or prints, because the tool cannot be had. The README states as fact what I find untrue or cannot test: the download address, the Example's output, that --help shows every way to run it, that the commit history records what changed in each version, and that docs/architecture.md is there."
+  }
+ ],
  "prompts": {
   "turn:generator": {
    "given": [
@@ -181,24 +227,176 @@
    ],
    "result": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/calls/0006-result.json",
    "reply": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.turn/20261026-.rn%2F20261026-downloads-organizer-cli%2Fcalls%2F0006-result.json/generator.json"
+  },
+  "turn:first-user": {
+   "given": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md"
+   ],
+   "work": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md"
+   ],
+   "checklists": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md"
+   ],
+   "receiver": [
+    "someone meeting tidy-downloads for the first time, with only what a newcomer has"
+   ],
+   "use": [
+    "deciding from the README alone whether the tool is for them, and if it is, installing it and using it to a first result"
+   ],
+   "parts": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:1-9",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:10-64",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:65-77",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:78-90",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:91-120",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:121-125",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:126-129",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:130-132"
+   ],
+   "reply": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.turn/20261026-.rn%2F20261026-downloads-organizer-cli%2Fcalls%2F0006-result.json/first-user.json"
   }
  },
  "since": {
-  "turn:generator": []
+  "turn:generator": [
+   {
+    "answers": [
+     {
+      "questions": [
+       {
+        "question": "What is the tool's one file called, and where in github.com/lovaizu/playground does it sit? The decision gives the download address as raw.githubusercontent.com/lovaizu/playground/main/<path> but leaves <path> open, and neither the CCS nor docs/ux.md names the file. Without it the README's curl line cannot be written, so a newcomer cannot install the tool from the README alone; the later task that builds the tool must then put the file at the same place.",
+        "recommended": "A file named tidy-downloads, with no extension, at the root of the repository, fetched from https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads, since this branch already makes the root README the tool's README and a file named as the command is copied onto the PATH as it is, with no renaming step.",
+        "items": [
+         {
+          "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+          "item": "B-4"
+         }
+        ]
+       }
+      ],
+      "answer": "The user's answer, kept as decision \"The file's name and place\" of t2.2: the tool's one file is tidy-downloads, with no extension, at the root of the repository, fetched from https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads."
+     }
+    ],
+    "reply": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.turn/20261026-.rn%2F20261026-downloads-organizer-cli%2Fcalls%2F0006-result.json/generator.json"
+   },
+   {
+    "sent_back": [
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-4",
+      "places": [
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:91-119",
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:111-117"
+      ],
+      "did": "The Requirements were clear: python3 --version as the check, other ways to install Python allowed, curl or a browser. I then ran the Installation commands as written, in a throwaway HOME made with mktemp -d. `mkdir -p ~/.local/bin` worked. `curl -fsSL https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads -o ~/.local/bin/tidy-downloads` failed with `curl: (22) The requested URL returned error: 404`, exit 22, and wrote no file. `chmod +x ~/.local/bin/tidy-downloads` failed with `No such file or directory`. `command -v tidy-downloads` printed nothing. The browser route the README offers opens the same address, so it also gets a 404. The GitHub API shows lovaizu/playground main holds only an `Initial commit` with README.md. The local copy of the repository has no tidy-downloads file either, only README.md, docs/ux.md and tool folders.",
+      "lacking": "I could not install the tool, so I could not run the Example or check that its output matches the README. The download address returns 404 because nothing is published there. The README does not say this; it reads as if the tool is ready to install. A smaller point, not run here because I am on Linux: line 113 sends bash users to ~/.bashrc 'as on most Linux systems'. A macOS user whose shell is bash gets a login shell in Terminal, which reads ~/.bash_profile and not ~/.bashrc, so after a new terminal `command -v tidy-downloads` would still print nothing."
+     },
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-5",
+      "places": [
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:121-132"
+      ],
+      "did": "I followed each place the README sends me on. `tidy-downloads --help`: I have no tidy-downloads to run (see B-4). The commit history at https://github.com/lovaizu/playground/commits/main returns HTTP 200, but via the GitHub API it holds one commit, `Initial commit`, with nothing of tidy-downloads. `docs/architecture.md`: there is no such file in the repository (docs/ holds only ux.md), and https://github.com/lovaizu/playground/blob/main/docs/architecture.md returns 404. The license is named in the README as MIT; I found no LICENSE file in the repository.",
+      "lacking": "None of the ways on leads anywhere I can use. Fuller use, through --help, needs a tool I cannot get. The commit history named for what changed in each version is of a repository with nothing of the tool committed. The Development link goes to a file that does not exist, so someone joining the builders has no way in. Only the license is named in the README itself."
+     },
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-8",
+      "places": [
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:3-8",
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:16-56",
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:76",
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:97",
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:123-124",
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:128"
+      ],
+      "did": "I set the opening's and Why's promises beside the later lines and found no clash. Undo removes empty folders, not files. One name is kept for each thing: 'folder for its kind', 'the last move', 'Other'. Then I tried to check the statements against the product: I ran the install (see B-4) and got a 404 with no tool to run, and I followed the Documentation and Development links (see B-5). I also checked line 76's claim that 'neither dragging by hand nor mv' puts the last move back against what I know of file managers.",
+      "lacking": "I could not check any statement about what the tool does or prints, because the tool cannot be had. So the README states as fact what I cannot find true: the output in the Example, that --help shows every way to run it, the download address, and that docs/architecture.md is there. Line 76 also claims more than holds. Finder's Edit > Undo Move (Cmd-Z) and Ctrl+Z in GNOME Files undo a drag by hand. What only tidy-downloads gives is putting back a whole sort of many files in one go, and the line does not say that."
+     }
+    ],
+    "reply": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.turn/20261026-.rn%2F20261026-downloads-organizer-cli%2Fcalls%2F0006-result.json/generator.json"
+   },
+   {
+    "sent_back": [
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-4",
+      "places": [
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:92-120"
+      ],
+      "did": "On the remade README, the Requirements were still clear, and line 114 now names ~/.bash_profile for bash on macOS, which answers the shell-file point from my last reading. I ran the Installation commands as written again, in a throwaway HOME made with mktemp -d. `mkdir -p ~/.local/bin` worked. `curl -fsSL https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads -o ~/.local/bin/tidy-downloads` still fails with `curl: (22) The requested URL returned error: 404`, exit 22, and writes no file. `chmod +x ~/.local/bin/tidy-downloads` fails with `No such file or directory`, and `command -v tidy-downloads` prints nothing. The browser route opens the same 404 address. On GitHub, lovaizu/playground main still holds only `Initial commit`. The local repository still holds only README.md and docs/ux.md, with no tidy-downloads file.",
+      "lacking": "I still cannot install the tool, so I cannot run the Example or check that its output matches the README. The download address returns 404, and the README gives no other way to get the tool and does not say it is not yet published."
+     },
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-5",
+      "places": [
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:122-133"
+      ],
+      "did": "I followed each place again on the remade README. Its lines 122-133 are unchanged apart from line numbers. `tidy-downloads --help`: no tool to run (see B-4). https://github.com/lovaizu/playground/commits/main opens, but via the GitHub API it holds only `Initial commit`, with nothing of tidy-downloads. `docs/architecture.md` is not in the repository (docs/ holds only ux.md), and https://github.com/lovaizu/playground/blob/main/docs/architecture.md returns 404. The license is named as MIT in the README; there is no LICENSE file.",
+      "lacking": "None of the ways on leads anywhere I can use. Fuller use, through --help, needs a tool I cannot get. The commit history named for what changed in each version holds nothing of the tool. The Development link goes to a file that does not exist, so someone joining the builders has no way in. Only the license is named in the README itself."
+     },
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-8",
+      "places": [
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:16-56",
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:98",
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:124-125",
+       "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:129"
+      ],
+      "did": "I set the opening's and Why's promises beside the later lines again and found no clash. Line 76 now claims only a one-command undo of the whole last move, against a file manager's one drag at a time and mv's none, which holds, so my last point is answered. One name is still kept for each thing. I ran the install again (see B-4) and still got a 404 with no tool, and I followed the Documentation and Development links again (see B-5).",
+      "lacking": "I still cannot check any statement about what the tool does or prints, because the tool cannot be had. The README states as fact what I find untrue or cannot test: the download address, the Example's output, that --help shows every way to run it, that the commit history records what changed in each version, and that docs/architecture.md is there."
+     }
+    ],
+    "reply": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.turn/20261026-.rn%2F20261026-downloads-organizer-cli%2Fcalls%2F0006-result.json/generator.json"
+   }
+  ],
+  "turn:first-user": [
+   {
+    "remade": [
+     "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md"
+    ],
+    "parts": [
+     "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:1-9",
+     "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:10-64",
+     "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:65-78",
+     "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:79-91",
+     "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:92-121",
+     "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:122-126",
+     "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:127-130",
+     "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:131-133"
+    ],
+    "reply": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.turn/20261026-.rn%2F20261026-downloads-organizer-cli%2Fcalls%2F0006-result.json/first-user.json"
+   }
+  ]
  },
  "started": {
-  "turn:generator": "a9d2f36c670d97c1d"
+  "turn:generator": "a9d2f36c670d97c1d",
+  "turn:first-user": "ae86cf0864c61289f"
  },
+ "sent": 2,
  "questions": {
   "from": "turn:generator",
   "questions": [
    {
-    "question": "What is the tool's one file called, and where in github.com/lovaizu/playground does it sit? The decision gives the download address as raw.githubusercontent.com/lovaizu/playground/main/<path> but leaves <path> open, and neither the CCS nor docs/ux.md names the file. Without it the README's curl line cannot be written, so a newcomer cannot install the tool from the README alone; the later task that builds the tool must then put the file at the same place.",
-    "recommended": "A file named tidy-downloads, with no extension, at the root of the repository, fetched from https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads, since this branch already makes the root README the tool's README and a file named as the command is copied onto the PATH as it is, with no renaming step.",
+    "question": "The first user, reading in the receiver's place, has twice found B-4, B-5 and B-8 without Good for one cause the README cannot change: the tool is not built or published, so the decided download address gives 404, there is no tidy-downloads --help to run, the commit history holds only 'Initial commit', docs/architecture.md does not exist, and the Example's output cannot be checked. The decision 'What the README is checked against now' already says the install and example are run for real once the tool is built, but the first user judges against what is there today. Remaking the README cannot end this, as a line saying the tool is not yet published would itself break B-8 by turning untrue once merged. How should these three items be settled for t2.2? a. Accept them now on the decided address, links and output, judged against docs/ux.md and the decisions, with the real install, Example, --help, commit history and docs/architecture.md checks moved to the task that builds the tool, and that written into this run's CCS so the first user judges by it. b. Leave the README unaccepted until the tool, its --help and docs/architecture.md are merged to main, and check all three items for real then.",
+    "recommended": "a, since it carries out what the user already decided and the README at the design stage is what the tool is built to, while b holds the design sign-off until the build that depends on it is done.",
     "items": [
      {
       "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
       "item": "B-4"
+     },
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-5"
+     },
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-8"
      }
     ]
    }

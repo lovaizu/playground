@@ -2,14 +2,100 @@
   "items": [
     {
       "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "F-1",
+      "good": "The reader finds each thing where READMEs commonly put it: the name, an opening under no heading that begins with the idea, then Example, Why tidy-downloads, Requirements, Installation, Documentation, Development and License in the template's order and wording; each section opens with its main point, each list item is one sentence with its explanation after a blank line and indented, and nothing is bold.",
+      "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:1-133"]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-1",
+      "good": "From the opening the reader learns the idea that sets the tool apart (sorting each file directly in Downloads into a folder for its kind while showing every move first, never deleting, renaming, overwriting or changing a file, and able to put the last move back), what they gain and the kind of thing that gives it (a terminal command after which they find a file by opening the folder for its kind), and whom it is for (people on macOS or Linux who type commands in a terminal and whose Downloads folder fills up).",
+      "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:3-8"]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-2",
+      "good": "The reader follows one cluttered Downloads folder like their own, with a photo, an archive, a file with no extension and a PDF whose name is already taken, through the preview, the move, finding the photo in Images, and the undo, each command with the tool's exact output after it and what it means, in the order it happens, and sees how to point it at another folder.",
+      "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:12-63"]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-3",
+      "good": "The reader sees what only tidy-downloads gives, each set against sorting by hand, a file manager or a script of mv commands: one command for every file, where each would go shown before any moves, never moving onto a file of the same name, and putting back every file of the last move in one command where a file manager's undo takes back one drag at a time.",
+      "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:67-77"]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
       "item": "B-4",
+      "question": 1
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-5",
+      "question": 1
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-6",
+      "parts": [
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:1-9",
+          "good": "The opening reads once through in plain words: what the tool does, how it keeps files safe, what kind of thing it is and whom it is for, the folder kinds named with examples.",
+          "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:3-8"]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:10-64",
+          "good": "The Example sets out the folder first, then each command in a block with its output, explaining Other and why invoice.pdf stays right after they appear, what happens to subfolders, and what a second undo does; the other-folder commands are in a block to copy.",
+          "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:12-63"]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:65-78",
+          "good": "Each Why item names the gain and the way it is set against in the same sentence, the one needing more explained under it, resting only on what the Example has shown.",
+          "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:67-77"]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:79-91",
+          "good": "Each requirement is named, then why it is needed and how to tell or get it, with no later step needed to follow it.",
+          "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:81-90"]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:92-121",
+          "good": "Installation goes in order, commands in blocks to copy: fetch and make runnable, the other-folder and no-curl routes, the check, which file to add the PATH line to for each shell and system, then the first use.",
+          "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:94-120"]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:122-126",
+          "good": "Documentation says in two sentences where fuller use and the changes are, with the address given.",
+          "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:124-125"]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:127-130",
+          "good": "Development is one line with the link to start at.",
+          "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:129"]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:131-133",
+          "good": "License names the MIT License in one sentence.",
+          "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:133"]
+        }
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-7",
+      "good": "Each sentence gives the reader something new: the opening the idea and audience, the Example the use with output, Why only the comparison with other ways, Installation the install with a one-line pointer back to the Example rather than its steps again; nothing addresses a reviewer, tells how decisions were reached, or gives fuller use.",
+      "lines": ["/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:1-133"]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-8",
       "question": 1
     }
   ],
   "questions": [
     {
-      "question": "What is the tool's one file called, and where in github.com/lovaizu/playground does it sit? The decision gives the download address as raw.githubusercontent.com/lovaizu/playground/main/<path> but leaves <path> open, and neither the CCS nor docs/ux.md names the file. Without it the README's curl line cannot be written, so a newcomer cannot install the tool from the README alone; the later task that builds the tool must then put the file at the same place.",
-      "recommended": "A file named tidy-downloads, with no extension, at the root of the repository, fetched from https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads, since this branch already makes the root README the tool's README and a file named as the command is copied onto the PATH as it is, with no renaming step."
+      "question": "The first user, reading in the receiver's place, has twice found B-4, B-5 and B-8 without Good for one cause the README cannot change: the tool is not built or published, so the decided download address gives 404, there is no tidy-downloads --help to run, the commit history holds only 'Initial commit', docs/architecture.md does not exist, and the Example's output cannot be checked. The decision 'What the README is checked against now' already says the install and example are run for real once the tool is built, but the first user judges against what is there today. Remaking the README cannot end this, as a line saying the tool is not yet published would itself break B-8 by turning untrue once merged. How should these three items be settled for t2.2? a. Accept them now on the decided address, links and output, judged against docs/ux.md and the decisions, with the real install, Example, --help, commit history and docs/architecture.md checks moved to the task that builds the tool, and that written into this run's CCS so the first user judges by it. b. Leave the README unaccepted until the tool, its --help and docs/architecture.md are merged to main, and check all three items for real then.",
+      "recommended": "a, since it carries out what the user already decided and the README at the design stage is what the tool is built to, while b holds the design sign-off until the build that depends on it is done."
     }
   ]
 }
