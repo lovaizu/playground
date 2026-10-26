@@ -75,15 +75,78 @@
  "more": 1,
  "stage": "asked",
  "told": true,
+ "answers": [
+  {
+   "questions": [
+    {
+     "question": "The README's template ends with a License section and a Documentation section, and the plan settles neither: which license the tool is released under, and where Documentation points for fuller use (such as what happens with name clashes, skipped files and the extension list) and for what changed in each version. Without an answer the README would have to guess both.",
+     "recommended": "Use the license the repository already has (or MIT if it has none), and have Documentation point to organize-downloads --help for fuller use and to the repository's commit history for changes, as these need no extra page to be made before the tool exists.",
+     "items": [
+      {
+       "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+       "item": "F-1"
+      }
+     ]
+    }
+   ],
+   "answer": "The user's answers to your question on F-1 (license and Documentation), kept as decisions of t1.2: (1) License: the tool is released under the MIT license, kept in organize-downloads/LICENSE; the repository has no license of its own. (2) Where Documentation points: the README's Documentation points to organize-downloads --help for fuller use, such as same-named files, files left in place and which extensions go to which folder, and to the repository's commit history for what changed; what --help shows is still to be settled when the tool is built. Go on with the run."
+  }
+ ],
+ "back": [],
+ "prompts": {
+  "turn:generator": {
+   "given": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-ccs.json",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/steering.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+   ],
+   "work": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md"
+   ],
+   "checklists": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md"
+   ],
+   "test": null,
+   "sent_back": [],
+   "answers": [
+    {
+     "questions": [
+      {
+       "question": "The README's template ends with a License section and a Documentation section, and the plan settles neither: which license the tool is released under, and where Documentation points for fuller use (such as what happens with name clashes, skipped files and the extension list) and for what changed in each version. Without an answer the README would have to guess both.",
+       "recommended": "Use the license the repository already has (or MIT if it has none), and have Documentation point to organize-downloads --help for fuller use and to the repository's commit history for changes, as these need no extra page to be made before the tool exists.",
+       "items": [
+        {
+         "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+         "item": "F-1"
+        }
+       ]
+      }
+     ],
+     "answer": "The user's answers to your question on F-1 (license and Documentation), kept as decisions of t1.2: (1) License: the tool is released under the MIT license, kept in organize-downloads/LICENSE; the repository has no license of its own. (2) Where Documentation points: the README's Documentation points to organize-downloads --help for fuller use, such as same-named files, files left in place and which extensions go to which folder, and to the repository's commit history for what changed; what --help shows is still to be settled when the tool is built. Go on with the run."
+    }
+   ],
+   "chosen": [],
+   "result": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-result.json",
+   "reply": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.turn/20261027-.rn%2F20261027-organize-downloads-cli%2Fcalls%2F0005-result.json/generator.json"
+  }
+ },
+ "since": {
+  "turn:generator": []
+ },
+ "started": {
+  "turn:generator": "a3d09e5467f572bc3"
+ },
  "questions": {
-  "from": "check",
+  "from": "turn:generator",
   "questions": [
    {
-    "question": "The README's template ends with a License section and a Documentation section, and the plan settles neither: which license the tool is released under, and where Documentation points for fuller use (such as what happens with name clashes, skipped files and the extension list) and for what changed in each version. Without an answer the README would have to guess both.",
-    "recommended": "Use the license the repository already has (or MIT if it has none), and have Documentation point to organize-downloads --help for fuller use and to the repository's commit history for changes, as these need no extra page to be made before the tool exists.",
+    "question": "The README's License section links to organize-downloads/LICENSE, where you decided the MIT license is kept, but no task in the plan makes that file and this run may write only the README, so the link points to nothing until someone adds it. Should LICENSE be added to this run as a second file of the work, holding the MIT license text?",
+    "recommended": "Add organize-downloads/LICENSE to the CCS as a work entry next to the README, holding the standard MIT text with the copyright holder you name, because the README tells the reader the license is there and nothing else makes it.",
     "items": [
      {
-      "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
       "item": "F-1"
      }
     ]

@@ -42,8 +42,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 3 of /rn:up on t1.2: answer turn's question, then send the answers to the run waiting
+Step 3 of /rn:up on t1.2: answer turn's question on LICENSE, adding it to the CCS, then send the answer to the run waiting
 
 ## Open
 
-- turn asks for t1.2 (checklist 0005-checklist-1.md, F-1): which license the tool is released under, and where the README's Documentation points for fuller use and for what changed in each version; recommended: the repository's license or MIT if none, and Documentation pointing to organize-downloads --help and the commit history
+- turn asks for t1.2 (0005-checklist-1.md, F-1): whether organize-downloads/LICENSE, holding the MIT text, is added to this run as a second file of the work, as the README links to it and nothing else makes it; recommended: add it, with the copyright holder the user names

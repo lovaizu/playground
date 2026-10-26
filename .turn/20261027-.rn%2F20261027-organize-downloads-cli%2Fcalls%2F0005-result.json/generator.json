@@ -1,0 +1,139 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+      "item": "F-1",
+      "question": 1
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+      "item": "B-1",
+      "good": "The reader learns first the idea the tool rests on (it sorts Downloads by type but only shows each move until told to, and can put back what it moved), then what they gain (finding the file they need in Downloads right away), the kind of thing that gives it (a command typed in a terminal whenever they want to tidy up) and whom it is for (anyone on macOS or Linux whose Downloads fills up with files of every kind), so they can place themselves.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:3-7"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+      "item": "B-2",
+      "good": "The reader follows one Downloads folder of the kind they have, from what it holds, through the run that only lists, the run with --apply and the folder after it, to undo listing and putting the files back, seeing each command they type and what the tool prints back in the order it happens, plus which files it leaves alone and how to give another folder.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:11-72"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+      "item": "B-3",
+      "good": "Set against sorting by hand and against tools that watch the folder by rules, the reader sees what only this tool gives: every move shown before any is made, the last run put back with undo, no rules to write with seven fixed folders, and no file overwritten, renamed or deleted, a same-named file being left in place with a message.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:76-86"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+      "item": "B-6",
+      "parts": [
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:1-8",
+          "good": "The opening reads in one pass: the idea, the gain, the kind of tool and the reader it is for, in plain words, each resting on nothing said later.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:3-7"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:9-73",
+          "good": "Each step comes with its command and output in a block to copy, the starting folder is shown before the first command, the files not listed are named with why, a type folder is shown in the output before the word is used, and each case named (undo typed again, another folder) says what happens.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:11-72"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:74-87",
+          "good": "The two other ways are named first, then each thing the tool gives as one sentence, with the one case that needs it (a name already taken) told with what happens.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:76-86"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:88-101",
+          "good": "Each requirement is named as what it is, with why it is needed under it, so the reader knows what to have before installing.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:90-100"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:102-136",
+          "good": "Each step is a block to copy, split by macOS and Debian or Ubuntu, with why a new terminal is opened, the uv way beside the pipx way, and the first run with what it does.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:104-135"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:137-148",
+          "good": "The reader sees which fuller-use topics --help covers and the command to run, then where changes are recorded, with the link.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:139-147"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:149-152",
+          "good": "One sentence says what the linked page holds, so a builder knows where to go.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:151-151"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:153-155",
+          "good": "The license is named, linked to its text.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:155-155"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+      "item": "B-7",
+      "good": "Each part gives the reader something no other gives: the opening the idea and gain, the Example the use and output, Why only the contrast with other ways, Installation only the install steps and points back to the Example for the first use instead of repeating it, and fuller use (same-named files, files left in place, the extension list) is only pointed to through --help; nothing addresses a reviewer or tells how decisions were reached.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:1-155"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "The README's License section links to organize-downloads/LICENSE, where you decided the MIT license is kept, but no task in the plan makes that file and this run may write only the README, so the link points to nothing until someone adds it. Should LICENSE be added to this run as a second file of the work, holding the MIT license text?",
+      "recommended": "Add organize-downloads/LICENSE to the CCS as a work entry next to the README, holding the standard MIT text with the copyright holder you name, because the README tells the reader the license is there and nothing else makes it."
+    }
+  ],
+  "chosen": [
+    {
+      "chosen": "What the tool prints: 'Would move N files in <folder>:' then one line per file as '<name> -> <Type>/', closing with how to move them; 'Moved N files' for --apply; the same layout for undo, 'Would put back' and 'Put back'.",
+      "why": "The README must show what the tool gives back (B-2) and nothing settles its output yet; this layout shows each file with its type folder, as AC1 and AC8 ask, and the builder can follow it."
+    },
+    {
+      "chosen": "The example's files: Docker.dmg, holiday.jpg, invoice.pdf, a folder Projects, .DS_Store and report.pdf.crdownload, on macOS at /Users/you/Downloads.",
+      "why": "Their extensions go to obvious folders while the extension list is unsettled, and the last three show the files AC5 leaves in place."
+    },
+    {
+      "chosen": "The install steps install pipx and git with Homebrew on macOS and with apt on Debian or Ubuntu, then run pipx ensurepath and open a new terminal; Xcode's command line tools are not given as a way.",
+      "why": "Homebrew's and apt's pipx bring Python with them, so one line covers Python and pipx; git is needed because pipx and uv fetch a git+https URL with it; pipx ensurepath puts ~/.local/bin on PATH where it is not already."
+    },
+    {
+      "chosen": "git is listed as a requirement.",
+      "why": "Installing from a git+https URL needs the git command, which a fresh Linux system often lacks; the decisions did not name it."
+    },
+    {
+      "chosen": "Updating and removing the tool are not told.",
+      "why": "They do not lead to the first result, so by B-7 they belong outside the README."
+    },
+    {
+      "chosen": "The commit history link is https://github.com/lovaizu/playground/commits/main/organize-downloads.",
+      "why": "It lists only the commits touching the tool's folder, which is what changed in the tool; the page answers now."
+    },
+    {
+      "chosen": "Development links to docs/architecture.md, which does not exist yet.",
+      "why": "The plan's T2 makes the architecture at organize-downloads/docs/architecture.md, so the link will hold by the design sign-off; adding it to this run would make it without its own checklist."
+    }
+  ]
+}
