@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "plan"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: Files pile up in Downloads so the wanted file cannot be found; the tool is to make it findable again"
+  }
+ ]
+}
