@@ -13,6 +13,9 @@
    "path": "organize-downloads/README.md"
   },
   {
+   "path": "organize-downloads/LICENSE"
+  },
+  {
    "audience": "the user approving the README at the design sign-off, and whoever makes the architecture and builds the tool to it"
   },
   {
@@ -46,15 +49,6 @@
    "decision": "How moving and undo are typed: The explicit word to act is --apply, for organizing and undo alike: organize-downloads only lists, organize-downloads --apply moves, organize-downloads undo only lists what it would put back, organize-downloads undo --apply puts it back; a folder to organize instead of Downloads is given last on each."
   },
   {
-   "artifact-language": "English"
-  },
-  {
-   "conversation-language": "Japanese"
-  },
-  {
-   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
-  },
-  {
    "decision": "License: The tool is released under the MIT license, kept in organize-downloads/LICENSE; the repository has no license of its own."
   },
   {
@@ -62,6 +56,18 @@
   },
   {
    "decision": "Copyright holder: The MIT license names lovaizu as the copyright holder: Copyright (c) 2026 lovaizu."
+  },
+  {
+   "chosen": "organize-downloads/LICENSE made with the README, holding the standard MIT text: the README points to it and no task makes it, so the link would point to nothing"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
   }
  ]
 }
