@@ -3,24 +3,24 @@
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
       "item": "F-1",
-      "good": "The approver and the builder find the template's parts in its order and under its headings: the title, how the tool is put together with a link to the README, the principles each in a line, User stories, Architecture with a Logical view shown as the SVG beside it and a Physical view as a tree, and Test, which says the project has no rules to link and gives what this tool's checks need, as the user's answer chose; each list line is one sentence with its why indented under it, nothing in bold.",
+      "good": "The builder and the approver meet the template's headings in its order: the title, how the tool is put together with a link to the README where the UX is defined, its own principles each in a line, User stories, Architecture with a Logical view (the figure in architecture.svg shown as an image, then the lines it cannot show) and a Physical view (a tree, then what the tool depends on and how it starts), and Test, which, as the user chose, says the project has no rules for checks and gives what this tool's checks need; each list line is one sentence, its why after a blank line indented under it, nothing in bold.",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:1-120",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:1-122",
         "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:1-107"
       ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
       "item": "B-1",
-      "good": "From the opening the reader knows the tool is one Python script of a Planner, a Mover, a Record keeper and an Undoer, what the last move is, where the words it uses are defined, that it rests on no other product's architecture, and the five principles every decision is held to: no file deleted, renamed or overwritten, only files directly in the folder moved, nothing added inside but the kinds' folders, where each file goes decided in one place, and one file to install.",
+      "good": "From the opening the reader tells how the tool is put together, a Planner deciding where each file goes, a Mover carrying it out while a Record keeper keeps each move outside the folder, and an Undoer putting back the last move, and the five principles every decision is held to: never deleting, renaming or overwriting, moving only the files directly in the folder, adding nothing inside it but the kinds' folders, deciding where each file goes in one place, and installing by downloading one file; it is built on no other architecture, which it says.",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-23"
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:1-23"
       ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
       "item": "B-2",
-      "good": "Each run of the README's Example and its Installation rests on one story at the tool's edge: listing, moving, undoing, and seeing how to run it, none a step inside the tool nor named by a technology.",
+      "good": "Every scene of the README rests on one of four stories, each one way the user runs the tool: listing with nothing moved (on ~/Downloads or another folder), moving, undoing the last move, and seeing how to run it; none is a step inside the tool or named by a technology.",
       "lines": [
         "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:25-31"
       ]
@@ -28,57 +28,54 @@
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
       "item": "B-3",
-      "good": "Following the figure and the lines, the builder sees how each story is achieved in order: the Command line asks the Planner, which tells where each file goes from the names in the folder and in its kinds' folders, so it can say a name is taken; it hands the same plan to the Mover, or asks the Undoer; the Mover makes the kinds' folders, moves the files and has the Record keeper add each move and folder as it is made, the first of these in a run starting the folder's record anew, so a --move that moves nothing leaves the last move's record for --undo; the Mover moves by a hard link, and on a drive that cannot make one, such as FAT or exFAT, by making the new name as a new file that fails where the name is taken and copying the contents, so the move story holds on any folder the README lets the user name; the Undoer reads the record through the Record keeper and removes folders only once files are back; each choice a builder would question comes with why.",
+      "good": "The reader follows each story through the figure's arrows and the lines in the order they act: to list, the Command line asks the Planner, which reads the names in the folder and in its kinds' folders, so it can say a name is taken; to move, the same plan goes to the Mover, which moves files and adds each file moved through the Record keeper; to undo, the Undoer reads the last move and moves files back; help is printed. The choices a builder or approver would question are given with why: recording each file as it is moved, moving by a hard link so a taken name is never overwritten (checked: os.link onto a taken name raises FileExistsError and leaves both files, os.rename replaces it), and, on a drive that cannot make hard links such as a FAT or exFAT USB stick, moving by making the new file only where the name is free, copying, then removing the old name, or removing the new file again where the copy fails, so the move story is achieved on any folder the README lets the user name and no file is added (checked: open in 'x' mode on a taken name raises FileExistsError and leaves it as it was).",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:37-73",
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:30-94"
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:37-75",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:63-94"
       ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
       "item": "B-4",
-      "good": "The builder sees from the tree that all five components are in the one Python 3 script using the standard library alone, where it is installed, the tests beside it, and the record's folder on Linux and macOS with its JSON Lines file per folder; and from the lines that it depends on Python of the README's version, is started as organize-downloads through its first line, and finds its places from the home folder and the system it runs on.",
+      "good": "From the tree the builder tells that every component of the figure is in the one Python 3 script using the standard library alone, that the tests sit under organize-downloads/tests, that the script is installed to ~/.local/bin, and that the record is a JSON Lines file per folder in ~/.local/state/organize-downloads/ on Linux or ~/Library/Application Support/organize-downloads/ on macOS; the lines say the tool depends on Python alone and is started as organize-downloads, handed to python3 by its first line.",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:75-98"
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:77-100"
       ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
       "item": "B-5",
-      "good": "The reader learns that the project has no rules for checks, as the user's answer settled, and that here the code, the one kind of part in the tree, is checked by unittest tests of each component, each a Given, a When and a Then, and the user stories by running the script on a temporary test folder with a temporary home, all run by one command on Linux, and by the user once on macOS; no case's inputs or bars are given.",
+      "good": "As the user chose, the Test section says the project has no rules for checks and gives this tool's: each component by unittest tests, each a Given, a When and a Then, each user story by running the script on a temporary test folder with a temporary home folder, all run by one command, python3 -m unittest discover organize-downloads/tests, passing on Linux, and the macOS run by the user; no case's inputs or bars are written here (checked: discover finds test_*.py in that folder and runs them from the repository's root).",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:100-120"
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:102-122"
       ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
       "item": "B-6",
-      "good": "Each line holds with the principles: moving by hard link, or on a drive without hard links by a new file that fails where the name is taken, keeps never overwriting even when a name is taken after planning; the record kept outside the folder keeps nothing added inside; the Mover takes the Planner's plan so listing shows what moving does; the Undoer puts back by the same kind of move; and tests run with a temporary home so they never touch the user's files.",
+      "good": "Each decision holds with every principle and every other line: both kinds of move never take a taken name and a failed copy adds no file, so nothing is overwritten or added; the record is started anew only by the first file a run moves, a kind's folder being recorded with the first file moved into it, so a run that moves no file, even one that made a kind's folder and then could not move into it, leaves the last move's record as it was, agreeing with the opening's 'the last run that moved a file in it', the why at lines 49-51, the tree's record line and the README's 'its last run that moved files in that folder'; the record is kept outside the folder; only the Planner decides where files go and the Mover is handed that same plan; the Undoer removes only kinds' folders the last move made, once empty; and the tests run on temporary folders, touching none of the user's files.",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:11-23",
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:39-73",
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:84-98",
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:111-115"
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-23",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:39-75",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:87-87",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:94-122"
       ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
       "item": "B-7",
-      "good": "Each line is a decision the approval rests on, said once: the Undoer's line holds only that it reads the record through the Record keeper, moves by the Mover's kind of move and removes folders after the files are back, leaving which file goes back in which case to the README and the tests; the kinds' extensions and the cases stay in the README, linked from the opening.",
+      "good": "Each line is a decision whose change would change what is approved, said once: how files are moved, recorded and put back, where the record lives and how it is named, and how the tool is checked; the kinds, the extensions and the printed lines are left to the README it links, and how each case behaves to the tests.",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-120"
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:1-122"
       ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
       "item": "B-8",
-      "good": "Reading once from the top, the builder meets the README's words through the opening's link, 'the last move' defined there as the last run that moved a file in the folder and used under that one name in the lines, the figure and the tree, and 'hard link' explained where it is used as a second name for the same file and its contents, so it is not taken for a symbolic link; each why rests on what came before it.",
+      "good": "Read once from the top, each line is understood where it is met: the README is linked for its terms such as a kind's folder, the five components keep one name each in the opening, the figure, the lines and the tree, a hard link is explained where it is first used, and each line rests only on what came before it.",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-7",
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:30-30",
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:41-70",
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:85-85",
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:76-92"
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:1-122",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:1-107"
       ]
     }
   ],
@@ -89,16 +86,12 @@
       "why": "A rename replaces a file that took the name after the Planner looked, while a hard link to a taken name fails and leaves both files, as checked with os.link and os.rename on a temporary folder, so the principle of never overwriting holds."
     },
     {
-      "chosen": "On a drive that cannot make hard links, the Mover makes the new name as a new file that fails where the name is taken, copies the contents into it, then removes the old name, rather than refusing the folder or saying each file stays.",
-      "why": "The README lets the user name any folder, such as one on a USB stick formatted FAT or exFAT, and this keeps the move story working there while the principle of never overwriting still holds, as creating a file exclusively on a taken name fails, checked on a temporary folder."
+      "chosen": "On a drive that cannot make hard links, the Mover makes the new name as a new file only where it is free, copies the contents, then removes the old name, and where the copy fails removes the new file and leaves the old one.",
+      "why": "The README lets the user name any folder, such as one on a FAT or exFAT USB stick where hard links cannot be made; creating the file only where the name is free fails on a taken name, as checked with open in 'x' mode, so nothing is overwritten, and removing a failed copy adds no file, as AC7 asks."
     },
     {
-      "chosen": "The Planner reads the names in the kinds' folders as well as in the folder, shown in the figure's arrow and in the Command line's line.",
-      "why": "It must, to say a file stays because its kind's folder already holds its name, as AC4 and the README's Example ask."
-    },
-    {
-      "chosen": "The Mover has each move and each kind's folder added to the record as soon as it is made, the first of these in a run starting the folder's record anew.",
-      "why": "A run stopped half way can still be undone, and a run that moves nothing leaves the last move's record for --undo, as the README's 'the last --move on that folder' and G1's 'the last run that moved files' ask."
+      "chosen": "The Mover has each file it moves added to the record as soon as it is moved, with the kind's folder it made if this is the first file in it, the first file moved in a run starting the folder's record anew.",
+      "why": "A run stopped half way can still be undone, and a run that moves no file, even one that made a kind's folder and then could not move into it, leaves the last move's record for --undo, as the README's 'its last run that moved files in that folder' and G1's 'the last run that moved files' ask."
     },
     {
       "chosen": "One record per folder, a JSON Lines file named by a hash of the folder's full path and holding that path, in organize-downloads/ under the place AC12 names.",

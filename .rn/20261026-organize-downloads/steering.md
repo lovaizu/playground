@@ -40,4 +40,6 @@ Step 3 of /rn:up on t2.1: start turn:up again with the same call, as it goes on 
 
 ## Open
 
-- turn:up's run on t2.1 stopped twice the same way, printing "The generator is still at work; I wait for its notification." and then "Waiting for the generator to finish.", while its turn:generator, remaking 1 item of 9 the first user found no Good for, was still running.
+- turn:up's run on t2.1 ends each time it waits for its turn:generator ("The generator is still working. I'll wait for its completion notice."), the generator's end reaching the orchestrator instead; it was remaking 1 item of 9 the first user found no Good for.
+- At the build stage, check B-4, B-5 and B-8 of the README checklist on organize-downloads/README.md, by a first user installing from its address and following its Example once the tool, docs/usage.md and CHANGELOG.md are on main and docs/architecture.md is made (decision "How t1.1 ends" of t1.1).
+- At the build stage, make organize-downloads/docs/usage.md and organize-downloads/CHANGELOG.md with the tool (decision "License and the places of fuller use and of changes" of t1.1).

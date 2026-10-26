@@ -43,8 +43,8 @@ It is built on no other product's architecture, so its principles are its own:
   the tool.
 
 - The Mover makes a kind's folder where it is missing and moves each file there, and has the Record
-  keeper add each move, and each kind's folder it made, to the folder's record as soon as it is
-  made, the first of these in a run starting that record anew.
+  keeper add each file moved to the folder's record as soon as it is moved, with the kind's folder
+  it made if this is the first file in it, the first file moved in a run starting that record anew.
 
   Why: a run stopped half way, by an error or by the user, leaves a record of every move it did
   make, so those can still be undone; and a run that moves nothing leaves the record of the last
@@ -59,10 +59,12 @@ It is built on no other product's architecture, so its principles are its own:
 
 - On a drive that cannot make hard links, such as a USB stick formatted FAT or exFAT, the Mover
   instead makes the new name as a new file, which fails where the name is taken, copies the
-  contents into it and then removes the old name.
+  contents into it and then removes the old name, or, where the copy fails, removes the new file
+  and leaves the old one where it was.
 
-  Why: the user can then sort any folder the README lets them name, and the new name is still
-  never one that was taken, so the principle holds there too.
+  Why: the user can then sort any folder the README lets them name, the new name is still never
+  one that was taken, and a copy that fails, such as on a full drive, adds no file, so the
+  principles hold there too.
 
 - The Undoer reads the folder's last move through the Record keeper, puts the files back by the
   same kind of move as the Mover's, and removes the kinds' folders only once the files are back.
@@ -82,7 +84,7 @@ organize-downloads/                  <the tool's folder in the repository>
     └── test_stories.py              <the tests of the user stories>
 ~/.local/bin/organize-downloads      <the script, downloaded there as the README says>
 ~/.local/state/organize-downloads/   <the Record keeper's folder on Linux; ~/Library/Application Support/organize-downloads/ on macOS>
-└── <hash of the folder's path>.jsonl <JSON Lines: the record of one folder's last move, a file moved or a kind's folder made on each line>
+└── <hash of the folder's path>.jsonl <JSON Lines: the record of one folder's last move, a file moved on each line, with the kind's folder made for it>
 ```
 
 - The tool depends on nothing but Python and its standard library, in the version the README's

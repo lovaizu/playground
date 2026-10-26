@@ -131,20 +131,23 @@
  "back": [
   {
    "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
-   "item": "B-3",
+   "item": "B-6",
    "places": [
-    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:27-29",
-    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:52-57",
-    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:79-82"
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-7",
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:45-67"
    ],
-   "did": "I followed each story through the arrows and lines. List: Command line asks Planner, Planner reads the folder, Command line prints. Move: the same plan goes to the Mover, which moves files and adds each move through the Record keeper. Undo: Command line asks the Undoer, which reads the last move through the Record keeper and moves files back. Help: Command line prints. All four are achieved, and the order of the arrows is in lines 39-42. I then tested the Mover's choice in a mktemp -d folder with python3 -I (Python 3.14.4). os.link('a','b') onto an existing b raised FileExistsError and left both files unchanged. os.rename('a','b') replaced b. The why at lines 55-57 is therefore true.",
-   "lacking": "The first story, and the README, let the user work on 'another folder' (README lines 90-95: '--move ~/Desktop'). The Mover moves only by making a hard link, and gives no other way. A builder or approver would ask at once what happens on a folder whose drive cannot make hard links, such as a USB stick formatted FAT or exFAT, or some network shares. There os.link fails for every file, so no run of arrows achieves the move story there. The lines do not say whether the tool refuses such a folder, reports each file as staying (and with what reason), or falls back to some other kind of move. Without this I cannot approve the choice knowing what it costs the user, and a builder would have to guess. Less important: to say 'stays, Documents/budget.xlsx already exists', the Planner must also read the names inside the kinds' folders. The figure's 'reads the names of its files' and the lines leave that for the reader to work out."
+   "did": "I checked each line against the principles and against each other. I also checked the claims in a mktemp folder with Python: os.link to a name that is taken raises FileExistsError and leaves that file as it was; os.open with O_CREAT|O_EXCL on a taken name raises FileExistsError; os.rename replaces the file at the target. All three hold. I then followed a move run in which the Mover makes a missing kind's folder and then cannot move the file into it. Lines 56-58 and 60-67 design for exactly this: a hard link that fails because a file came to hold the name after the Planner looked, or a copy that fails on a full FAT/exFAT drive.",
+   "lacking": "Lines 45-47 say each move and each kind's folder made is added to the record, and that the first of these in a run starts the record anew. So a run whose only success is making a kind's folder replaces the folder's record with one that holds just that folder and no moved file. That conflicts with three other statements. Line 5-6 defines the folder's last move as 'the last run that moved a file in it'. Lines 50-51 say 'a run that moves nothing leaves the record of the last move as it was, so an undo after it still puts back the files of the last move'. README 5-6 says the tool undoes 'its last run that moved files in that folder'. After such a run, --undo puts back none of the files the real last move took. A builder has to pick one of these lines and break the other."
   }
  ],
  "chosen": [
   {
    "chosen": "The Mover moves a file by a hard link to its new name and then removing the old name, never by a rename.",
    "why": "A rename replaces a file that took the name after the Planner looked, while a hard link to a taken name fails and leaves both files, as checked with os.link and os.rename on a temporary folder, so the principle of never overwriting holds."
+  },
+  {
+   "chosen": "On a drive that cannot make hard links, the Mover makes the new name as a new file only where it is free, copies the contents, then removes the old name, and where the copy fails removes the new file and leaves the old one.",
+   "why": "The README lets the user name any folder, such as one on a FAT or exFAT USB stick where hard links cannot be made; creating the file only where the name is free fails on a taken name, as checked with open in 'x' mode, so nothing is overwritten, and removing a failed copy adds no file, as AC7 asks."
   },
   {
    "chosen": "The Mover has each move and each kind's folder added to the record as soon as it is made, the first of these in a run starting the folder's record anew.",
@@ -159,10 +162,10 @@
    "why": "unittest's discover finds files named test_*.py with no setup, which gives the one command AC11 asks with nothing to install."
   }
  ],
- "sent": 2,
+ "sent": 3,
  "started": {
-  "turn:generator": "ad1e75de4ab217811",
-  "turn:first-user": "a7da81fcf8fd41778"
+  "turn:generator": "ae510d9b1bf06e042",
+  "turn:first-user": "aae4fa932b9f448c3"
  },
  "prompts": {
   "turn:first-user": {
@@ -189,9 +192,9 @@
    "parts": [
     "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:1-24",
     "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:25-32",
-    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:33-91",
-    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:92-112",
-    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:1-106"
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:33-101",
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:102-122",
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:1-107"
    ],
    "reply": "/tmp/rn/20261026-acceptance-7t59k26j/repo/.turn/20261027-.rn%2F20261026-organize-downloads%2Fcalls%2F0006-result.json/first-user.json"
   }
@@ -203,14 +206,13 @@
     "sent_back": [
      {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
-      "item": "B-3",
+      "item": "B-6",
       "places": [
-       "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:27-29",
-       "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:52-57",
-       "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:79-82"
+       "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-7",
+       "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:45-67"
       ],
-      "did": "I followed each story through the arrows and lines. List: Command line asks Planner, Planner reads the folder, Command line prints. Move: the same plan goes to the Mover, which moves files and adds each move through the Record keeper. Undo: Command line asks the Undoer, which reads the last move through the Record keeper and moves files back. Help: Command line prints. All four are achieved, and the order of the arrows is in lines 39-42. I then tested the Mover's choice in a mktemp -d folder with python3 -I (Python 3.14.4). os.link('a','b') onto an existing b raised FileExistsError and left both files unchanged. os.rename('a','b') replaced b. The why at lines 55-57 is therefore true.",
-      "lacking": "The first story, and the README, let the user work on 'another folder' (README lines 90-95: '--move ~/Desktop'). The Mover moves only by making a hard link, and gives no other way. A builder or approver would ask at once what happens on a folder whose drive cannot make hard links, such as a USB stick formatted FAT or exFAT, or some network shares. There os.link fails for every file, so no run of arrows achieves the move story there. The lines do not say whether the tool refuses such a folder, reports each file as staying (and with what reason), or falls back to some other kind of move. Without this I cannot approve the choice knowing what it costs the user, and a builder would have to guess. Less important: to say 'stays, Documents/budget.xlsx already exists', the Planner must also read the names inside the kinds' folders. The figure's 'reads the names of its files' and the lines leave that for the reader to work out."
+      "did": "I checked each line against the principles and against each other. I also checked the claims in a mktemp folder with Python: os.link to a name that is taken raises FileExistsError and leaves that file as it was; os.open with O_CREAT|O_EXCL on a taken name raises FileExistsError; os.rename replaces the file at the target. All three hold. I then followed a move run in which the Mover makes a missing kind's folder and then cannot move the file into it. Lines 56-58 and 60-67 design for exactly this: a hard link that fails because a file came to hold the name after the Planner looked, or a copy that fails on a full FAT/exFAT drive.",
+      "lacking": "Lines 45-47 say each move and each kind's folder made is added to the record, and that the first of these in a run starts the record anew. So a run whose only success is making a kind's folder replaces the folder's record with one that holds just that folder and no moved file. That conflicts with three other statements. Line 5-6 defines the folder's last move as 'the last run that moved a file in it'. Lines 50-51 say 'a run that moves nothing leaves the record of the last move as it was, so an undo after it still puts back the files of the last move'. README 5-6 says the tool undoes 'its last run that moved files in that folder'. After such a run, --undo puts back none of the files the real last move took. A builder has to pick one of these lines and break the other."
      }
     ],
     "reply": "/tmp/rn/20261026-acceptance-7t59k26j/repo/.turn/20261027-.rn%2F20261026-organize-downloads%2Fcalls%2F0006-result.json/generator.json"
@@ -240,14 +242,13 @@
    "sent_back": [
     {
      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
-     "item": "B-3",
+     "item": "B-6",
      "places": [
-      "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:27-29",
-      "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:52-57",
-      "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:79-82"
+      "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-7",
+      "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:45-67"
      ],
-     "did": "I followed each story through the arrows and lines. List: Command line asks Planner, Planner reads the folder, Command line prints. Move: the same plan goes to the Mover, which moves files and adds each move through the Record keeper. Undo: Command line asks the Undoer, which reads the last move through the Record keeper and moves files back. Help: Command line prints. All four are achieved, and the order of the arrows is in lines 39-42. I then tested the Mover's choice in a mktemp -d folder with python3 -I (Python 3.14.4). os.link('a','b') onto an existing b raised FileExistsError and left both files unchanged. os.rename('a','b') replaced b. The why at lines 55-57 is therefore true.",
-     "lacking": "The first story, and the README, let the user work on 'another folder' (README lines 90-95: '--move ~/Desktop'). The Mover moves only by making a hard link, and gives no other way. A builder or approver would ask at once what happens on a folder whose drive cannot make hard links, such as a USB stick formatted FAT or exFAT, or some network shares. There os.link fails for every file, so no run of arrows achieves the move story there. The lines do not say whether the tool refuses such a folder, reports each file as staying (and with what reason), or falls back to some other kind of move. Without this I cannot approve the choice knowing what it costs the user, and a builder would have to guess. Less important: to say 'stays, Documents/budget.xlsx already exists', the Planner must also read the names inside the kinds' folders. The figure's 'reads the names of its files' and the lines leave that for the reader to work out."
+     "did": "I checked each line against the principles and against each other. I also checked the claims in a mktemp folder with Python: os.link to a name that is taken raises FileExistsError and leaves that file as it was; os.open with O_CREAT|O_EXCL on a taken name raises FileExistsError; os.rename replaces the file at the target. All three hold. I then followed a move run in which the Mover makes a missing kind's folder and then cannot move the file into it. Lines 56-58 and 60-67 design for exactly this: a hard link that fails because a file came to hold the name after the Planner looked, or a copy that fails on a full FAT/exFAT drive.",
+     "lacking": "Lines 45-47 say each move and each kind's folder made is added to the record, and that the first of these in a run starts the record anew. So a run whose only success is making a kind's folder replaces the folder's record with one that holds just that folder and no moved file. That conflicts with three other statements. Line 5-6 defines the folder's last move as 'the last run that moved a file in it'. Lines 50-51 say 'a run that moves nothing leaves the record of the last move as it was, so an undo after it still puts back the files of the last move'. README 5-6 says the tool undoes 'its last run that moved files in that folder'. After such a run, --undo puts back none of the files the real last move took. A builder has to pick one of these lines and break the other."
     }
    ],
    "answers": [
@@ -296,6 +297,10 @@
      "why": "A rename replaces a file that took the name after the Planner looked, while a hard link to a taken name fails and leaves both files, as checked with os.link and os.rename on a temporary folder, so the principle of never overwriting holds."
     },
     {
+     "chosen": "On a drive that cannot make hard links, the Mover makes the new name as a new file only where it is free, copies the contents, then removes the old name, and where the copy fails removes the new file and leaves the old one.",
+     "why": "The README lets the user name any folder, such as one on a FAT or exFAT USB stick where hard links cannot be made; creating the file only where the name is free fails on a taken name, as checked with open in 'x' mode, so nothing is overwritten, and removing a failed copy adds no file, as AC7 asks."
+    },
+    {
      "chosen": "The Mover has each move and each kind's folder added to the record as soon as it is made, the first of these in a run starting the folder's record anew.",
      "why": "A run stopped half way can still be undone, and a run that moves nothing leaves the last move's record for --undo, as the README's 'the last --move on that folder' and G1's 'the last run that moved files' ask."
     },
@@ -315,19 +320,18 @@
    "sent_back": [
     {
      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
-     "item": "B-3",
+     "item": "B-6",
      "places": [
-      "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:27-29",
-      "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:52-57",
-      "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:79-82"
+      "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-7",
+      "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:45-67"
      ],
-     "did": "I followed each story through the arrows and lines. List: Command line asks Planner, Planner reads the folder, Command line prints. Move: the same plan goes to the Mover, which moves files and adds each move through the Record keeper. Undo: Command line asks the Undoer, which reads the last move through the Record keeper and moves files back. Help: Command line prints. All four are achieved, and the order of the arrows is in lines 39-42. I then tested the Mover's choice in a mktemp -d folder with python3 -I (Python 3.14.4). os.link('a','b') onto an existing b raised FileExistsError and left both files unchanged. os.rename('a','b') replaced b. The why at lines 55-57 is therefore true.",
-     "lacking": "The first story, and the README, let the user work on 'another folder' (README lines 90-95: '--move ~/Desktop'). The Mover moves only by making a hard link, and gives no other way. A builder or approver would ask at once what happens on a folder whose drive cannot make hard links, such as a USB stick formatted FAT or exFAT, or some network shares. There os.link fails for every file, so no run of arrows achieves the move story there. The lines do not say whether the tool refuses such a folder, reports each file as staying (and with what reason), or falls back to some other kind of move. Without this I cannot approve the choice knowing what it costs the user, and a builder would have to guess. Less important: to say 'stays, Documents/budget.xlsx already exists', the Planner must also read the names inside the kinds' folders. The figure's 'reads the names of its files' and the lines leave that for the reader to work out."
+     "did": "I checked each line against the principles and against each other. I also checked the claims in a mktemp folder with Python: os.link to a name that is taken raises FileExistsError and leaves that file as it was; os.open with O_CREAT|O_EXCL on a taken name raises FileExistsError; os.rename replaces the file at the target. All three hold. I then followed a move run in which the Mover makes a missing kind's folder and then cannot move the file into it. Lines 56-58 and 60-67 design for exactly this: a hard link that fails because a file came to hold the name after the Planner looked, or a copy that fails on a full FAT/exFAT drive.",
+     "lacking": "Lines 45-47 say each move and each kind's folder made is added to the record, and that the first of these in a run starts the record anew. So a run whose only success is making a kind's folder replaces the folder's record with one that holds just that folder and no moved file. That conflicts with three other statements. Line 5-6 defines the folder's last move as 'the last run that moved a file in it'. Lines 50-51 say 'a run that moves nothing leaves the record of the last move as it was, so an undo after it still puts back the files of the last move'. README 5-6 says the tool undoes 'its last run that moved files in that folder'. After such a run, --undo puts back none of the files the real last move took. A builder has to pick one of these lines and break the other."
     }
    ],
    "reply": "/tmp/rn/20261026-acceptance-7t59k26j/repo/.turn/20261027-.rn%2F20261026-organize-downloads%2Fcalls%2F0006-result.json/generator.json"
   },
-  "to": "ad1e75de4ab217811",
+  "to": "ae510d9b1bf06e042",
   "moved": true
  }
 }
