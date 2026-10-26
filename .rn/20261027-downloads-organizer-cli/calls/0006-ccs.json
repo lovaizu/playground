@@ -1,0 +1,52 @@
+{
+ "focal_entities": [
+  {
+   "work": "t2.1"
+  },
+  {
+   "stage": "design"
+  },
+  {
+   "kind": "readme"
+  },
+  {
+   "path": "README.md"
+  },
+  {
+   "audience": "the user approving the README at the design sign-off, and whoever makes the architecture and builds the tool to it"
+  },
+  {
+   "has": ".rn/20261027-downloads-organizer-cli/steering.md"
+  },
+  {
+   "has": "docs/ux.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving how a newcomer installs, uses and removes the tool, then building the architecture and the tool so that each step and each statement of the README holds"
+  },
+  {
+   "serves": "AC1: Installed from this repository with `pipx install .`, the tool runs from any directory as a command of its own, such as `organize-downloads`, with Python 3 on macOS and Linux, and `pipx uninstall` removes it."
+  },
+  {
+   "serves": "AC8: The README says how to install the tool, show the planned moves, make the moves, work on another folder, show and make the moves back of an undo, and remove the tool, so that following it alone the user can run the tool on a test Downloads folder of their own making."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md"
+  }
+ ],
+ "constraints": [
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+  }
+ ]
+}
