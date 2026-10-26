@@ -13,6 +13,9 @@
   },
   {
    "decision": "How files are sorted: The files directly in the Downloads folder are moved into one folder per kind of file, such as images, documents and archives, so the user can find a file by its kind."
+  },
+  {
+   "decision": "Operating systems: The tool works on both macOS and Linux. Windows is not needed."
   }
  ]
 }
