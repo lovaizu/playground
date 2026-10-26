@@ -31,7 +31,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
   Completion criterion: The user at the design sign-off, and whoever builds the tool to it, can tell from the README alone what the tool gives them, from G1 and AC1 to AC10, and follow each step from installing it on macOS or Linux to a first run that only lists, a run that moves and an undo; an AI that did not write it finds this so, using it in their place against the readme checklist.
 
-  - [ ] 1. Settle with the user what the README tells that no answer has made yet: the command's name, the language the tool is written in and how it is installed on macOS and Linux. The orchestrator, with the user.
+  - [x] 1. Settle with the user what the README tells that no answer has made yet: the command's name, the language the tool is written in and how it is installed on macOS and Linux. The orchestrator, with the user.
   - [ ] 2. Make the README from the plan and what action 1 settled, `organize-downloads/README.md` as a readme work. turn.
 
 - T2: The architecture, saying the parts the tool is made of, the technology each uses and how AC1 to AC10 are checked by tests that GitHub Actions runs on macOS and Linux. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC9, AC10.
@@ -42,7 +42,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T1: action 1, settle with the user the command's name, the language and how it is installed
+Step 4 of /rn:up on T1: action 2, have turn make the README
 
 ## Open
 
