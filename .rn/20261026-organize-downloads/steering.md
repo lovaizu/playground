@@ -11,8 +11,8 @@ conversation-language: Japanese
 
 ## Next
 
-Step 2 of /rn:up on plan: ask where a file whose extension matches no type goes, then step 3 on plan again
+Step 2 of /rn:up on plan: ask whether hidden files and downloads still in progress are left alone, then step 3 on plan again
 
 ## Open
 
-- Done when says every file directly in Downloads is moved into its type folder, but no decision says where a file whose extension matches no type (or has none) goes
+- On macOS Downloads holds hidden files such as .DS_Store and .localized, and browsers write downloads in progress as .crdownload, .part or .download; no decision says whether these are moved
