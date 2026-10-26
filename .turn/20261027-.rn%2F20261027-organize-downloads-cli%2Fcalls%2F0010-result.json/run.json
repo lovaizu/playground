@@ -17,7 +17,8 @@
   "organize-downloads/tests/test_folder.py",
   "organize-downloads/tests/test_organize.py",
   "organize-downloads/tests/test_cli.py",
-  "organize-downloads/tests/test_stories.py"
+  "organize-downloads/tests/test_stories.py",
+  "organize-downloads/.gitignore"
  ],
  "checklist": [
   "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
@@ -93,6 +94,7 @@
   "organize-downloads/tests/test_organize.py",
   "organize-downloads/tests/test_cli.py",
   "organize-downloads/tests/test_stories.py",
+  "organize-downloads/.gitignore",
   ".rn/20261027-organize-downloads-cli/steering.md",
   "organize-downloads/docs/architecture.md",
   "organize-downloads/README.md",
@@ -106,6 +108,7 @@
   "organize-downloads/tests/test_organize.py",
   "organize-downloads/tests/test_cli.py",
   "organize-downloads/tests/test_stories.py",
+  "organize-downloads/.gitignore",
   ".rn/20261027-organize-downloads-cli/steering.md",
   "organize-downloads/docs/architecture.md",
   "organize-downloads/README.md",
@@ -192,18 +195,169 @@
     }
    ],
    "answer": "Answer to your question on the tests' paths: the CCS now holds the work as files rather than the folder: organize-downloads/tests/__init__.py, test_type_table.py, test_folder.py, test_organize.py, test_cli.py and test_stories.py under organize-downloads/tests, with a \"chosen\" entry saying why. Read the CCS anew and go on with the run."
+  },
+  {
+   "questions": [
+    {
+     "question": "Running the tests makes Python's __pycache__/ in organize-downloads/tests, and code checklist B-5 asks that the repository's ignore file keep it out; the CCS names only the six test files as the work, so this run cannot add or change an ignore file. Where should keeping __pycache__/ out be done?",
+     "recommended": "Leave it to t3.3, whose work is organize-downloads as a whole and can add organize-downloads/.gitignore with __pycache__/, so this run's B-5 is judged on the test files alone; adding the ignore file to this run's paths would split the package's files across two works.",
+     "items": [
+      {
+       "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+       "item": "B-5"
+      }
+     ]
+    }
+   ],
+   "answer": "Answer to your B-5 question on __pycache__/: it is done in this run; the CCS now holds organize-downloads/.gitignore as a further path of the work, with a \"chosen\" entry saying why (running the tests first makes __pycache__/, so the ignore file comes with this run). Read the CCS anew and go on with the run."
   }
  ],
+ "back": [],
+ "prompts": {
+  "turn:generator": {
+   "given": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0010-ccs.json",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_type_table.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_organize.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/.gitignore",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/steering.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+   ],
+   "work": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_type_table.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_organize.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/.gitignore"
+   ],
+   "checklists": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
+   ],
+   "test": null,
+   "sent_back": [],
+   "answers": [
+    {
+     "questions": [
+      {
+       "question": "Which Python 3 version is the oldest the tool and its tests must run on? The architecture says only 'Python 3', so the tests cannot be checked against using features newer than the oldest version (code checklist B-1).",
+       "recommended": "Python 3.10, the oldest Python still shipped by a supported LTS (Ubuntu 22.04), while pipx through Homebrew brings a newer one on macOS.",
+       "items": [
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-1"
+        }
+       ]
+      },
+      {
+       "question": "The architecture wants the tests to need nothing beyond the standard library, but the code checklist B-6 asks for property tests, coverage of statements and branches, and mutation testing, which usually need tools such as hypothesis, coverage.py and mutmut. How should these be done, and is there anything to leave out with a written reason? Also: on Linux, when the xdg-user-dirs settings file is missing or names no download folder, what should the run with nothing added do (needed to test that case)?",
+       "recommended": "Keep the tests standard-library only, with property tests made from the standard random module and each failing input kept as an example, and run coverage.py and mutmut as maintainer checks through uv without adding them to the tool or the workflow; and on Linux without a named download folder, stop with a message naming the settings file and telling the user to give the folder last, as guessing a folder could organize the wrong one.",
+       "items": [
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-6"
+        }
+       ]
+      }
+     ],
+     "answer": "The user's answers to your questions on B-1 and B-6, each kept as a decision of t3.2:\n(1) Oldest Python: The tool and its tests run on Python 3.10 and every later version, so nothing newer than 3.10 is used.\n(2) Test tools: The tests use the standard library alone: inputs made at random are made with the standard random module, each failing input kept as an example; coverage of statements and branches with coverage.py and mutation testing with mutmut are run by whoever builds the tool, through uv, and are added neither to the tool nor to the GitHub Actions workflow.\n(3) No download folder named on Linux: On Linux, when the xdg-user-dirs settings file (~/.config/user-dirs.dirs) is missing, names no download folder, or names the home folder itself, and no folder is given, the tool does nothing and stops, naming the settings file and telling the user to give the folder to organize last.\nGo on with the run."
+    },
+    {
+     "questions": [
+      {
+       "question": "The work is the folder organize-downloads/tests, which by the architecture's physical view holds test_<module>.py files, test_stories.py and, for unittest discover with -t, an __init__.py; but this run lets me write only the exact path organize-downloads/tests and refuses every file inside it (Write and Bash were both stopped for organize-downloads/tests/__init__.py), so no test can be made. How should the run go on?",
+       "recommended": "Let the run write files under organize-downloads/tests (the work's path taken as a folder, as the CCS's kind code and the architecture make it), since the tests cannot be one file named tests and every item of the code checklist rests on them.",
+       "items": [
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "F-1"
+        },
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-1"
+        },
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-2"
+        },
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-3"
+        },
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-4"
+        },
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-5"
+        },
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-6"
+        },
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-7"
+        },
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-8"
+        },
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-9"
+        }
+       ]
+      }
+     ],
+     "answer": "Answer to your question on the tests' paths: the CCS now holds the work as files rather than the folder: organize-downloads/tests/__init__.py, test_type_table.py, test_folder.py, test_organize.py, test_cli.py and test_stories.py under organize-downloads/tests, with a \"chosen\" entry saying why. Read the CCS anew and go on with the run."
+    },
+    {
+     "questions": [
+      {
+       "question": "Running the tests makes Python's __pycache__/ in organize-downloads/tests, and code checklist B-5 asks that the repository's ignore file keep it out; the CCS names only the six test files as the work, so this run cannot add or change an ignore file. Where should keeping __pycache__/ out be done?",
+       "recommended": "Leave it to t3.3, whose work is organize-downloads as a whole and can add organize-downloads/.gitignore with __pycache__/, so this run's B-5 is judged on the test files alone; adding the ignore file to this run's paths would split the package's files across two works.",
+       "items": [
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-5"
+        }
+       ]
+      }
+     ],
+     "answer": "Answer to your B-5 question on __pycache__/: it is done in this run; the CCS now holds organize-downloads/.gitignore as a further path of the work, with a \"chosen\" entry saying why (running the tests first makes __pycache__/, so the ignore file comes with this run). Read the CCS anew and go on with the run."
+    }
+   ],
+   "chosen": [],
+   "result": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0010-result.json",
+   "reply": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.turn/20261027-.rn%2F20261027-organize-downloads-cli%2Fcalls%2F0010-result.json/generator.json"
+  }
+ },
+ "since": {
+  "turn:generator": []
+ },
+ "started": {
+  "turn:generator": "aeb6ed6af3b2a0ea0"
+ },
  "questions": {
-  "from": "check",
+  "from": "turn:generator",
   "questions": [
    {
-    "question": "Running the tests makes Python's __pycache__/ in organize-downloads/tests, and code checklist B-5 asks that the repository's ignore file keep it out; the CCS names only the six test files as the work, so this run cannot add or change an ignore file. Where should keeping __pycache__/ out be done?",
-    "recommended": "Leave it to t3.3, whose work is organize-downloads as a whole and can add organize-downloads/.gitignore with __pycache__/, so this run's B-5 is judged on the test files alone; adding the ignore file to this run's paths would split the package's files across two works.",
+    "question": "The requirements leave two kinds of entry open, so the tests cannot hold them either way (code B-6, input partitions no test takes). (a) Directly in the organized folder there can be entries that are neither a plain file nor a folder: a symbolic link (to a file, to a folder, or to nothing), and rarely a named pipe or socket; AC5 says only that folders are never moved. Should the run list them like files, or leave them in place like folders? (b) AC3 matches extensions without regard to case, but AC5 does not say so for the endings of files still being downloaded (.crdownload, .part, .download). Is a file such as report.pdf.PART a file still being downloaded, left in place, or a file listed to Others?",
+    "recommended": "(a) Leave every symbolic link and every entry that is not a plain file in place and unlisted, like folders, as the Mover moves by hard link and a hard link to a symbolic link acts differently on macOS and Linux, and a link to a folder moved would be a folder moved against AC5; (b) match those endings without regard to case, as AC3 does for extensions, since leaving a possibly unfinished download in place is the safe side and the user meets one rule for every ending.",
     "items": [
      {
       "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
-      "item": "B-5"
+      "item": "B-6"
      }
     ]
    }

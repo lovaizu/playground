@@ -63,8 +63,9 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 3 of /rn:up on t3.2: add the ignore file to the work's paths, then send the answer to the run waiting
+Step 3 of /rn:up on t3.2: ask turn's two questions one by one, then send the answers to the run waiting
 
 ## Open
 
-- turn asks for t3.2 (code B-5): where keeping __pycache__/ out of the repository is done, as the CCS names only the six test files
+- turn asks for t3.2 (code B-6): whether symbolic links and entries that are neither a plain file nor a folder are listed like files or left in place like folders; recommended: left in place
+- turn asks for t3.2 (code B-6): whether the endings of files still being downloaded are matched without regard to case, such as report.pdf.PART; recommended: yes
