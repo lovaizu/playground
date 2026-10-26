@@ -27,7 +27,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T2: weigh what it brought
+Step 5 of /rn:up on design: stop at the design sign-off
 
 ## Open
 
