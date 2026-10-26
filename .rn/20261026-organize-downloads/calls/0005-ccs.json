@@ -13,6 +13,9 @@
    "path": "organize-downloads/README.md"
   },
   {
+   "path": "organize-downloads/LICENSE"
+  },
+  {
    "audience": "the user approving the README at the design sign-off, and whoever makes the architecture and the tool to it"
   },
   {
@@ -37,15 +40,6 @@
  ],
  "constraints": [
   {
-   "artifact-language": "English"
-  },
-  {
-   "conversation-language": "Japanese"
-  },
-  {
-   "fix": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/fix.md"
-  },
-  {
    "decision": "How the tool is made and installed: The tool is one Python 3 program in a single file, using only Python's standard library; it is installed by downloading that file into ~/.local/bin and making it runnable, on macOS and Linux alike, with nothing else to install. Its tests run by one command with what Python itself provides."
   },
   {
@@ -53,6 +47,24 @@
   },
   {
    "decision": "Copyright line of the license: The MIT license at organize-downloads/LICENSE reads \"Copyright (c) 2026 lovaizu\"."
+  },
+  {
+   "chosen": "The README is approved at the design stage as what the build makes, its download address kept as written, and its installation and Example are tried by a first user only once the build stage has made the tool and put it on main, so at this stage B-4 is judged by whether the steps, followed once the tool is there, give what they say: the tool does not exist before the build, the plan's next stage, where rn adds the task that makes it"
+  },
+  {
+   "chosen": "organize-downloads/LICENSE is made with this work: it needs nothing from the tool, so the README's license link opens once the README is approved"
+  },
+  {
+   "chosen": "organize-downloads/docs/usage.md and organize-downloads/CHANGELOG.md are made with the tool in the build stage, and at this stage the README's links to them and to docs/architecture.md, made by T2, name where they will be: they can only be written once the tool exists, as the decision on their places says"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/fix.md"
   }
  ]
 }
