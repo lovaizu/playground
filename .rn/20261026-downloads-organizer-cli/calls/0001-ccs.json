@@ -13,6 +13,9 @@
   },
   {
    "decision": "Why it is wanted: Make the wanted file easy to find in a cluttered Downloads folder; the user runs it by hand when they feel like it"
+  },
+  {
+   "decision": "What shows it done: Run on a test folder of mixed files and subfolders, never the real Downloads: only top-level files move to kind folders, none lost, renamed or overwritten, subfolders left; a plain run only shows what would move, moving only when told; works on macOS and Linux; a file whose name already exists in its kind folder stays and is reported; a README gives install and usage; tests check all of this"
   }
  ]
 }
