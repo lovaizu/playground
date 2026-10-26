@@ -64,6 +64,9 @@
   },
   {
    "decision": "Trying the rename on each system: The one-step rename that refuses a taken name is tried before the tool is built: on Linux in this environment, and on macOS on a GitHub Actions macOS runner, as the user cannot run anything on a Mac. Where no such way works, macOS is checked only when the finished tool is tried on a test folder."
+  },
+  {
+   "decision": "Tests on GitHub Actions: A GitHub Actions workflow in the repository runs the tool's automated tests on macOS and on Linux on each change, so AC1's macOS and Linux keep being checked while the tool is built and after; it is first put there to try the rename on macOS before the tool is built, and stays."
   }
  ]
 }
