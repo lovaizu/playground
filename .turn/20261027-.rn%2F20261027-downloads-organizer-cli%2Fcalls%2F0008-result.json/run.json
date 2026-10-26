@@ -1,0 +1,106 @@
+{
+ "call": {
+  "ccs": ".rn/20261027-downloads-organizer-cli/calls/0008-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261027-downloads-organizer-cli/calls/0008-result.json",
+  "test": null
+ },
+ "work": [
+  "docs/architecture.md"
+ ],
+ "checklist": [
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md"
+ ],
+ "receiver": [
+  "the user approving the architecture at the design sign-off, and whoever builds the tool and its tests to it"
+ ],
+ "use": [
+  "approving how the tool is put together to keep every file from being deleted, renamed or overwritten and to keep the record of a run, then building each part and its tests by it"
+ ],
+ "has": [
+  ".rn/20261027-downloads-organizer-cli/steering.md",
+  "docs/ux.md",
+  "README.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "F-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-4"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-5"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-6"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-7"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-8"
+  }
+ ],
+ "each": [],
+ "given": [
+  ".rn/20261027-downloads-organizer-cli/calls/0008-ccs.json",
+  "docs/architecture.md",
+  ".rn/20261027-downloads-organizer-cli/steering.md",
+  "docs/ux.md",
+  "README.md",
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+ ],
+ "readable": [
+  "docs/architecture.md",
+  ".rn/20261027-downloads-organizer-cli/steering.md",
+  "docs/ux.md",
+  "README.md",
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md"
+ ],
+ "root": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "questions": {
+  "from": "check",
+  "questions": [
+   {
+    "question": "The architecture's Test section is to link the project's rules for how each kind of part (here, Python code) and the user stories are checked, but none of the files the call names holds such rules, nor says where they are. Is there a project rule for tests to link (where), or should the architecture's Test section itself say what this tool's checks need, from AC7?",
+    "recommended": "If the project has no such rule, let the Test section state only what AC7 already asks (automated tests in this repository, run on a test folder and a stand-in home so they never touch the real Downloads folder or the user's own record), as AC7 already sets that bar and needs no other source.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-5"
+     }
+    ]
+   }
+  ]
+ }
+}
