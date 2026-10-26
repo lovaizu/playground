@@ -35,8 +35,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 3 of /rn:up on t2.1: answer turn's question on the rules for checking parts and stories, then send the answer to the run waiting
+Step 3 of /rn:up on t2.1: add the figure's SVG to the CCS, then send the answer to the run waiting
 
 ## Open
 
-- turn asks for t2.1 (architecture B-5): whether the project has rules for how Python code and the user stories are checked, and where, or the architecture sets them itself; recommended: the architecture sets them, unittest with Given/When/Then on a temporary folder, stories checked by running the command end to end, GitHub Actions on ubuntu-latest and macos-latest on every push
+- turn asks for t2.1 (architecture F-1, B-3): whether organize-downloads/docs/architecture.svg, the Logical view's figure, is added as a file of the work; recommended: add it

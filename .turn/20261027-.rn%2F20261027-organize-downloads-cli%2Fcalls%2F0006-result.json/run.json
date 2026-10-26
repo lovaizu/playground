@@ -85,16 +85,84 @@
  "more": 1,
  "stage": "asked",
  "told": true,
+ "answers": [
+  {
+   "questions": [
+    {
+     "question": "The architecture's Test section is to link the project's rules for how each kind of part (here Python code) and the user stories are checked, but neither the steering nor the README names any such rules, so the architecture has nothing to link and the builder would guess the test framework and how the stories are checked. Does the project have such rules (and where), or should this architecture set the tool's checks itself?",
+     "recommended": "Let the architecture set them itself under the Test section, since the repository names none: tests in Python's standard unittest, each a Given, a When and a Then on a temporary folder, the stories checked by running the organize-downloads command end to end, all run by GitHub Actions on ubuntu-latest and macos-latest on every push, which keeps to the README's standard-library-alone principle and meets AC7.",
+     "items": [
+      {
+       "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+       "item": "B-5"
+      }
+     ]
+    }
+   ],
+   "answer": "The user's answer to your B-5 question, kept as a decision of t2.1: \"Rules for checking: The repository has no rules for checking code or user stories, so the architecture sets the tool's own under its Test section: tests in Python's standard unittest, each a Given, a When and a Then on a temporary folder; the user stories checked by running the organize-downloads command end to end; all run by GitHub Actions on ubuntu-latest and macos-latest on every push.\" Go on with the run."
+  }
+ ],
+ "back": [],
+ "prompts": {
+  "turn:generator": {
+   "given": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0006-ccs.json",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/steering.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+   ],
+   "work": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md"
+   ],
+   "checklists": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md"
+   ],
+   "test": null,
+   "sent_back": [],
+   "answers": [
+    {
+     "questions": [
+      {
+       "question": "The architecture's Test section is to link the project's rules for how each kind of part (here Python code) and the user stories are checked, but neither the steering nor the README names any such rules, so the architecture has nothing to link and the builder would guess the test framework and how the stories are checked. Does the project have such rules (and where), or should this architecture set the tool's checks itself?",
+       "recommended": "Let the architecture set them itself under the Test section, since the repository names none: tests in Python's standard unittest, each a Given, a When and a Then on a temporary folder, the stories checked by running the organize-downloads command end to end, all run by GitHub Actions on ubuntu-latest and macos-latest on every push, which keeps to the README's standard-library-alone principle and meets AC7.",
+       "items": [
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+         "item": "B-5"
+        }
+       ]
+      }
+     ],
+     "answer": "The user's answer to your B-5 question, kept as a decision of t2.1: \"Rules for checking: The repository has no rules for checking code or user stories, so the architecture sets the tool's own under its Test section: tests in Python's standard unittest, each a Given, a When and a Then on a temporary folder; the user stories checked by running the organize-downloads command end to end; all run by GitHub Actions on ubuntu-latest and macos-latest on every push.\" Go on with the run."
+    }
+   ],
+   "chosen": [],
+   "result": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0006-result.json",
+   "reply": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.turn/20261027-.rn%2F20261027-organize-downloads-cli%2Fcalls%2F0006-result.json/generator.json"
+  }
+ },
+ "since": {
+  "turn:generator": []
+ },
+ "started": {
+  "turn:generator": "af7aa29591f0120f7"
+ },
  "questions": {
-  "from": "check",
+  "from": "turn:generator",
   "questions": [
    {
-    "question": "The architecture's Test section is to link the project's rules for how each kind of part (here Python code) and the user stories are checked, but neither the steering nor the README names any such rules, so the architecture has nothing to link and the builder would guess the test framework and how the stories are checked. Does the project have such rules (and where), or should this architecture set the tool's checks itself?",
-    "recommended": "Let the architecture set them itself under the Test section, since the repository names none: tests in Python's standard unittest, each a Given, a When and a Then on a temporary folder, the stories checked by running the organize-downloads command end to end, all run by GitHub Actions on ubuntu-latest and macos-latest on every push, which keeps to the README's standard-library-alone principle and meets AC7.",
+    "question": "The architecture's Logical view is to be one figure kept as an SVG file beside the document and shown in it as an image, but the CCS names only organize-downloads/docs/architecture.md as the work, so there is no file the figure can be written to, and without it the reader cannot see how the components achieve each user story. May the figure be added as a file of the work, organize-downloads/docs/architecture.svg, as a further {\"path\": ...} entry of the CCS's focal_entities?",
+    "recommended": "Add {\"path\": \"organize-downloads/docs/architecture.svg\"} to the CCS beside the architecture, since the architecture checklist asks for the figure as an SVG file beside the document and it is named after the document it belongs to.",
     "items": [
      {
       "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
-      "item": "B-5"
+      "item": "F-1"
+     },
+     {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+      "item": "B-3"
      }
     ]
    }
