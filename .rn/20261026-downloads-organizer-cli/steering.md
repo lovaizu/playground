@@ -25,12 +25,12 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 5 of /rn:up on design: the design sign-off cannot be shown by rn 0.9.0; ask the user how to go on
+Step 3 of /rn:up on issue-3: have turn make it, show it to the user whole and ask whether to send it
 
 ## Open
 
-- The user chose to put T1 to T3 back (decision "Shortening done tasks' decisions" of plan), but rn.py check 0009 refused: 'the part of the call 0009 holds T1, T2 and T3, neither a task the steering holds nor numbered above every task it has held ... each new task numbered from T4'; nothing was kept
-- rn.py proposal shows every work called in the design stage (WORKS_SHOWN in scripts/proposal.py), each with at most 5 decisions (MOST) of at most 200 characters (LONGEST); t2.2 holds 9 decisions, so new tasks T4 on would not lift the stop
+- Issue-3 to rn's makers is not yet made nor sent
+- The design sign-off cannot be shown by rn 0.9.0: t1.2, t2.2 and t3.2 hold decisions over 200 characters, t2.2 holds 8 decisions, more than the 5 a sign-off shows of a work, and their tasks cannot be put back; it waits on rn's fixes for issues 1 and 3
 - Issues 1 and 2 were sent by the user's yes, but this environment's gh put them at https://github.com/lovaizu/playground/issues/11 and /12, not lovaizu/ccpm
 - The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decisions 'What the README is checked against now' and 'How the README run ends' of t2.2); the build-stage plan must carry this
 - The LICENSE file for the MIT license (decision 'License' of t2.2) is not yet made; the build-stage plan must carry it
