@@ -1,0 +1,41 @@
+{
+ "work": [
+  ".rn/20261026-downloads-organizer-cli/issue-2.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "F-1",
+   "good": "I find the template's parts in order: a title line `# rn: <what happens>`, then `## What happened`, `## Why it matters`, `## What it should be` and `## Seen in`, which holds `rn 0.9.0`. That is the version `/tmp/rn/20261026-acceptance-7vc7gbjm/rn/.claude-plugin/plugin.json` gives (\"version\": \"0.9.0\"). The whole issue is in English, so as a maker I can read the title and the body apart, as rn sends them.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-2.md:1-25"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-1",
+   "good": "The title names what happens, not a slip of one session: turn:up's hook refuses a run's first start, and the same call sent again starts. `## What it should be` says the change: the hook should let the first start through. It names where that is met, step 3 of `/rn:up` in `skills/up/SKILL.md`. I checked that step: line 159 says \"Start the agent `turn:up` with the Agent tool, the call's line as its whole prompt\", and a grep of rn's skills, scripts and README finds no other place that starts turn:up. So 'rn starts turn:up only at step 3' is true, and so is 'step 3 says nothing of sending it again'. `## Why it matters` gives the cost to every user of rn, not to one session: the work stops at that step, and the user waits or has to find out alone that sending the call again goes on. The refusal also reads as a fault of the call. As a maker, I know what to change (turn's hook, turn being a plugin rn depends on in plugin.json), where rn sees the result (step 3), and what users lose until it is fixed.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-2.md:1-1",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-2.md:8-14",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-2.md:16-21"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-2",
+   "good": "I can see what happened from the refusal's own words, quoted: \"lane cannot check read_only on step 4 of up: {given} is not given in what up started from\". The section adds only one fact: the same call, sent again, ran. It holds no path, name, code or words from the user's project, and none of the user's decisions about their own work. The only paths in the whole issue are rn's own (`skills/up/SKILL.md`). I could not hold the quote up against the learning it rests on, as the learning is not among what I was given. A maker reading the issue on GitHub would not have the learning either.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-2.md:3-6"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-3",
+   "good": "The issue holds one need, met by one change: turn's hook lets a run's first start through. Step 3 of `/rn:up` is named only as the place where that change shows. It asks for no second change there, such as calling turn again, so I can decide on the issue and close it as one.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-2.md:1-25"
+   ]
+  }
+ ]
+}
