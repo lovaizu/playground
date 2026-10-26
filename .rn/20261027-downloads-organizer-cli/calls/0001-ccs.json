@@ -16,6 +16,9 @@
   },
   {
    "decision": "Build or reuse: The tool is written in this repository rather than built on an existing tool, so that the tool itself, not a configuration, guarantees it never deletes, renames or overwrites a file. Run plainly, it only shows which files it would move where and moves nothing; it moves files only when told to. When a file of the same name is already in the kind folder, that file is not moved and is reported."
+  },
+  {
+   "decision": "Where it runs: The tool runs on macOS and Linux, written in Python 3; Windows is not needed. The folder it organizes is the Downloads folder under the user's home by default, and another folder can be given instead."
   }
  ]
 }
