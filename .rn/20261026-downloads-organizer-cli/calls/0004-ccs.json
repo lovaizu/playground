@@ -1,0 +1,36 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "design"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "What organizing does: Move only the files directly in Downloads into folders by kind, such as images, documents and archives; never delete, rename or overwrite any file"
+  },
+  {
+   "decision": "Why it is wanted: Make the wanted file easy to find in a cluttered Downloads folder; the user runs it by hand when they feel like it"
+  },
+  {
+   "decision": "What shows it done: Run on a test folder of mixed files and subfolders, never the real Downloads: only top-level files move to kind folders, none lost, renamed or overwritten, subfolders left; a plain run only shows what would move, moving only when told; works on macOS and Linux; a file whose name already exists in its kind folder stays and is reported; a README gives install and usage; tests check all of this"
+  },
+  {
+   "decision": "Files of no known kind: A top-level file of no known kind, such as one with no extension or an unfamiliar one, moves into an Other folder"
+  },
+  {
+   "decision": "Undoing the last run: The user can undo the last run, which moves each file that run moved back to where it was; the tests check this"
+  },
+  {
+   "decision": "Undo where the name is taken: Where a file of the same name is already at the place a file would go back to, undo leaves that file in its kind folder and reports it"
+  },
+  {
+   "decision": "Folders left empty by undo: Undo removes each kind folder that run made once it is empty, leaving folders that were there before or still hold a file"
+  },
+  {
+   "decision": "UX document: The purpose needs a UX, docs/ux.md, of kind ux"
+  }
+ ]
+}
