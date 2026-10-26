@@ -1,0 +1,227 @@
+{
+ "work": [
+  "organize-downloads/tests/__init__.py",
+  "organize-downloads/tests/test_mover.py",
+  "organize-downloads/tests/test_record.py",
+  "organize-downloads/tests/test_cli.py",
+  "organize-downloads/tests/test_stories.py"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "F-1",
+   "good": "Every file opens with a docstring that says what it tests and why it is there. I walked the AST of the five files: every helper, nested stand-ins included, has a type on each parameter it names and on its return value, and the ones I stopped at before now also have a docstring (wrapper and its rename in test_record, link_failing_for_name in __init__). Every test_ function has a one-sentence name and Given:, When: and Then: comments.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:93-121",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:44-64",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:45-56",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:74-79",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:42-49"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-1",
+   "good": "I ran the task's Test command on Python 3.10 and 3.14. Both collected the same 86 tests and ended FAILED (failures=6, errors=18), every failure from what T3 lacks: the mover and record modules, and --apply. stand_in_for_os uses pathlib's private _NormalAccessor only where it exists, which is 3.10 alone. In the last round I ran it on 3.10, 3.11 and 3.14, and it reached os.link, Path.hardlink_to, Path.replace and Path.rename on each. Only the standard library is used.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:68-90",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:13-22"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-2",
+   "good": "When a test stops, what it prints tells the user how to go on. On T3's code the --apply stories print the command's own `unrecognized arguments: --apply`, and test_mover and test_record stop with `cannot import name 'mover'` and `cannot import name 'record'`. A command missing from PATH, or a stale install of it, is met with INSTALL_HINT, which gives the pipx or uv command that clears it. The tests also make each --apply stop name the input, the reason and an action the user can take.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:36-43",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:109-135",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:308-322",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:377-390",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:419-444"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-3",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:1-239",
+     "good": "The module docstring says why the fixed values live here and how both discover layouts import them. Each constant says what it stands for and where it comes from: AC3, AC5, AC8, NO_HARD_LINKS, WRITE_FAILED and the heading end. stand_in_for_os gives the 3.10 reason it also replaces pathlib's copies, which I confirmed by running it. _MOVE_LINE's regular expression is shown on an example line.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:1-10",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:58-79",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:216-224"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:1-465",
+     "good": "The docstring defines MoveReport's four fields, and says that the architecture sets a hard link and that the tests stand in for it with stand_in_for_os, so Mover may make it either way. take_invoice_name says which kinds of entry it makes. Each class docstring states the behavior it holds, and the root skip says why.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:1-14",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:45-48",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:325-327"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:1-186",
+     "good": "The docstring says what write_moves and read_moves take and give, that the architecture sets a rename, and how the tests watch or interrupt it. NAME_CHARACTERS says why each character is in it. The imports are now in alphabetical order (13-22), as in the other modules.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:1-22",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:34-37",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:44-53"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:1-728",
+     "good": "ApplyRunTest's docstring says what the command's tests hold and what is left to test_mover. The --apply stop tests now make the home whose Downloads they guard and set HOME to it, so their comment that 'a run that fell back to Downloads would find it there and not in the user's own home' is true of the code. The layout matches the other modules: two blank lines before run_main, and imports in alphabetical order.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:192-195",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:419-470",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:12-42"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:1-267",
+     "good": "Each story class's docstring quotes its user story from the architecture. INSTALL_HINT says why uv needs --no-cache, and installed_package says why its Python runs with -I.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:36-53",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:200-201"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-4",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:1-239",
+     "good": "Each helper takes only what its callers vary. link_failing_on_second_call takes the error; link_failing_for_name takes the name and the error, used in test_mover and test_cli; stand_in_for_os takes the os names, used with link, replace and rename.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:68-121"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:1-465",
+     "good": "Every helper and branch serves an --apply behavior: take_invoice_name serves the four tests of a taken name, assertAllLeftInPlace the three stops before any move, and each subTest kind is a way a name or a type folder can be taken. FAILED_CONTENTS is kept as the test-tools decision asks.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:40-79",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:148-212"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:1-186",
+     "good": "recording_renames stands in for both os.replace and os.rename because Run record may use either. Nothing else goes beyond what writing, reading and an interrupted write need.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:44-64"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:1-728",
+     "good": "ApplyRunTest and the --apply stop tests use only the shared helpers. Each holds an --apply output or stop the requirements ask for.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:192-399",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:419-470"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:1-267",
+     "good": "MoveStoryTest's three stories are the user story 'move those files when I say so', run on the default Downloads, on a given folder and on a taken name. Nothing in it goes beyond them.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:200-267"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-5",
+   "good": "Each fixed value now has one name in one place, and every module imports it. That covers the type folders and extensions, the downloading endings, the record name, the taken-name heading, the move line's form, and both failing-link errors: NO_HARD_LINKS and WRITE_FAILED, which test_mover and test_cli now share. grep finds EIO only in WRITE_FAILED's definition and in the asserts on report.stopped.errno. The way a link is made to fail is written once, as stand_in_for_os and its two link stand-ins. organize-downloads/.gitignore keeps out __pycache__/, build/ and *.egg-info/, which the runs make.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:22-121",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:26-38",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:23-39"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-6",
+   "good": "Each behavior of AC2, AC4 and AC10, and of the architecture's Mover and Run record, is held by a test that fails when it breaks:\n- Moving into a missing or an existing type folder keeps name, content and modified time, and nothing outside changes.\n- A name may be taken by a file, a folder or a dangling link, or after planning; the file stays, nothing is overwritten, and the file is reported as left.\n- The stops are held: no hard link, a stop midway with nothing after it tried, a taken name and a stop in one run, a type folder name held by a file or a link outside, and an unwritable folder.\n- The record holds the moves made, in order. It is replaced only by a run that moves files, and kept after a stop and after Ctrl-C.\n- A property test over random folder contents.\n- The CLI's output for each combination of moved, taken and stopped, with the 0, 1 and 2 count boundary.\n- --apply with a given path that is missing, a plain file or unreadable now stops with Downloads in a temporary home left as it was. A fallback to Downloads would fail the snapshot compare without reaching the user's own home.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:82-212",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:215-340",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:343-410",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:413-464",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:78-186",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:192-399",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:419-470"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-7",
+   "good": "When a test fails, it points at the one behavior its name gives. The places I stopped at are fixed:\n- The --apply stop tests set HOME to a temporary home that holds a Downloads, so even on the fault they guard against, the run reaches only that home and not the machine's (test_cli 419-470).\n- Stdout and stderr of the midway stop are now two tests (test_cli 324-353).\n- NameTakenTest holds the folder's state and the report in separate tests (test_mover 152-212).\nNo module or story test reads the clock or the network or leaves state behind. Each makes its own temporary folder or home, and the stand-ins reach Path's methods on every Python the tool keeps to, so a failure does not depend on the version. Two checks are left out on purpose, each with its reason written beside it: the root-only skips and the Linux-only story.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:419-470",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:324-353",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:152-212",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:68-90"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-8",
+   "good": "The whole Test command, build of the package included, took 1.47 s wall time on 3.10 and 1.31 s on 3.14. unittest reported 'Ran 86 tests in 0.133s' and '0.150s'. Each test makes its folder with tempfile and plain writes, and the only other programs run are the installed command, once per story, and its Python once.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:206-213",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:74-91"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-9",
+   "good": "Each test writes only in its own temporary folder or home, removed after it, and the CLI tests with a fallback to guard and the stories set HOME to their own temporary home. The tests hold this of the code too: each record write must rename a hidden file of its own, so two runs at once never write the same new file, and a name taken by another run after planning is never overwritten.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:64-72",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:190-212",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:170-186",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:419-444",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:94-102"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The interface the tests ask of T4.2: mover.apply_moves(folder, moves) giving back mover.MoveReport(moved, name_taken, stopped, unmoved), and record.write_moves(folder, moves) and record.read_moves(folder), moves being organize.Move.",
+   "why": "The architecture names the parts and what each hands back but no calls. Reusing organize.Move keeps one kind of move, and undo's more general moves are left to T5."
+  },
+  {
+   "chosen": "The tests stand in for os.link, os.replace and os.rename through stand_in_for_os, which also replaces Python 3.10's copies in pathlib._NormalAccessor, so Mover and Run record may use the os functions or Path's methods.",
+   "why": "exFAT and an interrupted write cannot be made without root, so the calls must be stood in for. Reaching pathlib's private copies on 3.10 keeps the code free to choose, and keeps the tests failing alike on every Python the tool keeps to."
+  },
+  {
+   "chosen": "What --apply prints: \"Moved N files in <folder>:\" or \"Moved no file in <folder>.\", then \"Left N files in place, as a file of the same name is already in its type folder:\" and \"Left N files in place, as the run stopped:\", in that order. Each heading has the listing's lines under it, the arrows lined up across the whole output. A run with nothing to move prints the listing's \"No file to move in <folder>.\".",
+   "why": "The README's Example gives only the heading and lines of a run where every file moves. This keeps that form and adds why each file was left, as AC4 asks."
+  },
+  {
+   "chosen": "The two stop messages of --apply on standard error, with exit status 1: \"cannot move <file> into <type folder>/ (<reason>): check that you may write in <folder> and that it is on a file system that can make hard links, which exFAT and FAT32 cannot\", and, where the type folder's name is held by something not a folder, \"cannot move <file> into <type folder>/, as <path> is not a folder: move or rename it, and run again\".",
+   "why": "The architecture says the tool stops and tells the user, but gives no words. These name the input, the reason and an action, with the exit status the existing stops use."
+  },
+  {
+   "chosen": "A type folder whose name is held by a plain file, or by a symbolic link, even one to a folder, stops the run as not a folder (NotADirectoryError).",
+   "why": "Moving through a link would write outside the organized folder, against AC2, and AC5 already leaves links alone."
+  },
+  {
+   "chosen": "The record is written after each move, and a run that moves nothing writes no record and leaves the one before as it was.",
+   "why": "The architecture says Mover writes each move to Run record, and AC8 says undo undoes the last run that moved files. This way a run stopped or interrupted midway still leaves undo what it moved."
+  },
+  {
+   "chosen": "The listing run still ends \"Nothing was moved.\" without the README's \"To move these files, run: organize-downloads --apply\", and the --help wording for --apply is new.",
+   "why": "With a folder given, that hint would have to repeat the folder quoted for the shell, which the README does not settle. T6 makes the README again from the built tool."
+  },
+  {
+   "chosen": "The listing run telling apart a file whose name is already taken, which the architecture gives Organize planner, is not held by these tests.",
+   "why": "The CCS asks for the tests of the run with --apply, and test_organize.py is not among the files this run may write."
+  }
+ ]
+}

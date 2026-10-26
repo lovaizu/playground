@@ -1,5 +1,5 @@
-"""Tests of the user stories of the run with nothing added, each running the installed
-organize-downloads command end to end on a temporary folder, as the user meets it.
+"""Tests of the user stories of the run with nothing added and the run with --apply, each running
+the installed organize-downloads command end to end on a temporary folder, as the user meets it.
 
 The command is the one on PATH, as pipx or uv installed it; each story runs it with HOME set to a
 temporary home, so it never reads or changes the user's own home, and checks that home whole
@@ -16,7 +16,17 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from tests import listed_moves, make_files, make_home, snapshot, write_user_dirs
+from tests import (
+    NAME_TAKEN_HEADING_END,
+    RECORD_NAME,
+    after_moves,
+    listed_moves,
+    make_files,
+    make_home,
+    snapshot,
+    snapshot_without_record,
+    write_user_dirs,
+)
 
 COMMAND = "organize-downloads"
 
@@ -185,3 +195,73 @@ class SeeMovesStoryTest(StoryTestCase):
         self.assertIn(str(settings), result.stderr)
         self.assertEqual(listed_moves(result.stdout), [])
         self.assertEqual(snapshot(self.home), before)
+
+
+class MoveStoryTest(StoryTestCase):
+    """As the user, I want to move those files into their type folders when I say so."""
+
+    def test_typed_with_apply_it_moves_each_listed_file_into_its_type_folder(self):
+        # Given: Downloads holding a photo, an invoice, an installer, a folder, macOS's hidden
+        # .DS_Store and a file Chrome is still downloading, as in the README's Example, and home
+        # itself holding a file of its own
+        make_files(
+            self.downloads,
+            ["holiday.jpg", "invoice.pdf", "Docker.dmg", ".DS_Store", "report.pdf.crdownload"],
+        )
+        (self.downloads / "Projects").mkdir()
+        make_files(self.home, ["family.png"])
+        before = snapshot(self.home)
+        # When: organize-downloads --apply is typed
+        result = run_command(self.home, ["--apply"])
+        # Then: it ends well and lists each of the three files with its type folder; each is in
+        # that type folder inside Downloads under the same name, the record of the moves is in
+        # Downloads, and nothing else in home is changed
+        self.assertEqual(result.returncode, 0, result.stderr)
+        moves = [
+            ("Docker.dmg", "Installers"),
+            ("holiday.jpg", "Images"),
+            ("invoice.pdf", "Documents"),
+        ]
+        self.assertEqual(sorted(listed_moves(result.stdout)), moves)
+        self.assertEqual(
+            snapshot_without_record(self.home, "Downloads"), after_moves(before, "Downloads", moves)
+        )
+        self.assertTrue((self.downloads / RECORD_NAME).is_file())
+
+    def test_typed_with_apply_and_a_folder_given_last_it_moves_that_folder_files(self):
+        # Given: a Desktop folder holding a document and an archive, and Downloads holding a photo
+        desktop = self.home / "Desktop"
+        desktop.mkdir()
+        make_files(desktop, ["notes.TXT", "backup.tar.gz"])
+        make_files(self.downloads, ["holiday.jpg"])
+        before = snapshot(self.home)
+        # When: organize-downloads --apply is typed with the Desktop folder given last
+        result = run_command(self.home, ["--apply", str(desktop)])
+        # Then: the Desktop files alone are moved into their type folders inside Desktop, and
+        # nothing else in home is changed, Downloads included
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(
+            snapshot_without_record(self.home, "Desktop"),
+            after_moves(
+                before, "Desktop", [("backup.tar.gz", "Archives"), ("notes.TXT", "Documents")]
+            ),
+        )
+
+    def test_a_file_whose_name_is_taken_in_its_type_folder_is_left_and_the_user_told(self):
+        # Given: Downloads holding a photo and an invoice, its Documents folder already holding
+        # another file named invoice.pdf
+        make_files(self.downloads, ["holiday.jpg", "invoice.pdf"])
+        (self.downloads / "Documents").mkdir()
+        (self.downloads / "Documents" / "invoice.pdf").write_text("filed", encoding="utf-8")
+        before = snapshot(self.home)
+        # When: organize-downloads --apply is typed
+        result = run_command(self.home, ["--apply"])
+        # Then: it ends well; the photo is moved, both invoices are as they were, and the output
+        # names the invoice and says a file of the same name is already in its type folder
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(
+            snapshot_without_record(self.home, "Downloads"),
+            after_moves(before, "Downloads", [("holiday.jpg", "Images")]),
+        )
+        self.assertIn(("invoice.pdf", "Documents"), listed_moves(result.stdout))
+        self.assertIn(NAME_TAKEN_HEADING_END, result.stdout)

@@ -33,7 +33,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
   Test: `uv run --no-cache --isolated --no-project --with ./organize-downloads python3 -m unittest discover -s organize-downloads/tests -t organize-downloads`
 
-  - [ ] 1. Make the tests of the run with --apply from AC2, AC4, AC10 and the architecture, and see them fail on what T3 built, `organize-downloads/tests` as a code work. turn.
+  - [x] 1. Make the tests of the run with --apply from AC2, AC4, AC10 and the architecture, and see them fail on what T3 built, `organize-downloads/tests` as a code work. turn.
   - [ ] 2. Make the moving from the architecture until every test passes, `organize-downloads` as a code work. turn.
 
 - T5: The undo command, listing and putting back what the last run that moved files moved. Serves AC7, AC8, AC9, AC10.
@@ -53,7 +53,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T4: action 1, have turn make the tests of the run with --apply
+Step 4 of /rn:up on T4: action 2, have turn make the moving
 
 ## Open
 

@@ -1,8 +1,9 @@
 """Tests of Command line: what the run with nothing added prints, which folder it organizes, that
-it changes nothing, how it prints names, and why it stops.
+it changes nothing, what the run with --apply moves and prints, how it prints names, and why it
+stops.
 
 Each test calls cli.main with the arguments the user would type after organize-downloads and
-reads what it prints and the exit status it gives back, the planner or the system's name
+reads what it prints and the exit status it gives back, the planner, os.link or the system's name
 replaced only where a test says why. The tests with no folder given set HOME to a temporary home
 that names its Downloads both the macOS and the Linux way, so they hold on either system and never
 read the user's own home.
@@ -21,10 +22,19 @@ from unittest import mock
 from organize_downloads import cli, organize
 from tests import (
     EXTENSIONS_BY_FOLDER,
+    NAME_TAKEN_HEADING_END,
+    NO_HARD_LINKS,
+    RECORD_NAME,
+    WRITE_FAILED,
+    after_moves,
+    link_failing_for_name,
+    link_failing_on_second_call,
     listed_moves,
     make_files,
     make_home,
     snapshot,
+    snapshot_without_record,
+    stand_in_for_os,
     write_user_dirs,
 )
 
@@ -179,6 +189,216 @@ class ListingRunTest(CommandLineTestCase):
                 self.assertEqual(listed_moves(output), [(expected, "Documents")])
 
 
+class ApplyRunTest(CommandLineTestCase):
+    """With --apply, the run hands the moves it lists to Mover and prints each move, and each file
+    left in place with why. What a move does to the folder is Mover's, held in test_mover; these
+    tests hold that the command makes the moves and what it prints."""
+
+    def test_apply_moves_each_listed_file_into_its_type_folder(self):
+        # Given: a folder holding a photo, an invoice and an installer, as in the README's Example
+        make_files(self.root, ["holiday.jpg", "invoice.pdf", "Docker.dmg"])
+        before = snapshot(self.root)
+        # When: the command runs with --apply and that folder given last
+        run_main(["--apply", str(self.root)])
+        # Then: each file is in its type folder under the same name, and a record of the moves
+        # is in the folder
+        self.assertEqual(
+            snapshot_without_record(self.root),
+            after_moves(
+                before,
+                "",
+                [
+                    ("Docker.dmg", "Installers"),
+                    ("holiday.jpg", "Images"),
+                    ("invoice.pdf", "Documents"),
+                ],
+            ),
+        )
+        self.assertTrue((self.root / RECORD_NAME).is_file())
+
+    def test_apply_prints_how_many_files_moved_and_each_move_lined_up(self):
+        # Given: a folder holding a photo, an invoice and an installer, as in the README's Example
+        make_files(self.root, ["holiday.jpg", "invoice.pdf", "Docker.dmg"])
+        # When: the command runs with --apply and that folder given last
+        status, output, errors = run_main(["--apply", str(self.root)])
+        # Then: it ends well and prints how many files moved and where, one line for each sorted
+        # by name, the arrows lined up two spaces after the longest name
+        self.assertEqual((status, errors), (0, ""))
+        self.assertEqual(
+            output,
+            f"Moved 3 files in {self.root}:\n"
+            "  Docker.dmg   -> Installers/\n"
+            "  holiday.jpg  -> Images/\n"
+            "  invoice.pdf  -> Documents/\n",
+        )
+
+    def test_apply_given_after_the_folder_moves_too_and_counts_1_file(self):
+        # Given: a folder holding one file
+        make_files(self.root, ["invoice.pdf"])
+        # When: the command runs with the folder given first and --apply after it
+        status, output, _ = run_main([str(self.root), "--apply"])
+        # Then: it ends well, and the heading says 1 file moved
+        self.assertEqual(status, 0)
+        self.assertEqual(output.splitlines()[0], f"Moved 1 file in {self.root}:")
+
+    def test_a_file_whose_name_is_taken_is_printed_apart_from_the_moved_saying_why(self):
+        # Given: a folder holding an installer and an invoice, whose Documents folder already
+        # holds a file named invoice.pdf
+        make_files(self.root, ["Docker.dmg", "invoice.pdf"])
+        (self.root / "Documents").mkdir()
+        (self.root / "Documents" / "invoice.pdf").write_text("filed before", encoding="utf-8")
+        # When: the command runs with --apply and that folder given last
+        status, output, errors = run_main(["--apply", str(self.root)])
+        # Then: it ends well and prints the move, then the invoice under a heading saying why it
+        # was left, the arrows of both lined up
+        self.assertEqual((status, errors), (0, ""))
+        self.assertEqual(
+            output,
+            f"Moved 1 file in {self.root}:\n"
+            "  Docker.dmg   -> Installers/\n"
+            f"Left 1 file {NAME_TAKEN_HEADING_END}\n"
+            "  invoice.pdf  -> Documents/\n",
+        )
+
+    def test_when_every_name_is_taken_it_says_no_file_moved_and_which_were_left(self):
+        # Given: a folder holding two invoices, each name already taken in Documents
+        make_files(self.root, ["invoice.pdf", "receipt.pdf"])
+        (self.root / "Documents").mkdir()
+        make_files(self.root / "Documents", ["invoice.pdf", "receipt.pdf"])
+        # When: the command runs with --apply and that folder given last
+        status, output, _ = run_main(["--apply", str(self.root)])
+        # Then: it ends well, and says no file moved, and which were left and why
+        self.assertEqual(status, 0)
+        self.assertEqual(
+            output,
+            f"Moved no file in {self.root}.\n"
+            f"Left 2 files {NAME_TAKEN_HEADING_END}\n"
+            "  invoice.pdf  -> Documents/\n"
+            "  receipt.pdf  -> Documents/\n",
+        )
+
+    def test_apply_with_nothing_to_move_says_so(self):
+        # Given: a folder holding only a folder and a hidden file
+        (self.root / "Projects").mkdir()
+        make_files(self.root, [".DS_Store"])
+        # When: the command runs with --apply and that folder given last
+        status, output, _ = run_main(["--apply", str(self.root)])
+        # Then: it ends well and says there is no file to move, as the listing does
+        self.assertEqual(status, 0)
+        self.assertEqual(output, f"No file to move in {self.root}.\n")
+
+    def test_where_no_hard_link_can_be_made_it_prints_that_no_file_moved_and_each_left(self):
+        # Given: a folder holding an installer and an invoice, on a file system that cannot make
+        # hard links, such as exFAT, whose every link fails so
+        make_files(self.root, ["Docker.dmg", "invoice.pdf"])
+        # When: the command runs with --apply and that folder given last
+        with stand_in_for_os(link=mock.Mock(side_effect=NO_HARD_LINKS)):
+            status, output, _ = run_main(["--apply", str(self.root)])
+        # Then: it ends with the status of a stop, and prints that no file moved and that both
+        # were left as the run stopped
+        self.assertEqual(status, 1)
+        self.assertEqual(
+            output,
+            f"Moved no file in {self.root}.\n"
+            "Left 2 files in place, as the run stopped:\n"
+            "  Docker.dmg   -> Installers/\n"
+            "  invoice.pdf  -> Documents/\n",
+        )
+
+    def test_where_no_hard_link_can_be_made_the_stop_names_the_file_and_what_to_check(self):
+        # Given: a folder holding an installer and an invoice, on a file system that cannot make
+        # hard links, such as exFAT, whose every link fails so
+        make_files(self.root, ["Docker.dmg", "invoice.pdf"])
+        # When: the command runs with --apply and that folder given last
+        with stand_in_for_os(link=mock.Mock(side_effect=NO_HARD_LINKS)):
+            _, _, errors = run_main(["--apply", str(self.root)])
+        # Then: standard error holds one line naming the file it could not move, the reason,
+        # and what to check
+        self.assertEqual(
+            errors,
+            "organize-downloads: cannot move Docker.dmg into Installers/ "
+            f"({os.strerror(errno.EPERM)}): check that you may write in {self.root} and that it "
+            "is on a file system that can make hard links, which exFAT and FAT32 cannot\n",
+        )
+
+    def test_a_stop_midway_prints_the_files_moved_before_it_and_those_left(self):
+        # Given: a folder holding three files, the link of the second failing for a reason other
+        # than its name being taken
+        make_files(self.root, ["holiday.jpg", "invoice.pdf", "Docker.dmg"])
+        # When: the command runs with --apply and that folder given last
+        with stand_in_for_os(link=link_failing_on_second_call(WRITE_FAILED)):
+            status, output, _ = run_main(["--apply", str(self.root)])
+        # Then: it ends with the status of a stop, and prints the one move made and the two
+        # files left
+        self.assertEqual(status, 1)
+        self.assertEqual(
+            output,
+            f"Moved 1 file in {self.root}:\n"
+            "  Docker.dmg   -> Installers/\n"
+            "Left 2 files in place, as the run stopped:\n"
+            "  holiday.jpg  -> Images/\n"
+            "  invoice.pdf  -> Documents/\n",
+        )
+
+    def test_a_stop_midway_names_the_file_whose_move_failed(self):
+        # Given: a folder holding three files, the link of the second failing for a reason other
+        # than its name being taken
+        make_files(self.root, ["holiday.jpg", "invoice.pdf", "Docker.dmg"])
+        # When: the command runs with --apply and that folder given last
+        with stand_in_for_os(link=link_failing_on_second_call(WRITE_FAILED)):
+            _, _, errors = run_main(["--apply", str(self.root)])
+        # Then: standard error names the second file, whose move failed, and its type folder
+        self.assertTrue(
+            errors.startswith("organize-downloads: cannot move holiday.jpg into Images/"), errors
+        )
+
+    def test_a_name_taken_and_a_stop_in_one_run_are_printed_each_under_its_heading(self):
+        # Given: a folder holding an installer, an invoice whose name is taken in Documents, and
+        # notes, the link of the notes failing for a reason other than its name
+        make_files(self.root, ["Docker.dmg", "invoice.pdf", "notes.txt"])
+        (self.root / "Documents").mkdir()
+        make_files(self.root / "Documents", ["invoice.pdf"])
+        # When: the command runs with --apply and that folder given last
+        with stand_in_for_os(link=link_failing_for_name("notes.txt", WRITE_FAILED)):
+            status, output, _ = run_main(["--apply", str(self.root)])
+        # Then: it ends with the status of a stop and prints the move, then the invoice left for
+        # its taken name, then the notes left by the stop, the arrows of all lined up
+        self.assertEqual(status, 1)
+        self.assertEqual(
+            output,
+            f"Moved 1 file in {self.root}:\n"
+            "  Docker.dmg   -> Installers/\n"
+            f"Left 1 file {NAME_TAKEN_HEADING_END}\n"
+            "  invoice.pdf  -> Documents/\n"
+            "Left 1 file in place, as the run stopped:\n"
+            "  notes.txt    -> Documents/\n",
+        )
+
+    def test_a_type_folder_name_held_by_a_file_stops_the_run_saying_to_move_it(self):
+        # Given: a folder holding an installer, and a plain file named Installers where its
+        # type folder would be
+        make_files(self.root, ["Docker.dmg", "Installers"])
+        # When: the command runs with --apply and that folder given last
+        status, _, errors = run_main(["--apply", str(self.root)])
+        # Then: it ends with the status of a stop, and standard error holds one line naming the
+        # entry that is not a folder and what to do
+        self.assertEqual(status, 1)
+        self.assertEqual(
+            errors,
+            "organize-downloads: cannot move Docker.dmg into Installers/, as "
+            f"{self.root / 'Installers'} is not a folder: move or rename it, and run again\n",
+        )
+
+    def test_a_moved_name_holding_a_line_break_is_printed_on_one_line_escaped(self):
+        # Given: a folder holding a file whose name holds a line break
+        make_files(self.root, ["line\nbreak.txt"])
+        # When: the command runs with --apply and that folder given last
+        status, output, _ = run_main(["--apply", str(self.root)])
+        # Then: its line shows the line break as \n
+        self.assertEqual(status, 0)
+        self.assertEqual(listed_moves(output), [("line\\nbreak.txt", "Documents")])
+
+
 class StopTest(CommandLineTestCase):
     def test_a_given_path_that_is_no_folder_stops_the_run_naming_it(self):
         for name in ["no-such-folder", "notes.txt"]:
@@ -195,6 +415,59 @@ class StopTest(CommandLineTestCase):
                 self.assertIn(str(given), errors)
                 self.assertEqual(listed_moves(output), [])
                 self.assertEqual(snapshot(self.root), before)
+
+    def test_with_apply_a_given_path_that_is_no_folder_stops_the_run_moving_nothing(self):
+        for name in ["no-such-folder", "notes.txt"]:
+            with self.subTest(name=name):
+                with tempfile.TemporaryDirectory() as temporary:
+                    # Given: a path where there is nothing, or a plain file, in a home whose
+                    # Downloads, named the macOS and the Linux way, holds a file, so a run that
+                    # fell back to Downloads would find it there and not in the user's own home
+                    home = Path(temporary)
+                    make_files(make_home(home), ["invoice.pdf"])
+                    make_files(home, ["notes.txt"])
+                    given = home / name
+                    before = snapshot(home)
+                    # When: the command runs with --apply and that path given last, HOME being
+                    # that home
+                    with mock.patch.dict(os.environ, {"HOME": str(home)}):
+                        os.environ.pop("XDG_CONFIG_HOME", None)
+                        status, output, errors = run_main(["--apply", str(given)])
+                    after = snapshot(home)
+                # Then: it ends with the status of a stop, names the path and how to give a
+                # folder on standard error, prints no move, and changes nothing, Downloads
+                # included
+                self.assertEqual(status, 1)
+                self.assertIn(f"{given} ", errors)
+                self.assertIn("give the folder to organize last", errors)
+                self.assertEqual(listed_moves(output), [])
+                self.assertEqual(after, before)
+
+    # A folder whose read permission is taken away is still read by root, so the run cannot be
+    # made to stop there; GitHub Actions runs the tests as a user that is not root.
+    @unittest.skipIf(os.geteuid() == 0, "root reads a folder whatever its permissions")
+    def test_with_apply_a_folder_that_cannot_be_read_stops_the_run_moving_nothing(self):
+        # Given: a folder holding a file, whose permissions let no one read it, in a home whose
+        # Downloads holds a file, so a run that fell back to Downloads would find it there and
+        # not in the user's own home
+        make_files(make_home(self.root), ["receipt.pdf"])
+        locked = self.root / "Locked"
+        locked.mkdir()
+        make_files(locked, ["invoice.pdf"])
+        locked.chmod(0)
+        self.addCleanup(locked.chmod, stat.S_IRWXU)
+        # When: the command runs with --apply and that folder given last, HOME being that home
+        with mock.patch.dict(os.environ, {"HOME": str(self.root)}):
+            os.environ.pop("XDG_CONFIG_HOME", None)
+            status, output, errors = run_main(["--apply", str(locked)])
+        # Then: it ends with the status of a stop, prints no move, stops as the listing does,
+        # naming the folder, the reason and what to do, and moves nothing in it or in Downloads
+        self.assertEqual(status, 1)
+        self.assertEqual(listed_moves(output), [])
+        self.assertTrue(errors.startswith(f"organize-downloads: cannot read {locked} ("), errors)
+        locked.chmod(stat.S_IRWXU)
+        self.assertEqual(os.listdir(locked), ["invoice.pdf"])
+        self.assertEqual(os.listdir(self.root / "Downloads"), ["receipt.pdf"])
 
     def test_a_folder_stop_names_the_command_and_tells_to_give_a_folder_last(self):
         # Given: a path where there is nothing
@@ -338,25 +611,39 @@ def table_rows(block: str) -> list:
 
 
 class HelpTest(unittest.TestCase):
-    """--help tells what the command does, which folder it organizes, which extension sends a file
-    to which type folder, and what it leaves in place."""
+    """--help tells what the command does, what --apply adds, which folder it organizes, which
+    extension sends a file to which type folder, and what it leaves in place."""
 
     def test_help_shows_the_usage_under_the_command_name(self):
         # Given: the command
         # When: it runs with --help
         text = help_text()
         # Then: its first line shows how to type the command, under its own name
-        self.assertEqual(text.splitlines()[0], "usage: organize-downloads [-h] [folder]")
+        self.assertEqual(text.splitlines()[0], "usage: organize-downloads [-h] [--apply] [folder]")
 
-    def test_help_says_what_the_command_lists_and_that_nothing_is_moved(self):
+    def test_help_says_what_the_command_lists_and_that_only_apply_moves(self):
         # Given: the command
         # When: it runs with --help
         text = help_text()
-        # Then: the description says it lists where each file would go, and moves nothing
+        # Then: the description says it lists where each file would go, and moves only with
+        # --apply
         self.assertEqual(
             in_one_line(help_block(text, "List ")),
             "List the type folder each file in your Downloads folder, or in the folder given, "
-            "would be moved to. Nothing is moved.",
+            "would be moved to. Nothing is moved unless --apply is given.",
+        )
+
+    def test_help_says_what_apply_does_and_what_it_leaves(self):
+        # Given: the command
+        # When: it runs with --help
+        text = help_text()
+        # Then: the options say --apply moves each file listed, making a missing type folder,
+        # and leaves a file whose name is taken in its type folder
+        self.assertEqual(
+            in_one_line(help_block(text, "options:")),
+            "options: -h, --help show this help message and exit --apply move each file listed "
+            "into its type folder, making the folder where it is missing; a file whose name is "
+            "already taken there is left where it is",
         )
 
     def test_help_says_which_folder_is_organized_with_none_given(self):
