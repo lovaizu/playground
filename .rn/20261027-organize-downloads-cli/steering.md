@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/15
 stage: plan
-signoff: plan
+signoff: none
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -23,8 +23,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 5 of /rn:up on plan: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
+Step 6 of /rn:up on plan: find the point behind the feedback
 
 ## Open
 
-None.
+- 3 点お願いします。(1) 計画を読んで思いましたが、直前の実行を元に戻せるようにしてください。直前の実行で動かした各ファイルを元の場所へ戻すコマンドです（以前の「元に戻す機能はなし」を変えます）。(2) インストールの仕方と使い方を書いた README を作ることを基準に入れてください。(3) ツールはファイルを動かすだけで、消すことは決してない、と基準に明記してください。
