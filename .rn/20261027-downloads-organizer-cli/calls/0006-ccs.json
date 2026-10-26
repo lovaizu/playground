@@ -47,6 +47,9 @@
   },
   {
    "fix": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+  },
+  {
+   "decision": "License: The tool is under the MIT license; the README names it, and a LICENSE file holding it is still to be added to the repository."
   }
  ]
 }
