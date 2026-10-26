@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "issue-2"
+  },
+  {
+   "stage": "design"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Learning: turn:up's hook refused to start a run with 'lane cannot check read_only on step 4 of up: {given} is not given in what up started from', and the same call sent again ran"
+  }
+ ]
+}
