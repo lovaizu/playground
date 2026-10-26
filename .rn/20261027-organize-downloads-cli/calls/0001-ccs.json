@@ -25,6 +25,9 @@
   },
   {
    "decision": "Same name at the destination: When a file of the same name is already in the folder a file would go to, the tool leaves that file where it is, never overwriting or renaming anything, and tells the user it did not move it."
+  },
+  {
+   "decision": "File types and their folders: The tool tells a file's type by its extension and uses a fixed set of folders that the user cannot change: Images (pictures), Documents (documents, PDFs, spreadsheets), Archives (zip and the like), Audio, Video, Installers (.dmg, .deb and the like), and Others for a file that fits none of them. Which extensions go in each folder is still to be settled."
   }
  ]
 }
