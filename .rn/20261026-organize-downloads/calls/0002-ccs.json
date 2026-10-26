@@ -5,6 +5,28 @@
   },
   {
    "stage": "plan"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261026-organize-downloads/calls/0002-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-ybzs2fkf/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -31,6 +53,15 @@
   },
   {
    "decision": "Hidden files and downloads in progress: Files whose names start with '.' and downloads still in progress (.crdownload, .part, .download) are left in place, not moved"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-ybzs2fkf/rn/checklists/fix.md"
   }
  ]
 }
