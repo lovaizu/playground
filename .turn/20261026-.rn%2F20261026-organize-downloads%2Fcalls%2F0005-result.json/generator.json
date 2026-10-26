@@ -1,0 +1,154 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "F-1",
+      "good": "The approver and the builder find each part under the heading the template gives, in its order: the opening under the name with no heading, then Example, Why organize-downloads, Requirements, Installation, Documentation, Development and License; each section opens with its main point, and each list item is one sentence with its explanation indented under it after a blank line, none in bold.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-169"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-1",
+      "good": "From the opening the reader learns the idea (files sorted into one folder per kind by extension, listed before any move, never deleted, renamed or overwritten, and undoable), that it is a command-line tool for macOS and Linux, and that it is for someone whose Downloads folder is too full to find a file in, who would find it in a folder of its kind.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:3-8"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-2",
+      "good": "The reader follows one Downloads folder from its first contents through the listing run, the --move run and its result, and the --undo run back to the start, with the tool's printed lines and the folder trees shown, and the cases of hidden, in-progress, unknown and name-taken files shown on the same folder.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:10-107"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-3",
+      "good": "The reader sets the tool against sorting by hand, sorting the view in a file manager and a rule-based organizer, each with the work it leaves them that this tool does, and no benefit every way gives is listed.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:109-119"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-4",
+      "question": 1
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-5",
+      "question": 2
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-6",
+      "parts": [
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-9",
+          "good": "The opening reads once through: what is sorted, by what, the listing run and what a move never does, then the kind of tool and whom it is for, with no word that a later line explains.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:3-8"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:10-108",
+          "good": "Each run comes after the folder it works on, each output in a block to copy, each case named with what happens to it (hidden and in-progress files, folders already there, files that cannot go back), and the extensions in a table with the last-dot rule shown on archive.tar.gz.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:12-107"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:109-120",
+          "good": "Each other way is named with an example of it (Finder, Files) and the work it leaves, and the only back reference, to the table, points at what the reader has already read.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:111-119"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:121-142",
+          "good": "Each requirement says what it is, how to check for it and how to get it, with the PATH line in a block to copy and the shell file named for each system.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:123-141"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:143-156",
+          "good": "The three install commands stand in one block in the order they are run, then --help and the first use point back to the Example the reader has read.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:145-155"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:157-162",
+          "good": "Each item says what is found and where, as a link.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:159-161"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:163-166",
+          "good": "One sentence says what is found and links to it.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:165"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:167-169",
+          "good": "The license is named and linked in one line.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:169"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-7",
+      "good": "Each sentence adds something: the opening gives the idea and whom it is for, the Example shows each run and case once, Why gives only the comparison, Installation points to the Example for the first use instead of repeating it, and fuller use is left to docs/usage.md.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-169"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-8",
+      "good": "The opening's promise is no wider than the runs: it lists every move when run without moving anything, which is the run with no option, and the --move run is not said to list first; the line on folders already there now names the one exception, files moved into a kind's folder such as Documents and moved back out by --undo, so it agrees with report.pdf going into Documents; the other statements (extension table and last-dot rule, name order, hidden and in-progress files, which folders undo removes) agree with each other.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:3-6",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:41-45",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:47-88"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "The README's download address (README.md line 149, https://raw.githubusercontent.com/lovaizu/playground/main/organize-downloads/organize-downloads) gives 404, because the tool's file organize-downloads/organize-downloads does not exist yet and the plan (steering.md Tasks) has no task that makes it and puts it on main. Until it is there, no reader can install the tool, run --help or the Example's three runs, so B-4 cannot be met from the README alone. Should a task making the tool at organize-downloads/organize-downloads be added to the plan, with the README's installation and Example run again by a first user once that file is on main?",
+      "recommended": "Yes: keep the address as decided, add to the plan a build task that makes the tool at organize-downloads/organize-downloads and merges it to main, and take B-4 as met only when a first user installs from that address and gets the Example's output, because the address can only work once the file is on main and no change to the README can make it work sooner."
+    },
+    {
+      "question": "Of the four places Documentation, Development and License link to (README.md lines 159, 161, 165, 169), none is there yet: T2 makes organize-downloads/docs/architecture.md, but no task in the plan makes organize-downloads/docs/usage.md, organize-downloads/CHANGELOG.md or organize-downloads/LICENSE, so a reader would land on missing pages, including the license's full terms. Should these three files be added, and by which work?",
+      "recommended": "Add organize-downloads/LICENSE, with the standard MIT text and the copyright holder and year you name (such as lovaizu, 2026), as a file of this work t1.1 so it is there when the README is approved, and add to the plan tasks making organize-downloads/docs/usage.md and organize-downloads/CHANGELOG.md with the tool, because the license needs nothing from the tool while the usage page and the change list can only be written once the tool exists."
+    }
+  ],
+  "chosen": [
+    {
+      "chosen": "The full list of extensions of each kind in the table (README.md lines 100-107), including AppImage written in its own capitals while matching is in capitals or small letters alike.",
+      "why": "AC2 leaves the full list to the design and T1 asks the README to hold it; the list adds the common extensions of each kind on macOS and Linux to those AC2 names."
+    },
+    {
+      "chosen": "Python 3.8 or later as the least version (README.md line 123).",
+      "why": "The decision says Python 3 without a version; 3.8 is the oldest still found on common Linux systems, and the standard library the tool needs is there in it."
+    },
+    {
+      "chosen": "curl as the download command, with ~/.zshrc on macOS and ~/.bashrc on Linux for the PATH line (README.md lines 129-141).",
+      "why": "The decision says to download the file into ~/.local/bin without naming how; curl is on macOS by default and one package away on Linux, and zsh and bash are the default shells there."
+    },
+    {
+      "chosen": "The form of each printed line: '<name> -> <Folder>/', '<name>: stays, <reason>' and '<name>: back from <Folder>/', listed in name order (README.md lines 29-39, 81-86).",
+      "why": "AC1 and AC12 say what each line tells but not its form; this form names the file first so a reader finds it, and shows the move as an arrow."
+    }
+  ]
+}

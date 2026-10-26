@@ -46,5 +46,5 @@ Step 3 of /rn:up on t1.1: answer turn's questions, then send the answers to the 
 
 ## Open
 
-- turn asks: how the tool is made and installed (language, and how a newcomer gets it onto macOS and Linux); it recommends a single Python 3 program using only the standard library, installed with pipx from the organize-downloads folder of lovaizu/playground.
-- turn asks: under which license the tool is offered, and where fuller use and the changes of each version are written; it recommends MIT, organize-downloads/docs/usage.md and organize-downloads/CHANGELOG.md, with Development linking to organize-downloads/docs/architecture.md.
+- turn asks (B-4): the README's download address gives 404 until the tool is on main, and no task makes the tool; should a build task make it, with the install and Example tried once it is there?
+- turn asks (B-5): organize-downloads/docs/usage.md, CHANGELOG.md and LICENSE, which the README links to, have no work making them; it recommends LICENSE (MIT, a copyright holder and year the user names) as a file of t1.1, usage and changes made with the tool.

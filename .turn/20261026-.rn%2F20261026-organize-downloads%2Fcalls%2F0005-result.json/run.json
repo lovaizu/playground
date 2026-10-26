@@ -87,12 +87,106 @@
  "more": 1,
  "stage": "asked",
  "told": true,
+ "answers": [
+  {
+   "questions": [
+    {
+     "question": "How is the tool made and installed? steering.md settles neither the language the tool is written in nor how a newcomer gets it onto macOS and Linux, so the README's Requirements and Installation cannot say what must be in place or what to run, and the architecture (T2) must follow what the README says.",
+     "recommended": "A single Python 3 program using only the standard library, installed with `pipx install` from the organize-downloads folder of the GitHub repository lovaizu/playground, because Python 3 runs the same on macOS and Linux, needs nothing else installed, and its tests run by one command.",
+     "items": [
+      {
+       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+       "item": "B-4"
+      }
+     ]
+    },
+    {
+     "question": "Under which license is the tool offered, and where are fuller use and what changed in each version written? steering.md names neither, so the README's License, Documentation and Development sections cannot name a place the reader can reach.",
+     "recommended": "The MIT license (or the repository's own license, if it already has one), fuller use in organize-downloads/docs/usage.md and changes in organize-downloads/CHANGELOG.md, both added with the tool, and Development linking to organize-downloads/docs/architecture.md from T2, because each then is a page in the same repository the reader installs from.",
+     "items": [
+      {
+       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+       "item": "B-5"
+      }
+     ]
+    }
+   ],
+   "answer": "The user answered both questions on organize-downloads/README.md; each is kept as a decision of work t1.1.\n1. How the tool is made and installed: The tool is one Python 3 program in a single file, using only Python's standard library; it is installed by downloading that file into ~/.local/bin and making it runnable, on macOS and Linux alike, with nothing else to install. Its tests run by one command with what Python itself provides. (Not pipx.)\n2. License and the places of fuller use and of changes: The tool is offered under the MIT license, at organize-downloads/LICENSE. Fuller use is written in organize-downloads/docs/usage.md and the changes of each version in organize-downloads/CHANGELOG.md, both still to be made with the tool; the README's Development links to organize-downloads/docs/architecture.md, made by T2."
+  }
+ ],
+ "back": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-4",
+   "places": [
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:143-153",
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:28-86"
+   ],
+   "did": "Requirements (lines 121-139) was fine to follow: each item says what it is, how to check I already have it (python3 --version, echo \"$PATH\") and ways to get it ready. In a folder made with mktemp -d and removed afterwards, I ran the README's download command against the same address: curl -fsSL -o <tmp>/od https://raw.githubusercontent.com/lovaizu/playground/main/organize-downloads/organize-downloads. curl exited with code 22: 'The requested URL returned error: 404', and nothing was downloaded. https://github.com/lovaizu/playground returns 200, and raw.githubusercontent.com/lovaizu/playground/main/README.md returns 200, so the repository and branch can be reached; the tool's file is not at that address. The repository at hand holds no organize-downloads/organize-downloads either (organize-downloads/ holds only README.md).",
+   "lacking": "I could not install the tool: the download address at line 147 gives 404. So I could not run organize-downloads --help (line 151) or the three runs of the Example, and could not compare their output with lines 31-38, 48-55 and 80-84. The address can only work once the tool is in organize-downloads/ on main of lovaizu/playground. Nothing in the README or the plan says when that will happen."
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-5",
+   "places": [
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:155-167"
+   ],
+   "did": "Each place is named and linked, Development stands apart from Documentation, and the license is named (MIT) in the README itself. I then looked up each link relative to organize-downloads/README.md: ls of /tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/ shows only README.md, and organize-downloads/docs does not exist; the repository root has no LICENSE or CHANGELOG.md either. In steering.md's Tasks, T2 makes organize-downloads/docs/architecture.md; no task makes docs/usage.md, CHANGELOG.md or LICENSE.",
+   "lacking": "None of the four links reaches anything: docs/usage.md (line 157), CHANGELOG.md (line 159), docs/architecture.md (line 163) and LICENSE (line 167) are not there. architecture.md is planned in T2. Nothing in the plan makes usage.md, CHANGELOG.md or LICENSE, so even once the tool is built a reader would land on missing pages, including the license's full terms."
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-8",
+   "places": [
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:42-43",
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:45-46",
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:63-65",
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:3-5"
+   ],
+   "did": "I set each promise of the opening and the Example beside the later lines. Line 42-43 says 'The folder Projects, and every folder already there with all it holds, is left as it is.' Documents is a folder already there (lines 11-12, 18-19), yet --move puts report.pdf into it (line 53, lines 63-65), so the promise is broken by the README's own example. I also set the opening's 'it shows every move before making any' (line 4) beside the --move run (lines 45-55), which moves the files and prints the same lines without first listing them or asking anything. I could not run the tool to check the rest (see B-4). The other statements I checked agree with each other: the extension table and the last-dot rule, name order, hidden and in-progress files, and which folders undo removes.",
+   "lacking": "Lines 42-43 and lines 45-65 cannot both hold. As written, line 42-43 says a folder already there gains nothing, yet the tool moves files into a kind's folder that is already there. The exception (files moved into the kinds' folders, and moved back out by --undo) is missing. Line 4's 'shows every move before making any' is wider than what --move does: a reader who runs --move first gets no listing before the moves. Only running with no option first gives one, and the opening does not say so."
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The command and the single file are both named organize-downloads (no .py), kept at organize-downloads/organize-downloads in lovaizu/playground and downloaded from https://raw.githubusercontent.com/lovaizu/playground/main/organize-downloads/organize-downloads with curl.",
+   "why": "The user decided one file downloaded into ~/.local/bin; naming it as the command lets it run by name, the main branch keeps the address after the PR is merged, and curl is present on macOS and most Linux."
+  },
+  {
+   "chosen": "The options are --move and --undo, with the folder given after them and ~/Downloads when none is given; --help comes from Python's argument parser.",
+   "why": "AC2 and AC12 name only 'the option that tells it to move/undo'; the plain verbs read as what they do."
+  },
+  {
+   "chosen": "The printed lines are 'NAME -> KIND/', 'NAME: stays, unknown kind', 'NAME: stays, KIND/NAME already exists', and for undo 'NAME: back from KIND/', one per file in name order; undo prints no line for folders it removes.",
+   "why": "AC1, AC3, AC4 and AC12 ask for a line per file saying where it goes or why it stays, without fixing a form; a short, stable form is easy to read and to test, and AC12 asks lines only for files."
+  },
+  {
+   "chosen": "The full extension list of each kind is the table in the Example, matched on the part after the last dot regardless of case (so AppImage and JPG match, and archive.tar.gz goes to Archives).",
+   "why": "The plan leaves the full lists to the design and T1 to hold them; case is ignored as cameras and installers often write extensions in capitals."
+  },
+  {
+   "chosen": "--undo works on the last --move made on that same folder.",
+   "why": "AC12 runs undo 'on a folder'; tying the record to the folder keeps an undo of ~/Downloads from touching a move made on another folder."
+  },
+  {
+   "chosen": "Python 3.8 or later is required.",
+   "why": "The decision says Python 3 with the standard library only; 3.8 covers what the tool needs and is older than what macOS's Command Line Tools and current Linux systems give."
+  },
+  {
+   "chosen": "organize-downloads/LICENSE is taken as made with the tool, like docs/usage.md and CHANGELOG.md.",
+   "why": "The user named its place but not when it is made; the README's links reach readers only once the tool is merged with them."
+  }
+ ],
+ "sent": 1,
+ "started": {
+  "turn:generator": "a3623b1811598c40f"
+ },
  "questions": {
-  "from": "check",
+  "from": "turn:generator",
   "questions": [
    {
-    "question": "How is the tool made and installed? steering.md settles neither the language the tool is written in nor how a newcomer gets it onto macOS and Linux, so the README's Requirements and Installation cannot say what must be in place or what to run, and the architecture (T2) must follow what the README says.",
-    "recommended": "A single Python 3 program using only the standard library, installed with `pipx install` from the organize-downloads folder of the GitHub repository lovaizu/playground, because Python 3 runs the same on macOS and Linux, needs nothing else installed, and its tests run by one command.",
+    "question": "The README's download address (README.md line 149, https://raw.githubusercontent.com/lovaizu/playground/main/organize-downloads/organize-downloads) gives 404, because the tool's file organize-downloads/organize-downloads does not exist yet and the plan (steering.md Tasks) has no task that makes it and puts it on main. Until it is there, no reader can install the tool, run --help or the Example's three runs, so B-4 cannot be met from the README alone. Should a task making the tool at organize-downloads/organize-downloads be added to the plan, with the README's installation and Example run again by a first user once that file is on main?",
+    "recommended": "Yes: keep the address as decided, add to the plan a build task that makes the tool at organize-downloads/organize-downloads and merges it to main, and take B-4 as met only when a first user installs from that address and gets the Example's output, because the address can only work once the file is on main and no change to the README can make it work sooner.",
     "items": [
      {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
@@ -101,8 +195,8 @@
     ]
    },
    {
-    "question": "Under which license is the tool offered, and where are fuller use and what changed in each version written? steering.md names neither, so the README's License, Documentation and Development sections cannot name a place the reader can reach.",
-    "recommended": "The MIT license (or the repository's own license, if it already has one), fuller use in organize-downloads/docs/usage.md and changes in organize-downloads/CHANGELOG.md, both added with the tool, and Development linking to organize-downloads/docs/architecture.md from T2, because each then is a page in the same repository the reader installs from.",
+    "question": "Of the four places Documentation, Development and License link to (README.md lines 159, 161, 165, 169), none is there yet: T2 makes organize-downloads/docs/architecture.md, but no task in the plan makes organize-downloads/docs/usage.md, organize-downloads/CHANGELOG.md or organize-downloads/LICENSE, so a reader would land on missing pages, including the license's full terms. Should these three files be added, and by which work?",
+    "recommended": "Add organize-downloads/LICENSE, with the standard MIT text and the copyright holder and year you name (such as lovaizu, 2026), as a file of this work t1.1 so it is there when the README is approved, and add to the plan tasks making organize-downloads/docs/usage.md and organize-downloads/CHANGELOG.md with the tool, because the license needs nothing from the tool while the usage page and the change list can only be written once the tool exists.",
     "items": [
      {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",

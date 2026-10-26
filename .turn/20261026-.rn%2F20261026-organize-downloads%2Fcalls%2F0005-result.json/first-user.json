@@ -1,0 +1,140 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "F-1",
+      "good": "The headings are the template's, in its order: the name, an opening under no heading, Example, Why organize-downloads, Requirements, Installation, Documentation, Development, License. Each Requirements item is one sentence that stands alone, with its explanation after a blank line and indented under it; the Why and Documentation items are one sentence each; nothing is set in bold. Each section opens with its main point, such as Why's 'Each other way ... leaves you work that this tool does for you' and Installation's 'Download the tool into ~/.local/bin and make it runnable'.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-167"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-1",
+      "good": "The first sentence gives the idea: files sorted into one folder per kind, chosen by extension, with every move shown first, nothing deleted, renamed or overwritten, and the last move undoable. The next sentence gives the kind of thing (a command-line tool for macOS and Linux), whom it is for (anyone whose Downloads folder holds so many files they cannot find the one they want) and the gain (they would find it in a folder of its kind). I can tell at once whether it is for me.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:3-7"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-2",
+      "good": "The example is a Downloads folder like my own, shown as a tree. Then come the three runs in the order I would make them: the listing with no option, --move, --undo. Each shows the command, its exact output and, after --move, the folder as it is then. The tree before and after, the lines, and which folders are made and removed all agree, so I can picture the whole thing from start to finish on my own folder.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:11-86"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-3",
+      "good": "Why compares the tool with three other ways and names, for each, the work it leaves me. By hand I make each folder and drag each file myself. A file manager's sort by kind only orders the view. A rule-based organizer makes me write the rules first, while this tool comes with its kinds already set. No benefit that every way gives is placed among these or before them.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:109-117"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-4",
+      "places": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:143-153",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:28-86"
+      ],
+      "did": "Requirements (lines 121-139) was fine to follow: each item says what it is, how to check I already have it (python3 --version, echo \"$PATH\") and ways to get it ready. In a folder made with mktemp -d and removed afterwards, I ran the README's download command against the same address: curl -fsSL -o <tmp>/od https://raw.githubusercontent.com/lovaizu/playground/main/organize-downloads/organize-downloads. curl exited with code 22: 'The requested URL returned error: 404', and nothing was downloaded. https://github.com/lovaizu/playground returns 200, and raw.githubusercontent.com/lovaizu/playground/main/README.md returns 200, so the repository and branch can be reached; the tool's file is not at that address. The repository at hand holds no organize-downloads/organize-downloads either (organize-downloads/ holds only README.md).",
+      "lacking": "I could not install the tool: the download address at line 147 gives 404. So I could not run organize-downloads --help (line 151) or the three runs of the Example, and could not compare their output with lines 31-38, 48-55 and 80-84. The address can only work once the tool is in organize-downloads/ on main of lovaizu/playground. Nothing in the README or the plan says when that will happen."
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-5",
+      "places": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:155-167"
+      ],
+      "did": "Each place is named and linked, Development stands apart from Documentation, and the license is named (MIT) in the README itself. I then looked up each link relative to organize-downloads/README.md: ls of /tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/ shows only README.md, and organize-downloads/docs does not exist; the repository root has no LICENSE or CHANGELOG.md either. In steering.md's Tasks, T2 makes organize-downloads/docs/architecture.md; no task makes docs/usage.md, CHANGELOG.md or LICENSE.",
+      "lacking": "None of the four links reaches anything: docs/usage.md (line 157), CHANGELOG.md (line 159), docs/architecture.md (line 163) and LICENSE (line 167) are not there. architecture.md is planned in T2. Nothing in the plan makes usage.md, CHANGELOG.md or LICENSE, so even once the tool is built a reader would land on missing pages, including the license's full terms."
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-6",
+      "parts": [
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-8",
+          "good": "The name, then what it does, for whom and with what gain, in plain words; 'kind of file' is explained in place as 'chosen by each file's extension'.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-7"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:9-106",
+          "good": "The starting tree comes first, then each run with its output, each followed by why the lines are as they are: hidden and in-progress files have no line, folders already there are kept. For each case I get what happens in it, such as undo when a file cannot go back. The extension rule comes with an example (archive.tar.gz goes to Archives), and the kinds are in a table. I never had to go back or read ahead.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:11-105"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:107-118",
+          "good": "Each other way is said with what it leaves me to do. 'An organizer that sorts by rules' is explained in the same sentence: it makes you write the rules first. The 'table above' it points back to has already been read.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:109-117"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:119-140",
+          "good": "Each requirement says why it is needed and how to check it. PATH is explained as what lets the shell find the tool by its name. The line to add is in a block to copy, with the file to add it to for each system.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:121-139"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:141-154",
+          "good": "The three install commands are in one block to copy, followed by the first use, which points back to the Example already read.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:143-153"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:155-160",
+          "good": "Each item says what is found where, in one sentence.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:157-159"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:161-164",
+          "good": "One sentence says what the linked page holds.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:163"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:165-167",
+          "good": "The license is named, with where its text is.",
+          "lines": [
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:167"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-7",
+      "good": "Each sentence gives something new. The opening gives the promises; the Example shows them at work; Why gives only the comparison; Installation gives the commands and points to the Example for the first use rather than repeating its steps. The cases at lines 40-43 and 88-89 explain the output I see and whether undo can be trusted not to overwrite. Line 91 tells which folder the example works on. Nothing is aimed at a reviewer, nothing is history, and nothing tells what the README is.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:3-7",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:11-105",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:109-117",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:143-153"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-8",
+      "places": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:42-43",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:45-46",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:63-65",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:3-5"
+      ],
+      "did": "I set each promise of the opening and the Example beside the later lines. Line 42-43 says 'The folder Projects, and every folder already there with all it holds, is left as it is.' Documents is a folder already there (lines 11-12, 18-19), yet --move puts report.pdf into it (line 53, lines 63-65), so the promise is broken by the README's own example. I also set the opening's 'it shows every move before making any' (line 4) beside the --move run (lines 45-55), which moves the files and prints the same lines without first listing them or asking anything. I could not run the tool to check the rest (see B-4). The other statements I checked agree with each other: the extension table and the last-dot rule, name order, hidden and in-progress files, and which folders undo removes.",
+      "lacking": "Lines 42-43 and lines 45-65 cannot both hold. As written, line 42-43 says a folder already there gains nothing, yet the tool moves files into a kind's folder that is already there. The exception (files moved into the kinds' folders, and moved back out by --undo) is missing. Line 4's 'shows every move before making any' is wider than what --move does: a reader who runs --move first gets no listing before the moves. Only running with no option first gives one, and the opening does not say so."
+    }
+  ]
+}
