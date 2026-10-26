@@ -43,3 +43,68 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
   the user's home (`~/.local/state/organize-downloads` on Linux, `~/Library/Application
   Support/organize-downloads` on macOS), one record for each folder, so the organized folder gains no
   file of the tool's.
+
+## Tasks
+
+- T5: The tool showing the planned moves, the scene "Seeing the planned moves" of `docs/ux.md`, built as `docs/architecture.md` lays out. Serves AC2, AC3, AC5, AC7.
+
+  Completion criterion: Run without `--move` on a test folder holding a file of each kind, a file
+  whose name is taken in its kind folder, files of no kind, still being downloaded or hidden, and a
+  subfolder, and on the default folder under a stand-in home, the tool prints each planned move and
+  each file left in place with its reason as `docs/ux.md` shows them, and changes nothing; checked
+  by the automated tests, which never touch the real Downloads folder or the user's record, passing
+  on Linux here and on macOS and Linux on GitHub Actions.
+
+  Test: `PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_preview.py'`
+
+  - [ ] 1. The tests of showing the planned moves, from `docs/ux.md` and `docs/architecture.md`, seen failing on what is there, `tests/test_preview.py` as a code work. turn.
+  - [ ] 2. The tool's package and its preview run, from `docs/ux.md`, `docs/architecture.md` and `tests/test_preview.py`, `src/organize_downloads/` as a code work. turn.
+
+- T6: The tool moving the files, the scene "Organizing" of `docs/ux.md`, with the record of the run. Serves AC4, AC5, AC6, AC7, AC12.
+
+  Completion criterion: Run with `--move` on the test folder of T5 under a stand-in home, the tool
+  moves each file the preview showed into its kind folder by the one-step rename that refuses a
+  taken name, leaves the rest with their reasons, keeps the run's moves in the record under the
+  stand-in home and nothing in the folder, and after it every file is where it was or in its kind
+  folder with the same name and content; checked by the automated tests, passing on Linux here and on
+  macOS and Linux on GitHub Actions.
+
+  Test: `PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_move.py'`
+
+  - [ ] 1. The tests of moving the files and keeping the record, from `docs/ux.md` and `docs/architecture.md`, seen failing on what is there, `tests/test_move.py` as a code work. turn.
+  - [ ] 2. The move run, the Mover and the Record store, from `docs/ux.md`, `docs/architecture.md`, `.rn/20261027-downloads-organizer-cli/trial-rename.md` and `tests/test_move.py`, `src/organize_downloads/` as a code work. turn.
+
+- T7: The tool undoing the last move run, the scenes "Seeing the planned moves back" and "Undoing" of `docs/ux.md`. Serves AC6, AC7, AC9, AC10, AC11.
+
+  Completion criterion: After a move run of T6 on a test folder under a stand-in home, with one file
+  whose old place is now taken and one no longer in its kind folder, `--undo` shows each move back,
+  each file not moved back with its reason and each kind folder to remove, and changes nothing;
+  `--undo --move` makes those moves back, removes only the kind folders that run made and that are
+  now empty, keeps in the record the moves not made, and leaves every file where it was or where it
+  was moved back, with the same name and content; checked by the automated tests, passing on Linux
+  here and on macOS and Linux on GitHub Actions.
+
+  Test: `PYTHONPATH=src python3 -m unittest discover -s tests -p 'test_undo.py'`
+
+  - [ ] 1. The tests of undoing, from `docs/ux.md` and `docs/architecture.md`, seen failing on what is there, `tests/test_undo.py` as a code work. turn.
+  - [ ] 2. The undo runs and the Undo planner, from `docs/ux.md`, `docs/architecture.md` and `tests/test_undo.py`, `src/organize_downloads/` as a code work. turn.
+
+- T8: The README made again on the built tool, with the LICENSE file it names. Serves AC1, AC8.
+
+  Completion criterion: Following `README.md` alone on the built tool, a newcomer installs it with
+  `pipx install .`, runs `organize-downloads` from another directory, shows and makes the moves and
+  the moves back on a test folder of their own making, sees each output as the README shows it, and
+  removes it with `pipx uninstall`; the README also says what happens on a file system that refuses
+  the one-step rename, and the repository holds the MIT `LICENSE`. Checked by an AI that did not make
+  it, doing so in a newcomer's place.
+
+  - [ ] 1. The README made again from the built tool and `docs/ux.md`, with the LICENSE file, `README.md` as a readme work. turn.
+
+- T9: The architecture made again on the built tool. Serves AC7.
+
+  Completion criterion: Whoever changes the tool can tell from `docs/architecture.md`, held against
+  the built code and tests, each part where it is placed, how it acts on the others and how each is
+  checked, with no line the built tool does not hold. Checked by an AI that did not make it, reading
+  it with the built tool in a maintainer's place.
+
+  - [ ] 1. The architecture made again from the built tool, `docs/architecture.md` as an architecture work. turn.
