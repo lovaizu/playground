@@ -1,0 +1,33 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "plan"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: Files pile up in Downloads so the wanted file cannot be found; the tool is to make it findable again"
+  },
+  {
+   "decision": "How files are organized: Move each file into a folder for its type (images, documents, archives, installers, ...), the type decided by its extension"
+  },
+  {
+   "decision": "What is touched: Only files directly in Downloads; files are only moved, never deleted, renamed or overwritten"
+  },
+  {
+   "decision": "Name already taken at the destination: Leave that file in Downloads unmoved and show on screen that it was left"
+  },
+  {
+   "decision": "Done when: Run once on a test Downloads holding many kinds of files, every file directly in it is moved into its type folder (a name clash is left and shown) and none is deleted, renamed or overwritten; run with nothing given it only shows what it would move and moves nothing, moving only when told to; it works on macOS and Linux; a README gives install and usage; tests check all of these"
+  },
+  {
+   "decision": "How macOS is checked: GitHub Actions runs the tests on both Linux and macOS, and both passing is part of done"
+  },
+  {
+   "decision": "File of no known type: A file whose extension matches no type, or that has none, is moved into an Other folder"
+  }
+ ]
+}
