@@ -1,0 +1,64 @@
+{
+ "focal_entities": [
+  {
+   "work": "t5.1"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "code"
+  },
+  {
+   "path": "tests/test_preview.py"
+  },
+  {
+   "audience": "whoever maintains the tool, a person or an AI, and whoever builds its preview run to these tests"
+  },
+  {
+   "has": "docs/ux.md"
+  },
+  {
+   "has": "docs/architecture.md"
+  },
+  {
+   "has": ".github/workflows/tests.yml"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "trusting from these tests passing that showing the planned moves does what docs/ux.md says, and building the preview run until they pass"
+  },
+  {
+   "serves": "AC2: By default the tool works on the `Downloads` folder under the user's home; given another folder, it works on that folder instead."
+  },
+  {
+   "serves": "AC3: Run without being told to move, the tool shows each file it would move with the kind folder it would go to, and changes nothing in the folder."
+  },
+  {
+   "serves": "AC5: In a run of AC3 or of AC4 these stay where they are and are shown as left in place: a file whose name is already taken in its kind folder; a file whose extension is not in the table, or that has none, such as a file still being downloaded (`.crdownload`, `.part`, `.download`) or a hidden file (`.DS_Store`); and each subfolder with what it holds."
+  },
+  {
+   "serves": "AC7: The repository holds automated tests that build a test folder with a file for each case of AC3 to AC6 and AC9 to AC11, check each of those criteria on it and pass, never touching the user's real Downloads folder or the user's own record of a last run."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "The workflow .github/workflows/tests.yml is had: it runs the tests on macOS and Linux by the command docs/architecture.md gives, so the tests must run under it"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+  }
+ ]
+}
