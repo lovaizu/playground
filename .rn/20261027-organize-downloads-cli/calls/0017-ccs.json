@@ -1,0 +1,97 @@
+{
+ "focal_entities": [
+  {
+   "work": "t4.2"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "code"
+  },
+  {
+   "path": "organize-downloads/src/organize_downloads/cli.py"
+  },
+  {
+   "path": "organize-downloads/src/organize_downloads/mover.py"
+  },
+  {
+   "path": "organize-downloads/src/organize_downloads/record.py"
+  },
+  {
+   "path": "organize-downloads/src/organize_downloads/organize.py"
+  },
+  {
+   "path": "organize-downloads/src/organize_downloads/type_table.py"
+  },
+  {
+   "audience": "whoever runs the tool and whoever maintains it, a person or an AI"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  },
+  {
+   "has": "organize-downloads/docs/architecture.md"
+  },
+  {
+   "has": "organize-downloads/README.md"
+  },
+  {
+   "has": "organize-downloads"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/calls/0010-ccs.json"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/calls/0013-ccs.json"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/calls/0016-result.json"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "running organize-downloads --apply to move each listed file into its type folder with nothing overwritten or deleted, and maintaining it with every test passing"
+  },
+  {
+   "serves": "AC2: Told explicitly to move, such as with an option, the tool moves each file it lists into that type folder inside the organized folder, such as ~/Downloads/Images, making the folder where it is missing; each moved file keeps its name, and nothing outside the organized folder changes."
+  },
+  {
+   "serves": "AC4: When a file of the same name is already in the folder a file would go to, the tool leaves that file where it is, overwrites and renames nothing, and tells the user it did not move it."
+  },
+  {
+   "serves": "AC7: AC1 to AC6 and AC8 to AC10 each hold on both macOS and Linux, shown on the pull request by the tool's tests, which GitHub Actions runs on both on every push."
+  },
+  {
+   "serves": "AC10: The tool only moves files and never deletes anything: after any run, organizing or undo, each file that was in the organized folder or in its type folders before the run is still in one of them under the same name, and every folder is still there, a type folder that undo leaves empty included."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "the work given as cli.py, the new mover.py and record.py, and organize.py and type_table.py where the moving touches them: a run may write only the paths its CCS names"
+  },
+  {
+   "chosen": "the tool and the tests of T4.1 handed as organize-downloads: the action makes the moving until every test passes"
+  },
+  {
+   "chosen": "the result of T4.1 handed: its choices fix the interface and the output the tests ask of the moving"
+  },
+  {
+   "chosen": "the CCSs of T3.2 and T3.3 handed: their decisions, Python 3.10, the standard library alone, the Linux stop and the mutants left, hold for this code too"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+  }
+ ]
+}
