@@ -16,6 +16,9 @@
   },
   {
    "decision": "Operating systems: The tool works on both macOS and Linux. Windows is not needed."
+  },
+  {
+   "decision": "Preview before moving: Run with no options, the tool only lists the moves it would make and moves nothing; it moves files only when the user explicitly tells it to. Undoing a run is left to the user by hand."
   }
  ]
 }
