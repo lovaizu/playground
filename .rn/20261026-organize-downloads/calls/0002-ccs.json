@@ -28,6 +28,9 @@
   },
   {
    "decision": "File of no known type: A file whose extension matches no type, or that has none, is moved into an Other folder"
+  },
+  {
+   "decision": "Hidden files and downloads in progress: Files whose names start with '.' and downloads still in progress (.crdownload, .part, .download) are left in place, not moved"
   }
  ]
 }
