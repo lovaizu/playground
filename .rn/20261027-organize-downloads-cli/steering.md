@@ -27,12 +27,6 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Tasks
 
-- T7: The GitHub Actions workflow with every action it uses pinned to a full-length commit SHA, as lovaizu/playground allows no other. Serves AC7.
-
-  Completion criterion: The GitHub Actions run of the push that keeps the workflow runs every job on macOS and Linux to its end and passes, the tests of T3 included; checked on the run of that push.
-
-  - [ ] 1. Make the workflow again from the one T3 made, each action pinned to the full commit SHA of a released version with that version in a comment beside it, `.github/workflows/organize-downloads.yml` as a code work. turn.
-
 - T4: The run with --apply, moving each listed file into its type folder. Serves AC2, AC4, AC7, AC10.
 
   Completion criterion: organize-downloads --apply moves each file the run with nothing added lists into its type folder inside the organized folder under the same name, making the folder where it is missing, and records the moves in the organized folder's hidden record file; it leaves a file whose name is taken in its type folder where it is and says so; where hard links cannot be made it moves nothing and says so; it deletes nothing and changes nothing outside the organized folder; the tests action 1 makes hold each of these and pass here on Linux, and in the GitHub Actions run of the push on macOS and Linux.
@@ -59,8 +53,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 3 of /rn:up on t7.1: ask turn's question on Dependabot, then send the answer to the run waiting
+Step 4 of /rn:up on T7: weigh what it brought, the GitHub Actions run of the push first
 
 ## Open
 
-- turn asks for t7.1 (code B-5): whether .github/dependabot.yml is added, checking the workflow's actions each week and opening a pull request that updates each pinned SHA and its version comment; recommended: add it
+None.

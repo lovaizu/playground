@@ -11,13 +11,36 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
+        # The first is the oldest Python, the one requires-python in pyproject.toml names; the step
+        # "Check the oldest Python" fails where the two differ.
         python: ["3.10", "3.x"]
     runs-on: ${{ matrix.os }}
     # lovaizu/playground runs an action only when it is pinned to a full-length commit SHA, which
     # names one commit for good, where a tag such as v7 can be moved. Each SHA is that of the
-    # release named in the comment beside it; to update an action, change both together.
+    # release named in the comment beside it. To update an action, change both together, the SHA
+    # being the commit its release's tag names, as `git ls-remote <action's repository URL>
+    # refs/tags/<release>*` prints it, on the line ending in ^{} where it prints two.
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      # A lowered requires-python with the matrix left as it was would pass every job while the
+      # new oldest Python is never tested.
+      - name: Check the oldest Python is the one pyproject.toml requires
+        if: matrix.python != '3.x'
+        run: |
+          project=organize-downloads/pyproject.toml
+          line=$(grep -E '^requires-python[[:space:]]*=' "$project" || true)
+          # The version after ">=", in any quotes and spacing and beside any other bound.
+          oldest=$(printf '%s\n' "$line" | sed -nE 's/.*>=[[:space:]]*([0-9]+(\.[0-9]+)*).*/\1/p')
+          if [ "$oldest" != "${{ matrix.python }}" ]; then
+            echo "The matrix tests ${{ matrix.python }} as the oldest Python, but $project has:"
+            echo "${line:-(no requires-python line)}"
+            if [ -z "$oldest" ]; then
+              echo "Give requires-python the oldest Python as \">=<version>\", such as \">=3.10\"."
+            else
+              echo "Make the first python of this workflow's matrix \"$oldest\"."
+            fi
+            exit 1
+          fi
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: ${{ matrix.python }}
