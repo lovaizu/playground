@@ -27,9 +27,9 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Next
 
-Step 2 of /rn:up on plan: ask where the record of the last move is kept, then write the plan again (step 3) and the plan sign-off (step 5)
+Step 2 of /rn:up on plan: ask what undoing does with the kinds' folders left empty, then write the plan again (step 3) and the plan sign-off (step 5)
 
 ## Open
 
 - 直前の移動を元に戻せるようにしてください。元に戻すと、前回の実行で移した各ファイルが元の場所に戻るようにしてほしいです（「元に戻すのは手作業」という決定はこれで置き換えてください）。
-- Where the record of the last move is kept: undoing needs a record of what the last run moved, and AC7 says a run adds nothing but the kinds' folders, so a record inside the folder would break AC7 as written.
+- What undoing does with a kind's folder that the undone run made and that is left empty after the files go back: the decisions say only that each file returns.
