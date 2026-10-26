@@ -25,6 +25,9 @@
   },
   {
    "decision": "Undo where the name is taken: Where a file of the same name is already at the place a file would go back to, undo leaves that file in its kind folder and reports it"
+  },
+  {
+   "decision": "Folders left empty by undo: Undo removes each kind folder that run made once it is empty, leaving folders that were there before or still hold a file"
   }
  ]
 }
