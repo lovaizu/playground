@@ -35,7 +35,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T1: weigh what it brought
+Step 4 of /rn:up on T2: action 1, have turn make the architecture
 
 ## Open
 
