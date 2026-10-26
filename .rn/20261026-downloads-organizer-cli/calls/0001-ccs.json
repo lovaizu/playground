@@ -10,6 +10,9 @@
  "constraints": [
   {
    "decision": "What organizing does: Move only the files directly in Downloads into folders by kind, such as images, documents and archives; never delete, rename or overwrite any file"
+  },
+  {
+   "decision": "Why it is wanted: Make the wanted file easy to find in a cluttered Downloads folder; the user runs it by hand when they feel like it"
   }
  ]
 }
