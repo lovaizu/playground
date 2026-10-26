@@ -5,11 +5,45 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "readme"
+  },
+  {
+   "path": "README.md"
+  },
+  {
+   "audience": "someone meeting tidy-downloads for the first time, with only what a newcomer has"
+  },
+  {
+   "has": "docs/ux.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "deciding from the README alone whether the tool is for them, and if it is, installing it and using it to a first result"
+  },
+  {
+   "serves": "AC7: A README says how to install the tool and how to use it."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md"
   }
  ],
  "constraints": [
   {
    "decision": "How the tool is installed: The user installs tidy-downloads by copying its one file into a folder on their PATH, such as ~/.local/bin, and making it runnable"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
   }
  ]
 }
