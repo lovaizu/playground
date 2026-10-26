@@ -24,10 +24,9 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 2 of /rn:up on plan: settle what undo does where a file of the same name is back in the original place, then whether undo removes kind folders it leaves empty; then step 3 on plan and step 5 on plan
+Step 2 of /rn:up on plan: settle whether undo removes kind folders it leaves empty; then step 3 on plan and step 5 on plan
 
 ## Open
 
 - 最後の実行を取り消せるようにしてほしいです。取り消すと、その実行で移した各ファイルが元の場所へ戻るように。テストでもこれを確かめてください。
-- Undo: what happens where a file of the same name is already at the place a file would go back to (decision 'Undoing the last run' does not say)
 - Undo: whether kind folders left empty after undo are removed or kept
