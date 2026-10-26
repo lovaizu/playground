@@ -5,11 +5,42 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "issue"
+  },
+  {
+   "path": ".rn/20261026-downloads-organizer-cli/issue-3.md"
+  },
+  {
+   "audience": "rn's makers, reading the issue on lovaizu/ccpm, who build rn for all its users"
+  },
+  {
+   "has": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "deciding how rn changes so that every user's later work meets the need"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md"
   }
  ],
  "constraints": [
   {
    "decision": "Learning: rn.py decide keeps any number of decisions for a work, but rn.py proposal refuses a sign-off for a work with more than 5, and a done task's work can no longer be changed, so the design sign-off cannot be shown"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
   }
  ]
 }
