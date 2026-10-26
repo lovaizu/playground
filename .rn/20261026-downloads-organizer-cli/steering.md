@@ -29,15 +29,14 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
   Completion criterion: from `docs/architecture.md`, whoever builds the tool can tell the user stories drawn from `docs/ux.md`, the parts that take them on, the technology of each, where the record that undo reads is kept, and how each part and story is checked on a test folder, never the real Downloads folder, so that every item of the architecture checklist holds, as a first reader in a builder's place finds.
 
-  - [ ] 1. Where the record that undo reads is kept. The orchestrator, with the user.
+  - [x] 1. Where the record that undo reads is kept. The orchestrator, with the user.
   - [ ] 2. The architecture, from `docs/ux.md`, `README.md` and what action 1 settled, `docs/architecture.md` as an architecture work. turn.
 
 ## Next
 
-Step 4 of /rn:up on T3: action 1, settle with the user where the record that undo reads is kept
+Step 4 of /rn:up on T3: action 2, have turn make docs/architecture.md
 
 ## Open
 
-- T3 action 1: where the record that undo reads is kept is not yet settled
 - The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decisions 'What the README is checked against now' and 'How the README run ends' of t2.2); the build-stage plan must carry this
 - The LICENSE file for the MIT license (decision 'License' of t2.2) is not yet made; the build-stage plan must carry it
