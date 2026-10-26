@@ -5,6 +5,28 @@
   },
   {
    "stage": "plan"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261027-organize-downloads-cli/calls/0003-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -70,6 +92,15 @@
   },
   {
    "decision": "Undo again after undo: Once undo has put files back, the record is used up: undo run again moves nothing and tells the user there is nothing to put back; undo does not count as a run that moved files."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
   }
  ]
 }
