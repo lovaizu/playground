@@ -1,0 +1,91 @@
+{
+ "focal_entities": [
+  {
+   "work": "t4.1"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "code"
+  },
+  {
+   "path": "organize-downloads/tests/__init__.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_mover.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_record.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_cli.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_stories.py"
+  },
+  {
+   "audience": "whoever runs the tests and whoever maintains the tool, a person or an AI"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  },
+  {
+   "has": "organize-downloads/docs/architecture.md"
+  },
+  {
+   "has": "organize-downloads/README.md"
+  },
+  {
+   "has": "organize-downloads"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/calls/0010-ccs.json"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/calls/0013-ccs.json"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "running the tests to trust that the run with --apply does what AC2, AC4 and AC10 ask, and seeing them fail on what T3 built"
+  },
+  {
+   "serves": "AC2: Told explicitly to move, such as with an option, the tool moves each file it lists into that type folder inside the organized folder, such as ~/Downloads/Images, making the folder where it is missing; each moved file keeps its name, and nothing outside the organized folder changes."
+  },
+  {
+   "serves": "AC4: When a file of the same name is already in the folder a file would go to, the tool leaves that file where it is, overwrites and renames nothing, and tells the user it did not move it."
+  },
+  {
+   "serves": "AC7: AC1 to AC6 and AC8 to AC10 each hold on both macOS and Linux, shown on the pull request by the tool's tests, which GitHub Actions runs on both on every push."
+  },
+  {
+   "serves": "AC10: The tool only moves files and never deletes anything: after any run, organizing or undo, each file that was in the organized folder or in its type folders before the run is still in one of them under the same name, and every folder is still there, a type folder that undo leaves empty included."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "the work given as the test files the run with --apply touches, test_mover.py and test_record.py new for the architecture's Mover and Run record: a run may write only the paths its CCS names"
+  },
+  {
+   "chosen": "the tool as T3 built it handed as organize-downloads: the tests are seen failing on it and extend its tests"
+  },
+  {
+   "chosen": "the CCSs of T3.2 and T3.3 handed: their decisions, Python 3.10, tests on the standard library alone, the Linux stop and the mutants left, hold for these tests too"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+  }
+ ]
+}
