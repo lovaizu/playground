@@ -1,0 +1,5 @@
+# Made by Python when it runs the tool or its tests.
+__pycache__/
+# Made by setuptools when the tests' command or pipx builds the package.
+build/
+*.egg-info/

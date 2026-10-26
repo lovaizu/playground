@@ -1,0 +1,261 @@
+{
+ "work": [
+  "organize-downloads/tests/__init__.py",
+  "organize-downloads/tests/test_type_table.py",
+  "organize-downloads/tests/test_folder.py",
+  "organize-downloads/tests/test_organize.py",
+  "organize-downloads/tests/test_cli.py",
+  "organize-downloads/tests/test_stories.py",
+  "organize-downloads/.gitignore"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "F-1",
+   "good": "Every file opens with a docstring saying what it checks and why; test_stories.py also says why one test compares the installed package with src. Every helper says what it takes in, gives back and when it stops, with type hints (write_user_dirs, make_home, snapshot and make_files stop with OSError; run_command with FileNotFoundError; installed_package with subprocess.CalledProcessError). Every test is named as one sentence of what must happen and carries Given / When / Then comments in plain words; the property tests add a 'Property:' line. I found what each test checks without reading any body.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:1-124",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_type_table.py:1-194",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:1-236",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_organize.py:1-190",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:1-139",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:1-187",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/.gitignore:1-5"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-1",
+   "good": "The tests import only Python's standard library, as the architecture's Test section asks. The newest feature used is subprocess.run(capture_output=...), from Python 3.7, and the development rules name no lower version than 'Python 3'. Folder finder is given the system name as an argument, so the macOS and Linux ways, the plain-file stops included, are checked on either system; the one Linux-only story is skipped elsewhere, with the reason written. The code-under-test check finds the command's own Python beside the script, or else from its #! line, and runs it with -I; I saw it work with an install by `uv tool install` and with the env `uv run --with` makes. Against a throwaway reference build, the steering file's test command ran 46 tests OK here.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:12-15",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:1-16",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:11-56",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:171-173"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-2",
+   "good": "Each stop can be cleared by doing what it says. In a mktemp copy with a minimal pyproject and a throwaway src, I ran the steering file's test command, made a breaking edit to src/organize_downloads/cli.py, and ran it again. test_the_command_on_path_runs_the_code_under_test stopped, naming the installed package, 'differs from .../src/organize_downloads in cli.py', and the action. I ran the action's uv command, `uv run --isolated --no-project --no-cache --with ./organize-downloads ...`: that stop was gone, and the real fault showed instead (test_cli's no-folder test and two stories failed). With the edit undone, the same command gave 46 OK. The pipx half, `pipx install --force`, I saw clear it through its stand-in `uv tool install --force`. The stops the tests ask of the tool name the path, ~/Downloads, the named folder or the settings file, the default folder that is a plain file included, on standard error with a failing status. The not-on-PATH stop names the same working actions.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:26-33",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:99-125",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:171-187",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:124-139",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:62-111",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:177-236"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-3",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:1-124",
+     "good": "The opening says why the AC3 table and AC5 endings live here and how discover finds the package either way. Each helper's docstring tells what it takes, gives and stops with. The listing regular expression is explained with an example line.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:1-124"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_type_table.py:1-194",
+     "good": "The opening says the expected values come from tests/__init__.py and why. The NAME_CHARACTERS comment says truly what the set holds and leaves out: string.printable less '/' and '.', plus a few letters beyond ASCII. A fault that misreads names with line breaks failed 56-66 subtests on each of three runs. Each test name says the rule it holds.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_type_table.py:1-38",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_type_table.py:41-194"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:1-236",
+     "good": "The opening gives find_organized_folder's arguments and why the system name is passed in. The FOLDER_NAME_CHARACTERS and shell_escaped comments say what xdg-user-dirs escapes, and the settings-form test (lines 191-192) says why the unquoted forms name no folder.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:1-43",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:186-205"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_organize.py:1-190",
+     "good": "The opening gives plan_moves' result (name, type_folder) and why the moves are compared sorted. planned and FAILED_CONTENTS say what they hold.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_organize.py:1-35"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:1-139",
+     "good": "The opening says each test calls cli.main with what the user types and why the no-folder test sets HOME. run_main's docstring gives the triple it returns.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:1-38"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:1-187",
+     "good": "The opening says which command the stories run and that a stale install fails one test. The INSTALL_HINT comment now says why uv needs --no-cache, and what it says is so: after an edit, the plain uv command ran the cached build and the --no-cache one built the code as it is. installed_package says why it runs Python with -I, and the skip says why it is Linux-only.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:1-61",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:171-173"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/.gitignore:1-5",
+     "good": "Each rule has a comment saying what makes the files it keeps out.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/.gitignore:1-5"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-4",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:1-124",
+     "good": "Each helper is used by more than one test module, and each branch of snapshot is needed by a test that makes that kind of entry (links, a named pipe). write_user_dirs gives back its path because the stop tests assert it.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:17-124"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_type_table.py:1-194",
+     "good": "random_case and random_stem serve the property tests; FAILED_NAMES is the kept-example list B-6 asks for.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_type_table.py:16-38"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:1-236",
+     "good": "shell_escaped serves the property test that needs it, and assertSameFolder serves the temp paths that macOS spells through a link. Each test takes a partition no other test takes.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:22-43",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:104-111",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:228-236"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_organize.py:1-190",
+     "good": "planned turns the moves into the sorted pairs every test compares, so no test depends on an order AC1 leaves open.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_organize.py:18-35"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:1-139",
+     "good": "run_main gives back exactly the status, output and errors the tests assert; the errors are used by StopTest.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:22-38"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:1-187",
+     "good": "SOURCE, INSTALL_HINT, installed_package and python_files each serve the one check that the stories run the code under test. INSTALL_HINT is written once for both tests that print it. The #! fallback serves an install whose script is copied rather than linked, as the docstring says.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:21-81",
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:95-125"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/.gitignore:1-5",
+     "good": "Three rules, each for something a test run makes.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/.gitignore:1-5"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-5",
+   "good": "After the steering file's test command in a git-initialised mktemp copy, `git status --porcelain --untracked-files=all` showed nothing untracked: build/ and *.egg-info/ are kept out beside __pycache__/. The AC3 table and the AC5 endings are written once, in tests/__init__.py. The listing line format is written once, as _MOVE_LINE. The install hint is written once and printed by both tests. 'type folder' and 'organized folder' keep one name each throughout.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/.gitignore:1-5",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:17-34",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/__init__.py:108-110",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:26-33"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-6",
+   "good": "Each fault I put in a throwaway reference build was caught by some test: following symbolic links, no hidden check, looking inside folders, case-sensitive extensions or download endings, Others misnamed, an extra extension, no unescaping of xdg-user-dirs' backslashes, home itself accepted, a missing ~/Downloads or named folder accepted, a default folder that is a plain file accepted (macOS and Linux), exit 0 on a stop, the stop on stdout, a record file written by a listing run, a misreading of names with line breaks, and a run with no folder given organizing the current folder. Expected values come from tests/__init__.py, not from the code, and each property test keeps a failed-input list.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_type_table.py:41-194",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:46-236",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_organize.py:37-190",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:41-139",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:128-187"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-7",
+   "good": "A stale build can no longer pass for a good one. With a stale `uv tool install` and with the cached build of the plain uv command, a breaking edit to cli.py made test_the_command_on_path_runs_the_code_under_test fail, naming the file that differs. With the build cached, that was the only failure, so it was not mistaken for the edit's fault. With the hint's --no-cache command, the edit's own fault showed in test_cli and the stories. So a story result is either about the code under test, or one test says it is not and which file differs. Each test has its own temporary folder, none needs another first, and nothing is left behind.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:1-9",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:21-61",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:106-125"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-8",
+   "good": "No test sets up by running another program. The only subprocesses are the three story runs of the command and the one isolated Python that finds the installed package, and every test makes its few files in a TemporaryDirectory. Against the reference build, the 46 tests themselves ran in about 0.08 s. The steering command took 1.2 s wall time, with --no-cache (a fresh build each run) as well.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:36-92",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:33-43",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_organize.py:28-35",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:32-38"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-9",
+   "good": "Every place a test writes is its own: a fresh TemporaryDirectory per test, and per content in the planner property test. Each story has its own HOME and cwd. The CLI test's HOME change is made with mock.patch.dict inside its own process and undone after. The code-under-test check only reads. No fixed path, port or shared folder is written, so two runs at once cannot meet.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_folder.py:33-39",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_organize.py:28-35",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_organize.py:170-189",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:107-121",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_stories.py:36-92"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The interfaces the tests fix for t3.3: type_table.type_folder_for(name) -> folder name and type_table.is_still_downloading(name) -> bool; folder.find_organized_folder(given: str | None, system: str as platform.system() gives it, home: Path) -> Path, raising folder.FolderNotFound with a message; organize.plan_moves(folder) -> moves each with .name and .type_folder; cli.main(arguments) -> exit status, printing the listing to stdout and stops to stderr.",
+   "why": "The architecture names the modules and Command line's main but no function inside them; tests made first must call something, and passing the system and home in lets one machine check both systems without reading the user's home."
+  },
+  {
+   "chosen": "A listed move is read as a line of the file's name indented, then '->', then the type folder followed by '/', and other lines are ignored.",
+   "why": "It is the form the README's Example shows, and reading only those lines leaves the heading and closing words to the README and t3.3."
+  },
+  {
+   "chosen": "The run stops, naming the path, also where a given path is missing or a file, where ~/Downloads is missing or a file on macOS, and where the folder the Linux settings name is missing or a file; any XDG_DOWNLOAD_DIR line not in xdg-user-dirs' two forms (\"$HOME/...\" or \"/...\" in double quotes) counts as naming no folder.",
+   "why": "Nothing can be organized in a folder that is not there, so code B-2 asks for a stop that names it rather than a traceback; xdg-user-dirs itself documents only those two forms, so another counts as naming none under the user's decision."
+  },
+  {
+   "chosen": "The settings file is read only from <home>/.config/user-dirs.dirs, and the command line and story tests drop XDG_CONFIG_HOME from the environment.",
+   "why": "The user's decision names ~/.config/user-dirs.dirs; dropping the variable keeps a runner that sets it from changing which file the tests make the command read."
+  },
+  {
+   "chosen": "Values the requirements settle (AC3's table, AC5's endings) and the helpers several modules use live in tests/__init__.py and are imported with `from tests import ...`.",
+   "why": "The expected values must not come from the code (B-6) and must be written once (B-5); that import works under both the task's command (-t organize-downloads) and the workflow's (-s tests run in organize-downloads, the folder being sys.path[0])."
+  },
+  {
+   "chosen": "Property tests draw from an unseeded random.Random, 500 names, 200 folder names or 50 folder contents each, and a failing input is kept by pasting what subTest prints into the module's FAILED_* list.",
+   "why": "The user chose the standard random module with each failing input kept as an example; printing the input itself makes a seed needless, and these sizes keep the run under a second."
+  },
+  {
+   "chosen": "The story with the Linux settings naming no download folder is skipped on systems other than Linux, with the reason beside it.",
+   "why": "On macOS the settings file decides nothing, so the story has nothing to show there; the module test still checks the Linux way on both systems."
+  },
+  {
+   "chosen": "A story test checks that the command on PATH runs the code in src, by comparing the .py files of the package the command's own Python (found beside the script, or on its #! line, and run with -I) imports with those in src, and its stop names `pipx install --force` or the uv command with --no-cache.",
+   "why": "The stories run whatever is installed, and both an earlier install and uv's cached build of the folder run old code; comparing files tells this apart without adding an option to the tool, and --no-cache was seen to make uv build src as it is, where the plain command, --refresh and --reinstall did not."
+  },
+  {
+   "chosen": "organize-downloads/.gitignore also ignores build/ and *.egg-info/.",
+   "why": "The task's test command builds the package with setuptools, which leaves both in the tree; the CCS gives this file to keep out what running the tests makes."
+  }
+ ]
+}
