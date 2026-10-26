@@ -34,6 +34,9 @@
   },
   {
    "decision": "What is left in place: The tool never moves folders (the type folders included), hidden files whose names begin with a dot (such as macOS's .DS_Store and .localized), or files still being downloaded (such as Chrome's .crdownload, Firefox's .part and Safari's .download); it leaves them where they are and does not look inside folders."
+  },
+  {
+   "decision": "Folder to organize: With no folder given, the tool organizes the user's own Downloads folder: ~/Downloads on macOS, and on Linux the download folder the OS settings (xdg-user-dirs) name, such as ~/ダウンロード. The user can also give another folder to organize instead."
   }
  ]
 }
