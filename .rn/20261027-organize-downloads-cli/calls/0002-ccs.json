@@ -1,0 +1,45 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "plan"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: The user wants to find the file they need in their Downloads folder right away."
+  },
+  {
+   "decision": "What organizing does: The tool sorts the files in the Downloads folder into folders by file type."
+  },
+  {
+   "decision": "Operating systems: The tool works on both macOS and Linux; Windows is not needed."
+  },
+  {
+   "decision": "How it is run: The user runs the tool by typing a command in the terminal whenever they want to organize; it does not run on its own on a schedule."
+  },
+  {
+   "decision": "Guarding against mistakes: Run with nothing added, the tool only lists what it would move and where, and moves nothing; it moves files only when the user tells it to explicitly, such as with an option. There is no undo."
+  },
+  {
+   "decision": "Same name at the destination: When a file of the same name is already in the folder a file would go to, the tool leaves that file where it is, never overwriting or renaming anything, and tells the user it did not move it."
+  },
+  {
+   "decision": "File types and their folders: The tool tells a file's type by its extension and uses a fixed set of folders that the user cannot change: Images (pictures), Documents (documents, PDFs, spreadsheets), Archives (zip and the like), Audio, Video, Installers (.dmg, .deb and the like), and Others for a file that fits none of them. Which extensions go in each folder is still to be settled."
+  },
+  {
+   "decision": "Where the type folders go: The type folders are made inside the folder being organized, such as ~/Downloads/Images; nothing outside it is touched."
+  },
+  {
+   "decision": "What is left in place: The tool never moves folders (the type folders included), hidden files whose names begin with a dot (such as macOS's .DS_Store and .localized), or files still being downloaded (such as Chrome's .crdownload, Firefox's .part and Safari's .download); it leaves them where they are and does not look inside folders."
+  },
+  {
+   "decision": "Folder to organize: With no folder given, the tool organizes the user's own Downloads folder: ~/Downloads on macOS, and on Linux the download folder the OS settings (xdg-user-dirs) name, such as ~/ダウンロード. The user can also give another folder to organize instead."
+  },
+  {
+   "decision": "Checking on macOS: The tool's tests run on both macOS and Linux with GitHub Actions on every push, so the pull request shows that it works on macOS as well as Linux."
+  }
+ ]
+}
