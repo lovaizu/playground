@@ -11,8 +11,8 @@ conversation-language: Japanese
 
 ## Next
 
-Step 8 of /rn:up on plan: hear the purpose and what shows it done
+Step 2 of /rn:up on plan: ask where a file whose extension matches no type goes, then step 3 on plan again
 
 ## Open
 
-None.
+- Done when says every file directly in Downloads is moved into its type folder, but no decision says where a file whose extension matches no type (or has none) goes
