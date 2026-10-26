@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "issue-3"
+  },
+  {
+   "stage": "design"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Learning: rn.py decide keeps any number of decisions for a work, but rn.py proposal refuses a sign-off for a work with more than 5, and a done task's work can no longer be changed, so the design sign-off cannot be shown"
+  }
+ ]
+}
