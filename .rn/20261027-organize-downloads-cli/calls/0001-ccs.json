@@ -16,6 +16,9 @@
   },
   {
    "decision": "Operating systems: The tool works on both macOS and Linux; Windows is not needed."
+  },
+  {
+   "decision": "How it is run: The user runs the tool by typing a command in the terminal whenever they want to organize; it does not run on its own on a schedule."
   }
  ]
 }
