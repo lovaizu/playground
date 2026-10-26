@@ -35,8 +35,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 3 of /rn:up on t2.1: add the figure's SVG to the CCS, then send the answer to the run waiting
+Step 2 of /rn:up on t2.1: ask how Mover moves where hard links are not available, then step 3 on t2.1 again
 
 ## Open
 
-- turn asks for t2.1 (architecture F-1, B-3): whether organize-downloads/docs/architecture.svg, the Logical view's figure, is added as a file of the work; recommended: add it
+- organize-downloads/docs/architecture.md:62-66: Mover moves by hard link then removing the old name, a choice no answer of the user's made; a hard link fails on file systems without them, such as a USB drive formatted exFAT or FAT32, so a folder given there (AC6) could not be organized

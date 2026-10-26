@@ -1,0 +1,128 @@
+{
+ "work": [
+  "organize-downloads/docs/architecture.md",
+  "organize-downloads/docs/architecture.svg"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "F-1",
+   "good": "Reading from the top I meet the template's parts in its order and under its headings: the title, one sentence on how the tool is put together with a link to the README where what the user sees is defined (the link resolves to organize-downloads/README.md), its principles each in a line with the why indented under it, User stories as 'As the user, I want ...', Architecture with a Logical view that is architecture.svg shown as an image and lines on what the figure cannot show, a Physical view tree with what each place is made of and lines on dependencies and starting, and Test. The SVG parses as XML, has a box per component holding only its name, a legend for code versus outside, a frame round the product, labelled arrows, and a prefers-color-scheme dark style; working through the arrow coordinates no two arrows cross. Test has no link because the repository has no rules for checking, which line 111 says, and the tool's own rules follow in the template's list form. No bold is used; each list line is one sentence, its why after a blank line indented.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:1-17",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:18-30",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:31-108",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:109-128",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.svg:1-117"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-1",
+   "good": "From the opening I can tell how the tool is put together: one command whose parts first work out what to move and only move it when told, writing down each move so undo can move it back (lines 3-5). I also get the principles every later decision is held to, each in a line with its why, and each a rule rather than a means: every move is shown before any is made, and nothing moves without --apply; only the user's files are moved, into type folders and back, with none overwritten, renamed or deleted; nothing outside the organized folder changes; the tool runs only when typed, and needs no package beyond its language's runtime, so the user has nothing else to keep up to date. The tool is built on nothing that has principles of its own, so there is nothing to link.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:3-16"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-2",
+   "good": "Every scene of the README rests on one of the six stories, each one way the user uses the tool at its edge: installing with pipx or uv (README Installation) on lines 20-21; the listing run, for Downloads or a folder named last (README Example lines 19-31 and 65-72), on lines 22-23; the --apply run on line 24; undo listing on lines 25-26; undo --apply on line 27; and --help for which files are left in place and which extensions go where (README Documentation) on lines 28-29. No story is a step inside the tool, none repeats another, and none is named by a technology the architecture picks; pipx and uv are what the README itself has the user type.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:18-30"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-3",
+   "good": "For each story I could follow a run of arrows in the figure with the line beside it that says the order and what each part does with what it is handed: install, pipx or uv puts Command line on PATH (svg 65-66, md 38-39); listing, Command line asks Folder finder for the folder, which reads the xdg-user-dirs settings on Linux, then asks Organize planner, which lists the folder's files and looks up extensions in Type table, sets apart taken names and leaves downloads in progress, folders and hidden files, and Command line prints (svg 73-92, md 40-45); --apply, Command line hands the moves to Mover, which makes missing type folders, moves each file, records it in Run record kept in the organized folder, and hands back what it did not move to be printed (svg 81-82, 100-108, md 46-48); undo listing, Undo planner reads the last moves from Run record and checks each against the folder (svg 94-98, md 49-50); undo --apply goes through the same Mover, which leaves Run record's file holding no moves so undo typed again finds nothing (md 51-54, 71-73); --help is written from Type table (svg 75-76, md 55-57). The choices a builder would question are given with why: only Mover, and Run record as Mover writes to it, change the folder, so a listing run changes nothing (md 58-61); a hard link then removing the old name, so even a file arriving after planning is never overwritten (md 62-66); Run record replacing its own file by renaming a new one over it, so an interrupted write leaves the last record whole (md 67-70); one shared Mover (md 71-73); reading the xdg settings file rather than running a program (md 74-78). Every box holds only a name, and no component or path serves one case alone.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:33-78",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.svg:33-117"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-4",
+   "good": "Each of the figure's seven components has a file in the tree with its kind beside it (cli.py Command line <Python 3, argparse> to record.py Run record <Python 3, json>), and Run record's own file .organize-last-run <JSON> is placed in the organized folder. The build file, the workflow and the tests have their kinds too. Lines 104-107 say the tool depends at run time on Python 3 and its standard library alone, with pipx or uv fetching setuptools from PyPI to build it, and that it starts as the console script pyproject.toml names, which calls main in cli.py. Files are drawn as a tree, not as boxes.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:80-107"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-5",
+   "good": "Line 111 tells me the repository has no rules for checking (the repo holds no such file beside organize-downloads, whose folder has only LICENSE, README.md and docs), so the tool sets its own, which is the decision made for t2.1. From the rules I can tell how each kind of part in the tree is checked: each Python module by a unittest test_<module>.py, as Given, When, Then on a temporary folder; the user stories by test_stories.py running the installed command end to end; pyproject.toml and the console script by the workflow's pipx install, which the stories then use; and all of it on ubuntu-latest and macos-latest on every push, which gives AC7. The workflow's commands work as written: unittest discover with -s tests finds test_*.py by its default pattern without a package file, and PYTHONPATH=src makes organize_downloads importable from the source. No case's inputs or bar to pass is written here.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:109-128"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-6",
+   "good": "Each line and arrow holds together with the principles. The 'overwrites nothing' principle now guards the user's files and itself names the type folders the tool makes (lines 10-11), so Mover making folders and moving files by hard link and removal (lines 46-48, 62-66) keeps it. Run record replacing its own file by renaming over it (lines 67-68) is said to be the one file the tool replaces, being its own and not the user's, so it does not clash with line 63's 'never by renaming over' a user's file or with line 73's 'overwrite nothing'. Leaving that file in place after undo (lines 51-54) keeps 'deletes nothing'. Only Mover and Run record write, both inside the organized folder (lines 58-61, svg 100-108), which keeps the principles that a run without --apply changes nothing and that nothing outside the folder changes (lines 7-12). Reading the xdg settings file rather than running a program (lines 74-78) and the standard-library-only realization (line 104) keep line 13.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:7-16",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:46-78",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:104-105",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.svg:100-108"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-7",
+   "good": "Each line is a decision whose change would change what is approved, and each is said once. That undo leaves Run record's file in place holding no moves is now said only in lines 51-54, with its why. The principle on line 13 (no package beyond the language's runtime) and the Physical view's dependency on line 104 (Python 3 and its standard library) are now a rule and its realization, not one fact twice. Case behavior, such as which extension goes to which folder or what is printed, is left to the tests and the README. No line tells how a decision was reached or where the work stands, and no terms are gathered ahead of the lines that use them.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:1-128",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.svg:1-117"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-8",
+   "good": "Reading once from the top, each line was understood where I met it. The README, where what the user types and sees is defined, is linked in the opening, so --apply, undo and the type folders are found there. xdg-user-dirs is linked and said in a line to be the freedesktop.org tool that names the user's folders. pipx, uv, setuptools, PyPI and GitHub Actions are each given with what they do here (build and put the command on PATH, fetched to build it, runs the tests). Each component keeps one name throughout, the same in the figure, the lines and the tree, and Run record and Run record's file are told apart. 'Organized folder' is plain as the folder being organized, and lines 40-41 say which folder it is. No line rests on a reason that comes after it.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:1-128",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.svg:1-117"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The seven components and their names: Command line, Folder finder, Organize planner, Undo planner, Mover, Type table, Run record.",
+   "why": "Each takes one job the stories share; planning apart from moving lets a run without --apply change nothing by construction, and one Mover serves organizing and undo alike."
+  },
+  {
+   "chosen": "Mover moves by making a hard link under the new name and then removing the old name.",
+   "why": "Python's rename overwrites a taken name silently on macOS and Linux; a link fails instead, even against a download that finished after the plan, keeping the never-overwrite principle."
+  },
+  {
+   "chosen": "Run record writes its file by writing a new one beside it and renaming it over the old, the only file the tool replaces; the never-overwrite principle is on the user's files.",
+   "why": "An interrupted write then leaves the last record whole; the record is the tool's own, and it cannot work if it may never be rewritten. Checked here with os.replace on a temporary folder."
+  },
+  {
+   "chosen": "After undo --apply, Run record's .organize-last-run is kept holding no moves rather than removed, and is JSON.",
+   "why": "The tool deletes nothing in the organized folder, and JSON is read and written by the standard library."
+  },
+  {
+   "chosen": "On Linux, Folder finder reads xdg-user-dirs' settings file rather than running the xdg-user-dir command.",
+   "why": "The tool then runs no other program and needs nothing beyond its language's runtime."
+  },
+  {
+   "chosen": "Type table also holds the endings of files still being downloaded, and Command line writes --help from it.",
+   "why": "One place then holds which files go where and which stay, so --help and the planner never differ."
+  },
+  {
+   "chosen": "The layout: src/organize_downloads with one module per component (type_table.py, not types.py), pyproject.toml built with setuptools and a console script organize-downloads calling cli.main, tests/test_<module>.py and tests/test_stories.py, and the workflow at .github/workflows/organize-downloads.yml in the repository root.",
+   "why": "pipx and uv install from a subdirectory through pyproject.toml, GitHub Actions reads workflows only from the root, and types.py would shadow the standard library's module; setuptools is the most common build backend and is fetched only to build."
+  },
+  {
+   "chosen": "The workflow installs with pipx install ./organize-downloads from the checkout and runs PYTHONPATH=src python3 -m unittest discover -s tests with each runner's own python3.",
+   "why": "pipx is on both runner images and installs as the README does, so the stories run the command the user gets; installing from the checkout tests the pushed code without depending on the GitHub URL; checked here with uv tool install on a stand-in package."
+  },
+  {
+   "chosen": "The figure's look: dashed rounded boxes for what is outside the tool, a blue frame for the tool, colours switched by prefers-color-scheme on a background of their own.",
+   "why": "The checklist asks for the shape to tell code from what is not, and for the figure to read in light and dark; no part is done by an AI, so the legend shows no AI shape and a line says so."
+  }
+ ]
+}
