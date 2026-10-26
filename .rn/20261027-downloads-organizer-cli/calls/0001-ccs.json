@@ -10,6 +10,9 @@
  "constraints": [
   {
    "decision": "Why organize: The user cannot quickly find the file they are looking for in their Downloads folder; the tool is to make files there quick to find. It must not delete files."
+  },
+  {
+   "decision": "How files are organized: Files directly in the Downloads folder, and only those, are moved into subfolders by kind (decided by extension, such as Images, Documents, Archives). The tool only moves files: it never deletes, renames or overwrites any file."
   }
  ]
 }
