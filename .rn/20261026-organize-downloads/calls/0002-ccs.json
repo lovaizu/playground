@@ -34,6 +34,9 @@
   },
   {
    "decision": "Kinds and folder names: Files are sorted into six folders: Images (such as jpg, png, gif, heic, webp, svg), Documents (such as pdf, docx, xlsx, pptx, txt, md, csv), Archives (such as zip, tar, gz, 7z, rar), Installers (such as dmg, pkg, deb, rpm, AppImage), Audio (such as mp3, wav, m4a) and Videos (such as mp4, mov, mkv). The full list of extensions for each is still to be settled in the design."
+  },
+  {
+   "decision": "Undoing the last move: The tool can undo the last run that moved files: undoing returns each file that run moved to where it was."
   }
  ]
 }
