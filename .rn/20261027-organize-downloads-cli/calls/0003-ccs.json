@@ -43,6 +43,9 @@
   },
   {
    "decision": "Undo: A command puts each file the last run moved back where it was before that run."
+  },
+  {
+   "decision": "README: A README says how to install the tool and how to use it."
   }
  ]
 }
