@@ -65,6 +65,9 @@
   },
   {
    "fix": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/fix.md"
+  },
+  {
+   "decision": "How t1.1 ends: The README is taken as it is at the design stage; B-4, B-5 and B-8 of the README checklist, which need the tool and the linked pages, are checked at the build stage, by a first user installing from the README's address and following its Example once the tool, docs/usage.md and CHANGELOG.md are on main and docs/architecture.md is made."
   }
  ]
 }
