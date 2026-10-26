@@ -5,6 +5,37 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261027-downloads-organizer-cli/calls/0010-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  },
+  {
+   "has": ".rn/20261027-downloads-organizer-cli/calls/0004-ccs.json"
+  },
+  {
+   "has": ".rn/20261027-downloads-organizer-cli/calls/0006-ccs.json"
+  },
+  {
+   "has": ".rn/20261027-downloads-organizer-cli/calls/0009-ccs.json"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -67,6 +98,15 @@
   },
   {
    "decision": "Tests on GitHub Actions: A GitHub Actions workflow in the repository runs the tool's automated tests on macOS and on Linux on each change, so AC1's macOS and Linux keep being checked while the tool is built and after; it is first put there to try the rename on macOS before the tool is built, and stays."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
   }
  ]
 }
