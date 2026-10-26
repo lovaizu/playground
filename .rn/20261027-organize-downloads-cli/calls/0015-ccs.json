@@ -53,6 +53,9 @@
   },
   {
    "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+  },
+  {
+   "decision": "Keeping the pinned versions current: Nothing is added to update the pinned actions: whoever maintains the tool updates each SHA and its version comment by hand when they choose; no Dependabot settings file is added."
   }
  ]
 }
