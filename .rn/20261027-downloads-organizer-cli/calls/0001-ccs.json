@@ -19,6 +19,9 @@
   },
   {
    "decision": "Where it runs: The tool runs on macOS and Linux, written in Python 3; Windows is not needed. The folder it organizes is the Downloads folder under the user's home by default, and another folder can be given instead."
+  },
+  {
+   "decision": "Kind table: The table from extension to kind folder is built into the tool, covering the commonly downloaded kinds: images, documents, archives, audio, video and installers. No configuration file is needed; changing the table means changing the tool's code."
   }
  ]
 }
