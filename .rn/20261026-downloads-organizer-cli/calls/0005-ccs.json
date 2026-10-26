@@ -5,11 +5,45 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "ux"
+  },
+  {
+   "path": "docs/ux.md"
+  },
+  {
+   "audience": "the user who agrees the UX before anything else of the tool is made, and whoever builds the tool, its README and its architecture from it"
+  },
+  {
+   "has": ".rn/20261026-downloads-organizer-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "telling whom the tool is for, the goal they reach with it, the key results in order of priority, and the scenes of looking at what would move, moving and undoing that AC1 to AC5 and AC9 give, to agree the UX or build to it"
+  },
+  {
+   "serves": "G1: A command-line tool that moves the files directly in the Downloads folder into folders by kind, such as images, documents and archives, without deleting, renaming or overwriting any file, and can undo its last run, so that the user can easily find the file they want in a cluttered Downloads folder when they run it by hand."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/ux.md"
   }
  ],
  "constraints": [
   {
    "decision": "Key results and their order: 1) files lost, renamed or changed by a run or an undo, fewer better, none once reached; 2) share of top-level files that land in the folder of the kind the user looks in, more better; 3) steps from opening a terminal to the files sorted, fewer better"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
   }
  ]
 }
