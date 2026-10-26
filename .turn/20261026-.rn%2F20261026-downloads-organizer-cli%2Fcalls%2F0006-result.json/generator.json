@@ -1,0 +1,15 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-4",
+      "question": 1
+    }
+  ],
+  "questions": [
+    {
+      "question": "What is the tool's one file called, and where in github.com/lovaizu/playground does it sit? The decision gives the download address as raw.githubusercontent.com/lovaizu/playground/main/<path> but leaves <path> open, and neither the CCS nor docs/ux.md names the file. Without it the README's curl line cannot be written, so a newcomer cannot install the tool from the README alone; the later task that builds the tool must then put the file at the same place.",
+      "recommended": "A file named tidy-downloads, with no extension, at the root of the repository, fetched from https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads, since this branch already makes the root README the tool's README and a file named as the command is copied onto the PATH as it is, with no renaming step."
+    }
+  ]
+}

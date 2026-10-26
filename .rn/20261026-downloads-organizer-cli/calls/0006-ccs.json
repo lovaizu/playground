@@ -59,6 +59,9 @@
   },
   {
    "decision": "What the README is checked against now: The README is checked now against docs/ux.md and these decisions; its install and example are still to be run for real once the tool is built"
+  },
+  {
+   "decision": "The file's name and place: The tool's one file is tidy-downloads, with no extension, at the root of the repository, fetched from https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads"
   }
  ]
 }
