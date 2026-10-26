@@ -31,6 +31,12 @@
    "path": ".github/workflows/organize-downloads.yml"
   },
   {
+   "path": "organize-downloads/tests/test_cli.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_folder.py"
+  },
+  {
    "audience": "whoever runs the tool and whoever maintains it, a person or an AI"
   },
   {
@@ -83,6 +89,9 @@
   },
   {
    "chosen": "the CCS of T3.2 handed: its decisions, the oldest Python 3.10, the stop on Linux where no download folder is named and the tests on the standard library alone, hold for the code as well"
+  },
+  {
+   "chosen": "tests/test_cli.py and tests/test_folder.py added to the work: the code brings behaviors no T3.2 test holds, an unreadable folder, escaping of unprintable names and which condition a folder stop names, and a test for each comes in the same change"
   },
   {
    "artifact-language": "English"
