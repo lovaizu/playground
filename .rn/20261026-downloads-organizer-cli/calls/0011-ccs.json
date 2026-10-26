@@ -5,11 +5,42 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "issue"
+  },
+  {
+   "path": ".rn/20261026-downloads-organizer-cli/issue-2.md"
+  },
+  {
+   "audience": "rn's makers, reading the issue on lovaizu/ccpm, who build rn for all its users"
+  },
+  {
+   "has": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "deciding how rn changes so that every user's later work meets the need"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md"
   }
  ],
  "constraints": [
   {
    "decision": "Learning: turn:up's hook refused to start a run with 'lane cannot check read_only on step 4 of up: {given} is not given in what up started from', and the same call sent again ran"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
   }
  ]
 }
