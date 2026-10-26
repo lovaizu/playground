@@ -28,12 +28,6 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Tasks
 
-- T1: The tool's README, through which a newcomer installs the tool, lists the planned moves, moves the files and undoes the move on macOS and Linux, holding the full list of extensions of each kind. Serves AC2, AC10.
-
-  Completion criterion: Read in a newcomer's place by someone who did not write it, it meets every item of the readme checklist with the lines it names, and the user approves it at the design sign-off.
-
-  - [ ] 1. The README, from the plan and its decisions, `organize-downloads/README.md` as a readme work. turn.
-
 - T2: The tool's architecture, saying the parts the tool is made of, how the record of the last move is kept outside the folder, and how each part and each criterion is checked by tests run by one command. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC11, AC12.
 
   Completion criterion: Read in the place of whoever builds the tool by someone who did not write it, it meets every item of the architecture checklist with the lines it names, it agrees with the README of T1, and the user approves it at the design sign-off.
@@ -42,8 +36,9 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Next
 
-Step 3 of /rn:up on t1.1: ask the user how t1.1 ends, as turn's run cannot end on B-4, B-5 and B-8 before the tool exists
+Step 4 of /rn:up on T2: have the architecture made
 
 ## Open
 
-- turn's run on t1.1 ended four rounds with B-4, B-5 and B-8 of the README checklist unmet: the download address (README.md line 178) gives 404 as the tool is not on main, docs/usage.md, CHANGELOG.md and docs/architecture.md (lines 195, 197, 201) are not there, and no statement about the tool can be checked without it; the answer to end the run did not end it, as the first user is not given the CCS's choice. turn asks: (a) make the tool and the linked pages now, (b) take the three items out of this design-stage run and check them at the build stage, or (c) stop the run outside turn.
+- At the build stage, check B-4, B-5 and B-8 of the README checklist on organize-downloads/README.md, by a first user installing from its address and following its Example once the tool, docs/usage.md and CHANGELOG.md are on main and docs/architecture.md is made (decision "How t1.1 ends" of t1.1).
+- At the build stage, make organize-downloads/docs/usage.md and organize-downloads/CHANGELOG.md with the tool (decision "License and the places of fuller use and of changes" of t1.1).
