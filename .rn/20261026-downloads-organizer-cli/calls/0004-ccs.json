@@ -34,6 +34,9 @@
   },
   {
    "decision": "README document: The purpose needs a README, the repository's README.md rewritten for the tool, of kind readme"
+  },
+  {
+   "decision": "Architecture document: The purpose needs an architecture, docs/architecture.md, of kind architecture"
   }
  ]
 }
