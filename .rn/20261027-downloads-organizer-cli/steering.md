@@ -58,12 +58,12 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 - T3: The architecture of the tool. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC9, AC10, AC11, AC12.
 
   Completion criterion: Whoever builds the tool can tell from the architecture, with the UX `docs/ux.md`
-  and the README of T2, each part of the tool, how the parts keep any file from being deleted,
+  and the README `README.md`, each part of the tool, how the parts keep any file from being deleted,
   renamed or overwritten, in organizing and in undoing, what the record of a run holds and where, and
   how each part and each criterion is checked by the automated tests of AC7. Checked by an AI that
   did not make it, reading it in the builder's place.
 
-  - [ ] 1. The architecture made from the UX `docs/ux.md` and the README of T2, `docs/architecture.md` as an
+  - [ ] 1. The architecture made from the UX `docs/ux.md` and the README `README.md`, `docs/architecture.md` as an
     architecture work. turn.
 
 ## Next
