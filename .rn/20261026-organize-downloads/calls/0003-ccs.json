@@ -5,6 +5,28 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261026-organize-downloads/calls/0003-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -49,6 +71,15 @@
   },
   {
    "decision": "Where the tool and its documents are placed: The tool, its tests and its documents are kept together in the folder organize-downloads/: the README at organize-downloads/README.md and the architecture at organize-downloads/docs/architecture.md. The repository's own README.md stays as it is."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/fix.md"
   }
  ]
 }
