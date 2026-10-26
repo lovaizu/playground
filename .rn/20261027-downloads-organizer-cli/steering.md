@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/14
 stage: plan
-signoff: plan
+signoff: none
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -42,8 +42,8 @@ no file is ever deleted, renamed or overwritten.
 
 ## Next
 
-Step 5 of /rn:up on plan: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
+Step 6 of /rn:up on plan: find the point behind the feedback
 
 ## Open
 
-None.
+- 最後の実行を取り消せるようにしてください。前回の実行で移した各ファイルを元の場所へ戻す機能です。戻すときも、消す・名前を変える・上書きはしないでください。README とテストにもこれを入れてください。
