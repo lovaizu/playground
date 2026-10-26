@@ -88,16 +88,85 @@
  "more": 1,
  "stage": "asked",
  "told": true,
+ "answers": [
+  {
+   "questions": [
+    {
+     "question": "The architecture's Test section is to link the project's rules for how each kind of part (here, Python code) and the user stories are checked, but none of the files the call names holds such rules, nor says where they are. Is there a project rule for tests to link (where), or should the architecture's Test section itself say what this tool's checks need, from AC7?",
+     "recommended": "If the project has no such rule, let the Test section state only what AC7 already asks (automated tests in this repository, run on a test folder and a stand-in home so they never touch the real Downloads folder or the user's own record), as AC7 already sets that bar and needs no other source.",
+     "items": [
+      {
+       "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+       "item": "B-5"
+      }
+     ]
+    }
+   ],
+   "answer": "Answer to your question on the Test section: the project has no rules document for checking, and none is to be made. The Test section itself says only what AC7 already asks: automated tests in this repository, run on a test folder and a stand-in home, so they never touch the real Downloads folder or the user's own record of a last run. Kept as the decision \"Rules for checking\" of work t3.1, call 0008."
+  }
+ ],
+ "back": [],
+ "prompts": {
+  "turn:generator": {
+   "given": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0008-ccs.json",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/steering.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+   ],
+   "work": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md"
+   ],
+   "checklists": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md"
+   ],
+   "test": null,
+   "sent_back": [],
+   "answers": [
+    {
+     "questions": [
+      {
+       "question": "The architecture's Test section is to link the project's rules for how each kind of part (here, Python code) and the user stories are checked, but none of the files the call names holds such rules, nor says where they are. Is there a project rule for tests to link (where), or should the architecture's Test section itself say what this tool's checks need, from AC7?",
+       "recommended": "If the project has no such rule, let the Test section state only what AC7 already asks (automated tests in this repository, run on a test folder and a stand-in home so they never touch the real Downloads folder or the user's own record), as AC7 already sets that bar and needs no other source.",
+       "items": [
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+         "item": "B-5"
+        }
+       ]
+      }
+     ],
+     "answer": "Answer to your question on the Test section: the project has no rules document for checking, and none is to be made. The Test section itself says only what AC7 already asks: automated tests in this repository, run on a test folder and a stand-in home, so they never touch the real Downloads folder or the user's own record of a last run. Kept as the decision \"Rules for checking\" of work t3.1, call 0008."
+    }
+   ],
+   "chosen": [],
+   "result": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0008-result.json",
+   "reply": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.turn/20261027-.rn%2F20261027-downloads-organizer-cli%2Fcalls%2F0008-result.json/generator.json"
+  }
+ },
+ "since": {
+  "turn:generator": []
+ },
+ "started": {
+  "turn:generator": "a7e449b37ad5f6b4e"
+ },
  "questions": {
-  "from": "check",
+  "from": "turn:generator",
   "questions": [
    {
-    "question": "The architecture's Test section is to link the project's rules for how each kind of part (here, Python code) and the user stories are checked, but none of the files the call names holds such rules, nor says where they are. Is there a project rule for tests to link (where), or should the architecture's Test section itself say what this tool's checks need, from AC7?",
-    "recommended": "If the project has no such rule, let the Test section state only what AC7 already asks (automated tests in this repository, run on a test folder and a stand-in home so they never touch the real Downloads folder or the user's own record), as AC7 already sets that bar and needs no other source.",
+    "question": "The architecture's Logical view is to be one figure drawn by hand as an SVG file beside the document and shown in it as an image, but the call names only docs/architecture.md as the work, so no file may be written for the figure. Should an SVG file, such as docs/architecture.svg, be added to the call as a second path of the work?",
+    "recommended": "Add docs/architecture.svg to the call as a path entry beside docs/architecture.md, as the checklist asks for a hand-drawn SVG so the boxes' placing and frames are set by the drawer, which a figure written in the Markdown itself, such as Mermaid, does not give.",
     "items": [
      {
       "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
-      "item": "B-5"
+      "item": "F-1"
+     },
+     {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-3"
      }
     ]
    }

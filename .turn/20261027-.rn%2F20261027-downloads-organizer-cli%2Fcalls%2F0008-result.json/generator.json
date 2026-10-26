@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "F-1",
+      "question": 1
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-3",
+      "question": 1
+    }
+  ],
+  "questions": [
+    {
+      "question": "The architecture's Logical view is to be one figure drawn by hand as an SVG file beside the document and shown in it as an image, but the call names only docs/architecture.md as the work, so no file may be written for the figure. Should an SVG file, such as docs/architecture.svg, be added to the call as a second path of the work?",
+      "recommended": "Add docs/architecture.svg to the call as a path entry beside docs/architecture.md, as the checklist asks for a hand-drawn SVG so the boxes' placing and frames are set by the drawer, which a figure written in the Markdown itself, such as Mermaid, does not give."
+    }
+  ],
+  "chosen": []
+}

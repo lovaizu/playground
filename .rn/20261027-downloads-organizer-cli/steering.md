@@ -72,4 +72,4 @@ Step 3 of /rn:up on t3.1: answer turn's question and send it back to the run wai
 
 ## Open
 
-- turn asks whether a project rule for how the code and the user stories are checked exists for the architecture's Test section to link, or whether that section says what the checks need from AC7; turn recommends the latter where no rule exists.
+- turn asks whether docs/architecture.svg is added to the call as a second path of the work, for the Logical view figure the architecture checklist asks to be a hand-drawn SVG beside the document.
