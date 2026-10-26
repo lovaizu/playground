@@ -31,13 +31,13 @@ defined under [Scenes](ux.md#scenes).
 
   The files not moved back stay in the record, as [Undoing](ux.md#undoing) asks.
 
-- The Mover moves a file by making a hard link to it at its new name, which the system refuses when that name is taken, and only then taking away the old name; it removes a kind folder by a call the system refuses when the folder holds anything.
+- The Mover moves a file, and moves it back, by the system's own one-step rename that refuses a name already taken, `renameat2` with `RENAME_NOREPLACE` on Linux and `renamex_np` with `RENAME_EXCL` on macOS, called through Python's `ctypes`; it removes a kind folder by a call the system refuses when the folder holds anything.
 
-  A check made before the move would leave a moment in which another program, such as a browser finishing a download, could put a file at that name; the system's own refusal leaves none. A run stopped between making the hard link and taking away the old name keeps the file under both names, which `--undo` shows as not moved back, as the move is already in the record. A move refused because the name is taken shows `name taken in <kind>/` or `<file> is now in the folder`, as in the UX.
+  Python's own rename replaces a file at a taken name, and a check made before it, or a hard link made and the old name then taken away, would leave a moment in which another program, such as a browser finishing a download, could put a file at a name the Mover then overwrites or takes away; one call the system refuses leaves none. A move refused because the name is taken shows `name taken in <kind>/` or `<file> is now in the folder`, as in the UX.
 
-- A move the system refuses for another reason, such as no permission, or no hard links on the folder's file system, as on FAT, exFAT and many network shares, leaves the file in place, shown with the system's message as the reason, and the Mover has no other way of moving.
+- A move the system refuses for another reason, such as no permission or a file system that does not offer this rename, leaves the file in place, shown with the system's message as the reason, and the Mover has no other way of moving.
 
-  The UX names no such reason, and leaving the file is what the first rule asks. Any other way of moving would leave the moment above in which a file could be overwritten, so on a file system without hard links a move run moves nothing, which the preview cannot show, as it changes nothing.
+  The UX names no such reason, and leaving the file is what the first rule asks. Any other way of moving would leave the moment above, so where the file system refuses the call a move run moves nothing, which the preview cannot show, as it changes nothing.
 
 - The Record store begins a move run's record anew, empty, before the run's first move, and writes each record whole to a new file that then takes the old one's place in one step.
 

@@ -53,23 +53,10 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
   Support/organize-downloads` on macOS), one record for each folder, so the organized folder gains no
   file of the tool's.
 
-## Tasks
-
-- T3: The architecture of the tool. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC9, AC10, AC11, AC12.
-
-  Completion criterion: Whoever builds the tool can tell from the architecture, with the UX `docs/ux.md`
-  and the README `README.md`, each part of the tool, how the parts keep any file from being deleted,
-  renamed or overwritten, in organizing and in undoing, what the record of a run holds and where, and
-  how each part and each criterion is checked by the automated tests of AC7. Checked by an AI that
-  did not make it, reading it in the builder's place.
-
-  - [ ] 1. The architecture made from the UX `docs/ux.md` and the README `README.md`, `docs/architecture.md` as an
-    architecture work. turn.
-
 ## Next
 
-Step 3 of /rn:up on t3.1: answer turn's question and send it back to the run waiting
+Step 4 of /rn:up on T3: weigh what it brought
 
 ## Open
 
-- turn asks how the Mover closes the moment between making the hard link and taking away the old name, in which another program can put a new file at the old name that is then deleted (the same at undo): (a) check the old name still points to the same file just before, narrowing but not closing it; (b) the system's one-step rename refusing a taken name (renameat2 RENAME_NOREPLACE on Linux, renamex_np RENAME_EXCL on macOS) through ctypes, replacing the hard-links-only decision, with a trial first; (c) keep it and state it. turn recommends (b).
+None.

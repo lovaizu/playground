@@ -1,0 +1,107 @@
+{
+ "work": [
+  "docs/architecture.md",
+  "docs/architecture.svg"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "F-1",
+   "good": "The document follows the template, headings included: title; an opening that says how the tool is put together and links the UX; the principles, each in a line; User stories; Architecture, with the Logical view as an SVG shown as an image and the Physical view as a tree; and Test. Each list line is one sentence with its why indented after a blank line, and nothing is in bold. The SVG parses as XML. Each box holds a component's name alone; box shape (solid for code, dashed for outside) and the frame round the one process are explained in the legend; every arrow is labelled; no arrows cross; and a dark-mode style is included. The label 'runs' now sits at x=145, spanning about x=133-157, clear of both the user box (which ends at x=130) and the frame edge (x=160). The Test section says the project has no rules of its own to link. I could not check that against the repository, since no file of project rules was among what I was given.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:1-83",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:1-95"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-1",
+   "good": "The opening says how the tool is put together: one Python command that plans every move from what it reads in the folder or the record, and hands each move to the one part that changes the folder. It links the UX, and the section where the UX defines its terms (ux.md#scenes, a heading that exists at ux.md:52). Four principles follow, each in one line: the no-delete/rename/overwrite rule held by one part whatever it is handed; preview and move decide by the same plan; nothing written in the folder but the moved files and kind folders; each move recorded before it is made so --undo reaches a run stopped part way. None of them is a tool or a format. The tool is not built on anything else, so there are no principles of a base to link.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:3-11"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-2",
+   "good": "Each UX scene has a story at the command's edge. Seeing the planned moves (ux.md:106) rests on story 1, which also covers naming another folder (ux.md:91). Organizing (ux.md:161) rests on story 2. Seeing the planned moves back (ux.md:203) rests on story 3. Undoing (ux.md:251) rests on story 4. The whole way is the four in sequence. No story is an inner step, none repeats another, and none is named by a technology.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:15-18"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-3",
+   "good": "From the figure and the lines I can follow each story in order. Preview: the Command asks the Planner, which reads the folder, and prints the plan. Move: for each planned move, the Record store keeps the move and the kind folder to be made, then the Mover makes the move; the record entry is dropped if the Mover refuses. Undo preview: the Undo planner reads the last run's moves from the Record store and checks the folder. Undo move: the Mover moves each file back, the Record store drops each one made, and last the Mover removes the kind folders. Where a reader would question a choice, the lines say what each component does with what it is handed and why: the one-step rename that refuses a taken name, a folder removal the system refuses when the folder holds anything, what happens where the file system refuses the rename, and writing the record whole. I called renameat2 with RENAME_NOREPLACE through ctypes in a temp folder: onto a taken name it fails with 'File exists' and leaves both files as they were, and onto a free name it moves the file. I also checked with os.rmdir that removing a folder holding a file is refused ('Directory not empty'). Boxes hold component names alone, and no path serves one case only.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:47-86",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:26-44"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-4",
+   "good": "The tree places every component of the figure in its own Python 3 file under src/organize_downloads/: Command in cli.py, Planner in plan.py, Undo planner in undo.py, Mover in mover.py, Record store in record.py. It also places the package file, the tests, and the folder and records under the user's home, each with its kind (TOML, Python 3, JSON). The lines say the tool depends on Python 3 and its standard library alone (ctypes, which the Mover uses, is part of it), is installed with pipx install . as the README says (README.md#installation exists at README.md:122), and starts as organize-downloads, which runs the Command. They also say how the folder path and the home are taken.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:48-72"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-5",
+   "good": "The section says the project has no rules for checks, so this product's checks are set here. Every part in src/ and every user story is checked by unittest tests in tests/, with the command to run them. The tests use their own folder and a stand-in HOME, so they never touch the real Downloads folder or record, which is what AC7 asks for every case. pyproject.toml and the installed command are left unchecked, with why. Each kind of part in the tree is accounted for, and no single case's inputs or pass bar are written here. I ran the given command from the repository: it stops with 'Start directory is not importable: tests', as expected at this design stage with no tests built yet. The line says how they will be run, not that they exist.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:76-83"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-6",
+   "good": "Every line holds with the four principles. Principle 1 is held by the Mover alone. It moves and moves back with a single system call that refuses a taken name, so another program has no moment to put a file at either name, and the Mover never removes a name on its own. Line 36 gives this why. A call the system refuses for any other reason, including a file system without this rename, leaves the file in place (lines 38-40). That fits principle 2: the move run makes fewer moves than the preview showed, never other ones. Principle 3 holds: the record is under home and replaced in one step. ctypes is part of the standard library, so line 68's 'standard library alone' still holds. Principle 4 holds: each move is kept before it is made and dropped only once made or refused, and the files undo does not move stay in the record. I checked principle 1's call with renameat2 and RENAME_NOREPLACE in a temp folder: the taken name kept its file, and the file being moved stayed where it was.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:8-11",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:26-44",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:68"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-7",
+   "good": "Each line is a decision the approval rests on: the principles; how the parts call one another and in what order; how the Mover moves and removes, and by which system call; what is done where that call is refused; how the record is begun and replaced; where each file lives; how the folder and home are taken; and how and what is tested. Where a line points at the UX, it is the why and gives a link (ux.md#undoing, ux.md#organizing) rather than saying the UX again. No reason strings are copied beyond the two the Mover's refusal maps to. No case-by-case behaviour, count, history or status is written. The examples (a browser finishing a download, two paths to one folder) are the why of a decision, not a gloss on an idea the reader already holds.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:8-11",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:26-44",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:68-72",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:79-83"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-8",
+   "good": "Reading once from the top, the UX terms (kind folder, move run, record, preview run) are linked from the opening to where the UX defines them. 'Undo preview run' and 'undo move run' read as those runs with --undo. Each component has one name in the figure, the lines and the tree. The system calls renameat2 and renamex_np are named with what they are: the system's one-step rename that refuses a taken name. Line 40's 'the moment above' points back to line 36, not ahead. pipx is linked through the README. The one line pointing to later text is principle 4's 'even one that stopped part way', and its why is given at line 28 under the first line that uses it.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:3-11",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:26-44",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:68-72"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The second principle reads \"so on a folder unchanged in between a move run makes no move but those the preview showed\"; before, it said that what a preview shows is what the move run after it does.",
+   "why": "A move run can be refused by the system (no permission, or a file system without the one-step rename) on moves the preview showed, so the old wording would contradict the Mover lines. The new wording keeps the promise KR1.3 asks for: no move that differs from the preview."
+  },
+  {
+   "chosen": "A file system that does not offer the one-step rename goes in the existing line on moves the system refuses for another reason, not in a line of its own.",
+   "why": "It is the same rule (leave the file in place, with the system's message), so one line holds it (B-7)."
+  },
+  {
+   "chosen": "The label 'runs' in the figure is centred at x=145, between the user box and the tool's frame.",
+   "why": "It is the only point on that arrow where the word clears both the user box (ends at x=130) and the frame (x=160), and it stays next to the arrow it labels."
+  },
+  {
+   "chosen": "The trial of the rename on both systems, which the CCS says is still to be done, is not written in the architecture.",
+   "why": "It is where the work stands, not a decision, and B-7 keeps status out; the CCS already holds it."
+  }
+ ]
+}
