@@ -23,21 +23,11 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 - AC8: The repository's tests check AC1 to AC6 and AC9 by running the tool on a test folder of mixed files and subfolders, never on the real Downloads folder, and pass.
 - AC9: Told to undo, the tool moves each file that its last run which moved files in that folder moved back to where it was; where a file of the same name is already there, it leaves the file in the folder of its kind and reports it; and it removes each folder of a kind that run made once that folder is empty, leaving each folder that was there before or still holds a file.
 
-## Tasks
-
-- T3: The architecture, `docs/architecture.md`. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC8 and AC9.
-
-  Completion criterion: from `docs/architecture.md`, whoever builds the tool can tell the user stories drawn from `docs/ux.md`, the parts that take them on, the technology of each, where the record that undo reads is kept, and how each part and story is checked on a test folder, never the real Downloads folder, so that every item of the architecture checklist holds, as a first reader in a builder's place finds.
-
-  - [x] 1. Where the record that undo reads is kept. The orchestrator, with the user.
-  - [ ] 2. The architecture, from `docs/ux.md`, `README.md` and what action 1 settled, `docs/architecture.md` as an architecture work. turn.
-
 ## Next
 
-Step 3 of /rn:up on t3.2: call turn again with call 0008 once the user settles how to go on past turn's hook error
+Step 5 of /rn:up on design: stop at the design sign-off
 
 ## Open
 
-- turn:up stopped before starting call 0008: its PreToolUse hook refused 'turn.py start' with 'lane cannot check read_only on step 4 of up: {given} is not given in what up started from' and the same for read_whole, saying the maker of turn must fix it; no result was written
 - The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decisions 'What the README is checked against now' and 'How the README run ends' of t2.2); the build-stage plan must carry this
 - The LICENSE file for the MIT license (decision 'License' of t2.2) is not yet made; the build-stage plan must carry it
