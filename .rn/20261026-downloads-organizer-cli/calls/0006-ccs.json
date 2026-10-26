@@ -53,6 +53,9 @@
   },
   {
    "decision": "License: tidy-downloads is under the MIT license, with a LICENSE file in the repository"
+  },
+  {
+   "decision": "Where the README sends the reader on: Fuller use is what tidy-downloads --help shows; what changed is the commit history at https://github.com/lovaizu/playground/commits/main; Development links docs/architecture.md; no other document is made"
   }
  ]
 }
