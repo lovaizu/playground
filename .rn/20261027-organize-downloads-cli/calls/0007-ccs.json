@@ -5,6 +5,64 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "architecture"
+  },
+  {
+   "path": "organize-downloads/docs/architecture.md"
+  },
+  {
+   "path": "organize-downloads/docs/architecture.svg"
+  },
+  {
+   "audience": "the user approving the architecture at the design sign-off, and whoever builds the tool and its tests to it"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  },
+  {
+   "has": "organize-downloads/README.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving how the tool will be made, and building and testing each of AC1 to AC10 from it and the README"
+  },
+  {
+   "serves": "AC1: Typed in a terminal as one command with nothing added, the tool only lists each file it would move with the type folder it would go to, and moves nothing: every file and folder in the organized folder is as it was before the run. Nothing makes the tool run on its own, such as on a schedule."
+  },
+  {
+   "serves": "AC2: Told explicitly to move, such as with an option, the tool moves each file it lists into that type folder inside the organized folder, such as ~/Downloads/Images, making the folder where it is missing; each moved file keeps its name, and nothing outside the organized folder changes."
+  },
+  {
+   "serves": "AC3: The tool tells a file's type by its extension and uses only these folders, which the user cannot change: Images (pictures), Documents (documents, PDFs, spreadsheets), Archives (zip and the like), Audio, Video, Installers (.dmg, .deb and the like), and Others for a file that fits none of them. Each file goes to the folder its extension belongs to in the list of extensions per folder, which is still to be settled."
+  },
+  {
+   "serves": "AC4: When a file of the same name is already in the folder a file would go to, the tool leaves that file where it is, overwrites and renames nothing, and tells the user it did not move it."
+  },
+  {
+   "serves": "AC5: The tool never moves folders (the type folders included), hidden files whose names begin with a dot (such as macOS's .DS_Store and .localized), or files still being downloaded (such as Chrome's .crdownload, Firefox's .part and Safari's .download), and does not look inside folders."
+  },
+  {
+   "serves": "AC6: With no folder given, the tool organizes the user's own Downloads folder: ~/Downloads on macOS, and on Linux the download folder the OS settings (xdg-user-dirs) name, such as ~/ダウンロード. Given another folder, it organizes that folder instead."
+  },
+  {
+   "serves": "AC7: AC1 to AC6 and AC8 to AC10 each hold on both macOS and Linux, shown on the pull request by the tool's tests, which GitHub Actions runs on both on every push."
+  },
+  {
+   "serves": "AC8: An undo command undoes the last run that moved files. Typed with nothing added, it only lists each file it would put back with the place it would go, and puts nothing back; told explicitly, such as with an option, it puts each file that run moved back where it was before that run, under the same name. A run that only lists leaves what undo would put back as it was. What undo reads is kept as a hidden file inside the organized folder, such as ~/Downloads/.organize-last-run, so nothing outside the organized folder changes. Once undo has put files back, undo typed again moves nothing and tells the user there is nothing to put back."
+  },
+  {
+   "serves": "AC9: When undo puts files back, it leaves in its type folder a file whose name is already taken at the place it would go back to, overwriting and renaming nothing, and skips a file no longer in its type folder, such as one the user moved or deleted since, without looking for it elsewhere; for each it tells the user it did not put it back, and it puts the other files back."
+  },
+  {
+   "serves": "AC10: The tool only moves files and never deletes anything: after any run, organizing or undo, each file that was in the organized folder or in its type folders before the run is still in one of them under the same name, and every folder is still there, a type folder that undo leaves empty included."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md"
   }
  ],
  "constraints": [
@@ -12,10 +70,19 @@
    "decision": "Rules for checking: The repository has no rules for checking code or user stories, so the architecture sets the tool's own under its Test section: tests in Python's standard unittest, each a Given, a When and a Then on a temporary folder; the user stories checked by running the organize-downloads command end to end; all run by GitHub Actions on ubuntu-latest and macos-latest on every push."
   },
   {
+   "decision": "Where hard links cannot be made: Not overwriting comes first: where the organized folder is on a place that cannot make hard links, such as a USB drive formatted exFAT or FAT32, the tool moves nothing and tells the user so."
+  },
+  {
    "chosen": "organize-downloads/docs/architecture.svg made with the architecture: the architecture checklist asks for the Logical view as one SVG figure beside the document, and no other file holds it"
   },
   {
-   "decision": "Where hard links cannot be made: Not overwriting comes first: where the organized folder is on a place that cannot make hard links, such as a USB drive formatted exFAT or FAT32, the tool moves nothing and tells the user so."
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
   }
  ]
 }
