@@ -80,4 +80,4 @@ Step 3 of /rn:up on t2.1: answer turn's question and send it back to the run wai
 
 ## Open
 
-- turn asks which license the README's License section names: the readme checklist's template ends with a License section, and no file of the CCS says the tool's license; turn recommends the repository's LICENSE file if any, else MIT.
+- turn asks whether the README's Development section links docs/architecture.md, which T3 makes and which is not in the repository yet; turn recommends keeping the link, with a CCS decision that T3 adds that file.

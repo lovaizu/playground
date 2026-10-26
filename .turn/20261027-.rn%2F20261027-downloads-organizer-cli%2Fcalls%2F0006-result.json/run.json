@@ -78,12 +78,76 @@
  "more": 1,
  "stage": "asked",
  "told": true,
+ "answers": [
+  {
+   "questions": [
+    {
+     "question": "Which license should the README's License section name? The readme checklist's template ends with a License section, and neither the CCS, steering.md nor docs/ux.md says which license the tool is under.",
+     "recommended": "Name the license of the repository's LICENSE file if it has one, otherwise MIT, as a common permissive license for a small command-line tool shared publicly.",
+     "items": [
+      {
+       "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+       "item": "F-1"
+      }
+     ]
+    }
+   ],
+   "answer": "Answer to your question on the License section: the user chose the MIT license. The README names it; a LICENSE file holding it is still to be added to the repository (it is not there yet; the build adds it). Kept as the decision \"License\" of work t2.1, call 0006."
+  }
+ ],
+ "back": [],
+ "prompts": {
+  "turn:generator": {
+   "given": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0006-ccs.json",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/steering.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+   ],
+   "work": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md"
+   ],
+   "checklists": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md"
+   ],
+   "test": null,
+   "sent_back": [],
+   "answers": [
+    {
+     "questions": [
+      {
+       "question": "Which license should the README's License section name? The readme checklist's template ends with a License section, and neither the CCS, steering.md nor docs/ux.md says which license the tool is under.",
+       "recommended": "Name the license of the repository's LICENSE file if it has one, otherwise MIT, as a common permissive license for a small command-line tool shared publicly.",
+       "items": [
+        {
+         "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+         "item": "F-1"
+        }
+       ]
+      }
+     ],
+     "answer": "Answer to your question on the License section: the user chose the MIT license. The README names it; a LICENSE file holding it is still to be added to the repository (it is not there yet; the build adds it). Kept as the decision \"License\" of work t2.1, call 0006."
+    }
+   ],
+   "chosen": [],
+   "result": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0006-result.json",
+   "reply": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.turn/20261027-.rn%2F20261027-downloads-organizer-cli%2Fcalls%2F0006-result.json/generator.json"
+  }
+ },
+ "since": {
+  "turn:generator": []
+ },
+ "started": {
+  "turn:generator": "ab873f9a03d760436"
+ },
  "questions": {
-  "from": "check",
+  "from": "turn:generator",
   "questions": [
    {
-    "question": "Which license should the README's License section name? The readme checklist's template ends with a License section, and neither the CCS, steering.md nor docs/ux.md says which license the tool is under.",
-    "recommended": "Name the license of the repository's LICENSE file if it has one, otherwise MIT, as a common permissive license for a small command-line tool shared publicly.",
+    "question": "The README's Development section, which the readme checklist's template asks for as a link to the entrance to the architecture and development, links to docs/architecture.md, which the plan's task T3 makes and which is not in the repository yet. Keep that link, the file to be added by T3 as the CCS's LICENSE decision does for LICENSE, or name another entrance?",
+    "recommended": "Keep the link to docs/architecture.md and add it to this call's CCS as a decision that T3 adds that file, as the plan already makes it there and it is where a builder looks for how the tool is built and tested.",
     "items": [
      {
       "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
