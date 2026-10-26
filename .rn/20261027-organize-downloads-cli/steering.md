@@ -31,7 +31,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
   Completion criterion: Installed as the README says, organize-downloads typed with nothing added, or with a folder given last, lists each file directly in that folder with the type folder AC3 gives it, lists no folder, hidden file or file still being downloaded, and leaves every file and folder there as it was; the tests action 2 makes hold each of these and pass here on Linux, and in the GitHub Actions run of the push on macOS and Linux.
 
-  Test: `uv run --isolated --no-project --with ./organize-downloads python3 -m unittest discover -s organize-downloads/tests -t organize-downloads`
+  Test: `uv run --no-cache --isolated --no-project --with ./organize-downloads python3 -m unittest discover -s organize-downloads/tests -t organize-downloads`
 
   - [x] 1. Settle with the user which extensions go to each type folder, the list AC3 holds. The orchestrator, with the user.
   - [x] 2. Make the tests of the run with nothing added from AC1, AC3, AC5 and AC6, as the architecture's Test section says, and see them fail on what is there, `organize-downloads/tests` as a code work. turn.
@@ -41,7 +41,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
   Completion criterion: organize-downloads --apply moves each file the run with nothing added lists into its type folder inside the organized folder under the same name, making the folder where it is missing, and records the moves in the organized folder's hidden record file; it leaves a file whose name is taken in its type folder where it is and says so; where hard links cannot be made it moves nothing and says so; it deletes nothing and changes nothing outside the organized folder; the tests action 1 makes hold each of these and pass here on Linux, and in the GitHub Actions run of the push on macOS and Linux.
 
-  Test: `uv run --isolated --no-project --with ./organize-downloads python3 -m unittest discover -s organize-downloads/tests -t organize-downloads`
+  Test: `uv run --no-cache --isolated --no-project --with ./organize-downloads python3 -m unittest discover -s organize-downloads/tests -t organize-downloads`
 
   - [ ] 1. Make the tests of the run with --apply from AC2, AC4, AC10 and the architecture, and see them fail on what T3 built, `organize-downloads/tests` as a code work. turn.
   - [ ] 2. Make the moving from the architecture until every test passes, `organize-downloads` as a code work. turn.
@@ -50,7 +50,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
   Completion criterion: organize-downloads undo lists each file the last run with --apply moved and where it would go back, changing nothing, and organize-downloads undo --apply puts each back under the same name, leaves in its type folder one whose name is taken where it would go, skips one no longer in its type folder, says so for each, leaves the type folders, and once done makes undo typed again move nothing and say so; a run that only lists leaves what undo puts back as it was; the tests action 1 makes hold each of these and pass here on Linux, and in the GitHub Actions run of the push on macOS and Linux.
 
-  Test: `uv run --isolated --no-project --with ./organize-downloads python3 -m unittest discover -s organize-downloads/tests -t organize-downloads`
+  Test: `uv run --no-cache --isolated --no-project --with ./organize-downloads python3 -m unittest discover -s organize-downloads/tests -t organize-downloads`
 
   - [ ] 1. Make the tests of undo from AC8, AC9, AC10 and the architecture, and see them fail on what T4 built, `organize-downloads/tests` as a code work. turn.
   - [ ] 2. Make undo from the architecture until every test passes, `organize-downloads` as a code work. turn.
