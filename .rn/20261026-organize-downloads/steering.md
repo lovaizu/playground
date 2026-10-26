@@ -36,8 +36,8 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Next
 
-Step 3 of /rn:up on t2.1: add the figure's file to the CCS, then send it to the run waiting
+Step 3 of /rn:up on t2.1: start turn:up again with the same call, as it goes on from its last move
 
 ## Open
 
-- turn asks whether organize-downloads/docs/architecture.svg, the Logical view's figure the architecture checklist's template asks for beside the document, may be added to the work.
+- turn:up's run on t2.1 stopped twice the same way, printing "The generator is still at work; I wait for its notification." and then "Waiting for the generator to finish.", while its turn:generator, remaking 1 item of 9 the first user found no Good for, was still running.

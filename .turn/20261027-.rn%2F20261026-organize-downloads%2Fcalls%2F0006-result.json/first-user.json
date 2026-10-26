@@ -1,0 +1,86 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "F-1",
+      "good": "The document follows the template from top to bottom: the title '# organize-downloads architecture'; an opening sentence on how the tool is put together that links the README where its terms are defined; the principles, one per line, after a line saying it is built on no other product's architecture; '## User stories' with 'As a user, I want ...' lines; '## Architecture' with '### Logical view', which shows architecture.svg as an image followed by lines for what the figure cannot show, and '### Physical view', which has a tree followed by lines on dependencies and how the tool is started; and '## Test', which in place of the link says the project has no rules and then gives this tool's checks. Each list line is one sentence, each 'Why:' comes after a blank line indented under its line, and nothing is in bold. The figure is an SVG file beside the document. It has one box per component holding only its name, all square-cornered (code) against a legend that tells code, AI, person, files on disk and one product apart, a dashed frame round the five components labelled 'organize-downloads, one Python file', and labelled arrows. By the coordinates no arrow crosses another or a box. It has a prefers-color-scheme: dark style for every stroke, fill and text. One small thing: the end of the 'reads the last move' label (x=608, y=382) touches the Undoer to Record keeper arrow, but it can still be read.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:1-112",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:1-106"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-1",
+      "good": "From the opening I can tell how the tool is put together: one Python script in which a Planner decides each file's place or why it stays, a Mover carries out that plan, a Record keeper keeps each move outside the folder, and an Undoer puts back the last move. It also says plainly that the tool rests on no other product's architecture. Its own five principles are one per line, and each is a rule every later decision can be held to (never delete, rename or overwrite; move only files directly in the folder; add nothing but the kinds' folders; decide placement in one place; install as one file). None of them is a means such as a tool or a format.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-23"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-2",
+      "good": "Each scene of the README has a story under it: the run with no option that only lists, on ~/Downloads or another folder (story 1); --move (story 2); --undo (story 3); and --help, which Installation has the user run (story 4). Each story is one command the user runs at the tool's edge. None is a step inside the tool, none repeats another, and none is named by a technology.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:25-31"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-3",
+      "places": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:27-29",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:52-57",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:79-82"
+      ],
+      "did": "I followed each story through the arrows and lines. List: Command line asks Planner, Planner reads the folder, Command line prints. Move: the same plan goes to the Mover, which moves files and adds each move through the Record keeper. Undo: Command line asks the Undoer, which reads the last move through the Record keeper and moves files back. Help: Command line prints. All four are achieved, and the order of the arrows is in lines 39-42. I then tested the Mover's choice in a mktemp -d folder with python3 -I (Python 3.14.4). os.link('a','b') onto an existing b raised FileExistsError and left both files unchanged. os.rename('a','b') replaced b. The why at lines 55-57 is therefore true.",
+      "lacking": "The first story, and the README, let the user work on 'another folder' (README lines 90-95: '--move ~/Desktop'). The Mover moves only by making a hard link, and gives no other way. A builder or approver would ask at once what happens on a folder whose drive cannot make hard links, such as a USB stick formatted FAT or exFAT, or some network shares. There os.link fails for every file, so no run of arrows achieves the move story there. The lines do not say whether the tool refuses such a folder, reports each file as staying (and with what reason), or falls back to some other kind of move. Without this I cannot approve the choice knowing what it costs the user, and a builder would have to guess. Less important: to say 'stays, Documents/budget.xlsx already exists', the Planner must also read the names inside the kinds' folders. The figure's 'reads the names of its files' and the lines leave that for the reader to work out."
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-4",
+      "good": "The tree puts all five components (Command line, Planner, Mover, Record keeper, Undoer) in the one script 'organize-downloads', made of 'Python 3 script, standard library only'. It places the tests as Python unittest files, one per component plus one for the stories. It gives where the user installs the script (~/.local/bin, matching the README's Installation) and where the Record keeper keeps its records on Linux and macOS, each record 'JSON Lines', one per folder. The lines below the tree say the tool depends only on Python and its standard library, in the version the README's Requirements give (3.8 or later), and is started by running 'organize-downloads', whose first line hands it to python3.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:67-90"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-5",
+      "good": "The Test section says the project has no rules for checking its parts and stories, so it gives this tool's checks itself. The one kind of part, the code, is checked per component by unittest tests in Given/When/Then form that load the script as a module. The user stories are checked by running the script as the user does, on a temporary folder with HOME set to a temporary one; this works because Python resolves ~ from HOME, so the tests do not touch the user's own files. One command runs everything: 'python3 -m unittest discover organize-downloads/tests'. macOS is covered by the user's own run, as AC9 asks. The section gives no case's inputs or pass bar, which are left to the tests.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:92-112"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-6",
+      "good": "The lines fit with the principles and with each other. Moving by hard link keeps 'never overwritten' even under a race, which I confirmed: os.link onto a taken name fails and leaves both files. Handing the Mover the Planner's own plan keeps 'decided in one place'. Keeping the record under ~/.local/state or ~/Library/Application Support, named by a hash of the folder's path, keeps 'nothing added inside the folder' and keeps one folder's record apart from another's. Starting the record anew only with a run's first move agrees with the README's undo of 'its last run that moved files'. Finding ~/Downloads and the record's place from the home folder alone is what lets the story tests run safely with HOME set to a temporary folder.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:11-21",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:39-65",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:84-90",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:103-107"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-7",
+      "good": "Each line is a decision that would change what I approve if it changed: when the record is written and started anew, moving by hard link rather than rename, the order of the undo, one record per folder, naming the record by a hash, finding places from the home folder, and the test approach. Behaviour per case, the extension list and the Python version are not repeated; they are left to the README and the tests and pointed to ('in the version the README's Requirements give', 'defined in the README'). There is no history or status, and no terms are gathered ahead of the lines that use them.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-112"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-8",
+      "good": "Reading once from the top, I understood each line where I met it. The README's terms, such as a kind's folder, are linked from the opening. 'The folder's last move' is defined in the opening as the last run that moved a file in it. 'Hard link' is explained on the spot as a second name for the same file. A JSON Lines record is described in the tree as one move or one made folder per line. Each component keeps one name in the opening, figure, tree and lines. The 'Record' (the file on disk) and the 'Record keeper' (the component) are kept apart. Every why rests only on things already said or on the line itself.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-7",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:52-53",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:77-77",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:39-61"
+      ]
+    }
+  ]
+}

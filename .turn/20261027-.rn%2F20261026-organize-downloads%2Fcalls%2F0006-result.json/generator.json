@@ -3,19 +3,110 @@
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
       "item": "F-1",
-      "question": 1
+      "good": "The approver and the builder find the template's parts in its order and under its headings: the title, how the tool is put together with a link to the README, the principles each in a line, User stories, Architecture with a Logical view shown as the SVG beside it and a Physical view as a tree, and Test, which says the project has no rules to link and gives what this tool's checks need, as the user's answer chose; each list line is one sentence with its why indented under it, nothing in bold.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:1-120",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:1-107"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-1",
+      "good": "From the opening the reader knows the tool is one Python script of a Planner, a Mover, a Record keeper and an Undoer, what the last move is, where the words it uses are defined, that it rests on no other product's architecture, and the five principles every decision is held to: no file deleted, renamed or overwritten, only files directly in the folder moved, nothing added inside but the kinds' folders, where each file goes decided in one place, and one file to install.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-23"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-2",
+      "good": "Each run of the README's Example and its Installation rests on one story at the tool's edge: listing, moving, undoing, and seeing how to run it, none a step inside the tool nor named by a technology.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:25-31"
+      ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
       "item": "B-3",
-      "question": 1
-    }
-  ],
-  "questions": [
+      "good": "Following the figure and the lines, the builder sees how each story is achieved in order: the Command line asks the Planner, which tells where each file goes from the names in the folder and in its kinds' folders, so it can say a name is taken; it hands the same plan to the Mover, or asks the Undoer; the Mover makes the kinds' folders, moves the files and has the Record keeper add each move and folder as it is made, the first of these in a run starting the folder's record anew, so a --move that moves nothing leaves the last move's record for --undo; the Mover moves by a hard link, and on a drive that cannot make one, such as FAT or exFAT, by making the new name as a new file that fails where the name is taken and copying the contents, so the move story holds on any folder the README lets the user name; the Undoer reads the record through the Record keeper and removes folders only once files are back; each choice a builder would question comes with why.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:37-73",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:30-94"
+      ]
+    },
     {
-      "question": "The architecture's Logical view is to be one figure in an SVG file beside the document, shown in it as an image, but the CCS names only organize-downloads/docs/architecture.md as the work, so the figure's file cannot be written in this run. May an SVG file beside the architecture, such as organize-downloads/docs/architecture.svg, be added to the work?",
-      "recommended": "Add it to the CCS as a focal entity of the same kind as the architecture's own, {\"path\": \"organize-downloads/docs/architecture.svg\"}, as the checklist's template asks the figure to be drawn by hand in an SVG beside the document, and without it the reader cannot see how the components achieve each user story."
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-4",
+      "good": "The builder sees from the tree that all five components are in the one Python 3 script using the standard library alone, where it is installed, the tests beside it, and the record's folder on Linux and macOS with its JSON Lines file per folder; and from the lines that it depends on Python of the README's version, is started as organize-downloads through its first line, and finds its places from the home folder and the system it runs on.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:75-98"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-5",
+      "good": "The reader learns that the project has no rules for checks, as the user's answer settled, and that here the code, the one kind of part in the tree, is checked by unittest tests of each component, each a Given, a When and a Then, and the user stories by running the script on a temporary test folder with a temporary home, all run by one command on Linux, and by the user once on macOS; no case's inputs or bars are given.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:100-120"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-6",
+      "good": "Each line holds with the principles: moving by hard link, or on a drive without hard links by a new file that fails where the name is taken, keeps never overwriting even when a name is taken after planning; the record kept outside the folder keeps nothing added inside; the Mover takes the Planner's plan so listing shows what moving does; the Undoer puts back by the same kind of move; and tests run with a temporary home so they never touch the user's files.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:11-23",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:39-73",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:84-98",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:111-115"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-7",
+      "good": "Each line is a decision the approval rests on, said once: the Undoer's line holds only that it reads the record through the Record keeper, moves by the Mover's kind of move and removes folders after the files are back, leaving which file goes back in which case to the README and the tests; the kinds' extensions and the cases stay in the README, linked from the opening.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-120"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-8",
+      "good": "Reading once from the top, the builder meets the README's words through the opening's link, 'the last move' defined there as the last run that moved a file in the folder and used under that one name in the lines, the figure and the tree, and 'hard link' explained where it is used as a second name for the same file and its contents, so it is not taken for a symbolic link; each why rests on what came before it.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:3-7",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:30-30",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:41-70",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md:85-85",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.svg:76-92"
+      ]
     }
   ],
-  "chosen": []
+  "questions": [],
+  "chosen": [
+    {
+      "chosen": "The Mover moves a file by a hard link to its new name and then removing the old name, never by a rename.",
+      "why": "A rename replaces a file that took the name after the Planner looked, while a hard link to a taken name fails and leaves both files, as checked with os.link and os.rename on a temporary folder, so the principle of never overwriting holds."
+    },
+    {
+      "chosen": "On a drive that cannot make hard links, the Mover makes the new name as a new file that fails where the name is taken, copies the contents into it, then removes the old name, rather than refusing the folder or saying each file stays.",
+      "why": "The README lets the user name any folder, such as one on a USB stick formatted FAT or exFAT, and this keeps the move story working there while the principle of never overwriting still holds, as creating a file exclusively on a taken name fails, checked on a temporary folder."
+    },
+    {
+      "chosen": "The Planner reads the names in the kinds' folders as well as in the folder, shown in the figure's arrow and in the Command line's line.",
+      "why": "It must, to say a file stays because its kind's folder already holds its name, as AC4 and the README's Example ask."
+    },
+    {
+      "chosen": "The Mover has each move and each kind's folder added to the record as soon as it is made, the first of these in a run starting the folder's record anew.",
+      "why": "A run stopped half way can still be undone, and a run that moves nothing leaves the last move's record for --undo, as the README's 'the last --move on that folder' and G1's 'the last run that moved files' ask."
+    },
+    {
+      "chosen": "One record per folder, a JSON Lines file named by a hash of the folder's full path and holding that path, in organize-downloads/ under the place AC12 names.",
+      "why": "A move in one folder never replaces another's record, a hash is always short enough for a file name, and a line written per move survives a run stopped half way."
+    },
+    {
+      "chosen": "Tests under organize-downloads/tests, one test_<component>.py per component and test_stories.py for the stories, run by python3 -m unittest discover organize-downloads/tests.",
+      "why": "unittest's discover finds files named test_*.py with no setup, which gives the one command AC11 asks with nothing to install."
+    }
+  ]
 }

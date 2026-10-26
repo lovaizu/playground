@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1070" height="600" viewBox="0 0 1070 600" font-family="Helvetica, Arial, sans-serif">
+  <title>organize-downloads: logical view</title>
+  <style>
+    .ink { stroke: #4a5560; fill: none; stroke-width: 1.5; }
+    .box { stroke: #4a5560; fill: #e8eef4; stroke-width: 1.5; }
+    .store { stroke: #4a5560; fill: #f3ede2; stroke-width: 1.5; }
+    .frame { stroke: #7a8590; fill: none; stroke-width: 1.2; stroke-dasharray: 6 4; }
+    .person { stroke: #4a5560; fill: none; stroke-width: 1.5; stroke-dasharray: 3 3; }
+    .name { fill: #1d252c; font-size: 15px; text-anchor: middle; }
+    .label { fill: #3a4550; font-size: 12px; }
+    .mid { text-anchor: middle; }
+    .end { text-anchor: end; }
+    .head { fill: #4a5560; }
+    @media (prefers-color-scheme: dark) {
+      .ink, .box, .store, .person { stroke: #b8c4cf; }
+      .box { fill: #22303c; }
+      .store { fill: #3a3326; }
+      .frame { stroke: #8f9aa5; }
+      .name { fill: #eef2f5; }
+      .label { fill: #c9d2da; }
+      .head { fill: #b8c4cf; }
+    }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path class="head" d="M 0 0 L 10 5 L 0 10 z"/>
+    </marker>
+  </defs>
+
+  <!-- The frame round what makes the one product: the tool's one Python file -->
+  <rect class="frame" x="230" y="50" width="470" height="460"/>
+  <text class="label" x="242" y="70">organize-downloads, one Python file</text>
+
+  <!-- The user, outside the product -->
+  <rect class="person" x="10" y="250" width="80" height="50"/>
+  <text class="name" x="50" y="280">User</text>
+
+  <!-- Components, all code -->
+  <rect class="box" x="250" y="250" width="120" height="50"/>
+  <text class="name" x="310" y="280">Command line</text>
+
+  <rect class="box" x="520" y="90" width="140" height="50"/>
+  <text class="name" x="590" y="120">Planner</text>
+
+  <rect class="box" x="520" y="200" width="140" height="50"/>
+  <text class="name" x="590" y="230">Mover</text>
+
+  <rect class="box" x="550" y="305" width="130" height="50"/>
+  <text class="name" x="615" y="335">Record keeper</text>
+
+  <rect class="box" x="520" y="410" width="140" height="50"/>
+  <text class="name" x="590" y="440">Undoer</text>
+
+  <!-- Files on disk, outside the product -->
+  <path class="store" d="M 780 300 h 50 l 10 10 h 80 v 50 h -140 z"/>
+  <text class="name" x="850" y="333">Record</text>
+
+  <path class="store" d="M 960 70 h 40 l 10 10 h 40 v 400 h -90 z"/>
+  <text class="name" x="1005" y="265">Folder</text>
+  <text class="name" x="1005" y="285">being</text>
+  <text class="name" x="1005" y="305">sorted</text>
+
+  <!-- User and Command line -->
+  <line class="ink" x1="90" y1="262" x2="250" y2="262" marker-end="url(#arrow)"/>
+  <text class="label mid" x="160" y="254">runs it</text>
+  <line class="ink" x1="250" y1="290" x2="90" y2="290" marker-end="url(#arrow)"/>
+  <text class="label mid" x="160" y="308">prints a line</text>
+  <text class="label mid" x="160" y="322">for each file</text>
+
+  <!-- Command line to the three that do the work -->
+  <line class="ink" x1="370" y1="258" x2="520" y2="115" marker-end="url(#arrow)"/>
+  <text class="label end" x="440" y="168">asks where each file goes</text>
+  <line class="ink" x1="370" y1="270" x2="520" y2="225" marker-end="url(#arrow)"/>
+  <text class="label" x="402" y="278">hands it the plan</text>
+  <line class="ink" x1="370" y1="290" x2="520" y2="435" marker-end="url(#arrow)"/>
+  <text class="label end" x="430" y="400">asks to undo the last move</text>
+
+  <!-- Into the folder -->
+  <line class="ink" x1="660" y1="115" x2="960" y2="115" marker-end="url(#arrow)"/>
+  <text class="label mid" x="810" y="92">reads the names in it</text>
+  <text class="label mid" x="810" y="107">and in its kinds' folders</text>
+  <line class="ink" x1="660" y1="225" x2="960" y2="225" marker-end="url(#arrow)"/>
+  <text class="label mid" x="810" y="217">moves files into kinds' folders</text>
+  <line class="ink" x1="660" y1="435" x2="960" y2="435" marker-end="url(#arrow)"/>
+  <text class="label mid" x="810" y="412">moves files back, removes</text>
+  <text class="label mid" x="810" y="427">kinds' folders it left empty</text>
+
+  <!-- The record of the last move -->
+  <line class="ink" x1="600" y1="250" x2="615" y2="305" marker-end="url(#arrow)"/>
+  <text class="label end" x="600" y="283">adds each move</text>
+  <line class="ink" x1="600" y1="410" x2="615" y2="355" marker-end="url(#arrow)"/>
+  <text class="label end" x="608" y="382">reads the last move</text>
+  <line class="ink" x1="680" y1="330" x2="780" y2="330" marker-end="url(#arrow)"/>
+  <text class="label mid" x="740" y="348">writes, reads</text>
+
+  <!-- Legend -->
+  <rect class="box" x="230" y="540" width="40" height="24"/>
+  <text class="label" x="278" y="557">code</text>
+  <rect class="box" x="330" y="540" width="40" height="24" rx="10"/>
+  <text class="label" x="378" y="557">AI (none in this tool)</text>
+  <rect class="person" x="530" y="540" width="40" height="24"/>
+  <text class="label" x="578" y="557">person</text>
+  <path class="store" d="M 650 540 h 14 l 5 5 h 21 v 19 h -40 z"/>
+  <text class="label" x="698" y="557">files on disk</text>
+  <rect class="frame" x="810" y="540" width="40" height="24"/>
+  <text class="label" x="858" y="557">one product</text>
+</svg>
