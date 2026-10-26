@@ -79,6 +79,9 @@
   },
   {
    "decision": "Entries neither a file nor a folder: The tool never moves or lists a symbolic link, whatever it points to, or any entry that is neither a plain file nor a folder, such as a named pipe; it leaves them in place as it does folders."
+  },
+  {
+   "decision": "Case of the endings of downloads in progress: The endings of files still being downloaded (.crdownload, .part, .download) are matched without regard to case, as extensions are, so a file such as report.pdf.PART is left in place."
   }
  ]
 }
