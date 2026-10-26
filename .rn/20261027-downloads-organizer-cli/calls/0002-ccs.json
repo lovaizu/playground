@@ -43,6 +43,9 @@
   },
   {
    "decision": "Showing an undo before making it: Undoing works as organizing does: asked to undo without being told to move, the tool shows each file it would move back with where it would go, and each file it could not move back, and changes nothing; it moves files back only when told to."
+  },
+  {
+   "decision": "Kind folders left empty by undoing: When undoing, a kind folder that the last run newly made and that is empty once its files are moved back is removed, so the folder looks as it did before the run; a kind folder holding anything, or one that was there before the run, is left as it is."
   }
  ]
 }
