@@ -34,9 +34,10 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 4 of /rn:up on T3: action 2, have turn make docs/architecture.md
+Step 3 of /rn:up on t3.2: call turn again with call 0008 once the user settles how to go on past turn's hook error
 
 ## Open
 
+- turn:up stopped before starting call 0008: its PreToolUse hook refused 'turn.py start' with 'lane cannot check read_only on step 4 of up: {given} is not given in what up started from' and the same for read_whole, saying the maker of turn must fix it; no result was written
 - The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decisions 'What the README is checked against now' and 'How the README run ends' of t2.2); the build-stage plan must carry this
 - The LICENSE file for the MIT license (decision 'License' of t2.2) is not yet made; the build-stage plan must carry it
