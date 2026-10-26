@@ -1,0 +1,58 @@
+{
+ "focal_entities": [
+  {
+   "work": "t7.1"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "code"
+  },
+  {
+   "path": ".github/workflows/organize-downloads.yml"
+  },
+  {
+   "audience": "whoever maintains the tool, a person or an AI, and the user reading the pull request"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  },
+  {
+   "has": "organize-downloads/docs/architecture.md"
+  },
+  {
+   "has": "organize-downloads"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "seeing on each push that the tests pass on macOS and Linux, and keeping the pinned versions current"
+  },
+  {
+   "serves": "AC7: AC1 to AC6 and AC8 to AC10 each hold on both macOS and Linux, shown on the pull request by the tool's tests, which GitHub Actions runs on both on every push."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "the tool and its tests handed as organize-downloads: the workflow installs and runs them"
+  },
+  {
+   "chosen": "the failure handed: GitHub Actions run 40407400092 failed on every job before any step with 'The actions actions/checkout@v7 and actions/setup-python@v7 are not allowed in lovaizu/playground because all actions must be pinned to a full-length commit SHA.'"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+  }
+ ]
+}
