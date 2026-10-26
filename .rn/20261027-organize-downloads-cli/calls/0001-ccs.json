@@ -28,6 +28,9 @@
   },
   {
    "decision": "File types and their folders: The tool tells a file's type by its extension and uses a fixed set of folders that the user cannot change: Images (pictures), Documents (documents, PDFs, spreadsheets), Archives (zip and the like), Audio, Video, Installers (.dmg, .deb and the like), and Others for a file that fits none of them. Which extensions go in each folder is still to be settled."
+  },
+  {
+   "decision": "Where the type folders go: The type folders are made inside the folder being organized, such as ~/Downloads/Images; nothing outside it is touched."
   }
  ]
 }
