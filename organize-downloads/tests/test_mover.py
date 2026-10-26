@@ -10,7 +10,8 @@ failed for that reason and each one after it, all left undone.
 
 Mover gives each file its new name as a hard link and then removes the old one, as the
 architecture sets; the tests that need a link to fail stand in for os.link with stand_in_for_os,
-which reaches Path.hardlink_to too, so Mover may make the link either way.
+which reaches Path.hardlink_to too, so Mover may make the link either way. Those that need the old
+name's removal or the record's write to fail stand in for os.unlink and os.replace the same way.
 """
 
 import errno
@@ -19,6 +20,7 @@ import random
 import stat
 import tempfile
 import unittest
+from collections.abc import Callable
 from pathlib import Path
 from unittest import mock
 
@@ -54,6 +56,59 @@ def take_invoice_name(folder: Path, kind: str) -> None:
         taken.mkdir()
     else:
         os.symlink("missing.pdf", taken)
+
+
+# The error of removing a name in a folder that cannot be written.
+PERMISSION_DENIED = OSError(errno.EACCES, os.strerror(errno.EACCES))
+
+# The error of a disk that is full, as the record's write meets it.
+DISK_FULL = OSError(errno.ENOSPC, os.strerror(errno.ENOSPC))
+
+
+def unlink_failing_in(folder: Path, error: BaseException) -> Callable[..., None]:
+    """Take in a folder and an error; give back a stand-in for os.unlink that removes as os.unlink
+    does, but raises the error instead where the name to remove is directly in that folder, as
+    removing a file's old name in an organized folder that cannot be written meets."""
+    real_unlink = os.unlink
+
+    def unlink(path: os.PathLike | str, *arguments, **keywords) -> None:
+        if Path(path).parent == folder:
+            raise error
+        real_unlink(path, *arguments, **keywords)
+
+    return unlink
+
+
+def link_failing_into(folder: Path, error: BaseException) -> Callable[..., None]:
+    """Take in a folder and an error; give back a stand-in for os.link that links as os.link does,
+    but raises the error instead where the new name is directly in that folder, as giving a moved
+    file back its old name meets once a file of that name came there."""
+    real_link = os.link
+
+    def link(
+        source: os.PathLike | str, destination: os.PathLike | str, *arguments, **keywords
+    ) -> None:
+        if Path(destination).parent == folder:
+            raise error
+        real_link(source, destination, *arguments, **keywords)
+
+    return link
+
+
+def replace_failing_on_second_call(error: BaseException) -> Callable[..., None]:
+    """Take in an error; give back a stand-in for os.replace that renames as os.replace does on
+    every call but the second, which raises the error instead, as a record's write in a run whose
+    disk fills up after its first move meets."""
+    real_replace = os.replace
+    calls = []
+
+    def replace(*arguments, **keywords) -> None:
+        calls.append(arguments)
+        if len(calls) == 2:
+            raise error
+        real_replace(*arguments, **keywords)
+
+    return replace
 
 
 class MoverTestCase(unittest.TestCase):
@@ -296,6 +351,22 @@ class StopTest(MoverTestCase):
         self.assertEqual(report.stopped.errno, errno.EIO)
         self.assertEqual(move_pairs(report.unmoved), [("notes.txt", "Documents")])
 
+    def test_a_file_gone_after_the_moves_were_worked_out_stops_the_run_there(self):
+        # Given: moves worked out for a photo, an invoice and an installer, and then, before they
+        # are applied, the photo moved away, as another run at the same time would
+        make_files(self.folder, ["holiday.jpg", "invoice.pdf", "Docker.dmg"])
+        plan = organize.plan_moves(self.folder)
+        (self.folder / "holiday.jpg").rename(self.root / "holiday.jpg")
+        # When: the moves are applied
+        report = mover.apply_moves(self.folder, plan)
+        # Then: the installer before it is moved, and the run stops at the photo, saying it is
+        # not there, the invoice after it left
+        self.assertEqual(move_pairs(report.moved), [("Docker.dmg", "Installers")])
+        self.assertIsInstance(report.stopped, FileNotFoundError)
+        self.assertEqual(
+            move_pairs(report.unmoved), [("holiday.jpg", "Images"), ("invoice.pdf", "Documents")]
+        )
+
     def test_a_type_folder_name_held_by_something_not_a_folder_stops_the_run(self):
         for kind in ["plain file", "link to a folder outside"]:
             with self.subTest(kind=kind):
@@ -408,6 +479,97 @@ class RecordTest(MoverTestCase):
         self.assertTrue((self.folder / "Installers" / "Docker.dmg").is_file())
         self.assertFalse(os.path.lexists(self.folder / "Docker.dmg"))
         self.assertIn(("Docker.dmg", "Installers"), move_pairs(record.read_moves(self.folder)))
+
+
+class UndoneMoveTest(MoverTestCase):
+    """A move that fails after its link was made is undone, so its file keeps its old name, the
+    run stops there, and nothing is deleted."""
+
+    def test_an_old_name_that_cannot_be_removed_leaves_the_file_as_it_was(self):
+        # Given: an organized folder holding an invoice, whose names cannot be removed, as in a
+        # folder that cannot be written beside a Documents folder that can
+        make_files(self.folder, ["invoice.pdf"])
+        plan = organize.plan_moves(self.folder)
+        before = snapshot(self.root)
+        # When: the moves are applied
+        with stand_in_for_os(unlink=unlink_failing_in(self.folder, PERMISSION_DENIED)):
+            report = mover.apply_moves(self.folder, plan)
+        # Then: the run stops with that error before any move, and the invoice is where it was,
+        # its name in Documents removed and no record written; Documents, made for it, stays
+        self.assertAllLeftInPlace(report, plan)
+        self.assertEqual(report.stopped.errno, errno.EACCES)
+        self.assertEqual(snapshot(self.root), {**before, "Downloads/Documents": ("folder",)})
+
+    def test_a_file_whose_two_names_cannot_be_removed_keeps_both(self):
+        # Given: an organized folder holding an invoice, where no name can be removed at all
+        make_files(self.folder, ["invoice.pdf"])
+        plan = organize.plan_moves(self.folder)
+        # When: the moves are applied
+        with stand_in_for_os(unlink=mock.Mock(side_effect=PERMISSION_DENIED)):
+            report = mover.apply_moves(self.folder, plan)
+        # Then: the run stops before any move, and the invoice has its old name and its name in
+        # Documents, the same file, so nothing of it is lost
+        self.assertAllLeftInPlace(report, plan)
+        self.assertTrue(
+            os.path.samefile(self.folder / "invoice.pdf", self.folder / "Documents" / "invoice.pdf")
+        )
+
+    def test_a_record_that_cannot_be_written_puts_the_file_back_and_keeps_the_last_record(self):
+        # Given: an organized folder whose record holds a run before, and an invoice to move, on a
+        # disk that is full when the record is written
+        record.write_moves(self.folder, [organize.Move("old.pdf", "Documents")])
+        make_files(self.folder, ["invoice.pdf"])
+        plan = organize.plan_moves(self.folder)
+        before = snapshot(self.root)
+        # When: the moves are applied
+        with stand_in_for_os(replace=mock.Mock(side_effect=DISK_FULL)):
+            report = mover.apply_moves(self.folder, plan)
+        # Then: the run stops saying the record was not written, and the invoice is back where it
+        # was, so the record of the run before, as it was, still tells undo the last run that
+        # moved files; Documents, made for it, stays
+        self.assertAllLeftInPlace(report, plan)
+        self.assertIsInstance(report.stopped, record.RecordNotWritten)
+        self.assertEqual(snapshot(self.root), {**before, "Downloads/Documents": ("folder",)})
+
+    def test_a_record_that_cannot_be_written_midway_keeps_the_moves_before_it(self):
+        # Given: an organized folder holding three files, on a disk that is full when the record
+        # of the second move is written
+        make_files(self.folder, ["holiday.jpg", "invoice.pdf", "Docker.dmg"])
+        plan = organize.plan_moves(self.folder)
+        # When: the moves are applied
+        with stand_in_for_os(replace=replace_failing_on_second_call(DISK_FULL)):
+            report = mover.apply_moves(self.folder, plan)
+        # Then: the first move is made and in the record, the second file is back where it was
+        # and the third not tried, both left by the stop
+        self.assertEqual(move_pairs(report.moved), [("Docker.dmg", "Installers")])
+        self.assertEqual(
+            move_pairs(report.unmoved), [("holiday.jpg", "Images"), ("invoice.pdf", "Documents")]
+        )
+        self.assertEqual(move_pairs(record.read_moves(self.folder)), [("Docker.dmg", "Installers")])
+        self.assertTrue((self.folder / "holiday.jpg").is_file())
+        self.assertFalse(os.path.lexists(self.folder / "Images" / "holiday.jpg"))
+
+    def test_a_file_that_cannot_be_put_back_after_the_record_failed_is_reported_moved(self):
+        # Given: an organized folder holding three files, on a disk that is full when the record
+        # of the second move is written, where no old name can be given back, as when a file of
+        # that name came there meanwhile
+        make_files(self.folder, ["holiday.jpg", "invoice.pdf", "Docker.dmg"])
+        plan = organize.plan_moves(self.folder)
+        # When: the moves are applied
+        with stand_in_for_os(
+            replace=replace_failing_on_second_call(DISK_FULL),
+            link=link_failing_into(self.folder, WRITE_FAILED),
+        ):
+            report = mover.apply_moves(self.folder, plan)
+        # Then: the second file stays in Images, its only place, and is reported moved after the
+        # first; the run stops saying the record was not written, and the third is left by it
+        self.assertEqual(
+            move_pairs(report.moved), [("Docker.dmg", "Installers"), ("holiday.jpg", "Images")]
+        )
+        self.assertIsInstance(report.stopped, record.RecordNotWritten)
+        self.assertEqual(move_pairs(report.unmoved), [("invoice.pdf", "Documents")])
+        self.assertTrue((self.folder / "Images" / "holiday.jpg").is_file())
+        self.assertFalse(os.path.lexists(self.folder / "holiday.jpg"))
 
 
 class AnyFolderTest(unittest.TestCase):

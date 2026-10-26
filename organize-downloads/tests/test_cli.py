@@ -38,6 +38,9 @@ from tests import (
     write_user_dirs,
 )
 
+# The error of a disk that is full, as the record's write meets it.
+DISK_FULL = OSError(errno.ENOSPC, os.strerror(errno.ENOSPC))
+
 
 def run_main(arguments: list) -> tuple:
     """Take in the arguments typed after organize-downloads; run cli.main on them and give back
@@ -387,6 +390,58 @@ class ApplyRunTest(CommandLineTestCase):
             errors,
             "organize-downloads: cannot move Docker.dmg into Installers/, as "
             f"{self.root / 'Installers'} is not a folder: move or rename it, and run again\n",
+        )
+
+    def test_a_file_gone_before_its_move_stops_naming_it_and_to_run_again(self):
+        # Given: a folder holding an installer and an invoice, the invoice moved away after the
+        # moves were worked out, as another run at the same time would
+        make_files(self.root, ["Docker.dmg", "invoice.pdf"])
+        planned = organize.plan_moves(self.root)
+        (self.root / "invoice.pdf").unlink()
+        # When: the command runs with --apply and that folder given last
+        with mock.patch.object(organize, "plan_moves", return_value=planned):
+            status, _, errors = run_main(["--apply", str(self.root)])
+        # Then: it ends with the status of a stop, and standard error holds one line naming the
+        # file, that it is no longer there, and to run again
+        self.assertEqual(status, 1)
+        self.assertEqual(
+            errors,
+            "organize-downloads: cannot move invoice.pdf into Documents/, as it is no longer in "
+            f"{self.root}, such as when another run moves it at the same time: run again to move "
+            "the files left\n",
+        )
+
+    def test_a_record_that_cannot_be_written_prints_the_file_as_left_by_the_stop(self):
+        # Given: a folder holding an invoice, on a disk that is full when the record of its move
+        # is written
+        make_files(self.root, ["invoice.pdf"])
+        # When: the command runs with --apply and that folder given last
+        with stand_in_for_os(replace=mock.Mock(side_effect=DISK_FULL)):
+            status, output, _ = run_main(["--apply", str(self.root)])
+        # Then: it ends with the status of a stop, and prints that no file moved and that the
+        # invoice, put back, was left as the run stopped
+        self.assertEqual(status, 1)
+        self.assertEqual(
+            output,
+            f"Moved no file in {self.root}.\n"
+            "Left 1 file in place, as the run stopped:\n"
+            "  invoice.pdf  -> Documents/\n",
+        )
+
+    def test_a_record_that_cannot_be_written_stops_naming_it_and_what_to_check(self):
+        # Given: a folder holding an invoice, on a disk that is full when the record of its move
+        # is written
+        make_files(self.root, ["invoice.pdf"])
+        # When: the command runs with --apply and that folder given last
+        with stand_in_for_os(replace=mock.Mock(side_effect=DISK_FULL)):
+            _, _, errors = run_main(["--apply", str(self.root)])
+        # Then: standard error holds one line naming the record file, the reason, and what to
+        # check
+        self.assertEqual(
+            errors,
+            f"organize-downloads: cannot write {self.root / RECORD_NAME}, the record undo reads "
+            f"to put files back ({os.strerror(errno.ENOSPC)}): check that you may write in "
+            f"{self.root} and that its disk has room, and run again\n",
         )
 
     def test_a_moved_name_holding_a_line_break_is_printed_on_one_line_escaped(self):

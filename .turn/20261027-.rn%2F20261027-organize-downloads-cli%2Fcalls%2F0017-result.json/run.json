@@ -16,7 +16,10 @@
   "organize-downloads/src/organize_downloads/mover.py",
   "organize-downloads/src/organize_downloads/record.py",
   "organize-downloads/src/organize_downloads/organize.py",
-  "organize-downloads/src/organize_downloads/type_table.py"
+  "organize-downloads/src/organize_downloads/type_table.py",
+  "organize-downloads/tests/test_mover.py",
+  "organize-downloads/tests/test_cli.py",
+  "organize-downloads/tests/test_record.py"
  ],
  "checklist": [
   "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
@@ -95,6 +98,9 @@
   "organize-downloads/src/organize_downloads/record.py",
   "organize-downloads/src/organize_downloads/organize.py",
   "organize-downloads/src/organize_downloads/type_table.py",
+  "organize-downloads/tests/test_mover.py",
+  "organize-downloads/tests/test_cli.py",
+  "organize-downloads/tests/test_record.py",
   ".rn/20261027-organize-downloads-cli/steering.md",
   "organize-downloads/docs/architecture.md",
   "organize-downloads/README.md",
@@ -111,6 +117,9 @@
   "organize-downloads/src/organize_downloads/record.py",
   "organize-downloads/src/organize_downloads/organize.py",
   "organize-downloads/src/organize_downloads/type_table.py",
+  "organize-downloads/tests/test_mover.py",
+  "organize-downloads/tests/test_cli.py",
+  "organize-downloads/tests/test_record.py",
   ".rn/20261027-organize-downloads-cli/steering.md",
   "organize-downloads/docs/architecture.md",
   "organize-downloads/README.md",
@@ -125,16 +134,99 @@
  "more": 1,
  "stage": "asked",
  "told": true,
+ "answers": [
+  {
+   "questions": [
+    {
+     "question": "T4.2 may write only cli.py, mover.py, record.py, organize.py and type_table.py, no test file. The moving brings behaviors no T4.1 test holds, such as a record write that fails after a file was already moved, or the old name failing to be removed after its link was made; each needs a branch in Mover and a stop the user is told, and without a test beside it B-6 (every behavior held by a test) cannot be met. Should tests/test_mover.py, tests/test_cli.py and tests/test_record.py be added to this run's work, so a test for each such behavior comes in the same change?",
+     "recommended": "Yes, add those three test files to the work, as T3.3 did with test_cli.py and test_folder.py for the same reason, so every branch the code brings is held by a test in the same change.",
+     "items": [
+      {
+       "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+       "item": "B-6"
+      }
+     ]
+    }
+   ],
+   "answer": "Answer to your B-6 question: yes; the CCS now holds organize-downloads/tests/test_mover.py, test_cli.py and test_record.py as further paths of the work, with a \"chosen\" entry saying why. Read the CCS anew and go on with the run."
+  }
+ ],
+ "back": [],
+ "prompts": {
+  "turn:generator": {
+   "given": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0017-ccs.json",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/record.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/steering.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0010-ccs.json",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0013-ccs.json",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0016-result.json",
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+   ],
+   "work": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/record.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py"
+   ],
+   "checklists": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
+   ],
+   "test": "uv run --no-cache --isolated --no-project --with ./organize-downloads python3 -m unittest discover -s organize-downloads/tests -t organize-downloads",
+   "sent_back": [],
+   "answers": [
+    {
+     "questions": [
+      {
+       "question": "T4.2 may write only cli.py, mover.py, record.py, organize.py and type_table.py, no test file. The moving brings behaviors no T4.1 test holds, such as a record write that fails after a file was already moved, or the old name failing to be removed after its link was made; each needs a branch in Mover and a stop the user is told, and without a test beside it B-6 (every behavior held by a test) cannot be met. Should tests/test_mover.py, tests/test_cli.py and tests/test_record.py be added to this run's work, so a test for each such behavior comes in the same change?",
+       "recommended": "Yes, add those three test files to the work, as T3.3 did with test_cli.py and test_folder.py for the same reason, so every branch the code brings is held by a test in the same change.",
+       "items": [
+        {
+         "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+         "item": "B-6"
+        }
+       ]
+      }
+     ],
+     "answer": "Answer to your B-6 question: yes; the CCS now holds organize-downloads/tests/test_mover.py, test_cli.py and test_record.py as further paths of the work, with a \"chosen\" entry saying why. Read the CCS anew and go on with the run."
+    }
+   ],
+   "chosen": [],
+   "result": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0017-result.json",
+   "reply": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.turn/20261027-.rn%2F20261027-organize-downloads-cli%2Fcalls%2F0017-result.json/generator.json"
+  }
+ },
+ "since": {
+  "turn:generator": []
+ },
+ "started": {
+  "turn:generator": "a526623527c0de110"
+ },
  "questions": {
-  "from": "check",
+  "from": "turn:generator",
   "questions": [
    {
-    "question": "T4.2 may write only cli.py, mover.py, record.py, organize.py and type_table.py, no test file. The moving brings behaviors no T4.1 test holds, such as a record write that fails after a file was already moved, or the old name failing to be removed after its link was made; each needs a branch in Mover and a stop the user is told, and without a test beside it B-6 (every behavior held by a test) cannot be met. Should tests/test_mover.py, tests/test_cli.py and tests/test_record.py be added to this run's work, so a test for each such behavior comes in the same change?",
-    "recommended": "Yes, add those three test files to the work, as T3.3 did with test_cli.py and test_folder.py for the same reason, so every branch the code brings is held by a test in the same change.",
+    "question": "The tests now need one more failing-write error: a full disk (ENOSPC), the error a record write meets. test_mover.py and test_cli.py each define it as DISK_FULL, and test_record.py writes it inline twice. T4.1 put the errors the modules share, NO_HARD_LINKS and WRITE_FAILED, in tests/__init__.py for this reason (B-5, one value in one place). That file is not in this run's work. Should organize-downloads/tests/__init__.py be added to the work, so DISK_FULL is defined there once and the three modules import it?",
+    "recommended": "Yes, add tests/__init__.py to the work as a further path, as the shared NO_HARD_LINKS and WRITE_FAILED already live there, so the full-disk error is written once and a change to it reaches every test.",
     "items": [
      {
       "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
-      "item": "B-6"
+      "item": "B-5"
      }
     ]
    }

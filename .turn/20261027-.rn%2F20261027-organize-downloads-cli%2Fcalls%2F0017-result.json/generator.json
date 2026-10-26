@@ -1,0 +1,260 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "F-1",
+      "good": "Each new or changed module opens with what it does and why it is there. mover.py says it is the one part that changes the organized folder, and why it links before removing. record.py says why the record is hidden, kept inside the folder and renamed into place. cli.py's opening now covers --apply. Every function and the two new classes, MoveReport and RecordNotWritten, give types on each parameter and return value, and a docstring saying what they take, give back and when they stop. Each new test has a one-sentence name and Given:, When: and Then: comments, as the T4.1 tests do.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py:1-115",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/record.py:1-93",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:1-57",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:120-173",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:61-111",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:484-573",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:199-325",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:395-445"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-1",
+      "good": "The moving uses only Python's standard library, nothing newer than 3.10: os.link, os.unlink, os.mkdir, os.lstat, os.replace, os.fsync, tempfile.mkstemp, json, contextlib and typing.NamedTuple. `X | None` in annotations works from 3.10. I ran the task's Test command on Python 3.10 and 3.14: both ran 128 tests, all passing. I also ran the workflow's way, `PYTHONPATH=src python3 -m unittest discover -s tests` in organize-downloads, on 3.10: it passed too. Mover calls os.link and os.unlink directly, and Run record calls os.replace directly, so the tests' stand-ins reach them on every version.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py:11-33",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/record.py:10-58"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-2",
+      "good": "Each stop of --apply ends with status 1 and prints one line on standard error. The line names what could not be done, the reason, and an action that clears it:\n- A type folder's name held by a file or a link names that path and says to move or rename it and run again. I ran it on a real folder holding Docker.dmg and a plain file named Installers: after renaming the file, the run goes on.\n- A failing link or removal names the file and its type folder, and says to check write permission and that the file system can make hard links (exFAT and FAT32 cannot).\n- A file gone before its move, such as one moved by another run at the same time, says to run again. The planner then no longer lists it.\n- A record that cannot be written names the record file and says to check write permission and disk room.\nWith each stop, standard output lists every file left 'as the run stopped', so the user sees what is still to move. Folder and plan stops come before Mover is called, so --apply never moves in a folder it could not check. Run record's read_moves checks a record that may have been changed by hand where it comes in: it refuses any name that could reach outside the organized folder, and any type folder not of the table, naming the record file.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:31-57",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:151-173",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py:82-96",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/record.py:61-93"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-3",
+      "parts": [
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:1-193",
+          "good": "The opening and main's docstring now say what --apply adds and which exit status each ending gives; a taken name ends well. A comment says why one width serves the whole output. _print_report, _print_moves, _count and _why_stopped each say what they print or give back, and in what order. Error handling stays in the form of the existing stops: a message string passed to _stop.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:1-57",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:120-173"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py:1-115",
+          "good": "The opening gives the reason behind a link followed by a removal, as the architecture sets it. MoveReport's docstring defines each of its four fields. apply_moves says which failures stop the run, the exception for each, and what happens to the move that stops it, the one case that stays moved included. The comments at the removal and record branches say why the move is undone. _type_folder says why a link to a folder counts as not a folder.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py:1-79",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py:82-115"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/record.py:1-93",
+          "good": "The opening says why the record is hidden, kept inside the folder, and renamed into place. write_moves gives the JSON form and the reason for a new file of the write's own. Comments say why ensure_ascii carries any name, why fsync comes before the rename, and why the new file is removed on failure. read_moves lists exactly what it refuses and why.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/record.py:1-93"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:1-43",
+          "good": "Unchanged and still true: Move is the kind Mover and Run record take, as its docstring tells, and the planner still only reads.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:15-43"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:1-52",
+          "good": "Unchanged. Run record now also takes its set of allowed type folders from EXTENSIONS_BY_TYPE_FOLDER and OTHERS, as the opening's 'written here alone' promises.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:1-22"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:1-627",
+          "good": "The module docstring now says that the removal and the record write are made to fail by standing in for os.unlink and os.replace. Each new error constant and stand-in says what it stands for and which real event it acts out, such as a folder that cannot be written beside a Documents folder that can. UndoneMoveTest's docstring states what it holds.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:1-15",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:61-111",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:484-486"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:1-783",
+          "good": "DISK_FULL says which real event it stands for. The three new --apply tests sit in ApplyRunTest beside the other stop tests, in the same form: stdout and stderr in tests of their own.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:41-42",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:395-445"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:1-325",
+          "good": "NOT_FILE_NAMES says why '.' and '..' are not drawn. random_file_name says what it gives. ReadTest's docstring says why a record is refused. The root skip says why, in the same words as the other root skips.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:34-55",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:224-250"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-4",
+      "parts": [
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:1-193",
+          "good": "--apply is the one option the requirements ask. Each branch of _why_stopped is a stop Mover can give, each held by a test. _count and _print_moves are each used by both the listing and the report.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:43-57",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:120-173"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py:1-115",
+          "good": "apply_moves takes only the folder and the plan. Each try is a step of a move that can fail in its own way: the link, the removal and the record. _put_back and _remove_name serve only the undoing of a move that failed, the one way to keep AC10 and the record true. Undo's moves back are left to T5.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py:36-115"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/record.py:1-93",
+          "good": "write_moves and read_moves are the two calls T4.1's tests ask. read_moves' checks are those of the record coming in from the disk, not a guess at undo. The record holds nothing beyond name and type folder.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/record.py:29-93"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:1-43",
+          "good": "Unchanged. Nothing was added for the moving.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:15-43"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:1-52",
+          "good": "Unchanged. Nothing was added for the moving.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:8-52"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:1-627",
+          "good": "Each new stand-in takes only what its callers vary, the folder and the error, and each serves the tests in UndoneMoveTest. Each new test holds one branch of apply_moves.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:61-111",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:354-368",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:484-573"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:1-783",
+          "good": "The three new tests hold the two _why_stopped branches the T4.1 tests did not reach, and what a record stop prints.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:395-445"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:1-325",
+          "good": "write_record takes bytes as well as text because one case needs bytes no UTF-8 text holds. Each ReadTest case is one way a record can be refused.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:242-325"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-5",
+      "question": 1
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-6",
+      "good": "Every behavior the moving brings beyond the T4.1 tests now has a test that fails when it breaks:\n- the old name failing to be removed, and both names failing;\n- the record failing on the first move and midway;\n- the record failing when the file cannot be put back, after an earlier move, so the slice of moves left is checked;\n- a file gone after planning;\n- the record write failing, interrupted, or unable to make its new file;\n- each way read_moves refuses a record, with names next to those refused (`...`, `.x`, `x.`, `x`) read back;\n- the two new CLI stops.\nI measured branch coverage with coverage.py through uv, without the two property tests: cli.py, mover.py and record.py at 100% of statements and branches. mutmut 2.5.1, run through uv in a temporary copy without test_stories, killed all 152 mutants of cli.py, mover.py and record.py. It first found six survivors. Three were real gaps, now each held by a test: the slice of moves left after a put-back fails, and the two read messages, which were not compared whole. The other three were mutants of record's `placed` flag, which changed no behavior. The flag is now gone: the cleanup is an except that re-raises. The record property test now draws again a name that no file can have ('.' or '..'), rather than leaving it out silently, with the reason beside it.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:354-368",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:484-573",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:34-55",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:199-325",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:395-445"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-7",
+      "good": "Each new test holds one behavior: the report or the folder's state, stdout or stderr, each in a test of its own, as T4.1's are split. Each makes its own temporary folder, with no clock or network and no order between tests. The stand-ins are scoped to the `with` around the one call they break. The one new root-only test carries the same skip, with its reason, as the existing ones. The full Test command passes on 3.10 and 3.14, so no check is already failing.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:484-573",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:223-240",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_cli.py:395-445"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-8",
+      "good": "The whole Test command, the package build included, took 1.33 s wall time on 3.10. unittest reported 'Ran 128 tests in 0.229s'. The new tests run no other program. Mutation testing of the three modules, 152 mutants, ended in minutes.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:484-573",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_record.py:199-325"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-9",
+      "good": "When two runs work on one folder at the same time, neither overwrites the other's files:\n- Each record write makes a new file of its own with tempfile.mkstemp, so two runs never write the same new file.\n- Each record write replaces the record whole, never in part.\n- A name another run took after planning makes the link fail as taken, so it is never overwritten.\n- A file another run moved away stops this run, telling the user to run again; a test holds this.\n- Two runs moving into the same type folder both use mkdir, and a FileExistsError is taken as the folder being there.\nWhen two runs at once both move files, the record holds the moves of the run that wrote it last.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/record.py:29-58",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py:51-79",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/mover.py:82-96",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/tests/test_mover.py:354-368",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:165-169"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "The tests now need one more failing-write error: a full disk (ENOSPC), the error a record write meets. test_mover.py and test_cli.py each define it as DISK_FULL, and test_record.py writes it inline twice. T4.1 put the errors the modules share, NO_HARD_LINKS and WRITE_FAILED, in tests/__init__.py for this reason (B-5, one value in one place). That file is not in this run's work. Should organize-downloads/tests/__init__.py be added to the work, so DISK_FULL is defined there once and the three modules import it?",
+      "recommended": "Yes, add tests/__init__.py to the work as a further path, as the shared NO_HARD_LINKS and WRITE_FAILED already live there, so the full-disk error is written once and a change to it reaches every test."
+    }
+  ],
+  "chosen": [
+    {
+      "chosen": "A move is made in three steps: link the new name, remove the old name, then write the record with every move of the run so far. If the removal fails, the new name is removed. If the record write fails, the file is given its old name back by a link and the new name is removed. Either way the file keeps its old name and the run stops there.",
+      "why": "The architecture sets link-then-remove and a record of each move, but not how a failure after the link is handled. Undoing it keeps AC10 (nothing deleted, every file in one place) and keeps the record true. If the record failed on a run's first move and the file stayed moved, undo would put back the run before."
+    },
+    {
+      "chosen": "Where the old name cannot be given back after a failed record write, the file stays in its type folder and is reported under `moved`, with the stop and the moves after it unmoved.",
+      "why": "That is where the file is, and the report must not call a moved file left. The case needs a file of the same name to arrive at the old place within the run, so it gets no message of its own."
+    },
+    {
+      "chosen": "A record that cannot be written stops the run with record.RecordNotWritten, an OSError subclass whose filename is the record file. The command prints `cannot write <record>, the record undo reads to put files back (<reason>): check that you may write in <folder> and that its disk has room, and run again`.",
+      "why": "MoveReport's four fields are fixed by T4.1's tests, so the command tells this stop apart by the error's class. The message names the input, the reason and an action, as the other stops do."
+    },
+    {
+      "chosen": "A file gone between planning and its move (FileNotFoundError) stops the run. The command prints `cannot move <file> into <type folder>/, as it is no longer in <folder>, such as when another run moves it at the same time: run again to move the files left`.",
+      "why": "The architecture stops at the first link that fails for a reason other than a taken name. The general message's advice (write permission, hard links) would not clear this stop, while running again does."
+    },
+    {
+      "chosen": "The record is JSON: a list of {\"name\": ..., \"type_folder\": ...} in the order the moves were made. It is written with ensure_ascii, to a new file made by tempfile.mkstemp as `.organize-last-run.<random>` beside the record, fsync'd and then put in place with os.replace. The new file is removed where it was not put in place, a Ctrl-C included.",
+      "why": "The architecture gives JSON and write-then-rename but no layout. ensure_ascii carries any name, bytes not valid UTF-8 included. A file of each write's own keeps two runs apart. fsync makes a crash after the rename leave the new record whole. The new file is the tool's own and never held the user's data, so removing it is not the deleting the architecture forbids."
+    },
+    {
+      "chosen": "read_moves refuses, with ValueError naming the record, a record that is not JSON, not a list of objects of exactly name and type_folder, a name that is empty, '.', '..' or holds '/' or NUL, or a type folder not of Type table or Others. The record property test now draws a name again when it comes out '.' or '..'.",
+      "why": "The record is read from the disk, where a hand may change it, and undo will move files by it. Checking it where it comes in keeps any record from naming a place outside the organized folder. '.' and '..' are not names a file can have, like the '/' and NUL the test already left out."
+    },
+    {
+      "chosen": "The listing run still ends `Nothing was moved.` without the README's `To move these files, run: organize-downloads --apply`. The listing does not yet tell apart a file whose name is taken.",
+      "why": "Both were T4.1's choices, and the tests this work passes are written to them. The first waits on T6, which makes the README again from the built tool. The second needs a test in test_organize.py, which is not in this work."
+    },
+    {
+      "chosen": "Mutation testing was run with mutmut 2.5.1 on Python 3.11 through uv, in a temporary copy without test_stories.py, with the unittest command as its runner. Coverage was measured with coverage.py through uv, with and without the two property tests.",
+      "why": "The T3.2 decision has whoever builds the tool run these through uv, without adding them to the tool or the workflow. mutmut 3 runs only pytest, while 2.5 takes the unittest runner. The stories need the installed command, and the module tests reach the same code."
+    }
+  ]
+}

@@ -53,8 +53,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 3 of /rn:up on t4.2: add the three test files to the work's paths, then send the answer to the run waiting
+Step 3 of /rn:up on t4.2: add tests/__init__.py to the work's paths, then send the answer to the run waiting
 
 ## Open
 
-- turn asks for t4.2 (code B-6): whether tests/test_mover.py, test_cli.py and test_record.py are added to the work, for behaviors the moving brings that no T4.1 test holds
+- turn asks for t4.2 (code B-5): whether tests/__init__.py is added to the work, so the full-disk error DISK_FULL is defined once beside NO_HARD_LINKS and WRITE_FAILED
