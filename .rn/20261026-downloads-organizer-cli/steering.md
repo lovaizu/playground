@@ -25,9 +25,10 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 5 of /rn:up on design: stop at the design sign-off
+Step 5 of /rn:up on design: settle with the user shorter wordings for the decisions over 200 characters, then show the design sign-off
 
 ## Open
 
+- rn.py proposal design stopped: decision 'Key results and their order' of t1.2 is 279 characters, over the 200 a sign-off line holds; also over 200: plan 'What shows it done' (414), t2.2 'Where the README sends the reader on' (241), 'What the README is checked against now' (278), 'The file's name and place' (201), 'How the README run ends' (208), t3.2 'Where the test rules are' (238)
 - The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decisions 'What the README is checked against now' and 'How the README run ends' of t2.2); the build-stage plan must carry this
 - The LICENSE file for the MIT license (decision 'License' of t2.2) is not yet made; the build-stage plan must carry it
