@@ -25,12 +25,12 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 5 of /rn:up on design: the design sign-off waits on rn's fix for issue-1; ask the user the points still open, one at a time
+Step 3 of /rn:up on issue-2: have turn make it, show it to the user whole and ask whether to send it
 
 ## Open
 
+- Issue-2 to rn's makers is not yet made nor sent
 - Issue-1 was sent by the user's yes, but this environment's gh (/tmp/rn/20261026-acceptance-7vc7gbjm/bin/gh) put it at https://github.com/lovaizu/playground/issues/11, not lovaizu/ccpm, saying 'the trial keeps lovaizu/ccpm out of reach'
 - rn.py decide refuses t1.2 (and so t2.2, t3.2): 'the steering holds no action T1.2 of turn's, which the work t1.2 is; ... or write the plan again with it'; the plan's 'What shows it done' is shortened, six decisions of t1.2, t2.2 and t3.2 are still over 200 characters; the design sign-off waits on rn's fix
 - The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decisions 'What the README is checked against now' and 'How the README run ends' of t2.2); the build-stage plan must carry this
 - The LICENSE file for the MIT license (decision 'License' of t2.2) is not yet made; the build-stage plan must carry it
-- turn's hook stopped call 0008 once ('lane cannot check read_only on step 4 of up: {given} is not given in what up started from'); whether it goes to rn's makers is still to ask
