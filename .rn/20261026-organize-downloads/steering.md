@@ -26,20 +26,11 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 - AC11: The repository holds tests that check each criterion from AC1 to AC8 and AC12, run by one command, and they pass on Linux.
 - AC12: Run on a folder with the option that tells it to undo, the tool returns each file that the last run moving files, as AC2 says, moved, to where it was, under the same name and with the same contents, prints one line for each such file saying it went back or that it stays and why, and removes each kind's folder that run made that is left empty; a folder that was there before that run, or that still holds anything, stays. A file whose old place now holds a file of the same name, or that is no longer where that run put it, stays where it is, and its line says why. The record of that run, which the undo reads, is kept outside the folder, in the user's own place for an application's data: `~/.local/state` on Linux, `~/Library/Application Support` on macOS.
 
-## Tasks
-
-- T2: The tool's architecture, saying the parts the tool is made of, how the record of the last move is kept outside the folder, and how each part and each criterion is checked by tests run by one command. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC11, AC12.
-
-  Completion criterion: Read in the place of whoever builds the tool by someone who did not write it, it meets every item of the architecture checklist with the lines it names, it agrees with the README of T1, and the user approves it at the design sign-off.
-
-  - [ ] 1. The architecture, from the plan, its decisions and the README of T1, `organize-downloads/docs/architecture.md` as an architecture work. turn.
-
 ## Next
 
-Step 3 of /rn:up on t2.1: start turn:up again with the same call, as it goes on from its last move
+Step 5 of /rn:up on design: stop at the design sign-off
 
 ## Open
 
-- turn:up's run on t2.1 ends each time it waits for its turn:generator ("The generator is still working. I'll wait for its completion notice."), the generator's end reaching the orchestrator instead; it was remaking 1 item of 9 the first user found no Good for.
 - At the build stage, check B-4, B-5 and B-8 of the README checklist on organize-downloads/README.md, by a first user installing from its address and following its Example once the tool, docs/usage.md and CHANGELOG.md are on main and docs/architecture.md is made (decision "How t1.1 ends" of t1.1).
 - At the build stage, make organize-downloads/docs/usage.md and organize-downloads/CHANGELOG.md with the tool (decision "License and the places of fuller use and of changes" of t1.1).
