@@ -46,6 +46,9 @@
   },
   {
    "decision": "README: A README says how to install the tool and how to use it."
+  },
+  {
+   "decision": "Never deletes: The tool only moves files and never deletes anything."
   }
  ]
 }
