@@ -25,6 +25,9 @@
   },
   {
    "decision": "Files of no known kind: A file whose kind the tool does not know, such as one with no extension or an unfamiliar one, stays in Downloads, and the tool's list says it stays."
+  },
+  {
+   "decision": "Downloads in progress and hidden files: The tool never touches a download still in progress, such as a .crdownload, .part or .download file, nor a hidden file whose name begins with a dot, such as .DS_Store, and leaves them out of its list."
   }
  ]
 }
