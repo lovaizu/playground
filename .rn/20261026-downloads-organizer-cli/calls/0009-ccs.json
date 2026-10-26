@@ -5,6 +5,37 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261026-downloads-organizer-cli/calls/0009-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  },
+  {
+   "has": ".rn/20261026-downloads-organizer-cli/calls/0005-ccs.json"
+  },
+  {
+   "has": ".rn/20261026-downloads-organizer-cli/calls/0006-ccs.json"
+  },
+  {
+   "has": ".rn/20261026-downloads-organizer-cli/calls/0008-ccs.json"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -40,6 +71,15 @@
   },
   {
    "decision": "Shortening done tasks' decisions: Put T1 to T3 back into the plan to shorten their long decisions, then tick them done without remaking the documents"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
   }
  ]
 }
