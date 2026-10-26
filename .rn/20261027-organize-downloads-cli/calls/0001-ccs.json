@@ -31,6 +31,9 @@
   },
   {
    "decision": "Where the type folders go: The type folders are made inside the folder being organized, such as ~/Downloads/Images; nothing outside it is touched."
+  },
+  {
+   "decision": "What is left in place: The tool never moves folders (the type folders included), hidden files whose names begin with a dot (such as macOS's .DS_Store and .localized), or files still being downloaded (such as Chrome's .crdownload, Firefox's .part and Safari's .download); it leaves them where they are and does not look inside folders."
   }
  ]
 }
