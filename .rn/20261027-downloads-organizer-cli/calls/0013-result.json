@@ -1,0 +1,157 @@
+{
+ "work": [
+  "tests/test_preview.py"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "F-1",
+   "good": "Every place in the file follows the template. The module opens by saying what the tests hold, how they keep away from the real home, the Python they run on and the checks left out. Each helper has typed parameters and a return type, plus a docstring saying what it gives and any condition it needs (build: `top` must already exist; preview: a SystemExit ends the run; entry_lines: why lines are picked out by how they begin). Each class says which docs/ux.md section it holds. Each test name is one sentence saying what must happen, and each body has Given/When/Then comments in plain words, the property tests inside their loop too.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:1-21",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:61-161",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:164-455",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:538-561"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-1",
+   "good": "The file now names the oldest Python it runs on, 3.9, and says why: the user decided it so that the python3 of Apple's command line tools runs the tests. It uses only the standard library: contextlib, io, os, random, shutil, tempfile, unittest, typing and unittest.mock. I checked the file against 3.9 with `ast.parse(src, feature_version=(3, 9))`, which parses it, and found nothing newer than 3.9 in what it calls: typing.Dict/List/Optional, str.startswith with a tuple, f-strings, contextlib.redirect_stderr, mock.patch.dict. Only Python 3.14 is on this machine, so I ran the tests there, against a stand-in cli.py, and did not run them on 3.9 itself.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:13-15",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:23-33"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-2",
+   "good": "Each way the test run can stop tells the maintainer what was wrong and lets them go on. Run before the code exists, the run stops on `No module named 'organize_downloads'` at line 33, which together with the header (lines 10-11) says to build `organize_downloads.cli.main` under src/. When a file-and-subfolder check fails, the message gives the diff and everything printed (line 161). When the first or last line is wrong, the message shows that line against the one expected. When a property test fails, the message gives the seed, the run and the folder made, and the class docstring says how to replay that seed and keep the case as a fixed test. I saw these messages when I ran the tests against mutants of a stand-in cli.py.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:8-11",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:33-33",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:159-161",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:458-463",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:538-561"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-3",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:1-561",
+     "good": "Each class, function and test tells what it does from its name and opening alone. Each class docstring names the docs/ux.md section it holds ('The whole way', 'Seeing the planned moves') and what about it. `grep -n \"AC[0-9]\"` now finds no labels of the work's own. would_move, left, entry_lines, kind_of, build, read_tree, preview and assert_entries each say what they take and give. WOULD_MOVE/LEFT, LAST_LINE and Tree each have a comment saying what they are. The reasons behind choices are written down: why the home is resolved, why entry lines are sorted and picked out, why '.png' has the extension png, why '', '.' and '..' are skipped, why names differ in more than case. No comment tells how the work went.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:35-58",
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:61-92",
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:130-135",
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:164-169",
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:251-252",
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:280-281",
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:377-378",
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:439-440",
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:467-498"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-4",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:1-561",
+     "good": "Every helper, constant and parameter is used by tests that need it. `make_folder`'s `name` is given as Downloads, Desktop and folder-<run>. `assert_entries`'s `msg` is filled by the property tests, which need the seed in it. WOULD_MOVE and LEFT serve both building and picking out the entry lines. `kind_of` is used only by the property tests, as its docstring says. Nothing is there for a future need. The Given/When/Then comments are the form F-1 asks for, and the other comments give reasons the code does not show.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:52-92",
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:137-161",
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:467-536"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-5",
+   "good": "Within the tests each piece of knowledge is written once. The kind table is at lines 36-44, and lookups by extension come from it. The last line is at line 50. How the two kinds of entry line begin is at lines 53-54. Both the line builders and entry_lines use those beginnings. The extension rule is in kind_of. A change to docs/ux.md's table or line forms is made in one place in the tests. The table is written again apart from the Planner on purpose, as lines 6 and 35 say, so that expected values are never taken from the tool. Names match docs/ux.md throughout.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:35-92"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-6",
+   "good": "Each behavior docs/ux.md asks of a preview breaks at least one test. I wrote a stand-in cli.py in a temporary folder, removed afterwards, that previews as docs/ux.md says: 28 tests, OK, in each of 5 runs. Then I put in faults one at a time and every one of these broke a test: extension case ignored; os.path.splitext in place of 'part after the last dot', caught by the new `.png` test (lines 316-325) and by the property test, whose stems may now begin with a dot (lines 470, 484); abspath in place of realpath; the folder line naming the path as given; the folder line or last line changed or missing; an extra line printed; 'name taken in audio' without its slash; a kind folder made during the preview. Every case and reason of docs/ux.md has a test, and so do the missing folder, a file given as the folder and a missing Downloads. Expected values are written from docs/ux.md. Lines 17-20 record the user's decision to leave out coverage and mutation testing, with why. Three faults went uncaught, but each is about something docs/ux.md does not settle: 'No folder at' naming a relative path as typed, a symbolic link in the folder, and a kind-folder name taken by something that is not a regular file. docs/ux.md shows the missing-folder message only with a full path and says nothing of links.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:17-20",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:83-92",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:171-455",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:458-561"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-7",
+   "good": "A failure now points at the one behavior its test names. Tests about files and subfolders compare only those lines, through entry_lines and assert_entries, so a fault in the first or last line no longer fails them. With the stand-in cli.py, I changed the last line: only the two last-line tests failed. With the last line removed, those two failed plus the test of what lies between the first and last lines. With the folder line removed, the four folder-line tests failed plus that same between-lines test. With the folder line naming the path as given, only the relative-path and symbolic-link tests failed. Each test makes its own home with mkdtemp, removed by addCleanup; the chdir is undone; HOME is patched only during the call; no test needs another to run first. Five runs in a row all passed.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:74-80",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:130-161",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:171-277"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-8",
+   "good": "The whole run takes well under a second. Against the stand-in cli.py it printed 'Ran 28 tests in 0.13s' on each run, including the two property tests of 40 folders each. Each test builds its folder with plain file writes and calls cli.main in the same process, without starting other programs.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:95-157",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:465-465"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-9",
+   "good": "Each test writes only inside its own new home from tempfile.mkdtemp, which is removed after the test, and sets HOME to it only while the Command runs. Two test runs, or two workers, at the same time never share a folder or a record place, as lines 8-10 say.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:8-10",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:130-135",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/tests/test_preview.py:144-157"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The tests call the Command in-process as `organize_downloads.cli.main(<the words after the command>)`, a list of strings without the program name, catching what it prints on standard output and standard error together and taking a SystemExit as the end of the run.",
+   "why": "docs/architecture.md names cli.py as the Command and says the tests import the package from src/ but gives no function; calling it in-process keeps the run fast and lets HOME be set for the run alone, and catching both streams and SystemExit avoids fixing a stream or exit status docs/ux.md does not set."
+  },
+  {
+   "chosen": "The printed lines are checked exactly as the examples of docs/ux.md write them (two spaces between fields, `->` between the file and its new path, a trailing `/` on subfolders, `Folder: <full path>` first and `Nothing changed. Run with --move to make these moves.` last), with the lines about files and subfolders taken out by how they begin and compared as a sorted list.",
+   "why": "docs/ux.md gives these examples as what the user sees but sets no order for the lines between first and last; taking those lines out by how they begin lets each test fail only on its own behavior."
+  },
+  {
+   "chosen": "An empty folder still ends with `Nothing changed. Run with --move to make these moves.`",
+   "why": "docs/ux.md gives no other last line for a preview and its diagram ends every preview with 'nothing changed, and how to make these moves'."
+  },
+  {
+   "chosen": "A path given that is a file is answered like a missing folder, with `No folder at <path>.`, and the missing-folder message names the path by the full path the tests give.",
+   "why": "docs/ux.md says only that a folder that does not exist gives that message; a file at the path is a case of there being no folder there."
+  },
+  {
+   "chosen": "A preview is checked to change nothing anywhere under the stand-in home, not only in the folder, so it writes no record either.",
+   "why": "docs/ux.md says a preview run changes nothing, and the record is what the last move run did, which a preview is not."
+  },
+  {
+   "chosen": "A name whose only dot is its first character, such as `.png`, is taken to have the extension after that dot and go to its kind folder.",
+   "why": "docs/ux.md says only the part after the last dot is the extension, with no exception for hidden files; `.DS_Store` is left because DS_Store is not in the table, which the same rule gives."
+  },
+  {
+   "chosen": "Left untested, as docs/ux.md does not say what they give: a symbolic link directly in the folder, and a name taken in the kind folder that differs only in case.",
+   "why": "A test there would set a behavior the requirements leave open; the random folders avoid these cases too."
+  },
+  {
+   "chosen": "Each property test makes 40 random folders of up to 12 entries, with names from a small ASCII alphabet with spaces, dashes and dots, which may begin with a dot, and differ in more than case.",
+   "why": "This keeps the run well under a second while mixing every case and kind folder state, and names differing only in case cannot be made side by side on macOS's usual file system."
+  }
+ ]
+}

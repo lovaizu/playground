@@ -120,9 +120,8 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Next
 
-Step 3 of /rn:up on t5.1: answer turn's questions and send them back to the run waiting
+Step 2 of /rn:up on t5.1: settle whether a hidden file of a known extension is moved, then step 3 on t5.1 again
 
 ## Open
 
-- turn asks the oldest Python 3 version the tool and its tests run on, as docs/architecture.md says only 'Python 3'; turn recommends 3.9, the python3 of macOS's command line tools.
-- turn asks whether mutation testing and coverage measurement may be left out of the tests, with a comment saying the user decided so and why; turn recommends yes, as the standard library alone is allowed and property tests with random still hold each behavior.
+- tests/test_preview.py:83-92 takes the kind from the part after the last dot of any name, so a hidden file such as .png or .notes.pdf is planned to move to its kind folder (turn's choice); the plan's decision 'Files of no kind' says hidden files (such as .DS_Store) must not be moved, and docs/ux.md shows only .DS_Store as kind not known.
