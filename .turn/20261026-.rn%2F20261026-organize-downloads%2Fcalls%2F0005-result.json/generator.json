@@ -3,15 +3,15 @@
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
       "item": "F-1",
-      "good": "The reader finds each part under the heading READMEs commonly give it, in the template's order: the opening under the name with no heading, then Example, Why organize-downloads, Requirements, Installation, Documentation, Development and License; each section opens with its main point, and each list item is one sentence, not bold, with its explanation after a blank line and indented under it.",
+      "good": "The reader finds the opening right under the name with no heading, beginning with the idea (one folder per kind, by extension, listing before moving, never deleting, renaming or overwriting, and undo), then whom it is for; then Example, Why organize-downloads, Requirements, Installation, Documentation, Development and License in the template's order and headings. Each section opens with its main point, each Requirements item is one sentence alone with its explanation indented after a blank line, and no item is bold.",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-197"
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-205"
       ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
       "item": "B-1",
-      "good": "From the opening the reader learns the idea (files sorted into one folder per kind by extension, with a run that only lists the moves, no file ever deleted, renamed or overwritten, and the last move on that folder undoable), the kind of thing that gives it (a command-line tool for macOS and Linux), and whom it is for (anyone whose Downloads folder holds so many files they cannot find the one they want), so they can tell whether it is for them.",
+      "good": "From the opening the reader learns the idea that sets the tool apart (sorting by each file's extension, a listing first, and moves that never delete, rename or overwrite and can be undone), that it is a command-line tool for macOS and Linux, and that it is for anyone whose Downloads folder holds so many files they cannot find the one they want, so they can place themselves.",
       "lines": [
         "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:3-8"
       ]
@@ -19,28 +19,38 @@
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
       "item": "B-2",
-      "good": "The reader sees a Downloads folder like their own before, the listing run's output, the --move run's output and the folder after it, and the --undo run's output and the folder back as at first, with the cases of a taken name, an unknown kind, a hidden file, a download in progress and a folder already there each shown with what happens, so they can picture the three runs on their own folder from starting to the result.",
+      "good": "The reader sees a Downloads folder like their own, the listing it prints, the --move run and the folder after it, the --undo run with its lines and the folder back as at first, with each case shown (a name already taken, an unknown kind, hidden files, downloads in progress, a folder already there), how to work on another folder, and the table of every kind's extensions.",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:10-114"
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:10-108"
       ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
       "item": "B-3",
-      "good": "The reader sets the tool against sorting by hand, sorting the view in a file manager and a rule-based organizer, each with the work it leaves them that this tool does (making folders and dragging files, files left together in one folder, rules to write before anything moves), with no benefit every way gives set among them.",
+      "good": "The reader sees, set against sorting by hand, sorting the view in a file manager, and a rule-based organizer, the work each leaves them that this tool does: making the folders and moving the files, putting files in folders rather than ordering a view, and coming with its kinds already set.",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:115-125"
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:110-120"
       ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
       "item": "B-4",
-      "question": 1
+      "good": "Not met at the design stage; to be checked at the build stage. What the README gives now: each requirement said as what it is before one way of getting it: Python 3.8 or later run as python3, with how to get it on macOS and, through the package manager such as `sudo apt install python3` on Debian or Ubuntu, on a Linux system without it; curl; and ~/.local/bin in PATH, with the startup file told by the shell. Each of these steps works as written here: python3 --version printed Python 3.14.4, apt offers the python3 package, curl is at /usr/bin/curl, and echo \"$SHELL\" names the shell. It also gives the download into ~/.local/bin, making it runnable, --help, the first use as the Example's three runs, and the macOS note on Downloads access. What waits: the download address gives 404, as the tool's file organize-downloads/organize-downloads does not exist yet. So installing and running --help and the Example are checked by a first user installing from that address once the build stage has made the tool and put it on main, as the CCS chooses and the user decided.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:122-171",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:172-192"
+      ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
       "item": "B-5",
-      "question": 1
+      "good": "Not met at the design stage; to be checked at the build stage. What the README gives now: fuller use named at docs/usage.md and the changes of each version at CHANGELOG.md under Documentation, the builders' entrance docs/architecture.md alone under Development, and the license named as MIT with a link to LICENSE, which is there with the MIT text and \"Copyright (c) 2026 lovaizu\". What waits: docs/usage.md and CHANGELOG.md are made with the tool in the build stage, and docs/architecture.md by T2; the links name where they will be, and are checked once those files are on main.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:193-198",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:199-202",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:203-205",
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/LICENSE:1-21"
+      ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
@@ -48,63 +58,63 @@
       "parts": [
         {
           "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-9",
-          "good": "The opening reads once through: what the tool does, how it chooses (by extension), what it never does and what it can undo, then for whom, each word plain.",
+          "good": "The reader takes in what the tool does, how, and for whom in two sentences of common words, each resting on nothing later.",
           "lines": [
             "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:3-8"
           ]
         },
         {
-          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:10-114",
-          "good": "Each run is shown as a command block with its output after the folder it runs on; each case is told with what happens in it where it first appears; what the folders already there undergo is said after all three runs have been shown, so it names --move and --undo only once the reader has seen them; running on another folder is a command block to copy; and the extensions of each kind are in a table, with what an extension is said before it.",
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:10-109",
+          "good": "The reader follows the folder, each run and its output in blocks, in order, each case named with what happens in it right where it shows (why two files have no line, why budget.xlsx stays, what --undo removes and keeps, what a file that cannot go back does), and the extensions in a table after the rule that matches them.",
           "lines": [
-            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:12-113"
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:12-108"
           ]
         },
         {
-          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:115-126",
-          "good": "Each other way is named with an example of it where the name may be unclear (Finder, Files) and the work it leaves, and the comparison points back only to the table the reader has already read.",
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:110-121",
+          "good": "The reader reads the main point first, then each other way as one item with the work it leaves them, resting only on the Example's table above.",
           "lines": [
-            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:117-125"
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:112-120"
           ]
         },
         {
-          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:127-163",
-          "good": "Each requirement says what it is and why it is needed, and each command the reader runs to check or get it (python3 --version, sudo apt install curl, echo \"$PATH\", the PATH line) is in a block to copy, with what it prints and what to look for said before it.",
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:122-171",
+          "good": "The reader reads each requirement as what it is, with why and how to check it, how to get Python on macOS and on Linux, each command in a block to copy, and the startup file told from the shell by a command given there.",
           "lines": [
-            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:129-162"
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:124-170"
           ]
         },
         {
-          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:164-184",
-          "good": "The install commands are in one block to copy in the order they run, --help in a block of its own, then the first use points back to the Example the reader has read and tells the macOS access request where they meet it.",
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:172-192",
+          "good": "The reader reads the install commands in one block, then --help, then the first use as the Example's three runs, with the macOS access prompt and what to do about it.",
           "lines": [
-            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:166-183"
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:174-191"
           ]
         },
         {
-          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:185-190",
-          "good": "Each item says what the page holds and links to it, understood without following the link.",
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:193-198",
+          "good": "The reader reads two items, each saying what is written where, with its link.",
           "lines": [
-            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:187-189"
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:195-197"
           ]
         },
         {
-          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:191-194",
-          "good": "One sentence says what the linked page holds for those who build the tool.",
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:199-202",
+          "good": "The builder reads in one sentence where how the tool is made and tested is written.",
           "lines": [
-            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:193"
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:201-201"
           ]
         },
         {
-          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:195-197",
-          "good": "The license is named and its full text linked in one line.",
+          "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:203-205",
+          "good": "The reader reads the license's name and where its terms are.",
           "lines": [
-            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:197"
+            "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:205-205"
           ]
         },
         {
           "part": "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/LICENSE:1-21",
-          "good": "The reader who follows the License link reads the terms once from the top: the name \"MIT License\" first, then who holds the copyright and from when, then what anyone may do with the software, the one condition of keeping the notice, and the disclaimer of warranty and liability, in the standard MIT wording, each sentence resting only on what came before it (\"the Software\" defined in the first sentence that uses it).",
+          "good": "The reader reads the standard MIT text, known on sight, with its copyright line.",
           "lines": [
             "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/LICENSE:1-21"
           ]
@@ -114,24 +124,21 @@
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
       "item": "B-7",
-      "good": "Each sentence gives the reader one thing no other gives: the opening says the gain once and Why names only the work other ways leave; what folders already there undergo is said once, after the runs; Installation points to the Example's runs rather than repeating them; the kinds are listed once, in the table; no part speaks to a reviewer, tells the history of a decision, or holds fuller use, which docs/usage.md is for; the license's terms are only in LICENSE, the README naming it and linking there.",
+      "good": "Each sentence gives the reader something no other gives: the opening's gain is not said again in Why, which sets the tool against other ways; Installation's first use points to the Example's runs rather than repeating them; the --move run says it prints the same five lines rather than showing them again; nothing speaks to a reviewer, tells history, or holds fuller use.",
       "lines": [
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-197",
-        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/LICENSE:1-21"
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-205"
       ]
     },
     {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
       "item": "B-8",
-      "question": 1
+      "good": "Not met at the design stage; to be checked at the build stage. What the README gives now: its statements agree with one another and with AC1-AC12. Never deleting, renaming or overwriting holds in the Example, as budget.xlsx stays and --undo removes only empty folders the move made. Undo of the last run that moved files agrees with the --undo lines. Folders already there are left as they are in the trees. Each kind's folder has one name throughout, and there is no \"not yet\" or \"for now\". The Requirements commands hold when run here. What waits: what --help prints, the Python 3.8 floor, macOS, the three runs' output and trees, the undo lines for a file that cannot go back, and case handling of extensions are checked against the tool by a first user once the build stage has made it and put it on main.",
+      "lines": [
+        "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md:1-205"
+      ]
     }
   ],
-  "questions": [
-    {
-      "question": "B-4, B-5 and B-8 of organize-downloads/README.md are found without Good twice by the first user, who uses the README in a newcomer's place, and no change to the README can give them: the download address (README.md line 170) gives 404 and organize-downloads/ holds only README.md and LICENSE, so the reader cannot install the tool, run --help or the Example, or check what the README says the tool does; and the links to docs/usage.md, CHANGELOG.md and docs/architecture.md (lines 187, 189, 193) lead to files not yet there. The CCS already holds your choice that at this design stage these are judged by whether the steps and links give what they say once the build stage has made the tool and those files, but the first user judges them on what the reader gets today, so this run cannot end with them met. Everything else the first user checked holds: the requirements, the macOS access note, every statement set beside AC1-AC12, and LICENSE. How should t1.1 end for these three items?",
-      "recommended": "End t1.1 with B-4, B-5 and B-8 recorded as to be checked at the build stage, by a first user installing from the address once the tool, docs/usage.md and CHANGELOG.md are on main, and docs/architecture.md once T2 is, because the README already gives all it can at this stage and holding the run open would only repeat the same 404 and missing files until then."
-    }
-  ],
+  "questions": [],
   "chosen": [
     {
       "chosen": "LICENSE holds the standard MIT text as the Open Source Initiative gives it, headed \"MIT License\", with only the decided copyright line filled in.",
@@ -146,6 +153,10 @@
       "why": "The decision says Python 3 with only its standard library and names no version; 3.8 sets a floor low enough for older systems still in use, which I have not checked against a list of systems, and the tool is to use nothing a later standard library alone gives."
     },
     {
+      "chosen": "For a Linux system without Python, the README says to install it with the system's package manager, giving `sudo apt install python3` on Debian or Ubuntu as the example, in the same form as the curl item.",
+      "why": "The first user found nothing for a Linux system without Python; python3 is the package's name on Debian and Ubuntu (apt offers it here), and the same form as curl's item lets the reader read both alike."
+    },
+    {
       "chosen": "The options are --move and --undo, with the folder given after the options and ~/Downloads when none is given, and each line's wording is as the Example shows (\"name -> Folder/\", \"name: stays, <why>\", \"name: back from Folder/\").",
       "why": "steering.md names an option that moves and one that undoes but not their names or the lines' wording; short words that say the action let the reader type them from memory, and the README is what the build and T2 make the tool to."
     },
@@ -154,12 +165,20 @@
       "why": "AC2 leaves the full list to the design and T1 to hold it; these are the common files of each kind met in a Downloads folder on macOS and Linux, and matching the last dot gives archive.tar.gz to Archives with one rule."
     },
     {
-      "chosen": "The PATH line is added to ~/.zshrc on macOS and ~/.bashrc on Linux.",
-      "why": "Those are the shells each system starts by default, so a newcomer with no setup of their own finds the line takes effect."
+      "chosen": "The PATH line is added to the shell's startup file, ~/.zshrc for zsh and ~/.bashrc for bash, each named with the system that starts it by default, and `echo \"$SHELL\"` tells the reader which shell they have.",
+      "why": "zsh and bash are the shells macOS and most Linux systems start by default, so a newcomer with no setup of their own finds the right file, and a reader on the other shell, such as zsh on Linux, can tell the file from their shell rather than their system."
     },
     {
       "chosen": "The first use tells macOS readers that macOS may ask whether the terminal may access the Downloads folder, and to allow it.",
       "why": "macOS guards the Downloads folder and asks the first time a terminal reads it; a reader who refuses gets no files listed and cannot tell why, and the README says \"may\" since a terminal already allowed is not asked."
+    },
+    {
+      "chosen": "The opening says the tool \"can undo its last run that moved files in that folder\", keeping \"move\" for one file's move.",
+      "why": "The opening already uses \"move\" for one file's move (\"every move it would make\"), and steering.md's G1 speaks of undoing \"the last run that moved files\"; one word for each thing lets the reader tell them apart."
+    },
+    {
+      "chosen": "For the --move run, the Example keeps the words that it prints the same five lines as the run above and shows only the command in its block, rather than showing the five lines again.",
+      "why": "The first user found the two saying one thing; keeping the words tells the reader at once that nothing differs, where a second block would have them compare it line by line, and the command still stands in a block to copy."
     }
   ]
 }

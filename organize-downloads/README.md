@@ -2,8 +2,8 @@
 
 organize-downloads sorts the files lying directly in a folder into one folder per kind of file,
 chosen by each file's extension; run without moving anything, it lists every move it would make,
-and when it moves, it never deletes, renames or overwrites a file and can put back what its last
-move on that folder moved. It is a command-line tool for macOS and Linux, for anyone whose
+and when it moves, it never deletes, renames or overwrites a file, and it can undo its last run
+that moved files in that folder. It is a command-line tool for macOS and Linux, for anyone whose
 Downloads folder holds so many files that they cannot find the one they want, and who would find
 it in a folder of its kind.
 
@@ -43,15 +43,10 @@ setup.dmg -> Installers/
 `.download`, is never moved either.
 
 Run with `--move`, the tool makes the moves it listed, making `Images` and `Installers` as they are
-missing, and prints the same lines:
+missing, and prints the same five lines as the run above:
 
 ```
 $ organize-downloads --move
-budget.xlsx: stays, Documents/budget.xlsx already exists
-holiday.jpg -> Images/
-notes: stays, unknown kind
-report.pdf -> Documents/
-setup.dmg -> Installers/
 ```
 
 The folder then holds:
@@ -134,8 +129,13 @@ Each other way to sort a Downloads folder leaves you work that this tool does fo
   python3 --version
   ```
 
-  Most Linux systems have it; on macOS, if it is missing, running `python3` once offers to install
-  it, or you can get it from https://www.python.org/downloads/.
+  On macOS, if it is missing, running `python3` once offers to install it, or you can get it from
+  https://www.python.org/downloads/. Most Linux systems have it; on one without it, install it
+  with the system's package manager, such as apt on Debian or Ubuntu:
+
+  ```
+  sudo apt install python3
+  ```
 
 - The command `curl`, to download the tool.
 
@@ -154,8 +154,16 @@ Each other way to sort a Downloads folder leaves you work that this tool does fo
   echo "$PATH"
   ```
 
-  If `~/.local/bin`, written in full such as `/home/you/.local/bin`, is not among them, add this
-  line to `~/.zshrc` (macOS) or `~/.bashrc` (Linux) and open a new terminal:
+  If `~/.local/bin`, written in full such as `/home/you/.local/bin`, is not among them, add it to
+  `PATH` in your shell's startup file: `~/.zshrc` if your shell is zsh, as macOS starts by
+  default, or `~/.bashrc` if it is bash, as most Linux systems start by default. This command
+  prints your shell:
+
+  ```
+  echo "$SHELL"
+  ```
+
+  Add this line to that file and open a new terminal:
 
   ```
   export PATH="$HOME/.local/bin:$PATH"

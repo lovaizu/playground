@@ -42,8 +42,8 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Next
 
-Step 3 of /rn:up on t1.1: send turn the answer on how the run ends, then read its result
+Step 3 of /rn:up on t1.1: ask the user how t1.1 ends, as turn's run cannot end on B-4, B-5 and B-8 before the tool exists
 
 ## Open
 
-- turn asks how t1.1 ends for B-4, B-5 and B-8 of the README checklist, which a first user cannot meet until the tool, docs/usage.md, CHANGELOG.md and docs/architecture.md exist; settled by the orchestrator as how turn goes on: end t1.1 with them recorded as to be checked at the build stage, by a first user installing from the address once those files are on main.
+- turn's run on t1.1 ended four rounds with B-4, B-5 and B-8 of the README checklist unmet: the download address (README.md line 178) gives 404 as the tool is not on main, docs/usage.md, CHANGELOG.md and docs/architecture.md (lines 195, 197, 201) are not there, and no statement about the tool can be checked without it; the answer to end the run did not end it, as the first user is not given the CCS's choice. turn asks: (a) make the tool and the linked pages now, (b) take the three items out of this design-stage run and check them at the build stage, or (c) stop the run outside turn.
