@@ -61,6 +61,9 @@
   },
   {
    "decision": "Moving without hard links: The tool moves a file, and moves it back, by the system's own one-step rename that refuses a taken name, renameat2 with RENAME_NOREPLACE on Linux and renamex_np with RENAME_EXCL on macOS, called through ctypes of Python's standard library, so no moment is left in which a file can be overwritten or deleted; where the file system refuses this call, nothing is moved and each file is shown left in place with the system's reason. This is still to be tried on both systems before the tool is built. The README is still to say what happens where the file system refuses it."
+  },
+  {
+   "decision": "Trying the rename on each system: The one-step rename that refuses a taken name is tried before the tool is built: on Linux in this environment, and on macOS on a GitHub Actions macOS runner, as the user cannot run anything on a Mac. Where no such way works, macOS is checked only when the finished tool is tried on a test folder."
   }
  ]
 }
