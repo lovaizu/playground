@@ -42,8 +42,9 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Next
 
-Step 4 of /rn:up on T1: have the README made
+Step 3 of /rn:up on t1.1: answer turn's questions, then send the answers to the run waiting
 
 ## Open
 
-None.
+- turn asks: how the tool is made and installed (language, and how a newcomer gets it onto macOS and Linux); it recommends a single Python 3 program using only the standard library, installed with pipx from the organize-downloads folder of lovaizu/playground.
+- turn asks: under which license the tool is offered, and where fuller use and the changes of each version are written; it recommends MIT, organize-downloads/docs/usage.md and organize-downloads/CHANGELOG.md, with Development linking to organize-downloads/docs/architecture.md.

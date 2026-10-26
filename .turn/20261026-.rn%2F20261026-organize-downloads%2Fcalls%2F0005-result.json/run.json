@@ -1,0 +1,115 @@
+{
+ "call": {
+  "ccs": ".rn/20261026-organize-downloads/calls/0005-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261026-organize-downloads/calls/0005-result.json",
+  "test": null
+ },
+ "work": [
+  "organize-downloads/README.md"
+ ],
+ "checklist": [
+  "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md"
+ ],
+ "receiver": [
+  "the user approving the README at the design sign-off, and whoever makes the architecture and the tool to it"
+ ],
+ "use": [
+  "approving how a newcomer installs the tool and uses it, and building the architecture and the tool to what it says"
+ ],
+ "has": [
+  ".rn/20261026-organize-downloads/steering.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "F-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-4"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-5"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-6"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-7"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-8"
+  }
+ ],
+ "each": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+   "item": "B-6"
+  }
+ ],
+ "given": [
+  ".rn/20261026-organize-downloads/calls/0005-ccs.json",
+  "organize-downloads/README.md",
+  ".rn/20261026-organize-downloads/steering.md",
+  "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+  "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/fix.md"
+ ],
+ "readable": [
+  "organize-downloads/README.md",
+  ".rn/20261026-organize-downloads/steering.md",
+  "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md"
+ ],
+ "root": "/tmp/rn/20261026-acceptance-7t59k26j/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "questions": {
+  "from": "check",
+  "questions": [
+   {
+    "question": "How is the tool made and installed? steering.md settles neither the language the tool is written in nor how a newcomer gets it onto macOS and Linux, so the README's Requirements and Installation cannot say what must be in place or what to run, and the architecture (T2) must follow what the README says.",
+    "recommended": "A single Python 3 program using only the standard library, installed with `pipx install` from the organize-downloads folder of the GitHub repository lovaizu/playground, because Python 3 runs the same on macOS and Linux, needs nothing else installed, and its tests run by one command.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-4"
+     }
+    ]
+   },
+   {
+    "question": "Under which license is the tool offered, and where are fuller use and what changed in each version written? steering.md names neither, so the README's License, Documentation and Development sections cannot name a place the reader can reach.",
+    "recommended": "The MIT license (or the repository's own license, if it already has one), fuller use in organize-downloads/docs/usage.md and changes in organize-downloads/CHANGELOG.md, both added with the tool, and Development linking to organize-downloads/docs/architecture.md from T2, because each then is a page in the same repository the reader installs from.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md",
+      "item": "B-5"
+     }
+    ]
+   }
+  ]
+ }
+}
