@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "plan"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: The Downloads folder holds so many files that the user cannot find the one they are looking for; the tool is to make files in it easy to find. It must never delete any file."
+  }
+ ]
+}
