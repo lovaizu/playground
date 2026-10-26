@@ -1,0 +1,129 @@
+{
+ "call": {
+  "ccs": ".rn/20261027-organize-downloads-cli/calls/0010-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261027-organize-downloads-cli/calls/0010-result.json",
+  "test": null
+ },
+ "work": [
+  "organize-downloads/tests"
+ ],
+ "checklist": [
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
+ ],
+ "receiver": [
+  "whoever runs the tests and whoever maintains the tool, a person or an AI"
+ ],
+ "use": [
+  "running the tests to trust that the run with nothing added does what AC1, AC3, AC5 and AC6 ask, and seeing them fail while the command is not built"
+ ],
+ "has": [
+  ".rn/20261027-organize-downloads-cli/steering.md",
+  "organize-downloads/docs/architecture.md",
+  "organize-downloads/README.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "F-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-4"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-5"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-6"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-7"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-8"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-9"
+  }
+ ],
+ "each": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-4"
+  }
+ ],
+ "given": [
+  ".rn/20261027-organize-downloads-cli/calls/0010-ccs.json",
+  "organize-downloads/tests",
+  ".rn/20261027-organize-downloads-cli/steering.md",
+  "organize-downloads/docs/architecture.md",
+  "organize-downloads/README.md",
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+ ],
+ "readable": [
+  "organize-downloads/tests",
+  ".rn/20261027-organize-downloads-cli/steering.md",
+  "organize-downloads/docs/architecture.md",
+  "organize-downloads/README.md",
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
+ ],
+ "root": "/tmp/rn/20261027-acceptance-5180ibfe/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "questions": {
+  "from": "check",
+  "questions": [
+   {
+    "question": "Which Python 3 version is the oldest the tool and its tests must run on? The architecture says only 'Python 3', so the tests cannot be checked against using features newer than the oldest version (code checklist B-1).",
+    "recommended": "Python 3.10, the oldest Python still shipped by a supported LTS (Ubuntu 22.04), while pipx through Homebrew brings a newer one on macOS.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-1"
+     }
+    ]
+   },
+   {
+    "question": "The architecture wants the tests to need nothing beyond the standard library, but the code checklist B-6 asks for property tests, coverage of statements and branches, and mutation testing, which usually need tools such as hypothesis, coverage.py and mutmut. How should these be done, and is there anything to leave out with a written reason? Also: on Linux, when the xdg-user-dirs settings file is missing or names no download folder, what should the run with nothing added do (needed to test that case)?",
+    "recommended": "Keep the tests standard-library only, with property tests made from the standard random module and each failing input kept as an example, and run coverage.py and mutmut as maintainer checks through uv without adding them to the tool or the workflow; and on Linux without a named download folder, stop with a message naming the settings file and telling the user to give the folder last, as guessing a folder could organize the wrong one.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-6"
+     }
+    ]
+   }
+  ]
+ }
+}

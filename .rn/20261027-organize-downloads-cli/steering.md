@@ -63,8 +63,10 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T3: action 2, have turn make the tests of the run with nothing added
+Step 3 of /rn:up on t3.2: ask turn's three questions one by one, then send the answers to the run waiting
 
 ## Open
 
-None.
+- turn asks for t3.2 (code B-1): the oldest Python 3 the tool and its tests must run on; recommended: 3.10
+- turn asks for t3.2 (code B-6): how property tests, coverage and mutation testing are done with tests on the standard library alone; recommended: property tests from the random module, coverage.py and mutmut run by maintainers through uv, not in the tool or the workflow
+- turn asks for t3.2 (code B-6): what the run does on Linux when the xdg-user-dirs settings file is missing or names no download folder; recommended: stop, naming the settings file and telling the user to give the folder last
