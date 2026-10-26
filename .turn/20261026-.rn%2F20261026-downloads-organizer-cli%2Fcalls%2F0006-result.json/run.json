@@ -1,0 +1,125 @@
+{
+ "call": {
+  "ccs": ".rn/20261026-downloads-organizer-cli/calls/0006-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261026-downloads-organizer-cli/calls/0006-result.json",
+  "test": null
+ },
+ "work": [
+  "README.md"
+ ],
+ "checklist": [
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md"
+ ],
+ "receiver": [
+  "someone meeting tidy-downloads for the first time, with only what a newcomer has"
+ ],
+ "use": [
+  "deciding from the README alone whether the tool is for them, and if it is, installing it and using it to a first result"
+ ],
+ "has": [
+  "docs/ux.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "F-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-4"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-5"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-6"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-7"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-8"
+  }
+ ],
+ "each": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-6"
+  }
+ ],
+ "given": [
+  ".rn/20261026-downloads-organizer-cli/calls/0006-ccs.json",
+  "README.md",
+  "docs/ux.md",
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
+ ],
+ "readable": [
+  "README.md",
+  "docs/ux.md",
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md"
+ ],
+ "root": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "questions": {
+  "from": "check",
+  "questions": [
+   {
+    "question": "Where does a newcomer get the tool's one file, and what kind of script is it? The CCS says the user copies one file into a folder on their PATH, but it gives no address to download the file from and does not say whether the file is a Python 3 script or a POSIX sh script. Without these the README cannot give a download command that works or say what Requirements must be in place (Python 3 or nothing beyond a shell), so the reader cannot install the tool from the README alone.",
+    "recommended": "Give the public repository address the file will be published at, with the file as a POSIX sh script, since sh is on every macOS and Linux system while Python 3 is sometimes missing on macOS, so Requirements stays at macOS or Linux and a terminal.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-4"
+     }
+    ]
+   },
+   {
+    "question": "Which license is tidy-downloads under, and which pages do Documentation (fuller use, what changed in each version) and Development (the entrance to the architecture and development) link to? The CCS and docs/ux.md name none, so the README can neither name the license nor link to places the reader can reach.",
+    "recommended": "MIT, with Documentation linking to docs/usage.md and CHANGELOG.md and Development linking to docs/architecture.md, each made in this branch before the README is accepted, since MIT is short and common for a small tool and links only count when what they point to is there.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-5"
+     }
+    ]
+   },
+   {
+    "question": "The tool is not built yet (this is the design stage) and the receiver has only docs/ux.md, so no one can install it or run the example to check that the commands and output the README shows hold. Should the README be checked now against docs/ux.md and the decisions only, with the run checks of B-4 and B-8 done again once the tool is built, or should the README wait until the tool exists?",
+    "recommended": "Check it now against docs/ux.md and the decisions, and run the install and the example again once the tool is built, since the README at the design stage is what the tool is then built to match.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+      "item": "B-8"
+     }
+    ]
+   }
+  ]
+ }
+}
