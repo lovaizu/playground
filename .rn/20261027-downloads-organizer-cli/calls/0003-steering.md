@@ -43,3 +43,33 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
   the user's home (`~/.local/state/organize-downloads` on Linux, `~/Library/Application
   Support/organize-downloads` on macOS), one record for each folder, so the organized folder gains no
   file of the tool's.
+
+## Tasks
+
+- T1: The UX of the tool. Serves G1.
+
+  Completion criterion: The user can tell from the UX alone who uses the tool, what they do and see
+  in each of organizing, showing the planned moves and undoing, and what they gain, every scene
+  meeting AC2 to AC6 and AC9 to AC12; whoever makes the README and the architecture can build them
+  on it without asking the user again. Checked by an AI that did not make it, reading it as they do.
+
+  - [ ] 1. The UX made from the plan, `docs/ux.md` as a ux work. turn.
+
+- T2: The README of the tool. Serves AC1 and AC8.
+
+  Completion criterion: Following the README alone, a newcomer on macOS or Linux can do each thing
+  AC8 names, as the UX of T1 tells it, the install and removal as AC1 says. Checked by an AI that did
+  not make it, reading it in a newcomer's place.
+
+  - [ ] 1. The README made from the UX of T1, `README.md` as a readme work. turn.
+
+- T3: The architecture of the tool. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC9, AC10, AC11, AC12.
+
+  Completion criterion: Whoever builds the tool can tell from the architecture, with the UX of T1
+  and the README of T2, each part of the tool, how the parts keep any file from being deleted,
+  renamed or overwritten, in organizing and in undoing, what the record of a run holds and where, and
+  how each part and each criterion is checked by the automated tests of AC7. Checked by an AI that
+  did not make it, reading it in the builder's place.
+
+  - [ ] 1. The architecture made from the UX of T1 and the README of T2, `docs/architecture.md` as an
+    architecture work. turn.
