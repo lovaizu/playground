@@ -68,8 +68,8 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Next
 
-Step 3 of /rn:up on t3.1: answer turn's question and send it back to the run waiting
+Step 2 of /rn:up on t3.1: settle how the Mover moves a file on a folder whose file system has no hard links, then step 3 on t3.1 again
 
 ## Open
 
-- turn asks whether docs/architecture.svg is added to the call as a second path of the work, for the Logical view figure the architecture checklist asks to be a hand-drawn SVG beside the document.
+- docs/architecture.md:34-40 has the Mover move every file by a hard link; on a file system without hard links, such as FAT or exFAT on a USB stick or many network shares, the system refuses each link, so a folder given there (AC2) has every file left in place with the system's message, and AC4 is not met for it.

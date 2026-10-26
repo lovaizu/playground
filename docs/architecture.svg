@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="600" viewBox="0 0 1020 600" font-family="Helvetica, Arial, sans-serif">
+  <title>organize-downloads logical view</title>
+  <style>
+    .bg { fill: #ffffff; }
+    .box { fill: #f6f8fa; stroke: #1f2328; stroke-width: 1.5; }
+    .ext { fill: none; stroke: #1f2328; stroke-width: 1.5; stroke-dasharray: 6 4; }
+    .frame { fill: none; stroke: #6e7781; stroke-width: 1.5; }
+    .line { fill: none; stroke: #1f2328; stroke-width: 1.5; }
+    .head { fill: #1f2328; }
+    text { fill: #1f2328; }
+    .name { font-size: 15px; text-anchor: middle; }
+    .label { font-size: 12px; }
+    .mid { text-anchor: middle; }
+    .end { text-anchor: end; }
+    .frametext { font-size: 13px; fill: #57606a; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .box { fill: #161b22; stroke: #e6edf3; }
+      .ext { stroke: #e6edf3; }
+      .frame { stroke: #8b949e; }
+      .line { stroke: #e6edf3; }
+      .head { fill: #e6edf3; }
+      text { fill: #e6edf3; }
+      .frametext { fill: #8b949e; }
+    }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path class="head" d="M0,0 L10,5 L0,10 z"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1020" height="600"/>
+
+  <!-- outside the tool -->
+  <rect class="ext" x="20" y="245" width="110" height="50"/>
+  <text class="name" x="75" y="275">user</text>
+  <rect class="ext" x="830" y="80" width="170" height="270"/>
+  <text class="name" x="915" y="220">the folder</text>
+  <rect class="ext" x="830" y="410" width="170" height="50"/>
+  <text class="name" x="915" y="440">the records</text>
+
+  <!-- the tool -->
+  <rect class="frame" x="160" y="40" width="520" height="450" rx="10"/>
+  <text class="frametext" x="175" y="62">organize-downloads: one process for each run</text>
+
+  <rect class="box" x="190" y="245" width="130" height="50"/>
+  <text class="name" x="255" y="275">Command</text>
+  <rect class="box" x="470" y="80" width="160" height="50"/>
+  <text class="name" x="550" y="110">Planner</text>
+  <rect class="box" x="470" y="190" width="160" height="50"/>
+  <text class="name" x="550" y="220">Mover</text>
+  <rect class="box" x="470" y="300" width="160" height="50"/>
+  <text class="name" x="550" y="330">Undo planner</text>
+  <rect class="box" x="470" y="410" width="160" height="50"/>
+  <text class="name" x="550" y="440">Record store</text>
+
+  <!-- user to Command -->
+  <line class="line" x1="130" y1="270" x2="190" y2="270" marker-end="url(#arrow)"/>
+  <text class="label mid" x="160" y="262">runs</text>
+
+  <!-- Command to the four components -->
+  <line class="line" x1="320" y1="255" x2="470" y2="110" marker-end="url(#arrow)"/>
+  <text class="label mid" x="395" y="177" transform="rotate(-44 395 182)">asks the plan</text>
+  <line class="line" x1="320" y1="265" x2="470" y2="220" marker-end="url(#arrow)"/>
+  <text class="label mid" x="395" y="237" transform="rotate(-17 395 242)">hands each move</text>
+  <line class="line" x1="320" y1="277" x2="470" y2="320" marker-end="url(#arrow)"/>
+  <text class="label mid" x="395" y="293" transform="rotate(16 395 298)">asks the plan back</text>
+  <line class="line" x1="320" y1="287" x2="470" y2="430" marker-end="url(#arrow)"/>
+  <text class="label mid" x="395" y="353" transform="rotate(44 395 358)">keeps and drops moves</text>
+
+  <!-- components to what is outside -->
+  <line class="line" x1="630" y1="105" x2="830" y2="105" marker-end="url(#arrow)"/>
+  <text class="label mid" x="730" y="97">reads what is in it</text>
+  <line class="line" x1="630" y1="215" x2="830" y2="215" marker-end="url(#arrow)"/>
+  <text class="label mid" x="730" y="193">moves files to free names,</text>
+  <text class="label mid" x="730" y="207">makes and removes kind folders</text>
+  <line class="line" x1="630" y1="325" x2="830" y2="325" marker-end="url(#arrow)"/>
+  <text class="label mid" x="730" y="303">checks each file</text>
+  <text class="label mid" x="730" y="317">and its old place</text>
+  <line class="line" x1="550" y1="350" x2="550" y2="410" marker-end="url(#arrow)"/>
+  <text class="label" x="558" y="376">reads the moves</text>
+  <text class="label" x="558" y="390">of the last run</text>
+  <line class="line" x1="630" y1="435" x2="830" y2="435" marker-end="url(#arrow)"/>
+  <text class="label mid" x="730" y="427">reads and writes</text>
+  <text class="label mid" x="730" y="452">one for each folder</text>
+
+  <!-- legend -->
+  <rect class="box" x="20" y="530" width="40" height="24"/>
+  <text class="label" x="70" y="547">a component whose work code does; no component's work is done by an AI</text>
+  <rect class="ext" x="540" y="530" width="40" height="24"/>
+  <text class="label" x="590" y="547">outside the tool</text>
+  <rect class="frame" x="720" y="530" width="40" height="24" rx="5"/>
+  <text class="label" x="770" y="547">what runs as one process</text>
+</svg>

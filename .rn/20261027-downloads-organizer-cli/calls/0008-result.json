@@ -1,0 +1,132 @@
+{
+ "work": [
+  "docs/architecture.md",
+  "docs/architecture.svg"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "F-1",
+   "good": "The document has the template's headings in its order: the title, an opening sentence linking docs/ux.md, the principles one a line, User stories, Architecture with Logical view (docs/architecture.svg shown as an image, then lines with their why indented after a blank line) and Physical view (a tree, then lines), and Test. Nothing is bold. The SVG parses and has a legend, a frame round the one process, and colours for light and dark. In place of a link, the Test section says the project has no rules of its own, which fits the decision in the commit history that turn asked for.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:1-12",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:13-19",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:20-73",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:74-83",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:1-95"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-1",
+   "good": "From the opening I can tell how the tool is put together: one Python command plans every move from what it reads, and only one part changes the folder. I also get four principles, one per line. Each is a rule that later decisions are held to (only one part can delete, rename or overwrite; preview and move use the same plan; the folder holds nothing of the tool's; every move is in the record before it is made). None of them is a tool or a format. There is no base architecture, so none needs linking. The UX terms are linked to ux.md#scenes, and that heading exists.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:3-11"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-2",
+   "good": "There are four stories, one for each UX scene: Seeing the planned moves, Organizing, Seeing the planned moves back, and Undoing. The Whole way scene is those four in a row, and the first story's 'or one I name' covers its choice of folder. Each story is something the user does at the command line. None is a step inside the tool, none repeats another, and none is named after a technology.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:15-18"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-3",
+   "good": "The figure has five boxes, each holding only a name: Command, Planner, Mover, Undo planner and Record store. Command has a labelled arrow to each of the other four. Planner, Mover and Undo planner each have an arrow to the folder, Undo planner has one to Record store, and Record store has one to the records. No arrows cross. The lines give the order for each story: preview and move (ask Planner, print, then for each move have Record store keep it before Mover makes it, and drop it if Mover refuses), and undo preview and undo move (Undo planner reads the record and the folder; Mover moves back; Record store drops each one; then the kind folders are removed). They also explain the choices a reader would question: no separate plan for the move run, recording before moving, hard link before removing the old name, the refused-move case, and a new record per run. The SVG coordinates show no crossing arrows.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:36-86",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:24-44"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-4",
+   "good": "The tree puts each component in its own file under src/organize_downloads/, each marked Python 3. It also places pyproject.toml (TOML, setuptools, no dependencies), tests/ (Python 3, unittest), the default folder, and the record file on Linux and on macOS (JSON, named by a hash of the folder's path). The lines below the tree say the tool depends only on Python 3 and its standard library, is installed with pipx install . (linked to README#installation, which exists), and is started as organize-downloads, which runs Command.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:48-72"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-5",
+   "good": "For each kind of part in the tree I can tell how it is checked. The Python code in src/ and every user story are checked by the unittest tests in tests/, run with the command given; those tests use their own test folder and a stand-in HOME. pyproject.toml and starting through the installed organize-downloads command are named as left unchecked, with the reason: the tests are about what the tool does to the folder and the record, and the installed command only runs the Command. The project has no rules of its own, as the user decided, so this section is the only place these checks are set out, and it repeats none. The test command fails for now with ImportError because tests/ is not built yet, which is expected at this design stage.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:74-83"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-6",
+   "good": "I traced a move run stopped at each point against the four principles. The record keeps each move, and the kind folder for it, before the Mover makes it, and drops it if the Mover refuses. A move kept but never made leaves the file in its old place and not in its kind folder; the Undo planner checks that and shows it as not moved back with 'no longer in <kind>/'. A stop between the hard link and removing the old name leaves the old place taken; that shows as '<file> is now in the folder'. A stop while the record is being written comes before the Mover acts, and leaves the earlier record whole. In every case no file is lost and every move that was made is in the record, which matches principles 1 and 4. In a temporary folder I confirmed that the system refuses os.link to a taken name and os.rmdir on a folder with something in it. The other lines do not conflict with each other.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:8-11",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:26-44"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-7",
+   "good": "Every line is a decision that changing would change what was approved. Examples: which part changes the folder, that no separate plan exists for the move run, recording before moving, hard link then remove the old name, refusals left to the system, the record written whole and replaced in one step, the record named by a hash of the full resolved path, Python standard library only, tests run against a stand-in HOME, and the installed command left unchecked. Behaviour per case, such as the kind table and the printed reasons, is linked to the UX and not written again. No line says how a decision was reached or where the work stands. Where a 'why' points to the UX, it links the scene rather than repeating it.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:1-83",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:1-95"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+   "item": "B-8",
+   "good": "Reading once from the top, I understood each line where I met it. The UX terms (kind folder, move run, record, preview run) are linked to where they are defined in the opening, and undo preview run and undo move run are plain combinations of them. Line 28 now relies only on recording before moving, which line 26 has just said. The case of a run stopped between the hard link and removing the old name is now at line 36, right after line 34 explains how the Mover uses the hard link, and it relies on 'the move is already in the record', said at line 26. Each component has the same name in the figure, the lines and the tree. The figure's 'the records' (the files outside the tool) is clearly a different thing from the Record store component. pipx is linked to the README.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:3-11",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:26-44",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:68-72",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:36-56"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "Five code components: a Command that runs each story and prints, a Planner, an Undo planner, a Mover that alone changes the folder, and a Record store that alone reads and writes the records.",
+   "why": "Keeping every change of the folder in one part lets the no-overwrite rule be held in one place whatever the planners hand it, and one Planner shared by preview and move runs is what makes a preview match the move run."
+  },
+  {
+   "chosen": "The Mover moves a file by making a hard link at the new name and then removing the old name, and removes a kind folder by the system call that refuses a folder holding anything.",
+   "why": "A check before an ordinary rename leaves a moment in which another program can put a file at that name and be overwritten; the hard link is refused by the system when the name is taken, which I tried in Python on this machine (FileExistsError, both files kept)."
+  },
+  {
+   "chosen": "A move the system refuses for a reason other than a taken name, such as no permission, leaves the file in place with the system's message as the reason.",
+   "why": "The UX names no reason for such a case, and leaving the file in place is what its rule asks; a new reason text would have to be decided while building."
+  },
+  {
+   "chosen": "Each move, with the kind folder made for it, is kept in the record before the Mover makes it and dropped again if the Mover refuses it; the record is begun empty before a move run's first move and rewritten whole to a new file that then takes the old one's place.",
+   "why": "Kept after the move, a run stopped between the move and the write would leave a moved file --undo cannot reach; kept before, a stop leaves at worst an entry --undo shows as not moved back, as the Undo planner checks the folder anyway; a run that moves nothing still takes the last run's place, as the UX asks."
+  },
+  {
+   "chosen": "One JSON record for each folder, named by a hash of the folder's full path with symbolic links resolved, holding that path, its moves and the kind folders the run made.",
+   "why": "One folder reached by two paths gets one record, and undo needs to know which kind folders that run made to remove only those."
+  },
+  {
+   "chosen": "A src/organize_downloads/ package built with setuptools from pyproject.toml, one file for each component, no dependencies.",
+   "why": "pipx installs a pyproject package with a command entry, and the standard library is enough for the tool, so nothing else is installed with it."
+  },
+  {
+   "chosen": "The tests use unittest of the standard library, run with `PYTHONPATH=src python3 -m unittest discover -s tests`, and set HOME to a stand-in home; the Command takes the home from HOME.",
+   "why": "unittest needs nothing installed; I tried that command on a src layout and it runs the tests, while plain `python3 -m unittest` found none; Python's home lookup follows HOME, which I also tried."
+  },
+  {
+   "chosen": "pyproject.toml and the start through the installed command are left unchecked by the automated tests.",
+   "why": "The user's decision keeps the Test section to what AC7 asks, which is only what the tool does to a folder and the record; the installed command adds only the start of the Command."
+  },
+  {
+   "chosen": "Installing and removing the tool is not a user story.",
+   "why": "The stories rest on the UX's scenes, none of which is about installing; installing is in the README, which the Physical view links."
+  },
+  {
+   "chosen": "The figure has its own background, light by default and dark under the system's dark setting; plain rectangles for code components, dashed boxes for what is outside the tool, a grey frame for the one process.",
+   "why": "Its own background keeps it readable whether or not the page's theme matches the system setting; no component's work is done by an AI, so the legend says so instead of showing a shape nothing uses."
+  }
+ ]
+}
