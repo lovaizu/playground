@@ -10,6 +10,9 @@
  "constraints": [
   {
    "decision": "Purpose: The user wants to find the file they need in their Downloads folder right away."
+  },
+  {
+   "decision": "What organizing does: The tool sorts the files in the Downloads folder into folders by file type."
   }
  ]
 }
