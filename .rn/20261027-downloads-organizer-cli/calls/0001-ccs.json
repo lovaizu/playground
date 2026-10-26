@@ -25,6 +25,9 @@
   },
   {
    "decision": "Files of no kind: A file whose extension is not in the table, or that has no extension, stays where it is and is shown as a file left in place. This covers files still being downloaded (such as .crdownload, .part, .download) and hidden files (such as .DS_Store), which must not be moved."
+  },
+  {
+   "decision": "What shows it done: The finished tool is checked by automated tests on a test folder holding many kinds of files: a plain run moves nothing; files are moved by kind only when told; files whose name already exists in the kind folder, files of no kind, files still being downloaded and subfolders stay where they are and are reported; nothing is deleted or renamed. The tool is never tried on the user's real Downloads. Before approving the finished work, the user runs it on a test Downloads folder of their own making. A README gives how to install and use the tool."
   }
  ]
 }
