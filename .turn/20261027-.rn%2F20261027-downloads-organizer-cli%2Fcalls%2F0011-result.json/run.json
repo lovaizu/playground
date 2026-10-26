@@ -1,0 +1,127 @@
+{
+ "call": {
+  "ccs": ".rn/20261027-downloads-organizer-cli/calls/0011-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261027-downloads-organizer-cli/calls/0011-result.json",
+  "test": null
+ },
+ "work": [
+  ".rn/20261027-downloads-organizer-cli/trial-rename.md",
+  ".github/workflows/tests.yml"
+ ],
+ "checklist": [
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md"
+ ],
+ "receiver": [
+  "the user deciding whether the architecture's way of moving stands, and whoever keeps or changes docs/architecture.md and builds the tool on it"
+ ],
+ "use": [
+  "telling whether the one-step rename that refuses a taken name works through ctypes on Linux and on macOS before the tool is built on it"
+ ],
+ "has": [
+  ".rn/20261027-downloads-organizer-cli/steering.md",
+  "docs/architecture.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+   "item": "B-4"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+   "item": "B-5"
+  }
+ ],
+ "each": [],
+ "given": [
+  ".rn/20261027-downloads-organizer-cli/calls/0011-ccs.json",
+  ".rn/20261027-downloads-organizer-cli/trial-rename.md",
+  ".github/workflows/tests.yml",
+  ".rn/20261027-downloads-organizer-cli/steering.md",
+  "docs/architecture.md",
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+ ],
+ "readable": [
+  ".rn/20261027-downloads-organizer-cli/trial-rename.md",
+  ".github/workflows/tests.yml",
+  ".rn/20261027-downloads-organizer-cli/steering.md",
+  "docs/architecture.md",
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md"
+ ],
+ "root": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "back": [],
+ "prompts": {
+  "turn:generator": {
+   "given": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0011-ccs.json",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.github/workflows/tests.yml",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/steering.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+   ],
+   "work": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.github/workflows/tests.yml"
+   ],
+   "checklists": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md"
+   ],
+   "test": null,
+   "sent_back": [],
+   "answers": [],
+   "chosen": [],
+   "result": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0011-result.json",
+   "reply": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.turn/20261027-.rn%2F20261027-downloads-organizer-cli%2Fcalls%2F0011-result.json/generator.json"
+  }
+ },
+ "since": {
+  "turn:generator": []
+ },
+ "started": {
+  "turn:generator": "a7cbaf3fb63b13255"
+ },
+ "questions": {
+  "from": "turn:generator",
+  "questions": [
+   {
+    "question": "The macOS half of the trial runs only once .github/workflows/tests.yml is pushed to downloads-organizer-cli. The CCS allows the work to commit and push it, but this generator's own rules forbid it to run git commit or git push (and whether the bot's token may push a workflow file is not yet known). Who pushes: should the calling AI commit and push the workflow alone on this branch and hand back the run's ID, so the generator reads it with gh and fills in the macOS result?",
+    "recommended": "Yes: the calling AI pushes the workflow alone and hands back the run ID, as the CCS already allows the push and only it can make the macOS run happen.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+      "item": "B-1"
+     },
+     {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+      "item": "B-2"
+     }
+    ]
+   }
+  ]
+ }
+}

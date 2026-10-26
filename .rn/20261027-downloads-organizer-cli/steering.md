@@ -67,8 +67,8 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Next
 
-Step 4 of /rn:up on T4: action 1
+Step 3 of /rn:up on t4.1: hand the run waiting the ID of the GitHub Actions run of the pushed workflow
 
 ## Open
 
-None.
+- turn asks who pushes .github/workflows/tests.yml so its macOS run happens; its own rules forbid it to commit or push; it asks for the run's ID back. This move pushes it, as rn's keep commits and pushes every change.

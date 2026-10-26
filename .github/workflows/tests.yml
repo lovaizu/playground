@@ -1,0 +1,95 @@
+name: tests
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tests
+        if: hashFiles('tests/**') != ''
+        run: PYTHONPATH=src python3 -m unittest discover -s tests
+
+      # T4 of .rn/20261027-downloads-organizer-cli: the one-step rename that refuses a
+      # taken name, called through ctypes; its result is in trial-rename.md there.
+      - name: Trial of the one-step rename
+        shell: bash
+        run: |
+          python3 - <<'EOF'
+          import ctypes, errno, os, platform, shutil, subprocess, sys, tempfile
+
+          print("python", sys.version.split()[0], "|", platform.platform())
+          libc = ctypes.CDLL(None, use_errno=True)
+
+          if sys.platform == "linux":
+              print("libc", *platform.libc_ver())
+              AT_FDCWD, RENAME_NOREPLACE = -100, 1
+              call = "renameat2(AT_FDCWD, old, AT_FDCWD, new, RENAME_NOREPLACE)"
+              def rename(old, new):
+                  return libc.renameat2(AT_FDCWD, old, AT_FDCWD, new, RENAME_NOREPLACE)
+          elif sys.platform == "darwin":
+              RENAME_EXCL = 0x4
+              call = "renamex_np(old, new, RENAME_EXCL)"
+              def rename(old, new):
+                  return libc.renamex_np(old, new, RENAME_EXCL)
+          else:
+              sys.exit("no one-step rename for " + sys.platform)
+
+          # A folder under the home, as the tool's Downloads folder is.
+          folder = tempfile.mkdtemp(dir=os.path.expanduser("~"))
+          if sys.platform == "linux":
+              fs = subprocess.run(["stat", "-f", "-c", "%T", folder],
+                                  capture_output=True, text=True).stdout.strip()
+          else:
+              dev = subprocess.run(["df", folder], capture_output=True,
+                                   text=True).stdout.splitlines()[1].split()[0]
+              fs = next(l for l in subprocess.run(["mount"], capture_output=True,
+                        text=True).stdout.splitlines() if l.startswith(dev + " "))
+          print("folder", folder, "| file system:", fs)
+          print("call", call)
+
+          def write(path, text):
+              with open(path, "w") as f:
+                  f.write(text)
+
+          def state():
+              found = {}
+              for root, _, files in os.walk(folder):
+                  for name in files:
+                      path = os.path.join(root, name)
+                      with open(path) as f:
+                          found[os.path.relpath(path, folder)] = f.read()
+              return found
+
+          def case(name, before, old, new, expect_ret, expect_errno, expect_after):
+              shutil.rmtree(folder)
+              os.makedirs(os.path.join(folder, "images"))
+              for path, text in before.items():
+                  write(os.path.join(folder, path), text)
+              ctypes.set_errno(0)
+              ret = rename(os.path.join(folder, old).encode(),
+                           os.path.join(folder, new).encode())
+              err = ctypes.get_errno() if ret != 0 else 0
+              after = state()
+              ok = ret == expect_ret and err == expect_errno and after == expect_after
+              print(f"{name}: returned {ret}, errno {errno.errorcode.get(err, err)}, "
+                    f"files after {after} -> {'PASS' if ok else 'FAIL'}")
+              return ok
+
+          results = [
+              case("free name", {"a.png": "A"}, "a.png", "images/a.png",
+                   0, 0, {"images/a.png": "A"}),
+              case("taken name", {"a.png": "A", "images/a.png": "B"}, "a.png", "images/a.png",
+                   -1, errno.EEXIST, {"a.png": "A", "images/a.png": "B"}),
+          ]
+          shutil.rmtree(folder)
+          sys.exit(0 if all(results) else 1)
+          EOF
