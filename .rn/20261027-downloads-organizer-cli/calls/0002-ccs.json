@@ -37,6 +37,9 @@
   },
   {
    "decision": "Where the record of the last run is kept: The record of what the last run moved, from where to where, is kept in a place of the tool's own under the user's home (on Linux ~/.local/state/organize-downloads, on macOS ~/Library/Application Support/organize-downloads), one for each folder organized, so the organized folder gains no file of the tool's."
+  },
+  {
+   "decision": "Files that cannot be moved back: When undoing, a file that cannot be moved back, because a file of the same name is now where it was or because it is no longer in its kind folder, stays where it is and is shown as not moved back, with the reason; every other file is moved back."
   }
  ]
 }
