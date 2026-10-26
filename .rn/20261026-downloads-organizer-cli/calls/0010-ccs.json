@@ -5,11 +5,42 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "issue"
+  },
+  {
+   "path": ".rn/20261026-downloads-organizer-cli/issue-1.md"
+  },
+  {
+   "audience": "rn's makers, reading the issue on lovaizu/ccpm, who build rn for all its users"
+  },
+  {
+   "has": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "deciding how rn changes so that every user's later work meets the need"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md"
   }
  ],
  "constraints": [
   {
    "decision": "Learning: rn.py decide keeps a decision of any length, but rn.py proposal refuses a sign-off for one over 200 characters, and once its task has left the steering rn.py decide refuses to shorten it, so the design sign-off cannot be shown"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
   }
  ]
 }
