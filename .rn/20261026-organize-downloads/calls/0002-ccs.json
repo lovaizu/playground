@@ -37,6 +37,9 @@
   },
   {
    "decision": "Undoing the last move: The tool can undo the last run that moved files: undoing returns each file that run moved to where it was."
+  },
+  {
+   "decision": "Where the record of the last move is kept: The record of what the last run moved, which undoing needs, is kept outside the folder being sorted, in the user's own place for an application's data (~/.local/state on Linux, ~/Library/Application Support on macOS), so nothing is added to the folder but the kinds' folders."
   }
  ]
 }
