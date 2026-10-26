@@ -1,0 +1,49 @@
+{
+ "focal_entities": [
+  {
+   "work": "t1.1"
+  },
+  {
+   "stage": "design"
+  },
+  {
+   "kind": "readme"
+  },
+  {
+   "path": "organize-downloads/README.md"
+  },
+  {
+   "audience": "the user approving the README at the design sign-off, and whoever makes the architecture and the tool to it"
+  },
+  {
+   "has": ".rn/20261026-organize-downloads/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving how a newcomer installs the tool and uses it, and building the architecture and the tool to what it says"
+  },
+  {
+   "serves": "AC2: Run on a folder with the option that tells it to move, the tool moves each file directly in it that is of a known kind into that kind's folder inside it, made where missing, under the same name and with the same contents, and prints the same lines as AC1. The kinds' folders are Images (such as jpg, png, gif, heic, webp, svg), Documents (such as pdf, docx, xlsx, pptx, txt, md, csv), Archives (such as zip, tar, gz, 7z, rar), Installers (such as dmg, pkg, deb, rpm, AppImage), Audio (such as mp3, wav, m4a) and Videos (such as mp4, mov, mkv); the full list of extensions of each is settled in the design."
+  },
+  {
+   "serves": "AC10: The README says how to install the tool and how to use it on macOS and Linux, and a user following it alone installs the tool, lists the planned moves, moves the files and undoes the move."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/readme.md"
+  }
+ ],
+ "constraints": [
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/fix.md"
+  }
+ ]
+}
