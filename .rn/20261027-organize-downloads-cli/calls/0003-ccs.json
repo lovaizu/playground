@@ -58,6 +58,9 @@
   },
   {
    "decision": "Same name at the original place on undo: When a file of the same name is already at the place undo would put a file back, undo leaves that file in its type folder, overwrites and renames nothing, tells the user it did not put it back, and puts the other files back."
+  },
+  {
+   "decision": "A moved file gone on undo: When a file the last run moved is no longer in its type folder, such as one the user moved or deleted since, undo skips it, tells the user it could not put it back, and puts the other files back; it does not look for the file elsewhere."
   }
  ]
 }
