@@ -5,6 +5,55 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "architecture"
+  },
+  {
+   "path": "docs/architecture.md"
+  },
+  {
+   "audience": "whoever builds or changes tidy-downloads, and the user who approves it at the design sign-off"
+  },
+  {
+   "has": "docs/ux.md"
+  },
+  {
+   "has": "README.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "grasping in a short time how tidy-downloads is put together to give docs/ux.md, its user stories, parts, technology, where the undo record is kept, and how each part and story is checked on a test folder, never the real Downloads folder, to build it or approve it"
+  },
+  {
+   "serves": "AC1: Told to move, the tool moves each file directly in the folder it is run on, the Downloads folder unless another is named, into the folder of its kind, such as images, documents and archives, and each file of no known kind, such as one with no extension or an unfamiliar one, into an Other folder."
+  },
+  {
+   "serves": "AC2: Files inside subfolders are not moved, and each subfolder is left where it was."
+  },
+  {
+   "serves": "AC3: After a run, every file that was there before is still there under its own name, and no file's content has changed."
+  },
+  {
+   "serves": "AC4: Where a file of the same name is already in the folder of its kind, the tool leaves the file where it is and reports it."
+  },
+  {
+   "serves": "AC5: Run without being told to move, the tool shows each file it would move and where, and moves nothing."
+  },
+  {
+   "serves": "AC6: The tool works on both macOS and Linux."
+  },
+  {
+   "serves": "AC8: The repository's tests check AC1 to AC6 and AC9 by running the tool on a test folder of mixed files and subfolders, never on the real Downloads folder, and pass."
+  },
+  {
+   "serves": "AC9: Told to undo, the tool moves each file that its last run which moved files in that folder moved back to where it was; where a file of the same name is already there, it leaves the file in the folder of its kind and reports it; and it removes each folder of a kind that run made once that folder is empty, leaving each folder that was there before or still holds a file."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md"
   }
  ],
  "constraints": [
@@ -13,6 +62,15 @@
   },
   {
    "decision": "The tool's language and file: The tool is one Python 3 script, tidy-downloads with no extension at the root of the repository, installed by copying it onto the PATH"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
   }
  ]
 }
