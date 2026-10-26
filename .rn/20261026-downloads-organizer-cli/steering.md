@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/10
 stage: plan
-signoff: plan
+signoff: none
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -24,8 +24,8 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 5 of /rn:up on plan: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
+Step 6 of /rn:up on plan: find the point behind the feedback
 
 ## Open
 
-None.
+- 最後の実行を取り消せるようにしてほしいです。取り消すと、その実行で移した各ファイルが元の場所へ戻るように。テストでもこれを確かめてください。
