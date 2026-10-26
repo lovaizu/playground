@@ -28,9 +28,10 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Next
 
-Step 5 of /rn:up on design: stop at the design sign-off
+Step 3 of /rn:up on t1.1: have turn return its result, .rn/20261026-organize-downloads/calls/0005-result.json, which rn.py proposal design needs; then step 5 on design
 
 ## Open
 
+- rn.py proposal design stops: "turn has not returned the work t1.1: .rn/20261026-organize-downloads/calls/0005-result.json is not there". turn:up on t1.1, told by the user's decision "How t1.1 ends" to end with B-4, B-5 and B-8 waiting for the build stage, will not write the result: its flow opens a new round after each answer asking it to end, and it stopped saying the result must be written outside turn or turn.py fixed so such an answer closes the run. The orchestrator writes no line of what turn makes, so neither way is open to it.
 - At the build stage, check B-4, B-5 and B-8 of the README checklist on organize-downloads/README.md, by a first user installing from its address and following its Example once the tool, docs/usage.md and CHANGELOG.md are on main and docs/architecture.md is made (decision "How t1.1 ends" of t1.1).
 - At the build stage, make organize-downloads/docs/usage.md and organize-downloads/CHANGELOG.md with the tool (decision "License and the places of fuller use and of changes" of t1.1).
