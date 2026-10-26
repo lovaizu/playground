@@ -11,8 +11,8 @@ conversation-language: Japanese
 
 ## Next
 
-Step 8 of /rn:up on plan: hear the purpose and what shows it done
+Step 2 of /rn:up on plan: ask how the macOS criterion is checked, then step 3 on plan again
 
 ## Open
 
-None.
+- How the tool is checked on macOS: the session runs on Linux (uname: Linux aarch64) with no macOS machine, and the repository lovaizu/playground is PUBLIC with no .github folder; the user decided the tool works on macOS and Linux.
