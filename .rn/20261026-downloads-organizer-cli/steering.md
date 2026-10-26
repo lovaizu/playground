@@ -29,7 +29,7 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
   Completion criterion: `docs/ux.md` shows whom the tool is for, the goal they reach with it, the key results in order of priority, and the scenes of looking at what would move, moving and undoing that AC1 to AC5 and AC9 give, so that every item of the UX checklist holds, as a first reader in the user's place finds.
 
-  - [ ] 1. The key results for G1 and their order of priority. The orchestrator, with the user.
+  - [x] 1. The key results for G1 and their order of priority. The orchestrator, with the user.
   - [ ] 2. The UX, from the plan and the key results settled in action 1, `docs/ux.md` as a ux work. turn.
 
 - T2: The README, the repository's `README.md` rewritten for the tool. Serves AC7.
@@ -48,8 +48,8 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 4 of /rn:up on T1: action 1, settle the key results for G1 and their order with the user
+Step 4 of /rn:up on T1: action 2, have turn make docs/ux.md
 
 ## Open
 
-- T1 action 1: the key results for G1 and their order of priority are not yet settled
+None.
