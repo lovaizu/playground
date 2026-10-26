@@ -65,6 +65,9 @@
   },
   {
    "decision": "Test tools: The tests use the standard library alone: inputs made at random are made with the standard random module, each failing input kept as an example; coverage of statements and branches with coverage.py and mutation testing with mutmut are run by whoever builds the tool, through uv, and are added neither to the tool nor to the GitHub Actions workflow."
+  },
+  {
+   "decision": "No download folder named on Linux: On Linux, when the xdg-user-dirs settings file (~/.config/user-dirs.dirs) is missing, names no download folder, or names the home folder itself, and no folder is given, the tool does nothing and stops, naming the settings file and telling the user to give the folder to organize last."
   }
  ]
 }
