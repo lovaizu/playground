@@ -13,6 +13,9 @@
   },
   {
    "decision": "How files are organized: Files directly in the Downloads folder, and only those, are moved into subfolders by kind (decided by extension, such as Images, Documents, Archives). The tool only moves files: it never deletes, renames or overwrites any file."
+  },
+  {
+   "decision": "Build or reuse: The tool is written in this repository rather than built on an existing tool, so that the tool itself, not a configuration, guarantees it never deletes, renames or overwrites a file. Run plainly, it only shows which files it would move where and moves nothing; it moves files only when told to. When a file of the same name is already in the kind folder, that file is not moved and is reported."
   }
  ]
 }
