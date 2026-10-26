@@ -22,6 +22,9 @@
   },
   {
    "decision": "Guarding against mistakes: Run with nothing added, the tool only lists what it would move and where, and moves nothing; it moves files only when the user tells it to explicitly, such as with an option. There is no undo."
+  },
+  {
+   "decision": "Same name at the destination: When a file of the same name is already in the folder a file would go to, the tool leaves that file where it is, never overwriting or renaming anything, and tells the user it did not move it."
   }
  ]
 }
