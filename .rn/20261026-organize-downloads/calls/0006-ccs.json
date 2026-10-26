@@ -64,6 +64,9 @@
  ],
  "constraints": [
   {
+   "chosen": "The repository holds no project rules for how code and the user stories are checked, so the architecture's Test section says so and itself gives what this tool's checks need, the code checked by tests with Python's own unittest and each user story by running the tool on a temporary test folder holding every case, all run by one command: no file of such rules exists to link, and this meets AC11 with nothing to install beyond Python, as the decision on how the tool is made says"
+  },
+  {
    "artifact-language": "English"
   },
   {
