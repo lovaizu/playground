@@ -5,6 +5,28 @@
   },
   {
    "stage": "plan"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261026-downloads-organizer-cli/calls/0001-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -16,6 +38,15 @@
   },
   {
    "decision": "What shows it done: Run on a test folder of mixed files and subfolders, never the real Downloads: only top-level files move to kind folders, none lost, renamed or overwritten, subfolders left; a plain run only shows what would move, moving only when told; works on macOS and Linux; a file whose name already exists in its kind folder stays and is reported; a README gives install and usage; tests check all of this"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
   }
  ]
 }
