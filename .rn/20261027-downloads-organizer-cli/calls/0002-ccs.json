@@ -40,6 +40,9 @@
   },
   {
    "decision": "Files that cannot be moved back: When undoing, a file that cannot be moved back, because a file of the same name is now where it was or because it is no longer in its kind folder, stays where it is and is shown as not moved back, with the reason; every other file is moved back."
+  },
+  {
+   "decision": "Showing an undo before making it: Undoing works as organizing does: asked to undo without being told to move, the tool shows each file it would move back with where it would go, and each file it could not move back, and changes nothing; it moves files back only when told to."
   }
  ]
 }
