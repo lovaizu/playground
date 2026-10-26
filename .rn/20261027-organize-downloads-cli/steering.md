@@ -23,7 +23,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 6 of /rn:up on plan: find the point behind the feedback
+Step 2 of /rn:up on plan: hear the points the feedback opens on undo (where the record of the last run is kept, what counts as the last run, a same-named file at the original place, a file gone since the run, whether undo lists first, type folders left empty), then step 3 on plan and step 5 on the plan sign-off
 
 ## Open
 
