@@ -50,6 +50,9 @@
   },
   {
    "decision": "The file's language: The tool's one file is a Python 3 script, so Python 3 is what the user needs beforehand"
+  },
+  {
+   "decision": "License: tidy-downloads is under the MIT license, with a LICENSE file in the repository"
   }
  ]
 }
