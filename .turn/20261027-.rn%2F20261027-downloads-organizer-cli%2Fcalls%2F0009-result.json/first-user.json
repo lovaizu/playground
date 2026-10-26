@@ -1,0 +1,86 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "F-1",
+      "places": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:44-45",
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:58-60"
+      ],
+      "did": "Checked the document against the template: title, opening with the UX link, principles each in a line, User stories, Architecture with Logical view (SVG shown as an image) and Physical view (tree), Test, each list line one sentence with its why indented after a blank line, nothing in bold. All of that holds. The SVG parses as XML, has a light and a dark style, boxes holding names alone, a legend for box shape and frame, and no arrows crossing. Then I worked out where each label sits against the shapes. The frame round the tool has its left edge at x=160 from y=40 to y=490 (svg:44). The label 'runs' on the user-to-Command arrow is centred at x=160, baseline y=262 (svg:60), so it spans about x=148-172, y=253-262, and the frame's edge runs through the middle of the word.",
+      "lacking": "A figure whose every label reads clearly in light and dark. The label 'runs' has the frame line drawn through it. Moving the label left of the frame, for example centred at x=145, or anchoring it at the end before x=160, would clear it. Everything else in the template holds. The Test section says the project has no rules of its own, so it has no link to give (architecture.md:76-77). I could not check that against the repository, since no project rules file is among what I was given."
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-1",
+      "good": "The opening says how the tool is put together: one Python command that plans every move from what it reads in the folder or the record, and hands each move to the one part that changes the folder. It links the UX and where its terms are defined (ux.md#scenes, a heading that exists at ux.md:52). Four principles follow, each in one line: the no-delete/rename/overwrite rule held by one part whatever it is handed; preview and move decide by the same plan; nothing written in the folder but the moved files and kind folders; each move recorded before it is made so --undo reaches a run stopped part way. None of them is a tool or a format. Nothing else is built on, so there are no principles of a base to link.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:3-11"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-2",
+      "good": "Each UX scene has a story at the command's edge. Seeing the planned moves (ux.md:106) rests on story 1, which also covers naming another folder (ux.md:91). Organizing (ux.md:161) rests on story 2. Seeing the planned moves back (ux.md:203) rests on story 3. Undoing (ux.md:251) rests on story 4. The whole way is the four in sequence. No story is an inner step, none repeats another, and none is named by a technology.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:15-18"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-3",
+      "good": "From the figure and the lines I can follow each story in order. Preview: Command asks the Planner, which reads the folder, then prints. Move: the plan, then for each move the Record store keeps it and the kind folder to be made, then the Mover makes it, and the record entry is dropped if the Mover refuses. The why says this is what makes the move run match the preview. Undo preview: the Undo planner reads the last run's moves from the Record store and checks the folder. Undo move: the Mover moves each file back, the Record store drops each move made, and last the Mover removes the kind folders. Where a reader would question a choice, the lines say what each component does with what it is handed and why: hard link then removing the old name, and an rmdir that refuses a folder holding anything (I checked that both are refused on a taken name and a non-empty folder with os.link and os.rmdir in a temp folder); what happens on a file system without hard links; replacing the record whole. Boxes hold component names alone. No component or path serves one case only.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:47-86",
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:26-44"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-4",
+      "good": "The tree places every component of the figure in its own Python 3 file under src/organize_downloads/: Command in cli.py, Planner in plan.py, Undo planner in undo.py, Mover in mover.py, Record store in record.py. It also places the package file, the tests, and the folder and records under the user's home, each with its kind (TOML, Python 3, JSON). The lines say the tool depends on Python 3 and its standard library alone, is installed with pipx install . as the README says (README.md#installation exists at README.md:122), and starts as organize-downloads, which runs the Command. They also say how the folder path and the home are taken.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:48-72"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-5",
+      "good": "The section says the project has no rules for checks, so this product's checks are set here. Every part in src/ and every user story is checked by unittest tests in tests/, with the command to run them. The tests use their own folder and a stand-in HOME, so they never touch the real Downloads folder or record, which is what AC7 asks for every case. pyproject.toml and the installed command are left unchecked, with why. Each kind of part in the tree is accounted for, and no single case's inputs or pass bar are written here. I ran the given command from the repository: it stops with 'Start directory is not importable: tests', as expected at this design stage with no tests built yet. The line says how they will be run, not that they exist.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:76-83"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-6",
+      "places": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:8",
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:34-36"
+      ],
+      "did": "Held each line against the four principles and against the other lines. Principles 2 to 4 hold. The move run uses the preview's plan. A no-hard-link file system moves fewer files, never others. The record is under home and replaced in one step. Each move is kept before it is made and dropped only after it is made or refused. Undo leaves the files it does not move in the record. For principle 1 I followed the Mover's two steps on one file: link the file at its new name, which the system refuses if the name is taken (I checked this with os.link in a temp folder), then take away the old name. Line 36 gives the why: a check before the move leaves a moment in which another program could put a file at the name, and the system's refusal leaves none.",
+      "lacking": "How principle 1 holds at the old name. Taking away a name removes whatever is at that name at that moment. Between the hard link and its removal, another program (line 36's own example is a browser finishing a download) could put a new file at the old name, and the Mover would then delete that file. Undo has the same window at the kind-folder name. So the reason line 36 gives against a check made in advance applies just as much to the second step, and the lines do not say how that moment is closed. One way is to remove the name only if it still points to the linked file, which can still race. Another is a single system move that refuses a taken name, such as Linux renameat2 with RENAME_NOREPLACE or macOS renamex_np with RENAME_EXCL. Or the window can be accepted, with the why. The approver of the no-delete rule cannot tell which of these the Mover does."
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-7",
+      "good": "Each line is a decision the approval rests on: the principles, how parts call one another and in what order, how the Mover moves and removes, what is done where hard links are refused, how the record is begun and replaced, where each file lives, how the folder and home are taken, and how and what is tested. Where a line points at the UX it is the why, with a link (ux.md#undoing, ux.md#organizing), not the UX said again. No reason strings are copied beyond the two the Mover's refusal maps to. No case-by-case behaviour, count, history or status is written. The examples (FAT/exFAT, two paths to one folder) are the why of a decision, not a gloss on a known idea.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:8-11",
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:26-44",
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:68-72",
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:79-83"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-8",
+      "good": "Reading once from the top, the UX terms (kind folder, move run, record, preview run) are linked from the opening to where the UX defines them. 'Undo preview run' and 'undo move run' read as those runs with --undo. Each component has one name in the figure, the lines and the tree. The Mover's reasons point back to line 36 ('the moment above', 'already in the record'), not ahead. Hard link, FAT, exFAT and pipx are common terms, and pipx is linked through the README. The one line pointing to later text is principle 4's 'even one that stopped part way', and its why is given at line 28 under the first line that uses it.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:3-11",
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:26-44",
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:68-72"
+      ]
+    }
+  ]
+}

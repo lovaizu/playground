@@ -68,8 +68,8 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Next
 
-Step 2 of /rn:up on t3.1: settle how the Mover moves a file on a folder whose file system has no hard links, then step 3 on t3.1 again
+Step 3 of /rn:up on t3.1: answer turn's question and send it back to the run waiting
 
 ## Open
 
-- docs/architecture.md:34-40 has the Mover move every file by a hard link; on a file system without hard links, such as FAT or exFAT on a USB stick or many network shares, the system refuses each link, so a folder given there (AC2) has every file left in place with the system's message, and AC4 is not met for it.
+- turn asks how the Mover closes the moment between making the hard link and taking away the old name, in which another program can put a new file at the old name that is then deleted (the same at undo): (a) check the old name still points to the same file just before, narrowing but not closing it; (b) the system's one-step rename refusing a taken name (renameat2 RENAME_NOREPLACE on Linux, renamex_np RENAME_EXCL on macOS) through ctypes, replacing the hard-links-only decision, with a trial first; (c) keep it and state it. turn recommends (b).

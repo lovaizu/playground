@@ -6,7 +6,7 @@ it gives the UX in [docs/ux.md](ux.md), whose words, such as kind folder, move r
 defined under [Scenes](ux.md#scenes).
 
 - The rule that no run deletes, renames or overwrites a file is held by the one part that changes the folder, whatever the parts before it hand it.
-- A preview run and a move run decide each file by the same plan, so what a preview shows is what the move run after it does.
+- A preview run and a move run decide each file by the same plan, so on a folder unchanged in between a move run makes no move but those the preview showed.
 - The tool writes nothing in the folder but the files it moves and the kind folders; what it keeps is under the user's home.
 - Each move a move run makes is in the record before it is made, so `--undo` reaches every move of a run, even one that stopped part way.
 
@@ -35,9 +35,9 @@ defined under [Scenes](ux.md#scenes).
 
   A check made before the move would leave a moment in which another program, such as a browser finishing a download, could put a file at that name; the system's own refusal leaves none. A run stopped between making the hard link and taking away the old name keeps the file under both names, which `--undo` shows as not moved back, as the move is already in the record. A move refused because the name is taken shows `name taken in <kind>/` or `<file> is now in the folder`, as in the UX.
 
-- A move the system refuses for another reason, such as no permission, leaves the file in place, shown with the system's message as the reason.
+- A move the system refuses for another reason, such as no permission, or no hard links on the folder's file system, as on FAT, exFAT and many network shares, leaves the file in place, shown with the system's message as the reason, and the Mover has no other way of moving.
 
-  The UX names no such reason, and leaving the file is what the first rule asks.
+  The UX names no such reason, and leaving the file is what the first rule asks. Any other way of moving would leave the moment above in which a file could be overwritten, so on a file system without hard links a move run moves nothing, which the preview cannot show, as it changes nothing.
 
 - The Record store begins a move run's record anew, empty, before the run's first move, and writes each record whole to a new file that then takes the old one's place in one step.
 

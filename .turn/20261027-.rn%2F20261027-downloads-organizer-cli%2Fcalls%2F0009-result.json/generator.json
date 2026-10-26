@@ -1,0 +1,96 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "F-1",
+      "good": "The reader finds the document in the template's shape, headings included, and every label of the figure reads clearly in light and dark. The label 'runs' is now centred at x=145, so at 12px it spans about x=134-157: past the user box, which ends at x=130, and short of the tool's frame at x=160, so no line is drawn through it. The Test section says the project has no rules for checking, as the user decided in the CCS's 'Rules for checking' decision, in place of a link.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:1-83",
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:58-60"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-1",
+      "good": "The approver and the builder get from the opening how the tool is put together (one Python command that plans from the folder or the record and hands every move to the one part that changes the folder) and its four principles, each in a line, with the UX linked for its terms. The second principle promises only what holds on every file system: on a folder unchanged since the preview, a move run makes no move the preview did not show.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:3-11"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-2",
+      "good": "Each of the UX's scenes (seeing the planned moves, organizing, seeing the planned moves back, undoing) rests on one user story about what the user does with the command. No story is for a step inside the tool or named by a technology.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:13-18"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-3",
+      "good": "From the figure and the lines beside it, the builder sees how Command, Planner, Undo planner, Mover and Record store achieve each story, in order. The lines also give the why of each choice a reader would question: the record is kept before each move, and the Mover moves by hard link with no other way of moving, so on a file system without hard links each file is left in place with the system's message.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:1-95",
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:22-44"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-4",
+      "good": "The tree places each component in its own Python 3 file under src/organize_downloads/, along with pyproject.toml, the tests, and the record of each folder under the user's home on Linux and on macOS, each with its kind. The lines beside it say the tool needs only Python 3's standard library, is installed with pipx and started as organize-downloads, and how a record is named.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:46-72"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-5",
+      "good": "The reader learns that the project has no rules of its own for checking, as the user decided, so the Test section says only what AC7 asks. The parts in src/ and the user stories are checked by automated tests in tests/, run with the command given, on a test folder and a stand-in HOME; the section also says what is left unchecked, and why.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:74-83"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-6",
+      "question": 1
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-7",
+      "good": "Each line is a decision the approval rests on, said once. The hard-links-only decision sits in the one line on refused moves, with no history of how it was decided. The reasons a file is left in place, and the wording the tool prints, stay in the UX, which is linked.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:1-83"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/architecture.md",
+      "item": "B-8",
+      "good": "Read once from the top, each line is understood where it stands. UX terms are linked at the opening, and each component has the same name in the figure, the lines and the tree. \"The moment above\" on line 40 points back to line 36, which explains it.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.md:1-83",
+        "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/architecture.svg:1-95"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "Moving by a hard link and then taking away the old name still leaves a moment in which a file can be deleted. Between the two steps, another program, such as a browser finishing a download, can put a new file at the old name, and taking the old name away then deletes that new file. Undo has the same moment at the name in the kind folder. Python's standard library has no call that takes a name away only if it still points to a given file. Which should the Mover do? (a) Keep the hard link, and just before taking away the old name, check that it still points to the same file (same device and inode), leaving the file under both names if not; this narrows the moment to the gap between two system calls but does not close it. (b) Move each file by the system's own one-step rename that refuses a taken name, renameat2 with RENAME_NOREPLACE on Linux and renamex_np with RENAME_EXCL on macOS, called through ctypes from the standard library; there is no second step, so the moment is gone. Where the file system refuses this call, the file is left in place with the system's reason, as now. This replaces the hard-links-only decision, costs code for each system, and needs a trial first. (c) Keep the two steps as they are and state the moment in the architecture with why.",
+      "recommended": "(b), because a lost file is the one harm the UX puts first and (b) alone leaves no moment for it, while keeping the same behaviour of leaving files in place, with the system's reason, on file systems that refuse the call."
+    }
+  ],
+  "chosen": [
+    {
+      "chosen": "The second principle reads \"so on a folder unchanged in between a move run makes no move but those the preview showed\"; before, it said that what a preview shows is what the move run after it does.",
+      "why": "With hard links only, a preview on FAT or exFAT shows moves that the move run then cannot make, so the old wording would contradict the Mover line. The new wording keeps the promise KR1.3 asks for: no move that differs from the preview."
+    },
+    {
+      "chosen": "The case of a file system without hard links goes in the existing line on moves the system refuses for another reason, not in a line of its own.",
+      "why": "It is the same rule (leave the file in place, with the system's message), so one line holds it (B-7)."
+    },
+    {
+      "chosen": "The label 'runs' in the figure is centred at x=145, between the user box and the tool's frame.",
+      "why": "It is the only point on that arrow where the word clears both the user box (ends at x=130) and the frame (x=160), and it stays next to the arrow it labels."
+    }
+  ]
+}
