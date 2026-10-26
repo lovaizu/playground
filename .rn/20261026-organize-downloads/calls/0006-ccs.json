@@ -1,0 +1,76 @@
+{
+ "focal_entities": [
+  {
+   "work": "t2.1"
+  },
+  {
+   "stage": "design"
+  },
+  {
+   "kind": "architecture"
+  },
+  {
+   "path": "organize-downloads/docs/architecture.md"
+  },
+  {
+   "audience": "the user approving the architecture at the design sign-off, and whoever builds the tool and its tests to it"
+  },
+  {
+   "has": ".rn/20261026-organize-downloads/steering.md"
+  },
+  {
+   "has": "organize-downloads/README.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving how the tool is put together and checked, and building the tool and its tests to what it says"
+  },
+  {
+   "serves": "AC1: Run on a folder with no options, the tool prints one line for each file directly in it but those AC5 leaves out, saying the kind's folder the file would move to, or that it stays and why, and every file in the folder is left where and as it was."
+  },
+  {
+   "serves": "AC2: Run on a folder with the option that tells it to move, the tool moves each file directly in it that is of a known kind into that kind's folder inside it, made where missing, under the same name and with the same contents, and prints the same lines as AC1. The kinds' folders are Images (such as jpg, png, gif, heic, webp, svg), Documents (such as pdf, docx, xlsx, pptx, txt, md, csv), Archives (such as zip, tar, gz, 7z, rar), Installers (such as dmg, pkg, deb, rpm, AppImage), Audio (such as mp3, wav, m4a) and Videos (such as mp4, mov, mkv); the full list of extensions of each is settled in the design."
+  },
+  {
+   "serves": "AC3: A file of no known kind, such as one with no extension or an unfamiliar one, stays where it is, and its line says it stays because its kind is unknown."
+  },
+  {
+   "serves": "AC4: A file whose name its kind's folder already holds stays where it is under its own name, the file already in that folder is left as it was, and its line says it stays because the name is taken."
+  },
+  {
+   "serves": "AC5: A download still in progress, ending in .crdownload, .part or .download, and a hidden file, whose name begins with a dot, are never moved and have no line."
+  },
+  {
+   "serves": "AC6: The folders directly in the folder, and all they hold, are neither moved nor changed, apart from the files moved into the kinds' folders as AC2 says and the files moved back out of them and the kinds' folders removed as AC12 says."
+  },
+  {
+   "serves": "AC7: After any run, every file that was in the folder or in a folder inside it is still in the folder or in a folder inside it, under the same name and with the same contents, and nothing has been added but the kinds' folders."
+  },
+  {
+   "serves": "AC8: Run with no folder given, the tool works on the user's Downloads folder, `~/Downloads`."
+  },
+  {
+   "serves": "AC11: The repository holds tests that check each criterion from AC1 to AC8 and AC12, run by one command, and they pass on Linux."
+  },
+  {
+   "serves": "AC12: Run on a folder with the option that tells it to undo, the tool returns each file that the last run moving files, as AC2 says, moved, to where it was, under the same name and with the same contents, prints one line for each such file saying it went back or that it stays and why, and removes each kind's folder that run made that is left empty; a folder that was there before that run, or that still holds anything, stays. A file whose old place now holds a file of the same name, or that is no longer where that run put it, stays where it is, and its line says why. The record of that run, which the undo reads, is kept outside the folder, in the user's own place for an application's data: `~/.local/state` on Linux, `~/Library/Application Support` on macOS."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md"
+  }
+ ],
+ "constraints": [
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/fix.md"
+  }
+ ]
+}
