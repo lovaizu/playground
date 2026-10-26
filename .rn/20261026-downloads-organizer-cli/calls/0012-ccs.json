@@ -41,6 +41,9 @@
   },
   {
    "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
+  },
+  {
+   "decision": "rn version: The issue names rn 0.9.0, the version the session's steering front matter gives"
   }
  ]
 }
