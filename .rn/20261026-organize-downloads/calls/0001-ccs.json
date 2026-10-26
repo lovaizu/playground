@@ -19,6 +19,9 @@
   },
   {
    "decision": "Preview before moving: Run with no options, the tool only lists the moves it would make and moves nothing; it moves files only when the user explicitly tells it to. Undoing a run is left to the user by hand."
+  },
+  {
+   "decision": "Name already taken at the destination: When the destination folder already holds a file of the same name, the tool does not move the file: it stays in Downloads under its own name, and the tool tells the user so in its list. No file is renamed or overwritten."
   }
  ]
 }
