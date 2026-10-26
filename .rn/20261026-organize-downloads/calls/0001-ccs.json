@@ -28,6 +28,9 @@
   },
   {
    "decision": "Downloads in progress and hidden files: The tool never touches a download still in progress, such as a .crdownload, .part or .download file, nor a hidden file whose name begins with a dot, such as .DS_Store, and leaves them out of its list."
+  },
+  {
+   "decision": "How the tool is shown done: Each decided behaviour is checked on a test folder holding many kinds of files, here on Linux, and the user runs the tool once on a test folder on their macOS to confirm it works there. The work also comes with a README saying how to install and use the tool, and with tests that check each decided behaviour."
   }
  ]
 }
