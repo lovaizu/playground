@@ -25,9 +25,24 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 - AC10: The tool only moves files and never deletes anything: after any run, organizing or undo, each file that was in the organized folder or in its type folders before the run is still in one of them under the same name, and every folder is still there, a type folder that undo leaves empty included.
 - AC11: A README says how to install the tool and how to use it.
 
+## Tasks
+
+- T1: The README, telling a newcomer what the tool does for them, how to install it and how to organize and undo with it. Serves AC11.
+
+  Completion criterion: The user at the design sign-off, and whoever builds the tool to it, can tell from the README alone what the tool gives them, from G1 and AC1 to AC10, and follow each step from installing it on macOS or Linux to a first run that only lists, a run that moves and an undo; an AI that did not write it finds this so, using it in their place against the readme checklist.
+
+  - [ ] 1. Settle with the user what the README tells that no answer has made yet: the command's name, the language the tool is written in and how it is installed on macOS and Linux. The orchestrator, with the user.
+  - [ ] 2. Make the README from the plan and what action 1 settled, `organize-downloads/README.md` as a readme work. turn.
+
+- T2: The architecture, saying the parts the tool is made of, the technology each uses and how AC1 to AC10 are checked by tests that GitHub Actions runs on macOS and Linux. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC9, AC10.
+
+  Completion criterion: Whoever builds the tool can build and test each of AC1 to AC10 from the architecture and the README alone, with nothing about how the tool is put together left to their guess, and the user at the design sign-off can approve how it will be made; an AI that did not write it finds this so, using it in their place against the architecture checklist.
+
+  - [ ] 1. Make the architecture from the plan and the README of T1, `organize-downloads/docs/architecture.md` as an architecture work. turn.
+
 ## Next
 
-Step 9 of /rn:up on plan: hear which documents the purpose needs
+Step 4 of /rn:up on T1: action 1, settle with the user the command's name, the language and how it is installed
 
 ## Open
 
