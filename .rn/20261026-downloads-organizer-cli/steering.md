@@ -25,8 +25,8 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 9 of /rn:up on plan: hear which documents the purpose needs, UX first, then README, then architecture
+Step 9 of /rn:up on plan: hear which documents the purpose needs: README next, then architecture
 
 ## Open
 
-- Whether the purpose needs a UX document, and at which path
+- Where the README the tool needs (AC7) goes: the repository's README.md holds only the playground's one-line description
