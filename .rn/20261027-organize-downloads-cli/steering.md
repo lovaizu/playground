@@ -53,8 +53,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T4: action 2, have turn make the moving
+Step 3 of /rn:up on t4.2: add the three test files to the work's paths, then send the answer to the run waiting
 
 ## Open
 
-None.
+- turn asks for t4.2 (code B-6): whether tests/test_mover.py, test_cli.py and test_record.py are added to the work, for behaviors the moving brings that no T4.1 test holds
