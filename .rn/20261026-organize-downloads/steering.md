@@ -36,8 +36,8 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Next
 
-Step 3 of /rn:up on t2.1: answer turn's question on the project's rules for checks, then send it to the run waiting
+Step 3 of /rn:up on t2.1: add the figure's file to the CCS, then send it to the run waiting
 
 ## Open
 
-- turn asks where the project's rules for how code and the user stories are checked are, to link from the architecture's Test section; the repository holds none (git ls-files shows only README.md, organize-downloads/README.md, organize-downloads/LICENSE and .rn/, .turn/).
+- turn asks whether organize-downloads/docs/architecture.svg, the Logical view's figure the architecture checklist's template asks for beside the document, may be added to the work.

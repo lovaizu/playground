@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "F-1",
+      "question": 1
+    },
+    {
+      "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+      "item": "B-3",
+      "question": 1
+    }
+  ],
+  "questions": [
+    {
+      "question": "The architecture's Logical view is to be one figure in an SVG file beside the document, shown in it as an image, but the CCS names only organize-downloads/docs/architecture.md as the work, so the figure's file cannot be written in this run. May an SVG file beside the architecture, such as organize-downloads/docs/architecture.svg, be added to the work?",
+      "recommended": "Add it to the CCS as a focal entity of the same kind as the architecture's own, {\"path\": \"organize-downloads/docs/architecture.svg\"}, as the checklist's template asks the figure to be drawn by hand in an SVG beside the document, and without it the reader cannot see how the components achieve each user story."
+    }
+  ],
+  "chosen": []
+}

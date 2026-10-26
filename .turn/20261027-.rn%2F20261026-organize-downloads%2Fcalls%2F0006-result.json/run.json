@@ -85,12 +85,84 @@
  "more": 1,
  "stage": "asked",
  "told": true,
+ "answers": [
+  {
+   "questions": [
+    {
+     "question": "The architecture's Test section is to link the project's rules for how each kind of part (here, Python code) and the user stories are checked, but no file given for this run, the steering, the README or the plan's files, names such rules. Where are they: a file to link, or none, in which case the architecture's Test section itself says how this tool's code and stories are checked?",
+     "recommended": "If the project has no such rules, let the architecture's Test section say it, in the line for what this product's checks need: the code checked by tests with Python's own unittest, each story by running the tool on a temporary test folder holding every case, all run by one command, as that meets AC11 with nothing to install beyond Python.",
+     "items": [
+      {
+       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+       "item": "F-1"
+      },
+      {
+       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+       "item": "B-5"
+      }
+     ]
+    }
+   ],
+   "answer": "Answer to your question on the project's rules for checks (F-1, B-5): a CCS question, and the CCS (.rn/20261026-organize-downloads/calls/0006-ccs.json) now holds it as a choice; read it anew. The repository holds no such rules, so take your recommendation: the architecture's Test section says the project has none and itself gives what this tool's checks need, the code checked by tests with Python's own unittest and each user story by running the tool on a temporary test folder holding every case, all run by one command."
+  }
+ ],
+ "back": [],
+ "prompts": {
+  "turn:generator": {
+   "given": [
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/.rn/20261026-organize-downloads/calls/0006-ccs.json",
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md",
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/.rn/20261026-organize-downloads/steering.md",
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/README.md",
+    "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+    "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/fix.md"
+   ],
+   "work": [
+    "/tmp/rn/20261026-acceptance-7t59k26j/repo/organize-downloads/docs/architecture.md"
+   ],
+   "checklists": [
+    "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md"
+   ],
+   "test": null,
+   "sent_back": [],
+   "answers": [
+    {
+     "questions": [
+      {
+       "question": "The architecture's Test section is to link the project's rules for how each kind of part (here, Python code) and the user stories are checked, but no file given for this run, the steering, the README or the plan's files, names such rules. Where are they: a file to link, or none, in which case the architecture's Test section itself says how this tool's code and stories are checked?",
+       "recommended": "If the project has no such rules, let the architecture's Test section say it, in the line for what this product's checks need: the code checked by tests with Python's own unittest, each story by running the tool on a temporary test folder holding every case, all run by one command, as that meets AC11 with nothing to install beyond Python.",
+       "items": [
+        {
+         "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+         "item": "F-1"
+        },
+        {
+         "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
+         "item": "B-5"
+        }
+       ]
+      }
+     ],
+     "answer": "Answer to your question on the project's rules for checks (F-1, B-5): a CCS question, and the CCS (.rn/20261026-organize-downloads/calls/0006-ccs.json) now holds it as a choice; read it anew. The repository holds no such rules, so take your recommendation: the architecture's Test section says the project has none and itself gives what this tool's checks need, the code checked by tests with Python's own unittest and each user story by running the tool on a temporary test folder holding every case, all run by one command."
+    }
+   ],
+   "chosen": [],
+   "result": "/tmp/rn/20261026-acceptance-7t59k26j/repo/.rn/20261026-organize-downloads/calls/0006-result.json",
+   "reply": "/tmp/rn/20261026-acceptance-7t59k26j/repo/.turn/20261027-.rn%2F20261026-organize-downloads%2Fcalls%2F0006-result.json/generator.json"
+  }
+ },
+ "since": {
+  "turn:generator": []
+ },
+ "started": {
+  "turn:generator": "a0d2e969dfff7abdc"
+ },
  "questions": {
-  "from": "check",
+  "from": "turn:generator",
   "questions": [
    {
-    "question": "The architecture's Test section is to link the project's rules for how each kind of part (here, Python code) and the user stories are checked, but no file given for this run, the steering, the README or the plan's files, names such rules. Where are they: a file to link, or none, in which case the architecture's Test section itself says how this tool's code and stories are checked?",
-    "recommended": "If the project has no such rules, let the architecture's Test section say it, in the line for what this product's checks need: the code checked by tests with Python's own unittest, each story by running the tool on a temporary test folder holding every case, all run by one command, as that meets AC11 with nothing to install beyond Python.",
+    "question": "The architecture's Logical view is to be one figure in an SVG file beside the document, shown in it as an image, but the CCS names only organize-downloads/docs/architecture.md as the work, so the figure's file cannot be written in this run. May an SVG file beside the architecture, such as organize-downloads/docs/architecture.svg, be added to the work?",
+    "recommended": "Add it to the CCS as a focal entity of the same kind as the architecture's own, {\"path\": \"organize-downloads/docs/architecture.svg\"}, as the checklist's template asks the figure to be drawn by hand in an SVG beside the document, and without it the reader cannot see how the components achieve each user story.",
     "items": [
      {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
@@ -98,7 +170,7 @@
      },
      {
       "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/product/architecture.md",
-      "item": "B-5"
+      "item": "B-3"
      }
     ]
    }
