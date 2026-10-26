@@ -1,0 +1,54 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "design"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: The Downloads folder holds so many files that the user cannot find the one they are looking for; the tool is to make files in it easy to find. It must never delete any file."
+  },
+  {
+   "decision": "How files are sorted: The files directly in the Downloads folder are moved into one folder per kind of file, such as images, documents and archives, so the user can find a file by its kind."
+  },
+  {
+   "decision": "Operating systems: The tool works on both macOS and Linux. Windows is not needed."
+  },
+  {
+   "decision": "Preview before moving: Run with no options, the tool only lists the moves it would make and moves nothing; it moves files only when the user explicitly tells it to."
+  },
+  {
+   "decision": "Name already taken at the destination: When the destination folder already holds a file of the same name, the tool does not move the file: it stays in Downloads under its own name, and the tool tells the user so in its list. No file is renamed or overwritten."
+  },
+  {
+   "decision": "Files of no known kind: A file whose kind the tool does not know, such as one with no extension or an unfamiliar one, stays in Downloads, and the tool's list says it stays."
+  },
+  {
+   "decision": "Downloads in progress and hidden files: The tool never touches a download still in progress, such as a .crdownload, .part or .download file, nor a hidden file whose name begins with a dot, such as .DS_Store, and leaves them out of its list."
+  },
+  {
+   "decision": "How the tool is shown done: Each decided behaviour is checked on a test folder holding many kinds of files, here on Linux, and the user runs the tool once on a test folder on their macOS to confirm it works there. The work also comes with a README saying how to install and use the tool, and with tests that check each decided behaviour."
+  },
+  {
+   "decision": "Kinds and folder names: Files are sorted into six folders: Images (such as jpg, png, gif, heic, webp, svg), Documents (such as pdf, docx, xlsx, pptx, txt, md, csv), Archives (such as zip, tar, gz, 7z, rar), Installers (such as dmg, pkg, deb, rpm, AppImage), Audio (such as mp3, wav, m4a) and Videos (such as mp4, mov, mkv). The full list of extensions for each is still to be settled in the design."
+  },
+  {
+   "decision": "Undoing the last move: The tool can undo the last run that moved files: undoing returns each file that run moved to where it was."
+  },
+  {
+   "decision": "Where the record of the last move is kept: The record of what the last run moved, which undoing needs, is kept outside the folder being sorted, in the user's own place for an application's data (~/.local/state on Linux, ~/Library/Application Support on macOS), so nothing is added to the folder but the kinds' folders."
+  },
+  {
+   "decision": "Kinds' folders left empty by an undo: Undoing removes each kind's folder that the undone run made and that is left empty once its files go back; a folder that was there before that run, or that still holds anything, stays. No file is removed."
+  },
+  {
+   "decision": "Design documents: The purpose needs two documents: a README, of kind readme, saying how to install and use the tool and listing the full extensions of each kind; and an architecture, of kind architecture, saying the parts of the tool, how the record of the last move is kept, and how each part is checked. No UX: the README's example gives the scene of use."
+  },
+  {
+   "decision": "Where the tool and its documents are placed: The tool, its tests and its documents are kept together in the folder organize-downloads/: the README at organize-downloads/README.md and the architecture at organize-downloads/docs/architecture.md. The repository's own README.md stays as it is."
+  }
+ ]
+}
