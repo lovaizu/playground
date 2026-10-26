@@ -1,0 +1,21 @@
+{
+ "focal_entities": [
+  {
+   "work": "t2.1"
+  },
+  {
+   "stage": "design"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Rules for checking: The repository has no rules for checking code or user stories, so the architecture sets the tool's own under its Test section: tests in Python's standard unittest, each a Given, a When and a Then on a temporary folder; the user stories checked by running the organize-downloads command end to end; all run by GitHub Actions on ubuntu-latest and macos-latest on every push."
+  },
+  {
+   "chosen": "organize-downloads/docs/architecture.svg made with the architecture: the architecture checklist asks for the Logical view as one SVG figure beside the document, and no other file holds it"
+  },
+  {
+   "decision": "Where hard links cannot be made: Not overwriting comes first: where the organized folder is on a place that cannot make hard links, such as a USB drive formatted exFAT or FAT32, the tool moves nothing and tells the user so."
+  }
+ ]
+}
