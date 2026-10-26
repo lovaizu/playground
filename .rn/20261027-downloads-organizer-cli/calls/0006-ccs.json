@@ -40,6 +40,12 @@
  ],
  "constraints": [
   {
+   "decision": "License: The tool is under the MIT license; the README names it, and a LICENSE file holding it is still to be added to the repository."
+  },
+  {
+   "chosen": "The README's Development section links docs/architecture.md: the plan's task T3 makes the architecture there right after this README, so the link holds once T3 is done, and it is where a builder looks for how the tool is built and tested."
+  },
+  {
    "artifact-language": "English"
   },
   {
@@ -47,9 +53,6 @@
   },
   {
    "fix": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
-  },
-  {
-   "decision": "License: The tool is under the MIT license; the README names it, and a LICENSE file holding it is still to be added to the repository."
   }
  ]
 }
