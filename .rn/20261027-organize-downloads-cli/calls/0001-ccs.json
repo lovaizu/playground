@@ -13,6 +13,9 @@
   },
   {
    "decision": "What organizing does: The tool sorts the files in the Downloads folder into folders by file type."
+  },
+  {
+   "decision": "Operating systems: The tool works on both macOS and Linux; Windows is not needed."
   }
  ]
 }
