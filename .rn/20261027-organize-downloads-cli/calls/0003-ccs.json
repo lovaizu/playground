@@ -67,6 +67,9 @@
   },
   {
    "decision": "Type folders left empty on undo: Undo leaves every type folder where it is, even one it leaves empty, as the tool never deletes anything."
+  },
+  {
+   "decision": "Undo again after undo: Once undo has put files back, the record is used up: undo run again moves nothing and tells the user there is nothing to put back; undo does not count as a run that moved files."
   }
  ]
 }
