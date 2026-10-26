@@ -27,13 +27,6 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Tasks
 
-- T1: The README, telling a newcomer what the tool does for them, how to install it and how to organize and undo with it. Serves AC11.
-
-  Completion criterion: The user at the design sign-off, and whoever builds the tool to it, can tell from the README alone what the tool gives them, from G1 and AC1 to AC10, and follow each step from installing it on macOS or Linux to a first run that only lists, a run that moves and an undo; an AI that did not write it finds this so, using it in their place against the readme checklist.
-
-  - [x] 1. Settle with the user what the README tells that no answer has made yet: the command's name, the language the tool is written in and how it is installed on macOS and Linux. The orchestrator, with the user.
-  - [ ] 2. Make the README from the plan and what action 1 settled, `organize-downloads/README.md` as a readme work. turn.
-
 - T2: The architecture, saying the parts the tool is made of, the technology each uses and how AC1 to AC10 are checked by tests that GitHub Actions runs on macOS and Linux. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC9, AC10.
 
   Completion criterion: Whoever builds the tool can build and test each of AC1 to AC10 from the architecture and the README alone, with nothing about how the tool is put together left to their guess, and the user at the design sign-off can approve how it will be made; an AI that did not write it finds this so, using it in their place against the architecture checklist.
@@ -42,8 +35,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 3 of /rn:up on t1.2: answer turn's question on LICENSE, adding it to the CCS, then send the answer to the run waiting
+Step 4 of /rn:up on T1: weigh what it brought
 
 ## Open
 
-- turn asks for t1.2 (0005-checklist-1.md, F-1): whether organize-downloads/LICENSE, holding the MIT text, is added to this run as a second file of the work, as the README links to it and nothing else makes it; recommended: add it, with the copyright holder the user names
+None.

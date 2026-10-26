@@ -91,7 +91,7 @@ move files as they arrive, by rules you write. organize-downloads differs from b
 - Python 3.
 
   The tool is written in Python with its standard library alone; pipx, installed below, brings
-  Python with it on macOS through Homebrew and on Linux through apt.
+  Python with it on macOS through Homebrew and on Linux through your system's package manager.
 - pipx, or uv if you already use it.
 
   It installs the tool in a place of its own and puts the organize-downloads command on your PATH.
@@ -112,6 +112,26 @@ On Debian or Ubuntu:
 
 ```console
 $ sudo apt install pipx git
+$ pipx ensurepath
+```
+
+On Fedora:
+
+```console
+$ sudo dnf install pipx git
+$ pipx ensurepath
+```
+
+On Arch Linux:
+
+```console
+$ sudo pacman -S python-pipx git
+$ pipx ensurepath
+```
+
+On another Linux system, install pipx and git with its package manager, then run:
+
+```console
 $ pipx ensurepath
 ```
 

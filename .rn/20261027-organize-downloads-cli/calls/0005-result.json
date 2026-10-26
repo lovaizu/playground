@@ -1,0 +1,128 @@
+{
+ "work": [
+  "organize-downloads/README.md",
+  "organize-downloads/LICENSE"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "F-1",
+   "good": "The README has the template's headings in its order: the name, an opening under no heading, then Example, Why organize-downloads, Requirements, Installation, Documentation, Development and License. The opening begins with the idea (it only shows where each file would go, moves only when told, and can put back), then gives the gain, the kind of thing that gives it and whom it is for. Each section opens with its main point. Each Requirements and Why item is one sentence on its own, with any explanation after a blank line and indented under it, and no item is in bold. Documentation says where fuller use (--help) and what changed (the commit history) are. Development links to the architecture document. License links to the LICENSE file, which holds the full MIT text with 'Copyright (c) 2026 lovaizu'.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:1-175",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/LICENSE:1-21"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-1",
+   "good": "The first sentence gives the idea that sets it apart from other ways of sorting: it only shows where each file would go first, moves only when told, and can put back what it moved. The next sentence gives the gain (you find the file you need in Downloads right away), the kind of thing that gives it (a command you type in a terminal whenever you want to tidy up) and whom it is for (anyone on macOS or Linux whose Downloads folder fills up with files of every kind). As that reader, I could place myself at once.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:3-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-2",
+   "good": "The example uses a real-looking Downloads folder, shown with ls -A, that holds a photo, an invoice, an installer, a folder, .DS_Store and a .crdownload. It goes in the order things happen: what I type, then the output the tool prints, with nothing moved. Then which entries it leaves alone and why, then --apply with its output and the folder afterwards, then undo listing and undo --apply with their outputs, then what a second undo does. It ends with the default folder and how to give another one. I checked the outputs against each other: the ls -A orders before and after match byte order, the arrow columns line up, the three files and their folders match between the lines that list, apply and undo, and the folder after --apply holds what the text says. I could picture the run on my own Downloads from start to finish, including the undo.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:11-72"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-3",
+   "good": "Why sets the tool against the two other ways, sorting by hand and tools that watch the folder and move files by rules you write. It then lists what only this tool gives against them, in order: it shows every move before making any and moves only with --apply, it puts the last run back with undo, it needs no rules because of seven fixed folders by extension (named, Others included), and it never overwrites, renames or deletes, with what happens to a file whose name is taken. Nothing that every way gives is put first.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:76-86"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-6",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:1-8",
+     "good": "The idea, the gain, that it is a terminal command, and whom it is for are all in plain words. I took it in on one reading.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:3-7"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:9-73",
+     "good": "'Type folder', --apply and undo are each shown in a block with their output before anything relies on them. The hidden file and the unfinished download are named in lines 11-12 before lines 30-31 say they are left alone. The default folder on each system and how to give another folder are shown with commands.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:11-72"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:74-87",
+     "good": "The two other ways are named first. The seven folders are listed, Others included. The name-taken case says what happens.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:76-86"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:88-101",
+     "good": "Each requirement says why it is needed. 'pipx, installed below' only tells me I need not install Python separately, so I did not have to read ahead. Line 94 now says pipx brings Python on Linux through your system's package manager, which fits every system Installation covers.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:90-100"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:102-156",
+     "good": "Each system has its own copyable block: Homebrew, apt, dnf, pacman, and for any other Linux 'install pipx and git with its package manager' then pipx ensurepath. I checked the package names: Fedora's pipx package exists (version 1.18.4 in Fedora's package index), and Arch's python-pipx and git package pages both answer 200. After that come opening a new terminal and why, the pipx or uv install, and the first run, which points to the Example. So a reader on any Linux now has a step to follow, which was the gap last time. I ran the uv command in a temp folder earlier. It fails only because the tool is not built or merged yet, so I took it as a promise for the builder.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:104-155"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:157-168",
+     "good": "Fuller use goes to --help, shown in a block. The commit-history link answers 200.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:159-167"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:169-172",
+     "good": "One sentence and a link. docs/architecture.md is T2's work, still to be made, so I took it as a promise for the builder.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:171-171"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:173-175",
+     "good": "The link points to LICENSE, which exists and holds the full MIT text.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:175-175"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/LICENSE:1-21",
+     "good": "The standard MIT text, read once: the copyright holder and year, then the permission and its one condition, then the warranty disclaimer.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/LICENSE:1-21"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-7",
+   "good": "Each sentence gave me something new. The opening gives the idea, gain and reader. Example shows the outputs and what is left in place. Why adds the comparison with hand sorting and watcher tools, the seven fixed folders and the never-overwrite rule with the name-taken case, none of which the example shows. It does not repeat the opening's gain. Requirements says why each thing is needed. Installation gives one block of commands per system (macOS, Debian or Ubuntu, Fedora, Arch, any other) and ends with the first run, pointing to the Example for the rest instead of repeating its steps; its one clause on what that run prints is the result I check the install against. Documentation sends fuller use (the name-taken details, which files are left, the extension list) to --help instead of writing it here. No sentence is meant for a reviewer, tells the history of a decision, or describes the README instead of the tool.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/README.md:1-175"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The Development section links docs/architecture.md, which does not exist yet.",
+   "why": "The plan's T2 makes organize-downloads/docs/architecture.md as the architecture, so the link points to the file that task makes rather than to nothing no task makes."
+  },
+  {
+   "chosen": "Installation gives Linux steps for Debian or Ubuntu (apt), Fedora (dnf install pipx git) and Arch Linux (pacman -S python-pipx git), and for any other Linux the general step of installing pipx and git with its package manager, rather than narrowing the opening's 'Linux' to the systems with steps.",
+   "why": "The decided install way names apt only as an example ('such as'), and the plan offers the tool to every Linux user (G1, AC6), so the steps widen to fit that promise; Debian, Fedora and Arch are the most used families, their package names were checked on each system's package site and the Fedora step was run in a Fedora container, and the general step covers the rest without a block per system."
+  }
+ ]
+}
