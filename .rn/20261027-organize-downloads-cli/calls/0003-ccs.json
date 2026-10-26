@@ -40,6 +40,9 @@
   },
   {
    "decision": "Checking on macOS: The tool's tests run on both macOS and Linux with GitHub Actions on every push, so the pull request shows that it works on macOS as well as Linux."
+  },
+  {
+   "decision": "Undo: A command puts each file the last run moved back where it was before that run."
   }
  ]
 }
