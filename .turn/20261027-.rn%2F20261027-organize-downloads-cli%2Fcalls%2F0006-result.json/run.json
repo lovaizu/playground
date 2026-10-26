@@ -1,0 +1,103 @@
+{
+ "call": {
+  "ccs": ".rn/20261027-organize-downloads-cli/calls/0006-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261027-organize-downloads-cli/calls/0006-result.json",
+  "test": null
+ },
+ "work": [
+  "organize-downloads/docs/architecture.md"
+ ],
+ "checklist": [
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md"
+ ],
+ "receiver": [
+  "the user approving the architecture at the design sign-off, and whoever builds the tool and its tests to it"
+ ],
+ "use": [
+  "approving how the tool will be made, and building and testing each of AC1 to AC10 from it and the README"
+ ],
+ "has": [
+  ".rn/20261027-organize-downloads-cli/steering.md",
+  "organize-downloads/README.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "F-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-4"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-5"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-6"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-7"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-8"
+  }
+ ],
+ "each": [],
+ "given": [
+  ".rn/20261027-organize-downloads-cli/calls/0006-ccs.json",
+  "organize-downloads/docs/architecture.md",
+  ".rn/20261027-organize-downloads-cli/steering.md",
+  "organize-downloads/README.md",
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+ ],
+ "readable": [
+  "organize-downloads/docs/architecture.md",
+  ".rn/20261027-organize-downloads-cli/steering.md",
+  "organize-downloads/README.md",
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md"
+ ],
+ "root": "/tmp/rn/20261027-acceptance-5180ibfe/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "questions": {
+  "from": "check",
+  "questions": [
+   {
+    "question": "The architecture's Test section is to link the project's rules for how each kind of part (here Python code) and the user stories are checked, but neither the steering nor the README names any such rules, so the architecture has nothing to link and the builder would guess the test framework and how the stories are checked. Does the project have such rules (and where), or should this architecture set the tool's checks itself?",
+    "recommended": "Let the architecture set them itself under the Test section, since the repository names none: tests in Python's standard unittest, each a Given, a When and a Then on a temporary folder, the stories checked by running the organize-downloads command end to end, all run by GitHub Actions on ubuntu-latest and macos-latest on every push, which keeps to the README's standard-library-alone principle and meets AC7.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+      "item": "B-5"
+     }
+    ]
+   }
+  ]
+ }
+}
