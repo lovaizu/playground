@@ -1,0 +1,112 @@
+{
+ "work": [
+  "docs/ux.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/ux.md",
+   "item": "F-1",
+   "good": "The document follows the template in order: '# tidy-downloads UX', a main point saying what the tool gives whom and that the tool, its README and its architecture are built to it, '## Users and goals' with G1 and its indented explanation, '## Key results' with why the order and KR1.1 to KR1.3 each with an explanation indented after a blank line, '## Scenes' with who takes part and the words the figures use, '### The whole way' and a sequence diagram for each scene, the rules the figures cannot show as bullets, and '## Benefits'. Each list item is one sentence; none is bold. The figures could not be rendered here (the Mermaid renderer cannot start its browser: libglib-2.0.so.0 missing); by reading, each uses only sequenceDiagram, actor/participant, loop, alt/else and opt.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:1-6",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:8-15",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:17-42",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:44-139",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:141-150"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/ux.md",
+   "item": "B-1",
+   "good": "The user is a person on macOS or Linux with a cluttered Downloads folder who types commands in a terminal by hand, and someone who never opens a terminal is not one; their goal is to find the file they want there easily, by opening the folder of its kind. The main point says what the tool gives them, not what the document is.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:3-6",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:10-15"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/ux.md",
+   "item": "B-2",
+   "good": "The order is given with why (a lost or changed file cannot be found at all, a misplaced file is found late, a step costs a moment). KR1.1 counts a file once per move or undo after which it is not in the folder or a folder of a kind under its name with its content; KR1.2 judges each file by asking the user which folder they would open, Other for a file of no known kind, and counts a file kept in place by a name clash as not there; KR1.3 counts each command typed or answer given, not installing. Each says which way is better, how it stands once G1 is reached, and why a better value brings the user closer. No target value.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:19-21",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:23-28",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:30-36",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:38-42"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/ux.md",
+   "item": "B-3",
+   "good": "The whole way shows in order the preview, the move, the user opening the folder of the file's kind and finding it, and the optional undo, so no step between scenes is missing. Seeing what would move, Moving and Undoing each have their own figure with each file's branch; in Undoing the 'no longer in the folder of its kind' check now comes first, so a file the user dragged back by hand is reported as not found rather than as left in a folder it is not in. Boxes are names with their kind in angle brackets. The rules no figure shows are given beside the figures.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:53-72",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:74-91",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:93-109",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:111-135",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:137-139"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/ux.md",
+   "item": "B-4",
+   "good": "Two gains said as what the user gets: finding the file by opening the folder of its kind instead of searching one long list, because the tool sorts every file in one command; and sorting without fear of losing a file, because the preview shows each move first, nothing is deleted, renamed or overwritten, and an undo puts the files back.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:143-150"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/ux.md",
+   "item": "B-5",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:1-7",
+     "good": "Each line gives what the tool gives whom and that everything is built to it; nothing internal, no status or history.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:1-6"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:8-16",
+     "good": "G1 names user and goal; the explanation says when and how they use it, what a folder of a kind is as the user sees it, and who is not a user.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:10-15"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:17-43",
+     "good": "Each line gives the order and its why, or what a key result counts, how, which way is better, where it stands at the goal and why.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:19-42"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:44-140",
+     "good": "The words, figures and rules each give what the user types and sees back; the tool acts on the folder only where the user sees the result.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:46-51",
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:53-139"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:141-150",
+     "good": "Each line gives a gain and why this tool gives it.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:143-150"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/ux.md",
+   "item": "B-6",
+   "good": "Read once from the top, each term is shown where first used: the folder of a kind and Other at lines 12-15, before KR1.1 and KR1.2 use them; folder, preview, move, undo and the last move at lines 46-51. 'The last move' is now the last move in the folder that moved a file, so running --move, then --move again with nothing to move, then --undo puts back the first run's files, matching AC9; lines 119 and 139 use the same meaning. In Undoing, walking the case where the user dragged report.pdf from Documents back into Downloads by hand: the first branch (no longer in the folder of its kind) holds and the tool says it was not found there, which is true; the 'left in the folder of its kind' branch is reached only when the file is still there. I found no two lines that cannot both hold and no one thing under two names.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:12-15",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:46-51",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:119-134",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/docs/ux.md:139-139"
+   ]
+  }
+ ]
+}

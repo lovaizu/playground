@@ -25,13 +25,6 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Tasks
 
-- T1: The UX, `docs/ux.md`. Serves G1.
-
-  Completion criterion: `docs/ux.md` shows whom the tool is for, the goal they reach with it, the key results in order of priority, and the scenes of looking at what would move, moving and undoing that AC1 to AC5 and AC9 give, so that every item of the UX checklist holds, as a first reader in the user's place finds.
-
-  - [x] 1. The key results for G1 and their order of priority. The orchestrator, with the user.
-  - [ ] 2. The UX, from the plan and the key results settled in action 1, `docs/ux.md` as a ux work. turn.
-
 - T2: The README, the repository's `README.md` rewritten for the tool. Serves AC7.
 
   Completion criterion: from `README.md` alone, a newcomer can tell whom the tool is for and what they gain, as `docs/ux.md` has it, and can follow how to install it and how to use it to a first result, so that every item of the README checklist holds, as a first reader in a newcomer's place finds.
@@ -48,8 +41,8 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 4 of /rn:up on T1: action 2, have turn make docs/ux.md
+Step 4 of /rn:up on T2: action 1, settle with the user how the tool is installed on macOS and Linux
 
 ## Open
 
-None.
+- T2 action 1: how tidy-downloads is installed on macOS and Linux is not yet settled
