@@ -1,0 +1,115 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261027-downloads-organizer-cli/calls/0012-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  },
+  {
+   "has": ".rn/20261027-downloads-organizer-cli/calls/0004-ccs.json"
+  },
+  {
+   "has": ".rn/20261027-downloads-organizer-cli/calls/0006-ccs.json"
+  },
+  {
+   "has": ".rn/20261027-downloads-organizer-cli/calls/0009-ccs.json"
+  },
+  {
+   "has": ".rn/20261027-downloads-organizer-cli/calls/0011-ccs.json"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/plan.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Why organize: The user cannot quickly find the file they are looking for in their Downloads folder; the tool is to make files there quick to find. It must not delete files."
+  },
+  {
+   "decision": "How files are organized: Files directly in the Downloads folder, and only those, are moved into subfolders by kind (decided by extension, such as Images, Documents, Archives). The tool only moves files: it never deletes, renames or overwrites any file."
+  },
+  {
+   "decision": "Build or reuse: The tool is written in this repository rather than built on an existing tool, so that the tool itself, not a configuration, guarantees it never deletes, renames or overwrites a file. Run plainly, it only shows which files it would move where and moves nothing; it moves files only when told to. When a file of the same name is already in the kind folder, that file is not moved and is reported."
+  },
+  {
+   "decision": "Where it runs: The tool runs on macOS and Linux, written in Python 3; Windows is not needed. The folder it organizes is the Downloads folder under the user's home by default, and another folder can be given instead."
+  },
+  {
+   "decision": "Kind table: The table from extension to kind folder is built into the tool, covering the commonly downloaded kinds: images, documents, archives, audio, video and installers. No configuration file is needed; changing the table means changing the tool's code."
+  },
+  {
+   "decision": "Files of no kind: A file whose extension is not in the table, or that has no extension, stays where it is and is shown as a file left in place. This covers files still being downloaded (such as .crdownload, .part, .download) and hidden files (such as .DS_Store), which must not be moved."
+  },
+  {
+   "decision": "What shows it done: The finished tool is checked by automated tests on a test folder holding many kinds of files: a plain run moves nothing; files are moved by kind only when told; files whose name already exists in the kind folder, files of no kind, files still being downloaded and subfolders stay where they are and are reported; nothing is deleted or renamed. The tool is never tried on the user's real Downloads. Before approving the finished work, the user runs it on a test Downloads folder of their own making. A README gives how to install and use the tool."
+  },
+  {
+   "decision": "Install and call: The tool is installed from this repository with pipx install . and is then called from anywhere as a command named like organize-downloads; it is removed with pipx uninstall."
+  },
+  {
+   "decision": "Undo the last run: The last run can be undone: each file the previous run moved is moved back to where it was. Undoing too never deletes, renames or overwrites any file. The README and the automated tests are to cover undoing as well."
+  },
+  {
+   "decision": "Where the record of the last run is kept: The record of what the last run moved, from where to where, is kept in a place of the tool's own under the user's home (on Linux ~/.local/state/organize-downloads, on macOS ~/Library/Application Support/organize-downloads), one for each folder organized, so the organized folder gains no file of the tool's."
+  },
+  {
+   "decision": "Files that cannot be moved back: When undoing, a file that cannot be moved back, because a file of the same name is now where it was or because it is no longer in its kind folder, stays where it is and is shown as not moved back, with the reason; every other file is moved back."
+  },
+  {
+   "decision": "Showing an undo before making it: Undoing works as organizing does: asked to undo without being told to move, the tool shows each file it would move back with where it would go, and each file it could not move back, and changes nothing; it moves files back only when told to."
+  },
+  {
+   "decision": "Kind folders left empty by undoing: When undoing, a kind folder that the last run newly made and that is empty once its files are moved back is removed, so the folder looks as it did before the run; a kind folder holding anything, or one that was there before the run, is left as it is."
+  },
+  {
+   "decision": "UX document: A UX, kind ux, at docs/ux.md, made before the tool is built."
+  },
+  {
+   "decision": "README document: A README, kind readme, at README.md at the top of the repository, replacing the playground README with the tool's, made after the UX and before the tool is built."
+  },
+  {
+   "decision": "Architecture document: An architecture, kind architecture, at docs/architecture.md, made after the README and before the tool is built, so that how the tool keeps from deleting, renaming or overwriting any file, and the record of a run, are approved first."
+  },
+  {
+   "decision": "License: The tool is under the MIT license; a LICENSE file holding it is still to be added to the repository when the tool is built, as the README names it."
+  },
+  {
+   "decision": "Moving without hard links: The tool moves a file, and moves it back, by the system's own one-step rename that refuses a taken name, renameat2 with RENAME_NOREPLACE on Linux and renamex_np with RENAME_EXCL on macOS, called through ctypes of Python's standard library, so no moment is left in which a file can be overwritten or deleted; where the file system refuses this call, nothing is moved and each file is shown left in place with the system's reason. This is still to be tried on both systems before the tool is built. The README is still to say what happens where the file system refuses it."
+  },
+  {
+   "decision": "Trying the rename on each system: The one-step rename that refuses a taken name is tried before the tool is built: on Linux in this environment, and on macOS on a GitHub Actions macOS runner, as the user cannot run anything on a Mac. Where no such way works, macOS is checked only when the finished tool is tried on a test folder."
+  },
+  {
+   "decision": "Tests on GitHub Actions: A GitHub Actions workflow in the repository runs the tool's automated tests on macOS and on Linux on each change, so AC1's macOS and Linux keep being checked while the tool is built and after; it is first put there to try the rename on macOS before the tool is built, and stays."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+  }
+ ]
+}
