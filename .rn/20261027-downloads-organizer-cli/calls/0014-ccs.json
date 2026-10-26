@@ -70,6 +70,9 @@
   },
   {
    "decision": "Oldest Python: The tool and its tests run on Python 3.9 and every later Python 3, so a Mac user can run them with the python3 of Apple's command line tools without installing another; nothing newer than 3.9 offers is used, and pyproject.toml is to require 3.9 or later."
+  },
+  {
+   "decision": "Coverage and mutation testing: Coverage measurement and mutation testing are left out of the tests, as the tool and its tests use Python's standard library alone; the tests hold each case and reason of docs/ux.md and try many inputs with Python's own random module, and they are to say in a comment that the user decided this and why."
   }
  ]
 }
