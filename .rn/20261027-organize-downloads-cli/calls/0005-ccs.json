@@ -5,6 +5,31 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "readme"
+  },
+  {
+   "path": "organize-downloads/README.md"
+  },
+  {
+   "audience": "the user approving the README at the design sign-off, and whoever makes the architecture and builds the tool to it"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "deciding from the README whether it tells what the tool gives them and how to install and use it, approving it, and building the tool and its architecture to what it promises"
+  },
+  {
+   "serves": "AC11: A README says how to install the tool and how to use it."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md"
   }
  ],
  "constraints": [
@@ -19,6 +44,15 @@
   },
   {
    "decision": "How moving and undo are typed: The explicit word to act is --apply, for organizing and undo alike: organize-downloads only lists, organize-downloads --apply moves, organize-downloads undo only lists what it would put back, organize-downloads undo --apply puts it back; a folder to organize instead of Downloads is given last on each."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
   }
  ]
 }
