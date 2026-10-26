@@ -5,6 +5,28 @@
   },
   {
    "stage": "plan"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261027-downloads-organizer-cli/calls/0002-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -46,6 +68,15 @@
   },
   {
    "decision": "Kind folders left empty by undoing: When undoing, a kind folder that the last run newly made and that is empty once its files are moved back is removed, so the folder looks as it did before the run; a kind folder holding anything, or one that was there before the run, is left as it is."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
   }
  ]
 }
