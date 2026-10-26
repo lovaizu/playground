@@ -36,9 +36,8 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Next
 
-Step 4 of /rn:up on T2: have the architecture made
+Step 3 of /rn:up on t2.1: answer turn's question on the project's rules for checks, then send it to the run waiting
 
 ## Open
 
-- At the build stage, check B-4, B-5 and B-8 of the README checklist on organize-downloads/README.md, by a first user installing from its address and following its Example once the tool, docs/usage.md and CHANGELOG.md are on main and docs/architecture.md is made (decision "How t1.1 ends" of t1.1).
-- At the build stage, make organize-downloads/docs/usage.md and organize-downloads/CHANGELOG.md with the tool (decision "License and the places of fuller use and of changes" of t1.1).
+- turn asks where the project's rules for how code and the user stories are checked are, to link from the architecture's Test section; the repository holds none (git ls-files shows only README.md, organize-downloads/README.md, organize-downloads/LICENSE and .rn/, .turn/).
