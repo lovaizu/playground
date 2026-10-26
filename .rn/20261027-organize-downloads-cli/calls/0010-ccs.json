@@ -59,6 +59,9 @@
   },
   {
    "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+  },
+  {
+   "decision": "Oldest Python: The tool and its tests run on Python 3.10 and every later version, so nothing newer than 3.10 is used."
   }
  ]
 }
