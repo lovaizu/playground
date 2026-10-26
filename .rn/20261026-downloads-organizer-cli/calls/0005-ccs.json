@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "t1.2"
+  },
+  {
+   "stage": "design"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Key results and their order: 1) files lost, renamed or changed by a run or an undo, fewer better, none once reached; 2) share of top-level files that land in the folder of the kind the user looks in, more better; 3) steps from opening a terminal to the files sorted, fewer better"
+  }
+ ]
+}
