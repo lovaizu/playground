@@ -10,7 +10,22 @@
    "kind": "code"
   },
   {
-   "path": "organize-downloads/tests"
+   "path": "organize-downloads/tests/__init__.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_type_table.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_folder.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_organize.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_cli.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_stories.py"
   },
   {
    "audience": "whoever runs the tests and whoever maintains the tool, a person or an AI"
@@ -52,15 +67,6 @@
  ],
  "constraints": [
   {
-   "artifact-language": "English"
-  },
-  {
-   "conversation-language": "Japanese"
-  },
-  {
-   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
-  },
-  {
    "decision": "Oldest Python: The tool and its tests run on Python 3.10 and every later version, so nothing newer than 3.10 is used."
   },
   {
@@ -68,6 +74,18 @@
   },
   {
    "decision": "No download folder named on Linux: On Linux, when the xdg-user-dirs settings file (~/.config/user-dirs.dirs) is missing, names no download folder, or names the home folder itself, and no folder is given, the tool does nothing and stops, naming the settings file and telling the user to give the folder to organize last."
+  },
+  {
+   "chosen": "the tests given as the files the architecture's Physical view names for the modules the run with nothing added uses, with tests/__init__.py for unittest discover with -t: a run may write only the paths its CCS names, so the folder alone let no test be made"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
   }
  ]
 }
