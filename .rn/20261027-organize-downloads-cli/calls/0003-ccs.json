@@ -52,6 +52,9 @@
   },
   {
    "decision": "Where the record of the last run is kept: The record of what the last run moved, which undo needs, is kept as a hidden file inside the organized folder, such as ~/Downloads/.organize-last-run, so nothing outside the organized folder changes."
+  },
+  {
+   "decision": "What counts as the last run: Only a run that moved files counts as the last run; a run that only lists leaves the record as it was, so undo still puts back what the last moving run moved."
   }
  ]
 }
