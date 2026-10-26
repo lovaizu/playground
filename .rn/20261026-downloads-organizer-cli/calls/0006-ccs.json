@@ -56,6 +56,9 @@
   },
   {
    "decision": "Where the README sends the reader on: Fuller use is what tidy-downloads --help shows; what changed is the commit history at https://github.com/lovaizu/playground/commits/main; Development links docs/architecture.md; no other document is made"
+  },
+  {
+   "decision": "What the README is checked against now: The README is checked now against docs/ux.md and these decisions; its install and example are still to be run for real once the tool is built"
   }
  ]
 }
