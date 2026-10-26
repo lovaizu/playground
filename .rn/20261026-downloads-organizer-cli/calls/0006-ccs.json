@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "t2.2"
+  },
+  {
+   "stage": "design"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "How the tool is installed: The user installs tidy-downloads by copying its one file into a folder on their PATH, such as ~/.local/bin, and making it runnable"
+  }
+ ]
+}
