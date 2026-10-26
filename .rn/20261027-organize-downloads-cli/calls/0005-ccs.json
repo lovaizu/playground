@@ -53,6 +53,9 @@
   },
   {
    "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+  },
+  {
+   "decision": "License: The tool is released under the MIT license, kept in organize-downloads/LICENSE; the repository has no license of its own."
   }
  ]
 }
