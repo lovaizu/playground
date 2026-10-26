@@ -1,0 +1,67 @@
+{
+ "focal_entities": [
+  {
+   "work": "t4.1"
+  },
+  {
+   "stage": "design"
+  },
+  {
+   "kind": "trial"
+  },
+  {
+   "path": ".rn/20261027-downloads-organizer-cli/trial-rename.md"
+  },
+  {
+   "path": ".github/workflows/tests.yml"
+  },
+  {
+   "audience": "the user deciding whether the architecture's way of moving stands, and whoever keeps or changes docs/architecture.md and builds the tool on it"
+  },
+  {
+   "has": ".rn/20261027-downloads-organizer-cli/steering.md"
+  },
+  {
+   "has": "docs/architecture.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "telling whether the one-step rename that refuses a taken name works through ctypes on Linux and on macOS before the tool is built on it"
+  },
+  {
+   "serves": "AC1: Installed from this repository with `pipx install .`, the tool runs from any directory as a command of its own, such as `organize-downloads`, with Python 3 on macOS and Linux, and `pipx uninstall` removes it."
+  },
+  {
+   "serves": "AC4: Told to move, the tool moves each file directly in the folder whose extension is in its built-in table into the folder of that kind: images, documents, archives, audio, video or installers."
+  },
+  {
+   "serves": "AC6: After any run of AC3, AC4, AC9 or AC10, every file that was in the folder, its subfolders included, is either where it was before the run or where the run moved it, under the same name and with the same content; none is deleted, renamed or overwritten."
+  },
+  {
+   "serves": "AC10: Asked to undo and told to move, the tool moves each file the last run of AC4 on that folder moved back to where it was, and then removes each kind folder that run newly made and that is now empty; a kind folder holding anything, or one that was there before that run, stays."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "The macOS run is on a GitHub Actions macOS runner, with the workflow at .github/workflows/tests.yml as a second path of the work, kept to run the tool's tests on macOS and Linux on each change once they are there: the user cannot run anything on a Mac and asked for it, and the plan's decision 'Tests on GitHub Actions' keeps the workflow"
+  },
+  {
+   "chosen": "The work may commit and push the workflow and the trial's script on this branch, downloads-organizer-cli, and read the run with gh, committing nothing else: GitHub Actions runs only what is pushed"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+  }
+ ]
+}
