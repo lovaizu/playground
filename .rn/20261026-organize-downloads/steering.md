@@ -26,10 +26,24 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 - AC11: The repository holds tests that check each criterion from AC1 to AC8 and AC12, run by one command, and they pass on Linux.
 - AC12: Run on a folder with the option that tells it to undo, the tool returns each file that the last run moving files, as AC2 says, moved, to where it was, under the same name and with the same contents, prints one line for each such file saying it went back or that it stays and why, and removes each kind's folder that run made that is left empty; a folder that was there before that run, or that still holds anything, stays. A file whose old place now holds a file of the same name, or that is no longer where that run put it, stays where it is, and its line says why. The record of that run, which the undo reads, is kept outside the folder, in the user's own place for an application's data: `~/.local/state` on Linux, `~/Library/Application Support` on macOS.
 
+## Tasks
+
+- T1: The tool's README, through which a newcomer installs the tool, lists the planned moves, moves the files and undoes the move on macOS and Linux, holding the full list of extensions of each kind. Serves AC2, AC10.
+
+  Completion criterion: Read in a newcomer's place by someone who did not write it, it meets every item of the readme checklist with the lines it names, and the user approves it at the design sign-off.
+
+  - [ ] 1. The README, from the plan and its decisions, `organize-downloads/README.md` as a readme work. turn.
+
+- T2: The tool's architecture, saying the parts the tool is made of, how the record of the last move is kept outside the folder, and how each part and each criterion is checked by tests run by one command. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC11, AC12.
+
+  Completion criterion: Read in the place of whoever builds the tool by someone who did not write it, it meets every item of the architecture checklist with the lines it names, it agrees with the README of T1, and the user approves it at the design sign-off.
+
+  - [ ] 1. The architecture, from the plan, its decisions and the README of T1, `organize-downloads/docs/architecture.md` as an architecture work. turn.
+
 ## Next
 
-Step 9 of /rn:up on plan: ask where the tool and its documents are placed in the repository, then write the plan again with a task for each document
+Step 4 of /rn:up on T1: have the README made
 
 ## Open
 
-- Where the tool and its documents are placed: the repository's README.md is the playground's own ("A playground for experimenting and testing — nothing here is meant to last.").
+None.
