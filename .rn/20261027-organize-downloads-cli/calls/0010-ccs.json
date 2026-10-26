@@ -62,6 +62,9 @@
   },
   {
    "decision": "Oldest Python: The tool and its tests run on Python 3.10 and every later version, so nothing newer than 3.10 is used."
+  },
+  {
+   "decision": "Test tools: The tests use the standard library alone: inputs made at random are made with the standard random module, each failing input kept as an example; coverage of statements and branches with coverage.py and mutation testing with mutmut are run by whoever builds the tool, through uv, and are added neither to the tool nor to the GitHub Actions workflow."
   }
  ]
 }
