@@ -47,6 +47,9 @@
   },
   {
    "decision": "How the tool is made and installed: The tool is one Python 3 program in a single file, using only Python's standard library; it is installed by downloading that file into ~/.local/bin and making it runnable, on macOS and Linux alike, with nothing else to install. Its tests run by one command with what Python itself provides."
+  },
+  {
+   "decision": "License and the places of fuller use and of changes: The tool is offered under the MIT license, at organize-downloads/LICENSE. Fuller use is written in organize-downloads/docs/usage.md and the changes of each version in organize-downloads/CHANGELOG.md, both still to be made with the tool; the README's Development links to organize-downloads/docs/architecture.md, made by T2."
   }
  ]
 }
