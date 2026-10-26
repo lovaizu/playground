@@ -59,6 +59,9 @@
   },
   {
    "decision": "Where Documentation points: The README's Documentation points to organize-downloads --help for fuller use, such as same-named files, files left in place and which extensions go to which folder, and to the repository's commit history for what changed; what --help shows is still to be settled when the tool is built."
+  },
+  {
+   "decision": "Copyright holder: The MIT license names lovaizu as the copyright holder: Copyright (c) 2026 lovaizu."
   }
  ]
 }
