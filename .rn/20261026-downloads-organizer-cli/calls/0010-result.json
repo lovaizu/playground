@@ -1,0 +1,41 @@
+{
+ "work": [
+  ".rn/20261026-downloads-organizer-cli/issue-1.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "F-1",
+   "good": "The issue follows the template in order: a first line `# rn: <what happens>` I can send as the title, then `## What happened`, `## Why it matters`, `## What it should be` and `## Seen in` with `rn 0.9.0`, all in English. 0.9.0 is the version rn's own `.claude-plugin/plugin.json` and CHANGELOG.md give, so the line is a version the makers can find.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-1.md:1-27"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-1",
+   "good": "The title names what rn does, not a slip of the session: `rn.py decide` keeps a decision longer than a sign-off can show. `## What it should be` says what to change and where. `rn.py decide` should refuse a `<title>: <what it says>` longer than `LONGEST` in `scripts/proposal.py`, saying to settle it again shorter, as `rn.py proposal` does. It also points at step 2 of `/rn:up`, which asks for 'short enough for the proposal to show as one line' and gives no number. I checked each of these in rn. proposal.py:42 sets `LONGEST = 200`, and `simple()` stops a decision longer than that. `run_decide` in scripts/rn.py:164-200 has no length check. `session.made_by` stops when the task's action is no longer in the steering. skills/up/SKILL.md:116-120 (step 2) has the quoted words and no number. `## Why it matters` gives a cost to any user of rn, not just this session: they meet the limit only at the sign-off, after the work is made, when the one way to shorten the decision is closed, so they cannot see or approve the work they asked for.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-1.md:1-1",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-1.md:9-14",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-1.md:16-23"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-2",
+   "good": "`## What happened` tells the event as a quote of the learning: decide keeps any length, proposal refuses over 200 characters, decide refuses to shorten once the task has left the steering, so the design sign-off cannot be shown. Each part of the quote matches rn's code (proposal.py:42-66, rn.py:164-185, session.py:74-84). Nothing of the user's project is in it: no path, name, code or words of the work being built, and no decision the user made about their own work. Only the length and the stage (design sign-off) are given. The learning file is outside what I was given, so I could not compare the quote with it word for word. A maker reading the issue on lovaizu/ccpm will not have the learning file either, and what they get from the quote is true of rn.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-1.md:3-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-3",
+   "good": "The issue asks for one change: a length check in `rn.py decide` that matches the one in `rn.py proposal`. The note that step 2 of `/rn:up` gives no number is given as the reason the check is needed, not as a second change to make on its own. The cost and the event are about the same fault, so one change meets the whole issue and closes it.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-1.md:1-27"
+   ]
+  }
+ ]
+}
