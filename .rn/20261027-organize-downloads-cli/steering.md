@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/15
 stage: design
-signoff: none
+signoff: design
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -27,7 +27,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 5 of /rn:up on design: stop at the design sign-off
+Step 5 of /rn:up on design: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
 
 ## Open
 
