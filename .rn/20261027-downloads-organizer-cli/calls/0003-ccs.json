@@ -49,6 +49,9 @@
   },
   {
    "decision": "UX document: A UX, kind ux, at docs/ux.md, made before the tool is built."
+  },
+  {
+   "decision": "README document: A README, kind readme, at README.md at the top of the repository, replacing the playground README with the tool's, made after the UX and before the tool is built."
   }
  ]
 }
