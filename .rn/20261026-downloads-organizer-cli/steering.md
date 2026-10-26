@@ -25,11 +25,12 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 5 of /rn:up on design: show the design sign-off once rn is fixed for issue-1 (https://github.com/lovaizu/playground/issues/11); run rn.py proposal design again then
+Step 5 of /rn:up on design: the design sign-off cannot be shown by rn 0.9.0; ask the user how to go on
 
 ## Open
 
-- Issues 1 and 2 were sent by the user's yes, but this environment's gh (/tmp/rn/20261026-acceptance-7vc7gbjm/bin/gh) put them at https://github.com/lovaizu/playground/issues/11 and /12, not lovaizu/ccpm, saying 'the trial keeps lovaizu/ccpm out of reach'
-- rn.py decide refuses t1.2 (and so t2.2, t3.2): 'the steering holds no action T1.2 of turn's, which the work t1.2 is; ... or write the plan again with it'; the plan's 'What shows it done' is shortened, six decisions of t1.2, t2.2 and t3.2 are still over 200 characters; the design sign-off waits on rn's fix
+- The user chose to put T1 to T3 back (decision "Shortening done tasks' decisions" of plan), but rn.py check 0009 refused: 'the part of the call 0009 holds T1, T2 and T3, neither a task the steering holds nor numbered above every task it has held ... each new task numbered from T4'; nothing was kept
+- rn.py proposal shows every work called in the design stage (WORKS_SHOWN in scripts/proposal.py), each with at most 5 decisions (MOST) of at most 200 characters (LONGEST); t2.2 holds 9 decisions, so new tasks T4 on would not lift the stop
+- Issues 1 and 2 were sent by the user's yes, but this environment's gh put them at https://github.com/lovaizu/playground/issues/11 and /12, not lovaizu/ccpm
 - The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decisions 'What the README is checked against now' and 'How the README run ends' of t2.2); the build-stage plan must carry this
 - The LICENSE file for the MIT license (decision 'License' of t2.2) is not yet made; the build-stage plan must carry it
