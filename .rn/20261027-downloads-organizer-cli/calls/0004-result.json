@@ -1,0 +1,161 @@
+{
+ "work": [
+  "docs/ux.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/ux.md",
+   "item": "F-1",
+   "good": "The UX follows the template in order: a title `organize-downloads UX`, a main point saying what the tool gives whom and that the README, architecture and tests are built to it, Users and goals with G1 and G2, Key results with an opening on priority and why, KR1.1 to KR2.1 each one sentence with its why indented under a blank line, Scenes with an opening naming who takes part and the words the figures use, The whole way and four scenes each with its own sequence diagram followed by list items, and Benefits. Every list item is one sentence that stands alone, explanations sit indented after a blank line, and nothing is set in bold.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:1-7",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:8-19",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:20-51",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:52-292",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:293-318"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/ux.md",
+   "item": "B-1",
+   "good": "I can tell whom it is for and what they want: a person on macOS or Linux who downloads into a folder (Downloads under their home, or one they name) where they can no longer quickly find a file, and who can type a command and read its output. G1 is what they achieve (find a file by its kind, with every file still there), and G2 is getting the folder back as it was before the last organizing. The main point says what the tool gives this person, not what the document is.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:3-6",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:10-18"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/ux.md",
+   "item": "B-2",
+   "good": "As the builder, I can judge a version by how close it comes. The order is given with why: a lost file can't be put right, sorting is G1 itself, the preview is what the user agrees to, and undo is the way back. Each KR says what counts and which way is better, has no target value, and says why a better value shows the user closer. KR1.1 counts files after every kind of run, subfolders included. KR1.2 now ends at every known-kind file not left with `name taken in <kind>/` or `<kind> is not a folder`, which matches the left-in-place reasons in the scene, and says such files still count as not put. KR1.3 now requires the folder to be unchanged between the preview and the move, the same condition as the Organizing scene. KR2.1 says which files are left out of its count and why. With these, every case the scenes define has a value a correct version can reach.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:22-26",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:28-32",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:34-38",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:40-44",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:46-50"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/ux.md",
+   "item": "B-3",
+   "good": "I can follow the user's way in order. The whole way runs from a preview to `--move`, opening the kind folder and finding the file, then optionally `--undo` and `--undo --move`, so no step between the scenes is missing. Each of the four scenes (Seeing the planned moves, Organizing, Seeing the planned moves back, Undoing) has its own sequence diagram with loops and branches for each file. The boxes are named with one-word kinds in angle brackets (user <person>, organize-downloads <command>, folder <folder>, record <file>). The rules that hold throughout are given beside The whole way: working on another folder and the message when it does not exist, never deleting, renaming or overwriting, and the record kept outside the folder. Each scene shows sample output of what the user sees.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:54-62",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:64-104",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:106-159",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:161-201",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:203-249",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:251-291"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/ux.md",
+   "item": "B-4",
+   "good": "Each benefit is something the user gets, with why this tool gives it: finding a file by opening one folder of its kind (six kind folders by extension, no setup); organizing a folder they care about without fear (a built-in rule that no setting turns off, and every file left in place is shown with why); knowing each move before it is made (the preview changes nothing and the move run decides the same way); going back (undo shows first and removes the empty kind folders it made); and a folder holding only their own files and the kind folders (the record is kept outside).",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:295-318"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/ux.md",
+   "item": "B-5",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:1-7",
+     "good": "The main point tells me what the user gets (files sorted by kind, nothing lost, the last organizing undoable) and that the README, the architecture and the tests are built to it. It has no status or history.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:3-6"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:8-19",
+     "good": "Each line says who the user is, what they want, or when they want G2. None of it describes the tool's insides or is aimed at a reviewer.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:10-18"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:20-51",
+     "good": "Each line gives the priority order with its why, or a KR with what counts and why it shows the user closer. All of it is about outcomes the user meets (a lost file, a file put in its kind folder, a move they did not expect, a file found where they left it).",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:22-50"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:52-292",
+     "good": "The figures, tables and sample output show what the user types and reads. The record shows up only through what the user meets: where it lives so the folder stays clean, that it holds only the last run so `--undo` undoes that, and that files not moved back stay undoable. The examples (`photo.JPG`, `backup.tar.gz`, `~/Desktop`) each settle a case the reader could not guess.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:54-291"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:293-318",
+     "good": "Each benefit and its reason is a gain the user gets. Where a reason was already set, it points to the scene that sets it (under The whole way, under Organizing) and does not restate it.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:295-318"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/ux.md",
+   "item": "B-6",
+   "good": "Reading once from the top, I take each line as meant. The words the figures use (kind folder, preview run, move run, left in place, the record) are set out before the figures, and each thing keeps one name throughout. The sample outputs now match their rules: the existing kind folder shows as `left  audio/  subfolder` in both the preview and the move sample, as the subfolder row of the reason table and the loops of both figures say. KR1.2 now names both reasons a known-kind file stays in place, the same two the reason table gives, so no two lines contradict each other. The condition that the folder is unchanged sits both in KR1.3 and in the Organizing scene, not set apart from its case.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:34",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:40",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:56-62",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:115-121",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:138-159",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/docs/ux.md:171-197"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The command is `organize-downloads`, with `--move` to make moves, `--undo` to undo, and the folder as its last word.",
+   "why": "AC1 gives `organize-downloads` as its example and AC12's paths use the same name; the steering says \"told to move\" and \"asked to undo\", which a flag for each puts in the fewest words, and a flag for undo rather than a word such as `undo` keeps a folder named `undo` from being taken for the command."
+  },
+  {
+   "chosen": "Two goals: G1 finding a file by kind with every file still there, G2 getting the folder back as it was before the last organizing.",
+   "why": "The steering's G1 names both organizing and moving back; undo is a different want with its own key result, so it is its own goal."
+  },
+  {
+   "chosen": "Four key results in this order: KR1.1 files lost, KR1.2 share of known-kind files put in their kind folder, KR1.3 share of moves differing from a preview just before on the unchanged folder, KR2.1 share of movable files put back by undo.",
+   "why": "The steering sets no measures; these are what the user sees of G1 and G2, ordered by harm: a lost file cannot be put right, sorting is the goal, the preview is what the user agrees to, and undo is the way back the preview already makes less needed."
+  },
+  {
+   "chosen": "KR1.2 once G1 is reached leaves out files left with `name taken in <kind>/` or `<kind> is not a folder`, while still counting them as not put.",
+   "why": "Both are kept in place only to avoid an overwrite, which KR1.1 ranks higher, so a version cannot be closer by moving them; they still count, as the user still has to look for them."
+  },
+  {
+   "chosen": "The kind table: the extensions listed per kind folder in the Seeing the planned moves scene, matched on the part after the last dot, ignoring case; the kind folder names lowercase as AC4 writes them.",
+   "why": "AC4 names the six kinds but not their extensions; the list holds the common extensions of each kind a person downloads on macOS or Linux, including `exe` and `msi` as installers people still download there, and case is ignored so `photo.JPG` is sorted like `photo.jpg`."
+  },
+  {
+   "chosen": "The exact lines printed: a `Folder:` first line, `would move`/`moved`, `left` with one of four reasons (`name taken in <kind>/`, `kind not known`, `subfolder`, `<kind> is not a folder`), `would move back`/`moved back`, `not moved back` with one of two reasons, `would remove empty folder`/`removed empty folder`, a closing line saying what to run next, `Nothing to undo in <folder>.` and `No folder at <folder>.`.",
+   "why": "AC3, AC5, AC9 and AC11 say what is shown but not how; one fixed form lets the README show it and the tests check it. The `<kind> is not a folder` reason covers a file already named like a kind folder, which AC6 requires be left alone and AC5 does not list."
+  },
+  {
+   "chosen": "Kind folders already in the folder are shown as left subfolders in later runs, like any other subfolder, and the samples show `audio/` so.",
+   "why": "AC5 says each subfolder is shown as left in place, with no exception for kind folders."
+  },
+  {
+   "chosen": "The undo preview also shows each kind folder that would be removed.",
+   "why": "So the preview shows all that the undo move run would change, as the preview run does for organizing."
+  },
+  {
+   "chosen": "Each move run replaces the record, even one that moves no file; an undo move run drops the moves it put back and keeps the ones it could not, so a later undo can try them again; with nothing left, undo says there is nothing to undo.",
+   "why": "AC9 to AC11 speak of the last run of AC4 but not of a run that moved nothing or of undoing twice; keeping only what is left lets the user clear a reason and undo again, and never moves a file that undo already put back."
+  },
+  {
+   "chosen": "Sample paths use `/Users/me/Downloads` (a macOS home).",
+   "why": "Any one example serves; the Linux form differs only in the home's path."
+  },
+  {
+   "chosen": "The figure boxes write their kind as `#lt;person#gt;` and so on in the Mermaid source.",
+   "why": "Mermaid sanitizes a bare `<person>` as an HTML tag and drops it when rendered; the escape renders as `<person>` as the checklist asks."
+  }
+ ]
+}

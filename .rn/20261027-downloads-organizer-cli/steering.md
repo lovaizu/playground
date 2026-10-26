@@ -55,15 +55,6 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Tasks
 
-- T1: The UX of the tool. Serves G1.
-
-  Completion criterion: The user can tell from the UX alone who uses the tool, what they do and see
-  in each of organizing, showing the planned moves and undoing, and what they gain, every scene
-  meeting AC2 to AC6 and AC9 to AC12; whoever makes the README and the architecture can build them
-  on it without asking the user again. Checked by an AI that did not make it, reading it as they do.
-
-  - [ ] 1. The UX made from the plan, `docs/ux.md` as a ux work. turn.
-
 - T2: The README of the tool. Serves AC1 and AC8.
 
   Completion criterion: Following the README alone, a newcomer on macOS or Linux can do each thing
@@ -85,7 +76,7 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Next
 
-Step 4 of /rn:up on T1: action 1
+Step 4 of /rn:up on T2: action 1
 
 ## Open
 
