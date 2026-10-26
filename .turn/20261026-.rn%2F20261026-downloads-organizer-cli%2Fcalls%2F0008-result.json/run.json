@@ -1,0 +1,107 @@
+{
+ "call": {
+  "ccs": ".rn/20261026-downloads-organizer-cli/calls/0008-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261026-downloads-organizer-cli/calls/0008-result.json",
+  "test": null
+ },
+ "work": [
+  "docs/architecture.md"
+ ],
+ "checklist": [
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md"
+ ],
+ "receiver": [
+  "whoever builds or changes tidy-downloads, and the user who approves it at the design sign-off"
+ ],
+ "use": [
+  "grasping in a short time how tidy-downloads is put together to give docs/ux.md, its user stories, parts, technology, where the undo record is kept, and how each part and story is checked on a test folder, never the real Downloads folder, to build it or approve it"
+ ],
+ "has": [
+  "docs/ux.md",
+  "README.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+   "item": "F-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+   "item": "B-4"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+   "item": "B-5"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+   "item": "B-6"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+   "item": "B-7"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+   "item": "B-8"
+  }
+ ],
+ "each": [],
+ "given": [
+  ".rn/20261026-downloads-organizer-cli/calls/0008-ccs.json",
+  "docs/architecture.md",
+  "docs/ux.md",
+  "README.md",
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
+ ],
+ "readable": [
+  "docs/architecture.md",
+  "docs/ux.md",
+  "README.md",
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md"
+ ],
+ "root": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "questions": {
+  "from": "check",
+  "questions": [
+   {
+    "question": "The architecture's Test section must link the project's rules for how each kind of part (here a Python 3 script) and the user stories are checked, but neither the CCS nor docs/ux.md nor README.md names such rules; which file holds this project's test rules, or, if there is none, may the architecture say in its Test section how this tool's parts and stories are checked (its tests run the script on a temporary test folder of mixed files and subfolders, never the real Downloads folder)? Without one of these, the reader cannot tell how each part and story is checked.",
+    "recommended": "If the project has a test rule file, name it; if not, let the Test section say briefly how this tool is checked, since AC8 already fixes the bar and a separate rule file for one script would be made only to be linked.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+      "item": "F-1"
+     },
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/architecture.md",
+      "item": "B-5"
+     }
+    ]
+   }
+  ]
+ }
+}

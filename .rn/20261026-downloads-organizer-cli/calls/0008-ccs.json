@@ -71,6 +71,9 @@
   },
   {
    "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
+  },
+  {
+   "decision": "Where the test rules are: No separate test rule file; the architecture's Test section says briefly how the tool is checked: its tests run the script on a temporary test folder of mixed files and subfolders, never the real Downloads folder"
   }
  ]
 }
