@@ -3,9 +3,9 @@
 organize-downloads sorts the files lying directly in a folder into one folder per kind of file,
 chosen by each file's extension; run without moving anything, it lists every move it would make,
 and when it moves, it never deletes, renames or overwrites a file and can put back what its last
-move moved. It is a command-line tool for macOS and Linux, for anyone whose Downloads folder holds
-so many files that they cannot find the one they want, and who would find it in a folder of its
-kind.
+move on that folder moved. It is a command-line tool for macOS and Linux, for anyone whose
+Downloads folder holds so many files that they cannot find the one they want, and who would find
+it in a folder of its kind.
 
 ## Example
 
@@ -40,9 +40,7 @@ setup.dmg -> Installers/
 
 `.DS_Store` has no line because hidden files, whose names begin with a dot, are never moved, and
 `talk.mp4.part` has none because a download still in progress, ending in `.crdownload`, `.part` or
-`.download`, is never moved either. The folder `Projects`, and every folder already there with all
-it holds, is left as it is, apart from the files moved into a kind's folder such as `Documents`
-and moved back out of it by `--undo`.
+`.download`, is never moved either.
 
 Run with `--move`, the tool makes the moves it listed, making `Images` and `Installers` as they are
 missing, and prints the same lines:
@@ -90,8 +88,16 @@ The folder is then again as it was at first.
 A file that cannot go back, because a file of its name is now in its old place or it is no longer
 in the folder the move put it in, stays where it is, and its line says which.
 
+The folder `Projects`, and every folder already there with all it holds, is left as it is through
+all three runs, apart from the files `--move` puts into a kind's folder such as `Documents` and
+`--undo` takes back out of it.
+
 With no folder given, the tool works on `~/Downloads`; give a folder after the options to work on
-another, such as `organize-downloads --move ~/Desktop`.
+another, such as your Desktop:
+
+```
+$ organize-downloads --move ~/Desktop
+```
 
 A file goes to the folder of its kind by its extension, the part of its name after the last dot,
 in capitals or small letters alike; so `archive.tar.gz` goes to `Archives`, and a file whose
@@ -122,19 +128,34 @@ Each other way to sort a Downloads folder leaves you work that this tool does fo
 
 - Python 3.8 or later, run by the command `python3`.
 
-  The tool is a Python program. `python3 --version` tells you whether you have it; most Linux
-  systems do, and on macOS, if it is missing, running `python3` once offers to install it, or you
-  can get it from https://www.python.org/downloads/.
+  The tool is a Python program. This command tells you whether you have it, printing its version:
+
+  ```
+  python3 --version
+  ```
+
+  Most Linux systems have it; on macOS, if it is missing, running `python3` once offers to install
+  it, or you can get it from https://www.python.org/downloads/.
 
 - The command `curl`, to download the tool.
 
   macOS has it; on a Linux system without it, install it with the system's package manager, such
-  as `sudo apt install curl`.
+  as apt on Debian or Ubuntu:
+
+  ```
+  sudo apt install curl
+  ```
 
 - The folder `~/.local/bin` in your `PATH`, so that your shell finds the tool by its name.
 
-  `echo "$PATH"` shows whether it is there. If not, add this line to `~/.zshrc` (macOS) or
-  `~/.bashrc` (Linux) and open a new terminal:
+  This command shows the folders in your `PATH`, separated by colons:
+
+  ```
+  echo "$PATH"
+  ```
+
+  If `~/.local/bin`, written in full such as `/home/you/.local/bin`, is not among them, add this
+  line to `~/.zshrc` (macOS) or `~/.bashrc` (Linux) and open a new terminal:
 
   ```
   export PATH="$HOME/.local/bin:$PATH"
@@ -150,9 +171,16 @@ curl -fsSL -o ~/.local/bin/organize-downloads https://raw.githubusercontent.com/
 chmod +x ~/.local/bin/organize-downloads
 ```
 
-`organize-downloads --help` then prints how to run it. Your first use is the three runs of the
-Example on your own `~/Downloads`: first with no option, then `--move`, and `--undo` if you want
-the files back.
+This then prints how to run it:
+
+```
+organize-downloads --help
+```
+
+Your first use is the three runs of the Example on your own `~/Downloads`: first with no option,
+then `--move`, and `--undo` if you want the files back. On macOS, the first time your terminal
+reads `~/Downloads`, macOS may ask whether the terminal may access files in your Downloads folder;
+allow it, as without that access the tool cannot see the files there.
 
 ## Documentation
 

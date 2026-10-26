@@ -42,9 +42,8 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Next
 
-Step 3 of /rn:up on t1.1: answer turn's questions, then send the answers to the run waiting
+Step 3 of /rn:up on t1.1: send turn the answer on how the run ends, then read its result
 
 ## Open
 
-- turn asks (B-4): the README's download address gives 404 until the tool is on main, and no task makes the tool; should a build task make it, with the install and Example tried once it is there?
-- turn asks (B-5): organize-downloads/docs/usage.md, CHANGELOG.md and LICENSE, which the README links to, have no work making them; it recommends LICENSE (MIT, a copyright holder and year the user names) as a file of t1.1, usage and changes made with the tool.
+- turn asks how t1.1 ends for B-4, B-5 and B-8 of the README checklist, which a first user cannot meet until the tool, docs/usage.md, CHANGELOG.md and docs/architecture.md exist; settled by the orchestrator as how turn goes on: end t1.1 with them recorded as to be checked at the build stage, by a first user installing from the address once those files are on main.
