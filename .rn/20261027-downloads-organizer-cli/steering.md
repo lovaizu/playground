@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/14
 stage: design
-signoff: none
+signoff: design
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -55,7 +55,7 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Next
 
-Step 4 of /rn:up on T4: weigh what it brought
+Step 5 of /rn:up on design: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
 
 ## Open
 
