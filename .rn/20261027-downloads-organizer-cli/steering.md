@@ -120,8 +120,9 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Next
 
-Step 4 of /rn:up on T5: action 1
+Step 3 of /rn:up on t5.1: answer turn's questions and send them back to the run waiting
 
 ## Open
 
-None.
+- turn asks the oldest Python 3 version the tool and its tests run on, as docs/architecture.md says only 'Python 3'; turn recommends 3.9, the python3 of macOS's command line tools.
+- turn asks whether mutation testing and coverage measurement may be left out of the tests, with a comment saying the user decided so and why; turn recommends yes, as the standard library alone is allowed and property tests with random still hold each behavior.

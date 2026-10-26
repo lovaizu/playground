@@ -1,0 +1,129 @@
+{
+ "call": {
+  "ccs": ".rn/20261027-downloads-organizer-cli/calls/0013-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261027-downloads-organizer-cli/calls/0013-result.json",
+  "test": null
+ },
+ "work": [
+  "tests/test_preview.py"
+ ],
+ "checklist": [
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md"
+ ],
+ "receiver": [
+  "whoever maintains the tool, a person or an AI, and whoever builds its preview run to these tests"
+ ],
+ "use": [
+  "trusting from these tests passing that showing the planned moves does what docs/ux.md says, and building the preview run until they pass"
+ ],
+ "has": [
+  "docs/ux.md",
+  "docs/architecture.md",
+  ".github/workflows/tests.yml"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "F-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-4"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-5"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-6"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-7"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-8"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-9"
+  }
+ ],
+ "each": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+   "item": "B-4"
+  }
+ ],
+ "given": [
+  ".rn/20261027-downloads-organizer-cli/calls/0013-ccs.json",
+  "tests/test_preview.py",
+  "docs/ux.md",
+  "docs/architecture.md",
+  ".github/workflows/tests.yml",
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+ ],
+ "readable": [
+  "tests/test_preview.py",
+  "docs/ux.md",
+  "docs/architecture.md",
+  ".github/workflows/tests.yml",
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md"
+ ],
+ "root": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "questions": {
+  "from": "check",
+  "questions": [
+   {
+    "question": "Which oldest Python 3 version must the tool and its tests run on? docs/architecture.md says only 'Python 3', so B-1 (nothing newer than the oldest version named) has no version to check the tests against, and pyproject.toml will need the same floor.",
+    "recommended": "Python 3.9, because it is the python3 that macOS gives with its own command line tools, so a macOS user can run the tool and its tests without installing another Python.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+      "item": "B-1"
+     }
+    ]
+   },
+   {
+    "question": "May mutation testing and coverage measurement be left out of the tests, with a comment in tests/test_preview.py saying the user decided so and why? The development rules name the standard library alone and no coverage or mutation tool, and B-6 asks either such checks or a written decision of the user for leaving them out; property tests can still be made with Python's own random module.",
+    "recommended": "Yes, leave them out with that comment, because adding coverage.py or mutmut would change the development rules in docs/architecture.md, which this task does not make, while property tests with random and cases from each partition and reason of docs/ux.md still hold every preview behavior.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/code.md",
+      "item": "B-6"
+     }
+    ]
+   }
+  ]
+ }
+}
