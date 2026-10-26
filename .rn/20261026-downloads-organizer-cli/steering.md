@@ -29,7 +29,7 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
   Completion criterion: from `README.md` alone, a newcomer can tell whom the tool is for and what they gain, as `docs/ux.md` has it, and can follow how to install it and how to use it to a first result, so that every item of the README checklist holds, as a first reader in a newcomer's place finds.
 
-  - [ ] 1. How the tool is installed on macOS and Linux. The orchestrator, with the user.
+  - [x] 1. How the tool is installed on macOS and Linux. The orchestrator, with the user.
   - [ ] 2. The README, from `docs/ux.md` and the way of installing settled in action 1, `README.md` as a readme work. turn.
 
 - T3: The architecture, `docs/architecture.md`. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC8 and AC9.
@@ -41,8 +41,8 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 4 of /rn:up on T2: action 1, settle with the user how the tool is installed on macOS and Linux
+Step 4 of /rn:up on T2: action 2, have turn make README.md
 
 ## Open
 
-- T2 action 1: how tidy-downloads is installed on macOS and Linux is not yet settled
+None.
