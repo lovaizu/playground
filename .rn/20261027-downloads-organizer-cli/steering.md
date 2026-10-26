@@ -67,8 +67,8 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Next
 
-Step 3 of /rn:up on t4.1: hand the run waiting the ID of the GitHub Actions run of the pushed workflow
+Step 3 of /rn:up on t4.1: hand the run waiting the ID of the GitHub Actions run of the pinned workflow
 
 ## Open
 
-- turn asks who pushes .github/workflows/tests.yml so its macOS run happens; its own rules forbid it to commit or push; it asks for the run's ID back. This move pushes it, as rn's keep commits and pushes every change.
+- turn asks again to push .github/workflows/tests.yml, now naming actions/checkout by its full commit SHA (v4.4.0), as run 40378426948 stopped on both runners: the repository allows only actions pinned to a full SHA. This move pushes it.

@@ -62,7 +62,8 @@ exit 0
 
 ### macOS
 
-Not run yet: GitHub Actions runs the workflow only once it is pushed.
+Not run yet: the first run on GitHub Actions stopped before the trial's step, as the last item
+below tells.
 
 ## How far the result holds
 
@@ -75,4 +76,9 @@ Not run yet: GitHub Actions runs the workflow only once it is pushed.
   call the other way round, not run here.
 - That no other program can put a file at the name during the call rests on the call being one
   step in the system; the trial does not race another program against it.
-- Nothing failed or was worked around in the run.
+- The first run on GitHub Actions,
+  [40378426948](https://github.com/lovaizu/playground/actions/runs/40378426948), stopped on both
+  runners before any step, with `The action actions/checkout@v4 is not allowed in
+  lovaizu/playground because all actions must be pinned to a full-length commit SHA.`; the workflow
+  now names `actions/checkout` by the commit of its tag `v4.4.0`. Nothing else failed or was worked
+  around.

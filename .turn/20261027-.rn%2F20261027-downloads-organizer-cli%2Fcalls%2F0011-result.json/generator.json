@@ -13,9 +13,9 @@
     {
       "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
       "item": "B-3",
-      "good": "The user and the builder can tell how far the verdict holds: one file system per system, one glibc and Python version, only the move into a kind folder (not the move back of --undo), no race against another program, and that nothing failed or was worked around.",
+      "good": "The user and the builder can tell how far the verdict holds: one file system per system, one glibc and Python version, only the move into a kind folder (not the move back of --undo), no race against another program, and the first GitHub Actions run that stopped on the repository's rule for pinned actions, with how the workflow was changed for it.",
       "lines": [
-        ".rn/20261027-downloads-organizer-cli/trial-rename.md:67-78"
+        ".rn/20261027-downloads-organizer-cli/trial-rename.md:68-84"
       ]
     },
     {
@@ -23,7 +23,7 @@
       "item": "B-4",
       "good": "Each part serves deciding or building: the way and its point, the check, the verdict table, the run and its whole short output, and the limits; the script itself is in the workflow alone and the result points to its lines, not said twice.",
       "lines": [
-        ".rn/20261027-downloads-organizer-cli/trial-rename.md:1-78",
+        ".rn/20261027-downloads-organizer-cli/trial-rename.md:1-84",
         ".github/workflows/tests.yml:21-95"
       ]
     },
@@ -39,8 +39,8 @@
   ],
   "questions": [
     {
-      "question": "The macOS half of the trial runs only once .github/workflows/tests.yml is pushed to downloads-organizer-cli. The CCS allows the work to commit and push it, but this generator's own rules forbid it to run git commit or git push (and whether the bot's token may push a workflow file is not yet known). Who pushes: should the calling AI commit and push the workflow alone on this branch and hand back the run's ID, so the generator reads it with gh and fills in the macOS result?",
-      "recommended": "Yes: the calling AI pushes the workflow alone and hands back the run ID, as the CCS already allows the push and only it can make the macOS run happen."
+      "question": "Run 40378426948 stopped on both runners before any step: the repository allows only actions pinned to a full-length commit SHA. The working tree's .github/workflows/tests.yml now names actions/checkout@11d5960a326750d5838078e36cf38b85af677262 (tag v4.4.0) instead of @v4, nothing else changed. Should the calling AI commit and push this workflow change alone on downloads-organizer-cli and hand back the new run's ID, so the generator reads it with gh and fills in the macOS result?",
+      "recommended": "Yes: push the pinned workflow alone and hand back the run ID, as only a pushed run gives the macOS result and the CCS already allows this push."
     }
   ],
   "chosen": [
@@ -51,6 +51,10 @@
     {
       "chosen": "The workflow runs on push to any branch and on workflow_dispatch, on ubuntu-latest and macos-latest, with a Tests step that runs only when tests/ exists, by the command docs/architecture.md gives.",
       "why": "Push alone runs it on each change without a second run for the open pull request; the Tests step stays ready for the tool's tests, as the CCS keeps the workflow for them, without failing before they are there."
+    },
+    {
+      "chosen": "actions/checkout is pinned to 11d5960a326750d5838078e36cf38b85af677262, the commit of its latest v4 release, v4.4.0.",
+      "why": "The repository refuses actions not pinned to a full commit SHA; the latest v4 keeps the major version first written."
     },
     {
       "chosen": "The check is two cases, a file moved into images/ at a free name and at a taken name, in a folder made under the home.",
