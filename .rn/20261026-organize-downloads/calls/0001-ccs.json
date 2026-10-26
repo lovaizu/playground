@@ -22,6 +22,9 @@
   },
   {
    "decision": "Name already taken at the destination: When the destination folder already holds a file of the same name, the tool does not move the file: it stays in Downloads under its own name, and the tool tells the user so in its list. No file is renamed or overwritten."
+  },
+  {
+   "decision": "Files of no known kind: A file whose kind the tool does not know, such as one with no extension or an unfamiliar one, stays in Downloads, and the tool's list says it stays."
   }
  ]
 }
