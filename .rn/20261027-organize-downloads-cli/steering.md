@@ -53,7 +53,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T7: weigh what it brought, the GitHub Actions run of the push first
+Step 4 of /rn:up on T4: action 1, have turn make the tests of the run with --apply
 
 ## Open
 
