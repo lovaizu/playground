@@ -72,7 +72,7 @@
    "decision": "Undo again after undo: Once undo has put files back, the record is used up: undo run again moves nothing and tells the user there is nothing to put back; undo does not count as a run that moved files."
   },
   {
-   "decision": "Design documents: The purpose needs two documents, a README (kind readme) and an architecture (kind architecture), and no UX; where each is placed is still to be settled."
+   "decision": "Design documents: The purpose needs two documents, a README at organize-downloads/README.md (kind readme) and an architecture at organize-downloads/docs/architecture.md (kind architecture), and no UX; the tool itself goes in the folder organize-downloads too, and the repository's own README.md stays as it is."
   }
  ]
 }
