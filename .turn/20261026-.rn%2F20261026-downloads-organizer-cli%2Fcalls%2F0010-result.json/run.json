@@ -1,0 +1,80 @@
+{
+ "call": {
+  "ccs": ".rn/20261026-downloads-organizer-cli/calls/0010-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261026-downloads-organizer-cli/calls/0010-result.json",
+  "test": null
+ },
+ "work": [
+  ".rn/20261026-downloads-organizer-cli/issue-1.md"
+ ],
+ "checklist": [
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md"
+ ],
+ "receiver": [
+  "rn's makers, reading the issue on lovaizu/ccpm, who build rn for all its users"
+ ],
+ "use": [
+  "deciding how rn changes so that every user's later work meets the need"
+ ],
+ "has": [
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "F-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-3"
+  }
+ ],
+ "each": [],
+ "given": [
+  ".rn/20261026-downloads-organizer-cli/calls/0010-ccs.json",
+  ".rn/20261026-downloads-organizer-cli/issue-1.md",
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn",
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
+ ],
+ "readable": [
+  ".rn/20261026-downloads-organizer-cli/issue-1.md",
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn",
+  "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md"
+ ],
+ "root": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "questions": {
+  "from": "check",
+  "questions": [
+   {
+    "question": "The issue's last section must read `rn <version>` with the version the session's steering front matter names, but the CCS and the files it names do not give the steering, so the version cannot be read from them. Which version of rn should the issue name?",
+    "recommended": "rn 0.9.0, as rn.py start writes the version from rn's .claude-plugin/plugin.json into the steering, and the rn the session runs on gives 0.9.0 there.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+      "item": "F-1"
+     }
+    ]
+   }
+  ]
+ }
+}
