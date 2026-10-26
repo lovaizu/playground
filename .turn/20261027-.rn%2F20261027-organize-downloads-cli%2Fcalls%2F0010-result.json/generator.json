@@ -1,0 +1,21 @@
+{
+  "items": [
+    {"checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md", "item": "F-1", "question": 1},
+    {"checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md", "item": "B-1", "question": 1},
+    {"checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md", "item": "B-2", "question": 1},
+    {"checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md", "item": "B-3", "question": 1},
+    {"checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md", "item": "B-4", "question": 1},
+    {"checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md", "item": "B-5", "question": 1},
+    {"checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md", "item": "B-6", "question": 1},
+    {"checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md", "item": "B-7", "question": 1},
+    {"checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md", "item": "B-8", "question": 1},
+    {"checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md", "item": "B-9", "question": 1}
+  ],
+  "questions": [
+    {
+      "question": "The work is the folder organize-downloads/tests, which by the architecture's physical view holds test_<module>.py files, test_stories.py and, for unittest discover with -t, an __init__.py; but this run lets me write only the exact path organize-downloads/tests and refuses every file inside it (Write and Bash were both stopped for organize-downloads/tests/__init__.py), so no test can be made. How should the run go on?",
+      "recommended": "Let the run write files under organize-downloads/tests (the work's path taken as a folder, as the CCS's kind code and the architecture make it), since the tests cannot be one file named tests and every item of the code checklist rests on them."
+    }
+  ],
+  "chosen": []
+}
