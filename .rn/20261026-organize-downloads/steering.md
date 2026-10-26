@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/13
 stage: plan
-signoff: plan
+signoff: none
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -27,8 +27,8 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Next
 
-Step 5 of /rn:up on plan: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
+Step 6 of /rn:up on plan: find the point behind the feedback
 
 ## Open
 
-None.
+- 直前の移動を元に戻せるようにしてください。元に戻すと、前回の実行で移した各ファイルが元の場所に戻るようにしてほしいです（「元に戻すのは手作業」という決定はこれで置き換えてください）。
