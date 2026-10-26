@@ -1,0 +1,117 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "F-1",
+      "good": "The maintainer finds, at the top of the workflow, what it does and why (lines 1-2), and, above the steps, why every action is pinned to a commit SHA and how the SHA and the version beside it are kept together (lines 16-18); each other step keeps its one-line comment saying why it is there, in YAML comments, the only form a workflow file has for this.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:1-2",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:16-21",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:24-32"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-1",
+      "good": "Each push now gets the same run on every runner: each action is named by the full commit SHA of a published release (actions/checkout v7.0.1 at 3d3c42e5..., actions/setup-python v7.1.0 at 6d4fd22b..., both checked to be the commit their release tag names, neither a draft nor a prerelease), so lovaizu/playground's rule no longer stops every job before its first step, as it did in run 40407400092, and a tag moved later cannot change what runs; these are the commits the tag v7 named for each action, so the run does what T3's workflow meant. The rest of the job is unchanged: on ubuntu-latest and macos-latest, on Python 3.10 (the oldest pyproject.toml allows) and the latest, it installs the tool with pipx and runs all the tests, the same as the architecture's Test section says; run here on Linux in a temporary folder, those two steps installed the tool and passed all 65 tests, and actionlint finds no fault in the file.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:9-23",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:25-32"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-2",
+      "good": "The stop that ended run 40407400092, actions not pinned to a full-length commit SHA, is cleared at its cause: no action in the file is named by a tag any more, so the rule has nothing to stop. Where a later step stops, such as pipx install or a failing test, its own output and the test messages (which name what to install anew) say what to do; the workflow takes in nothing from outside but the matrix values it sets itself.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:20-21",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:25-32"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-3",
+      "parts": [
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:1-32",
+          "good": "Reading only the file, the maintainer learns what the workflow does (lines 1-2), why the matrix does not stop at the first failure (line 10), why a 40-character SHA stands where a version would be expected, which is the repository's rule and that a SHA cannot be moved where a tag can (lines 16-18), which release each SHA is, from the comment beside it (lines 20-21), and why the tool is installed with pipx while the module tests run from src (lines 24, 29). The comment tells the rule and the reason, not the failed run or the task that brought the change, so it stays true as the file changes.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:1-2",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:10-10",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:16-21",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:24-24",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:29-29"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-4",
+      "parts": [
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:1-32",
+          "good": "The change is the two pinned lines and the one comment they need, nothing else: no new step, input, permission or option was added, and each other line is what T3's workflow had and AC7 still needs (the two systems, the two Pythons, the pipx install for the stories and the test run). The comment above the steps gives the reason for the SHAs and how to update them, which the lines themselves do not say.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:16-21"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-5",
+      "question": 1
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-6",
+      "good": "Every test the tool has, the user stories and each module's tests, is run by the workflow on both systems and both Pythons with discover over the whole tests folder, so a behavior a test holds and a change breaks fails a job of the push's run; the matrix being unchanged, none is left out.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:12-14",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:30-32"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-7",
+      "good": "A failing job now means a fault of the push, in the system and Python its name shows: the jobs no longer fail before any step on the repository's rule, and with fixed SHAs a new release of an action cannot change the run between two pushes, so a failure is not taken from the action's side; fail-fast off keeps each job's result its own.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:9-11",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:16-21"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-8",
+      "good": "The workflow runs the whole test run once per job, which took 0.09 seconds for 65 tests here, after a single install of the tool; nothing in it sets up by running other programs per test.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:25-32"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-9",
+      "good": "Each job of the matrix runs on its own fresh runner, so the four jobs of one push, and the runs of two pushes at once, share no file, folder or port; within a job the tests use their own temporary folders.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:9-15"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "B-5 (one change in one place) waits on this. The purpose of this work includes keeping the pinned versions current, but a pinned SHA never moves by itself and nothing in the repository updates it, so today each new release of an action means a maintainer finds it, looks up its commit SHA and edits the SHA and its version comment by hand. Should a Dependabot settings file, .github/dependabot.yml, that checks the workflow's actions each week and opens a pull request changing the SHA and its version comment together, be added to the CCS as a code work?",
+      "recommended": "Add it as a code work, as Dependabot is GitHub's own free tool that reads the `# v7.0.1` comment form used here and updates the SHA and the comment in one change, so the pins stay current without anyone watching releases."
+    }
+  ],
+  "chosen": [
+    {
+      "chosen": "Pinned actions/checkout to v7.0.1 (3d3c42e5aac5ba805825da76410c181273ba90b1) and actions/setup-python to v7.1.0 (6d4fd22b20465ccc0f7354476588e8df7c9ca0e0).",
+      "why": "Each is the latest published release of its action, and the very commit the tag v7 that T3's workflow used names now, so the workflow runs what T3 meant, only pinned."
+    },
+    {
+      "chosen": "The version is written as a trailing comment of the form `# v7.0.1` on the same line as the SHA, with one comment above the steps saying why SHAs are used and to change both together.",
+      "why": "The task asks for the version in a comment beside each SHA; this form is the one Dependabot and Renovate read and update, and stating the rule once above the steps keeps it out of each line."
+    }
+  ]
+}

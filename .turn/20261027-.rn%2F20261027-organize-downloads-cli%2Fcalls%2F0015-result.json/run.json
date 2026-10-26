@@ -1,0 +1,151 @@
+{
+ "call": {
+  "ccs": ".rn/20261027-organize-downloads-cli/calls/0015-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261027-organize-downloads-cli/calls/0015-result.json",
+  "test": null
+ },
+ "work": [
+  ".github/workflows/organize-downloads.yml"
+ ],
+ "checklist": [
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
+ ],
+ "receiver": [
+  "whoever maintains the tool, a person or an AI, and the user reading the pull request"
+ ],
+ "use": [
+  "seeing on each push that the tests pass on macOS and Linux, and keeping the pinned versions current"
+ ],
+ "has": [
+  ".rn/20261027-organize-downloads-cli/steering.md",
+  "organize-downloads/docs/architecture.md",
+  "organize-downloads"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "F-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-4"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-5"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-6"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-7"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-8"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-9"
+  }
+ ],
+ "each": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+   "item": "B-4"
+  }
+ ],
+ "given": [
+  ".rn/20261027-organize-downloads-cli/calls/0015-ccs.json",
+  ".github/workflows/organize-downloads.yml",
+  ".rn/20261027-organize-downloads-cli/steering.md",
+  "organize-downloads/docs/architecture.md",
+  "organize-downloads",
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+ ],
+ "readable": [
+  ".github/workflows/organize-downloads.yml",
+  ".rn/20261027-organize-downloads-cli/steering.md",
+  "organize-downloads/docs/architecture.md",
+  "organize-downloads",
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
+ ],
+ "root": "/tmp/rn/20261027-acceptance-5180ibfe/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "back": [],
+ "prompts": {
+  "turn:generator": {
+   "given": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0015-ccs.json",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/steering.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads",
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+   ],
+   "work": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml"
+   ],
+   "checklists": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
+   ],
+   "test": null,
+   "sent_back": [],
+   "answers": [],
+   "chosen": [],
+   "result": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.rn/20261027-organize-downloads-cli/calls/0015-result.json",
+   "reply": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.turn/20261027-.rn%2F20261027-organize-downloads-cli%2Fcalls%2F0015-result.json/generator.json"
+  }
+ },
+ "since": {
+  "turn:generator": []
+ },
+ "started": {
+  "turn:generator": "a56f179ee6363b6e6"
+ },
+ "questions": {
+  "from": "turn:generator",
+  "questions": [
+   {
+    "question": "B-5 (one change in one place) waits on this. The purpose of this work includes keeping the pinned versions current, but a pinned SHA never moves by itself and nothing in the repository updates it, so today each new release of an action means a maintainer finds it, looks up its commit SHA and edits the SHA and its version comment by hand. Should a Dependabot settings file, .github/dependabot.yml, that checks the workflow's actions each week and opens a pull request changing the SHA and its version comment together, be added to the CCS as a code work?",
+    "recommended": "Add it as a code work, as Dependabot is GitHub's own free tool that reads the `# v7.0.1` comment form used here and updates the SHA and the comment in one change, so the pins stay current without anyone watching releases.",
+    "items": [
+     {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-5"
+     }
+    ]
+   }
+  ]
+ }
+}

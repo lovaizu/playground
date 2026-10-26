@@ -59,8 +59,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T7: action 1, have turn make the workflow again with pinned actions
+Step 3 of /rn:up on t7.1: ask turn's question on Dependabot, then send the answer to the run waiting
 
 ## Open
 
-None.
+- turn asks for t7.1 (code B-5): whether .github/dependabot.yml is added, checking the workflow's actions each week and opening a pull request that updates each pinned SHA and its version comment; recommended: add it

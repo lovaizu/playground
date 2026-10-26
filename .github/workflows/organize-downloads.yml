@@ -13,9 +13,12 @@ jobs:
         os: [ubuntu-latest, macos-latest]
         python: ["3.10", "3.x"]
     runs-on: ${{ matrix.os }}
+    # lovaizu/playground runs an action only when it is pinned to a full-length commit SHA, which
+    # names one commit for good, where a tag such as v7 can be moved. Each SHA is that of the
+    # release named in the comment beside it; to update an action, change both together.
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: ${{ matrix.python }}
       # The user stories run the command as pipx installs it for the user.
