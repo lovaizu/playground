@@ -10,6 +10,9 @@
  "constraints": [
   {
    "decision": "Where the undo record is kept: The record that undo reads is a hidden file inside the folder sorted, such as ~/Downloads/.tidy-downloads-last, which the tool itself never moves"
+  },
+  {
+   "decision": "The tool's language and file: The tool is one Python 3 script, tidy-downloads with no extension at the root of the repository, installed by copying it onto the PATH"
   }
  ]
 }
