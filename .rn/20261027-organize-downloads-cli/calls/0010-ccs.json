@@ -28,6 +28,9 @@
    "path": "organize-downloads/tests/test_stories.py"
   },
   {
+   "path": "organize-downloads/.gitignore"
+  },
+  {
    "audience": "whoever runs the tests and whoever maintains the tool, a person or an AI"
   },
   {
@@ -77,6 +80,9 @@
   },
   {
    "chosen": "the tests given as the files the architecture's Physical view names for the modules the run with nothing added uses, with tests/__init__.py for unittest discover with -t: a run may write only the paths its CCS names, so the folder alone let no test be made"
+  },
+  {
+   "chosen": "organize-downloads/.gitignore made with the tests: running them first makes __pycache__/, so the ignore file comes with the first run that makes it rather than waiting for t3.3"
   },
   {
    "artifact-language": "English"
