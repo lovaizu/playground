@@ -41,8 +41,8 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 4 of /rn:up on T2: action 2, have turn make README.md
+Step 3 of /rn:up on t2.2: wait for turn to return README.md, then weigh its result
 
 ## Open
 
-None.
+- The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decision 'What the README is checked against now' of t2.2); the build-stage plan must carry this
