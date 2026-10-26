@@ -101,6 +101,9 @@
   },
   {
    "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+  },
+  {
+   "decision": "Mutants that change no behavior: The two mutants no test can kill, organize.py's follow_symlinks=False made None and type_table.py's empty extension for a name with no dot made another string, are left, each line with a one-line comment saying that mutant changes no behavior and why."
   }
  ]
 }
