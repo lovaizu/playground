@@ -1,0 +1,93 @@
+{
+ "call": {
+  "ccs": ".rn/20261027-organize-downloads-cli/calls/0005-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261027-organize-downloads-cli/calls/0005-result.json",
+  "test": null
+ },
+ "work": [
+  "organize-downloads/README.md"
+ ],
+ "checklist": [
+  ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md"
+ ],
+ "receiver": [
+  "the user approving the README at the design sign-off, and whoever makes the architecture and builds the tool to it"
+ ],
+ "use": [
+  "deciding from the README whether it tells what the tool gives them and how to install and use it, approving it, and building the tool and its architecture to what it promises"
+ ],
+ "has": [
+  ".rn/20261027-organize-downloads-cli/steering.md"
+ ],
+ "items": [
+  {
+   "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "F-1"
+  },
+  {
+   "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-6"
+  },
+  {
+   "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-7"
+  }
+ ],
+ "each": [
+  {
+   "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-6"
+  }
+ ],
+ "given": [
+  ".rn/20261027-organize-downloads-cli/calls/0005-ccs.json",
+  "organize-downloads/README.md",
+  ".rn/20261027-organize-downloads-cli/steering.md",
+  ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+  "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+ ],
+ "readable": [
+  "organize-downloads/README.md",
+  ".rn/20261027-organize-downloads-cli/steering.md",
+  ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md"
+ ],
+ "root": "/tmp/rn/20261027-acceptance-5180ibfe/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "questions": {
+  "from": "check",
+  "questions": [
+   {
+    "question": "The README's template ends with a License section and a Documentation section, and the plan settles neither: which license the tool is released under, and where Documentation points for fuller use (such as what happens with name clashes, skipped files and the extension list) and for what changed in each version. Without an answer the README would have to guess both.",
+    "recommended": "Use the license the repository already has (or MIT if it has none), and have Documentation point to organize-downloads --help for fuller use and to the repository's commit history for changes, as these need no extra page to be made before the tool exists.",
+    "items": [
+     {
+      "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+      "item": "F-1"
+     }
+    ]
+   }
+  ]
+ }
+}

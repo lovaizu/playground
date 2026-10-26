@@ -42,8 +42,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T1: action 2, have turn make the README
+Step 3 of /rn:up on t1.2: answer turn's question, then send the answers to the run waiting
 
 ## Open
 
-None.
+- turn asks for t1.2 (checklist 0005-checklist-1.md, F-1): which license the tool is released under, and where the README's Documentation points for fuller use and for what changed in each version; recommended: the repository's license or MIT if none, and Documentation pointing to organize-downloads --help and the commit history
