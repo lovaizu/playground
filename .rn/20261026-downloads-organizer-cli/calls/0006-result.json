@@ -1,0 +1,144 @@
+{
+ "work": [
+  "README.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "F-1",
+   "good": "The headings come in the template's order with no others: the name, an opening under no heading, Example, Why tidy-downloads, Requirements, Installation, Documentation, Development, License. The opening gives the idea in its first sentence (sort by kind, leave a file whose name is taken, show where each file would go first, never delete or overwrite, undo the last move), then the gain with the kind of thing that gives it (a command typed in a terminal; find a file by opening the folder for its kind), then whom it is for. Each list item is one sentence that reads alone, with its explanation after a blank line and indented (Why item 3, Python 3, curl). Nothing is in bold. Installation ends with the first use by pointing to the Example. Documentation names where fuller use (--help) and the changes in each version (commit history) are. Development is one link.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:1-10",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:11-11",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:68-81",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:82-94",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:95-97",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:140-153"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-1",
+   "good": "From the opening I can place myself. It is for people on macOS or Linux who type commands in a terminal and whose Downloads folder fills up, which is G1 in docs/ux.md. What I gain is finding a file by opening Images, Documents or Archives in place of searching one long list, and the thing that gives it is a command typed in a terminal. Where other ways fall short is in the first sentence: it shows where each file would go before moving any, leaves a file whose name is taken, never deletes, renames or overwrites, and can undo its last move. That matches the two Benefits in docs/ux.md.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:3-9"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-2",
+   "good": "The Example is my own kind of work: a Downloads folder with a photo, a zip, a PDF, a file with no extension, and a folder I made by hand. It goes in the order of 'The whole way' in docs/ux.md. I type the preview, the tool prints where each file would go, which one stays and why, and that nothing moved. Then I type --move and it prints each file moved and the one left. Then I open ~/Downloads/Images to find the photo. Then the optional --undo prints each file moved back and the empty folders removed. Each printed output is shown, not described, and every case matches the Undoing scene: a file kept because a same-named file has come back, a file not found, a second undo moving nothing.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:13-59"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-3",
+   "good": "Each item in Why sets what tidy-downloads gives against a named other way. One command against dragging each file by hand. Seeing every destination first against a mv script that moves as it runs. Never moving onto a same-named file against mv, which overwrites unless told not to. Undoing the files of the last move in one command against a file manager's undo of one drag at a time, and mv, which has no undo. No item is a benefit that every way gives.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:70-80"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-4",
+   "good": "Judged for this stage, against docs/ux.md and not by running anything. Each requirement says what it is, how to tell whether I already have it, and more than one way to get it. For Python 3 that is python3 --version, python.org or any way I like. For curl, a browser does the same. Installation gives every command in a block to copy: make ~/.local/bin, fetch the one file, make it runnable. There is a way without curl, a check that the terminal finds the command, and the PATH line for zsh, for bash on Linux and for bash on macOS, with how to tell which shell I have. It ends by sending me to the Example's preview and --move, the first result in docs/ux.md. Running the install, the Example and the download address is left to the build stage, as the use says.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:82-140"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-5",
+   "good": "Documentation names fuller use (tidy-downloads --help) and what changed in each version (the commit history, with its full address). Development is a section of its own with one link, docs/architecture.md, set apart from Documentation. License names the MIT License in the README itself. Opening these places is left to the build stage, as the use says.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:142-153"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-6",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:1-10",
+     "good": "Read once from the top, the opening is clear. 'Kind' is shown by Images, Documents and Archives. The preview is said without the word 'move' ('where each file would go before it moves any'). 'Its last move' is said right away to put back 'the files that run moved', so I know undo puts back the whole last run and not one file.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:3-9"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:11-67",
+     "good": "The starting folder is given first. Then each command is in a block with its output, and each line of output I might not follow (Other, the file that stays, the folders made) is explained right after it. Each undo case is said with what happens in it and what the tool says. Sorting another folder is shown as commands to copy.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:13-66"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:68-81",
+     "good": "Each item reads alone and names the other way it is set against, in words a terminal user knows: dragging by hand, a mv script, a file manager's undo.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:70-80"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:82-94",
+     "good": "Each requirement comes with how to tell whether I have it and how to get it. 'The file' curl fetches is read as the script named just above it.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:84-93"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:95-141",
+     "good": "Each step is a command in a block, in the order I run it. Each 'if' (no curl, nothing printed, which shell) comes with what to do in that case.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:97-140"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:142-146",
+     "good": "Two sentences, each naming a place: --help, and the commit history with its address.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:144-145"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:147-150",
+     "good": "One link that says where to start.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:149-149"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:151-153",
+     "good": "Names the license.",
+     "lines": [
+      "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:153-153"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-7",
+   "good": "Each sentence gives me something no other one does. The opening gives the idea, the gain and whom it is for. The Example shows the run and what it prints, and the undo cases tell what happens to a file that cannot be put back. Why adds only the contrast with doing it by hand, with mv and with a file manager. Installation points to the Example for the first use and does not repeat its steps. Documentation, Development and License only point on. Nothing is meant for a reviewer or tells how a decision was reached.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:3-9",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:13-66",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:70-80",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:84-140",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:144-153"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/product/readme.md",
+   "item": "B-8",
+   "good": "Every promise holds against docs/ux.md. I took the case that broke the last version: after --move, a new beach.jpg is downloaded into ~/Downloads, then --undo is run. Lines 56-58 now say that file stays in its kind's folder, the folder stays with it, and the tool says so. A file moved out by hand is reported as not found. Both match the Undoing scene (ux lines 119-133), and line 79 now says 'the files of the last move' in place of 'every file'. 'Move' as a noun now names only one run of --move (lines 6, 45, 55-59, 79), and the preview is said without the word (line 5). 'Never deletes, renames, overwrites or changes a file' holds beside undo removing empty folders, which are not files. Nothing says 'not yet' or 'for now'.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:3-9",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:45-59",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/README.md:72-80"
+   ]
+  }
+ ]
+}

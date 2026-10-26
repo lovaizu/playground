@@ -2,11 +2,11 @@
 
 tidy-downloads moves each file directly in your Downloads folder, or in another folder you name,
 into a folder named for its kind, leaving in place one whose name is already taken there; it shows
-every move before making it, never deletes, renames, overwrites or changes a file, and can put the
-last move back. It is a command you type in a terminal: you then find a downloaded file by opening
-the folder for its kind, such as Images, Documents or Archives, in place of searching one long
-list. It is for people on macOS or Linux who type commands in a terminal and whose Downloads folder
-fills up.
+where each file would go before it moves any, never deletes, renames, overwrites or changes a file,
+and can undo its last move, putting back the files that run moved. It is a command you type in a
+terminal: you then find a downloaded file by opening the folder for its kind, such as Images,
+Documents or Archives, in place of searching one long list. It is for people on macOS or Linux who
+type commands in a terminal and whose Downloads folder fills up.
 
 ## Example
 
@@ -53,8 +53,10 @@ Removed empty folders: Images, Archives, Other
 ```
 
 The files are back in `~/Downloads` as they were before the move, and the folders the move made
-are gone. Running `tidy-downloads --undo` a second time moves nothing, as only the last move is put
-back, once.
+are gone. A file stays in the folder of its kind, and that folder with it, if a file of the same
+name has come into `~/Downloads` since the move, and tidy-downloads says so; a file you have moved
+out of that folder yourself is not put back, and tidy-downloads says it was not found. Running
+`tidy-downloads --undo` a second time moves nothing, as only the last move is put back, once.
 
 To sort another folder, add its path at the end:
 
@@ -74,7 +76,7 @@ tidy-downloads --move ~/Desktop
   A script of `mv` commands overwrites such a file unless told not to; tidy-downloads leaves the
   file where it is and says why.
 
-- `tidy-downloads --undo` puts back every file of the last move in one command, where undo in a
+- `tidy-downloads --undo` puts back the files of the last move in one command, where undo in a
   file manager takes back one drag at a time and `mv` has no undo.
 
 ## Requirements

@@ -25,13 +25,6 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Tasks
 
-- T2: The README, the repository's `README.md` rewritten for the tool. Serves AC7.
-
-  Completion criterion: from `README.md` alone, a newcomer can tell whom the tool is for and what they gain, as `docs/ux.md` has it, and can follow how to install it and how to use it to a first result, so that every item of the README checklist holds, as a first reader in a newcomer's place finds.
-
-  - [x] 1. How the tool is installed on macOS and Linux. The orchestrator, with the user.
-  - [ ] 2. The README, from `docs/ux.md` and the way of installing settled in action 1, `README.md` as a readme work. turn.
-
 - T3: The architecture, `docs/architecture.md`. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC8 and AC9.
 
   Completion criterion: from `docs/architecture.md`, whoever builds the tool can tell the user stories drawn from `docs/ux.md`, the parts that take them on, the technology of each, where the record that undo reads is kept, and how each part and story is checked on a test folder, never the real Downloads folder, so that every item of the architecture checklist holds, as a first reader in a builder's place finds.
@@ -41,9 +34,9 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 3 of /rn:up on t2.2: settle with the user how the README run ends, then answer turn or call it again
+Step 4 of /rn:up on T2: weigh what it brought, then T3
 
 ## Open
 
-- turn's run on README.md left B-4, B-5 and B-8 without Good for four rounds: its first user, given only README.md, docs/ux.md and the checklist, checks what is online today (the download address and docs/architecture.md give 404, --help and the Example cannot run), so decision 'What the README is checked against now' does not reach it
-- The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decision 'What the README is checked against now' of t2.2); the build-stage plan must carry this
+- The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decisions 'What the README is checked against now' and 'How the README run ends' of t2.2); the build-stage plan must carry this
+- The LICENSE file for the MIT license (decision 'License' of t2.2) is not yet made; the build-stage plan must carry it
