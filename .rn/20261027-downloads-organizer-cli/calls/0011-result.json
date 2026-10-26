@@ -1,0 +1,73 @@
+{
+ "work": [
+  ".rn/20261027-downloads-organizer-cli/trial-rename.md",
+  ".github/workflows/tests.yml"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+   "item": "B-1",
+   "good": "From the opening I can tell the way tried (one rename call the system refuses at a taken name: renameat2 with RENAME_NOREPLACE on Linux, renamex_np with RENAME_EXCL on macOS, through ctypes), the point it serves (T4 of steering.md, the Mover of docs/architecture.md), and a check that does not depend on who reads it: two cases, each with its files before and an exact return value, errno and files after. The check says it was set before the run, and git agrees: it is already in the file at commit aad8f52, before run 40378817689. The result table gives the verdict per system, each limited to where it was run (this environment, ubuntu-latest, macos-latest), so it is no wider than the try. I ran the Linux trial myself and got both cases PASS with exit 0. The run log shows the same PASS lines on both runners, so the verdict holds.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md:1-14",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md:15-25",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md:26-33"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+   "item": "B-2",
+   "good": "I ran it again from what it says alone. The command at lines 47-51, run from the repository, printed the same lines as lines 56-62 (only the random folder name differs) and exit 0. The script is in the workflow at lines 23-95. Its link goes to commit f32a63b, and the file there has the same blob (1b93a85) as the local one. The setup and the inputs are in the script and in the Check table. Versions are given for each system: Python, OS, libc, file system, runner image and image version. `gh run view 40378817689 -R lovaizu/playground --log` gives exactly the output shown at lines 76-80 and 86-91, image macos-26-arm64 20261013.0424.1 and ubuntu-24.04 20261012.334.1, head commit f32a63b on downloads-organizer-cli by push, and both jobs succeeded. The Trial step succeeded and Tests was skipped, as line 95 says. The checkout SHA 11d5960 is the v4.4.0 tag of actions/checkout.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md:34-96",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.github/workflows/tests.yml:1-95"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+   "item": "B-3",
+   "good": "I can tell what was not covered: file systems other than APFS, overlayfs and the ext family (USB drives, network folders), what happens then under the architecture, Intel Macs and older macOS, a libc without renameat2, the move back of --undo, and no race against another program. I can also tell the one failure on the way: run 40378426948 stopped before any step because checkout was not pinned to a SHA. `gh run view 40378426948` shows that same message on both runners, and the fix (pinning to v4.4.0) is told. The only other thing in the run is a Node.js 20 deprecation warning on checkout. It bears on nothing tried and is not something the maker worked around.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md:97-116",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md:94-95"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+   "item": "B-4",
+   "good": "Each line serves the decision or the building. The opening names the way and the point. The Check and Result tables carry the verdict. The commands and outputs are short, and the verdict rests on their PASS lines and versions. Lines 94-95 explain the 'ext2/ext3' label and the skipped step, which a reader of the log would otherwise wonder about. The limits section tells the builder where the way is untried. The failed first run is kept only because B-3 asks for failures on the way, and it is said once. The script is not copied into the trial file but pointed to in the workflow. No dropped attempts are told.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md:1-116",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.github/workflows/tests.yml:21-22"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/session/trial.md",
+   "item": "B-5",
+   "good": "Each term the reader may not know has a line that shows its meaning. 'One-step rename that refuses a taken name' is explained at lines 5-7. ctypes is explained at lines 12-13. EEXIST is glossed as \"file exists\" at line 24. 'ext2/ext3' is explained at line 94. --undo, 'move run' and 'kind folder' are the architecture's and UX's words, which the receiver has beside the trial through docs/architecture.md and its link to the UX's Scenes. AT_FDCWD appears only inside the printed call line, and the verdict does not need its meaning.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md:5-13",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md:24-24",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/trial-rename.md:94-95"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The trial's script lives inline in the workflow step 'Trial of the one-step rename', not as a file of its own, and the trial result points to its lines at commit f32a63b.",
+   "why": "The work names only the workflow and the result as files to write; one copy of the script, run both here and on the runners, keeps the run and its record from drifting apart, and the commit link still reaches it once the step is taken out of the workflow."
+  },
+  {
+   "chosen": "The workflow runs on push to any branch and on workflow_dispatch, on ubuntu-latest and macos-latest, with a Tests step that runs only when tests/ exists, by the command docs/architecture.md gives.",
+   "why": "Push alone runs it on each change without a second run for the open pull request; the Tests step stays ready for the tool's tests, as the CCS keeps the workflow for them, without failing before they are there."
+  },
+  {
+   "chosen": "actions/checkout is pinned to 11d5960a326750d5838078e36cf38b85af677262, the commit of its latest v4 release, v4.4.0.",
+   "why": "The repository refuses actions not pinned to a full commit SHA; the latest v4 keeps the major version first written."
+  },
+  {
+   "chosen": "The check is two cases, a file moved into images/ at a free name and at a taken name, in a folder made under the home.",
+   "why": "That is the move a move run makes, into a kind folder of a folder under the home, and the steering's completion criterion asks exactly these two outcomes."
+  }
+ ]
+}

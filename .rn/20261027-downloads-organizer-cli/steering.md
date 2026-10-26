@@ -53,22 +53,10 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
   Support/organize-downloads` on macOS), one record for each folder, so the organized folder gains no
   file of the tool's.
 
-## Tasks
-
-- T4: A trial of the one-step rename that refuses a taken name, on Linux and on macOS. Serves AC1, AC4, AC6, AC10.
-
-  Completion criterion: The trial result tells, for Linux as run in this environment and for macOS as
-  run on a GitHub Actions macOS runner, whether `renameat2` with `RENAME_NOREPLACE` and `renamex_np`
-  with `RENAME_EXCL`, called through Python's `ctypes`, move a file to a free name, and refuse a taken
-  name leaving both files as they were, so the architecture `docs/architecture.md` can be kept or
-  changed on it before the tool is built.
-
-  - [ ] 1. The trial, with the GitHub Actions workflow it runs on macOS, from the architecture `docs/architecture.md`, `.rn/20261027-downloads-organizer-cli/trial-rename.md` as a trial work. turn.
-
 ## Next
 
-Step 3 of /rn:up on t4.1: hand the run waiting the ID of the GitHub Actions run of the pinned workflow
+Step 4 of /rn:up on T4: weigh what it brought
 
 ## Open
 
-- turn asks again to push .github/workflows/tests.yml, now naming actions/checkout by its full commit SHA (v4.4.0), as run 40378426948 stopped on both runners: the repository allows only actions pinned to a full SHA. This move pushes it.
+None.
