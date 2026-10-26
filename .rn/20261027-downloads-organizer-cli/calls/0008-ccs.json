@@ -13,6 +13,9 @@
    "path": "docs/architecture.md"
   },
   {
+   "path": "docs/architecture.svg"
+  },
+  {
    "audience": "the user approving the architecture at the design sign-off, and whoever builds the tool and its tests to it"
   },
   {
@@ -73,6 +76,12 @@
  ],
  "constraints": [
   {
+   "decision": "Rules for checking: The project has no document of rules for how parts and user stories are checked, and none is to be made: the architecture's Test section itself says only what AC7 already asks, that the checks are automated tests in this repository, run on a test folder and a stand-in home, so they never touch the real Downloads folder or the user's own record of a last run."
+  },
+  {
+   "chosen": "docs/architecture.svg is a second path of the work: the architecture checklist asks the Logical view to be one figure drawn by hand as an SVG file beside the document, shown in it as an image."
+  },
+  {
    "artifact-language": "English"
   },
   {
@@ -80,9 +89,6 @@
   },
   {
    "fix": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
-  },
-  {
-   "decision": "Rules for checking: The project has no document of rules for how parts and user stories are checked, and none is to be made: the architecture's Test section itself says only what AC7 already asks, that the checks are automated tests in this repository, run on a test folder and a stand-in home, so they never touch the real Downloads folder or the user's own record of a last run."
   }
  ]
 }
