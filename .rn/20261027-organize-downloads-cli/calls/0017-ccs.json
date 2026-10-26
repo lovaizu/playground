@@ -25,6 +25,15 @@
    "path": "organize-downloads/src/organize_downloads/type_table.py"
   },
   {
+   "path": "organize-downloads/tests/test_mover.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_cli.py"
+  },
+  {
+   "path": "organize-downloads/tests/test_record.py"
+  },
+  {
    "audience": "whoever runs the tool and whoever maintains it, a person or an AI"
   },
   {
@@ -83,6 +92,9 @@
   },
   {
    "chosen": "the CCSs of T3.2 and T3.3 handed: their decisions, Python 3.10, the standard library alone, the Linux stop and the mutants left, hold for this code too"
+  },
+  {
+   "chosen": "tests/test_mover.py, test_cli.py and test_record.py added to the work: the moving brings behaviors no T4.1 test holds, such as a record write failing after a move, and a test for each comes in the same change"
   },
   {
    "artifact-language": "English"
