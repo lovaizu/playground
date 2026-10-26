@@ -5,6 +5,28 @@
   },
   {
    "stage": "plan"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261026-organize-downloads/calls/0001-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -34,6 +56,15 @@
   },
   {
    "decision": "Kinds and folder names: Files are sorted into six folders: Images (such as jpg, png, gif, heic, webp, svg), Documents (such as pdf, docx, xlsx, pptx, txt, md, csv), Archives (such as zip, tar, gz, 7z, rar), Installers (such as dmg, pkg, deb, rpm, AppImage), Audio (such as mp3, wav, m4a) and Videos (such as mp4, mov, mkv). The full list of extensions for each is still to be settled in the design."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7t59k26j/rn/checklists/fix.md"
   }
  ]
 }
