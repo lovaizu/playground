@@ -1,8 +1,8 @@
 ---
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/15
-stage: plan
-signoff: plan
+stage: design
+signoff: none
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -27,7 +27,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 5 of /rn:up on plan: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
+Step 9 of /rn:up on plan: hear which documents the purpose needs
 
 ## Open
 
