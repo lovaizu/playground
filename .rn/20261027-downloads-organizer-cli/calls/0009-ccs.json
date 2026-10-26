@@ -1,0 +1,21 @@
+{
+ "focal_entities": [
+  {
+   "work": "t3.1"
+  },
+  {
+   "stage": "design"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Rules for checking: The project has no document of rules for how parts and user stories are checked, and none is to be made: the architecture's Test section itself says only what AC7 already asks, that the checks are automated tests in this repository, run on a test folder and a stand-in home, so they never touch the real Downloads folder or the user's own record of a last run."
+  },
+  {
+   "chosen": "docs/architecture.svg is a second path of the work: the architecture checklist asks the Logical view to be one figure drawn by hand as an SVG file beside the document, shown in it as an image."
+  },
+  {
+   "decision": "Moving without hard links: The tool moves a file only by a hard link at the new name and then taking away the old name, with no other way of moving: on a file system without hard links, such as FAT, exFAT or many network shares, nothing is moved and each file is shown left in place with the system's reason."
+  }
+ ]
+}
