@@ -5,6 +5,34 @@
   },
   {
    "stage": "build"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261027-organize-downloads-cli/calls/0009-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/calls/0005-ccs.json"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/calls/0007-ccs.json"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -76,6 +104,15 @@
   },
   {
    "decision": "Extensions per folder: Extensions are matched without regard to case, by the last extension of the name (report.tar.gz by gz). Images: jpg jpeg png gif webp heic heif bmp tif tiff svg ico psd raw cr2 nef arw dng. Documents: pdf doc docx xls xlsx ppt pptx odt ods odp rtf txt md csv tsv pages numbers key epub. Archives: zip tar gz tgz bz2 xz zst 7z rar. Audio: mp3 wav flac aac m4a ogg opus aif aiff wma mid midi. Video: mp4 mov mkv avi webm m4v wmv flv mpg mpeg 3gp. Installers: dmg pkg deb rpm appimage flatpak snap iso msi exe. Others: every other file, one with no extension included."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
   }
  ]
 }
