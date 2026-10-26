@@ -50,6 +50,9 @@
   },
   {
    "decision": "License and the places of fuller use and of changes: The tool is offered under the MIT license, at organize-downloads/LICENSE. Fuller use is written in organize-downloads/docs/usage.md and the changes of each version in organize-downloads/CHANGELOG.md, both still to be made with the tool; the README's Development links to organize-downloads/docs/architecture.md, made by T2."
+  },
+  {
+   "decision": "Copyright line of the license: The MIT license at organize-downloads/LICENSE reads \"Copyright (c) 2026 lovaizu\"."
   }
  ]
 }
