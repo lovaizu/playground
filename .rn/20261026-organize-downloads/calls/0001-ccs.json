@@ -10,6 +10,9 @@
  "constraints": [
   {
    "decision": "Purpose: Files pile up in Downloads so the wanted file cannot be found; the tool is to make it findable again"
+  },
+  {
+   "decision": "How files are organized: Move each file into a folder for its type (images, documents, archives, installers, ...), the type decided by its extension"
   }
  ]
 }
