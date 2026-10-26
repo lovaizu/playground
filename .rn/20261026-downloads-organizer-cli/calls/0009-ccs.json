@@ -37,6 +37,9 @@
   },
   {
    "decision": "Architecture document: The purpose needs an architecture, docs/architecture.md, of kind architecture"
+  },
+  {
+   "decision": "Shortening done tasks' decisions: Put T1 to T3 back into the plan to shorten their long decisions, then tick them done without remaking the documents"
   }
  ]
 }
