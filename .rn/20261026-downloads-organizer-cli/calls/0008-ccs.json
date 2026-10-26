@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "t3.2"
+  },
+  {
+   "stage": "design"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Where the undo record is kept: The record that undo reads is a hidden file inside the folder sorted, such as ~/Downloads/.tidy-downloads-last, which the tool itself never moves"
+  }
+ ]
+}
