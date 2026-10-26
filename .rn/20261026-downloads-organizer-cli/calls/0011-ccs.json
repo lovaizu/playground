@@ -41,6 +41,9 @@
   },
   {
    "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
+  },
+  {
+   "decision": "What the issue asks to change: turn:up's hook should let a run's first start through, as it lets the same call through when sent again; met where step 3 of /rn:up starts turn:up"
   }
  ]
 }
