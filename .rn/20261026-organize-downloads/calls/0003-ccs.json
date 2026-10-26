@@ -46,6 +46,9 @@
   },
   {
    "decision": "Design documents: The purpose needs two documents: a README, of kind readme, saying how to install and use the tool and listing the full extensions of each kind; and an architecture, of kind architecture, saying the parts of the tool, how the record of the last move is kept, and how each part is checked. No UX: the README's example gives the scene of use. Each document's path is still to be settled."
+  },
+  {
+   "decision": "Where the tool and its documents are placed: The tool, its tests and its documents are kept together in the folder organize-downloads/: the README at organize-downloads/README.md and the architecture at organize-downloads/docs/architecture.md. The repository's own README.md stays as it is."
   }
  ]
 }
