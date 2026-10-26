@@ -10,6 +10,9 @@
  "constraints": [
   {
    "decision": "Language: The tool is written in Python, with its standard library alone; on macOS the user installs Python 3 first, such as with Xcode's command line tools or Homebrew."
+  },
+  {
+   "decision": "How it is installed: The user installs the tool from GitHub with pipx in one line, pipx install \"git+https://github.com/lovaizu/playground#subdirectory=organize-downloads\", which puts the command on PATH and updates and removes it in one line too; pipx is installed first, such as with brew install pipx on macOS or apt install pipx on Linux, and uv tool install works the same way for those who use uv."
   }
  ]
 }
