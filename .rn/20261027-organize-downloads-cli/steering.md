@@ -27,16 +27,6 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Tasks
 
-- T3: The installable organize-downloads command whose run with nothing added lists where each file would go and changes nothing, with its tests and the GitHub Actions workflow that runs them. Serves AC1, AC3, AC5, AC6, AC7.
-
-  Completion criterion: Installed as the README says, organize-downloads typed with nothing added, or with a folder given last, lists each file directly in that folder with the type folder AC3 gives it, lists no folder, hidden file or file still being downloaded, and leaves every file and folder there as it was; the tests action 2 makes hold each of these and pass here on Linux, and in the GitHub Actions run of the push on macOS and Linux.
-
-  Test: `uv run --no-cache --isolated --no-project --with ./organize-downloads python3 -m unittest discover -s organize-downloads/tests -t organize-downloads`
-
-  - [x] 1. Settle with the user which extensions go to each type folder, the list AC3 holds. The orchestrator, with the user.
-  - [x] 2. Make the tests of the run with nothing added from AC1, AC3, AC5 and AC6, as the architecture's Test section says, and see them fail on what is there, `organize-downloads/tests` as a code work. turn.
-  - [ ] 3. Make the command, its package and the workflow from the architecture until the tests of action 2 pass, `organize-downloads` as a code work. turn.
-
 - T4: The run with --apply, moving each listed file into its type folder. Serves AC2, AC4, AC7, AC10.
 
   Completion criterion: organize-downloads --apply moves each file the run with nothing added lists into its type folder inside the organized folder under the same name, making the folder where it is missing, and records the moves in the organized folder's hidden record file; it leaves a file whose name is taken in its type folder where it is and says so; where hard links cannot be made it moves nothing and says so; it deletes nothing and changes nothing outside the organized folder; the tests action 1 makes hold each of these and pass here on Linux, and in the GitHub Actions run of the push on macOS and Linux.
@@ -63,8 +53,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 3 of /rn:up on t3.3: ask turn's question on the two surviving mutants, then send the answer to the run waiting
+Step 4 of /rn:up on T3: weigh what it brought, the GitHub Actions run of the push on macOS and Linux first
 
 ## Open
 
-- turn asks for t3.3 (code B-6): whether two mutants that change no behavior (organize.py:37 follow_symlinks=None, type_table.py:39 the empty extension) are left with a one-line comment beside each; recommended: yes
+None.

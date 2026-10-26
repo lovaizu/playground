@@ -36,6 +36,8 @@ def last_extension(name: str) -> str:
     """Take in a file name; give back what follows its last dot, in lower case, so extensions
     match without regard to case; "" for a name with no dot or nothing after its last dot."""
     _, dot, extension = name.rpartition(".")
+    # Mutation testing's "XXXX" for "" changes no behavior: no type folder's extension and no
+    # downloading ending is "xxxx", so the file still goes to Others and is not downloading.
     return extension.lower() if dot else ""
 
 

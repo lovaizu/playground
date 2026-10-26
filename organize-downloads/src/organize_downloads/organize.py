@@ -34,6 +34,7 @@ def plan_moves(folder: Path) -> list[Move]:
     with os.scandir(folder) as entries:
         for entry in entries:
             if (
+                # Mutation testing's None for False changes no behavior: None is false too.
                 entry.is_file(follow_symlinks=False)
                 and not entry.name.startswith(".")
                 and not type_table.is_still_downloading(entry.name)
