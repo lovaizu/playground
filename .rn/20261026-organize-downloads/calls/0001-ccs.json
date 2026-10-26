@@ -19,6 +19,9 @@
   },
   {
    "decision": "Name already taken at the destination: Leave that file in Downloads unmoved and show on screen that it was left"
+  },
+  {
+   "decision": "Done when: Run once on a test Downloads holding many kinds of files, every file directly in it is moved into its type folder (a name clash is left and shown) and none is deleted, renamed or overwritten; run with nothing given it only shows what it would move and moves nothing, moving only when told to; it works on macOS and Linux; a README gives install and usage; tests check all of these"
   }
  ]
 }
