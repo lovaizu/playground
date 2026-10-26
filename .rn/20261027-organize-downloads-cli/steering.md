@@ -33,7 +33,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
   Test: `uv run --isolated --no-project --with ./organize-downloads python3 -m unittest discover -s organize-downloads/tests -t organize-downloads`
 
-  - [ ] 1. Settle with the user which extensions go to each type folder, the list AC3 leaves still to be settled. The orchestrator, with the user.
+  - [x] 1. Settle with the user which extensions go to each type folder, the list AC3 leaves still to be settled. The orchestrator, with the user.
   - [ ] 2. Make the tests of the run with nothing added from AC1, AC3, AC5, AC6 and the list of action 1, as the architecture's Test section says, and see them fail on what is there, `organize-downloads/tests` as a code work. turn.
   - [ ] 3. Make the command, its package and the workflow from the architecture until the tests of action 2 pass, `organize-downloads` as a code work. turn.
 
@@ -63,7 +63,7 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T3: action 1, settle with the user which extensions go to each type folder
+Step 4 of /rn:up on T3: action 2, have turn make the tests of the run with nothing added
 
 ## Open
 
