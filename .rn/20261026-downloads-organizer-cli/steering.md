@@ -25,8 +25,8 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 9 of /rn:up on plan: hear which documents the purpose needs
+Step 9 of /rn:up on plan: hear which documents the purpose needs, UX first, then README, then architecture
 
 ## Open
 
-None.
+- Whether the purpose needs a UX document, and at which path
