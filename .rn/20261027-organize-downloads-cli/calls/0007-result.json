@@ -1,0 +1,99 @@
+{
+ "work": [
+  "organize-downloads/docs/architecture.md",
+  "organize-downloads/docs/architecture.svg"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "F-1",
+   "good": "The document follows the template from top to bottom: the title, a one-sentence opening on how the tool is put together that links the README as the UX, its own principles each in one line with the why indented under it after a blank line (it is built on no base architecture, so it has none to link), User stories in the 'As the user, I want' form, Architecture with a Logical view (the SVG shown as an image, then lines for what the figure cannot show) and a Physical view (a tree, then lines on dependencies and how it starts), and Test (a line saying the repository has no rules, then the checks this product sets). Every list line is one sentence that reads on its own, and nothing is in bold. The figure has one box for each component holding only its name, a square code shape and a rounded dashed shape for things outside, a legend, and a frame round the product. I traced every arrow's path: each is labelled in a few words, they run left to right in the order they act, none cross, and a prefers-color-scheme block gives dark colours.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:1-17",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:18-30",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:31-115",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:116-135",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.svg:1-117"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-1",
+   "good": "From the opening I know the tool is one Python command that works out the moves first and makes them only when told, recording each move so undo can reverse it, and that the UX is in the README. I also get four principles that every later line is held to: nothing moves without --apply; the tool only moves the user's files into type folders and back, and never overwrites, renames or deletes them; nothing outside the organized folder changes; and the tool runs only when typed and needs nothing beyond Python's own runtime. Each principle is a rule, not a tool or a format.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:3-16"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-2",
+   "good": "Every scene of the README rests on one of the stories: install with pipx or uv (Installation), list the moves for Downloads or a folder given (Example and the other-folder commands), move with --apply, list what undo would put back, put back with undo --apply, and read --help for what is left in place and which extensions go where (Documentation). Each story is something the user does at the command's edge, none repeats another, and none is named after a technology inside the tool. pipx and uv are named because the user types them in the README.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:20-29"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-3",
+   "good": "Each story has a run of arrows plus a line giving the order. Install: pipx or uv puts Command line on the PATH. Listing: Command line asks Folder finder for the folder, then Organize planner lists the files and looks up each extension in Type table, setting apart files whose name is already taken and leaving in place folders, hidden files and unfinished downloads (whose endings Type table also holds). Applying: Command line hands the moves to Mover, which makes the folders, moves the files, writes each move to Run record and hands back what it did not move to be printed. Undo listing: Undo planner reads the last moves from Run record and checks each file against the folder. Undo applying: Mover moves the files back and leaves the record empty, so a second undo finds nothing. --help is written from Type table. The lines also explain the choices I would question: hard link then remove the old name, why it stops on file systems without hard links, the record replaced by rename, one Mover shared by organizing and undo, and reading the xdg-user-dirs file instead of running a program. With AC9 beside it I can tell the undo check means 'still in its type folder' and 'original name free'. No component or path serves only one case.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:35-85",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.svg:33-108"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-4",
+   "good": "Every component in the figure has its own file in the tree with what it is made of beside it (cli.py Command line with Python 3 and argparse, folder.py, type_table.py, organize.py, undo.py, mover.py, record.py with json). The tree also places pyproject.toml (setuptools), the workflow (YAML), the tests (unittest) and Run record's file .organize-last-run (JSON) inside the organized folder. The lines under it give the outside dependencies (Python 3 and its standard library at run time, setuptools from PyPI to build) and how it starts (the console script calls main in cli.py). I tried the argparse choice: argparse subcommands reject the README's 'organize-downloads ~/Desktop', but a positional list read with parse_intermixed_args takes every README form, so argparse can realize Command line.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:89-114"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-5",
+   "good": "The section says the repository has no rules for checking code or user stories, so there is nothing to link, and it sets this product's own. Each code module gets unittest tests written as Given, When, Then on a temporary folder. The user stories are tested end to end through the installed command in test_stories.py. GitHub Actions runs both on ubuntu-latest and macos-latest on every push, which is what AC7 asks. I get the exact install and test commands. No case's inputs or bar to pass are written here; those are left to the tests.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:118-135"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-6",
+   "good": "Each line holds with the principles. Only Mover and Run record write, so a run without --apply changes nothing. The move by hard link fails rather than overwrite: I ran os.link onto a name already taken and got EEXIST. Where hard links cannot be made, the tool moves nothing and tells the user, rather than rename. Undo empties Run record's file instead of deleting it, matching 'deletes nothing'. The one rename is of the tool's own file, which matches 'renames none of the user's files'. The record lives inside the organized folder, matching 'nothing outside changes'. Reading the xdg-user-dirs file keeps 'runs no other program'. The tests use temporary folders, so they never touch the user's Downloads. The Undo planner's check keeps files that are gone out of what Mover is handed, so Mover stopping on a failed link does not undo AC9's 'puts the other files back'.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:7-16",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:46-85",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:121-124"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-7",
+   "good": "Each line is a decision that would change what is approved if it changed: which component does which step, where the downloading endings are kept, that only Mover writes, hard link and stop where links fail, how the record is replaced, one shared Mover, reading the xdg file, the file layout, and the test kinds and CI matrix. The examples it gives (a download that just finished, exFAT or FAT32) make a decision's reach clear rather than repeat an idea I already have. No list of extensions, count or step-by-step case behaviour is written here; the README's commands and outputs are linked, not copied; and there is no history or status.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:1-135"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/architecture.md",
+   "item": "B-8",
+   "good": "Reading once from the top, I understood each line where I met it. The UX terms (type folder, --apply, undo) come from the README, which the opening links. 'Organized folder' reads plainly as the folder being organized and is pinned down at line 40-41. xdg-user-dirs is linked and explained in the same line. Each component keeps one name throughout, matching the figure, and Run record (the component) is kept apart from its file. Each why comes after the line it explains, never before.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:3-5",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:38-85",
+    "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/docs/architecture.md:107-108"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "Mover finds that hard links cannot be made by the link failing, stopping at the first link that fails for a reason other than the name being taken, rather than by a check of the file system made before moving.",
+   "why": "On a file system without hard links no link ever succeeds, so the stop comes before any move and nothing is moved, as the user decided; a check made first would need a file of the tool's own made and removed in the organized folder, against 'deletes nothing', or asking the system for the file system's kind, which differs between macOS and Linux."
+  },
+  {
+   "chosen": "A type folder Mover made before the first link failed stays, empty.",
+   "why": "The tool deletes nothing in the organized folder, its own making included, and an empty type folder is what undo already leaves (AC10)."
+  }
+ ]
+}

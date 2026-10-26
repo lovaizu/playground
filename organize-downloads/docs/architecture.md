@@ -64,6 +64,13 @@ types is in the [README](../README.md).
 
   The link fails where the name is already taken, even by a file that came after the moves were
   worked out, such as a download that just finished, so no file of the user's is ever overwritten.
+- Mover stops at the first link that fails for a reason other than the name being taken, and hands
+  back that reason with the files it did not move, for Command line to print.
+
+  Where the organized folder is on a file system that cannot make hard links, such as a USB drive
+  formatted exFAT or FAT32, every link fails, so there the tool moves nothing and tells the user
+  so, rather than move by a rename that could overwrite; a type folder it made stays, empty, as the
+  tool deletes nothing.
 - Run record writes its file by writing a new one beside it and renaming it over the old, the one
   file the tool replaces, being its own and not the user's.
 

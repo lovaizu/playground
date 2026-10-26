@@ -25,18 +25,10 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 - AC10: The tool only moves files and never deletes anything: after any run, organizing or undo, each file that was in the organized folder or in its type folders before the run is still in one of them under the same name, and every folder is still there, a type folder that undo leaves empty included.
 - AC11: A README says how to install the tool and how to use it.
 
-## Tasks
-
-- T2: The architecture, saying the parts the tool is made of, the technology each uses and how AC1 to AC10 are checked by tests that GitHub Actions runs on macOS and Linux. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC9, AC10.
-
-  Completion criterion: Whoever builds the tool can build and test each of AC1 to AC10 from the architecture and the README alone, with nothing about how the tool is put together left to their guess, and the user at the design sign-off can approve how it will be made; an AI that did not write it finds this so, using it in their place against the architecture checklist.
-
-  - [ ] 1. Make the architecture from the plan and the README of T1, `organize-downloads/docs/architecture.md` as an architecture work. turn.
-
 ## Next
 
-Step 2 of /rn:up on t2.1: ask how Mover moves where hard links are not available, then step 3 on t2.1 again
+Step 4 of /rn:up on T2: weigh what it brought
 
 ## Open
 
-- organize-downloads/docs/architecture.md:62-66: Mover moves by hard link then removing the old name, a choice no answer of the user's made; a hard link fails on file systems without them, such as a USB drive formatted exFAT or FAT32, so a folder given there (AC6) could not be organized
+None.
