@@ -1,0 +1,46 @@
+{
+ "focal_entities": [
+  {
+   "work": "t1.1"
+  },
+  {
+   "stage": "design"
+  },
+  {
+   "kind": "ux"
+  },
+  {
+   "path": "docs/ux.md"
+  },
+  {
+   "audience": "the user approving the UX at the design sign-off, and whoever makes the README and the architecture to it"
+  },
+  {
+   "has": ".rn/20261027-downloads-organizer-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving who uses the tool, what they do and see and what they gain, then building the README and the architecture on it without asking the user again"
+  },
+  {
+   "serves": "G1: A command-line tool for macOS and Linux that moves the files directly in the user's Downloads folder into folders by kind, and can move back what its last run moved, because today the user cannot quickly find the file they are looking for there and wants to find it by what kind of file it is; the tool itself, not a setting, makes sure no file is ever deleted, renamed or overwritten."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/product/ux.md"
+  }
+ ],
+ "constraints": [
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+  }
+ ]
+}
