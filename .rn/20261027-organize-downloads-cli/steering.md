@@ -53,8 +53,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T3: weigh what it brought, the GitHub Actions run of the push on macOS and Linux first
+Step 3 of /rn:up on t3.3: have the workflow made again with its actions pinned to full commit SHAs, then see the GitHub Actions run pass
 
 ## Open
 
-None.
+- .github/workflows/organize-downloads.yml:18-19: GitHub Actions run 40407400092 failed on every job before any step: 'The actions actions/checkout@v7 and actions/setup-python@v7 are not allowed in lovaizu/playground because all actions must be pinned to a full-length commit SHA.'
