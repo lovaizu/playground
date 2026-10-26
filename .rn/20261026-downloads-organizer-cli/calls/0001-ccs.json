@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "plan"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "What organizing does: Move only the files directly in Downloads into folders by kind, such as images, documents and archives; never delete, rename or overwrite any file"
+  }
+ ]
+}
