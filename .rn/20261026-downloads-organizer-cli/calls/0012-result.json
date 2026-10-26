@@ -1,0 +1,41 @@
+{
+ "work": [
+  ".rn/20261026-downloads-organizer-cli/issue-3.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "F-1",
+   "good": "The issue follows the template heading for heading, in English: a title line `# rn: <what happens>`, then `## What happened` with a quoted learning, `## Why it matters` with the cost to a user, `## What it should be` naming rn's command, script and skill steps, and `## Seen in` with `rn 0.9.0`. I checked that version against rn's manifest: /tmp/rn/20261026-acceptance-7vc7gbjm/rn/.claude-plugin/plugin.json gives \"version\": \"0.9.0\". rn can send the first line as the title and the rest as the body.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-3.md:1-26"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-1",
+   "good": "As a maker I can tell what to change and where. The title says what rn does, not a slip of one session: the five-decision limit is only applied at the sign-off, after the task is done. Lines 19-22 name the change, `rn.py decide` refusing a decision past `MOST` in `scripts/proposal.py` while the task is open, and the steps it moves the check between, step 2 and step 5 of `skills/up/SKILL.md`. I checked each against rn. scripts/proposal.py:41 sets `MOST = 5` and `simple()` stops past it with 'settle its points again more simply with the user, have turn make it again'. scripts/rn.py `run_decide` (lines 164-214) has no count limit, and for a task's work it calls `session.made_by`, which stops when the steering no longer holds the action. scripts/steering.py:561 drops tasks whose actions are all ticked, so a done task's work is refused. SKILL.md step 2 is where decisions are kept with `rn.py decide`, and step 5 is where `rn.py proposal` stops. Lines 11-15 give the cost to any user whose document needs more than five points settled: the design sign-off cannot be shown or approved, the work already made is stranded, and no step is left to recover.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-3.md:1-1",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-3.md:11-15",
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-3.md:19-22"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-2",
+   "good": "What happened is told as one quote of the learning, and that quote is only about rn: `rn.py decide`, `rn.py proposal`, the limit of 5, a done task's work, the design sign-off. Nothing of the user's project shows: no path, file name, code, number of decisions, the user's own choices or subject. I could not compare the quote with the learning file itself, because it is not among the files given to me, so I take the quote as the issue gives it. Every rn fact it states matches rn's code, as checked under B-1.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-3.md:5-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/session/issue.md",
+   "item": "B-3",
+   "good": "The issue holds one need: a work's decisions should be held to the sign-off's limit while they can still be changed. One change meets it: `rn.py decide` refusing a decision past `MOST`. Step 2 then settling points more simply follows from that refusal; it is not a second change. No second learning is folded in.",
+   "lines": [
+    "/tmp/rn/20261026-acceptance-7vc7gbjm/repo/.rn/20261026-downloads-organizer-cli/issue-3.md:1-26"
+   ]
+  }
+ ]
+}

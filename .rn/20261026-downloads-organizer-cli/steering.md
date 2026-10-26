@@ -25,11 +25,11 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 3 of /rn:up on issue-3: have turn make it, show it to the user whole and ask whether to send it
+Step 3 of /rn:up on issue-3: ask the user whether to send it, then send it on their yes alone
 
 ## Open
 
-- Issue-3 to rn's makers is not yet made nor sent
+- Issue-3 to rn's makers is made at .rn/20261026-downloads-organizer-cli/issue-3.md, not yet sent; waiting on the user's yes
 - The design sign-off cannot be shown by rn 0.9.0: t1.2, t2.2 and t3.2 hold decisions over 200 characters, t2.2 holds 8 decisions, more than the 5 a sign-off shows of a work, and their tasks cannot be put back; it waits on rn's fixes for issues 1 and 3
 - Issues 1 and 2 were sent by the user's yes, but this environment's gh put them at https://github.com/lovaizu/playground/issues/11 and /12, not lovaizu/ccpm
 - The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decisions 'What the README is checked against now' and 'How the README run ends' of t2.2); the build-stage plan must carry this
