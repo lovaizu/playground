@@ -71,6 +71,9 @@
   },
   {
    "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+  },
+  {
+   "decision": "Rules for checking: The repository has no rules for checking code or user stories, so the architecture sets the tool's own under its Test section: tests in Python's standard unittest, each a Given, a When and a Then on a temporary folder; the user stories checked by running the organize-downloads command end to end; all run by GitHub Actions on ubuntu-latest and macos-latest on every push."
   }
  ]
 }
