@@ -1,0 +1,97 @@
+{
+ "focal_entities": [
+  {
+   "work": "t3.3"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "code"
+  },
+  {
+   "path": "organize-downloads/pyproject.toml"
+  },
+  {
+   "path": "organize-downloads/src/organize_downloads/__init__.py"
+  },
+  {
+   "path": "organize-downloads/src/organize_downloads/cli.py"
+  },
+  {
+   "path": "organize-downloads/src/organize_downloads/folder.py"
+  },
+  {
+   "path": "organize-downloads/src/organize_downloads/type_table.py"
+  },
+  {
+   "path": "organize-downloads/src/organize_downloads/organize.py"
+  },
+  {
+   "path": ".github/workflows/organize-downloads.yml"
+  },
+  {
+   "audience": "whoever runs the tool and whoever maintains it, a person or an AI"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  },
+  {
+   "has": "organize-downloads/docs/architecture.md"
+  },
+  {
+   "has": "organize-downloads/README.md"
+  },
+  {
+   "has": "organize-downloads/tests"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/calls/0010-ccs.json"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "running organize-downloads with nothing added, or with a folder given last, to see where each file would go with nothing changed, and maintaining it with the tests of T3.2 passing"
+  },
+  {
+   "serves": "AC1: Typed in a terminal as one command with nothing added, the tool only lists each file it would move with the type folder it would go to, and moves nothing: every file and folder in the organized folder is as it was before the run. Nothing makes the tool run on its own, such as on a schedule."
+  },
+  {
+   "serves": "AC3: The tool tells a file's type by its extension and uses only these folders, which the user cannot change: Images (pictures), Documents (documents, PDFs, spreadsheets), Archives (zip and the like), Audio, Video, Installers (.dmg, .deb and the like), and Others for a file that fits none of them. Each file goes to the folder its last extension belongs to, matched without regard to case (report.tar.gz by gz): Images jpg jpeg png gif webp heic heif bmp tif tiff svg ico psd raw cr2 nef arw dng; Documents pdf doc docx xls xlsx ppt pptx odt ods odp rtf txt md csv tsv pages numbers key epub; Archives zip tar gz tgz bz2 xz zst 7z rar; Audio mp3 wav flac aac m4a ogg opus aif aiff wma mid midi; Video mp4 mov mkv avi webm m4v wmv flv mpg mpeg 3gp; Installers dmg pkg deb rpm appimage flatpak snap iso msi exe; Others every other file, one with no extension included."
+  },
+  {
+   "serves": "AC5: The tool never moves or lists folders (the type folders included), symbolic links, whatever they point to, or other entries that are neither a plain file nor a folder, such as a named pipe; hidden files whose names begin with a dot (such as macOS's .DS_Store and .localized); or files still being downloaded (such as Chrome's .crdownload, Firefox's .part and Safari's .download), their endings matched without regard to case, so report.pdf.PART is one; and it does not look inside folders."
+  },
+  {
+   "serves": "AC6: With no folder given, the tool organizes the user's own Downloads folder: ~/Downloads on macOS, and on Linux the download folder the OS settings (xdg-user-dirs) name, such as ~/ダウンロード. Given another folder, it organizes that folder instead."
+  },
+  {
+   "serves": "AC7: AC1 to AC6 and AC8 to AC10 each hold on both macOS and Linux, shown on the pull request by the tool's tests, which GitHub Actions runs on both on every push."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "the work given as the files of the architecture's Physical view that the run with nothing added needs, the workflow included: a run may write only the paths its CCS names"
+  },
+  {
+   "chosen": "the tests of T3.2 handed as organize-downloads/tests: the action makes the command until they pass"
+  },
+  {
+   "chosen": "the CCS of T3.2 handed: its decisions, the oldest Python 3.10, the stop on Linux where no download folder is named and the tests on the standard library alone, hold for the code as well"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
+  }
+ ]
+}
