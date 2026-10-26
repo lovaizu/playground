@@ -41,8 +41,9 @@ G1: A command-line tool that moves the files directly in the Downloads folder in
 
 ## Next
 
-Step 3 of /rn:up on t2.2: wait for turn to return README.md, then weigh its result
+Step 3 of /rn:up on t2.2: settle with the user how the README run ends, then answer turn or call it again
 
 ## Open
 
+- turn's run on README.md left B-4, B-5 and B-8 without Good for four rounds: its first user, given only README.md, docs/ux.md and the checklist, checks what is online today (the download address and docs/architecture.md give 404, --help and the Example cannot run), so decision 'What the README is checked against now' does not reach it
 - The README's install, Example, --help, commit history and docs/architecture.md link are to be checked for real once the tool is built (decision 'What the README is checked against now' of t2.2); the build-stage plan must carry this

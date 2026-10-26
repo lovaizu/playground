@@ -1,11 +1,12 @@
 # tidy-downloads
 
-tidy-downloads moves each file directly in your Downloads folder into a folder named for its kind,
-showing every move before it makes it, never deleting, renaming, overwriting or changing a file,
-and able to put the last move back. It is a command you type in a terminal: you then find a
-downloaded file by opening the folder for its kind, such as Images, Documents or Archives, in place
-of searching one long list. It is for people on macOS or Linux who type commands in a terminal
-and whose Downloads folder fills up.
+tidy-downloads moves each file directly in your Downloads folder, or in another folder you name,
+into a folder named for its kind, leaving in place one whose name is already taken there; it shows
+every move before making it, never deletes, renames, overwrites or changes a file, and can put the
+last move back. It is a command you type in a terminal: you then find a downloaded file by opening
+the folder for its kind, such as Images, Documents or Archives, in place of searching one long
+list. It is for people on macOS or Linux who type commands in a terminal and whose Downloads folder
+fills up.
 
 ## Example
 
@@ -38,7 +39,7 @@ Left invoice.pdf: Documents/invoice.pdf already exists
 ```
 
 tidy-downloads made `Images`, `Archives` and `Other`, since they were not there. To find the photo,
-you now open `~/Downloads/Images`. Folders inside `~/Downloads`, and the files in them, stay as they
+you now open `~/Downloads/Images`. Files already inside folders in `~/Downloads` stay where they
 are, so `Documents` still holds just its own `invoice.pdf`.
 
 If you do not like the result, put the last move back:
@@ -64,7 +65,7 @@ tidy-downloads --move ~/Desktop
 
 ## Why tidy-downloads
 
-- One command sorts every file directly in the folder, where by hand you decide on and drag each
+- One command sorts the files directly in the folder, where by hand you decide on and drag each
   file in turn.
 - You see where each file would go before any file is moved, where a script of `mv` commands moves
   them as it runs.
@@ -109,12 +110,29 @@ Check that your terminal finds it:
 command -v tidy-downloads
 ```
 
-If this prints nothing, `~/.local/bin` is not on your PATH. Add it with the line below, then open
-a new terminal and check again. The line is for zsh, the shell macOS starts. If `echo $SHELL` ends
-in `bash`, put `~/.bashrc` in place of `~/.zshrc` on Linux, and `~/.bash_profile` on macOS.
+If this prints nothing, `~/.local/bin` is not on your PATH. Add it with the line for your shell,
+then open a new terminal and check again. To see your shell, run:
+
+```sh
+echo $SHELL
+```
+
+If it ends in `zsh`, the shell macOS starts:
 
 ```sh
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+```
+
+If it ends in `bash`, on Linux:
+
+```sh
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+```
+
+If it ends in `bash`, on macOS:
+
+```sh
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bash_profile
 ```
 
 Then run `tidy-downloads` and `tidy-downloads --move` as in the Example.
