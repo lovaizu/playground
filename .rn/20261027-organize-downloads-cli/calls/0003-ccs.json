@@ -61,6 +61,9 @@
   },
   {
    "decision": "A moved file gone on undo: When a file the last run moved is no longer in its type folder, such as one the user moved or deleted since, undo skips it, tells the user it could not put it back, and puts the other files back; it does not look for the file elsewhere."
+  },
+  {
+   "decision": "Undo lists first: Run with nothing added, the undo command only lists each file it would put back and where, and puts nothing back; it puts files back only when the user tells it to explicitly, such as with an option, as when organizing."
   }
  ]
 }
