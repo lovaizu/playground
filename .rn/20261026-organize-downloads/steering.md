@@ -28,8 +28,8 @@ G1: A command-line tool for macOS and Linux that sorts the files directly in the
 
 ## Next
 
-Step 9 of /rn:up on plan: hear which documents the purpose needs
+Step 9 of /rn:up on plan: ask where the tool and its documents are placed in the repository, then write the plan again with a task for each document
 
 ## Open
 
-None.
+- Where the tool and its documents are placed: the repository's README.md is the playground's own ("A playground for experimenting and testing — nothing here is meant to last.").
