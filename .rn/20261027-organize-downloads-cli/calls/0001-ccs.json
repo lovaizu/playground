@@ -19,6 +19,9 @@
   },
   {
    "decision": "How it is run: The user runs the tool by typing a command in the terminal whenever they want to organize; it does not run on its own on a schedule."
+  },
+  {
+   "decision": "Guarding against mistakes: Run with nothing added, the tool only lists what it would move and where, and moves nothing; it moves files only when the user tells it to explicitly, such as with an option. There is no undo."
   }
  ]
 }
