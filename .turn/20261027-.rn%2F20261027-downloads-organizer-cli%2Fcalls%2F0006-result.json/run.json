@@ -1,0 +1,96 @@
+{
+ "call": {
+  "ccs": ".rn/20261027-downloads-organizer-cli/calls/0006-ccs.json",
+  "kind": {
+   "work": "path",
+   "checklist": "checklist",
+   "receiver": "audience",
+   "use": "purpose",
+   "has": "has"
+  },
+  "result": ".rn/20261027-downloads-organizer-cli/calls/0006-result.json",
+  "test": null
+ },
+ "work": [
+  "README.md"
+ ],
+ "checklist": [
+  ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md"
+ ],
+ "receiver": [
+  "the user approving the README at the design sign-off, and whoever makes the architecture and builds the tool to it"
+ ],
+ "use": [
+  "approving how a newcomer installs, uses and removes the tool, then building the architecture and the tool so that each step and each statement of the README holds"
+ ],
+ "has": [
+  ".rn/20261027-downloads-organizer-cli/steering.md",
+  "docs/ux.md"
+ ],
+ "items": [
+  {
+   "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "F-1"
+  },
+  {
+   "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "B-1"
+  },
+  {
+   "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "B-2"
+  },
+  {
+   "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "B-3"
+  },
+  {
+   "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "B-6"
+  },
+  {
+   "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "B-7"
+  }
+ ],
+ "each": [
+  {
+   "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "B-6"
+  }
+ ],
+ "given": [
+  ".rn/20261027-downloads-organizer-cli/calls/0006-ccs.json",
+  "README.md",
+  ".rn/20261027-downloads-organizer-cli/steering.md",
+  "docs/ux.md",
+  ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+  "/tmp/rn/20261027-acceptance-x2mk_zvm/rn/checklists/fix.md"
+ ],
+ "readable": [
+  "README.md",
+  ".rn/20261027-downloads-organizer-cli/steering.md",
+  "docs/ux.md",
+  ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md"
+ ],
+ "root": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo",
+ "round": 1,
+ "more": 1,
+ "stage": "asked",
+ "told": true,
+ "questions": {
+  "from": "check",
+  "questions": [
+   {
+    "question": "Which license should the README's License section name? The readme checklist's template ends with a License section, and neither the CCS, steering.md nor docs/ux.md says which license the tool is under.",
+    "recommended": "Name the license of the repository's LICENSE file if it has one, otherwise MIT, as a common permissive license for a small command-line tool shared publicly.",
+    "items": [
+     {
+      "checklist": ".rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+      "item": "F-1"
+     }
+    ]
+   }
+  ]
+ }
+}

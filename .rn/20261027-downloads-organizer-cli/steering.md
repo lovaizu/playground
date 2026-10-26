@@ -76,8 +76,8 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Next
 
-Step 4 of /rn:up on T2: action 1
+Step 3 of /rn:up on t2.1: answer turn's question and send it back to the run waiting
 
 ## Open
 
-None.
+- turn asks which license the README's License section names: the readme checklist's template ends with a License section, and no file of the CCS says the tool's license; turn recommends the repository's LICENSE file if any, else MIT.
