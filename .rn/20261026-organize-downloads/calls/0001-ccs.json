@@ -16,6 +16,9 @@
   },
   {
    "decision": "What is touched: Only files directly in Downloads; files are only moved, never deleted, renamed or overwritten"
+  },
+  {
+   "decision": "Name already taken at the destination: Leave that file in Downloads unmoved and show on screen that it was left"
   }
  ]
 }
