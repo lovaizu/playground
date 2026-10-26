@@ -64,6 +64,9 @@
   },
   {
    "decision": "Undo lists first: Run with nothing added, the undo command only lists each file it would put back and where, and puts nothing back; it puts files back only when the user tells it to explicitly, such as with an option, as when organizing."
+  },
+  {
+   "decision": "Type folders left empty on undo: Undo leaves every type folder where it is, even one it leaves empty, as the tool never deletes anything."
   }
  ]
 }
