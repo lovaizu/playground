@@ -63,8 +63,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 3 of /rn:up on t3.2: give the test files as the work's paths, then send the answer to the run waiting
+Step 3 of /rn:up on t3.2: add the ignore file to the work's paths, then send the answer to the run waiting
 
 ## Open
 
-- turn asks for t3.2 (code F-1, B-1 to B-9): the run may write only the exact path organize-downloads/tests and is refused every file inside it, so no test can be made; recommended: let it write files under organize-downloads/tests
+- turn asks for t3.2 (code B-5): where keeping __pycache__/ out of the repository is done, as the CCS names only the six test files
