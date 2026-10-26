@@ -63,8 +63,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 3 of /rn:up on t3.3: add test_cli.py and test_folder.py to the work's paths, then send the answer to the run waiting
+Step 3 of /rn:up on t3.3: ask turn's question on the two surviving mutants, then send the answer to the run waiting
 
 ## Open
 
-- turn asks for t3.3 (code B-6): whether test_cli.py and test_folder.py are added to the work's paths, for tests of an unreadable folder, escaping of unprintable names and which condition a folder stop names, which no T3.2 test holds
+- turn asks for t3.3 (code B-6): whether two mutants that change no behavior (organize.py:37 follow_symlinks=None, type_table.py:39 the empty extension) are left with a one-line comment beside each; recommended: yes

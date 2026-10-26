@@ -10,9 +10,6 @@ import os
 import re
 from pathlib import Path
 
-# What a stop tells the user to do where no folder to organize is found.
-_GIVE_A_FOLDER = "give the folder to organize last: organize-downloads <folder>"
-
 # A line of xdg-user-dirs' settings naming the download folder, as xdg-user-dirs writes it and
 # reads it back: XDG_DOWNLOAD_DIR="<value>", spaces allowed around "=", the value between double
 # quotes with a backslash before each character that follows it as is, such as \" or \$. A line
@@ -23,7 +20,8 @@ _ESCAPED_CHARACTER = re.compile(r"\\(.)")
 
 class FolderNotFound(Exception):
     """The run has no folder to organize; the message names the path or settings file that was
-    wrong and what the user can do instead."""
+    wrong and the condition. What the user can do instead, give a folder last, is for the command
+    line to add, as it names the command."""
 
 
 def find_organized_folder(given: str | None, system: str, home: Path) -> Path:
@@ -50,7 +48,7 @@ def _existing_folder(path: Path, what: str) -> Path:
     give back the path where it is a folder. Stops with FolderNotFound naming it otherwise."""
     if not path.is_dir():
         reason = "does not exist" if not os.path.lexists(path) else "is not a folder"
-        raise FolderNotFound(f"{what}{path} {reason}: {_GIVE_A_FOLDER}")
+        raise FolderNotFound(f"{what}{path} {reason}")
     return path
 
 
@@ -67,7 +65,7 @@ def _download_folder_named_in(settings: Path, home: Path) -> Path:
     except OSError as error:
         raise FolderNotFound(
             f"cannot read {settings}, where xdg-user-dirs names the download folder "
-            f"({error.strerror}): {_GIVE_A_FOLDER}"
+            f"({error.strerror})"
         ) from error
     downloads = None
     for line in text.splitlines():
@@ -81,12 +79,11 @@ def _download_folder_named_in(settings: Path, home: Path) -> Path:
             downloads = Path(value)
     if downloads is None:
         raise FolderNotFound(
-            f'{settings} names no download folder, in a line XDG_DOWNLOAD_DIR="$HOME/<folder>": '
-            f"{_GIVE_A_FOLDER}"
+            f'{settings} names no download folder, in a line XDG_DOWNLOAD_DIR="$HOME/<folder>"'
         )
     if os.path.normpath(downloads) == os.path.normpath(home):
         raise FolderNotFound(
             f"{settings} names your home folder itself as the download folder, which the tool "
-            f"does not organize: {_GIVE_A_FOLDER}"
+            "does not organize"
         )
     return downloads

@@ -31,7 +31,7 @@ def main(arguments: list[str] | None = None) -> int:
     try:
         organized = folder.find_organized_folder(options.folder, platform.system(), Path.home())
     except folder.FolderNotFound as stop:
-        return _stop(str(stop))
+        return _stop(f"{stop}: give the folder to organize last: {PROGRAM} <folder>")
     try:
         moves = organize.plan_moves(organized)
     except OSError as error:
@@ -117,13 +117,11 @@ def _shown(text: str) -> str:
 
     Bytes of a name that are not valid in the system's encoding, which Python holds as
     surrogates and cannot print, are written as \\xNN, and characters that cannot be shown, such
-    as a line break, as their escape, such as \\n; every other character is kept as it is.
+    as a line break, as their escape in a Python string, such as \\n, which ascii() gives between
+    quotes; every other character is kept as it is.
     """
     text = os.fsencode(text).decode(sys.getfilesystemencoding(), "backslashreplace")
-    return "".join(
-        char if char.isprintable() else char.encode("unicode_escape").decode("ascii")
-        for char in text
-    )
+    return "".join(char if char.isprintable() else ascii(char)[1:-1] for char in text)
 
 
 def _stop(message: str) -> int:

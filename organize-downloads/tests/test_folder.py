@@ -59,24 +59,37 @@ class GivenFolderTest(FolderTestCase):
                 # Then: it is the given folder, not Downloads
                 self.assertSameFolder(result, given)
 
-    def test_a_given_path_that_does_not_exist_stops_the_run_naming_it(self):
+    def test_a_given_path_that_does_not_exist_stops_the_run_saying_it_does_not_exist(self):
         # Given: a path where there is nothing
         given = self.home / "no-such-folder"
         # When: the folder to organize is found with that path given
-        # Then: the run stops, naming the path
+        # Then: the run stops, naming the path, with nothing before it, and that it does not exist
         with self.assertRaises(folder.FolderNotFound) as stop:
             folder.find_organized_folder(str(given), "Linux", self.home)
-        self.assertIn(str(given), str(stop.exception))
+        self.assertEqual(str(stop.exception), f"{given} does not exist")
 
-    def test_a_given_path_that_is_a_file_stops_the_run_naming_it(self):
-        # Given: a path that is a plain file, not a folder
-        given = self.home / "notes.txt"
-        given.write_text("notes", encoding="utf-8")
-        # When: the folder to organize is found with that path given
-        # Then: the run stops, naming the path
-        with self.assertRaises(folder.FolderNotFound) as stop:
-            folder.find_organized_folder(str(given), "Darwin", self.home)
-        self.assertIn(str(given), str(stop.exception))
+    def test_a_given_file_or_broken_link_stops_the_run_saying_it_is_not_a_folder(self):
+        # Given: a plain file, and a symbolic link pointing to nothing, which is there itself
+        (self.home / "notes.txt").write_text("notes", encoding="utf-8")
+        os.symlink("missing", self.home / "broken-link")
+        for name in ["notes.txt", "broken-link"]:
+            with self.subTest(name=name):
+                given = self.home / name
+                # When: the folder to organize is found with that path given
+                # Then: the run stops, naming the path, with nothing before it, and that it is
+                # not a folder
+                with self.assertRaises(folder.FolderNotFound) as stop:
+                    folder.find_organized_folder(str(given), "Darwin", self.home)
+                self.assertEqual(str(stop.exception), f"{given} is not a folder")
+
+    def test_a_given_symbolic_link_to_a_folder_is_the_one_organized(self):
+        # Given: a symbolic link pointing to a folder
+        (self.home / "Desktop").mkdir()
+        os.symlink("Desktop", self.home / "desktop-link")
+        # When: the folder to organize is found with the link given
+        result = folder.find_organized_folder(str(self.home / "desktop-link"), "Linux", self.home)
+        # Then: it is the folder the link points to
+        self.assertSameFolder(result, self.home / "Desktop")
 
 
 class MacOSDownloadsTest(FolderTestCase):
@@ -96,19 +109,25 @@ class MacOSDownloadsTest(FolderTestCase):
     def test_with_no_folder_given_and_no_downloads_macos_stops_naming_it(self):
         # Given: a home folder on macOS with no Downloads in it
         # When: the folder to organize is found with none given
-        # Then: the run stops, naming ~/Downloads as the folder it did not find
+        # Then: the run stops, naming ~/Downloads as the Downloads folder and that it does not
+        # exist
         with self.assertRaises(folder.FolderNotFound) as stop:
             folder.find_organized_folder(None, "Darwin", self.home)
-        self.assertIn(str(self.home / "Downloads"), str(stop.exception))
+        self.assertEqual(
+            str(stop.exception), f"the Downloads folder {self.home / 'Downloads'} does not exist"
+        )
 
     def test_with_no_folder_given_and_downloads_a_file_macos_stops_naming_it(self):
         # Given: a home folder on macOS where Downloads is a plain file, not a folder
         (self.home / "Downloads").write_text("not a folder", encoding="utf-8")
         # When: the folder to organize is found with none given
-        # Then: the run stops, naming ~/Downloads
+        # Then: the run stops, naming ~/Downloads as the Downloads folder and that it is not a
+        # folder
         with self.assertRaises(folder.FolderNotFound) as stop:
             folder.find_organized_folder(None, "Darwin", self.home)
-        self.assertIn(str(self.home / "Downloads"), str(stop.exception))
+        self.assertEqual(
+            str(stop.exception), f"the Downloads folder {self.home / 'Downloads'} is not a folder"
+        )
 
 
 class LinuxDownloadsTest(FolderTestCase):
@@ -178,10 +197,12 @@ class LinuxDownloadsTest(FolderTestCase):
         # Given: a home folder on Linux holding Downloads but no user-dirs settings file
         (self.home / "Downloads").mkdir()
         # When: the folder to organize is found with none given
-        # Then: the run stops, naming the settings file, rather than guessing ~/Downloads
+        # Then: the run stops, saying it cannot read the settings file, rather than guessing
+        # ~/Downloads
         with self.assertRaises(folder.FolderNotFound) as stop:
             folder.find_organized_folder(None, "Linux", self.home)
-        self.assertIn(str(self.home / ".config" / "user-dirs.dirs"), str(stop.exception))
+        settings = self.home / ".config" / "user-dirs.dirs"
+        self.assertIn(f"cannot read {settings}", str(stop.exception))
 
     def test_settings_naming_no_download_folder_stop_the_run_naming_them(self):
         for text in [
@@ -199,10 +220,11 @@ class LinuxDownloadsTest(FolderTestCase):
                 (self.home / "Downloads").mkdir(exist_ok=True)
                 settings = write_user_dirs(self.home, text)
                 # When: the folder to organize is found with none given
-                # Then: the run stops, naming the settings file
+                # Then: the run stops, naming the settings file and that it names no download
+                # folder
                 with self.assertRaises(folder.FolderNotFound) as stop:
                     folder.find_organized_folder(None, "Linux", self.home)
-                self.assertIn(str(settings), str(stop.exception))
+                self.assertIn(f"{settings} names no download folder", str(stop.exception))
 
     def test_settings_naming_home_itself_stop_the_run_naming_them(self):
         for value in ["$HOME", "$HOME/"]:
@@ -211,26 +233,41 @@ class LinuxDownloadsTest(FolderTestCase):
                 # as xdg-user-dirs does where the folder was removed
                 settings = write_user_dirs(self.home, f'XDG_DOWNLOAD_DIR="{value}"\n')
                 # When: the folder to organize is found with none given
-                # Then: the run stops, naming the settings file, so home is never organized
+                # Then: the run stops, naming the settings file and that it names home itself,
+                # so home is never organized
                 with self.assertRaises(folder.FolderNotFound) as stop:
                     folder.find_organized_folder(None, "Linux", self.home)
-                self.assertIn(str(settings), str(stop.exception))
+                self.assertEqual(
+                    str(stop.exception),
+                    f"{settings} names your home folder itself as the download folder, which the "
+                    "tool does not organize",
+                )
 
     def test_a_named_folder_that_does_not_exist_stops_the_run_naming_it(self):
         # Given: user-dirs settings naming a download folder that is not there
         write_user_dirs(self.home, 'XDG_DOWNLOAD_DIR="$HOME/Gone"\n')
         # When: the folder to organize is found with none given
-        # Then: the run stops, naming the folder it did not find
+        # Then: the run stops, naming the settings file, the folder it names and that it does
+        # not exist
         with self.assertRaises(folder.FolderNotFound) as stop:
             folder.find_organized_folder(None, "Linux", self.home)
-        self.assertIn(str(self.home / "Gone"), str(stop.exception))
+        settings = self.home / ".config" / "user-dirs.dirs"
+        self.assertEqual(
+            str(stop.exception),
+            f"the download folder {settings} names, {self.home / 'Gone'} does not exist",
+        )
 
     def test_a_named_folder_that_is_a_file_stops_the_run_naming_it(self):
         # Given: user-dirs settings naming a download folder that is a plain file
         (self.home / "Dl").write_text("not a folder", encoding="utf-8")
         write_user_dirs(self.home, 'XDG_DOWNLOAD_DIR="$HOME/Dl"\n')
         # When: the folder to organize is found with none given
-        # Then: the run stops, naming the path it found no folder at
+        # Then: the run stops, naming the settings file, the path it names and that it is not a
+        # folder
         with self.assertRaises(folder.FolderNotFound) as stop:
             folder.find_organized_folder(None, "Linux", self.home)
-        self.assertIn(str(self.home / "Dl"), str(stop.exception))
+        settings = self.home / ".config" / "user-dirs.dirs"
+        self.assertEqual(
+            str(stop.exception),
+            f"the download folder {settings} names, {self.home / 'Dl'} is not a folder",
+        )
