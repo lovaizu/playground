@@ -1,0 +1,22 @@
+# How pipx and uv build and install organize-downloads; how the tool is put together is in
+# docs/architecture.md.
+
+[build-system]
+# 77 is the first setuptools to take `license` as an SPDX name, the form it now asks for.
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "organize-downloads"
+version = "0.1.0"
+description = "Sort the files in your Downloads folder into folders by type, listing moves first."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+# The oldest Python the tool and its tests are kept to; nothing newer than 3.10 is used.
+requires-python = ">=3.10"
+# The tool runs on Python's standard library alone.
+dependencies = []
+
+[project.scripts]
+organize-downloads = "organize_downloads.cli:main"

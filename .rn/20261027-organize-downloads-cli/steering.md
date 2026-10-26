@@ -63,8 +63,8 @@ G1: The user wants to find the file they need in their Downloads folder right aw
 
 ## Next
 
-Step 4 of /rn:up on T3: action 3, have turn make the command, its package and the workflow
+Step 3 of /rn:up on t3.3: add test_cli.py and test_folder.py to the work's paths, then send the answer to the run waiting
 
 ## Open
 
-None.
+- turn asks for t3.3 (code B-6): whether test_cli.py and test_folder.py are added to the work's paths, for tests of an unreadable folder, escaping of unprintable names and which condition a folder stop names, which no T3.2 test holds

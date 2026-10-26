@@ -1,0 +1,29 @@
+# Runs organize-downloads' tests on Linux and macOS on every push, so the pull request shows that
+# each behavior holds on both, on the oldest Python the tool supports and on the latest.
+name: organize-downloads
+
+on: push
+
+jobs:
+  test:
+    strategy:
+      # Each system and Python reports on its own, so one failing does not hide another.
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ["3.10", "3.x"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      # The user stories run the command as pipx installs it for the user.
+      - name: Install the tool with pipx
+        run: |
+          pipx install --python "$(command -v python)" ./organize-downloads
+          pipx environment --value PIPX_BIN_DIR >> "$GITHUB_PATH"
+      # The module tests run the code as it is in src.
+      - name: Run the tests
+        working-directory: organize-downloads
+        run: PYTHONPATH=src python3 -m unittest discover -s tests

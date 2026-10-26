@@ -1,0 +1,286 @@
+{
+  "items": [
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "F-1",
+      "good": "The maintainer finds the same shape in every file before reading any body. Each module opens with a docstring saying what it does and why it is there. Each function has type hints on what it takes and gives back, and a docstring that says what it takes in, what it gives back and when it stops (FolderNotFound, OSError, SystemExit through argparse, the exit statuses). pyproject.toml and the workflow open with a comment saying what each is for. The work holds no tests; those of T3.2 already follow the Given/When/Then form.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/__init__.py:1-5",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:1-7",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:25-29",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:46-47",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:69-71",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:98-101",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:114-121",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:129-131",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:1-7",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:24-38",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:48-50",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:57-62",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:1-6",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:15-32",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:1-6",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:35-50",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/pyproject.toml:1-2",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:1-2"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-1",
+      "good": "Whoever runs the tool gets the same listing on any macOS or Linux machine that has Python 3.10 or later and nothing else. The code imports only the standard library: argparse, os, platform, re, sys, textwrap, pathlib and typing.NamedTuple. It uses nothing newer than 3.10: `str | None` and `list[...]` hints work from 3.10. pyproject.toml declares requires-python >=3.10 and no dependencies, and only the build fetches setuptools. The workflow runs every test on ubuntu-latest and macos-latest, each on 3.10 and on the latest Python, so the pull request shows this. Here all 46 tests pass through the task's test command on Python 3.14.4 and with `--python 3.10` on 3.10.22.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:9-16",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:9-11",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:8-12",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/pyproject.toml:4-19",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:8-20"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-2",
+      "good": "Each stop prints on standard error, after the command's name, the path or settings file that was wrong and what is wrong with it, then an action the user can take that clears it, and gives back status 1. The stops are: a given path that does not exist or is not a folder; ~/Downloads missing on macOS; on Linux, a settings file that is missing or cannot be read (with the system's reason), names no download folder (showing the line form it looks for), names the home folder itself, or names a folder that is not there; and a folder that cannot be read. Every stop about the folder tells the user to give the folder to organize last, `organize-downloads <folder>`. That works in every case, since a given folder skips the settings. The unreadable-folder stop says to check the folder's permissions or give another. The given folder and the settings file are both checked before anything reads the folder. Unknown arguments get argparse's usage line and status 2. Each stop was run here on a made-up home, and each printed what is described.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:13-14",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:39-54",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:63-91",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:30-43",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:129-133"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-3",
+      "parts": [
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/pyproject.toml:1-22",
+          "good": "The maintainer reads from the comments why setuptools must be 77 or later (the SPDX `license` form), that 3.10 is the oldest Python kept to, and that there are no dependencies because the tool uses the standard library alone. The console script line names the entry point, cli.main.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/pyproject.toml:1-7",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/pyproject.toml:16-22"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/__init__.py:1-5",
+          "good": "The maintainer reads what the package does, where the command starts and where the modules' design is written.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/__init__.py:1-5"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:1-133",
+          "good": "The maintainer reads from the module docstring that Command line is the one part that meets the user, and that --help is built from Type table. main's docstring gives each exit status. _HELP_WIDTH says why --help is wrapped by hand, since RawDescriptionHelpFormatter prints text as written. _shown says which characters it escapes and why: surrogates cannot be printed, and a line break would break the listing. _stop says where it prints and what it gives back. Each name says what its thing is: organized, moves, _print_moves, _help_epilog, _stop.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:1-7",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:18-29",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:46-47",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:69-71",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:98-101",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:114-121",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:129-131"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:1-92",
+          "good": "The maintainer reads what xdg-user-dirs is, and why the module reads its settings file itself rather than run a program. The regular expression's comment says what it matches: the quoting, the backslash escapes, and that comments and other forms name no folder. find_organized_folder's docstring gives the rule for each system and every case that stops. _download_folder_named_in says that the last line counts and that $HOME is read as xdg-user-dirs reads it. The decode comment says why the file is read as bytes.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:1-7",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:13-38",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:48-50",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:57-66"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:1-50",
+          "good": "The maintainer reads that the table is fixed and kept here alone so that --help and the planner agree, what each constant holds (lower case, in --help's order, with OTHERS as the fallback), and what each function gives back for names with no extension.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:1-26",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:35-50"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:1-42",
+          "good": "The maintainer reads why planning is kept apart from moving, what a Move holds, and from plan_moves' docstring every kind of entry that is left in place, the sort order and why it is sorted, and the stop. The condition in the body reads as that list.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:1-6",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:15-42"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:1-29",
+          "good": "The maintainer reads why the workflow runs: both systems on every push, on the oldest and the latest Python. They read why fail-fast is off, that the pipx install is for the user stories, and that PYTHONPATH=src is for the module tests.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:1-2",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:10-11",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:21-29"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-4",
+      "parts": [
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/pyproject.toml:1-22",
+          "good": "It holds only what pipx and uv need to build the package and put the organize-downloads command on PATH, with no extra metadata or optional groups.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/pyproject.toml:4-22"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/__init__.py:1-5",
+          "good": "It holds a docstring only, with no exports or version kept in a second place.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/__init__.py:1-5"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:1-133",
+          "good": "The command takes only the folder argument the run with nothing added needs. There is no --apply or undo yet, as those belong to T4 and T5. Each branch serves a listing or a stop the requirements or B-2 ask for. The escaping in _shown is there because, without it, a file name holding bytes that are not valid UTF-8 crashes the print and the listing AC1 asks for is lost.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:25-66",
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:98-126"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:1-92",
+          "good": "It holds the cases AC6 and the user's no-download-folder decision name, and nothing for other settings keys or for XDG_CONFIG_HOME, which the decision does not name.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:29-92"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:1-50",
+          "good": "It holds the table of AC3, the endings of AC5, and the three functions the planner and the tests use, with no way to change the table.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:8-50"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:1-42",
+          "good": "It plans only for what AC5 and AC3 ask. The name-already-taken check of AC4 is left out, as it belongs to T4's run with --apply.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:23-42"
+          ]
+        },
+        {
+          "part": "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:1-29",
+          "good": "It has one job with the two systems AC7 names and the two Python versions the 3.10 decision needs, and only the steps the architecture's Test section names. The extra line adding pipx's bin folder to PATH is there so the stories find the command on both runners.",
+          "lines": [
+            "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:7-29"
+          ]
+        }
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-5",
+      "good": "The maintainer changes each thing in one place. The extensions and download endings live only in Type table, and --help reads them from there. The xdg-user-dirs reading lives only in folder.py. The stop action is one constant, and the program name is one constant. The version is only in pyproject.toml. Each module takes on one component of the architecture's Logical view. The names match the tests and the architecture: find_organized_folder, FolderNotFound, plan_moves, Move.name and Move.type_folder, type_folder_for, is_still_downloading. Files a run makes, build/, src/organize_downloads.egg-info/ and __pycache__/, are kept out by organize-downloads/.gitignore, which the user's answer confirms. `git status --ignored` shows all three as ignored after the test command and a pipx install.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:8-32",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:69-95",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:13-21",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:18",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/pyproject.toml:9-11"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-6",
+      "question": 1
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-7",
+      "good": "When a test fails after a change, the maintainer can take it as a fault of that change. The test command passes on the code as it is, here on 3.14 and 3.10, and the workflow way (pipx install, then PYTHONPATH=src in organize-downloads) passes too. The code reads no clock or network. Each function has one job, so a failing test of T3.2 points at one function: the planner's filter, the type lookup or the settings reading. The command's only reads of the machine, the home folder and the system name, come in through main's arguments to find_organized_folder.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/cli.py:25-43",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:29-45",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:23-42",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/type_table.py:35-50"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-8",
+      "good": "The maintainer runs the whole test run in well under a second: 46 tests ran in 0.085s. The code starts no other program, as folder.py reads the settings file itself rather than run xdg-user-dir. The workflow builds the tool once per job.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:4-6",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:63-66",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/.github/workflows/organize-downloads.yml:22-29"
+      ]
+    },
+    {
+      "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/product/code.md",
+      "item": "B-9",
+      "good": "Two runs at the same time each get their own listing, because the run with nothing added writes nothing. The planner only scans the folder, the folder finder only reads, and the command prints to its own output. There is no lock, temporary file or port to share.",
+      "lines": [
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:4-5",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/organize.py:33-42",
+        "/tmp/rn/20261027-acceptance-5180ibfe/repo/organize-downloads/src/organize_downloads/folder.py:6"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "question": "Three behaviors of the code are held by no test of T3.2: the stop on a folder that cannot be read (cli.py lines 37-38, the only lines coverage finds unrun), the escaping of file names that cannot be printed as they are (bytes not valid UTF-8, a line break), and which condition a folder stop names ('does not exist' or 'is not a folder'). This run may write only the seven code and workflow paths, so it cannot add those tests. May the run also write organize-downloads/tests/test_cli.py and organize-downloads/tests/test_folder.py, adding them to the CCS paths?",
+      "recommended": "Yes, add test_cli.py and test_folder.py to the CCS paths, so each of these behaviors gets a test in the same change that brings it, and a fault in it fails a test, as B-6 asks."
+    }
+  ],
+  "chosen": [
+    {
+      "chosen": "The listing is printed as the README's Example shows it: 'Would move N files in <folder>:', then one line per file with the names padded so the arrows line up ('  name  -> Folder/'), then 'Nothing was moved.'. The Example's last part, 'To move these files, run: organize-downloads --apply', is left out.",
+      "why": "The README is the user's design for the output. --apply arrives only in T4, and until then a hint naming it would send the user to an option the command rejects. T4 can add the hint with --apply, and T6 matches the README to the built tool."
+    },
+    {
+      "chosen": "A folder with nothing to move prints 'No file to move in <folder>.' and ends with status 0; one file is counted as '1 file'.",
+      "why": "Nothing in the CCS or its files gives this case. Printing a line tells the user the run found the folder and looked. Status 0 is used because nothing went wrong."
+    },
+    {
+      "chosen": "Moves are listed sorted by name, in plain character order (upper case before lower case).",
+      "why": "The same folder then lists the same way on every run and on both systems. This order matches the README Example's order (Docker.dmg, holiday.jpg, invoice.pdf)."
+    },
+    {
+      "chosen": "Exit statuses: 0 for a listing, 1 for a stop, 2 for arguments the command does not take (argparse's own). Stops print on standard error as 'organize-downloads: <what is wrong>: <what to do>'.",
+      "why": "This follows the usual shell form, and the tests expect a non-zero status and the path on standard error. Printing the program name first tells the user which command stopped."
+    },
+    {
+      "chosen": "Every stop about the folder ends with the same action, 'give the folder to organize last: organize-downloads <folder>'. An unreadable folder says 'check that you may read it, or give another folder last'.",
+      "why": "A concrete example such as ~/Downloads would stop again on a macOS machine with no ~/Downloads. A placeholder folder works for every one of these stops, because a given folder skips the Downloads lookup."
+    },
+    {
+      "chosen": "With no folder given, any system other than macOS ('Darwin') uses the xdg-user-dirs way.",
+      "why": "AC6 names only macOS and Linux, and the tests pass 'Linux'. Other Unix desktops, such as the BSDs, use xdg-user-dirs too. On any system with no settings file, the stop still tells the user to give a folder."
+    },
+    {
+      "chosen": "The settings file read is ~/.config/user-dirs.dirs alone, not $XDG_CONFIG_HOME/user-dirs.dirs.",
+      "why": "The user's decision in T3.2's CCS names that path. The tests of T3.2 hand find_organized_folder the home alone and do not control XDG_CONFIG_HOME. A user whose XDG_CONFIG_HOME moves the file gets the stop naming ~/.config/user-dirs.dirs, and can clear it by giving the folder."
+    },
+    {
+      "chosen": "The settings are read as xdg-user-dirs reads them: lines XDG_DOWNLOAD_DIR=\"...\" with optional spaces around '=', backslash escapes undone, the value taken only if it starts with \"$HOME\" followed by '/' or the end, or with '/', and the last such line wins. The file is decoded with os.fsdecode, and 'home itself' is tested with os.path.normpath.",
+      "why": "This is the form xdg-user-dirs writes and its own lookup accepts, so any name it writes is read back, as the property test of T3.2 checks. Decoding the way file names are decoded keeps a name in any bytes. normpath also catches \"$HOME//\" and a full path equal to home."
+    },
+    {
+      "chosen": "Printed names and paths escape bytes that are not valid in the file system encoding as \\xNN, and characters that cannot be shown, such as a line break, as their escape, such as \\n.",
+      "why": "Python holds such bytes as surrogates, and printing them stops the run with a traceback. A line break in a name would split one listed move over two lines. Checked here: 'bad\\xffname.txt' and 'two\\nlines.mp3' each list on one line."
+    },
+    {
+      "chosen": "--help gives a description and a folder-argument help that says the default per system. After that, the epilog shows the type table in two columns (from Type table), Others, and what is left in place, with the download endings taken from Type table. All of it is wrapped to 79 columns with RawDescriptionHelpFormatter.",
+      "why": "The architecture asks for --help built from Type table, and the user story wants to read in the terminal which extensions go where and which files are left in place. The raw formatter keeps the table's columns lined up."
+    },
+    {
+      "chosen": "pyproject.toml: build-system setuptools>=77, license = \"MIT\" with license-files = [\"LICENSE\"], version 0.1.0, readme README.md, and a one-line description.",
+      "why": "The repository's LICENSE is MIT. setuptools now asks for the SPDX string form of `license`, which needs 77 or later, and the older table form is deprecated. 0.1.0 marks the first, unreleased version."
+    },
+    {
+      "chosen": "The workflow is one job, a matrix of ubuntu-latest and macos-latest by Python \"3.10\" and \"3.x\" through actions/setup-python@v7, with fail-fast off, and actions/checkout@v7. It runs `pipx install --python \"$(command -v python)\" ./organize-downloads`, then adds `pipx environment --value PIPX_BIN_DIR` to GITHUB_PATH.",
+      "why": "Testing on 3.10 shows the user's oldest-Python decision holds, and testing on the latest shows nothing has since broken. Passing --python makes the stories run under that same Python. Adding the bin folder to GITHUB_PATH means the stories find the command whatever bin folder pipx uses on each runner. v7 is the current major release of both actions."
+    },
+    {
+      "chosen": "A Move is a typing.NamedTuple(name, type_folder), and type_table.last_extension is a public function used by both type_folder_for and is_still_downloading.",
+      "why": "The tests read move.name and move.type_folder. A tuple sorts by name with no key and cannot be changed by mistake. One function for 'the last extension, lower case' keeps that rule in one place."
+    }
+  ]
+}
