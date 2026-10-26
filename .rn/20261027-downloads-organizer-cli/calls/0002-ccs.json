@@ -34,6 +34,9 @@
   },
   {
    "decision": "Undo the last run: The last run can be undone: each file the previous run moved is moved back to where it was. Undoing too never deletes, renames or overwrites any file. The README and the automated tests are to cover undoing as well."
+  },
+  {
+   "decision": "Where the record of the last run is kept: The record of what the last run moved, from where to where, is kept in a place of the tool's own under the user's home (on Linux ~/.local/state/organize-downloads, on macOS ~/Library/Application Support/organize-downloads), one for each folder organized, so the organized folder gains no file of the tool's."
   }
  ]
 }
