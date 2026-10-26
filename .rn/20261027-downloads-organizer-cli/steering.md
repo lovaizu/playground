@@ -55,14 +55,6 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Tasks
 
-- T2: The README of the tool. Serves AC1 and AC8.
-
-  Completion criterion: Following the README alone, a newcomer on macOS or Linux can do each thing
-  AC8 names, as the UX `docs/ux.md` tells it, the install and removal as AC1 says. Checked by an AI
-  that did not make it, reading it in a newcomer's place.
-
-  - [ ] 1. The README made from the UX `docs/ux.md`, `README.md` as a readme work. turn.
-
 - T3: The architecture of the tool. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC7, AC8, AC9, AC10, AC11, AC12.
 
   Completion criterion: Whoever builds the tool can tell from the architecture, with the UX `docs/ux.md`
@@ -76,8 +68,8 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Next
 
-Step 3 of /rn:up on t2.1: answer turn's question and send it back to the run waiting
+Step 4 of /rn:up on T3: action 1
 
 ## Open
 
-- turn asks whether the README's Development section links docs/architecture.md, which T3 makes and which is not in the repository yet; turn recommends keeping the link, with a CCS decision that T3 adds that file.
+None.

@@ -88,10 +88,12 @@ Moved back 1 file. 1 file not moved back.
 
 ## Why organize-downloads
 
-- Unlike sorting by hand or with rules you write, it shows every move before making it, and the move run then makes just those moves.
+- Unlike sorting by hand or with rules you write, it shows every move before making it, and `--move` on a folder unchanged since then makes just those moves.
 
   Dragging files in a file manager or running a script shows nothing beforehand; a sort-by-type
-  view changes only how the folder is shown, not where the files are.
+  view changes only how the folder is shown, not where the files are. `--move` decides each file
+  anew, so a file that arrives in between, such as a finished download, is moved too; run the
+  preview again when the folder has changed.
 
 - Unlike sorting by hand or by script, it can move back what its last run moved, and take away the kind folders that run made once they are empty.
 

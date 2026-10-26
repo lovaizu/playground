@@ -1,0 +1,144 @@
+{
+ "work": [
+  "README.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "F-1",
+   "good": "The README has the template's headings in the template's order: the name, an opening under no heading, Example, Why organize-downloads, Requirements, Installation, Documentation, Development, License. Each section opens with its main point. The Why and Requirements items are each one sentence that makes sense alone, with any explanation after a blank line and indented under it, and nothing is in bold. Installation gives the install, then the first use on the Downloads folder, pointing back to the Example. Documentation says where fuller use is written and that no changes between versions are written yet, because there has been no release.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:1-7",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:9-11",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:89-109",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:111-120",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:122-144",
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:146-159"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "B-1",
+   "good": "The first sentence gives the idea the tool rests on: it sorts by extension into six fixed kind folders, which it names, under a rule built into the tool that no file is ever deleted, renamed or overwritten. The next sentence says what kind of thing it is (a terminal command on macOS and Linux), whom it is for (anyone whose Downloads folder has grown too full to find a file in) and what they gain (they find a file by opening the one folder of its kind, with every file still there). From this I can tell whether the tool is for me.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:3-7"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "B-2",
+   "good": "The Example takes one test folder of my own from start to finish, in the order things happen: I make it, preview, move, move one file myself, preview the undo, then undo. After each command it shows exactly what the tool prints. It says why each file or subfolder is left in place, and it ends with where every file is. I ran the setup commands (mkdir, touch) and the user's own mv in a temporary home, and acted out the moves the output describes. The folder states came out as the README says: after the move run the folder holds documents/report.pdf, images/photo.JPG, projects/ and setup.crdownload; after the mv, images/ is empty and photo.JPG is in projects/. So the undo output fits: photo.JPG is not moved back with 'no longer in images/', both kind folders are removed, and it prints 'Moved back 1 file. 1 file not moved back.' The printed lines and reasons match the formats in docs/ux.md (lines 149-158, 187-196, 241-245, 285-290). The tool itself is not built yet, so I could not run organize-downloads.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:11-87"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "B-3",
+   "good": "Each Why item is something only this tool gives, set against another way of doing the work: the preview against dragging files, a script, or a sort-by-type view; undo against sorting by hand, after which nothing remembers where each file was; leaving a file in place against mv, which overwrites without asking; and no setup against rule-based apps. Each now says only what holds. The first item limits 'makes just those moves' to a folder unchanged since the preview, and its explanation says that --move decides each file anew, so a file that arrives in between, such as a finished download, is moved too, and that you should preview again. This matches docs/ux.md line 183 and KR1.3 (lines 40-44). None of the items is a benefit every way gives.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:91-109"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "B-6",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:1-8",
+     "good": "The opening defines 'kind folders' at once by naming all six, and the rule and the gain are plain. I read it once from the top without stopping.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:3-7"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:9-88",
+     "good": "Each command is in a block to copy, and the tool's output for each is in a block after it. The default folder and the folder-as-last-word rule are said before the first command. Each reason in the output ('kind not known', 'subfolder', 'no longer in images/') is explained right after the block where it first appears. When kind folders are removed is said right where the removal first appears (lines 71-72). 'Move run' is used there only after '--move' has been shown to make the moves, so its meaning is clear. I did not need to go back, look ahead or guess.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:11-87"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:89-110",
+     "good": "Each item names the other way it is set against and says in its explanation what that other way does. In the first item, 'unchanged since then' points to the preview named just before it in the same sentence, and the explanation says right away what happens when the folder has changed and what to do about it. All the terms used (kind folders, move run, last run) come from the opening and the Example before it, and none rests on anything said later.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:91-109"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:111-121",
+     "good": "Each requirement is named, and the one a newcomer may not know, pipx, is explained in the same line (it installs a Python command-line tool in a place of its own and puts the command on your path). It has a link to its installation guide, which I opened (HTTP 200). Why Git is needed is said too.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:113-120"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:122-145",
+     "good": "Install, first use and removal are each a block to copy. The first use on the Downloads folder relies only on the Example, which I have already read, and the link to it is a pointer back, not a page I must open before reading on. The clone URL https://github.com/lovaizu/playground answered (HTTP 200).",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:124-144"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:146-152",
+     "good": "It says what is in docs/ux.md and why nothing is written about changes. I opened docs/ux.md and found each thing named: the extension table (lines 127-134), the reasons for leaving a file in place and for not moving one back (lines 140-145, 229-232), and where the record is kept (line 102).",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:148-151"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:153-156",
+     "good": "One sentence and one link say where the build and test documents are, and the reader does not need to open the link to understand the part. docs/architecture.md is not in the repository yet. steering.md says T3 makes it, and whether to keep this link is the question still open there (its Open section) for the user to decide, so I take it as the entrance that T3 will make.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:155"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:157-159",
+     "good": "It names the license in one sentence.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:159"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/.rn/20261027-downloads-organizer-cli/calls/0006-checklist-1.md",
+   "item": "B-7",
+   "good": "Each part gives something no other part gives. The opening gives the idea and whom the tool is for. The Example gives the one full use, with its output. Each Why item adds a comparison with another way that the opening and Example do not make: the file manager and sort-by-type view, nothing remembering where files were, mv overwriting silently, and rule apps needing setup. The note added under the first Why item, that --move decides each file anew, is said nowhere else. Requirements and Installation add only what you need to get the tool, plus the Downloads-folder case the Example leaves out. Documentation points to the fuller use rather than repeating it. Nothing is addressed to a reviewer, tells the history of a decision, or tells what the README itself does. The one near-repeat is line 109 ('The six kind folders and the extensions in each are built in'), which repeats the opening's 'six fixed kind folders' but adds that the extension table is fixed too, which is what 'no setup' rests on.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-x2mk_zvm/repo/README.md:1-159"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The Example uses a test folder ~/test-downloads made with mkdir and touch, holding report.pdf, photo.JPG, setup.crdownload and a projects/ subfolder, and moves photo.JPG into projects/ by hand before the undo.",
+   "why": "AC8 asks that the user can run the tool on a test Downloads folder of their own making; the files come from docs/ux.md's own examples, and the hand move shows a 'not moved back' case with the same summary wording docs/ux.md gives ('Moved back 1 file. 1 file not moved back.'), as docs/ux.md does not say how a count of 0 is printed."
+  },
+  {
+   "chosen": "Install by git clone https://github.com/lovaizu/playground.git, cd playground, pipx install .",
+   "why": "AC1 installs from this repository with pipx install .; the URL is the repository of the pull request in steering.md, checked with git ls-remote."
+  },
+  {
+   "chosen": "Remove with pipx uninstall organize-downloads, the package named as the command.",
+   "why": "AC1 says pipx uninstall removes it but names no package; naming the package as the command lets the reader remove it without looking the name up, and the build must name the package so."
+  },
+  {
+   "chosen": "Documentation says the tool has had no release yet, so no changes between versions are written, and links docs/ux.md for fuller use.",
+   "why": "The template asks where what changed in each version is written; no such file exists and nothing has been released, and docs/ux.md holds the full kind table and every reason."
+  },
+  {
+   "chosen": "The License section names the MIT License without linking the LICENSE file.",
+   "why": "The decision says the README names it and the LICENSE file is still to be added; a link would point at a file not there yet."
+  },
+  {
+   "chosen": "The Why section sets the tool against sorting by hand in a file manager, a sort-by-type view, a script of mv commands and rule-based sorting apps.",
+   "why": "The template asks for the other ways of doing the same work, which no file of the CCS names; these are the ways a terminal user would otherwise sort a Downloads folder."
+  },
+  {
+   "chosen": "The first Why item tells the reader to run the preview again when the folder has changed.",
+   "why": "docs/ux.md says the move run decides each file anew and matches the preview only on an unchanged folder; telling what to do when it has changed lets the reader keep the benefit rather than only learn its limit."
+  }
+ ]
+}
