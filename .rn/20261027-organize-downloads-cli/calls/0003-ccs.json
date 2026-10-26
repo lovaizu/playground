@@ -49,6 +49,9 @@
   },
   {
    "decision": "Never deletes: The tool only moves files and never deletes anything."
+  },
+  {
+   "decision": "Where the record of the last run is kept: The record of what the last run moved, which undo needs, is kept as a hidden file inside the organized folder, such as ~/Downloads/.organize-last-run, so nothing outside the organized folder changes."
   }
  ]
 }
