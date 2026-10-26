@@ -62,6 +62,9 @@
   },
   {
    "decision": "The file's name and place: The tool's one file is tidy-downloads, with no extension, at the root of the repository, fetched from https://raw.githubusercontent.com/lovaizu/playground/main/tidy-downloads"
+  },
+  {
+   "decision": "How the README run ends: At the design stage the README is judged only on matching docs/ux.md and these decisions; running its install, Example and --help and reaching its links are checked at the build stage"
   }
  ]
 }
