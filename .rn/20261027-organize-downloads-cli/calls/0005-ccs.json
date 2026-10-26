@@ -16,6 +16,9 @@
   },
   {
    "decision": "Command name: The command is named organize-downloads."
+  },
+  {
+   "decision": "How moving and undo are typed: The explicit word to act is --apply, for organizing and undo alike: organize-downloads only lists, organize-downloads --apply moves, organize-downloads undo only lists what it would put back, organize-downloads undo --apply puts it back; a folder to organize instead of Downloads is given last on each."
   }
  ]
 }
