@@ -52,6 +52,9 @@
   },
   {
    "decision": "README document: A README, kind readme, at README.md at the top of the repository, replacing the playground README with the tool's, made after the UX and before the tool is built."
+  },
+  {
+   "decision": "Architecture document: An architecture, kind architecture, at docs/architecture.md, made after the README and before the tool is built, so that how the tool keeps from deleting, renaming or overwriting any file, and the record of a run, are approved first."
   }
  ]
 }
