@@ -40,6 +40,9 @@
   },
   {
    "decision": "Where the record of the last move is kept: The record of what the last run moved, which undoing needs, is kept outside the folder being sorted, in the user's own place for an application's data (~/.local/state on Linux, ~/Library/Application Support on macOS), so nothing is added to the folder but the kinds' folders."
+  },
+  {
+   "decision": "Kinds' folders left empty by an undo: Undoing removes each kind's folder that the undone run made and that is left empty once its files go back; a folder that was there before that run, or that still holds anything, stays. No file is removed."
   }
  ]
 }
