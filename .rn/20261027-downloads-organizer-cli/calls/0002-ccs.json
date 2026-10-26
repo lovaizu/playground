@@ -1,0 +1,39 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "plan"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Why organize: The user cannot quickly find the file they are looking for in their Downloads folder; the tool is to make files there quick to find. It must not delete files."
+  },
+  {
+   "decision": "How files are organized: Files directly in the Downloads folder, and only those, are moved into subfolders by kind (decided by extension, such as Images, Documents, Archives). The tool only moves files: it never deletes, renames or overwrites any file."
+  },
+  {
+   "decision": "Build or reuse: The tool is written in this repository rather than built on an existing tool, so that the tool itself, not a configuration, guarantees it never deletes, renames or overwrites a file. Run plainly, it only shows which files it would move where and moves nothing; it moves files only when told to. When a file of the same name is already in the kind folder, that file is not moved and is reported."
+  },
+  {
+   "decision": "Where it runs: The tool runs on macOS and Linux, written in Python 3; Windows is not needed. The folder it organizes is the Downloads folder under the user's home by default, and another folder can be given instead."
+  },
+  {
+   "decision": "Kind table: The table from extension to kind folder is built into the tool, covering the commonly downloaded kinds: images, documents, archives, audio, video and installers. No configuration file is needed; changing the table means changing the tool's code."
+  },
+  {
+   "decision": "Files of no kind: A file whose extension is not in the table, or that has no extension, stays where it is and is shown as a file left in place. This covers files still being downloaded (such as .crdownload, .part, .download) and hidden files (such as .DS_Store), which must not be moved."
+  },
+  {
+   "decision": "What shows it done: The finished tool is checked by automated tests on a test folder holding many kinds of files: a plain run moves nothing; files are moved by kind only when told; files whose name already exists in the kind folder, files of no kind, files still being downloaded and subfolders stay where they are and are reported; nothing is deleted or renamed. The tool is never tried on the user's real Downloads. Before approving the finished work, the user runs it on a test Downloads folder of their own making. A README gives how to install and use the tool."
+  },
+  {
+   "decision": "Install and call: The tool is installed from this repository with pipx install . and is then called from anywhere as a command named like organize-downloads; it is removed with pipx uninstall."
+  },
+  {
+   "decision": "Undo the last run: The last run can be undone: each file the previous run moved is moved back to where it was. Undoing too never deletes, renames or overwrites any file. The README and the automated tests are to cover undoing as well."
+  }
+ ]
+}
