@@ -13,6 +13,9 @@
   },
   {
    "decision": "How files are organized: Move each file into a folder for its type (images, documents, archives, installers, ...), the type decided by its extension"
+  },
+  {
+   "decision": "What is touched: Only files directly in Downloads; files are only moved, never deleted, renamed or overwritten"
   }
  ]
 }
