@@ -1,8 +1,8 @@
 ---
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/14
-stage: plan
-signoff: plan
+stage: design
+signoff: none
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -55,7 +55,7 @@ is; the tool itself, not a setting, makes sure no file is ever deleted, renamed 
 
 ## Next
 
-Step 5 of /rn:up on plan: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
+Step 9 of /rn:up on plan: hear which documents the purpose needs
 
 ## Open
 
