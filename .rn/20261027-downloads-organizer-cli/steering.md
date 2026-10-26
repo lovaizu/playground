@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/14
 stage: plan
-signoff: none
+signoff: plan
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -42,7 +42,7 @@ no file is ever deleted, renamed or overwritten.
 
 ## Next
 
-Step 8 of /rn:up on plan: stop at the plan sign-off
+Step 5 of /rn:up on plan: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
 
 ## Open
 
