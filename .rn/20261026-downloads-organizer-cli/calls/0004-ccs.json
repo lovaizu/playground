@@ -31,6 +31,9 @@
   },
   {
    "decision": "UX document: The purpose needs a UX, docs/ux.md, of kind ux"
+  },
+  {
+   "decision": "README document: The purpose needs a README, the repository's README.md rewritten for the tool, of kind readme"
   }
  ]
 }
