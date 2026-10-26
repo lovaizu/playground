@@ -1,6 +1,6 @@
 ---
 rn: 0.9.0
-pr: none
+pr: https://github.com/lovaizu/playground/pull/13
 stage: plan
 signoff: none
 artifact-language: English
