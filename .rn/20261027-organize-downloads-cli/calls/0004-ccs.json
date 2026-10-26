@@ -5,6 +5,28 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261027-organize-downloads-cli/calls/0004-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -73,6 +95,15 @@
   },
   {
    "decision": "Design documents: The purpose needs two documents, a README at organize-downloads/README.md (kind readme) and an architecture at organize-downloads/docs/architecture.md (kind architecture), and no UX; the tool itself goes in the folder organize-downloads too, and the repository's own README.md stays as it is."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-5180ibfe/rn/checklists/fix.md"
   }
  ]
 }
