@@ -21,7 +21,7 @@
  ],
  "goal_orientation": [
   {
-   "purpose": "deciding from the README alone whether the tool is for them, and if it is, installing it and using it to a first result"
+   "purpose": "deciding from the README alone whether the tool is for them, and if it is, installing it and using it to a first result; at this design stage, before the tool is built or merged, the README is judged on matching docs/ux.md and the decisions, and running its install, Example and --help and reaching its download address, commit history and docs/architecture.md link are checked at the build stage, not now"
   },
   {
    "serves": "AC7: A README says how to install the tool and how to use it."
@@ -35,15 +35,6 @@
  "constraints": [
   {
    "decision": "How the tool is installed: The user installs tidy-downloads by copying its one file into a folder on their PATH, such as ~/.local/bin, and making it runnable"
-  },
-  {
-   "artifact-language": "English"
-  },
-  {
-   "conversation-language": "Japanese"
-  },
-  {
-   "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
   },
   {
    "decision": "Where the file is fetched from: A newcomer fetches the tool's one file with curl straight from the main branch of github.com/lovaizu/playground, usable once this work is merged"
@@ -65,6 +56,15 @@
   },
   {
    "decision": "How the README run ends: At the design stage the README is judged only on matching docs/ux.md and these decisions; running its install, Example and --help and reaching its links are checked at the build stage"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261026-acceptance-7vc7gbjm/rn/checklists/fix.md"
   }
  ]
 }
