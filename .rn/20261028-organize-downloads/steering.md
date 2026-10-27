@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/17
 stage: goal
-signoff: goal
+signoff: none
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -23,8 +23,8 @@ G1: A command-line tool, run on macOS or Linux, that sorts the files in the user
 
 ## Next
 
-Step 5 of /rn:up on goal: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
+Step 6 of /rn:up on goal: find the point behind the feedback
 
 ## Open
 
-None.
+- 次の3点を受け入れ基準に足してください。(1) 直前の実行を取り消して、動かした各ファイルを元の場所へ戻せること。(2) README にインストール方法と使い方が書いてあること。(3) テストで、これらの動き（表示だけ・移動・消さない・同名は残して表示・取り消し）を確かめていること。
