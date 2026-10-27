@@ -1,0 +1,79 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "plan"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261027-organize-downloads-cli/calls/0002-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/session/plan.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: The Downloads folder holds too many files to find the one wanted; the tool sorts them into groups by kind of file so that a file is easy to find."
+  },
+  {
+   "decision": "Sorting: Folders for kinds of file, such as Images, Documents, Videos, Music, Archives and Others, are made inside Downloads, and each file is moved into the folder of its kind."
+  },
+  {
+   "decision": "What is sorted: Only the files directly in Downloads are sorted; nothing inside its subfolders."
+  },
+  {
+   "decision": "Only moves: The tool only moves files; it never deletes, renames or overwrites any file."
+  },
+  {
+   "decision": "Name already taken: A file whose name already exists in the folder it would move to is not moved, left as it is, and reported."
+  },
+  {
+   "decision": "Show before moving: Run plainly, the tool only shows what it would move where and moves nothing; it moves files only when told to."
+  },
+  {
+   "decision": "Where it runs: The tool runs on Linux and macOS, on the user's ~/Downloads; it is built to act the same on both, checked by running it on Linux in the session, and the user runs it once on their Mac."
+  },
+  {
+   "decision": "What shows it done: On a trial folder holding images, documents, a name already taken in a target folder and a subfolder, among others, a plain run changes nothing; a run told to move puts each file in the folder of its kind, leaves each file whose name is taken and reports it, and no file is deleted or renamed; this is shown by automated tests and by real runs. Last, the user does a plain run on their own Downloads and finds the folders it would sort into acceptable. A README says how to install the tool and how to use it."
+  },
+  {
+   "decision": "Undo: The tool can undo its last run that moved files: it moves each file that run moved back to where it was, one by one. This is part of the goal and the acceptance criteria, and is shown by automated tests and by real runs of the tool on Linux."
+  },
+  {
+   "decision": "Name taken when undoing: A file whose old place now holds a file of the same name is not moved back, stays where it is, and is named in the tool's output, as a name already taken is when sorting."
+  },
+  {
+   "decision": "Show before undoing: Run to undo plainly, the tool only shows what it would move back where and moves nothing; it moves files back only when told to, as with sorting."
+  },
+  {
+   "decision": "Folders made by the sort, on undo: Undo removes a kind folder the sort made only when undoing has left it empty; a folder that was there before the sort, or that still holds anything, is not removed."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/fix.md"
+  }
+ ]
+}
