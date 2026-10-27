@@ -5,6 +5,37 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "readme"
+  },
+  {
+   "path": "sort-downloads/README.md"
+  },
+  {
+   "audience": "the user, approving at the design sign-off what the finished tool will be, and the maker of the architecture and the tool"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/research-existing-tools.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the README as what the tool will do and how it is installed and used, then building the architecture and the tool to it"
+  },
+  {
+   "serves": "AC5: The user installs the tool on their Mac as the README says and runs it once without being told to move, and it lists the files and the folders they would move to as AC1 says."
+  },
+  {
+   "serves": "AC7: The README says how to install the tool and how to use it, undoing included, the kinds and which files belong to each included, and a reader following it from a fresh clone installs the tool and runs it to sort and to undo, each both without being told to move and told to move."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": ".rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md"
   }
  ],
  "constraints": [
@@ -13,6 +44,21 @@
   },
   {
    "decision": "Language and install: The tool is one Python 3 file using only the standard library, installed by copying it from the clone into a folder on the user's PATH, such as ~/.local/bin. Whether the user's Mac has python3 is not checked yet, so the README says that python3 is needed and how to install it where it is not there."
+  },
+  {
+   "chosen": "research-existing-tools.md handed to the maker: it holds what macOS gives for python3 and the install way chosen from it, which the README's install steps rest on"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/fix.md"
+  },
+  {
+   "decision": "Files left unsorted: Hidden files, whose name starts with '.', such as .localized and .DS_Store, and downloads still running, ending in .crdownload or .part, are not sorted: they stay where they are and are named in the tool's output as left for that reason. Every other file directly in the folder is sorted."
   }
  ]
 }

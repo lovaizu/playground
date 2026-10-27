@@ -24,14 +24,6 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Tasks
 
-- T1: The README, `sort-downloads/README.md`, telling a newcomer what the tool does for them, the kinds and which files belong to each, how to install it on Linux and macOS, and how to sort and to undo, each first shown and then told to move. Serves AC5 and AC7.
-
-  Completion criterion: the user, reading it at the design sign-off, finds in it every part AC7 names, the install steps on the way of building and installing the user chose in action 2, and the use of sorting and undoing as AC1 to AC3 and AC8 say, and approves it as what the finished tool will be.
-
-  - [x] 1. Find out whether an existing tool already sorts a folder's files into folders by kind with a preview and an undo of the last sort, on both Linux and macOS, how near each comes to AC1 to AC3 and AC8, and whether its licence and price allow using it here; and, for a tool made here, which ways of building and installing it run alike on Linux and macOS with what a Mac has, `.rn/20261027-organize-downloads-cli/research-existing-tools.md` as a research work. turn.
-  - [x] 2. Settle, from the research result of action 1, whether the tool is an existing one used as it is or one made here, and, for one made here, its language and how the user installs it. The orchestrator, with the user.
-  - [ ] 3. Make the README from the plan and what action 2 settled, `sort-downloads/README.md` as a readme work. turn.
-
 - T2: The architecture, `sort-downloads/docs/architecture.md`, holding how the tool is put together to do what the README says, the record of the last sort that undo reads included, and how each part and AC1 to AC3 and AC8 are checked by automated tests and real runs on Linux. Serves AC1, AC2, AC3, AC4 and AC8.
 
   Completion criterion: the user, reading it at the design sign-off with the README, finds each use the README shows taken on by a part, the language and way of installing action 2 of T1 settled used, and a check named for each of AC1 to AC3 and AC8 on the trial folder AC4 names, and approves it as how the tool is built.
@@ -40,7 +32,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Next
 
-Step 4 of /rn:up on T1: action 3, make the README
+Step 4 of /rn:up on T1: weigh what it brought; AC2 written again for the files left unsorted
 
 ## Open
 

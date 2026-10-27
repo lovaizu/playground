@@ -1,0 +1,143 @@
+{
+ "work": [
+  "sort-downloads/README.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "F-1",
+   "good": "The headings are the template's, in its order: the name, an opening with no heading, Example, Why sort-downloads, Requirements, Installation, Documentation, Development, License. Each section opens with its main point. Each list item (the files left alone, the three points in Why, the two requirements) is one sentence that makes sense alone, with any explanation after a blank line and indented under it. Nothing is in bold. Installation ends by pointing to the first use as in Example.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:1-166"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-1",
+   "good": "The first sentence gives the idea that sets it apart: it shows each move before making it and can move everything back, on top of sorting Downloads into folders by kind. The third sentence gives the kind of thing it is, a command run in a terminal on Linux or macOS, and whom it is for: anyone whose Downloads has so many files that the one they want is hard to find. A reader can place themselves from that.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:3-6"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-2",
+   "good": "The example is the reader's own kind of work, a cluttered ~/Downloads. It goes in the order things happen: show the sort, sort with --move, save a new notes.xyz, show the undo, undo with --move. Each step's terminal output is shown as the reader will see it. The output covers each case AC1 to AC3 and AC8 name: the folder of each kind, Others, a name already taken, hidden files and running downloads left alone, a file not moved back because its old place now holds a file of the same name, and only the empty folder the sort made being removed. I checked each output against the setup and the rules at lines 39-52, 70-73 and 96-97, and they agree.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:10-97"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-3",
+   "good": "Why first sets the tool against sorting by hand: every file in one run, with the whole list shown first. It then sets it against the tools tried, giving three things each of them lacks: never renaming or writing over a file, an undo shown file by file first, and nothing to set up. Each comes with the tool that lacks it. These match the research table: TidyMate and downloads-folder-organizer rename files and the latter's undo writes over a new file; TidyMate's undo shows only a count; organize has no undo and needs a YAML file. No point that every way of sorting gives is put first.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:101-116"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-6",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:1-7",
+     "good": "The opening reads once with no guessing: what it does, the idea that it shows each move first and can undo, what kind of thing it is, and whom it is for.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:3-6"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:8-98",
+     "good": "Example reads once from the top. Each term comes with its meaning where it is first used: the kinds in a table, --move, the reasons a file is left, --undo. The case of a named folder (67-68) now comes before undo. The undo rule (70-73) says what happens in that case: undo works on the folder of the last --move sort, no folder is named with --undo, the first line of its output names that folder, and only that last sort can be undone. So after `sort-downloads --move ~/Desktop`, the reader knows a plain `sort-downloads --undo` undoes the Desktop sort, and the maker knows the record holds the folder of the last sort. The outputs agree with these rules.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:10-97"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:99-117",
+     "good": "Why reads once. It opens against sorting by hand. The other tools appear first as 'the tools we tried', and each named tool comes with what it lacks.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:101-116"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:118-127",
+     "good": "Requirements say what is needed, why, how to check it (`python3 --version`) and how to get it on a Mac and on Linux, each in a sentence that rests on the one before it.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:120-126"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:128-154",
+     "good": "Installation gives copyable command blocks in order: clone, copy, check with `command -v` (which prints nothing when the command is not found, as the README says), and what to do in that case. It ends by pointing to the first use in Example.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:130-153"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:155-159",
+     "good": "Documentation points to --help and to the commit history. The link returned 200 when I fetched it.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:157-158"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:160-163",
+     "good": "Development points to the architecture, which task T2 makes, as the way in for those who build the tool.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:162-162"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:164-166",
+     "good": "License says plainly that no licence has been chosen yet.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:166-166"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-7",
+   "good": "Each part gives the reader something toward deciding or toward a first result that no other part gives. The opening gives the idea and whom it is for. Example alone holds the steps and outputs, and Installation only points back to it (line 152) without repeating them. Why holds only the comparison. Requirements say why python3 and git are needed and how to get them. Documentation leaves fuller use to --help and gives the commit history for what changed in each version. No sentence is about the README itself or about how a decision was reached. The folder case is now said once, at lines 67-68, and its undo once, at lines 70-72. The two places that both say no file is renamed or written over (line 44 and line 105) do different jobs: one says why a file is left, the other sets the tool against other tools.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/README.md:1-166"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "Command and file name 'sort-downloads', the file at sort-downloads/sort-downloads with no .py ending, committed executable so cp alone installs it.",
+   "why": "The plan names the folder sort-downloads; a file without an ending gives the command the same name once on PATH."
+  },
+  {
+   "chosen": "Options: no option shows only; --move moves; --undo shows the undo; --undo --move undoes; an optional folder after the command, ~/Downloads when none is named.",
+   "why": "Matches G1 and AC1, AC2, AC4, AC8 'told to move' with one word for both sort and undo."
+  },
+  {
+   "chosen": "One record of the last sort, whichever folder it was in; --undo takes no folder and prints that folder in its first line; only that last sort can be undone.",
+   "why": "AC8 defines the last sort as the last run told to move that was not to undo, with no folder in it; printing the folder lets the user see which one will change."
+  },
+  {
+   "chosen": "The extensions of each kind as in the table (README lines 30-37), .dmg among Archives, endings matched regardless of capitals.",
+   "why": "Common download types on Linux and macOS; AC6 lets the user judge them on their own Downloads."
+  },
+  {
+   "chosen": "Python 3.9 or newer; on a Mac, xcode-select --install as the way to get python3 and git; on Linux, the python3 package.",
+   "why": "Apple's command line tools give python3 3.9; the CCS decision says the README tells how to install python3 where it is missing."
+  },
+  {
+   "chosen": "Install into ~/.local/bin, with the PATH line for ~/.zshrc on macOS and ~/.bashrc on Linux when command -v finds nothing.",
+   "why": "The CCS names ~/.local/bin; zsh is the macOS default shell and bash the usual Linux one."
+  },
+  {
+   "chosen": "The output wording ('Would move', 'Would leave', 'Moved', 'Left', 'Moved back', 'Removed empty folder', each reason) as in the Example.",
+   "why": "Shows the reader exactly what they get; T2 and the tool are to print it so."
+  },
+  {
+   "chosen": "Documentation points to --help and the commit history; License says no license has been chosen yet.",
+   "why": "No other documents or LICENSE file exist in the repository; which license to use is the user's to decide later, not needed for this sign-off."
+  }
+ ]
+}
