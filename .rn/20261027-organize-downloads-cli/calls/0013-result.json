@@ -1,0 +1,195 @@
+{
+ "work": [
+  "sort-downloads/sort_downloads.py",
+  "sort-downloads/tests/test_sort.py"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "F-1",
+   "good": "Both files open with a module docstring saying what they do and why. Every function and dataclass of the program has type hints and a Google-style docstring with Args, Returns and, where it stops, Raises: move_files raises OSError where the record cannot be written or an old name cannot be taken away; Parser.error and main raise SystemExit, with the statuses. Every test helper has typed parameters and a docstring. Every test's name, the three new ones among them, is one sentence of what must happen, and its body carries Given, When and Then comments in plain words.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:1-15",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:141-324",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:374-412",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:1-14",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:65-94",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:104-457"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-1",
+   "good": "The program imports only the standard library. `uv run --no-project --python 3.9 python -m unittest` in sort-downloads, Python 3.9 with nothing installed, ran 36 tests, OK. In the first reading, the linked command sort-downloads/sort-downloads under Python 3.9, run on a temporary Downloads holding the README Example's files, printed the README's preview and --move listings and sorted the folder as the Example says. In this reading, it sorted a temporary Downloads with --move under Python 3.9 again.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:17-26",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:187-324",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:394-450",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:104-147"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-2",
+   "good": "Each stop now tells whoever runs the tool how to go on, and their action clears it. A wrong option, two folders, or a folder named that is missing or cannot be read or changed each stop with status 2, the usage, what was wrong and `Run 'sort-downloads --help'`; a missing folder with --move also gets `sort-downloads --move ~/Desktop`. I ran the linked command under Python 3.9 with HOME in a temporary folder, on a Downloads holding a.pdf and b.jpg with Documents at 0o555, using `sort-downloads --move`. The first run printed `Moved: b.jpg -> Images/b.jpg` and `Left: a.pdf: could not move to Documents/a.pdf: Permission denied`, with exit 0. Run again, it printed only the Left line for a.pdf, with exit 0. After `chmod 755` on Documents, the same command printed `Moved: a.pdf -> Documents/a.pdf`, with exit 0, and both files were in their kind folders. Called in-process with a planned a.pdf deleted before move_files, it printed `a.pdf: could not move to Documents/a.pdf: No such file or directory` and b.jpg still moved. The reason names the place it could not go and the system's cause, which tells the user what to change.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:272-324",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:374-391",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:431-444"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-3",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:1-454",
+     "good": "Each name says its thing: plan_sort, move_files, write_record, last_sort_record, needed_place, name_taken, print_preview and print_sorted, and the Move/Leave/SortPlan/SortDone records. Each docstring tells what the function takes, gives and raises, and each held true when I ran it. move_files' docstring now tells the files left with the system's reason, and that the other files still move, and its Raises names only what is still raised. SortDone.left names the files the Mover could not move. The comment on strerror says why the system's words are used. Words of the code's own are pointed to docs/architecture.md, and comments tell the code, not the work.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:1-15",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:108-121",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:154-324",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:394-450"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:1-457",
+     "good": "The module opening tells what is tested and where each expectation comes from. Each constant and helper says what it holds or gives. Each test name says the behavior its Then checks, the three new tests included: the record replaced when nothing moves, the record kept for a sort cut off part way, and a file whose kind folder cannot be changed left while the rest move. The stand-in for os.link and the root skips are explained by their Given lines and skip reasons.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:1-102",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:104-457"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-4",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:1-454",
+     "good": "Each function serves the preview or the sort with --move. needed_place and name_taken are each used by both the planner and the Mover. print_lists' headings take two pairs. Each branch serves a case the README, AC2, AC3 or a stop that must be cleared names: hidden, still downloading, name taken, kind folder missing, a name saved after the plan, and a move the system refuses. No option or parameter goes unused.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:154-226",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:272-371",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:421-450"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:1-457",
+     "good": "Each helper and constant is used by the tests. Each test holds a behavior that AC2, AC3, AC4, AC8's last sort, the README or the architecture asks. Its comments give the Given, When and Then, which its code lines do not.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:29-94",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:104-457"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-5",
+   "good": "These are each written once: the kinds and endings in KINDS, which a test keeps equal to the README's table; the reasons in HIDDEN, DOWNLOADING, name_taken and the Mover's one could-not-move line; the place a move needs in needed_place; and the record's place and form in last_sort_record and write_record. The tests take the Example's files, helpers and setUp from test_preview. After the full check command ran, `git status --short` showed only the two changed work files, the staged steering.md and the untracked .rn calls file and .turn/, and no __pycache__, .coverage or tool cache.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:28-80",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:154-184",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:229-269",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:311-320",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:25-27",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:97-102"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-6",
+   "good": "Each record write in move_files is now held by a test that fails without it, and I read each test beside the line it holds. The empty record before the first move (line 299) is held by lines 367-385: after a sort of another folder, --move on a folder where nothing moves must leave the record naming this folder with made [] and moved [], which AC8's last sort needs. The write after a folder is made (line 307), and the record written as the sort goes rather than once after the loop, are held by lines 387-427: a stop raised as the PDF is linked, after Documents is made, must leave made ['Images','Documents'] and only holiday.jpg moved. Removing line 307 drops Documents, and writing once after the loop leaves no record of the photo. The write after each move (line 323) is held by lines 217-239 and 430-457. The OSError branch is held by lines 430-457. The T4 Test command on Python 3.9 ran 36 tests OK, with sort_downloads.py at 134 statements and 26 branches, 100%, and TOTAL 488/46 at 100%. No line or mutant is left out without a reason.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:296-324",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:217-239",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:367-457"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-7",
+   "good": "Every check the development rules name, the T4 Test command with pyproject.toml's settings, passed: ruff format, ruff check, `Success: no issues found in 4 source files` from mypy, 36 tests OK, and coverage at 100%. Each test checks one behavior its name says. Each runs in its own temporary folder with HOME and XDG_STATE_HOME patched and undone. The os.link stand-in and the permission changes are undone by the patch and by cleanups, so no test needs another to run first.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:97-102",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:104-457"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-8",
+   "good": "The whole T4 check command took 0.213 s of real time, and the 36 unit tests took 0.037 s.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:97-102",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:104-457"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-9",
+   "good": "Each record write goes first to its own new file from tempfile.mkstemp, then is put in place with os.replace, so two runs never write into one file. Two moves to one name cannot overwrite each other, because the link fails on a taken name and that file is left. Each test works in a temporary folder of its own, with its own HOME and XDG_STATE_HOME.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:242-269",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:300-323",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:97-102"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-10",
+   "good": "The T4 Test command runs `ruff format --check . && ruff check . && mypy .` before the unit tests, joined by && so it fails on any finding. Ruff and mypy take their settings from pyproject.toml. When run, the command printed each tool's passing result.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:1-454",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:1-457"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "A file is moved by os.link(old, new, follow_symlinks=False) and then os.unlink(old), not by os.rename.",
+   "why": "The architecture asks for a step that fails where the target name is taken; os.rename writes over on Linux and macOS, and Python 3.9's standard library has no rename that refuses to write over. A hard link fails with FileExistsError, and if the run is cut off between the two steps the file has two names, never none."
+  },
+  {
+   "chosen": "A file the Mover cannot move for a reason other than a taken place (a kind folder it cannot make or write into, a file gone since the plan, a disk with no hard links) is left with the reason 'could not move to <kind>/<name>: <the system's strerror>', and the other files still move; only a failure to write the record, or to take away a file's old name once its new one is given, still stops the run with Python's error.",
+   "why": "Sent back under B-2: a stop on one file kept every later run from sorting anything, with a traceback telling no cause; the system's words, such as 'Permission denied', name what the user changes, and the next run moves the file once they do. The two failures still stopping cannot leave a file and go on: without the record no undo is possible, and a file with two names must be seen at once."
+  },
+  {
+   "chosen": "A file named like a kind folder (a file Images, or a symbolic link of that name) takes the place every file of that kind needs: those files are left with the reason 'Images already exists', in the preview and with --move, by one rule (needed_place) used by both the Sort planner and the Mover.",
+   "why": "The CCS asks the photo to be left with its reason as a taken name is, with no stop part way and nothing written over; putting the rule in the planner too makes the preview show what --move will do, as the architecture asks."
+  },
+  {
+   "chosen": "With --move, the folder must also be one that can be changed; otherwise the run stops at the folder check, before the record is touched, with 'is not a folder that can be read and changed; name one that is after the command, such as: sort-downloads --move ~/Desktop'.",
+   "why": "Otherwise a read-only folder had the last sort's record replaced by an empty one before anything could move, so that sort could no longer be undone; B-2 asks for input to be checked where it comes in."
+  },
+  {
+   "chosen": "The record's form: JSON {\"folder\": absolute path, \"made\": [kind folder names in the order made], \"moved\": [{\"name\", \"kind\"} in the order moved]}, indented by 2.",
+   "why": "It holds what the architecture says the undo needs (each move and each folder made, and the folder, as the undo names none), in the Move's own two fields; indented so a person can read it when something goes wrong."
+  },
+  {
+   "chosen": "The record is rewritten whole after the first empty write and after each folder made and each file moved, to a new file from tempfile.mkstemp beside it (prefix '.last-sort.json.'), then put in place with os.replace.",
+   "why": "The architecture asks for the record written as each move is made and never left half written; a new file for each write keeps two runs from writing into one file."
+  },
+  {
+   "chosen": "An XDG_STATE_HOME that is set but not an absolute path is ignored, as an unset one is, the record going to ~/.local/state.",
+   "why": "The XDG Base Directory Specification says a relative path there is invalid and to be ignored; a relative one would put the record wherever the command was run from, where the undo could not find it."
+  },
+  {
+   "chosen": "With --move, the files the Mover left (place taken since the plan, or could not move) are listed under 'Left:' first, then the plan's own left files in the plan's order.",
+   "why": "The plan lists taken-name reasons first; such failures are rare, so keeping the plan's order otherwise keeps the output as the README's Example shows."
+  },
+  {
+   "chosen": "The --help text says 'Nothing is moved unless --move is given', gives --move the help 'move the files as shown, making each kind folder that is not there', and the folder's help is 'the folder to sort'.",
+   "why": "The README points the user to --help for every option, and the old text said nothing is ever moved, which --move now makes false."
+  },
+  {
+   "chosen": "The new tests are added at the end of TestSort in tests/test_sort.py and test the --move run only; the cut-off sort is made by a stand-in for os.link raising KeyboardInterrupt, as Ctrl-C does, at the second file.",
+   "why": "The answer and the CCS let this action add to tests/test_sort.py only, for --move behaviours; KeyboardInterrupt is the cut-off a user makes, and it is not an OSError, so the Mover does not take it as a file left."
+  },
+  {
+   "chosen": "The record's content is held by tests (the folder, the kind folders made, each file moved with its kind), after a full sort, after a sort where nothing moves, and after a sort cut off part way.",
+   "why": "T4's completion criterion asks the tests to show the record holding each move and each folder made, and AC8's undo reads these fields."
+  }
+ ]
+}

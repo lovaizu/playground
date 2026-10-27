@@ -16,6 +16,7 @@ another test's.
 from __future__ import annotations
 
 import json
+import os
 import unittest
 from collections import Counter
 from pathlib import Path
@@ -212,3 +213,245 @@ class TestSort(unittest.TestCase):
         self.assertIn(str(missing), err)
         self.assertEqual(out, "")
         self.assertEqual(snapshot(self.root), before)
+
+    def test_records_the_folder_each_kind_folder_made_and_each_file_moved(
+        self,
+    ) -> None:
+        # Given: a folder holding the README Example's files.
+        make_files(self.folder, EXAMPLE_FILES)
+        # When: the tool is run on it with --move.
+        run_tool(["--move", str(self.folder)])
+        # Then: the record names the folder, Images and Others as made, in the
+        # order the files needing them were moved, and each file moved with its
+        # kind folder; Documents, there before, is not named as made.
+        record = json.loads((self.root / RECORD).read_bytes())
+        self.assertEqual(
+            record,
+            {
+                "folder": str(self.folder),
+                "made": ["Images", "Others"],
+                "moved": [
+                    {"name": "holiday.jpg", "kind": "Images"},
+                    {"name": "invoice.pdf", "kind": "Documents"},
+                    {"name": "notes.xyz", "kind": "Others"},
+                ],
+            },
+        )
+
+    def test_leaves_each_file_of_a_kind_whose_folder_name_a_file_takes(
+        self,
+    ) -> None:
+        # Given: a photo, and beside it a file named Images, the name of the
+        # photo's kind folder.
+        make_files(self.folder, {"holiday.jpg": b"photo", "Images": b"a file"})
+        # When: the tool is run on it with --move.
+        status, out, err = run_tool(["--move", str(self.folder)])
+        # Then: the photo is printed as left, Images being taken, the run goes on to
+        # move the file named Images to Others, and both keep their content.
+        self.assertEqual(
+            out,
+            f"In {self.folder}:\n"
+            "Moved:\n"
+            "  Images -> Others/Images\n"
+            "Left:\n"
+            "  holiday.jpg: Images already exists\n",
+        )
+        self.assertEqual((status, err), (0, ""))
+        self.assertEqual(
+            snapshot(self.folder),
+            {"holiday.jpg": b"photo", "Others": None, "Others/Images": b"a file"},
+        )
+
+    def test_leaves_each_file_of_a_kind_whose_folder_name_is_saved_after_the_plan(
+        self,
+    ) -> None:
+        # Given: a photo and a PDF, and the user saving a file named Images once the
+        # sort is planned, before it moves.
+        make_files(self.folder, {"holiday.jpg": b"photo", "invoice.pdf": b"invoice"})
+        plan_sort = sort_downloads.plan_sort
+
+        def plan_then_save(folder: Path) -> sort_downloads.SortPlan:
+            plan = plan_sort(folder)
+            make_files(folder, {"Images": b"saved since"})
+            return plan
+
+        # When: the tool is run on it with --move.
+        with mock.patch.object(sort_downloads, "plan_sort", plan_then_save):
+            status, out, err = run_tool(["--move", str(self.folder)])
+        # Then: the photo is printed as left, Images being taken, the PDF still
+        # moves, and the file saved keeps its content.
+        self.assertIn("  holiday.jpg: Images already exists\n", out)
+        self.assertIn("  invoice.pdf -> Documents/invoice.pdf\n", out)
+        self.assertEqual((status, err), (0, ""))
+        self.assertEqual(
+            snapshot(self.folder),
+            {
+                "holiday.jpg": b"photo",
+                "Images": b"saved since",
+                "Documents": None,
+                "Documents/invoice.pdf": b"invoice",
+            },
+        )
+
+    def test_moves_a_symbolic_link_as_a_link_leaving_what_it_points_to(
+        self,
+    ) -> None:
+        # Given: a symbolic link ending in .pdf to a file outside the folder.
+        make_files(self.root, {"saved/invoice": b"invoice"})
+        target = self.root / "saved" / "invoice"
+        (self.folder / "invoice.pdf").symlink_to(target)
+        # When: the tool is run on the folder with --move.
+        run_tool(["--move", str(self.folder)])
+        # Then: Documents holds the link, pointing where it did, and the file it
+        # points to is where it was with its content.
+        moved = self.folder / "Documents" / "invoice.pdf"
+        self.assertTrue(moved.is_symlink())
+        self.assertEqual(os.readlink(moved), str(target))
+        self.assertFalse(os.path.lexists(self.folder / "invoice.pdf"))
+        self.assertEqual(target.read_bytes(), b"invoice")
+
+    def test_keeps_the_record_in_home_when_xdg_state_home_is_not_an_absolute_path(
+        self,
+    ) -> None:
+        # Given: a folder holding a photo, run from the temporary folder so a record
+        # put at a relative path would land in it.
+        self.addCleanup(os.chdir, os.getcwd())
+        os.chdir(self.root)
+        for state in (None, "", "state"):
+            with self.subTest(XDG_STATE_HOME=state):
+                make_files(self.folder, {"holiday.jpg": b"photo"})
+                environment = {} if state is None else {"XDG_STATE_HOME": state}
+                with mock.patch.dict(os.environ, environment):
+                    if state is None:
+                        del os.environ["XDG_STATE_HOME"]
+                    # When: the tool is run on it with --move.
+                    run_tool(["--move", str(self.folder)])
+                # Then: the record is in ~/.local/state/sort-downloads, and nothing
+                # is made at XDG_STATE_HOME's place.
+                record = self.home / ".local/state/sort-downloads/last-sort.json"
+                self.assertEqual(
+                    json.loads(record.read_bytes())["folder"], str(self.folder)
+                )
+                self.assertFalse((self.root / RECORD).exists())
+                record.unlink()
+                (self.folder / "Images" / "holiday.jpg").unlink()
+                (self.folder / "Images").rmdir()
+
+    @unittest.skipIf(
+        os.geteuid() == 0, "a folder's permissions do not keep the root user out"
+    )
+    def test_stops_naming_a_folder_that_cannot_be_changed_and_keeps_the_record(
+        self,
+    ) -> None:
+        # Given: a sort made of another folder, and a folder holding a photo whose
+        # permissions let it be read and listed but not changed.
+        other = self.root / "other"
+        make_files(other, {"invoice.pdf": b"invoice"})
+        run_tool(["--move", str(other)])
+        make_files(self.folder, {"holiday.jpg": b"photo"})
+        before = snapshot(self.root)
+        self.addCleanup(self.folder.chmod, 0o755)
+        self.folder.chmod(0o555)
+        # When: the tool is run on it with --move.
+        status, out, err = run_tool(["--move", str(self.folder)])
+        # Then: it stops with a failing status, naming the folder and the --move
+        # command to name another with, prints nothing on standard output, and
+        # leaves everything, the other sort's record among it, as it was.
+        self.folder.chmod(0o755)
+        self.assertNotEqual(status, 0)
+        self.assertIn(str(self.folder), err)
+        self.assertIn("sort-downloads --move ~/Desktop", err)
+        self.assertEqual(out, "")
+        self.assertEqual(snapshot(self.root), before)
+
+    def test_replaces_the_record_of_an_earlier_sort_when_nothing_moves(
+        self,
+    ) -> None:
+        # Given: a sort made of another folder, and a folder holding only a hidden
+        # file.
+        other = self.root / "other"
+        make_files(other, {"invoice.pdf": b"invoice"})
+        run_tool(["--move", str(other)])
+        make_files(self.folder, {".localized": b""})
+        # When: the tool is run on the folder with --move.
+        status, out, err = run_tool(["--move", str(self.folder)])
+        # Then: it prints the hidden file as left, and the record now names this
+        # folder with nothing made or moved, so no undo moves the other's files.
+        self.assertEqual(out, f"In {self.folder}:\nLeft:\n  .localized: hidden file\n")
+        self.assertEqual((status, err), (0, ""))
+        self.assertEqual(
+            json.loads((self.root / RECORD).read_bytes()),
+            {"folder": str(self.folder), "made": [], "moved": []},
+        )
+
+    def test_keeps_in_the_record_what_a_sort_cut_off_part_way_did(self) -> None:
+        # Given: a folder holding a photo, a PDF and a file of no listed kind, and
+        # the user stopping the run with Ctrl-C as the PDF is given its new name,
+        # once Documents is made for it.
+        make_files(
+            self.folder,
+            {"holiday.jpg": b"photo", "invoice.pdf": b"invoice", "notes.xyz": b"notes"},
+        )
+        link = os.link
+
+        def link_until_the_pdf(old: Path, new: Path, **options: bool) -> None:
+            if Path(old).name == "invoice.pdf":
+                raise KeyboardInterrupt
+            link(old, new, **options)
+
+        # When: the tool is run on it with --move.
+        stopping = mock.patch.object(os, "link", link_until_the_pdf)
+        with stopping, self.assertRaises(KeyboardInterrupt):
+            run_tool(["--move", str(self.folder)])
+        # Then: the record holds the folders made, Documents among them, and the
+        # photo moved, and the PDF and the other file are where they were.
+        self.assertEqual(
+            json.loads((self.root / RECORD).read_bytes()),
+            {
+                "folder": str(self.folder),
+                "made": ["Images", "Documents"],
+                "moved": [{"name": "holiday.jpg", "kind": "Images"}],
+            },
+        )
+        self.assertEqual(
+            snapshot(self.folder),
+            {
+                "Images": None,
+                "Images/holiday.jpg": b"photo",
+                "Documents": None,
+                "invoice.pdf": b"invoice",
+                "notes.xyz": b"notes",
+            },
+        )
+
+    @unittest.skipIf(
+        os.geteuid() == 0, "a folder's permissions do not keep the root user out"
+    )
+    def test_leaves_a_file_whose_kind_folder_cannot_be_changed_and_moves_the_rest(
+        self,
+    ) -> None:
+        # Given: a PDF and a photo, and a Documents folder there before whose
+        # permissions let it be read and listed but not changed.
+        make_files(self.folder, {"a.pdf": b"pdf", "b.jpg": b"photo"})
+        (self.folder / "Documents").mkdir()
+        self.addCleanup((self.folder / "Documents").chmod, 0o755)
+        (self.folder / "Documents").chmod(0o555)
+        # When: the tool is run on the folder with --move.
+        status, out, err = run_tool(["--move", str(self.folder)])
+        # Then: the PDF is printed as left, naming where it could not go and the
+        # cause, it stays with its content, and the photo still moves and is
+        # recorded.
+        self.assertEqual(
+            out,
+            f"In {self.folder}:\n"
+            "Moved:\n"
+            "  b.jpg -> Images/b.jpg\n"
+            "Left:\n"
+            "  a.pdf: could not move to Documents/a.pdf: Permission denied\n",
+        )
+        self.assertEqual((status, err), (0, ""))
+        self.assertEqual((self.folder / "a.pdf").read_bytes(), b"pdf")
+        self.assertEqual(
+            json.loads((self.root / RECORD).read_bytes())["moved"],
+            [{"name": "b.jpg", "kind": "Images"}],
+        )

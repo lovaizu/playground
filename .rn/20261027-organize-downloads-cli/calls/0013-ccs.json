@@ -1,0 +1,82 @@
+{
+ "focal_entities": [
+  {
+   "work": "t4.2"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "code"
+  },
+  {
+   "path": "sort-downloads/sort_downloads.py"
+  },
+  {
+   "path": "sort-downloads/tests/test_sort.py"
+  },
+  {
+   "audience": "whoever runs sort-downloads and whoever maintains it, a person or an AI"
+  },
+  {
+   "has": "sort-downloads/README.md"
+  },
+  {
+   "has": "sort-downloads/docs/architecture.md"
+  },
+  {
+   "has": "sort-downloads/pyproject.toml"
+  },
+  {
+   "has": "sort-downloads/sort_downloads.py"
+  },
+  {
+   "has": "sort-downloads/tests/test_preview.py"
+  },
+  {
+   "has": "sort-downloads/tests/test_sort.py"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "running sort-downloads --move to sort a folder as the README's Example shows, and maintaining it with its tests"
+  },
+  {
+   "serves": "AC2: Run told to move, the tool moves each file directly in the folder into the folder of its kind inside it, making that folder where it is not there, a file of no kind the README lists going to Others; each file inside a subfolder stays where it was; a hidden file, whose name starts with '.', and a download still running, whose name ends in .crdownload or .part, are not moved, stay where they were, and are named in the tool's output as left for that reason."
+  },
+  {
+   "serves": "AC3: A file whose name already exists in the folder it would move to is not moved, stays where it was, and is named in the tool's output as left for that reason; after any run, every file there was before is still there with the same name and content, no file overwritten."
+  },
+  {
+   "serves": "AC4: AC1 to AC3 and AC8 hold on a trial folder holding at least images, documents, a file of no listed kind, a name already taken in a target folder, a subfolder with files in it, a hidden file, a download still running, and, after a sort, a new file of the same name as one the sort moved, put where that one was; shown by automated tests and by real runs of the tool on Linux; run with no folder named, the tool works on ~/Downloads."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "README, architecture, settings, the tool of T3, its tests and the sort's tests of T4 action 1 handed: the Mover and the record are made to the architecture, passing both test files under the settings of T3 action 1"
+  },
+  {
+   "chosen": "A file whose name is a kind folder's, such as a file named Images beside a photo to sort, is a case the tests of T4 action 1 leave open: the tool must neither stop part way nor write over it, the photo left with its reason as a name taken is"
+  },
+  {
+   "chosen": "sort-downloads/tests/test_sort.py may be added to in this action: tests for --move behaviours the code handles that the tests of T4 action 1 do not hold belong with the sort's tests, each kept as those tests are, not changing what they hold"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/fix.md"
+  }
+ ]
+}

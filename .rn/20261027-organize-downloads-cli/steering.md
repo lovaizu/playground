@@ -24,15 +24,6 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Tasks
 
-- T4: `sort-downloads --move`, which moves each file the preview shows into the folder of its kind, making the folder where it is not there, leaves each file it shows as left, and writes the record of the sort. Serves AC2, AC3 and AC4.
-
-  Completion criterion: unit tests show, on a folder made as AC4's trial folder, each file moved as AC2 says, each file left as AC2 and AC3 say and named in the output with its reason, a file saved under a taken name between the plan and the move not written over, nothing in a subfolder moved, and the record holding each move and each folder made; and they pass, with the formatter, linter and type checker, on Python 3.9.
-
-  Test: `uv run --directory sort-downloads --no-project --python 3.9 --with ruff --with mypy --with coverage sh -c 'ruff format --check . && ruff check . && mypy . && coverage run --branch -m unittest && coverage report'`
-
-  - [x] 1. Make the unit tests of the sort with `--move` from AC2, AC3 and the README's Example, seen failing on the tool of T3, `sort-downloads/tests/test_sort.py` as a code work. turn.
-  - [ ] 2. Make the tool's Mover and Last sort record for a sort, `sort-downloads/sort_downloads.py` as a code work. turn.
-
 - T5: `sort-downloads --undo`, which shows what undoing the last sort would move back and leave, and with `--move` moves each file back and removes each folder that sort made once empty. Serves AC3, AC4 and AC8.
 
   Completion criterion: unit tests show, on a folder made as AC4's trial folder, sorted and then given a new file where a moved one was, the undo listing and moves AC8 and the README's Example give, the file whose old place is taken left and named, only the empty folders the sort made removed, and nothing moved without `--move`; property tests show, over any file names, that a sort and its undo leave every file where it was with the same name and content and that no run writes over a file; mutation testing finds a test failing on each change it makes; and they pass, with the formatter, linter and type checker, on Python 3.9.
@@ -69,7 +60,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Next
 
-Step 4 of /rn:up on T4: action 2, make the tool's Mover and Last sort record for a sort
+Step 4 of /rn:up on T5: action 1, the unit tests of the undo
 
 ## Open
 
