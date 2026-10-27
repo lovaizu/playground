@@ -30,7 +30,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
   Test: `uv run --directory sort-downloads --no-project --python 3.9 --with ruff --with mypy --with coverage --with hypothesis --with mutmut --with pytest sh -c 'ruff format --check . && ruff check . && mypy . && coverage run --branch -m unittest && coverage report && python -m unittest tests.properties && mutmut run'`
 
-  - [ ] 1. Make the unit tests of the undo from AC8 and the README's Example, seen failing on the tool of T4, `sort-downloads/tests/test_undo.py` as a code work. turn.
+  - [x] 1. Make the unit tests of the undo from AC8 and the README's Example, seen failing on the tool of T4, `sort-downloads/tests/test_undo.py` as a code work. turn.
   - [ ] 2. Make the property tests the architecture names, seen failing on the tool of T4, `sort-downloads/tests/properties.py` as a code work. turn.
   - [ ] 3. Make the tool's Undo planner and the Mover's undo, `sort-downloads/sort_downloads.py` as a code work. turn.
 
@@ -60,7 +60,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Next
 
-Step 4 of /rn:up on T5: action 1, the unit tests of the undo
+Step 4 of /rn:up on T5: action 2, the property tests
 
 ## Open
 

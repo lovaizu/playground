@@ -1,0 +1,159 @@
+{
+ "work": [
+  "sort-downloads/tests/test_undo.py"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "F-1",
+   "good": "The module opens with what it tests and why, and where each expectation is drawn from (the README's Example, AC3, AC4 and AC8, the architecture's Mover); each helper has a Google-style docstring with Args and Returns and typed signature; each test's name is one sentence of what must happen, and its body carries Given, When and Then comments in plain words. Ruff with the D rules passes on it (`ruff check .`: All checks passed).",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:1-17",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:83-98",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:108-127",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:496-511"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-1",
+   "good": "The file imports only the standard library and the project's own test modules, so `uv run --no-project --python 3.9 python -m unittest tests.test_undo` runs it on Python 3.9 with nothing installed: 22 tests ran in 0.026s. On the tool of T4, 20 of them fail or error, each for want of --undo (\"unrecognized arguments: --undo\", \"module 'sort_downloads' has no attribute 'plan_undo'\", \"KeyboardInterrupt not raised\"), and the 2 that pass are the ones holding that nothing changes (lines 129-139 and 163-171), which a tool that refuses --undo meets too; so the run shows what the undo must do and that T4 does not do it.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:19-30"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-2",
+   "good": "The tests hold each stop the README and AC8 imply for the undo: no sort made yet stops non-zero, prints nothing on standard output, changes nothing and names `sort-downloads --move`, the action that makes a sort to undo (which the usage line alone would not satisfy, as the comment says); the sorted folder gone, a folder given with --undo, and the sorted folder unchangeable each stop naming the folder and changing nothing, the record included. The undo's other runs (lines 119-127) show that taking the named action, a sort with --move, lets --undo go on.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:496-570",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:108-127"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-3",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:1-570",
+     "good": "Each constant says by its name and comment what it stands for (NEW_NOTES, NOTHING_MOVED_BACK, EXAMPLE_UNDO_LISTING, EXAMPLE_UNDONE_LISTING, EXAMPLE_UNDONE with why each folder stays or goes); snapshot_of's docstring says it gives what snapshot() would for make_files' input; the set-up reuse says it is the preview's, kept in one place; each test name says the behavior, such as test_a_run_without_move_after_the_sort_does_not_change_which_is_undone, and its Given/When/Then tells what its assertions check, including the reasons behind choices (the mock of plan_undo standing for a file saved between plan and move; the mock of os.link standing for Ctrl-C; why the root user skips the permission test; why `sort-downloads --move` is looked for in place of the usage line). I read each test beside its assertions and found each comment telling what the code does.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:32-117",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:370-395",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:466-494",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:551-570"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-4",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:1-570",
+     "good": "Each helper and constant is used by the tests that need it: snapshot_of by two tests that compare against the Example's files before sorting, sort_the_example_then_save_new_notes by the five tests on AC4's trial folder after a sort, NOTHING_MOVED_BACK by every undo listing; each test is one behavior AC3, AC4, AC8, the README's Example or the architecture's Mover names, and no option or branch is tested that they do not ask for. The plan_then_save wrappers take *arguments/**options as plan_undo's signature is not yet made, which is all their callers need.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:32-117",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:376-381"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-5",
+   "good": "The set-up, make_files, run_tool, snapshot, EXAMPLE_FILES and files_by_name are taken from tests/test_preview.py and tests/test_sort.py rather than written again; the README's two undo listings are each written once and reused; the names snapshot, folder, record and the Example's terms are the same as in the other test files. Running the whole unit test run and reading `git status --short --ignored sort-downloads` showed only the new test file untracked and the run's own files (__pycache__/, .mypy_cache/, .ruff_cache/, .coverage) ignored.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:27-61",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:101-106"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-6",
+   "good": "Read beside AC3, AC4, AC8, the README's Example and the architecture's Mover, the tests take each partition and transition the undo has: with and without --move; the README Example's listing and moves to the character (lines 119-161) on AC4's trial folder after a sort and a new notes.xyz; a sort with nothing saved since undone to the exact folder before (173-195); ~/Downloads with no folder named, and a named folder rather than ~/Downloads (197-228); the last of two sorts only, and a run without --move not changing which is last (230-274); the record's states: a file left then moved back by a later undo once its place is cleared, everything already moved back, and an undo cut off part way going on from what is left (276-323, 466-494); folders: one there before kept though empty, one the sort made kept while it holds a file saved since or saved after the plan, made ones removed in the order made (173-195, 325-368, 398-429); a file whose old place is taken at plan time and after the plan, and one gone since the sort (153-171, 370-396, 431-464); no file lost or written over (163-171); and the four stops (496-570). Expected values are written from the README's text and AC8, not from code, as the undo code is not there yet. Run on the tool of T4, 20 of 22 fail; the 2 passing hold that nothing changes, which a fault moving a file would break. Coverage of the code is for T5 action 3, which these tests drive.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:119-570"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-7",
+   "good": "Each test fails on the one behavior its name says, and each stop test splits its argv cases into subtests, so the failure names the case. Each test makes its own temporary folder with HOME and XDG_STATE_HOME inside it, reads no clock or network, restores the folder's permissions by addCleanup, and needs no other test to run first. `ruff format --check .` and `ruff check .` pass; `mypy .` reports only `Module has no attribute \"plan_undo\"` at lines 376 and 405, and the unit tests fail, both for want of the undo on the tool of T4, which is the use this work is for; they go once T5 action 3 makes plan_undo.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:101-106",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:496-570"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-8",
+   "good": "The whole unit test run, 58 tests with these 22, ended in 0.05s (0.08s wall); no test runs another program, each set-up being files written by make_files and calls of main() in the same process.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:108-117"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-9",
+   "good": "Every place a test writes, the sorted folders, ~/Downloads and the Last sort record, is inside the test's own temporary folder through the shared set-up, which points HOME and XDG_STATE_HOME there, so two test workers or two runs never write one place.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:13-16",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:101-106"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-10",
+   "good": "The file sits under the checks pyproject.toml sets and T5's Test command runs: Ruff's formatter and linter (with D rules, test classes and methods exempt as their names and comments tell them) and mypy strict on Python 3.9. I ran the three on it: the formatter and linter pass, and mypy shows the two lines that will pass once plan_undo exists, so a maintainer is shown what each finds on every change.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:19-30",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_undo.py:376-381"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The Undo planner is named sort_downloads.plan_undo and is called through the module, as main calls plan_sort. Two tests patch it to save a file between the plan and the move. The patch wrappers take *arguments/**options, so its parameters stay open.",
+   "why": "The architecture names an Undo planner beside the Sort planner, plan_sort, and test_sort tests the race the same way, by patching the planner. Only a patch can make the 'file saved since the plan' case the architecture's Mover is built for."
+  },
+  {
+   "chosen": "The undo's Mover moves a file back with os.link and then takes away the old name, as the sort's Mover does. The Ctrl-C test patches os.link.",
+   "why": "The architecture says the Mover moves by a step that fails where the target name is taken, and the sort does that with os.link. test_sort's Ctrl-C test patches os.link the same way."
+  },
+  {
+   "chosen": "The README's heading 'Removed empty folder:' is also used when several folders are removed, one per line, in the order the sort made them. A file left in an undo is named by its current place ('Others/notes.xyz') with the reason '<old name> already exists'. Undo lists are in the order the sort moved the files.",
+   "why": "The README's Example shows one folder, the 'Kind/name -> name' line form, the left-file form, and the files in the order the sort moved them; this extends that form to more than one folder without a second wording."
+  },
+  {
+   "chosen": "A file the sort moved that is no longer in its kind folder is listed under Would leave/Left as '<Kind>/<name>: no longer there', and the folder the sort made is still removed once empty.",
+   "why": "AC8 and the README do not cover this case. Listing the file with a reason keeps every file the last sort moved in the output, as AC8 asks, and the Undo planner already gives each file a place to go back to or a reason."
+  },
+  {
+   "chosen": "--undo with no sort recorded stops with a failing status, prints nothing on standard output, and names 'sort-downloads --move' in its message. The tests do not fix the rest of the wording.",
+   "why": "This follows the tool's other stops, which go through parser.error with status 2, and B-2: the stop names the action that makes a sort to undo. The usage line already holds '--move', so the test asks for the whole command so that it shows something."
+  },
+  {
+   "chosen": "--undo with a folder named stops, naming that folder, and changes nothing. --undo stops, naming the folder, when the sorted folder is gone; --undo --move also stops when it cannot be changed. In each case the record is kept.",
+   "why": "The README says 'you name no folder with --undo', and the sort checks the folder in main before the Mover runs, so the last sort's record is kept. The undo is held to the same rule."
+  },
+  {
+   "chosen": "The tests check that the record 'always holds what is still to undo' through behavior: a later undo, one after everything is back, and one after Ctrl-C. They do not check the record's JSON after an undo.",
+   "why": "The architecture gives the rule but no record shape after an undo. Checking behavior leaves the shape to T5 action 3, and a broken record still fails these tests."
+  },
+  {
+   "chosen": "An undo that finds nothing left to move back prints 'In <folder>:' and 'Nothing was moved.' with no hint without --move, and only 'In <folder>:' with --move.",
+   "why": "The sort's preview and print_sorted already behave this way when nothing moves (test_preview, test_sort), and the undo is said to work 'like a sort'."
+  },
+  {
+   "chosen": "Two undo tests pass on the tool of T4: no file lost or written over, and nothing changed without --move. They pass because T4 refuses --undo and so changes nothing. They are kept.",
+   "why": "They guard what must not change (AC3 and AC8's 'afterwards every file and folder is where it was'). Any change that breaks it makes them fail. The other 20 undo tests fail on T4, as the CCS asks."
+  },
+  {
+   "chosen": "A helper snapshot_of(files) in test_undo.py gives the snapshot of a folder made from EXAMPLE_FILES, used to compare a folder with its state before the sort.",
+   "why": "Two tests need that state after their snapshot is gone, and building it from EXAMPLE_FILES keeps the Example's files written in one place."
+  }
+ ]
+}
