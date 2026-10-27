@@ -1,8 +1,8 @@
 ---
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/16
-stage: design
-signoff: design
+stage: build
+signoff: none
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -24,7 +24,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Next
 
-Step 5 of /rn:up on design: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
+Step 10 of /rn:up on plan: make the tasks that build the finished work
 
 ## Open
 
