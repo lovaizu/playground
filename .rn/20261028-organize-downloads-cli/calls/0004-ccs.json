@@ -1,0 +1,27 @@
+{
+ "focal_entities": [
+  {
+   "work": "t1.2"
+  },
+  {
+   "stage": "ux"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Command name: The command is named organize-downloads."
+  },
+  {
+   "decision": "How it is told to move and to undo: Run plainly, organize-downloads only shows what it would move. organize-downloads --move moves the files; organize-downloads --undo undoes the last run that moved files. Given both --move and --undo, it stops with an error and changes nothing."
+  },
+  {
+   "decision": "Types, folders and extensions: Files are sorted into six folders made inside Downloads, by extension, upper and lower case alike (.JPG goes to Images):\nImages: jpg jpeg png gif webp heic bmp tiff svg\nDocuments: pdf doc docx xls xlsx ppt pptx odt ods odp rtf txt md csv pages numbers key\nArchives: zip tar gz tgz bz2 xz 7z rar\nInstallers: dmg pkg deb rpm appimage exe msi\nAudio: mp3 wav m4a aac flac ogg\nVideos: mp4 mov mkv avi webm"
+  },
+  {
+   "decision": "Files of no type: A file whose extension is of none of the six types, such as one with no extension, .json, or a download still in progress such as .crdownload or .part, stays in Downloads and is listed as a file not moved."
+  },
+  {
+   "decision": "Which folder it sorts: By default the tool sorts the user's Downloads folder: ~/Downloads on macOS; on Linux the folder XDG_DOWNLOAD_DIR in ~/.config/user-dirs.dirs names, such as ~/ダウンロード, or ~/Downloads where none is set. The user can name another folder to sort instead, as in organize-downloads ~/some-folder."
+  }
+ ]
+}
