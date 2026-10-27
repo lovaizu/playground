@@ -1,0 +1,1 @@
+{"work": "plan", "was": "Where it runs: The tool runs on Linux and macOS, on the user's ~/Downloads.", "now": "Where it runs: The tool runs on Linux and macOS, on the user's ~/Downloads; it is built to act the same on both, checked by running it on Linux in the session, and the user runs it once on their Mac."}
