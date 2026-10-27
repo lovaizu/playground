@@ -1,0 +1,139 @@
+{
+ "work": [
+  "sort-downloads/docs/architecture.md",
+  "sort-downloads/docs/logical-view.svg"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/architecture.md",
+   "item": "F-1",
+   "good": "The document follows the template from the top: the title '# sort-downloads architecture', an opening sentence on how the tool is put together with a link to the README (../README.md, found), its own principles each a list line with its why indented after a blank line, '## User stories' as 'As the user, I want ...' lines, '## Architecture' with '### Logical view' showing logical-view.svg beside it as an image followed by lines, '### Physical view' as a text tree followed by lines, and '## Test'. The Test section has no link because the project has no rule file of its own, and it says so in its first sentence, which is where the template puts the link. No bold anywhere. The figure has a box per component holding only its name, a legend for the shapes (code component, files on disk, one product), a dashed frame round the product, and labelled arrows. It sits on a white card of its own, so it reads the same on light and dark pages. I checked the arrow coordinates and none cross.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:1-18",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:19-27",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:28-83",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:84-112",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/logical-view.svg:1-90"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/architecture.md",
+   "item": "B-1",
+   "good": "The opening says how the tool is put together: one Python program that first plans every move of a sort or an undo, then prints the plan or carries it out and prints what it did, keeping the record of the last sort outside the sorted folder. It then gives the rules every decision is held to: nothing moves without --move; no file is deleted, renamed or written over, and the only thing removed is an empty folder the undone sort made; only loose files are moved, and an undo moves only what the sort moved; the preview and the move come from the same plan; and at run time only Python 3.9+ and its standard library are needed. Each is a rule, not a means. The tool is built on nothing else, so it has no base principles to link.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:3-17"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/architecture.md",
+   "item": "B-2",
+   "good": "I set each scene of the README beside a story. The 'sort-downloads' preview, and 'sort-downloads --move ~/Desktop' for another folder, rest on story 1 (see what would move and what would be left, for Downloads or a named folder). 'sort-downloads --move' rests on story 2. 'sort-downloads --undo' rests on story 3. '--undo --move' with 'Removed empty folder' rests on story 4. Documentation's 'sort-downloads --help' rests on story 5. Requirements and Installation rest on story 6. Each story is something the user does at the command line, not a step inside the tool. Each says what no other does, and each is named by what the user does, not by Python.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:19-26"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/architecture.md",
+   "item": "B-3",
+   "good": "I followed each story through the arrows. Preview sort: User runs Command line, which asks Sort planner for a plan; Sort planner lists the files in Sorted folder; Command line hands what was planned to Report, which prints it. Move: the same, and Command line hands the plan to Mover with --move; Mover moves files and makes folders in Sorted folder and updates Last sort record after each move; Report prints what was done. Undo preview and undo move: Undo planner reads the record and looks at the old places, then Mover moves files back, removes the empty folders and updates the record. --help: the line on Command line says it prints help and goes no further. Install: the line says it takes no component. Line 34 gives the order the arrows run in, and line 35 says what a plan holds. The cases a reader would ask about each go to a component already there: hidden files, running downloads and taken names to Sort planner; old places now taken to Undo planner; a file saved between plan and move to Mover's step that fails rather than overwrites; a sort cut off part way to the record written after each move; bad options to Command line. The lines say why for the choices a reader would question, such as failing rather than looking first, keeping the record outside the folder, and updating the record on undo. Each box holds a name only.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:30-56",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/logical-view.svg:22-78"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/architecture.md",
+   "item": "B-4",
+   "good": "I looked up each box of the figure in the tree. Command line, Sort planner, Undo planner, Mover and Report are in sort_downloads.py <Python 3.9, standard library only>. Last sort record is last-sort.json <JSON> under $XDG_STATE_HOME/sort-downloads/, with ~/.local/state as the fallback. Sorted folder lies outside the product frame; it is the user's folder, named on the command line or ~/Downloads (line 36). Each place in the tree has its kind, and it is a text tree, not boxes. The lines say the one outside dependency is python3 3.9 or newer, found by '#!/usr/bin/env python3'. They say the tool starts by the name sort-downloads from the copy in ~/.local/bin, which is what the README's Installation does with 'cp playground/sort-downloads/sort-downloads ~/.local/bin/'. And they say the code file has a module name while a symlink gives the command name, and that cp copies the file the link points to, as plain cp does on both GNU and BSD.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:58-82"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/architecture.md",
+   "item": "B-5",
+   "good": "The Test section says the project has no rules of its own for checking code and user stories, so it sets the checks here. For each kind of part in the tree there is a check. The program is checked by unittest unit tests on Python 3.9, with HOME and XDG_STATE_HOME pointed into a temp folder, and by line and branch coverage, Ruff, mypy, Hypothesis property tests (in tests/properties.py, run on their own by 'python3 -m unittest tests.properties') and mutmut, with their settings in pyproject.toml. The README's kinds table is checked against the code by a unit test. The user stories are checked by real runs of the installed sort-downloads on Linux, on a new copy of the AC4 trial folder (the link to the plan's Acceptance criteria resolves): AC1, AC2 with AC3, AC8 after a new file is put in an old place, and the run with no folder named. The user checks the Mac install and AC6. Each check names the command that is run, not a case's inputs or the bar to pass. One thing for the user to confirm at sign-off: the claim of no project rules answers the question still listed under Open in steering.md.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:84-112"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/architecture.md",
+   "item": "B-6",
+   "good": "I checked each principle against the arrows, lines and checks it bears on. Nothing moving without --move fits Mover being handed the plan only with --move (line 34 and the arrow labelled 'hands the plan, with --move'). Never writing over a file fits Mover's step that fails where the name is taken, and the Undo planner leaving a file whose old place is taken. Loose files only fits the Sort planner listing only the files directly in the folder, and the Undo planner taking only the files in the record. One plan fits both runs going through the same planners. Python 3.9 and the standard library only fits the tree's 'standard library only', line 76, and the unit tests run by 'python3 -m unittest' with nothing installed (line 89). That last check now holds alongside the property tests. The tree puts them in tests/properties.py (line 66), and line 102 says that name is outside test*.py and that they run on their own by 'python3 -m unittest tests.properties'. In a mktemp folder, removed at the end, I set up tests/__init__.py, a test_kinds.py and a properties.py using Hypothesis. 'python3 -S -m unittest' (no Hypothesis) ran 1 test with exit 0, so properties.py was not picked up. 'python3 -m unittest tests.properties -v' with Hypothesis ran test_p and passed. Line 89 and line 106 (property tests run on what a change touches) now both hold. The lines about the record also agree with each other: replaced on a sort and written after each move (line 44), cut back on an undo (line 48), and written as a new file then put in place of the old (line 81).",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:8-17",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:34-48",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:62-66",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:76-81",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:89-106"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/architecture.md",
+   "item": "B-7",
+   "good": "Each line is a decision that changing would change what was approved. They decide which component takes which kind of case, the order of the record writes and why, where the record lives, how the code file and the command name are placed, where the property tests live and how they are run apart, and which check covers each AC. How a part behaves case by case is left to the tests. Counts, the list of kinds and the output text are not given; the kinds stay in the README and the code, with a test keeping the two the same. The UX is reached by the link to the README, and the trial folder by the link to AC4, not written again. The lines say what holds now, with no history or status. The one repeat, Python 3.9 at lines 15 and 76, comes from the template asking for both a principle and the outside dependency.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:3-17",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:34-56",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:76-82",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:89-112"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/architecture.md",
+   "item": "B-8",
+   "good": "Reading once from the top, I understood each line where I met it. UX terms such as --move, --undo, kinds and 'left' are reached through the README link in the opening. A 'plan' is said at line 35 and the 'Last sort record' at line 5 before the components use them. The other products each have a link: Hypothesis, coverage.py, mutmut, pytest, Ruff, mypy. Mutation testing and property tests are said in a clause where the Test section uses them. Each component has one name across the figure and the text: Command line, Sort planner, Undo planner, Mover, Report, Last sort record, Sorted folder. Each line rests on what comes before it.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/architecture.md:1-112",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/docs/logical-view.svg:22-44"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "Six user stories, the install scene among them, carried by line 56 rather than a component.",
+   "why": "Every README scene must rest on a story (B-2), and installing is only copying the file, so no component takes it."
+  },
+  {
+   "chosen": "Five code components (Command line, Sort planner, Undo planner, Mover, Report) and the Last sort record, with one Mover for both sort and undo.",
+   "why": "The plan-then-act split gives preview and move from one plan (principle at line 11), and one Mover lets the no-overwrite and empty-folder-only rules be kept in one place for both."
+  },
+  {
+   "chosen": "The record at $XDG_STATE_HOME/sort-downloads/last-sort.json, ~/.local/state/sort-downloads/ where unset, on both Linux and macOS, as JSON.",
+   "why": "Undo names no folder, so the record must be outside the sorted folder; one place on both systems keeps it simple, and JSON from the standard library keeps any file name exact."
+  },
+  {
+   "chosen": "The record replaced when a sort with --move starts, written after each move, written as a new file then renamed into place, and on undo each undone entry taken out.",
+   "why": "An interrupted sort can still be undone, the record is never half written, and a file left on undo can be undone later once its place is cleared."
+  },
+  {
+   "chosen": "Moves and folder removals by steps that themselves fail on a taken name or a non-empty folder, not by looking first.",
+   "why": "A file saved between the plan and the move is then never overwritten (G1, AC3)."
+  },
+  {
+   "chosen": "Code in sort-downloads/sort_downloads.py with sort-downloads/sort-downloads a symbolic link to it.",
+   "why": "The README's install copies sort-downloads/sort-downloads; cp follows the link (tried), and a .py module name lets unittest, coverage.py, mutmut, Ruff and mypy take the file as a module."
+  },
+  {
+   "chosen": "Development tools Hypothesis, coverage.py, mutmut run through pytest, Ruff and mypy, settings in sort-downloads/pyproject.toml; unit tests in plain unittest on Python 3.9.",
+   "why": "rn's code checklist (handed in the CCS so the checks agree with it) asks for property tests, coverage, mutation testing, a formatter, a linter and a type checker; keeping the unit tests to unittest lets them run on 3.9 with nothing installed, as the user's answer said."
+  },
+  {
+   "chosen": "The property tests in tests/properties.py, a name outside test*.py, run on their own by 'python3 -m unittest tests.properties'.",
+   "why": "The plain unit test run on a clean Python 3.9 then never imports Hypothesis, and a file name keeps them apart with no skip logic and no second folder."
+  },
+  {
+   "chosen": "Property tests and mutation testing run on what a change touches before it is merged; formatter, linter, type checker and unit tests with coverage on every change.",
+   "why": "rn's code checklist leaves property and mutation testing to a slower pass; no CI is named in the given files, so the line says when, not where."
+  },
+  {
+   "chosen": "The AC checks linked to the plan's acceptance criteria in .rn/20261027-organize-downloads-cli/steering.md.",
+   "why": "AC1 to AC8 and the trial folder are defined there alone; repeating them would make a second copy that drifts."
+  },
+  {
+   "chosen": "The figure on its own white card with fixed colours.",
+   "why": "An SVG shown as an image does not follow the page's theme reliably, so its own background keeps it readable on light and dark pages."
+  }
+ ]
+}

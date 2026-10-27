@@ -22,17 +22,9 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 - AC7: The README says how to install the tool and how to use it, undoing included, the kinds and which files belong to each included, and a reader following it from a fresh clone installs the tool and runs it to sort and to undo, each both without being told to move and told to move.
 - AC8: Run to undo without being told to move, the tool lists each file the last sort moved, the sort being the last run told to move that was not to undo, with the place it would go back to, and afterwards every file and folder is where it was; run to undo and told to move, it moves each file the last sort moved back to where it was, one by one, and removes each folder that sort made that is then empty; a file whose old place now holds a file of the same name is not moved back, stays where it is, and is named in the tool's output as left for that reason; a folder that was there before that sort, or that still holds anything, is not removed.
 
-## Tasks
-
-- T2: The architecture, `sort-downloads/docs/architecture.md`, holding how the tool is put together to do what the README says, the record of the last sort that undo reads included, and how each part and AC1 to AC3 and AC8 are checked by automated tests and real runs on Linux. Serves AC1, AC2, AC3, AC4 and AC8.
-
-  Completion criterion: the user, reading it at the design sign-off with the README, finds each use the README shows taken on by a part, the language and way of installing the README gives used, and a check named for each of AC1 to AC3 and AC8 on the trial folder AC4 names, and approves it as how the tool is built.
-
-  - [ ] 1. Make the architecture from the README, `sort-downloads/README.md`, and the research result `.rn/20261027-organize-downloads-cli/research-existing-tools.md`, `sort-downloads/docs/architecture.md` as an architecture work. turn.
-
 ## Next
 
-Step 4 of /rn:up on T2: action 1, make the architecture
+Step 5 of /rn:up on design: show the design sign-off
 
 ## Open
 

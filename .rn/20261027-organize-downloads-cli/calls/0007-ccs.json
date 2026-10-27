@@ -1,0 +1,76 @@
+{
+ "focal_entities": [
+  {
+   "work": "t2.1"
+  },
+  {
+   "stage": "design"
+  },
+  {
+   "kind": "architecture"
+  },
+  {
+   "path": "sort-downloads/docs/architecture.md"
+  },
+  {
+   "path": "sort-downloads/docs/logical-view.svg"
+  },
+  {
+   "audience": "the user, approving at the design sign-off how the tool is built, and the maker of the tool and its tests"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  },
+  {
+   "has": "sort-downloads/README.md"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/research-existing-tools.md"
+  },
+  {
+   "has": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the architecture as how the tool is built and checked, then building the tool and its tests to it"
+  },
+  {
+   "serves": "AC1: Run on a folder without being told to move, the tool lists each file directly in that folder with the folder it would move to, and afterwards every file and folder in it is where it was, with the same name and content."
+  },
+  {
+   "serves": "AC2: Run told to move, the tool moves each file directly in the folder into the folder of its kind inside it, making that folder where it is not there, a file of no kind the README lists going to Others; each file inside a subfolder stays where it was; a hidden file, whose name starts with '.', and a download still running, whose name ends in .crdownload or .part, are not moved, stay where they were, and are named in the tool's output as left for that reason."
+  },
+  {
+   "serves": "AC3: A file whose name already exists in the folder it would move to is not moved, stays where it was, and is named in the tool's output as left for that reason; after any run, every file there was before is still there with the same name and content, no file overwritten."
+  },
+  {
+   "serves": "AC4: AC1 to AC3 and AC8 hold on a trial folder holding at least images, documents, a file of no listed kind, a name already taken in a target folder, a subfolder with files in it, a hidden file, a download still running, and, after a sort, a new file of the same name as one the sort moved, put where that one was; shown by automated tests and by real runs of the tool on Linux; run with no folder named, the tool works on ~/Downloads."
+  },
+  {
+   "serves": "AC8: Run to undo without being told to move, the tool lists each file the last sort moved, the sort being the last run told to move that was not to undo, with the place it would go back to, and afterwards every file and folder is where it was; run to undo and told to move, it moves each file the last sort moved back to where it was, one by one, and removes each folder that sort made that is then empty; a file whose old place now holds a file of the same name is not moved back, stays where it is, and is named in the tool's output as left for that reason; a folder that was there before that sort, or that still holds anything, is not removed."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/architecture.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "sort-downloads/docs/logical-view.svg made with the architecture: the architecture checklist's F-1 and B-3 ask for the Logical view as an SVG diagram beside the document"
+  },
+  {
+   "chosen": "No rule of the project's own for how code and user stories are checked: the repository holds none, so the architecture's Test section writes the tool's checks as its own; rn's code checklist, by which the code is checked at the build stage, is handed so the checks agree with it, but it lies outside the repository and is not linked"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/fix.md"
+  }
+ ]
+}

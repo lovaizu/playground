@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="660" viewBox="0 0 1020 660" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title>sort-downloads logical view</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f2328"/>
+    </marker>
+  </defs>
+
+  <!-- A light card of its own, so the figure reads the same on a light or a dark page. -->
+  <rect x="0" y="0" width="1020" height="660" rx="12" fill="#ffffff"/>
+
+  <!-- The product: the one program file and the record it keeps. -->
+  <rect x="170" y="20" width="540" height="560" rx="10" fill="none" stroke="#57606a" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="185" y="42" fill="#57606a">sort-downloads</text>
+
+  <!-- The user, outside the product. -->
+  <circle cx="75" cy="268" r="14" fill="none" stroke="#1f2328" stroke-width="2"/>
+  <path d="M75,282 L75,318 M50,296 L100,296 M75,318 L56,346 M75,318 L94,346" fill="none" stroke="#1f2328" stroke-width="2"/>
+  <text x="75" y="368" text-anchor="middle" fill="#1f2328">User</text>
+
+  <!-- Components done by code. -->
+  <rect x="200" y="270" width="130" height="60" fill="#ddf4ff" stroke="#1f2328" stroke-width="2"/>
+  <text x="265" y="305" text-anchor="middle" fill="#1f2328">Command line</text>
+
+  <rect x="510" y="60" width="180" height="60" fill="#ddf4ff" stroke="#1f2328" stroke-width="2"/>
+  <text x="600" y="95" text-anchor="middle" fill="#1f2328">Sort planner</text>
+
+  <rect x="510" y="170" width="180" height="60" fill="#ddf4ff" stroke="#1f2328" stroke-width="2"/>
+  <text x="600" y="205" text-anchor="middle" fill="#1f2328">Undo planner</text>
+
+  <rect x="510" y="400" width="180" height="60" fill="#ddf4ff" stroke="#1f2328" stroke-width="2"/>
+  <text x="600" y="435" text-anchor="middle" fill="#1f2328">Mover</text>
+
+  <rect x="200" y="490" width="130" height="60" fill="#ddf4ff" stroke="#1f2328" stroke-width="2"/>
+  <text x="265" y="525" text-anchor="middle" fill="#1f2328">Report</text>
+
+  <!-- Files kept on disk. -->
+  <path d="M530,280 L530,350 A70,12 0 0 0 670,350 L670,280" fill="#fff8c5" stroke="#1f2328" stroke-width="2"/>
+  <ellipse cx="600" cy="280" rx="70" ry="12" fill="#fff8c5" stroke="#1f2328" stroke-width="2"/>
+  <text x="600" y="325" text-anchor="middle" fill="#1f2328">Last sort record</text>
+
+  <path d="M840,70 L840,470 A80,14 0 0 0 1000,470 L1000,70" fill="#fff8c5" stroke="#1f2328" stroke-width="2"/>
+  <ellipse cx="920" cy="70" rx="80" ry="14" fill="#fff8c5" stroke="#1f2328" stroke-width="2"/>
+  <text x="920" y="265" text-anchor="middle" fill="#1f2328">Sorted folder</text>
+
+  <!-- Arrows, each from the component that acts to the one it acts on. -->
+  <g fill="none" stroke="#1f2328" stroke-width="1.6" marker-end="url(#arrow)">
+    <path d="M102,300 L198,300"/>
+    <path d="M330,280 L508,95"/>
+    <path d="M330,292 L508,205"/>
+    <path d="M330,318 L508,425"/>
+    <path d="M265,330 L265,488"/>
+    <path d="M200,520 L98,352"/>
+    <path d="M690,90 L838,90"/>
+    <path d="M690,200 L838,200"/>
+    <path d="M600,230 L600,266"/>
+    <path d="M600,400 L600,364"/>
+    <path d="M690,430 L838,430"/>
+  </g>
+
+  <g fill="#1f2328" font-size="13">
+    <text x="150" y="292" text-anchor="middle">runs</text>
+    <text x="400" y="160" text-anchor="middle" transform="rotate(-46 400 160)">asks for a sort plan</text>
+    <text x="430" y="232" text-anchor="middle" transform="rotate(-26 430 232)">asks for an undo plan</text>
+    <text x="420" y="348" text-anchor="middle" transform="rotate(31 420 348)">hands the plan, with --move</text>
+    <text x="275" y="400">hands what was</text>
+    <text x="275" y="416">planned or done</text>
+    <text x="136" y="452" text-anchor="middle" transform="rotate(59 136 452)">prints it</text>
+    <text x="775" y="82" text-anchor="middle">lists files</text>
+    <text x="775" y="192" text-anchor="middle">looks at</text>
+    <text x="775" y="222" text-anchor="middle">old places</text>
+    <text x="608" y="252">reads</text>
+    <text x="608" y="379">updates after</text>
+    <text x="608" y="394">each move</text>
+    <text x="775" y="448" text-anchor="middle">moves files,</text>
+    <text x="775" y="464" text-anchor="middle">makes and</text>
+    <text x="775" y="480" text-anchor="middle">removes folders</text>
+  </g>
+
+  <!-- Legend. -->
+  <g font-size="13" fill="#1f2328">
+    <rect x="200" y="606" width="34" height="22" fill="#ddf4ff" stroke="#1f2328" stroke-width="2"/>
+    <text x="244" y="622">component whose work code does</text>
+    <path d="M480,606 L480,624 A17,5 0 0 0 514,624 L514,606" fill="#fff8c5" stroke="#1f2328" stroke-width="2"/>
+    <ellipse cx="497" cy="606" rx="17" ry="5" fill="#fff8c5" stroke="#1f2328" stroke-width="2"/>
+    <text x="524" y="622">files on disk</text>
+    <rect x="640" y="606" width="34" height="22" fill="none" stroke="#57606a" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="684" y="622">one product</text>
+  </g>
+</svg>
