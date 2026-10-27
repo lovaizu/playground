@@ -1,0 +1,55 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "goal"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261028-organize-downloads-cli/calls/0001-steering.md"
+  },
+  {
+   "audience": "the user at the goal sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261028-acceptance-u96xr86w/rn/checklists/session/plan.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: Sort the files in the Downloads folder into folders by type, so the user can find the file they are looking for quickly. The tool deletes nothing."
+  },
+  {
+   "decision": "Platforms: The tool works on both macOS and Linux. Windows is not needed."
+  },
+  {
+   "decision": "When it organizes: The tool sorts the Downloads folder as it is at the moment the user runs the command; it does not watch the folder. Run plainly, it only shows what it would move and moves nothing; it moves files only when the user tells it to."
+  },
+  {
+   "decision": "What shows it done: The finished tool is done when, run on macOS and on Linux against a Downloads folder holding files:\n1. Run plainly, it lists which file it would move to which folder, and nothing in Downloads changes.\n2. Told to move, each file directly in Downloads goes into the folder named for its type (such as images, documents, archives).\n3. Before and after moving, the number and content of the files are the same; nothing is lost or overwritten.\n4. After sorting, a user who knows the type of the file they want finds it by opening that type's folder alone.\n5. Where a file of the same name is already in the folder it would go to, that file is not moved, stays where it was, and the user is told so; it is not renamed and moved either.\n6. A README tells how to install the tool and how to use it.\n7. Tests check the points above.\nWhich types there are and which extensions go to each is still to be settled at the ux stage."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261028-acceptance-u96xr86w/rn/checklists/fix.md"
+  }
+ ]
+}
