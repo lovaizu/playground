@@ -282,3 +282,121 @@ class TestPreview(unittest.TestCase):
         self.assertIn("--mvoe", err)
         self.assertEqual(out, "")
         self.assertEqual(snapshot(self.root), before)
+
+    @unittest.skipIf(
+        os.geteuid() == 0, "a folder's permissions do not keep the root user out"
+    )
+    def test_stops_naming_a_folder_that_cannot_be_read(self) -> None:
+        # Given: a folder holding a file, whose permissions let its owner do nothing,
+        # only list it without opening what is in it, or only open what is in it
+        # without listing it.
+        make_files(self.folder, {"holiday.jpg": b"photo"})
+        before = snapshot(self.root)
+        self.addCleanup(self.folder.chmod, 0o755)
+        for mode in (0o000, 0o600, 0o300):
+            with self.subTest(mode=oct(mode)):
+                self.folder.chmod(mode)
+                # When: the tool is run on it with no --move.
+                status, out, err = run_tool([str(self.folder)])
+                # Then: it stops with a failing status, naming the folder, and lists
+                # nothing; once it can be read again, the folder is as it was.
+                self.folder.chmod(0o755)
+                self.assertNotEqual(status, 0)
+                self.assertIn(str(self.folder), err)
+                self.assertEqual(out, "")
+                self.assertEqual(snapshot(self.root), before)
+
+    def test_stops_naming_the_second_of_two_folders(self) -> None:
+        # Given: two folders, each holding a file.
+        other = self.root / "other"
+        make_files(self.folder, {"holiday.jpg": b"photo"})
+        make_files(other, {"invoice.pdf": b"invoice"})
+        before = snapshot(self.root)
+        # When: the tool is run on both with no --move.
+        status, out, err = run_tool([str(self.folder), str(other)])
+        # Then: it stops with a failing status, naming the second, lists nothing, and
+        # changes nothing.
+        self.assertNotEqual(status, 0)
+        self.assertIn(str(other), err)
+        self.assertEqual(out, "")
+        self.assertEqual(snapshot(self.root), before)
+
+    def test_leaves_out_a_link_to_a_folder(self) -> None:
+        # Given: a photo, and a symbolic link to a folder elsewhere holding a file.
+        make_files(self.folder, {"holiday.jpg": b"photo"})
+        make_files(self.root / "elsewhere", {"plan.txt": b"plan"})
+        (self.folder / "shortcut").symlink_to(self.root / "elsewhere")
+        # When: the tool is run on the folder with no --move.
+        out = run_tool([str(self.folder)])[1]
+        # Then: only the photo is listed, the link no more than a folder is.
+        self.assertEqual(
+            out,
+            f"In {self.folder}:\n"
+            "Would move:\n"
+            "  holiday.jpg -> Images/holiday.jpg\n"
+            "Nothing was moved. Run again with --move to move these files.\n",
+        )
+
+    def test_would_move_a_link_to_a_file_by_the_link_s_ending(self) -> None:
+        # Given: a symbolic link ending in .pdf to a file elsewhere.
+        make_files(self.root, {"saved/invoice": b"invoice"})
+        (self.folder / "invoice.pdf").symlink_to(self.root / "saved" / "invoice")
+        # When: the tool is run on the folder with no --move.
+        out = run_tool([str(self.folder)])[1]
+        # Then: the link is listed as moving to Documents, as a file of its name is.
+        self.assertIn("  invoice.pdf -> Documents/invoice.pdf\n", out)
+
+    def test_would_leave_a_file_whose_name_a_link_to_nothing_takes(self) -> None:
+        # Given: a PDF, and in Documents a symbolic link of the same name to nothing.
+        make_files(self.folder, {"report.pdf": b"new report"})
+        (self.folder / "Documents").mkdir()
+        (self.folder / "Documents" / "report.pdf").symlink_to(self.root / "gone")
+        # When: the tool is run on the folder with no --move.
+        out = run_tool([str(self.folder)])[1]
+        # Then: the PDF is listed as left, its name taken.
+        self.assertIn("  report.pdf: Documents/report.pdf already exists\n", out)
+        self.assertNotIn("report.pdf ->", out)
+
+    def test_prints_only_the_folder_and_that_nothing_moved_for_an_empty_folder(
+        self,
+    ) -> None:
+        # Given: an empty folder.
+        # When: the tool is run on it with no --move.
+        status, out, err = run_tool([str(self.folder)])
+        # Then: it prints the folder and that nothing was moved, with no heading and
+        # no word of --move, as there is nothing to move.
+        self.assertEqual(out, f"In {self.folder}:\nNothing was moved.\n")
+        self.assertEqual((status, err), (0, ""))
+
+    def test_prints_no_move_heading_nor_move_hint_when_every_file_is_left(
+        self,
+    ) -> None:
+        # Given: a folder holding only a hidden file.
+        make_files(self.folder, {".localized": b""})
+        # When: the tool is run on it with no --move.
+        out = run_tool([str(self.folder)])[1]
+        # Then: it prints the file under "Would leave" alone, and no word of --move.
+        self.assertEqual(
+            out,
+            f"In {self.folder}:\n"
+            "Would leave:\n"
+            "  .localized: hidden file\n"
+            "Nothing was moved.\n",
+        )
+
+    def test_lists_names_in_order_counting_capitals_as_small_letters(self) -> None:
+        # Given: files whose order by character code, capitals first, differs from
+        # their order counting capitals as small letters.
+        make_files(
+            self.folder, {"Zebra.txt": b"z", "apple.txt": b"a", "Mango.txt": b""}
+        )
+        # When: the tool is run on the folder with no --move.
+        out = run_tool([str(self.folder)])[1]
+        # Then: they are listed as a person reads them: apple, Mango, Zebra.
+        self.assertIn(
+            "Would move:\n"
+            "  apple.txt -> Documents/apple.txt\n"
+            "  Mango.txt -> Documents/Mango.txt\n"
+            "  Zebra.txt -> Documents/Zebra.txt\n",
+            out,
+        )

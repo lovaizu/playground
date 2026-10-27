@@ -1,0 +1,79 @@
+{
+ "focal_entities": [
+  {
+   "work": "t3.3"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "code"
+  },
+  {
+   "path": "sort-downloads/sort_downloads.py"
+  },
+  {
+   "path": "sort-downloads/sort-downloads"
+  },
+  {
+   "path": "sort-downloads/tests/test_preview.py"
+  },
+  {
+   "audience": "whoever runs sort-downloads and whoever maintains it, a person or an AI"
+  },
+  {
+   "has": "sort-downloads/README.md"
+  },
+  {
+   "has": "sort-downloads/docs/architecture.md"
+  },
+  {
+   "has": "sort-downloads/pyproject.toml"
+  },
+  {
+   "has": "sort-downloads/tests/test_preview.py"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "running sort-downloads with no --move to see what it would move where, as the README's Example shows, and maintaining it with its tests"
+  },
+  {
+   "serves": "AC1: Run on a folder without being told to move, the tool lists each file directly in that folder with the folder it would move to, and afterwards every file and folder in it is where it was, with the same name and content."
+  },
+  {
+   "serves": "AC3: A file whose name already exists in the folder it would move to is not moved, stays where it was, and is named in the tool's output as left for that reason; after any run, every file there was before is still there with the same name and content, no file overwritten."
+  },
+  {
+   "serves": "AC4: AC1 to AC3 and AC8 hold on a trial folder holding at least images, documents, a file of no listed kind, a name already taken in a target folder, a subfolder with files in it, a hidden file, a download still running, and, after a sort, a new file of the same name as one the sort moved, put where that one was; shown by automated tests and by real runs of the tool on Linux; run with no folder named, the tool works on ~/Downloads."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "README, architecture, settings, the preview's tests and the plan handed: the tool is made to the README and the architecture, passing the tests of T3 action 2 under the settings of T3 action 1"
+  },
+  {
+   "chosen": "sort-downloads/sort-downloads made with the code: the architecture places it as a symbolic link to sort_downloads.py, the name the user copies and runs"
+  },
+  {
+   "chosen": "sort-downloads/tests/test_preview.py may be added to: tests for preview behaviours the code handles that the tests of T3 action 2 do not hold belong with the preview's tests, each kept as those tests are, not changing what they hold"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/fix.md"
+  }
+ ]
+}

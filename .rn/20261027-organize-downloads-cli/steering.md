@@ -24,16 +24,6 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Tasks
 
-- T3: `sort-downloads` that, run with no `--move`, shows for a folder named, or `~/Downloads`, each file directly in it with the folder of its kind it would move to and each file it would leave with its reason, and moves nothing. Serves AC1, AC3 and AC4.
-
-  Completion criterion: unit tests show, on a folder made as AC4's trial folder, the listing the README's first Example gives, each file left with its reason, `~/Downloads` used where no folder is named, the kinds the same as the README's table, and every file and folder where it was with the same name and content; and they pass, with the formatter, linter and type checker, on Python 3.9.
-
-  Test: `uv run --directory sort-downloads --no-project --python 3.9 --with ruff --with mypy --with coverage sh -c 'ruff format --check . && ruff check . && mypy . && coverage run --branch -m unittest && coverage report'`
-
-  - [x] 1. Set up the development tools the architecture names, with their settings, `sort-downloads/pyproject.toml` as a code work. turn.
-  - [x] 2. Make the unit tests of the preview from AC1, AC3, AC4 and the README's Example, seen failing with no tool there, `sort-downloads/tests/test_preview.py` as a code work. turn.
-  - [ ] 3. Make the tool's Command line, Sort planner and Report as the architecture places them, with the link `sort-downloads/sort-downloads` to it, `sort-downloads/sort_downloads.py` as a code work. turn.
-
 - T4: `sort-downloads --move`, which moves each file the preview shows into the folder of its kind, making the folder where it is not there, leaves each file it shows as left, and writes the record of the sort. Serves AC2, AC3 and AC4.
 
   Completion criterion: unit tests show, on a folder made as AC4's trial folder, each file moved as AC2 says, each file left as AC2 and AC3 say and named in the output with its reason, a file saved under a taken name between the plan and the move not written over, nothing in a subfolder moved, and the record holding each move and each folder made; and they pass, with the formatter, linter and type checker, on Python 3.9.
@@ -79,7 +69,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Next
 
-Step 4 of /rn:up on T3: action 3, make the tool's preview
+Step 4 of /rn:up on T4: action 1, the unit tests of the sort with --move
 
 ## Open
 

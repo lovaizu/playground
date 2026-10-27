@@ -1,0 +1,189 @@
+{
+ "work": [
+  "sort-downloads/sort_downloads.py",
+  "sort-downloads/sort-downloads",
+  "sort-downloads/tests/test_preview.py"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "F-1",
+   "good": "The module opens with what it does (shows where each loose file would move, moves nothing) and why it is there (the README's Example, the architecture's components, stdlib only for the README's Requirements). Every function and class has typed parameters and returns and a Google-style docstring with Args, Returns and Raises, main's naming each SystemExit status and when. The test module opens with what it tests and why each test runs in its own temp folder; each helper has a typed signature and docstring. Each of the 20 tests, the 8 new ones included, is named as one sentence of what must happen, with Given, When and Then comments in its body. Ruff's pydocstyle rules pass.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:1-13",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:78-149",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:175-229",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:1-12",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:61-125",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:147-402"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-1",
+   "good": "Ran `uv run --no-project --python 3.9 python -m unittest` in sort-downloads with nothing installed: 20 tests OK, none skipped (I ran as uid 1000, so the permissions test ran). The code imports only standard library modules. A copy of sort-downloads made as the README's cp makes it is a regular executable file. Run by name with a temp HOME, it printed the README Example's listing, exit 0, and left the folder unchanged.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:1",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:15-22",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:150-193",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:14-25"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-2",
+   "good": "The folder is checked in main, where it comes in and before plan_sort uses it. I ran each stop with the installed copy: a missing path, a file named as the folder, an unreadable folder (mode 0), a missing ~/Downloads, `--mvoe`, two folders. Each exited 2, printed the usage and named what was wrong (the path, or the argument not taken). Each also named an action: name a readable folder after the command, such as `sort-downloads ~/Desktop`, or run `sort-downloads --help`, which lists the one optional folder. Naming an existing folder then gave the listing with exit 0. The tests now hold each of these stops, two folders and an unreadable folder included. Not a gap for this stage: `--move`, which the preview's last line names, is T4's work.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:196-213",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:238-253",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:246-322"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-3",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:1-258",
+     "good": "The module opening maps the architecture's Command line, Sort planner and Report to main, plan_sort and print_preview. The names say their thing: KINDS, OTHERS, KIND_OF_ENDING, DOWNLOADING_ENDINGS, Move, Leave, SortPlan, by_name. Each docstring states its rules, and each rule matched what I ran. Decisions carry their reasons in comments: is_file following links, lexists for a link that points nowhere, and one check for every unreadable path. Errors all go through Parser.error. sort-downloads is a symbolic link to this file (ls -la: 'sort-downloads -> sort_downloads.py'; cmp: the same), so its lines 1-258 are these lines and give the same Good.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:1-13",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:24-75",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:121-172",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:196-254"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:1-402",
+     "good": "The opening says what the tests hold and where their expected values come from (README Example and table, AC1, AC3, AC4). Constants and helpers say their thing: KIND_ROW (its regex explained), EXAMPLE_FILES, EXAMPLE_LISTING, readme_kinds, make_files, snapshot, run_tool (its exit-status mapping explained). Each test name says the one behaviour it holds, for example test_would_leave_a_file_whose_name_a_link_to_nothing_takes. Reasons are given where a choice is made: realpath for macOS /var, the skipIf reason that root ignores permissions, and why the three modes are tried.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:1-12",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:27-145",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:286-402"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-4",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:1-258",
+     "good": "Only the preview is there: one optional folder argument and no --move or --undo before their tasks. Each branch serves a rule the README or AC1-AC4 names: hidden, still downloading, name taken, Others, capitals ignored, ~/Downloads by default, and the hint only when something would move. The Parser subclass is there only to add the --help pointer to every stop. Each comment adds a reason the line does not give. sort-downloads is a symbolic link to this file, so its lines 1-258 are these lines and give the same Good.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:150-193",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:196-254"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:1-402",
+     "good": "Each helper is used by several tests with different values: make_files with each test's files, snapshot for before and after, run_tool with each argv. Each test holds a behaviour the README, an AC or a docstring of the code states, and I found no test of an unasked case. The setUp environment patch for XDG_STATE_HOME is there for the record's place, which the unchanged-folder test reads, as its comment says.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:61-145",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:147-402"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-5",
+   "good": "The kinds and endings are written once, in KINDS, and KIND_OF_ENDING is built from it. test_holds_the_kinds_and_endings_of_the_readme_table keeps the README table equal to KINDS. Each reason text is one constant, or one f-string for a taken name. The functions are split one job each. After the full check command ran, `git status --short sort-downloads` listed only the work files (test_preview.py modified, the two code files untracked); the __pycache__, .coverage, .mypy_cache and .ruff_cache it made are all ignored.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:24-75",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:121-193",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:179-187"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-6",
+   "good": "The gap I sent back is mended. Each partition I named now has a test: an unreadable folder in three modes, two folders, a link to a folder, a link to a file, a link to nothing at the target name, an empty folder, a folder where every file is left, and order ignoring capitals. To check the claim, I applied each mutant to a temp copy of the code and ran the unit tests: os.access dropped, X_OK dropped, R_OK dropped, 'and' made 'or', lexists made exists, is_file without following links, 'not is_dir', each heading's if made True, the hint made unconditional, casefold dropped. I also tried two of my own, leaves reordered and .lower() dropped. Every one exited 1, failing the test named for it. The check command: 20 tests OK, sort_downloads.py 100% of lines and branches. The one test skipped on some machines, the permissions test under root, is named with why at its skipIf.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:147-402",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:150-193",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:243-253"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-7",
+   "good": "Ran the T3 Test command from steering.md with pyproject.toml's settings: `ruff format --check .` (5 files already formatted), `ruff check .` (All checks passed), `mypy .` (no issues in 3 files), and `coverage run --branch -m unittest && coverage report` (20 tests OK, 100%). It exited 0. In my mutant runs, each mutant failed only the tests whose names say the behaviour it broke. Each test makes its own temp folder with HOME and XDG_STATE_HOME pointed into it, cleaned by addCleanup, and the permissions test restores the mode in a cleanup, so no test reads the machine or leaves state behind.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:128-146",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:286-307",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:150-254"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-8",
+   "good": "The whole check command took 0.182 s of wall time, and the 20 unit tests 0.016 s. Their only set-up is a few files and links written to a temp folder, with no other programs run.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:75-86",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:128-146"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-9",
+   "good": "A preview only reads: plan_sort scans and checks names, and print_preview writes to standard output. My run left the folder unchanged, as the snapshot tests also hold. Each test works in its own TemporaryDirectory with its own HOME and XDG_STATE_HOME, so two runs or two test workers share no place they write.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:150-193",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:128-146"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-10",
+   "good": "architecture.md line 105 names Ruff's formatter and linter and mypy, each set in pyproject.toml. The T3 Test command chains `ruff format --check . && ruff check . && mypy . && ...`, so it fails on whatever any of the three finds. I ran it on the code and the tests: the formatter reported '5 files already formatted', the linter 'All checks passed!' and mypy 'Success: no issues found in 3 source files'.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/sort_downloads.py:1-258",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:1-402"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The command takes only the optional folder for now; --move and --undo stop as options it does not take until T4 and T5 add them, while the preview's last line still says 'Run again with --move to move these files.'",
+   "why": "T3 builds the preview alone and an option that did nothing would mislead; the last line is the README Example's text, which the test holds, and is true once T4 is built."
+  },
+  {
+   "chosen": "Files moved are listed by name with capitals counted as small letters; files left are listed by reason, name taken first, then hidden, then download still running, by name within each.",
+   "why": "The README Example lists the left files in that order, which is also the order its bullet list gives the reasons; a fixed order lists each run the same."
+  },
+  {
+   "chosen": "A file is an entry for which is_file() is true, following symbolic links: a link to a folder or a broken link is not listed at all; a name is taken in the kind folder when anything is there by os.path.lexists, a link to nothing included.",
+   "why": "Folders and what is in them are never moved (README); a name with anything at it cannot be moved to without writing over it."
+  },
+  {
+   "chosen": "Download still running and kind are both decided by the last ending, in small letters; a name ending in '.' or with none goes to Others.",
+   "why": "The README goes by 'ending' with capitals counting the same, and a test holds draft.part.txt going to Documents."
+  },
+  {
+   "chosen": "The folder is printed as the absolute path of what was named (os.path.abspath, links not followed), or HOME/Downloads where none is named.",
+   "why": "The user sees the folder in the words they gave it, made whole for a relative name such as 'Projects'."
+  },
+  {
+   "chosen": "One stop for a path that is missing, not a folder or not readable, and every stop through argparse's error with status 2, followed by a line naming 'sort-downloads --help'.",
+   "why": "The user's action is the same for each, naming another folder; one way of stopping keeps the messages alike, and the --help line names where every option is."
+  },
+  {
+   "chosen": "A heading with nothing under it is not printed, and with nothing to move the last line is 'Nothing was moved.' without the --move hint; an empty folder prints its 'In' line and that line.",
+   "why": "The README shows only headings with entries; telling the user to run --move when nothing would move is untrue."
+  },
+  {
+   "chosen": "The kinds are held as KINDS, each folder with a tuple of endings in the README table's order, and the reason texts are made by the Sort planner and printed by the Report as they are.",
+   "why": "The test reads KINDS.items() against the table; keeping the texts with the plan lets T4's 'Left:' print the same reasons from the same plan."
+  },
+  {
+   "chosen": "The unreadable-folder test is skipped when run as the root user, and checks three modes: none (000), read and write without entering (600), entering and write without reading (300).",
+   "why": "Permissions do not keep root out, so the stop cannot be made there; the two one-sided modes are what fail when either R_OK or X_OK is dropped from the check."
+  },
+  {
+   "chosen": "The new tests are added to the one TestPreview class in its form: a sentence name, Given/When/Then comments, run_tool and snapshot, with whole-output assertEqual where a heading's absence is held.",
+   "why": "The CCS places them beside the existing preview tests, kept as those are, and only a whole-output check fails when a heading or hint is printed that should not be."
+  }
+ ]
+}
