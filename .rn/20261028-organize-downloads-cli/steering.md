@@ -23,9 +23,24 @@ G1: A command-line tool, for macOS and Linux, that sorts the files in the Downlo
 - AC8: On macOS and on Linux, the tool told to undo puts each file it moved in its last run that moved files back where it was before that run, under the same name and with the same content.
 - AC9: Where a file moved in that last run cannot be put back, because a file of the same name is now where it was or it is no longer where the run put it, the undo leaves that file as it is, deletes and overwrites nothing, puts back the other files, and tells the user which files it did not put back and why.
 
+## Tasks
+
+- T1: The UX of the tool, approved at the ux sign-off. Serves AC1, AC2, AC4, AC5, AC8 and AC9.
+
+  Completion criterion: read whole, the UX shows the user each scene of using the tool, run plainly, told to move and told to undo, with what they type and what the tool shows them, the clashes of AC5 and AC9 included, and names each type's folder with the extensions that go into it, so the user can approve them at the ux sign-off and whoever builds the tool builds each scene from it alone.
+
+  - [ ] 1. Settle with the user the command's name, how the user tells it to move and to undo, and the types with the folder name and the extensions of each. The orchestrator, with the user.
+  - [ ] 2. Write the UX from the plan and the answers of action 1, `.rn/20261028-organize-downloads-cli/ux.md` as a ux work. turn.
+
+- T2: The tool's section of README.md, drafted from the UX. Serves AC6.
+
+  Completion criterion: read whole by someone who has never seen the tool, the section tells them whom the tool is for and what they gain, shows one run on a Downloads folder from running it plainly to moving the files, and tells how to install it and how to run it plainly, told to move and told to undo, each as the UX of T1 says, with the README's first two lines kept.
+
+  - [ ] 1. Write the tool's section of README.md from the UX of T1, `README.md` as a readme work. turn.
+
 ## Next
 
-Step 9 of /rn:up on plan: hear which documents of what the user gets and how they use it the work needs
+Step 4 of /rn:up on T1: action 1, settle the command's name, how it is told to move and to undo, and the types with their folders and extensions
 
 ## Open
 
