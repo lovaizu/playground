@@ -1,0 +1,70 @@
+{
+ "focal_entities": [
+  {
+   "work": "t3.2"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "code"
+  },
+  {
+   "path": "sort-downloads/tests/test_preview.py"
+  },
+  {
+   "path": "sort-downloads/tests/__init__.py"
+  },
+  {
+   "audience": "whoever maintains sort-downloads, a person or an AI"
+  },
+  {
+   "has": "sort-downloads/README.md"
+  },
+  {
+   "has": "sort-downloads/docs/architecture.md"
+  },
+  {
+   "has": "sort-downloads/pyproject.toml"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "trusting, from the preview's tests passing, that the preview behaves as AC1, AC3 and the README's Example say, and seeing them fail with no tool there"
+  },
+  {
+   "serves": "AC1: Run on a folder without being told to move, the tool lists each file directly in that folder with the folder it would move to, and afterwards every file and folder in it is where it was, with the same name and content."
+  },
+  {
+   "serves": "AC3: A file whose name already exists in the folder it would move to is not moved, stays where it was, and is named in the tool's output as left for that reason; after any run, every file there was before is still there with the same name and content, no file overwritten."
+  },
+  {
+   "serves": "AC4: AC1 to AC3 and AC8 hold on a trial folder holding at least images, documents, a file of no listed kind, a name already taken in a target folder, a subfolder with files in it, a hidden file, a download still running, and, after a sort, a new file of the same name as one the sort moved, put where that one was; shown by automated tests and by real runs of the tool on Linux; run with no folder named, the tool works on ~/Downloads."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "README, architecture, settings and plan handed: the tests are drawn from AC1, AC3, AC4 and the README's Example, placed as the architecture says, and checked with the settings of T3 action 1"
+  },
+  {
+   "chosen": "sort-downloads/tests/__init__.py made with the first test file: without it python3 -m unittest run in sort-downloads finds no test in tests/, and tests.properties and its mypy setting take tests as a package"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/fix.md"
+  }
+ ]
+}

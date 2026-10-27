@@ -1,0 +1,158 @@
+{
+ "work": [
+  "sort-downloads/tests/test_preview.py",
+  "sort-downloads/tests/__init__.py"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "F-1",
+   "good": "Both files open with what they are: tests/__init__.py says the package holds the unit and property tests, and test_preview.py says what the preview is, which sources its expectations come from (README Example and table, AC1, AC3, AC4) and how each test is kept away from the machine's files. Each helper has a Google-style docstring with Args and Returns and typed signatures; each test's name is one sentence of what must happen and its body carries Given, When and Then comments in plain words.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/__init__.py:1-1",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:1-12",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:61-125",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:147-284"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-1",
+   "good": "The tests use only the standard library, and `from __future__ import annotations` keeps `dict[str, bytes | None]` valid on 3.9. I ran T3's Test command again (uv, --python 3.9): ruff format --check ('4 files already formatted') and ruff check ('All checks passed!') pass, and mypy and the unit run fail only on `No module named 'sort_downloads'`, as expected with no tool there. I put a reference sort_downloads.py written from the README into a fresh copy in a mktemp folder and ran `python -m unittest` on Python 3.9 with nothing installed: all 12 tests passed ('OK').",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:14-25"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-2",
+   "good": "With no tool there, the work's own stop is the unittest import error naming the missing module `sort_downloads`. It is cleared by making sort_downloads.py as T3 action 3 says: once my reference tool was there, the same run went on and passed. For the tool's stops, the tests check that each one (a missing folder, a file named as a folder, an option it does not take) names the wrong input on standard error, gives a failing status, prints nothing to standard output and changes nothing. Whether the stop also names an action is checked on the code itself at T3 action 3; the use here (AC1, AC3 and the Example) does not depend on it.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:25-25",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:246-284"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-3",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:1-284",
+     "good": "Each name says its thing (EXAMPLE_FILES, EXAMPLE_LISTING, readme_kinds, make_files, snapshot, run_tool, and test names as sentences); the regular expression KIND_ROW is explained, as is why realpath is taken and why Projects and Documents are among the Example's files. run_tool's docstring now says what lines 122-124 do: no code gives 0, a number gives itself, and a message gives 1, which is what the shell sees. I checked this on a fresh copy with my reference tool: changed to stop by `raise SystemExit()` it now fails 2 tests; changed to stop by `sys.exit(message)` it passes, which is right, since the shell sees 1 there.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:29-58",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:106-125",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:132-134"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/__init__.py:1-1",
+     "good": "Its one line says what the package holds.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/__init__.py:1-1"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-4",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:1-284",
+     "good": "Each helper is used by several tests with different values (make_files with the Example's files, the table's endings and single files; snapshot on every no-change check; run_tool with a folder, with nothing, and with a bad option). Each SystemExit branch serves a real case: argparse stops by SystemExit, and a stop with no code must count as the shell's 0. Each comment tells something its line does not.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:27-125",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:128-145"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/__init__.py:1-1",
+     "good": "One line, needed so `python3 -m unittest` finds tests/ as a package, with nothing beyond its opening.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/__init__.py:1-1"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-5",
+   "good": "The expected listing, the Example's files and the kinds are each written once and shared by the tests that need them. The kinds are not copied from the README: they are read from its table (KIND_ROW, readme_kinds) and compared with sort_downloads.KINDS, so a change of kinds is made in the code and the README alone. Names stay the same throughout. After the runs, `git status --short --untracked-files=all sort-downloads` showed only tests/__init__.py and tests/test_preview.py; the ignore file keeps out the caches and .coverage the runs made.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:27-72",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:179-203"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-6",
+   "good": "The tests hold, from the README and AC1, AC3 and AC4:\n- the Example's exact listing;\n- every ending in the table;\n- capitals in an ending;\n- no ending;\n- hidden files and both kinds of running download;\n- '.part' that is not the last ending;\n- a taken name;\n- ~/Downloads when no folder is named;\n- nothing changed, the record's place included;\n- each stop.\nEXAMPLE_FILES now holds Projects/plan.txt, a folder whose name is no kind, so README line 52 is held for any folder. I ran them on Python 3.9 against a fresh reference tool and changed copies of it. They passed unchanged, and failed on each fault:\n- endings not lowered (1 failure);\n- '.part' matched anywhere in a name (1);\n- the state folder written by a preview (2);\n- a stop by `SystemExit()` (2);\n- folders skipped only where their name is a kind (2).\nLine and branch coverage and mutation testing are counted once the tool exists, at T3 action 3 and T5.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:33-58",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:147-284"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-7",
+   "good": "Each test makes its own folder in a fresh TemporaryDirectory, removed by addCleanup, and points HOME and XDG_STATE_HOME into it by mock.patch.dict, undone after the test. So no test reads the machine, needs another test, or depends on order, and none reads a clock or the network. Apart from the Example test, which holds the whole listing as the README shows it, each test asserts one behavior and its name says which. In T3's Test command ruff format --check and ruff check pass; mypy and the unit run fail only on the missing sort_downloads module, as this action means them to with no tool there.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:128-145",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:147-284"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-8",
+   "good": "T3's whole Test command took about 0.16 s, and the 12 tests against the reference tool ended at once. The set-up only writes a few small files in a temporary folder and runs no other program.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:75-85",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:128-145"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-9",
+   "good": "A test writes only in its own TemporaryDirectory, whose name is new each time, and through HOME and XDG_STATE_HOME in folders inside it. So a second run or test worker at the same time never shares a place to write, the tool's record included.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:9-11",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:129-145"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-10",
+   "good": "I ran T3's Test command (steering.md line 31) with the settings in pyproject.toml. It ran `ruff format --check` ('4 files already formatted'), `ruff check` ('All checks passed!') and strict `mypy`, which reported only the missing sort_downloads module, and the command fails on what they find. The test files go through all three.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_preview.py:1-284"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The tests call the tool as `sort_downloads.main(argv: list[str]) -> int`, with argv the arguments after the command name, and read what it prints from standard output and standard error; a SystemExit from it, as argparse raises, is taken as the status the shell would see.",
+   "why": "The architecture says the unit tests run the program's functions, and the README defines the preview by what it prints; testing at main() holds that behavior without naming the inner parts, which T3 action 3 is free to shape, and lets coverage count it in one process."
+  },
+  {
+   "chosen": "The tool is to hold its kinds as `sort_downloads.KINDS`, a mapping from each folder name but Others to its endings, each written with its dot in small letters, as \".jpg\".",
+   "why": "The architecture asks for a unit test checking the README's table against the kinds the Sort planner holds; that needs the kinds under one name, and this form is the table's own."
+  },
+  {
+   "chosen": "The Example's output is checked as exact text, its 'Would leave' lines in the Example's order: name taken, then hidden, then still downloading; other tests check single lines only.",
+   "why": "The purpose is that the preview behaves as the README's Example says, and the Example's order is also the order the README lists the reasons in; where the README shows no whole output, the tests pin only the lines it gives."
+  },
+  {
+   "chosen": "The trial folder is the Example's own files, with Projects/plan.txt as the Example's 'a folder' of the user's own and Documents/report.pdf in the kind folder already there; other tests add every ending of the table, a capital ending, no ending, .localized, a .part download, and '.part' not at the end.",
+   "why": "This gives AC4's trial folder (images, documents, a file of no listed kind, a taken name, a subfolder with files, a hidden file, a running download), with a subfolder whose name is no kind so a tool skipping only kind folders fails, while the Example's output stays exact."
+  },
+  {
+   "chosen": "Stops checked for a folder that does not exist, a path that is a file, and an unknown option: a failing status, the bad path or option named on standard error, nothing on standard output, nothing changed; the wording and the status number are left to the tool.",
+   "why": "The architecture's Command line stops where the options or folder cannot be used, and the code checklist asks for the invalid partitions to be tested; the README gives no wording for these stops."
+  },
+  {
+   "chosen": "tests/__init__.py holds the one line \"\"\"Unit and property tests of sort-downloads.\"\"\".",
+   "why": "Ruff's D104 asks each package for an opening, and the folder will hold the unit tests and tests/properties.py, as the architecture's physical view places them."
+  }
+ ]
+}
