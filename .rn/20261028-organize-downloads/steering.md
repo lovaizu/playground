@@ -25,9 +25,24 @@ G1: A command-line tool, run on macOS or Linux, that sorts the files in the user
 - AC10: The repository's README says how to install the tool and how to use it to preview, to move and to undo.
 - AC11: The repository's tests check preview only (AC1), moving (AC2), never deleting a file (AC3), leaving a same-name file and showing it (AC4, AC9), and undo (AC8), and they pass.
 
+## Tasks
+
+- T1: The UX of the tool, approved by the user. Serves AC1, AC2, AC4, AC8 and AC9.
+
+  Completion criterion: the UX names each kind of file with the folder it goes to, and shows what the user types and sees in the preview, the moving run and undo, a same-name file left included; the user approves it at the ux sign-off.
+
+  - [ ] 1. Settle with the user the kinds of file and the plain-word name of each kind's folder, and where a file of no listed kind goes. The orchestrator, with the user.
+  - [ ] 2. Make the UX from the kinds and folder names settled in action 1, `.rn/20261028-organize-downloads/ux.md` as a ux work. turn.
+
+- T2: The tool's README, saying how to use it to preview, to move and to undo. Serves AC10.
+
+  Completion criterion: a reader who has only the README can tell from it what to type for the preview, the moving run and undo, and what each shows, as the UX of T1 gives them; the user approves it at the ux sign-off.
+
+  - [ ] 1. Make the README from the UX of T1, `organize-downloads/README.md` as a readme work. turn.
+
 ## Next
 
-Step 9 of /rn:up on plan: hear which documents of what the user gets and how they use it the work needs
+Step 4 of /rn:up on T1: action 1, settle the kinds of file and their folder names with the user
 
 ## Open
 

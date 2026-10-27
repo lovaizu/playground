@@ -1,0 +1,79 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "ux"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261028-organize-downloads/calls/0003-steering.md"
+  },
+  {
+   "audience": "the user at the goal sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261028-acceptance-zdax9pcp/rn/checklists/session/plan.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: The user wants to find the files they need in their Downloads folder quickly."
+  },
+  {
+   "decision": "What organizing does: The tool sorts the files in the Downloads folder into folders by kind of file. It never deletes a file; it only moves files."
+  },
+  {
+   "decision": "Operating systems: The tool works on macOS and Linux. Windows is not needed."
+  },
+  {
+   "decision": "When it runs: The tool organizes once, each time the user runs the command. It does not run in the background."
+  },
+  {
+   "decision": "Preview by default: Run with no option, the tool only shows which file would move where and moves nothing. It moves files only when the user tells it to."
+  },
+  {
+   "decision": "Same name at the destination: When a file of the same name is already in the folder a file would move to, the tool leaves that file where it is, never overwriting or renaming, and shows that it left it."
+  },
+  {
+   "decision": "Folders already in Downloads: The tool moves only the files directly in the Downloads folder. It leaves every folder there, and all that is inside it, untouched."
+  },
+  {
+   "decision": "Undo: The user can undo the last run, returning each file it moved to where it was."
+  },
+  {
+   "decision": "README: The README says how to install the tool and how to use it. It is a document of kind readme made new at organize-downloads/README.md, in a folder of the tool's own, leaving the repository's README.md as it is."
+  },
+  {
+   "decision": "Tests: Tests check these behaviours: preview only, moving, never deleting, leaving a same-name file and showing it, and undo."
+  },
+  {
+   "decision": "Same name where undo returns a file: When undo would return a file to Downloads and a file of the same name is already there, undo leaves the file in its kind's folder, overwriting and renaming nothing, and shows that it left it."
+  },
+  {
+   "decision": "UX document: A UX of kind ux is made at .rn/20261028-organize-downloads/ux.md, kept in the session alone, outside what the work leaves, to settle the kinds of file, their folder names and what the user sees in the preview, the moving run and undo."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261028-acceptance-zdax9pcp/rn/checklists/fix.md"
+  }
+ ]
+}
