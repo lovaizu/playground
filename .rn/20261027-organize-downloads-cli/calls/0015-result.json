@@ -1,0 +1,138 @@
+{
+ "work": [
+  "sort-downloads/tests/properties.py"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "F-1",
+   "good": "The module opens by saying what the two properties check (AC8 and AC3) and why they run apart from the unit tests. Each function (place_key, layouts, make_layout, save_new_files, trial) has typed parameters and a Google-style docstring with Args/Returns/Yields. Each test is named as one sentence of what must happen, and its body carries Given/When/Then comments. ruff format --check and ruff check (pydocstyle google) pass on Python 3.9.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:1-15",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:86-187",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:198-242"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-1",
+   "good": "The file needs only the standard library, the repository's own test helpers and Hypothesis, which the architecture's development tools name. `uv run --no-project --python 3.9 --with hypothesis python -m unittest tests.properties` ran it on Python 3.9.25. mypy raised no errors for it; its only 2 errors are in tests/test_undo.py, about the plan_undo that T5 action 3 has not built yet.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:17-38"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-2",
+   "good": "The file has no stops of its own. Each property checks that every run ends with status 0 and nothing on standard error, so when the tool stops, the failure shows the stop's full message. On the T4 tool both properties failed showing `sort-downloads: unrecognized arguments: --undo` and the run's steps, which tells the maintainer what to build.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:214-215",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:241-242"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-3",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:1-242",
+     "good": "Each opening, signature and comment says what the code does. The module opening names the two properties and why they run on their own. Each docstring says what the function takes and gives. The comment over STEMS now says the names are every character UTF-8 can write except \"/\" and NUL, which leaves out lone surrogates. The code matches: `st.characters(codec=\"utf-8\", exclude_characters=\"/\\x00\")`. In 8 runs I drew 3000 STEMS values each and none held a surrogate. Each word of the code's own (SAVE, RUNS, place_key, trial, TRIAL) is explained where it is defined.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:1-15",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:40-83",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:86-195"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-4",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:1-242",
+     "good": "Each piece is used by the two properties AC8 and AC3 ask for. KIND_FOLDERS and ENDINGS make inputs that reach each kind, the running-download endings, names with no ending, and kind-folder names a file takes. place_key keeps two names from being made that one file system would count as one. save_new_files makes AC4's new file saved in place of a moved one. RUNS and SAVE give every run the tool has. trial gives each input its own fresh setUp. Every comment adds a reason the line under it does not show, such as why lexists is used, why the codec is UTF-8, or why deadline and database are None.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:40-195"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-5",
+   "good": "The file takes each piece of knowledge from where it is already written: the kinds and endings from the README's table (readme_kinds), the README Example's files (EXAMPLE_FILES, snapshot_of), the way files are made, read and run (make_files, snapshot, run_tool), the count of files by name (files_by_name), and the set-up (TestPreview.setUp via trial). After the runs, `git status --short --ignored sort-downloads` showed only properties.py itself as new; .hypothesis/, __pycache__/, .coverage and the tool caches are all ignored.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:29-56",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:170-187"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-6",
+   "good": "There is one property test each for AC8 (sort then undo gives back the same snapshot) and AC3 (no run, in any order and with files saved in between, changes the count of files by name and content). The README Example is kept as an @example for both. Their expected values come from the requirements: a snapshot taken before the run, and the count of files. Both fail on the T4 tool. To check the tests can tell a working tool from a broken one, I added a minimal undo to the T4 tool in memory, with the file as it now stands. It passed on 8 of 8 runs. Each fault I put in made a test fail: an undo that writes over a file, an undo that keeps the folders it should remove, an undo that moves nothing back, a sort that writes over a name already taken in Others, and an undo that writes over only names with no ending. The last two the README Example does not reach; Hypothesis found them from generated inputs (layout={'Images': b'Images'}, steps=[None, ['--undo', '--move']]).",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:152-167",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:198-242"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-7",
+   "good": "Each property gives the same result on every run: it passes on a correct tool and fails on the one fault its name says. I ran `python -m unittest tests.properties` 8 times, unchanged, against the T4 tool with a correct undo added in memory. All 8 printed `Ran 2 tests ... OK`, with no ERROR and no UnicodeEncodeError. On the T4 tool both properties fail with `unrecognized arguments: --undo`, as the use expects. With an undo that writes over only names with no ending, only test_no_run_writes_over_a_file failed, at layout={'Images': b'Images'}, steps=[None, ['--undo', '--move']]. database=None keeps one run's result from depending on an earlier run, and trial() cleans each input's temporary folder away. `ruff format --check .` and `ruff check .` pass; mypy raises nothing in this file.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:58-62",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:170-195",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:198-242"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-8",
+   "good": "One whole property run takes under a second: 0.46-0.48 s for both properties at Hypothesis's default 100 examples each, measured with the in-memory undo added. On the T4 tool it took 0.015 s. Each input makes its folders in a fresh temporary folder, with no other programs run.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:170-195"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-9",
+   "good": "Each input runs through trial(), which runs TestPreview.setUp: a new temporary folder, with HOME and XDG_STATE_HOME pointed into it, so the folder and the record each input writes belong to it alone, and doCleanups removes them. A second worker or session at the same time gets its own temporary folders.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:170-187",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:205-205",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:224-224"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-10",
+   "good": "I ran T5's check command, up to and including the property tests, on Python 3.9. `ruff format --check .` reported 8 files already formatted, and `ruff check .` reported All checks passed!, both covering properties.py. `mypy .` raised no errors in properties.py, with the pyproject overrides for Hypothesis and tests.properties; its only 2 errors are in tests/test_undo.py, about the plan_undo not yet built. So the formatter, the linter and the type checker all check this file on every change.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/properties.py:1-242"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "Two properties: test_a_sort_then_its_undo_leaves_every_file_and_folder_where_it_was (snapshot of the folder, folders included, equal after --move then --undo --move) and test_no_run_writes_over_a_file (after each run of a generated sequence, the files counted by name and content, as test_sort's files_by_name does, equal to those before that run).",
+   "why": "They are the two the architecture's Test and T5's completion criterion name; comparing by name and content wherever each file is matches AC3's 'every file there was before is still there with the same name and content', which a sort changes the place of."
+  },
+  {
+   "chosen": "The no-overwrite property starts every sequence with a sort, then up to 6 steps drawn from the preview, the sort, --undo, --undo --move and SAVE, the user saving a new file where each file first directly in the folder no longer is; and it requires each run to end with status 0 and nothing on standard error.",
+   "why": "A first sort gives each undo something to undo, SAVE makes AC4's new file in the old place of a moved one, the case where an undo could write over; requiring each run to be made keeps a run that only stopped from passing as one that wrote nothing, which is also what makes this property fail on the tool of T4, as the purpose asks."
+  },
+  {
+   "chosen": "Inputs: up to 8 entries directly in the folder, each a file or a folder of up to 3 files or none; names are a README kind folder's name, or an optional '.' plus up to 10 characters UTF-8 can write but '/' and NUL, plus one of the README's endings, in small letters or capitals, a download ending, or none; names unique by NFD casefold; each file's content is its own path; Hypothesis's default 100 inputs per property.",
+   "why": "This reaches every way the plan sorts or leaves a file (kinds, Others, hidden, downloading, name taken, kind folder name taken, folders there before, empty or not) with any character a file name can hold, keeps names within 255 bytes and valid on Linux and macOS file systems, makes a swapped file visible, and keeps the run under a second."
+  },
+  {
+   "chosen": "Each input is set up by a context manager trial() that makes a TestPreview and runs its setUp and doCleanups, rather than a set-up of its own.",
+   "why": "Hypothesis runs the body once per input while unittest runs setUp once per test; reusing TestPreview.setUp keeps the set-up in one place, as test_sort and test_undo already reuse it, and 'call the tool as the unit tests do' is what the CCS asks."
+  },
+  {
+   "chosen": "settings(deadline=None, database=None) on each property, and the README's Example folder (snapshot_of(EXAMPLE_FILES)) as an @example of each, with the sequence sort, preview, save, --undo, --undo --move for the second.",
+   "why": "Runs touch files, so a time limit would fail slow machines at random; no database keeps each run's result from hanging on an earlier one, with failing inputs kept as @example as the checklist asks; the README's Example is AC4's trial folder, so it is tried on every run."
+  }
+ ]
+}

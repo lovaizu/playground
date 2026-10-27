@@ -1,0 +1,76 @@
+{
+ "focal_entities": [
+  {
+   "work": "t5.2"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "code"
+  },
+  {
+   "path": "sort-downloads/tests/properties.py"
+  },
+  {
+   "audience": "whoever maintains sort-downloads, a person or an AI"
+  },
+  {
+   "has": "sort-downloads/README.md"
+  },
+  {
+   "has": "sort-downloads/docs/architecture.md"
+  },
+  {
+   "has": "sort-downloads/pyproject.toml"
+  },
+  {
+   "has": "sort-downloads/sort_downloads.py"
+  },
+  {
+   "has": "sort-downloads/tests/test_preview.py"
+  },
+  {
+   "has": "sort-downloads/tests/test_sort.py"
+  },
+  {
+   "has": "sort-downloads/tests/test_undo.py"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "trusting, from the property tests passing, that over any file names a sort and its undo leave every file where it was with the same name and content and that no run writes over a file, and seeing them fail on the tool of T4"
+  },
+  {
+   "serves": "AC3: A file whose name already exists in the folder it would move to is not moved, stays where it was, and is named in the tool's output as left for that reason; after any run, every file there was before is still there with the same name and content, no file overwritten."
+  },
+  {
+   "serves": "AC4: AC1 to AC3 and AC8 hold on a trial folder holding at least images, documents, a file of no listed kind, a name already taken in a target folder, a subfolder with files in it, a hidden file, a download still running, and, after a sort, a new file of the same name as one the sort moved, put where that one was; shown by automated tests and by real runs of the tool on Linux; run with no folder named, the tool works on ~/Downloads."
+  },
+  {
+   "serves": "AC8: Run to undo without being told to move, the tool lists each file the last sort moved, the sort being the last run told to move that was not to undo, with the place it would go back to, and afterwards every file and folder is where it was; run to undo and told to move, it moves each file the last sort moved back to where it was, one by one, and removes each folder that sort made that is then empty; a file whose old place now holds a file of the same name is not moved back, stays where it is, and is named in the tool's output as left for that reason; a folder that was there before that sort, or that still holds anything, is not removed."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "README, architecture, settings, the tool of T4, its tests, the undo's tests and the plan handed: the property tests are placed and run as the architecture says, call the tool as the unit tests do, and are seen failing on the tool of T4"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/fix.md"
+  }
+ ]
+}
