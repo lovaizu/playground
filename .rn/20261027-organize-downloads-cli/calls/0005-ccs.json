@@ -1,0 +1,18 @@
+{
+ "focal_entities": [
+  {
+   "work": "t1.3"
+  },
+  {
+   "stage": "design"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Made here: The tool is made here, not an existing tool used as it is, so that it acts as the plan says: never renaming or overwriting, and showing first before undoing too."
+  },
+  {
+   "decision": "Language and install: The tool is one Python 3 file using only the standard library, installed by copying it from the clone into a folder on the user's PATH, such as ~/.local/bin. Whether the user's Mac has python3 is not checked yet, so the README says that python3 is needed and how to install it where it is not there."
+  }
+ ]
+}
