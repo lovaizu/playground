@@ -17,14 +17,18 @@ G1: A command-line tool, run on macOS or Linux, that sorts the files in the user
 - AC2: Run with the option that tells it to move, the tool moves each file directly in Downloads into a folder inside Downloads named for the file's kind in plain words, such as images or documents, every file of the same kind into the same folder, and each file to the folder the preview showed for it.
 - AC3: After any run, every file that was in Downloads before it is still there, in Downloads or in a folder of its kind, with the same name and the same contents.
 - AC4: When a file of the same name is already in the folder a file would move to, the tool leaves that file where it is, overwriting and renaming nothing, and shows that it left it, both in the preview and when moving.
-- AC5: Every folder in Downloads before a run, and all that is inside it, is unchanged after the run.
+- AC5: Every folder in Downloads before a run, and all that is inside it, is unchanged after the run, but for the files the tool moves into a folder of a kind or returns from it.
 - AC6: The tool organizes once each time the user runs the command and leaves no process running after it ends.
-- AC7: AC1 to AC6 hold on macOS and on Linux.
+- AC7: AC1 to AC6, AC8 and AC9 hold on macOS and on Linux.
+- AC8: Run with the option that tells it to undo, the tool returns each file the last moving run moved back to where it was directly in Downloads, with the same name and the same contents.
+- AC9: When undo would return a file and a file of the same name is already directly in Downloads, the tool leaves the file in its kind's folder, overwriting and renaming nothing, and shows that it left it.
+- AC10: The repository's README says how to install the tool and how to use it to preview, to move and to undo.
+- AC11: The repository's tests check preview only (AC1), moving (AC2), never deleting a file (AC3), leaving a same-name file and showing it (AC4, AC9), and undo (AC8), and they pass.
 
 ## Next
 
-Step 6 of /rn:up on goal: find the point behind the feedback
+Step 5 of /rn:up on goal: show the goal sign-off
 
 ## Open
 
-- 次の3点を受け入れ基準に足してください。(1) 直前の実行を取り消して、動かした各ファイルを元の場所へ戻せること。(2) README にインストール方法と使い方が書いてあること。(3) テストで、これらの動き（表示だけ・移動・消さない・同名は残して表示・取り消し）を確かめていること。
+None.
