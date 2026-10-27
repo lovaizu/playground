@@ -1,0 +1,64 @@
+# Settings of the development tools that check sort-downloads, as docs/architecture.md's Test
+# names them. The tool itself uses none of them: it runs on Python 3.9 or newer with its standard library alone.
+# There is no [project] table: the tool is installed by copying one file, never as a package, so
+# the tools are run with `uv run --no-project`.
+
+[tool.ruff]
+# The oldest Python the tool runs on, so no fix or rule asks for a newer one.
+target-version = "py39"
+# mutants: mutmut's changed copies of the code, not the code to check.
+extend-exclude = ["mutants"]
+
+[tool.ruff.lint]
+# E, W: pycodestyle; F: Pyflakes; I: import order; B: flake8-bugbear, likely bugs;
+# UP: pyupgrade, newer forms Python 3.9 has; SIM: simpler forms;
+# D: pydocstyle, an opening for each module, class and function.
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+# A test's name says what must happen and its Given, When and Then are comments in its body,
+# so its class and methods need no docstring; each test module keeps its opening.
+"tests/*" = ["D101", "D102"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+warn_unreachable = true
+exclude = ["^mutants/"]
+
+# The check on every change runs mypy without Hypothesis installed, and the property tests import
+# it; there Hypothesis's decorators are of unknown type. Where it is installed, its own types are
+# used.
+[[tool.mypy.overrides]]
+module = ["hypothesis", "hypothesis.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tests.properties"
+disallow_untyped_decorators = false
+
+# On Python 3.9 coverage.py reads this file only with tomli installed; mypy brings it in the check
+# command, and coverage.py run without it stops saying to install coverage[toml].
+[tool.coverage.run]
+branch = true
+source = ["."]
+# mutants/: mutmut's changed copies of the code. tests/properties.py: the property tests, which
+# the unit test run does not run, as their inputs change from run to run.
+omit = ["mutants/*", "tests/properties.py"]
+
+[tool.coverage.report]
+# Every statement and branch is to be run by the unit tests.
+fail_under = 100
+show_missing = true
+exclude_also = [
+    # Run only when the file is started as a command, which the unit tests do not do: they call
+    # its functions, so their coverage is counted in one process.
+    'if __name__ == "__main__":',
+]
+
+[tool.mutmut]
+paths_to_mutate = ["sort_downloads.py"]
+tests_dir = ["tests/"]

@@ -1,0 +1,64 @@
+{
+ "focal_entities": [
+  {
+   "work": "t3.1"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "code"
+  },
+  {
+   "path": "sort-downloads/pyproject.toml"
+  },
+  {
+   "path": "sort-downloads/.gitignore"
+  },
+  {
+   "audience": "whoever maintains sort-downloads, a person or an AI"
+  },
+  {
+   "has": "sort-downloads/docs/architecture.md"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "running the formatter, linter, type checker and tests of the tool with the settings it gives, as the architecture's Test says"
+  },
+  {
+   "serves": "AC1: Run on a folder without being told to move, the tool lists each file directly in that folder with the folder it would move to, and afterwards every file and folder in it is where it was, with the same name and content."
+  },
+  {
+   "serves": "AC3: A file whose name already exists in the folder it would move to is not moved, stays where it was, and is named in the tool's output as left for that reason; after any run, every file there was before is still there with the same name and content, no file overwritten."
+  },
+  {
+   "serves": "AC4: AC1 to AC3 and AC8 hold on a trial folder holding at least images, documents, a file of no listed kind, a name already taken in a target folder, a subfolder with files in it, a hidden file, a download still running, and, after a sort, a new file of the same name as one the sort moved, put where that one was; shown by automated tests and by real runs of the tool on Linux; run with no folder named, the tool works on ~/Downloads."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "architecture and steering handed: the architecture names the development tools and checks to set up, and the plan's T3 Test line is the command they must run under"
+  },
+  {
+   "chosen": "sort-downloads/.gitignore made with pyproject.toml: the checks make caches and mutmut's copies of the code, and no ignore file in the repository keeps them out of a commit"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/fix.md"
+  }
+ ]
+}

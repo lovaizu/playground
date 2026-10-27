@@ -1,0 +1,160 @@
+{
+ "work": [
+  "sort-downloads/pyproject.toml",
+  "sort-downloads/.gitignore"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "F-1",
+   "good": "The settings file opens with what it is for and why it has no [project] table, and the .gitignore opens with what its names are. The settings make the template hold on the code to come: Ruff's D rules with the google convention ask an opening for each module and function. In a sample tool tried in a temporary folder, a test module with no opening was stopped with D100 and a function with none with D103, while test classes and methods, whose names and Given/When/Then comments carry what they check, were let through as lines 21-24 say. mypy strict asks types for what each function takes in and gives back.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:1-4",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:12-24",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:26-28",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/.gitignore:1"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-1",
+   "good": "The settings hold the checks to Python 3.9, the oldest the architecture names: Ruff's target-version py39 and mypy's python_version 3.9. Run as the plan's T3 Test command on a sample tool and tests, through uv on Python 3.9.25 with only ruff, mypy and coverage added, the format check, lint, type check, unit tests and coverage report all passed (exit 0). The unit tests themselves need nothing beyond the standard library. mypy with Hypothesis not installed passed on the property tests, through the overrides at lines 35-41.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:6-8",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:26-27",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:32-41"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-2",
+   "good": "The one stop the settings themselves cause, coverage.py on Python 3.9 not reading pyproject.toml without tomli, is named beside the coverage settings with how it is cleared. Running coverage alone through uv on 3.9 stopped with \"Can't read 'pyproject.toml' without TOML support. Install with [toml] extra\" (exit 1). Run with mypy alongside, as the plan's command does, it read the settings and ran. The coverage floor's stop, \"Coverage failure: total of 82 is less than fail-under=100\" with the missing lines shown (show_missing), names the lines a maintainer has to cover.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:43-46",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:52-55"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-3",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:1-64",
+     "good": "Each table and each value that needs it has a comment saying what it does and why: py39 as the oldest Python the tool runs on, mutants as mutmut's copies, each letter of the rule set spelled out, why tests skip D101/D102, why Hypothesis is let in untyped and only in tests.properties, the tomli condition, why properties.py and the __main__ guard are left out of coverage. Each comment says what the setting does, not how the work went. The names taken from other products (pycodestyle, Pyflakes, flake8-bugbear, pyupgrade, pydocstyle, mutmut, Hypothesis, tomli) are each told what they are or do.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:1-24",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:32-60"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/.gitignore:1-9",
+     "good": "The opening says the names are files the checks make, set up in pyproject.toml, and none is code. mutants/ has its own comment saying it is mutmut's copies and results. The other names are each tool's well-known cache.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/.gitignore:1-9"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-4",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:1-64",
+     "good": "Each setting serves a check the architecture's Test names now: Ruff format and lint, mypy, coverage, mutmut. Tried in a sample: without the tests.properties override, mypy with no Hypothesis installed failed with \"Untyped decorator makes function untyped\", so lines 39-41 are needed. With mutants/ present after mutmut ran, ruff, mypy and coverage all left it out, so the three mutants excludes are needed. The tests/* D101/D102 ignore lets test classes and methods through, which the F-1 template does not ask to carry docstrings. Comments say the why the values do not.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:6-64"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/.gitignore:1-9",
+     "good": "Each name is a file or folder the checks were seen making in the sample runs: __pycache__/, .coverage, .mypy_cache/, .ruff_cache/, .hypothesis/ from the property run, mutants/ from mutmut. .pytest_cache/ comes from the pytest that mutmut runs and from a maintainer running pytest directly. No name ignores anything else.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/.gitignore:2-9"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-5",
+   "good": "Each tool's settings are in one place, pyproject.toml. Python 3.9 is named once for each tool that needs it, in that tool's own form. After the T3 and T5 commands (ruff, mypy, coverage, the property tests, mutmut) ran on a sample in a git folder holding these two files, `git status --ignored` showed every file the runs made as ignored: .coverage, __pycache__/, tests/__pycache__/, .mypy_cache/, .ruff_cache/, .hypothesis/, and mutants/ with its .pytest_cache. Only the sample's sources were untracked. On the real folder, the T3 command's run left only sort-downloads/.ruff_cache/, shown as ignored.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/.gitignore:1-9",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:1-64"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-6",
+   "good": "The coverage settings count lines and branches (branch = true) over the unit tests, leave out the property tests, and fail below 100. Tried in a sample with one branch uncovered: the report gave 82%, showed line 15 as missing, and failed with exit 2. Each part left out has its why beside it: mutants/ as mutmut's copies, tests/properties.py because its inputs change from run to run, the __main__ guard because the tests call functions in one process. mutmut is set to mutate sort_downloads.py with the tests in tests/. In the sample it made 17 mutants and named the surviving ones in `mutmut results`.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:45-64"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-7",
+   "good": "With these settings, every check the architecture's Test names ran once on a sample tool, through the plan's T5 command on Python 3.9: ruff format --check, ruff check, mypy, the unit tests with coverage, the property tests and mutmut. All passed on conforming code. Lint failed on code missing an opening (exit 1), and coverage failed on an uncovered branch (exit 2). Nothing in the settings ties one run to another: Hypothesis's database and coverage's data file are kept in the ignored files in the checkout.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:6-64"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-8",
+   "good": "The settings add nothing slow to the test run. The unit tests are found by plain unittest, the property tests are kept out of it, and mutmut runs only sort_downloads.py against tests/. In the sample, the unit tests ran in 0.000s, the property run in 0.5s, and mutmut ran 17 mutants at about 318 mutations a second, ending in seconds.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:45-50",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:62-64"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-9",
+   "good": "The settings name no place outside the checkout. Every file the checks write (.coverage, the caches, mutants/) lands in the clone they run in, so checks run from two clones do not share a place. The tool's own record place is settled by the code and the architecture, not by these files.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:45-50",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/.gitignore:2-9"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-10",
+   "good": "A formatter (Ruff format), a linter (Ruff check with E, W, F, I, B, UP, SIM, D) and a type checker (mypy strict) are each set up in pyproject.toml. The plan's check command runs all three, chained with &&. Run once on the real folder, it printed \"2 files already formatted\" and \"All checks passed!\", then mypy's \"There are no .py[i] files\", as there is no code yet. Run on a sample, it printed each tool's result, and a lint finding (D100, D103) failed the command with exit 1.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/pyproject.toml:6-41"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "No [project] table in pyproject.toml; only [tool.*] tables.",
+   "why": "The tool is installed by copying one file (architecture line 56), and the plan's Test lines run uv with --no-project."
+  },
+  {
+   "chosen": "Ruff rules E, W, F, I, B, UP, SIM and D (google convention), tests/* exempt from D101 and D102 only; line length left at Ruff's default.",
+   "why": "Common rule sets that catch likely bugs and outdated forms; D makes every module and function carry the opening F-1 asks; a test's name and its Given/When/Then comments are its opening, as F-1 sets."
+  },
+  {
+   "chosen": "mypy strict with warn_unreachable, at Python 3.9.",
+   "why": "F-1 and B-3 ask each function's in and out as types; strict makes every signature carry them."
+  },
+  {
+   "chosen": "mypy ignores a missing Hypothesis and allows its untyped decorators in tests.properties only.",
+   "why": "The everyday check (T3 and T4 Test lines) installs no Hypothesis, while tests/properties.py imports it; without these, that check fails once the property tests exist."
+  },
+  {
+   "chosen": "coverage.py: branch on, source the folder, omit mutants/ and tests/properties.py, fail_under 100, the __main__ block excluded.",
+   "why": "B-6 asks every statement and branch run by the unit tests counted without the property tests; fail_under makes the plan's 'coverage report' fail on a gap; the __main__ block runs only when the file is started as a command, which the unit tests do not do."
+  },
+  {
+   "chosen": "mutmut mutates sort_downloads.py and runs tests/ (through pytest, which does not collect tests/properties.py by its name).",
+   "why": "The architecture places all code in sort_downloads.py and the unit tests in tests/test_*.py."
+  },
+  {
+   "chosen": ".gitignore lists exactly the seven names the trial run made, with no general Python template.",
+   "why": "B-4: each entry is one a check of this tool makes; a template would list files nothing here makes."
+  }
+ ]
+}

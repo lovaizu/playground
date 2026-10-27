@@ -30,7 +30,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
   Test: `uv run --directory sort-downloads --no-project --python 3.9 --with ruff --with mypy --with coverage sh -c 'ruff format --check . && ruff check . && mypy . && coverage run --branch -m unittest && coverage report'`
 
-  - [ ] 1. Set up the development tools the architecture names, with their settings, `sort-downloads/pyproject.toml` as a code work. turn.
+  - [x] 1. Set up the development tools the architecture names, with their settings, `sort-downloads/pyproject.toml` as a code work. turn.
   - [ ] 2. Make the unit tests of the preview from AC1, AC3, AC4 and the README's Example, seen failing with no tool there, `sort-downloads/tests/test_preview.py` as a code work. turn.
   - [ ] 3. Make the tool's Command line, Sort planner and Report as the architecture places them, with the link `sort-downloads/sort-downloads` to it, `sort-downloads/sort_downloads.py` as a code work. turn.
 
@@ -79,7 +79,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Next
 
-Step 4 of /rn:up on T3: action 1, set up the development tools
+Step 4 of /rn:up on T3: action 2, the unit tests of the preview
 
 ## Open
 

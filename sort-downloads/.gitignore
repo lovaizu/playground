@@ -1,0 +1,9 @@
+# Files made by running the tool's checks, set up in pyproject.toml; none of them is code.
+__pycache__/
+.coverage
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.pytest_cache/
+# mutmut's changed copies of the code and its results.
+mutants/
