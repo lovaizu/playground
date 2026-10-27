@@ -28,7 +28,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
   Completion criterion: the user, reading it at the design sign-off, finds in it every part AC7 names, the install steps on the way of building and installing the user chose in action 2, and the use of sorting and undoing as AC1 to AC3 and AC8 say, and approves it as what the finished tool will be.
 
-  - [ ] 1. Find out whether an existing tool already sorts a folder's files into folders by kind with a preview and an undo of the last sort, on both Linux and macOS, how near each comes to AC1 to AC3 and AC8, and whether its licence and price allow using it here; and, for a tool made here, which ways of building and installing it run alike on Linux and macOS with what a Mac has, `.rn/20261027-organize-downloads-cli/research-existing-tools.md` as a research work. turn.
+  - [x] 1. Find out whether an existing tool already sorts a folder's files into folders by kind with a preview and an undo of the last sort, on both Linux and macOS, how near each comes to AC1 to AC3 and AC8, and whether its licence and price allow using it here; and, for a tool made here, which ways of building and installing it run alike on Linux and macOS with what a Mac has, `.rn/20261027-organize-downloads-cli/research-existing-tools.md` as a research work. turn.
   - [ ] 2. Settle, from the research result of action 1, whether the tool is an existing one used as it is or one made here, and, for one made here, its language and how the user installs it. The orchestrator, with the user.
   - [ ] 3. Make the README from the plan and what action 2 settled, `sort-downloads/README.md` as a readme work. turn.
 
@@ -40,7 +40,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Next
 
-Step 4 of /rn:up on T1: action 1, the research on existing tools
+Step 4 of /rn:up on T1: action 2, settle with the user whether to use an existing tool or make one, and its language and way of installing
 
 ## Open
 

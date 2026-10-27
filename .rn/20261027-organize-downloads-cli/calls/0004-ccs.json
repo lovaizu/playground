@@ -1,0 +1,49 @@
+{
+ "focal_entities": [
+  {
+   "work": "t1.1"
+  },
+  {
+   "stage": "design"
+  },
+  {
+   "kind": "research"
+  },
+  {
+   "path": ".rn/20261027-organize-downloads-cli/research-existing-tools.md"
+  },
+  {
+   "audience": "the user, settling with the orchestrator whether to use an existing tool or make one and in what language and way of installing, and the maker of the README and the architecture"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "choosing between an existing tool and one made here, and building the README and the architecture on that choice"
+  },
+  {
+   "serves": "AC5: The user installs the tool on their Mac as the README says and runs it once without being told to move, and it lists the files and the folders they would move to as AC1 says."
+  },
+  {
+   "serves": "AC7: The README says how to install the tool and how to use it, undoing included, the kinds and which files belong to each included, and a reader following it from a fresh clone installs the tool and runs it to sort and to undo, each both without being told to move and told to move."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/session/research.md"
+  }
+ ],
+ "constraints": [
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/fix.md"
+  }
+ ]
+}

@@ -1,0 +1,108 @@
+{
+ "work": [
+  ".rn/20261027-organize-downloads-cli/research-existing-tools.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/session/research.md",
+   "item": "B-1",
+   "good": "From the opening I can tell what was asked and why: whether an existing tool sorts, previews and undoes on Linux and macOS, how near it comes to AC1 to AC3 and AC8, and whether its licence and price allow it, plus which ways of making it here run on both with what a Mac has. This is asked for T1 action 2, the choice the user settles. The answer is stated outright and in the terms of that choice: make the tool here, because no tool meets AC1 to AC3 and AC8, and the two nearest fail on named points (organize has no undo; TidyMate renames a file whose name is taken and does not list files before undoing). The favoured way is one Python 3 standard-library file copied onto PATH, and the one point the README and architecture must not guess is named. The tables bear it out: organize's undo issue #16 has been open since 2018, and TidyMate's build_plan and unique_path rename files.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:5-15",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:16-29"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/session/research.md",
+   "item": "B-2",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:1-4",
+     "good": "The date of the check (2026-10-27) is given, so the reader knows how current the facts below are. This part states no other fact.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:3-3"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:5-15",
+     "good": "The question's only references are to the plan (T1 action 2, AC1 to AC3, AC8). I checked these against steering.md and they say what the question says. It states no outside fact that needs a source.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:7-14"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:16-29",
+     "good": "Each fact in the answer points to the tables, and I checked it there at its source. organize has `sim` and no undo (issue #16 'Undo option', state open, created 2018-10-03). TidyMate renames on a taken name: build_plan L139-145 calls free_path, which makes 'name (n).ext'. Its undo prints only a count (run_undo L197-211) and puts a file back under unique_path (common.py L154). Running on Linux and on a Mac with python3 matches the Apple notes for 10.15 and 12.3.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:18-28"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:30-42",
+     "good": "I opened each source. PyPI organize-tool: 3.3.0 is the latest, uploaded 2024-11-25, requires_python '<4.0,>=3.9', MIT. The organize README says 'Works on macOS, Windows and Linux' and has `organize sim`. The actions docs for move say on_conflict takes skip and defaults to rename_new. The rules docs say subfolders defaults to false. Issue #16 is open since 2018-10-03. PyPI tidymate: only 1.0.0, uploaded 2026-10-10, >=3.8, MIT, and GitHub shows 5 stars. At the pinned commit: free_path renames (L82-88, L139-145), run_undo prints a count and asks (L197-211), undo_log moves back via unique_path and rmdirs only its created_dirs (common.py L138-166), a file with no extension is skipped (L131-132), a file changed in the last 5 minutes is skipped by default (L135, default 5), and no folder prints help (L236-239). downloads-folder-organizer: last commit c3a796b on 2025-09-12, MIT. It renames to name_N.ext (L160-174), its undo runs `mv \"$dest\" \"$source\"` with no check of the old place (L340-350), and DOWNLOADS_DIR is fixed to $HOME/Downloads. Hazel: the store lists Hazel 6 at $42, and the site says 'for your Mac'. The MIT text allows use, modification and distribution provided the notice is kept.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:32-41"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:43-51",
+     "good": "The 12.3 release notes say 'Python 2.7 was removed from macOS in this update. Developers should use Python 3 or an alternative language instead.' The 10.15 notes say 'Future versions of macOS won't include scripting language runtimes by default, and might require you to install additional packages.' PEP 668 (Final) is about refusing installs into an externally managed interpreter. Apple's bash source repo holds a bash-3.2 tree. Apple support 102360 says zsh is the default for new accounts from 10.15 and lists /bin/bash among the shells. The bash-in-shell cost is marked as the team's own judgement, not a sourced fact. 'As on many Linux distributions' in the pip row is not stated by PEP 668 itself. It weighs only against the pip option, which the answer does not favour, so it does not affect the choice.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:45-50"
+     ]
+    },
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:52-59",
+     "good": "The one fact here is that Apple's notes say Python might need an extra package without saying which version. I checked it against the 10.15 note quoted above, which names no version. The rest is open points, not facts.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:54-57"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/session/research.md",
+   "item": "B-3",
+   "good": "What is not known is stated as such. Whether the user's Mac has python3, and which version, is open, settled by the user running `python3 --version`, with the decision to make if it is missing. Whether the kinds suit the user's Downloads is left to AC6, once there is a tool to try. Hazel's cells are marked 'not checked', with the reason it is ruled out anyway. The shell cost is marked as our judgement, not a sourced fact.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:26-28",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:37-37",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:49-49",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:52-59"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/session/research.md",
+   "item": "B-4",
+   "good": "Each line is the question, the answer, a finding, or an open point. There is no account of how the search went. The tools and the ways of making it are each in a table against the ACs and the costs that bear on the choice. The answer points to the tables instead of repeating them, and the MIT note sits once under the table.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:1-59"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/session/research.md",
+   "item": "B-5",
+   "good": "Terms a newcomer may not know are shown where they appear. 'A folder on PATH' comes with the example ~/.local/bin. 'Externally managed' comes with what it causes, pip refused outside a virtual environment, and a link to PEP 668. 'Standard library only' is shown by 'no build step and no package manager'. on_conflict and subfolders come with their meaning and defaults. MIT comes with what it lets you do.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:24-27",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:34-34",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:39-41",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/.rn/20261027-organize-downloads-cli/research-existing-tools.md:47-48"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "Favoured in the answer: make the tool here as one Python 3 standard-library file installed by copying it onto PATH.",
+   "why": "The research question asks what to favour; this is the way that needs no build and no package manager on either OS, and the user still decides it at T1 action 2."
+  },
+  {
+   "chosen": "Compared organize, TidyMate, ajitfawade/downloads-folder-organizer and Hazel only.",
+   "why": "organize is the well-known maintained tool (3174 stars, pushed 2026-10-26); TidyMate and the bash script were the nearest GitHub matches with preview or undo on Linux and macOS; Hazel is the paid Mac app organize names as what it replaces; the other hits had 1-4 stars or no Linux/macOS CLI."
+  },
+  {
+   "chosen": "Linked the small repositories at a fixed commit and their lines, and dated each tool.",
+   "why": "So a reader opens the same lines later even if the repository changes."
+  }
+ ]
+}
