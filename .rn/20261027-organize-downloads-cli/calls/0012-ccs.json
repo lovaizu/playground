@@ -1,0 +1,70 @@
+{
+ "focal_entities": [
+  {
+   "work": "t4.1"
+  },
+  {
+   "stage": "build"
+  },
+  {
+   "kind": "code"
+  },
+  {
+   "path": "sort-downloads/tests/test_sort.py"
+  },
+  {
+   "audience": "whoever maintains sort-downloads, a person or an AI"
+  },
+  {
+   "has": "sort-downloads/README.md"
+  },
+  {
+   "has": "sort-downloads/docs/architecture.md"
+  },
+  {
+   "has": "sort-downloads/pyproject.toml"
+  },
+  {
+   "has": "sort-downloads/sort_downloads.py"
+  },
+  {
+   "has": "sort-downloads/tests/test_preview.py"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "trusting, from the sort's tests passing, that sort-downloads --move behaves as AC2, AC3 and the README's Example say, and seeing them fail on the tool of T3"
+  },
+  {
+   "serves": "AC2: Run told to move, the tool moves each file directly in the folder into the folder of its kind inside it, making that folder where it is not there, a file of no kind the README lists going to Others; each file inside a subfolder stays where it was; a hidden file, whose name starts with '.', and a download still running, whose name ends in .crdownload or .part, are not moved, stay where they were, and are named in the tool's output as left for that reason."
+  },
+  {
+   "serves": "AC3: A file whose name already exists in the folder it would move to is not moved, stays where it was, and is named in the tool's output as left for that reason; after any run, every file there was before is still there with the same name and content, no file overwritten."
+  },
+  {
+   "serves": "AC4: AC1 to AC3 and AC8 hold on a trial folder holding at least images, documents, a file of no listed kind, a name already taken in a target folder, a subfolder with files in it, a hidden file, a download still running, and, after a sort, a new file of the same name as one the sort moved, put where that one was; shown by automated tests and by real runs of the tool on Linux; run with no folder named, the tool works on ~/Downloads."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "README, architecture, settings, the tool of T3 with its tests and the plan handed: the tests are drawn from AC2, AC3 and the README's Example, call the tool as T3's tests do, and are seen failing on the tool of T3"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/fix.md"
+  }
+ ]
+}

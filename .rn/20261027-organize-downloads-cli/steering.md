@@ -30,7 +30,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
   Test: `uv run --directory sort-downloads --no-project --python 3.9 --with ruff --with mypy --with coverage sh -c 'ruff format --check . && ruff check . && mypy . && coverage run --branch -m unittest && coverage report'`
 
-  - [ ] 1. Make the unit tests of the sort with `--move` from AC2, AC3 and the README's Example, seen failing on the tool of T3, `sort-downloads/tests/test_sort.py` as a code work. turn.
+  - [x] 1. Make the unit tests of the sort with `--move` from AC2, AC3 and the README's Example, seen failing on the tool of T3, `sort-downloads/tests/test_sort.py` as a code work. turn.
   - [ ] 2. Make the tool's Mover and Last sort record for a sort, `sort-downloads/sort_downloads.py` as a code work. turn.
 
 - T5: `sort-downloads --undo`, which shows what undoing the last sort would move back and leave, and with `--move` moves each file back and removes each folder that sort made once empty. Serves AC3, AC4 and AC8.
@@ -69,7 +69,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Next
 
-Step 4 of /rn:up on T4: action 1, the unit tests of the sort with --move
+Step 4 of /rn:up on T4: action 2, make the tool's Mover and Last sort record for a sort
 
 ## Open
 

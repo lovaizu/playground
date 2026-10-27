@@ -1,0 +1,141 @@
+{
+ "work": [
+  "sort-downloads/tests/test_sort.py"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "F-1",
+   "good": "The module opens with what it tests and why it is there and where each expected value comes from (README Example, AC2, AC3, AC4, the architecture's physical view). Each helper has a typed signature and a Google-style docstring giving Args and Returns. Each of the seven tests has a name that says in one sentence what must happen, and a body with Given, When and Then comments in plain words.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:1-14",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:64-93",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:103-214"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-1",
+   "good": "I ran T4's Test command (uv run --no-project --python 3.9 with only ruff, mypy and coverage). The formatter, linter and mypy pass, and the unit test run on Python 3.9 ran all 27 tests. `uv run --python 3.9 python -m unittest` with nothing installed ran them as well. The tests use only the standard library and the preview tests' helpers, so they run anywhere the development rules name. Six fail only because T3's tool rejects --move, which is the failure this action expects.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:16-26"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-2",
+   "good": "The work's only stops are assertion failures, and each one prints a full diff against the expected output or the expected folder contents. On T3 they showed, for example, the missing 'Moved:' listing, the files not yet in Images, Documents and Others, and argparse's 'unrecognized arguments: --move'. That tells the maintainer what to change. The tool's own stop on a missing folder is held as naming the path, with nothing printed and nothing made, the same check the preview tests apply.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:109-113",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:201-214"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-3",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:1-214",
+     "good": "Each name says what it holds:\n- EXAMPLE_MOVED is the Example's --move output.\n- EXAMPLE_SORTED is the sorted folder, and its comment says which folders are made and which were there.\n- RECORD is the record's path, pointing to the physical view, where I found it as $XDG_STATE_HOME/sort-downloads/last-sort.json.\n- files_by_name and outside each have a docstring that matches their bodies.\n- The comment on the borrowed setUp says it is kept in one place and sets root, home and folder, which matches TestPreview.setUp.\n- The comment at line 190 says why b\"\" is there.\n\nThe plan file the opening names exists and holds AC2 to AC4. No comment tells how the work went.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:1-14",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:28-101",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:190-191"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-4",
+   "parts": [
+    {
+     "part": "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:1-214",
+     "good": "Each test holds a behavior AC2, AC3, AC4 or the README Example asks for now:\n- the output\n- the sorted folder\n- no file renamed, overwritten or lost\n- ~/Downloads used when no folder is named\n- a name taken between the plan and the move\n- the record kept outside the folder\n- the stop on a missing folder\n\nEach helper is used by a test with the values that test needs. Test 3 is implied by test 2's exact snapshot, but its name points at AC3's own promise, so a failure there names that behavior. I do not count that as surplus.",
+     "lines": [
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:64-93",
+      "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:103-214"
+     ]
+    }
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-5",
+   "good": "The Example's files, the snapshot, make_files, run_tool and the test set-up all come from test_preview.py rather than being written again. Only the --move output and the sorted state, which are new, are written here. Names match the tool and the preview tests (plan_sort, SortPlan, snapshot). After the Test command ran, `git status --short` showed nothing new beyond the untracked work itself: __pycache__ and .coverage are ignored.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:24-26",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:97-101"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-6",
+   "good": "Read beside AC2, AC3 and the README Example, each behavior --move must have breaks some test.\n\nCases covered:\n- a file moved into an existing kind folder (Documents) and into a missing one (Images, Others, made)\n- a file of no listed kind going to Others\n- a name already taken in its kind folder, left with its reason\n- a hidden file and a running download left with their reasons\n- files in subfolders not moved (Projects/plan.txt, Documents/report.pdf)\n- the exact output\n- no file renamed, overwritten or lost\n- ~/Downloads used when no folder is named\n- a file saved under a taken name between the plan and the move: printed as left, both files keep their content, other files still move\n- the record written outside the folder, and only there\n- a missing folder: stop, nothing written\n\nAll expected values are copied from the README Example (lines 54-67) and the physical view, not from the code. The .part ending and links reach --move through the same plan_sort the preview tests already hold, as the architecture says both runs use one plan.\n\nOn T3, six of the seven tests fail for the missing --move. Test 3 passes because a tool that moves nothing keeps every file; it fails on a Mover that overwrites or renames.\n\nCoverage: tool and preview tests stay at 100%. The 15 lines of test_sort.py not run on T3 are the lines after the first failing assert, which run once --move exists. What the record holds is left to T5's undo tests.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:28-61",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:103-214"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-7",
+   "good": "Each test's name gives the one behavior whose fault fails it, and the six failures on T3 each named their own behavior. Each test runs in its own temporary folder, with HOME and XDG_STATE_HOME pointed into it through the shared setUp and cleaned up afterwards. No test reads a clock or the network, and none needs another to run first. The plan-then-save case swaps in its function with mock.patch.object, which is undone when the test ends. ruff format --check, ruff check and mypy --strict, run with the repository's settings, all pass. The unit test run fails only as this action expects, on T3's tool.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:96-101",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:148-175"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-8",
+   "good": "The whole unit test run, 27 tests, took 0.022 s. Each set-up only writes a few small files, and no other program is run.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:96-214"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-9",
+   "good": "Every place a test writes, its folder, HOME/Downloads and the record under XDG_STATE_HOME, is inside a temporary folder made for that test alone by the shared setUp. Two test workers or two runs at once therefore never write the same place.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:96-101",
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:177-199"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/product/code.md",
+   "item": "B-10",
+   "good": "T4's Test command runs ruff format --check, ruff check and mypy, with their settings in pyproject.toml, and stops at the first that fails. On this work it printed '6 files already formatted', 'All checks passed!' and 'Success: no issues found in 4 source files'. The comment in the work that exists for the type checker (line 190) keeps mypy --strict passing.",
+   "lines": [
+    "/tmp/rn/20261027-acceptance-f4dxd0ky/repo/sort-downloads/tests/test_sort.py:1-214"
+   ]
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The tests check what the record holds only as far as this: after a --move run, $XDG_STATE_HOME/sort-downloads/last-sort.json exists and is valid JSON, and nothing else outside the sorted folder changes. They do not fix the record's fields.",
+   "why": "The CCS says the tests come from AC2, AC3 and the README's Example, and none of those say what the record holds. The architecture gives only its path and that it is JSON. Its fields are the Mover's to choose in action 2, and the first thing to read them is T5's undo, whose tests will show whether it holds each move and each folder made. T4's completion criterion asks for 'the record holding each move and each folder made'. If that is wanted inside T4, it needs a test added with action 2, when the format is decided."
+  },
+  {
+   "chosen": "A file saved under a taken name between the plan and the move is made by patching sort_downloads.plan_sort with a wrapper. The wrapper calls the real planner and then saves Documents/invoice.pdf. The tests expect the left file's reason to be the same 'Documents/invoice.pdf already exists' as a name taken before the plan, without fixing where it appears in the Left list.",
+   "why": "The architecture says a run with --move uses the plan from the Sort planner and that a move that fails on a taken name is 'left where it is, with that reason'. Patching the planner is the only point between plan and move that T3's code already has. The README does not say where such a file goes in the list, so the test does not fix it."
+  },
+  {
+   "chosen": "The setUp and helpers (EXAMPLE_FILES, make_files, run_tool, snapshot) come from tests/test_preview.py: setUp is reused with 'setUp = tests.test_preview.TestPreview.setUp', and TestPreview is reached through the module so unittest does not load the preview tests twice.",
+   "why": "B-5 asks for one place, and this work can write only test_sort.py, so a shared helper module could not be made. If a shared module is preferred later, these can be moved there."
+  },
+  {
+   "chosen": "The tool is called as run_tool(['--move', folder]), with --move before the folder, and as run_tool(['--move']) for ~/Downloads.",
+   "why": "This follows the README's 'sort-downloads --move ~/Desktop' and the example in run_tool's docstring."
+  },
+  {
+   "chosen": "test_keeps_every_file_there_was_with_its_name_and_content passes on T3. It is the AC3 guard that no file is lost or written over, and a tool that moves nothing also meets it.",
+   "why": "AC3 says it must hold 'after any run', so it is a guard rather than a check for --move only. The other six tests are the ones seen failing on T3."
+  },
+  {
+   "chosen": "Not tested: what --move prints for a folder with nothing to move or leave, and a file named like a kind folder (such as a file 'Images') with a photo to sort beside it.",
+   "why": "Neither the README nor the ACs say what should happen in these cases, so a test would set behavior no one decided."
+  }
+ ]
+}
