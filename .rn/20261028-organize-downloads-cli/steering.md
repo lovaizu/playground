@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/18
 stage: goal
-signoff: none
+signoff: goal
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -25,7 +25,7 @@ G1: A command-line tool, for macOS and Linux, that sorts the files in the Downlo
 
 ## Next
 
-Step 5 of /rn:up on goal: show the goal sign-off again
+Step 5 of /rn:up on goal: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
 
 ## Open
 
