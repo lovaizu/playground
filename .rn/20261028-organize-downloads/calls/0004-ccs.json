@@ -1,0 +1,18 @@
+{
+ "focal_entities": [
+  {
+   "work": "t1.2"
+  },
+  {
+   "stage": "ux"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Kinds of file and their folders: A file's kind is found from its extension. There are seven kinds, each with its folder: images (jpg, png, gif, webp, heic, svg and the like), documents (pdf, doc/docx, xls/xlsx, ppt/pptx, txt, md, csv and the like), videos (mp4, mov, mkv, avi and the like), music (mp3, m4a, wav, flac and the like), archives (zip, tar, gz, 7z, rar and the like), installers (dmg, pkg, deb, rpm, AppImage and the like) and code (py, js, sh, json, html and the like)."
+  },
+  {
+   "decision": "Files of no listed kind: A file with no extension, or with one none of the seven kinds lists, moves to a folder named others."
+  }
+ ]
+}

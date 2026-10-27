@@ -31,7 +31,7 @@ G1: A command-line tool, run on macOS or Linux, that sorts the files in the user
 
   Completion criterion: the UX names each kind of file with the folder it goes to, and shows what the user types and sees in the preview, the moving run and undo, a same-name file left included; the user approves it at the ux sign-off.
 
-  - [ ] 1. Settle with the user the kinds of file and the plain-word name of each kind's folder, and where a file of no listed kind goes. The orchestrator, with the user.
+  - [x] 1. Settle with the user the kinds of file and the plain-word name of each kind's folder, and where a file of no listed kind goes. The orchestrator, with the user.
   - [ ] 2. Make the UX from the kinds and folder names settled in action 1, `.rn/20261028-organize-downloads/ux.md` as a ux work. turn.
 
 - T2: The tool's README, saying how to use it to preview, to move and to undo. Serves AC10.
@@ -42,7 +42,7 @@ G1: A command-line tool, run on macOS or Linux, that sorts the files in the user
 
 ## Next
 
-Step 4 of /rn:up on T1: action 1, settle the kinds of file and their folder names with the user
+Step 4 of /rn:up on T1: action 2, make the UX
 
 ## Open
 
