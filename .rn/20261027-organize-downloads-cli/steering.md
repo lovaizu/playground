@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/16
 stage: plan
-signoff: none
+signoff: plan
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -24,7 +24,7 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 
 ## Next
 
-Step 5 of /rn:up on plan: show the plan sign-off
+Step 5 of /rn:up on plan: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
 
 ## Open
 
