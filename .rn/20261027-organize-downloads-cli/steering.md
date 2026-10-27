@@ -22,9 +22,64 @@ G1: A command-line tool, on Linux and macOS, that sorts the files directly in th
 - AC7: The README says how to install the tool and how to use it, undoing included, the kinds and which files belong to each included, and a reader following it from a fresh clone installs the tool and runs it to sort and to undo, each both without being told to move and told to move.
 - AC8: Run to undo without being told to move, the tool lists each file the last sort moved, the sort being the last run told to move that was not to undo, with the place it would go back to, and afterwards every file and folder is where it was; run to undo and told to move, it moves each file the last sort moved back to where it was, one by one, and removes each folder that sort made that is then empty; a file whose old place now holds a file of the same name is not moved back, stays where it is, and is named in the tool's output as left for that reason; a folder that was there before that sort, or that still holds anything, is not removed.
 
+## Tasks
+
+- T3: `sort-downloads` that, run with no `--move`, shows for a folder named, or `~/Downloads`, each file directly in it with the folder of its kind it would move to and each file it would leave with its reason, and moves nothing. Serves AC1, AC3 and AC4.
+
+  Completion criterion: unit tests show, on a folder made as AC4's trial folder, the listing the README's first Example gives, each file left with its reason, `~/Downloads` used where no folder is named, the kinds the same as the README's table, and every file and folder where it was with the same name and content; and they pass, with the formatter, linter and type checker, on Python 3.9.
+
+  Test: `uv run --directory sort-downloads --no-project --python 3.9 --with ruff --with mypy --with coverage sh -c 'ruff format --check . && ruff check . && mypy . && coverage run --branch -m unittest && coverage report'`
+
+  - [ ] 1. Set up the development tools the architecture names, with their settings, `sort-downloads/pyproject.toml` as a code work. turn.
+  - [ ] 2. Make the unit tests of the preview from AC1, AC3, AC4 and the README's Example, seen failing with no tool there, `sort-downloads/tests/test_preview.py` as a code work. turn.
+  - [ ] 3. Make the tool's Command line, Sort planner and Report as the architecture places them, with the link `sort-downloads/sort-downloads` to it, `sort-downloads/sort_downloads.py` as a code work. turn.
+
+- T4: `sort-downloads --move`, which moves each file the preview shows into the folder of its kind, making the folder where it is not there, leaves each file it shows as left, and writes the record of the sort. Serves AC2, AC3 and AC4.
+
+  Completion criterion: unit tests show, on a folder made as AC4's trial folder, each file moved as AC2 says, each file left as AC2 and AC3 say and named in the output with its reason, a file saved under a taken name between the plan and the move not written over, nothing in a subfolder moved, and the record holding each move and each folder made; and they pass, with the formatter, linter and type checker, on Python 3.9.
+
+  Test: `uv run --directory sort-downloads --no-project --python 3.9 --with ruff --with mypy --with coverage sh -c 'ruff format --check . && ruff check . && mypy . && coverage run --branch -m unittest && coverage report'`
+
+  - [ ] 1. Make the unit tests of the sort with `--move` from AC2, AC3 and the README's Example, seen failing on the tool of T3, `sort-downloads/tests/test_sort.py` as a code work. turn.
+  - [ ] 2. Make the tool's Mover and Last sort record for a sort, `sort-downloads/sort_downloads.py` as a code work. turn.
+
+- T5: `sort-downloads --undo`, which shows what undoing the last sort would move back and leave, and with `--move` moves each file back and removes each folder that sort made once empty. Serves AC3, AC4 and AC8.
+
+  Completion criterion: unit tests show, on a folder made as AC4's trial folder, sorted and then given a new file where a moved one was, the undo listing and moves AC8 and the README's Example give, the file whose old place is taken left and named, only the empty folders the sort made removed, and nothing moved without `--move`; property tests show, over any file names, that a sort and its undo leave every file where it was with the same name and content and that no run writes over a file; mutation testing finds a test failing on each change it makes; and they pass, with the formatter, linter and type checker, on Python 3.9.
+
+  Test: `uv run --directory sort-downloads --no-project --python 3.9 --with ruff --with mypy --with coverage --with hypothesis --with mutmut --with pytest sh -c 'ruff format --check . && ruff check . && mypy . && coverage run --branch -m unittest && coverage report && python -m unittest tests.properties && mutmut run'`
+
+  - [ ] 1. Make the unit tests of the undo from AC8 and the README's Example, seen failing on the tool of T4, `sort-downloads/tests/test_undo.py` as a code work. turn.
+  - [ ] 2. Make the property tests the architecture names, seen failing on the tool of T4, `sort-downloads/tests/properties.py` as a code work. turn.
+  - [ ] 3. Make the tool's Undo planner and the Mover's undo, `sort-downloads/sort_downloads.py` as a code work. turn.
+
+- T6: The real runs of the installed `sort-downloads` on Linux. Serves AC4.
+
+  Completion criterion: the record shows, each on a new copy of AC4's trial folder, the tool installed as the README says, then run with no `--move`, with `--move`, with `--undo` and with `--undo --move`, and with no folder named where `HOME` holds the trial folder as `Downloads`, each run's output as printed, and every file's name, place and checksum before and after each run meeting AC1 to AC3 and AC8.
+
+  - [ ] 1. Run the installed tool on Linux as the architecture's Test says and record what was run and what came out, `.rn/20261027-organize-downloads-cli/trial-linux-runs.md` as a trial work. turn.
+
+- T7: The README made again on the built tool, `sort-downloads/README.md`. Serves AC7.
+
+  Completion criterion: a newcomer following it from a fresh clone of the branch installs the tool, runs it to sort and to undo, each with no `--move` and with `--move`, and gets what it shows, with the kinds and the files of each as the tool sorts them.
+
+  - [ ] 1. Make the README again from the built tool, `sort-downloads/README.md` as a readme work. turn.
+
+- T8: The architecture made again on the built tool, `sort-downloads/docs/architecture.md`. Serves AC1, AC2, AC3, AC4 and AC8.
+
+  Completion criterion: each component, file and check it names is there in the built tool and its tests, as it says.
+
+  - [ ] 1. Make the architecture again from the built tool, `sort-downloads/docs/architecture.md` as an architecture work. turn.
+
+- T9: The user's own run on their Mac. Serves AC5 and AC6.
+
+  Completion criterion: the user says that, installed on their Mac as the README says and run with no `--move` on their own `~/Downloads`, the tool listed the files and the folders they would move to as AC1 says, and that they find those folders acceptable for finding a file.
+
+  - [ ] 1. Have the user install the tool on their Mac as the README says, run it once with no `--move` on their `~/Downloads`, and say what it listed and whether its folders suit finding a file. The orchestrator, with the user.
+
 ## Next
 
-Step 10 of /rn:up on plan: make the tasks that build the finished work
+Step 4 of /rn:up on T3: action 1, set up the development tools
 
 ## Open
 
