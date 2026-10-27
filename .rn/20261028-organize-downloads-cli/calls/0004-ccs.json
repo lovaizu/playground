@@ -5,6 +5,46 @@
   },
   {
    "stage": "ux"
+  },
+  {
+   "kind": "ux"
+  },
+  {
+   "path": ".rn/20261028-organize-downloads-cli/ux.md"
+  },
+  {
+   "audience": "the user approving the UX at the ux sign-off, and whoever makes the README, the architecture and the tool from it"
+  },
+  {
+   "has": ".rn/20261028-organize-downloads-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving what the tool gives them and how they use it, its types and extensions included, and building each scene from it alone"
+  },
+  {
+   "serves": "AC1: On macOS and on Linux, the tool run plainly on a Downloads folder holding files lists each file it would move with the folder it would go to, and the names, number and content of everything in Downloads are the same after the run as before."
+  },
+  {
+   "serves": "AC2: On macOS and on Linux, the tool told to move puts each file directly in Downloads into the folder named for its type, by the types and the extensions of each that the user approves at the ux sign-off."
+  },
+  {
+   "serves": "AC4: After the tool moves files, each type's folder holds only files of that type, so a user who knows the type of the file they want finds it by opening that one folder."
+  },
+  {
+   "serves": "AC5: Where a file of the same name is already in the folder a file would go to, the tool leaves that file where it was, under its own name, and tells the user which file it left and why."
+  },
+  {
+   "serves": "AC8: On macOS and on Linux, the tool told to undo puts each file it moved in its last run that moved files back where it was before that run, under the same name and with the same content."
+  },
+  {
+   "serves": "AC9: Where a file moved in that last run cannot be put back, because a file of the same name is now where it was or it is no longer where the run put it, the undo leaves that file as it is, deletes and overwrites nothing, puts back the other files, and tells the user which files it did not put back and why."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261028-acceptance-u96xr86w/rn/checklists/product/ux.md"
   }
  ],
  "constraints": [
@@ -22,6 +62,15 @@
   },
   {
    "decision": "Which folder it sorts: By default the tool sorts the user's Downloads folder: ~/Downloads on macOS; on Linux the folder XDG_DOWNLOAD_DIR in ~/.config/user-dirs.dirs names, such as ~/ダウンロード, or ~/Downloads where none is set. The user can name another folder to sort instead, as in organize-downloads ~/some-folder."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261028-acceptance-u96xr86w/rn/checklists/fix.md"
   }
  ]
 }

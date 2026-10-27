@@ -1,0 +1,134 @@
+{
+ "work": [
+  ".rn/20261028-organize-downloads-cli/ux.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261028-acceptance-u96xr86w/rn/checklists/product/ux.md",
+   "item": "F-1",
+   "lines": [
+    ".rn/20261028-organize-downloads-cli/ux.md:1-301"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261028-acceptance-u96xr86w/rn/checklists/product/ux.md",
+   "item": "B-1",
+   "lines": [
+    ".rn/20261028-organize-downloads-cli/ux.md:3-3",
+    ".rn/20261028-organize-downloads-cli/ux.md:7-9"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261028-acceptance-u96xr86w/rn/checklists/product/ux.md",
+   "item": "B-2",
+   "lines": [
+    ".rn/20261028-organize-downloads-cli/ux.md:13-33"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261028-acceptance-u96xr86w/rn/checklists/product/ux.md",
+   "item": "B-3",
+   "lines": [
+    ".rn/20261028-organize-downloads-cli/ux.md:66-129",
+    ".rn/20261028-organize-downloads-cli/ux.md:131-162",
+    ".rn/20261028-organize-downloads-cli/ux.md:164-203",
+    ".rn/20261028-organize-downloads-cli/ux.md:205-243",
+    ".rn/20261028-organize-downloads-cli/ux.md:245-283"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261028-acceptance-u96xr86w/rn/checklists/product/ux.md",
+   "item": "B-4",
+   "lines": [
+    ".rn/20261028-organize-downloads-cli/ux.md:287-301"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261028-acceptance-u96xr86w/rn/checklists/product/ux.md",
+   "item": "B-5",
+   "lines": [
+    ".rn/20261028-organize-downloads-cli/ux.md:1-3",
+    ".rn/20261028-organize-downloads-cli/ux.md:5-9",
+    ".rn/20261028-organize-downloads-cli/ux.md:11-33",
+    ".rn/20261028-organize-downloads-cli/ux.md:35-283",
+    ".rn/20261028-organize-downloads-cli/ux.md:285-301"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261028-acceptance-u96xr86w/rn/checklists/product/ux.md",
+   "item": "B-6",
+   "lines": [
+    ".rn/20261028-organize-downloads-cli/ux.md:37-64",
+    ".rn/20261028-organize-downloads-cli/ux.md:89-129",
+    ".rn/20261028-organize-downloads-cli/ux.md:147-162",
+    ".rn/20261028-organize-downloads-cli/ux.md:199-203",
+    ".rn/20261028-organize-downloads-cli/ux.md:237-243",
+    ".rn/20261028-organize-downloads-cli/ux.md:259-259",
+    ".rn/20261028-organize-downloads-cli/ux.md:275-283"
+   ]
+  }
+ ],
+ "left": [],
+ "chosen": [
+  {
+   "chosen": "The exact text of every output: the 'Would move / Would not move', 'Moved / Did not move' and 'Put back / Did not put back' lists, each as 'name -> Folder/' or 'name : reason', ending with the next command to run, and the error lines starting 'organize-downloads:'.",
+   "why": "The builder builds each scene from the UX alone and the README shows one run, so the words the user sees are fixed here; a list per outcome ending with the next command lets the user decide the next run from the output alone."
+  },
+  {
+   "chosen": "The plain run also lists the files it would not move with why, clashes included, and --move does exactly what the plain run listed.",
+   "why": "The user decides to move from the plain run's list (KR1.4); a clash shown only after the move would be a surprise."
+  },
+  {
+   "chosen": "A file's extension is the part after the last dot, other than a leading dot; so backup.tar.gz goes to Archives and .DS_Store or README are of no type and listed as not moved.",
+   "why": "The decided types name single extensions; without this rule builders would treat .tar.gz and dotfiles differently."
+  },
+  {
+   "chosen": "Folders directly in Downloads, the type folders included, and what they hold are left as they are; only files directly in it are sorted.",
+   "why": "AC2 speaks of each file directly in Downloads; moving folders or re-sorting type folders would move what the user did not ask for."
+  },
+  {
+   "chosen": "A file or other non-folder already named like a type folder (such as a file named Images) makes each file of that type not moved, with the reason 'Images exists and is not a folder'.",
+   "why": "The tool deletes and overwrites nothing, so it cannot make the folder; telling why keeps every file accounted for (KR1.5)."
+  },
+  {
+   "chosen": "Undo works per sorted folder; a file not put back stays in the last move so a later --undo tries it again; the last move ends when every file of it is put back or another --move moves files; an undo leaves empty type folders in place; with nothing to undo it says so and exits 0.",
+   "why": "Lets the user clear a clash and retry without losing the way back, while an undo still removes and overwrites nothing (AC9)."
+  },
+  {
+   "chosen": "Errors: both --move and --undo, an unknown option, more than one folder, or a folder that does not exist or cannot be read stop the run with a one-line reason, a pointer to --help, exit status 1 and no change; a run that went through every file exits 0, files not moved or not put back included.",
+   "why": "The CCS decided only the --move with --undo case; the same treatment for every misuse keeps one rule, and exit 0 for a finished run keeps not-moved files (normal) apart from errors."
+  },
+  {
+   "chosen": "organize-downloads --help prints a usage line, what the tool does, the three options and the six types with their extensions, changes nothing and exits 0.",
+   "why": "Common practice for a command-line tool; the errors point to it, and the user can see the agreed types from the tool itself."
+  },
+  {
+   "chosen": "Lists are in order of file names, with paths relative to the sorted folder named in full on the first line.",
+   "why": "A stable order lets the user compare the plain run with the move, and the full path on top shows which folder (such as ~/ダウンロード) was sorted."
+  },
+  {
+   "chosen": "Key results in the order: files lost or changed, files not put back by undo, files not sorted into their type folder, plain-run list differing from the move, files left without a reason.",
+   "why": "Losing a file costs more than any time saved; a move that cannot be undone keeps the user from sorting at all; only then do sorting, preview and telling bring the user closer to G1."
+  },
+  {
+   "chosen": "Box kinds in the figures written as Mermaid entity codes (#lt;person#gt;) so the angle brackets render.",
+   "why": "A bare <person> in a Mermaid label is read as an HTML tag and dropped when rendered."
+  },
+  {
+   "chosen": "A file that cannot be moved or put back for a reason other than a clash, such as no permission, is left as it is and named with the system's reason, and the run goes on with the other files.",
+   "why": "Stopping halfway would leave some files moved and others not with no list of either; going on and naming each keeps every file accounted for (KR1.5) and leaves the moved ones for --undo."
+  },
+  {
+   "chosen": "Each command printed for the next run names the sorted folder last where the user named one.",
+   "why": "Otherwise copying the printed command would act on ~/Downloads instead of the folder the user named."
+  },
+  {
+   "chosen": "Where nothing moves or is put back, the first line is 'Nothing to move / Nothing was moved / Nothing was put back in <folder>.', followed by the list of files left with why.",
+   "why": "Keeps the rule that the first line names the sorted folder in full, and still names every file left."
+  },
+  {
+   "chosen": "KR1.5 counts, per run, the files the run is about: run plainly or told to move, every file directly in the sorted folder not listed as moved or to be moved; told to undo, every file of the last move not put back; files in the type folders not of the last move, and folders, are not counted.",
+   "why": "Those are the files the user expects a word on from that run; files the run never touches would make the count grow with no fault of the run."
+  }
+ ]
+}

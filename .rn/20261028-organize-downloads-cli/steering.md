@@ -25,13 +25,6 @@ G1: A command-line tool, for macOS and Linux, that sorts the files in the Downlo
 
 ## Tasks
 
-- T1: The UX of the tool, approved at the ux sign-off. Serves AC1, AC2, AC4, AC5, AC8 and AC9.
-
-  Completion criterion: read whole, the UX shows the user each scene of using the tool, run plainly, told to move and told to undo, with what they type and what the tool shows them, the clashes of AC5 and AC9 included, and names each type's folder with the extensions that go into it, so the user can approve them at the ux sign-off and whoever builds the tool builds each scene from it alone.
-
-  - [x] 1. Settle with the user the command's name, how the user tells it to move and to undo, and the types with the folder name and the extensions of each. The orchestrator, with the user.
-  - [ ] 2. Write the UX from the plan and the answers of action 1, `.rn/20261028-organize-downloads-cli/ux.md` as a ux work. turn.
-
 - T2: The tool's section of README.md, drafted from the UX. Serves AC6.
 
   Completion criterion: read whole by someone who has never seen the tool, the section tells them whom the tool is for and what they gain, shows one run on a Downloads folder from running it plainly to moving the files, and tells how to install it and how to run it plainly, told to move and told to undo, each as the UX of T1 says, with the README's first two lines kept.
@@ -40,7 +33,7 @@ G1: A command-line tool, for macOS and Linux, that sorts the files in the Downlo
 
 ## Next
 
-Step 4 of /rn:up on T1: action 2, write the UX
+Step 4 of /rn:up on T2: action 1, write the tool's section of README.md from the UX
 
 ## Open
 
