@@ -5,6 +5,34 @@
   },
   {
    "stage": "design"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261027-organize-downloads-cli/calls/0006-steering.md"
+  },
+  {
+   "audience": "the user at the plan sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/calls/0004-ccs.json"
+  },
+  {
+   "has": ".rn/20261027-organize-downloads-cli/calls/0005-ccs.json"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -52,6 +80,15 @@
   },
   {
    "decision": "Files left unsorted: Hidden files, whose name starts with '.', such as .localized and .DS_Store, and downloads still running, ending in .crdownload or .part, are not sorted: they stay where they are and are named in the tool's output as left for that reason. Every other file directly in the folder is sorted."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261027-acceptance-f4dxd0ky/rn/checklists/fix.md"
   }
  ]
 }
