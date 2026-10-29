@@ -5,6 +5,40 @@
   },
   {
    "stage": "ux"
+  },
+  {
+   "kind": "ux"
+  },
+  {
+   "path": ".rn/20261030-tidy-downloads-cli/ux.md"
+  },
+  {
+   "audience": "the user, approving at the ux sign-off what the tool gives them and how they use it, and whoever makes the README and the architecture from it"
+  },
+  {
+   "has": ".rn/20261030-tidy-downloads-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "agreeing how tidy-downloads is used before it is built, and building the README and the architecture to it"
+  },
+  {
+   "serves": "AC1: Run with nothing added, the tool shows, for each file directly under Downloads, the folder it would move it to, and afterwards every file is where it was before."
+  },
+  {
+   "serves": "AC2: Run with the option that tells it to move, the tool moves each file directly under Downloads, other than one AC3 keeps in place, into the folder of its kind (images, documents, archives and so on), and each file of no known kind into one folder for those."
+  },
+  {
+   "serves": "AC3: The tool only moves files: after any run, every file that was in Downloads before is still in Downloads with the same name and the same contents, and none is overwritten. A file whose name is already taken in the folder it would move to stays where it was, and the tool names it in its output."
+  },
+  {
+   "serves": "AC4: After any run, every file and folder that was inside a subfolder of Downloads before it is where it was, with the same name and contents."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/product/ux.md"
   }
  ],
  "constraints": [
@@ -19,6 +53,21 @@
   },
   {
    "decision": "Key results: Two key results, in this order of priority, keeping \"never delete\" before tidying:\n1. The number of files lost, overwritten or changed in content by a run; fewer is better, and none once the goal is reached.\n2. The number of files left directly under the folder after a run with --move, other than the kind folders; fewer is better."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/fix.md"
+  },
+  {
+   "decision": "Dot files: Files directly under the folder whose name starts with a dot, such as .DS_Store and .localized, are not moved and not shown, so files the user never sees stay as they are; AC2 is to read that it moves each file other than one whose name starts with a dot."
+  },
+  {
+   "decision": "Unfinished downloads: Files still being downloaded, those ending in .crdownload (Chrome), .part (Firefox) or .download, are not moved, and the tool names each as staying because it is still downloading, so a download in progress is not broken; once it ends, the next run sorts it by its real kind. AC2 is to read that it moves each file other than these."
   }
  ]
 }

@@ -1,0 +1,93 @@
+{
+ "work": [
+  ".rn/20261030-tidy-downloads-cli/ux.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/product/ux.md",
+   "item": "F-1",
+   "lines": [
+    ".rn/20261030-tidy-downloads-cli/ux.md:1-169"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/product/ux.md",
+   "item": "B-1",
+   "lines": [
+    ".rn/20261030-tidy-downloads-cli/ux.md:3-3",
+    ".rn/20261030-tidy-downloads-cli/ux.md:7-11"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/product/ux.md",
+   "item": "B-2",
+   "lines": [
+    ".rn/20261030-tidy-downloads-cli/ux.md:15-23"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/product/ux.md",
+   "item": "B-3",
+   "lines": [
+    ".rn/20261030-tidy-downloads-cli/ux.md:27-60",
+    ".rn/20261030-tidy-downloads-cli/ux.md:62-161"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/product/ux.md",
+   "item": "B-4",
+   "lines": [
+    ".rn/20261030-tidy-downloads-cli/ux.md:165-169"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/product/ux.md",
+   "item": "B-5",
+   "lines": [
+    ".rn/20261030-tidy-downloads-cli/ux.md:3-3",
+    ".rn/20261030-tidy-downloads-cli/ux.md:7-11",
+    ".rn/20261030-tidy-downloads-cli/ux.md:15-23",
+    ".rn/20261030-tidy-downloads-cli/ux.md:27-161",
+    ".rn/20261030-tidy-downloads-cli/ux.md:165-169"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/product/ux.md",
+   "item": "B-6",
+   "lines": [
+    ".rn/20261030-tidy-downloads-cli/ux.md:1-169"
+   ]
+  }
+ ],
+ "left": [],
+ "chosen": [
+  {
+   "chosen": "Kind folder names Images, Documents, Archives, Installers, Audio, Video, Code and Other, made inside the folder tidied, created when missing.",
+   "why": "The decision Kinds and folders names the kinds with these words; using them as the folder names keeps one name per kind, and making them inside the tidied folder keeps every file in Downloads as AC3 asks."
+  },
+  {
+   "chosen": "The extension is the part after the last dot, so backup.tar.gz goes to Archives by gz.",
+   "why": "The decision lists both tar and gz as Archives, and the last dot gives one rule with no list of double extensions."
+  },
+  {
+   "chosen": "Output form: a header 'Tidying <folder>', one line per file ('name -> Kind/' when seeing, 'name moved to Kind/' when moving, 'name stays: <reason>' when kept), then a count line; without --move the header says nothing is moved and the last line gives the --move command.",
+   "why": "AC1 and AC3 ask that each file and each file kept be named; one line per file lets the user check the plan file by file, and the closing line tells them the next step."
+  },
+  {
+   "chosen": "A file kept because its name is taken names the file that holds it, as 'stays: Documents/invoice.pdf already exists'.",
+   "why": "The user then knows which two files to compare or rename before running the tool again."
+  },
+  {
+   "chosen": "With no file to tidy the tool prints only 'Nothing to tidy in <folder>.', with or without --move.",
+   "why": "An empty list with a count of 0 leaves the user unsure whether the tool looked at the right folder."
+  },
+  {
+   "chosen": "A folder that does not exist or is not a folder gives the message '<folder> is not a folder. Nothing was moved.' and a failure exit status.",
+   "why": "A mistyped path then moves nothing, and scripts can tell the run failed."
+  },
+  {
+   "chosen": "KR1.2 counts every file left directly under the folder, and says that once G1 is reached only files still downloading and files whose name is taken remain.",
+   "why": "It keeps the count on what the user sees left to search through, while the files kept by the two rules that protect downloads and contents are named as the floor, which KR1.1 ranks first."
+  }
+ ]
+}
