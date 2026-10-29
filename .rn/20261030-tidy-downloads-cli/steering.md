@@ -20,9 +20,24 @@ G1: A command-line tool that sorts the files directly under the user's Downloads
 - AC5: AC1 to AC4 hold when the tool is run on macOS and when it is run on Linux.
 - AC6: The README says how to install the tool and how to use it, and the project's tests check each of AC1 to AC4.
 
+## Tasks
+
+- T1: The UX of the tool, at `.rn/20261030-tidy-downloads-cli/ux.md`, approved at the ux sign-off. Serves AC1, AC2, AC3, AC4.
+
+  Completion criterion: the UX says, for the user tidying their Downloads, how they run the tool to see what it would move and to move, what it shows them in each case, the kinds and the folder each kind goes to, and what they see for a file kept in place, each scene ending with every file still in Downloads; every item of the ux checklist holds on it, as turn's first user reads it.
+
+  - [ ] 1. Settle with the user each point of use the UX rests on that the goal and the criteria leave open, such as the command's name, the kinds and their folder names, and which folder it tidies when none is named. The orchestrator, with the user.
+  - [ ] 2. Make the UX from the plan and the points settled in action 1, `.rn/20261030-tidy-downloads-cli/ux.md` as a ux work. turn.
+
+- T2: The tool's README, rewriting `README.md`, approved at the ux sign-off. Serves AC6.
+
+  Completion criterion: from the README alone, a newcomer can tell what the tool does for them and whether it is for them, and follow, in one example from the UX, its use from seeing what it would move to moving the files; every item of the readme checklist holds on it, as turn's first user reads it.
+
+  - [ ] 1. Make the README from the UX made in T1, `README.md` as a readme work. turn.
+
 ## Next
 
-Step 9 of /rn:up on plan: hear which documents of what the user gets and how they use it the work needs
+Step 4 of /rn:up on T1: action 1, settle the points of use the UX rests on
 
 ## Open
 
