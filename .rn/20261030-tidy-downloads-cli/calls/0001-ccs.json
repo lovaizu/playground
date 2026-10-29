@@ -1,0 +1,49 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "goal"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261030-tidy-downloads-cli/calls/0001-steering.md"
+  },
+  {
+   "audience": "the user at the goal sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/session/plan.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: Files directly under the Downloads folder are scattered and hard to find; the tool sorts them into folders by kind (images, documents, archives and so on) so they are easy to find. It never deletes anything."
+  },
+  {
+   "decision": "Acceptance criteria: The finished tool is done when:\n- Run with nothing added, it only shows which file it would move where, and moves nothing. It moves files only when told to move them.\n- Told to move, it moves each file directly under Downloads into the folder of its kind (images, documents, archives and so on); a file of no known kind goes to a folder for those.\n- It only moves: it never deletes, renames or overwrites anything. Where a file of the same name is already at the destination, that file stays where it was and is reported.\n- It leaves the contents of subfolders untouched.\n- It works on macOS and Linux.\n- The README says how to install it and how to use it, and tests check each behaviour above."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/fix.md"
+  }
+ ]
+}
