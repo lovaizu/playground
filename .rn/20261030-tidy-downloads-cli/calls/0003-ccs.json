@@ -1,0 +1,24 @@
+{
+ "focal_entities": [
+  {
+   "work": "t1.2"
+  },
+  {
+   "stage": "ux"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Folder tidied: With no folder named, the tool tidies ~/Downloads; given a folder as an argument, it tidies that folder instead, so other places and test folders can be tidied too."
+  },
+  {
+   "decision": "Kinds and folders: A file's kind is set by its extension, upper and lower case alike, and it goes to the folder of that kind:\n- Images: jpg, jpeg, png, gif, webp, heic, svg, bmp, tiff\n- Documents: pdf, doc, docx, xls, xlsx, ppt, pptx, txt, md, csv, odt, ods, odp, rtf, pages, numbers, key\n- Archives: zip, tar, gz, tgz, bz2, xz, 7z, rar\n- Installers: dmg, pkg, deb, rpm, appimage, exe, msi\n- Audio: mp3, wav, m4a, flac, aac, ogg\n- Video: mp4, mov, mkv, avi, webm\n- Code: py, js, ts, json, html, css, sh, ipynb\n- Other: a file of none of these extensions, or with no extension"
+  },
+  {
+   "decision": "Command and move option: The command is tidy-downloads; run alone it only shows what it would move where, and it moves files only with --move. For example: tidy-downloads to see, tidy-downloads --move to move, tidy-downloads --move ~/Desktop for another folder."
+  },
+  {
+   "decision": "Key results: Two key results, in this order of priority, keeping \"never delete\" before tidying:\n1. The number of files lost, overwritten or changed in content by a run; fewer is better, and none once the goal is reached.\n2. The number of files left directly under the folder after a run with --move, other than the kind folders; fewer is better."
+  }
+ ]
+}

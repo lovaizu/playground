@@ -26,7 +26,7 @@ G1: A command-line tool that sorts the files directly under the user's Downloads
 
   Completion criterion: the UX says, for the user tidying their Downloads, how they run the tool to see what it would move and to move, what it shows them in each case, the kinds and the folder each kind goes to, and what they see for a file kept in place, each scene ending with every file still in Downloads; every item of the ux checklist holds on it, as turn's first user reads it.
 
-  - [ ] 1. Settle with the user each point of use the UX rests on that the goal and the criteria leave open, such as the command's name, the kinds and their folder names, and which folder it tidies when none is named. The orchestrator, with the user.
+  - [x] 1. Settle with the user each point of use the UX rests on that the goal and the criteria leave open, such as the command's name, the kinds and their folder names, and which folder it tidies when none is named. The orchestrator, with the user.
   - [ ] 2. Make the UX from the plan and the points settled in action 1, `.rn/20261030-tidy-downloads-cli/ux.md` as a ux work. turn.
 
 - T2: The tool's README, rewriting `README.md`, approved at the ux sign-off. Serves AC6.
@@ -37,7 +37,7 @@ G1: A command-line tool that sorts the files directly under the user's Downloads
 
 ## Next
 
-Step 4 of /rn:up on T1: action 1, settle the points of use the UX rests on
+Step 4 of /rn:up on T1: action 2, have the UX made
 
 ## Open
 
