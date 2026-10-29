@@ -5,6 +5,31 @@
   },
   {
    "stage": "ux"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261030-tidy-downloads-cli/calls/0004-steering.md"
+  },
+  {
+   "audience": "the user at the goal sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  },
+  {
+   "has": ".rn/20261030-tidy-downloads-cli/calls/0003-ccs.json"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -25,6 +50,15 @@
   },
   {
    "decision": "Unfinished downloads: Files still being downloaded, those ending in .crdownload (Chrome), .part (Firefox) or .download, are not moved, and the tool names each as staying because it is still downloading, so a download in progress is not broken; once it ends, the next run sorts it by its real kind. AC2 is to read that it moves each file other than these."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-ge8mt11f/rn/checklists/fix.md"
   }
  ]
 }
