@@ -35,23 +35,9 @@ it does.
   or Linux gets the tool installed and runs both a plain run and a run told to move.
 - AC6: Tests check the behaviour AC1, AC2 and AC3 name, and pass on macOS and on Linux.
 
-## Tasks
-
-- T3: The repository's LICENSE, the MIT licence text the README's License section points to.
-  Serves AC5.
-
-  Completion criterion: a reader following the README's License section finds in LICENSE the
-  standard MIT licence text, its copyright line naming the holder the user settles, word for word
-  as the MIT licence reads; checked by an AI that did not make it, reading it in that reader's place
-  against the license checklist.
-
-  - [x] 1. Settle with the user whom the copyright line names. The orchestrator, with the user.
-  - [ ] 2. Make LICENSE from the MIT licence text and the answer of action 1, `LICENSE` as a
-    license work. turn.
-
 ## Next
 
-Step 3 of /rn:up on t3.2: make LICENSE
+Step 5 of /rn:up on ux: stop at the ux sign-off
 
 ## Open
 

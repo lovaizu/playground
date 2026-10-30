@@ -1,0 +1,53 @@
+{
+ "work": [
+  "LICENSE"
+ ],
+ "items": [
+  {
+   "checklist": ".rn/checklists/license.md",
+   "item": "F-1",
+   "lines": [
+    "LICENSE:1-21"
+   ]
+  },
+  {
+   "checklist": ".rn/checklists/license.md",
+   "item": "B-1",
+   "lines": [
+    "LICENSE:1-1"
+   ]
+  },
+  {
+   "checklist": ".rn/checklists/license.md",
+   "item": "B-2",
+   "lines": [
+    "LICENSE:1-21"
+   ]
+  },
+  {
+   "checklist": ".rn/checklists/license.md",
+   "item": "B-3",
+   "lines": [
+    "LICENSE:3-3"
+   ]
+  },
+  {
+   "checklist": ".rn/checklists/license.md",
+   "item": "B-4",
+   "lines": [
+    "LICENSE:1-1"
+   ]
+  }
+ ],
+ "left": [],
+ "chosen": [
+  {
+   "chosen": "The copyright year is 2026 alone, not a range (LICENSE:3).",
+   "why": "The repository's first commit is in 2026, as git log --reverse prints it, and every commit since is in 2026, so a range would have nothing to span."
+  },
+  {
+   "chosen": "The MIT text's lines are wrapped at under 80 characters, as GitHub's licence template and choosealicense.com give it, rather than the SPDX file's longer lines (LICENSE:5-21).",
+   "why": "The checklist judges the words with line breaks aside, so either wrapping keeps the text standard; the shorter wrapping reads without side scrolling in a terminal or an 80-column editor."
+  }
+ ]
+}

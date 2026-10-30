@@ -5,11 +5,48 @@
   },
   {
    "stage": "ux"
+  },
+  {
+   "kind": "license"
+  },
+  {
+   "path": "LICENSE"
+  },
+  {
+   "audience": "a reader following the README's License section to the LICENSE file"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "learning the terms under which they may use, copy, change and share sort-downloads"
+  },
+  {
+   "serves": "AC5: The README says how to install the tool and how to use it, and a user following it on macOS or Linux gets the tool installed and runs both a plain run and a run told to move."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": ".rn/checklists/license.md"
   }
  ],
  "constraints": [
   {
    "decision": "Copyright holder: The LICENSE's copyright line reads Copyright (c) 2026 lovaizu, the GitHub account that owns the repository."
+  },
+  {
+   "chosen": "the whole repository is given: the README the reader comes from, and the git history the copyright year is checked against"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/fix.md"
   }
  ]
 }
