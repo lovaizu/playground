@@ -51,8 +51,11 @@ it does.
 
 ## Next
 
-Step 4 of /rn:up on T2: action 2, make the README
+Step 2 of /rn:up on t2.2: settle the points the README's result left, then step 3 on t2.2 again
 
 ## Open
 
-None.
+- Result 0004 left B-7 of 0004-checklist-1.md: the reader should meet only what serves deciding and the first run, fuller use reached from Documentation; this falls short by the user's decision that no separate page is made and fuller use is written in the README itself (README.md:135-174).
+- README.md:120,127 download the tool from https://github.com/lovaizu/playground/releases/latest/download/sort-downloads, a release asset no decision names, answering 404 until a release is published; README.md:137-138 point to the Releases page for changes; where the file is downloaded from is the user's to decide.
+- README.md:1 drops the repository's one-line playground description, which the decision README says stays at its top.
+- The LICENSE file holding the MIT text is made by no task yet; to be given a task once T2 is weighed.

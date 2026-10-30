@@ -1,0 +1,78 @@
+{
+ "work": [
+  "README.md"
+ ],
+ "items": [
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0004-checklist-1.md",
+   "item": "F-1",
+   "lines": [
+    "README.md:1-184"
+   ]
+  },
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0004-checklist-1.md",
+   "item": "B-1",
+   "lines": [
+    "README.md:3-7"
+   ]
+  },
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0004-checklist-1.md",
+   "item": "B-2",
+   "lines": [
+    "README.md:11-74"
+   ]
+  },
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0004-checklist-1.md",
+   "item": "B-3",
+   "lines": [
+    "README.md:78-92"
+   ]
+  },
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0004-checklist-1.md",
+   "item": "B-6",
+   "lines": [
+    "README.md:3-7",
+    "README.md:11-74",
+    "README.md:78-92",
+    "README.md:96-112",
+    "README.md:116-133",
+    "README.md:137-174",
+    "README.md:178-178",
+    "README.md:182-184"
+   ]
+  }
+ ],
+ "left": [
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0004-checklist-1.md",
+   "item": "B-7",
+   "need": "The README reader meets only what serves deciding and the first run, with the fuller use (another folder, run again, cannot move, nothing to sort, the error messages) reached from Documentation instead of read through in the README itself."
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The tool is downloaded from https://github.com/lovaizu/playground/releases/latest/download/sort-downloads, a release asset named sort-downloads; that URL answers 404 today, as no release exists yet.",
+   "why": "The latest-release URL stays the same for every version, so updating is the same commands again, as the install decision asks, and the tool built to this README is published there."
+  },
+  {
+   "chosen": "Install in three commands (mkdir -p, curl -fsSL -o, chmod +x), with a wget line in place of curl for a Linux without curl, and Requirements telling how to check and add ~/.local/bin to PATH for zsh (macOS) and bash (Linux).",
+   "why": "macOS ships curl, but some Linux desktops ship only wget, and ~/.local/bin is not on PATH by default on macOS, so without these a newcomer could not finish the install with nothing else to install first."
+  },
+  {
+   "chosen": "The Documentation section points to the GitHub Releases page for what changed in each version.",
+   "why": "The tool is published as release assets, so each release's notes are the natural place for its changes, and the user's decision left that part open."
+  },
+  {
+   "chosen": "The type table of the six folders and their extensions sits in Example, right after the first run's list.",
+   "why": "The reader needs it at that point to see why each file goes where it does and why data.xyz and notes stay."
+  },
+  {
+   "chosen": "The License part says in one sentence what the MIT License lets the reader do, beside the link to LICENSE.",
+   "why": "The reader takes in the terms from the README alone, while LICENSE, which the decision has the section point to, is made by a later task."
+  }
+ ]
+}
