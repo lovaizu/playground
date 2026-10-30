@@ -1,0 +1,24 @@
+{
+ "focal_entities": [
+  {
+   "work": "t1.1"
+  },
+  {
+   "stage": "ux"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Extensions of each group: Each group holds the extensions in the table at ux.md:72-81 and no other: Images jpg, jpeg, png, gif, webp, heic, heif, bmp, tif, tiff, svg, ico; Documents pdf, doc, docx, odt, rtf, txt, md, xls, xlsx, ods, csv, ppt, pptx, odp, pages, numbers, key, epub; Archives zip, tar, gz, tgz, bz2, xz, 7z, rar, zst; Audio mp3, wav, flac, aac, m4a, ogg, opus, aiff, wma; Video mp4, mov, mkv, avi, webm, m4v, wmv, mpg, mpeg; Installers dmg, pkg, deb, rpm, appimage, exe, msi, apk. Unfinished downloads such as .crdownload and .part are in no group."
+  },
+  {
+   "decision": "Command name and instructions: The command is downloads-organizer: run plainly it only shows, with --move it moves, and with --undo it undoes."
+  },
+  {
+   "decision": "Folder worked on: The tool works on ~/Downloads when no folder is named, and on the folder named after the command where one is, such as downloads-organizer ~/Desktop --move; an undo undoes only the last move run on the folder it is given."
+  },
+  {
+   "decision": "Case of extensions and names: Extensions are matched whatever their case, so photo.JPG goes to Images as photo.jpg does; two names are the same where the user's system treats them as the same, so on macOS Report.pdf is not moved into a Documents folder that holds report.pdf, and is reported by name instead."
+  }
+ ]
+}

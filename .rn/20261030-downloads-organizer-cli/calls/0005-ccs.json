@@ -1,0 +1,67 @@
+{
+ "focal_entities": [
+  {
+   "work": "t1.1"
+  },
+  {
+   "stage": "ux"
+  },
+  {
+   "kind": "ux"
+  },
+  {
+   "path": ".rn/20261030-downloads-organizer-cli/ux.md"
+  },
+  {
+   "audience": "the user approving the UX at the ux sign-off, and whoever makes the README, the architecture and the tool to it"
+  },
+  {
+   "has": ".rn/20261030-downloads-organizer-cli/steering.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving what the tool gives the user and how they use it, then making the later works to it"
+  },
+  {
+   "serves": "AC1: Run plainly on a Downloads folder, the tool shows, for each file directly in that folder, the type folder it would move the file to, and afterwards every file and folder in the Downloads folder is where it was, with the same name and contents."
+  },
+  {
+   "serves": "AC2: Run with the instruction to move, the tool moves each file directly in the Downloads folder whose extension one of the groups Images, Documents, Archives, Audio, Video and Installers holds into that group's folder inside the Downloads folder, making the folder where it is not there yet, the file keeping its name and contents."
+  },
+  {
+   "serves": "AC4: Where a group's folder already holds a file of the same name as one to move there, that file stays where it is, and the run reports it by name, both when it only shows and when it moves."
+  },
+  {
+   "serves": "AC5: A file with no extension, or with one no group holds, stays where it is, and the run shows it in a list of files left in place."
+  },
+  {
+   "serves": "AC9: Run with the instruction to undo, the tool moves each file that the last run with the instruction to move moved back to where it was directly in the Downloads folder, the file keeping its name and contents; no run before that one is undone."
+  },
+  {
+   "serves": "AC10: Where a file the undone run moved cannot go back, because a file of the same name is now directly in the Downloads folder or the file is no longer in its group's folder, that file stays where it is and the undo reports it by name, and every other file still goes back."
+  },
+  {
+   "serves": "AC11: After an undo, each group folder that the undone run made and that is empty once the files are back is gone; a group folder that holds anything, or that was there before that run, stays as it is."
+  },
+  {
+   "serves": "AC12: Run with the instruction to undo where no run with the instruction to move has been made since the last undo, or none at all, the tool moves nothing and says there is no run to undo."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/product/ux.md"
+  }
+ ],
+ "constraints": [
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/fix.md"
+  }
+ ]
+}

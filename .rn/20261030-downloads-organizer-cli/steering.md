@@ -28,12 +28,6 @@ G1: A command-line tool that groups the files of the user's Downloads folder by 
 
 ## Tasks
 
-- T1: The UX of the tool: whom it is for, what they do to show, move and undo, and what each run shows them. Serves AC1, AC2, AC4, AC5, AC9, AC10, AC11, AC12.
-
-  Completion criterion: read against the criteria it serves, each of them shows in a scene of the UX as what the user types and what the tool shows back, and the user approves it at the ux sign-off.
-
-  - [ ] 1. Write the UX of the tool from the goal and the criteria, `.rn/20261030-downloads-organizer-cli/ux.md` as a ux work. turn.
-
 - T2: The tool's README, written from the UX of T1, saying how to install the tool and run it to show, to move and to undo. Serves AC7.
 
   Completion criterion: a reader with only the README, on macOS or Linux, finds in it each step to install the tool and to run it to show, to move and to undo, each command and what it shows matching the UX of T1, and the user approves it at the ux sign-off.
@@ -42,7 +36,7 @@ G1: A command-line tool that groups the files of the user's Downloads folder by 
 
 ## Next
 
-Step 4 of /rn:up on T1: write the UX
+Step 4 of /rn:up on T1: weigh what it brought
 
 ## Open
 

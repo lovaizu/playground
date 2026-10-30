@@ -1,0 +1,89 @@
+{
+ "work": [
+  ".rn/20261030-downloads-organizer-cli/ux.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/product/ux.md",
+   "item": "F-1",
+   "lines": [
+    ".rn/20261030-downloads-organizer-cli/ux.md:1-269"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/product/ux.md",
+   "item": "B-1",
+   "lines": [
+    ".rn/20261030-downloads-organizer-cli/ux.md:3-3",
+    ".rn/20261030-downloads-organizer-cli/ux.md:7-9"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/product/ux.md",
+   "item": "B-2",
+   "lines": [
+    ".rn/20261030-downloads-organizer-cli/ux.md:13-33"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/product/ux.md",
+   "item": "B-3",
+   "lines": [
+    ".rn/20261030-downloads-organizer-cli/ux.md:37-255"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/product/ux.md",
+   "item": "B-4",
+   "lines": [
+    ".rn/20261030-downloads-organizer-cli/ux.md:259-269"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/product/ux.md",
+   "item": "B-5",
+   "lines": [
+    ".rn/20261030-downloads-organizer-cli/ux.md:3-3",
+    ".rn/20261030-downloads-organizer-cli/ux.md:7-9",
+    ".rn/20261030-downloads-organizer-cli/ux.md:13-33",
+    ".rn/20261030-downloads-organizer-cli/ux.md:37-255",
+    ".rn/20261030-downloads-organizer-cli/ux.md:259-269"
+   ]
+  }
+ ],
+ "left": [],
+ "chosen": [
+  {
+   "chosen": "The command is `downloads-organizer`, showing when run plainly, moving with `--move` and undoing with `--undo`.",
+   "why": "The tool's folder in the plan is downloads-organizer/, so the command bears the same name; plain long flags say each instruction in a word, and a plain run that only shows meets AC1 and G1's 'moves nothing until told to'."
+  },
+  {
+   "chosen": "The tool works on `~/Downloads` unless a folder is named after the command, and an undo undoes the last move run on the folder it is given.",
+   "why": "~/Downloads is where macOS and Linux put downloads; naming a folder lets a user whose downloads go elsewhere use it and lets the tests run on folders of made-up files (AC6, AC8); tying the undo to its folder keeps an undo from moving files in another folder."
+  },
+  {
+   "chosen": "The wording and layout of what each run prints: files grouped under their group's folder, then the files not moved with their cause, then the files left in place, with the next command at the end.",
+   "why": "The user reads first what the run does, then what it does not, each under its cause, so every file is named (AC4, AC5, AC10) and the next step is in front of them."
+  },
+  {
+   "chosen": "An undo after a move run that moved no files moves nothing, says that run moved no files, and does not reach back to an earlier run.",
+   "why": "AC9 says the last run with the instruction to move is the one undone and no run before it; reaching back would undo a run the user did not expect."
+  },
+  {
+   "chosen": "The extension is the part of the name after the last dot, matched whatever its case; a name with no dot or only a leading dot (such as `.DS_Store`) has none; names are taken as the same when the system treats them so (case on macOS).",
+   "why": "`photo.JPG` is as much a picture as `photo.jpg`; the last-dot rule puts `.tar.gz` in Archives with no special case; a dot file has no extension under AC5; on macOS treating `Report.pdf` and `report.pdf` as different would overwrite a file, against AC3."
+  },
+  {
+   "chosen": "The extensions of each group are those in the table at lines 72-81 of the UX, set in the UX itself.",
+   "why": "Which group a file goes to is what each run shows the user, so the user approves it here and the README and the tool take it from this one place; the list holds the common file types of macOS and Linux downloads for each of the six groups AC2 names, and leaves out unfinished downloads such as `.crdownload` and `.part`."
+  },
+  {
+   "chosen": "The rules that hold in every scene are bullets under the figure of the whole way, not a heading of their own.",
+   "why": "The template gives each heading under Scenes a figure, and puts what no figure shows, such as a rule that holds throughout, in bullets beside one; the whole way is the figure all scenes belong to."
+  },
+  {
+   "chosen": "The five key results and their order: no file lost or changed, every file left named, moves matching the show run, files grouped, files back after undo.",
+   "why": "G1 ends 'so no file is lost', which ranks above grouping; a file left unnamed or a move not shown first is a harm the user cannot see, and grouping and undo are worth having only once those hold."
+  }
+ ]
+}
