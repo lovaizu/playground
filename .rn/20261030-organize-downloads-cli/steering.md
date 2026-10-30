@@ -1,8 +1,8 @@
 ---
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/20
-stage: ux
-signoff: ux
+stage: architecture
+signoff: none
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -37,7 +37,7 @@ it does.
 
 ## Next
 
-Step 5 of /rn:up on ux: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
+Step 10 of /rn:up on plan: hear which documents of how the work is built and checked it needs
 
 ## Open
 
