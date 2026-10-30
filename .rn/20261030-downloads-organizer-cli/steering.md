@@ -26,9 +26,24 @@ G1: A command-line tool that groups the files of the user's Downloads folder by 
 - AC11: After an undo, each group folder that the undone run made and that is empty once the files are back is gone; a group folder that holds anything, or that was there before that run, stays as it is.
 - AC12: Run with the instruction to undo where no run with the instruction to move has been made since the last undo, or none at all, the tool moves nothing and says there is no run to undo.
 
+
+## Tasks
+
+- T3: The UX of T1 made again from the choices the user confirmed on it: the extensions of each group, the command name and instructions, the folder worked on, and the case of extensions and names. Serves AC1, AC2, AC4, AC5, AC9, AC10, AC11, AC12.
+
+  Completion criterion: read against the criteria it serves, each of them shows in a scene of the UX as what the user types and what the tool shows back, each confirmed choice is in it as decided, and the user approves it at the ux sign-off.
+
+  - [ ] 1. Write the UX again from the goal, the criteria and the choices the user confirmed on it, `.rn/20261030-downloads-organizer-cli/ux.md` as a ux work. turn.
+
+- T4: The README of T2 made again from the UX of T3 and the choices the user confirmed on it: how the tool is installed, its licence, the development document it links to, and what --help shows. Serves AC7.
+
+  Completion criterion: a reader with only the README, on macOS or Linux, finds in it each step to install the tool and to run it to show, to move and to undo, each command and what it shows matching the UX of T3, each confirmed choice in it as decided, and the user approves it at the ux sign-off.
+
+  - [ ] 1. Write the README again from the UX of T3 and the choices the user confirmed on it, `downloads-organizer/README.md` as a readme work. turn.
+
 ## Next
 
-Step 4 of /rn:up on T2: weigh what it brought
+Step 4 of /rn:up on T3: write the UX again
 
 ## Open
 

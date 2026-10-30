@@ -5,6 +5,34 @@
   },
   {
    "stage": "ux"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261030-downloads-organizer-cli/calls/0008-steering.md"
+  },
+  {
+   "audience": "the user at the goal sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  },
+  {
+   "has": ".rn/20261030-downloads-organizer-cli/calls/0006-ccs.json"
+  },
+  {
+   "has": ".rn/20261030-downloads-organizer-cli/calls/0009-ccs.json"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/session/plan.md"
   }
  ],
  "constraints": [
@@ -46,6 +74,15 @@
   },
   {
    "decision": "Development document: A development document is made at downloads-organizer/docs/development.md, at the architecture or the build stage, for whoever builds or changes the tool: how its code is laid out, how to run its tests, and the way to its architecture; the README's Development section links to it. What it holds, and its kind, are still to be heard at that stage."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/fix.md"
   }
  ]
 }
