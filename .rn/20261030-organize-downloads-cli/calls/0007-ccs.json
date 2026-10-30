@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "t3.2"
+  },
+  {
+   "stage": "ux"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Copyright holder: The LICENSE's copyright line reads Copyright (c) 2026 lovaizu, the GitHub account that owns the repository."
+  }
+ ]
+}

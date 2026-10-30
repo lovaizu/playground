@@ -45,13 +45,13 @@ it does.
   as the MIT licence reads; checked by an AI that did not make it, reading it in that reader's place
   against the license checklist.
 
-  - [ ] 1. Settle with the user whom the copyright line names. The orchestrator, with the user.
+  - [x] 1. Settle with the user whom the copyright line names. The orchestrator, with the user.
   - [ ] 2. Make LICENSE from the MIT licence text and the answer of action 1, `LICENSE` as a
     license work. turn.
 
 ## Next
 
-Step 4 of /rn:up on T3: action 1, settle whom the copyright line names
+Step 4 of /rn:up on T3: action 2, make LICENSE (its checklist first)
 
 ## Open
 
