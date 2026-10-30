@@ -35,9 +35,28 @@ it does.
   or Linux gets the tool installed and runs both a plain run and a run told to move.
 - AC6: Tests check the behaviour AC1, AC2 and AC3 name, and pass on macOS and on Linux.
 
+## Tasks
+
+- T4: The architecture document of the tool, `docs/architecture.md`. Serves AC1, AC2, AC3, AC4,
+  AC5, AC6.
+
+  Completion criterion: from the document alone, whoever builds the tool can tell the language and
+  files it is made of, how it moves a file without ever overwriting one of the same name on macOS
+  and on Linux, where its file sits for the README's download URL, and how its tests check AC1, AC2
+  and AC3 and run on both macOS and Linux, each choice resting on the research's findings; checked
+  by an AI that did not make it, reading it in the builder's place against the architecture
+  checklist.
+
+  - [ ] 1. Research which language lets the tool be one file that runs on macOS and Linux with
+    nothing else installed, how each OS moves a file without ever overwriting one of the same name,
+    and where the tests can run on both OSes,
+    `.rn/20261030-organize-downloads-cli/research.md` as a research work. turn.
+  - [ ] 2. Make the architecture from the UX, the README and the research of action 1,
+    `docs/architecture.md` as an architecture work. turn.
+
 ## Next
 
-Step 10 of /rn:up on plan: hear which documents of how the work is built and checked it needs
+Step 4 of /rn:up on T4: action 1, the research
 
 ## Open
 

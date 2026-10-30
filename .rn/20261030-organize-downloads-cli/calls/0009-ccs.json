@@ -1,0 +1,91 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "architecture"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261030-organize-downloads-cli/calls/0009-steering.md"
+  },
+  {
+   "audience": "the user at the goal sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  },
+  {
+   "has": ".rn/20261030-organize-downloads-cli/calls/0003-ccs.json"
+  },
+  {
+   "has": ".rn/20261030-organize-downloads-cli/calls/0005-ccs.json"
+  },
+  {
+   "has": ".rn/20261030-organize-downloads-cli/calls/0007-ccs.json"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/session/plan.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: Files pile up in the Downloads folder and the user cannot find the one they want; the tool sorts them by type (such as images, documents, archives) into groups so they are easy to find."
+  },
+  {
+   "decision": "Where sorted files go: Files are moved into one folder per type (such as Images, Documents, Archives) made inside the Downloads folder itself; no folder outside Downloads is touched."
+  },
+  {
+   "decision": "Operating systems: The tool works on macOS and Linux; Windows is not needed."
+  },
+  {
+   "decision": "Safety: Run plainly, the tool only lists which file would move to which folder and moves nothing; it moves files only when the user explicitly tells it to. It never deletes, renames or overwrites any file. No undo is provided; the user moves files back by hand."
+  },
+  {
+   "decision": "Same name at the destination: When the destination folder already holds a file of the same name, that file is left where it is and the list shows it is not moved because of the same name; the other files are still moved."
+  },
+  {
+   "decision": "Types: Files are told apart by their extension and sorted into a fixed set of types: Images, Documents, Archives, Audio, Video and Installers (such as .dmg and .deb); no settings are needed or offered."
+  },
+  {
+   "decision": "Files of no type, folders and hidden files: Files with no extension or an extension of none of the six types, folders already in Downloads, and hidden files (such as .DS_Store) are all left where they are; the list shows each file of no type as not moved."
+  },
+  {
+   "decision": "Folder to organize: With no folder given the tool organizes ~/Downloads; given a folder, it organizes that folder instead."
+  },
+  {
+   "decision": "What shows it done: Done when all of these hold on both macOS and Linux: on a trial folder holding files of all six types, files of no type, existing folders, hidden files and a same-name clash, a plain run prints the correct list and moves no file; a run told to move moves files as listed, and no file is lost, renamed or overwritten; the README says how to install the tool and how to use it; and tests check the behaviour above. The user does not check it on their own Downloads."
+  },
+  {
+   "decision": "UX document: A UX document of kind ux is made at .rn/20261030-organize-downloads-cli/ux.md, kept in the session folder alone and not left in the repository, for the user to approve and the README and the tool to be built from."
+  },
+  {
+   "decision": "README: The repository's README.md, a document of kind readme, is changed into the tool's README, so whoever opens the repository reads how to install and use it at once; the repository's one-line playground description stays at its top."
+  },
+  {
+   "decision": "Architecture document: An architecture document of kind architecture is kept in the repository at docs/architecture.md, so the README's Development section points to it and whoever changes the tool later reads how it is built and how its tests run."
+  },
+  {
+   "decision": "Research for the architecture: Before the architecture document, a research work finds out: which language lets the tool be one file that runs on macOS and Linux with nothing else installed; whether each OS has a way to move a file that never overwrites one of the same name, and how; and where the tests can run on both macOS and Linux, such as GitHub Actions' macOS machines for a public repository."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/fix.md"
+  }
+ ]
+}
