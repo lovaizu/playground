@@ -36,7 +36,7 @@ G1: A command-line tool that groups the files of the user's Downloads folder by 
 
 ## Next
 
-Step 4 of /rn:up on T1: weigh what it brought
+Step 4 of /rn:up on T2: write the README
 
 ## Open
 
