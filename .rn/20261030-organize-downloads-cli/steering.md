@@ -35,27 +35,10 @@ it does.
   or Linux gets the tool installed and runs both a plain run and a run told to move.
 - AC6: Tests check the behaviour AC1, AC2 and AC3 name, and pass on macOS and on Linux.
 
-## Tasks
-
-- T2: The README of the tool, in place of the repository's README.md. Serves AC5.
-
-  Completion criterion: a newcomer reading the README alone can tell what the tool is for, and can
-  follow its steps to install it on macOS or Linux and to make a plain run and a run told to move,
-  as the UX's scenes give them; checked by an AI that did not make it, reading it in a newcomer's
-  place against the readme checklist.
-
-  - [x] 1. Settle with the user how the tool is installed on macOS and on Linux. The orchestrator,
-    with the user.
-  - [ ] 2. Make the README from the UX of T1 and the answer of action 1, `README.md` as a readme
-    work. turn.
-
 ## Next
 
-Step 2 of /rn:up on t2.2: settle the points the README's result left, then step 3 on t2.2 again
+Step 4 of /rn:up on T2: weigh what it brought; write the plan again with a task making LICENSE
 
 ## Open
 
-- Result 0004 left B-7 of 0004-checklist-1.md: the reader should meet only what serves deciding and the first run, fuller use reached from Documentation; this falls short by the user's decision that no separate page is made and fuller use is written in the README itself (README.md:135-174).
-- README.md:120,127 download the tool from https://github.com/lovaizu/playground/releases/latest/download/sort-downloads, a release asset no decision names, answering 404 until a release is published; README.md:137-138 point to the Releases page for changes; where the file is downloaded from is the user's to decide.
-- README.md:1 drops the repository's one-line playground description, which the decision README says stays at its top.
-- The LICENSE file holding the MIT text is made by no task yet; to be given a task once T2 is weighed.
+- The LICENSE file holding the MIT text, which README.md:185-187 point to, is made by no task yet (B-6 left by result 0005); it needs a task of its own.

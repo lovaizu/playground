@@ -1,3 +1,5 @@
+A playground for experimenting and testing — nothing here is meant to last.
+
 # sort-downloads
 
 sort-downloads sorts the files of a piled-up Downloads folder by type into one folder per type
@@ -117,14 +119,14 @@ Download the tool into `~/.local/bin` and make it executable:
 
 ```
 mkdir -p ~/.local/bin
-curl -fsSL -o ~/.local/bin/sort-downloads https://github.com/lovaizu/playground/releases/latest/download/sort-downloads
+curl -fsSL -o ~/.local/bin/sort-downloads https://raw.githubusercontent.com/lovaizu/playground/main/sort-downloads
 chmod +x ~/.local/bin/sort-downloads
 ```
 
 On a Linux without `curl`, use this line in place of the second:
 
 ```
-wget -qO ~/.local/bin/sort-downloads https://github.com/lovaizu/playground/releases/latest/download/sort-downloads
+wget -qO ~/.local/bin/sort-downloads https://raw.githubusercontent.com/lovaizu/playground/main/sort-downloads
 ```
 
 To update the tool, run the same commands again.
@@ -134,8 +136,9 @@ Then make your first run as in the example: `sort-downloads` to see the list, an
 
 ## Documentation
 
-Fuller use is written below, as the tool has no other manual; what changed in each version is
-written on the [Releases page](https://github.com/lovaizu/playground/releases).
+Fuller use is written below, as the tool has no other manual; each change to the tool is
+written in the [commit history](https://github.com/lovaizu/playground/commits/main/sort-downloads)
+of the tool's file.
 
 - To sort another folder, write it after the command, as `sort-downloads ~/Desktop` and then
   `sort-downloads --move ~/Desktop`.

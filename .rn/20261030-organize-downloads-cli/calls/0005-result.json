@@ -1,0 +1,68 @@
+{
+ "work": [
+  "README.md"
+ ],
+ "items": [
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "F-1",
+   "lines": [
+    "README.md:3-9",
+    "README.md:11-11",
+    "README.md:78-94",
+    "README.md:96-114",
+    "README.md:116-135",
+    "README.md:137-177",
+    "README.md:179-181",
+    "README.md:183-187"
+   ]
+  },
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-1",
+   "lines": [
+    "README.md:5-9"
+   ]
+  },
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-2",
+   "lines": [
+    "README.md:13-76"
+   ]
+  },
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-3",
+   "lines": [
+    "README.md:80-94"
+   ]
+  }
+ ],
+ "left": [
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-6",
+   "need": "Following the License section's pointer, the reader finds the MIT text in LICENSE, which is not in the repository, so README.md:186-187 tells of a file they cannot open."
+  },
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0005-checklist-1.md",
+   "item": "B-7",
+   "need": "The reader meets in the README only what serves deciding and the first run, with fuller use reached from Documentation, while README.md:139-177 still writes fuller use in the README itself, as the user decided, so this needs the user to weigh the item against that decision."
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The tool's file is at the repository root under the name sort-downloads, so the download URL is https://raw.githubusercontent.com/lovaizu/playground/main/sort-downloads (README.md:122,129) and the changes link is https://github.com/lovaizu/playground/commits/main/sort-downloads (README.md:140).",
+   "why": "The download decision leaves the file's path to the architecture stage, yet the install commands need a whole URL; the root with the command's own name is the shortest path a user can copy and matches the name the file is saved under, and the README is made again once the architecture settles the path."
+  },
+  {
+   "chosen": "The repository's line 'A playground for experimenting and testing — nothing here is meant to last.' stands as the README's first line, above '# sort-downloads', and the old '# playground' heading is dropped.",
+   "why": "The README decision keeps the one-line description at the top while the tool's README takes the repository's place; the readme checklist's template has the product name as the one heading, so the line stays and the heading goes."
+  },
+  {
+   "chosen": "Documentation points to the commit history of the tool's file alone, not the whole repository's commits.",
+   "why": "The repository is a playground holding other work, so the file's own history shows only the changes to the tool."
+  }
+ ]
+}

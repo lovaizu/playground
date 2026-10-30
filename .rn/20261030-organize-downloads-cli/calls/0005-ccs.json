@@ -1,0 +1,67 @@
+{
+ "focal_entities": [
+  {
+   "work": "t2.2"
+  },
+  {
+   "stage": "ux"
+  },
+  {
+   "kind": "readme"
+  },
+  {
+   "path": "README.md"
+  },
+  {
+   "audience": "the user approving the README at the ux sign-off, and whoever makes the architecture and the tool to it"
+  },
+  {
+   "has": ".rn/20261030-organize-downloads-cli/steering.md"
+  },
+  {
+   "has": ".rn/20261030-organize-downloads-cli/ux.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving what a newcomer reads to choose and install the tool, and building the tool so each step of it holds"
+  },
+  {
+   "serves": "AC5: The README says how to install the tool and how to use it, and a user following it on macOS or Linux gets the tool installed and runs both a plain run and a run told to move."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": ".rn/20261030-organize-downloads-cli/calls/0005-checklist-1.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "How the tool is installed: On macOS and on Linux the user installs the tool by downloading one file, putting it in a folder on their PATH such as ~/.local/bin and making it executable, in two or three commands, with nothing else to install first; updating is the same steps again."
+  },
+  {
+   "decision": "Licence: sort-downloads is released under the MIT licence, with a LICENSE file in the repository holding its text; the README's License section names MIT and points to that file."
+  },
+  {
+   "decision": "Documentation and Development sections: No separate page is made: fuller use, such as another folder, a second run, a file that cannot move and the messages the tool gives when it cannot run, is written in the README itself under its Documentation section, which says so, even though the readme checklist's B-7 asks for fuller use on a page reached from Documentation; the Development section is written when the README is made again once the architecture stage settles where the architecture document is kept, and until then says the development documents are still to come."
+  },
+  {
+   "decision": "Where the tool is downloaded from: The tool's file is downloaded straight from the repository's main branch at raw.githubusercontent.com/lovaizu/playground/main/<the file's path>, the path still to be settled at the architecture stage; no GitHub release is made, and what changed is kept in the commit history, which the README points to in place of a Releases page."
+  },
+  {
+   "decision": "README in place of the repository's: The repository's README.md is changed into the tool's README, so whoever opens the repository reads how to install and use it at once; the repository's one-line playground description stays at its top."
+  },
+  {
+   "chosen": "LICENSE is not a work of this call and is not made here: it is a result of its own, given a task of its own in the plan once T2 is done, and its copyright holder is still the user's to settle; the README's License section points to LICENSE as that task will make it, and B-6 is judged on the README's pointer with LICENSE to come"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/fix.md"
+  }
+ ]
+}
