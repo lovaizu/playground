@@ -37,19 +37,6 @@ it does.
 
 ## Tasks
 
-- T1: The UX of the tool, the scenes from typing the command to the files sorted. Serves AC1, AC2,
-  AC3.
-
-  Completion criterion: from the UX alone, the user can tell the command they type for a plain run,
-  for a run told to move and for a run on a folder they give, and what the tool prints back in each,
-  as AC1, AC2 and AC3 ask; checked by an AI that did not make it, reading it in the user's place
-  against the ux checklist.
-
-  - [x] 1. Settle with the user the command's name, how they tell it to move, and how they give a
-    folder. The orchestrator, with the user.
-  - [ ] 2. Make the UX from the plan's decisions and the answers of action 1,
-    `.rn/20261030-organize-downloads-cli/ux.md` as a ux work. turn.
-
 - T2: The README of the tool, in place of the repository's README.md. Serves AC5.
 
   Completion criterion: a newcomer reading the README alone can tell what the tool is for, and can
@@ -64,7 +51,7 @@ it does.
 
 ## Next
 
-Step 4 of /rn:up on T1: action 2, make the UX
+Step 4 of /rn:up on T2: action 1, settle how the tool is installed on macOS and on Linux
 
 ## Open
 

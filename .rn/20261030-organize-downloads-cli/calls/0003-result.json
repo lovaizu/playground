@@ -1,0 +1,96 @@
+{
+ "work": [
+  ".rn/20261030-organize-downloads-cli/ux.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/ux.md",
+   "item": "F-1",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:1-241"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/ux.md",
+   "item": "B-1",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:3-6",
+    ".rn/20261030-organize-downloads-cli/ux.md:10-14"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/ux.md",
+   "item": "B-2",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:18-42"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/ux.md",
+   "item": "B-3",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:46-77",
+    ".rn/20261030-organize-downloads-cli/ux.md:79-230"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/ux.md",
+   "item": "B-4",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:234-241"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/ux.md",
+   "item": "B-5",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:1-6",
+    ".rn/20261030-organize-downloads-cli/ux.md:10-14",
+    ".rn/20261030-organize-downloads-cli/ux.md:18-42",
+    ".rn/20261030-organize-downloads-cli/ux.md:46-230",
+    ".rn/20261030-organize-downloads-cli/ux.md:234-241"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/ux.md",
+   "item": "B-6",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:46-58",
+    ".rn/20261030-organize-downloads-cli/ux.md:115-133",
+    ".rn/20261030-organize-downloads-cli/ux.md:178-184",
+    ".rn/20261030-organize-downloads-cli/ux.md:197-211"
+   ]
+  }
+ ],
+ "left": [],
+ "chosen": [
+  {
+   "chosen": "The extensions of each of the six types (for example dmg, pkg, deb, rpm and appimage as Installers), read from the last part of the name after a dot, upper or lower case alike, so backup.tar.gz is an archive.",
+   "why": "AC1 says the types are told apart by extension but not which ones; these are the common download formats on macOS and Linux, and ignoring case keeps PHOTO.JPG from being left out."
+  },
+  {
+   "chosen": "Each run prints a first line naming the folder in full, one line per file in name order (`would move NAME -> TYPE/`, `moved NAME -> TYPE/`, or `not moved NAME` with its reason), and a last line with the counts; a plain run's last line adds `To move them, run: sort-downloads --move`, with the folder in full when one was written, only when a file would move; `Nothing to sort in FOLDER` is printed alone only when no file gets a line.",
+   "why": "AC1 asks for a list giving each file's type folder or why it stays; the full folder name lets the user see which folder (AC3) is sorted, the hint naming the given folder keeps following it from sorting ~/Downloads instead, and a folder of only untyped files still shows why each stays."
+  },
+  {
+   "chosen": "Folders and hidden files (names starting with a dot) get no line and are never moved.",
+   "why": "AC2 leaves them where they were and AC1 does not ask to list them; a line for `.DS_Store` and every type folder already there would bury the files the user reads the list for."
+  },
+  {
+   "chosen": "A run told to move makes a type folder only when a file first goes into it, asks nothing before moving, and leaves in place a file it cannot move, saying `cannot move: REASON`, while the others are still sorted; a type folder name taken by a file is shown in both runs, while a refusal by the system such as no permission shows only in the run told to move, the plain run giving that file `would move`.",
+   "why": "The user decided that --move is how they tell it to move, so a second yes adds nothing; empty type folders would add clutter; one file that cannot move should not stop the rest nor be lost; and a plain run that moves nothing cannot learn that the system would refuse a move."
+  },
+  {
+   "chosen": "For a folder that is not there, an unknown option, or more than one folder, the tool prints a one-line message and `Usage: sort-downloads [--move] [folder]`, and moves nothing.",
+   "why": "The user's decisions give one optional folder and one option; a mistyped folder or option must not sort a folder the user did not mean, and the usage line shows the right form."
+  },
+  {
+   "chosen": "Three key results in this order: files kept whole (KR1.1), files found in their type folder (KR1.2), and lists told true (KR1.3).",
+   "why": "G1 says no file is ever deleted, renamed or overwritten and that a file is found by opening its type folder; a lost file cannot be undone while an unsorted one can still be found, and the plain run's list is what the user decides to move from."
+  },
+  {
+   "chosen": "In the figures the angle brackets around each box's kind are written as mermaid's #lt; and #gt;.",
+   "why": "Mermaid would take a bare <person> as an HTML tag and drop it from the box; the entity codes show as <person> once drawn."
+  }
+ ]
+}
