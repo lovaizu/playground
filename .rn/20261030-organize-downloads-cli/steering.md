@@ -44,14 +44,14 @@ it does.
   as the UX's scenes give them; checked by an AI that did not make it, reading it in a newcomer's
   place against the readme checklist.
 
-  - [ ] 1. Settle with the user how the tool is installed on macOS and on Linux. The orchestrator,
+  - [x] 1. Settle with the user how the tool is installed on macOS and on Linux. The orchestrator,
     with the user.
   - [ ] 2. Make the README from the UX of T1 and the answer of action 1, `README.md` as a readme
     work. turn.
 
 ## Next
 
-Step 4 of /rn:up on T2: action 1, settle how the tool is installed on macOS and on Linux
+Step 4 of /rn:up on T2: action 2, make the README
 
 ## Open
 

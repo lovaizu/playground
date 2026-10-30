@@ -1,0 +1,15 @@
+{
+ "focal_entities": [
+  {
+   "work": "t2.2"
+  },
+  {
+   "stage": "ux"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "How the tool is installed: On macOS and on Linux the user installs the tool by downloading one file, putting it in a folder on their PATH such as ~/.local/bin and making it executable, in two or three commands, with nothing else to install first; updating is the same steps again."
+  }
+ ]
+}
