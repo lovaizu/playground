@@ -47,7 +47,7 @@ it does.
   by an AI that did not make it, reading it in the builder's place against the architecture
   checklist.
 
-  - [ ] 1. Research which language lets the tool be one file that runs on macOS and Linux with
+  - [x] 1. Research which language lets the tool be one file that runs on macOS and Linux with
     nothing else installed, how each OS moves a file without ever overwriting one of the same name,
     and where the tests can run on both OSes,
     `.rn/20261030-organize-downloads-cli/research.md` as a research work. turn.
@@ -56,8 +56,10 @@ it does.
 
 ## Next
 
-Step 4 of /rn:up on T4: action 1, the research
+Step 2 of /rn:up on t4.2: settle the language and the list's name order with the user, then step 3 on t4.2
 
 ## Open
 
+- research.md:15-19 recommends POSIX sh for the tool; the language is the user's to settle before the architecture is made.
+- research.md:170-175 leaves the list's name order open: it follows the locale, so whether the tool sorts in one fixed order (LC_ALL=C) changes what the user sees.
 - For learnings: in call 0008, turn's first user was refused reading usability.md by its read guard although turn.py first-user listed it in given, so F-3 of checklist.md came back left; the orchestrator checked it holds (usability.md line 3, version: 1, matches license.md line 6).

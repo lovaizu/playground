@@ -1,0 +1,81 @@
+{
+ "work": [
+  ".rn/20261030-organize-downloads-cli/research.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/session/research.md",
+   "item": "B-1",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/research.md:3-11",
+    ".rn/20261030-organize-downloads-cli/research.md:15-37"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/session/research.md",
+   "item": "B-2",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/research.md:6-11",
+    ".rn/20261030-organize-downloads-cli/research.md:15-40",
+    ".rn/20261030-organize-downloads-cli/research.md:44-68",
+    ".rn/20261030-organize-downloads-cli/research.md:74-125",
+    ".rn/20261030-organize-downloads-cli/research.md:129-156",
+    ".rn/20261030-organize-downloads-cli/research.md:160-186",
+    ".rn/20261030-organize-downloads-cli/research.md:190-246"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/session/research.md",
+   "item": "B-3",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/research.md:39-40",
+    ".rn/20261030-organize-downloads-cli/research.md:132-132",
+    ".rn/20261030-organize-downloads-cli/research.md:158-186"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/session/research.md",
+   "item": "B-4",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/research.md:48-54",
+    ".rn/20261030-organize-downloads-cli/research.md:74-79",
+    ".rn/20261030-organize-downloads-cli/research.md:88-91",
+    ".rn/20261030-organize-downloads-cli/research.md:129-133",
+    ".rn/20261030-organize-downloads-cli/research.md:153-156"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/session/research.md",
+   "item": "B-5",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/research.md:17-17",
+    ".rn/20261030-organize-downloads-cli/research.md:24-26",
+    ".rn/20261030-organize-downloads-cli/research.md:44-46",
+    ".rn/20261030-organize-downloads-cli/research.md:50-50",
+    ".rn/20261030-organize-downloads-cli/research.md:66-68",
+    ".rn/20261030-organize-downloads-cli/research.md:77-78",
+    ".rn/20261030-organize-downloads-cli/research.md:110-115",
+    ".rn/20261030-organize-downloads-cli/research.md:135-137"
+   ]
+  }
+ ],
+ "left": [],
+ "chosen": [
+  {
+   "chosen": "The answer recommends one option for each of the three questions (POSIX sh; ln -P then rm -f with a check first; GitHub Actions on ubuntu-24.04, ubuntu-26.04 and macos-latest) instead of only laying the options side by side.",
+   "why": "The research's receiver builds docs/architecture.md on it and the user approves that; an answer they can take as said keeps each reader from drawing their own, while the tables still show every option weighed."
+  },
+  {
+   "chosen": "ubuntu-26.04 is named as a third test runner beside ubuntu-24.04 and macos-latest.",
+   "why": "Ubuntu has shipped the Rust coreutils as its core utilities since 25.10, so ubuntu-latest (24.04, GNU) alone would not test the ln and rm a current Ubuntu user runs; that the 26.04 runner's ln is the Rust one is left in Not settled."
+  },
+  {
+   "chosen": "Sources are cited as [S1]..[S21] in the text with one list at the end, each with its URL, version or date, and line numbers for source code and NEWS.",
+   "why": "Each source is written once and pointed to from every fact that rests on it, so a reader opens it from one place and the text stays short."
+  },
+  {
+   "chosen": "The name order of the list (locale-dependent glob order) and the wording of ln's error for cannot move: REASON are written as Not settled, for the architecture or a test to settle, rather than asked of the user now.",
+   "why": "They bear on how the tool is built, which the architecture stage decides; the research names what would settle each and flags that the order is the user's point only if it changes what they see."
+  }
+ ]
+}

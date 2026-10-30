@@ -1,0 +1,70 @@
+{
+ "focal_entities": [
+  {
+   "work": "t4.1"
+  },
+  {
+   "stage": "architecture"
+  },
+  {
+   "kind": "research"
+  },
+  {
+   "path": ".rn/20261030-organize-downloads-cli/research.md"
+  },
+  {
+   "audience": "the user approving the architecture, and whoever makes the architecture document from the research"
+  },
+  {
+   "has": ".rn/20261030-organize-downloads-cli/steering.md"
+  },
+  {
+   "has": ".rn/20261030-organize-downloads-cli/ux.md"
+  },
+  {
+   "has": "README.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "choosing the language, the way to move without overwriting, and where the tests run, on checked facts"
+  },
+  {
+   "serves": "AC1: Run plainly, with no instruction to move, on the trial folder, the tool prints a list giving each file of the six types (Images, Documents, Archives, Audio, Video, Installers, told apart by extension) with the type folder it would move to, each file of no type as not moved, and the same-name file as not moved because of the same name; afterwards every file and folder is where it was. The trial folder is a folder holding files of all six types, a file with no extension, a file with an extension of none of the six types, a folder, a hidden file such as `.DS_Store`, and a file whose name is already taken in the type folder it would move to."
+  },
+  {
+   "serves": "AC2: Run told to move, on the trial folder, the tool moves each file the list gives as moving into its type folder inside the trial folder, and leaves the files of no type, the folder, the hidden file and the same-name file where they were; afterwards the trial folder holds the same files, by name and content, as before, none lost, renamed or overwritten, and nothing outside it is changed."
+  },
+  {
+   "serves": "AC3: Given no folder, the tool organizes `~/Downloads`; given a folder, it organizes that folder and leaves `~/Downloads` as it was."
+  },
+  {
+   "serves": "AC4: AC1, AC2 and AC3 each hold on macOS and on Linux."
+  },
+  {
+   "serves": "AC5: The README says how to install the tool and how to use it, and a user following it on macOS or Linux gets the tool installed and runs both a plain run and a run told to move."
+  },
+  {
+   "serves": "AC6: Tests check the behaviour AC1, AC2 and AC3 name, and pass on macOS and on Linux."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/session/research.md"
+  }
+ ],
+ "constraints": [
+  {
+   "chosen": "the UX and the README are given: the research answers what they promise, such as one downloaded file with nothing else installed"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/fix.md"
+  }
+ ]
+}
