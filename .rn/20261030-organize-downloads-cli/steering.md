@@ -25,9 +25,24 @@ G1: The user can quickly find the file they want in their Downloads folder, whic
 - AC10: Run with the undo option, the tool puts each file the folder's last move run moved back directly in the folder, and removes each kind's folder that run made and that is then empty, keeping every folder that was there before the run or still holds anything; a file whose name is already directly in the folder, or that is no longer in its kind's folder, is not put back, and the tool shows that it was not put back because a file of the same name is there, or because it was not found.
 - AC11: A move run adds nothing to the folder but the kinds' folders: the record that undoing reads is kept outside it, under `~/.local/state` on Linux and `~/Library/Application Support` on macOS.
 
+## Tasks
+
+- T1: The UX of the tool: who uses it, what they type for the preview, the move and the undo, and what it shows them for each case AC1 to AC6, AC10 and AC11 name. Serves AC1, AC2, AC3, AC4, AC5, AC6, AC10, AC11.
+
+  Completion criterion: the user, reading it at the ux sign-off, can tell for each of those criteria the command they type and what the tool shows back, and whoever builds the tool takes the option names and messages from it without asking; every item of the ux checklist holds.
+
+  - [ ] 1. Write the UX from the plan's goal and criteria, `.rn/20261030-organize-downloads-cli/ux.md` as a ux work. turn.
+
+- T2: The tool's README, reached from the top README. Serves AC8.
+
+  Completion criterion: a newcomer reading `organize-downloads/README.md`, after following the one line added to `README.md`, can tell whether the tool is for them, how to install it on macOS or Linux and how to preview, move and undo, each in the words the UX of T1 uses; every item of the readme checklist holds.
+
+  - [ ] 1. Write the tool's README from the UX of T1, `organize-downloads/README.md` as a readme work. turn.
+  - [ ] 2. Add to the top README one line linking to the tool's README of action 1, keeping the rest as it is, `README.md` as a readme work. turn.
+
 ## Next
 
-Step 9 of /rn:up on plan: hear which documents of what the user gets and how they use it the work needs
+Step 4 of /rn:up on T1: action 1, the UX
 
 ## Open
 
