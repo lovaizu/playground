@@ -1,0 +1,58 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "goal"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261030-downloads-organizer-cli/calls/0001-steering.md"
+  },
+  {
+   "audience": "the user at the goal sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/session/plan.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: The user has so many files in their Downloads folder that they cannot find the one they are looking for; they want the files grouped by type (images, documents, archives and so on) so they can find them."
+  },
+  {
+   "decision": "What grouping does to files: The tool moves files into a folder per type (such as Images, Documents, Archives) made inside the Downloads folder. Only the files directly in the Downloads folder are its targets. It only moves: it never deletes, renames or overwrites a file. Run plainly, it only shows what it would move where; it moves files only when told to. Where the target folder already holds a file of the same name, that file is left where it is and reported."
+  },
+  {
+   "decision": "Computers it runs on: The tool must work on macOS and Linux; working on Windows too is welcome but not required."
+  },
+  {
+   "decision": "Types and files of no type: A file's type is told by its file-name extension, in a fixed set of groups: Images, Documents, Archives, Audio, Video and Installers (such as .dmg, .pkg, .deb). A file with no extension, or one no group holds, is not moved and is left where it is, shown in a list. Which extensions each group holds is still to be settled."
+  },
+  {
+   "decision": "How the finished work is checked: The finished work is checked on a test folder of made-up files, not on the user's real Downloads folder; the user tries the finished work themselves on a made-up Downloads folder to confirm it. The work also gives a README that says how to install and how to use the tool, and tests that check what has been decided for the tool."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/fix.md"
+  }
+ ]
+}
