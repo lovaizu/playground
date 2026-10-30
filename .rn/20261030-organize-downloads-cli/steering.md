@@ -51,8 +51,8 @@ it does.
 
 ## Next
 
-Step 4 of /rn:up on T3: action 2, make LICENSE (its checklist first)
+Step 3 of /rn:up on t3.2: make LICENSE
 
 ## Open
 
-- No checklist exists for the kind license; T3.2 needs .rn/checklists/license.md made first.
+- For learnings: in call 0008, turn's first user was refused reading usability.md by its read guard although turn.py first-user listed it in given, so F-3 of checklist.md came back left; the orchestrator checked it holds (usability.md line 3, version: 1, matches license.md line 6).

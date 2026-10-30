@@ -1,0 +1,114 @@
+{
+ "work": [
+  ".rn/checklists/license.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/checklist.md",
+   "item": "F-1",
+   "lines": [
+    ".rn/checklists/license.md:1-21",
+    ".rn/checklists/license.md:23-47",
+    ".rn/checklists/license.md:49-121"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/checklist.md",
+   "item": "F-2",
+   "lines": [
+    ".rn/checklists/license.md:3-3"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/checklist.md",
+   "item": "F-4",
+   "lines": [
+    ".rn/checklists/license.md:25-25",
+    ".rn/checklists/license.md:51-51",
+    ".rn/checklists/license.md:64-64",
+    ".rn/checklists/license.md:87-87",
+    ".rn/checklists/license.md:107-107"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/checklist.md",
+   "item": "B-1",
+   "lines": [
+    ".rn/checklists/license.md:11-21"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/checklist.md",
+   "item": "B-2",
+   "lines": [
+    ".rn/checklists/license.md:11-21",
+    ".rn/checklists/license.md:51-62",
+    ".rn/checklists/license.md:64-85",
+    ".rn/checklists/license.md:87-105",
+    ".rn/checklists/license.md:107-121"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/checklist.md",
+   "item": "B-3",
+   "lines": [
+    ".rn/checklists/license.md:25-47",
+    ".rn/checklists/license.md:51-121"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/checklist.md",
+   "item": "B-4",
+   "lines": [
+    ".rn/checklists/license.md:55-59",
+    ".rn/checklists/license.md:68-81",
+    ".rn/checklists/license.md:91-101",
+    ".rn/checklists/license.md:111-118"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/checklist.md",
+   "item": "B-5",
+   "lines": [
+    ".rn/checklists/license.md:38-42",
+    ".rn/checklists/license.md:58-59",
+    ".rn/checklists/license.md:71-81",
+    ".rn/checklists/license.md:94-101",
+    ".rn/checklists/license.md:114-118"
+   ]
+  }
+ ],
+ "left": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/checklist.md",
+   "item": "F-3",
+   "need": "The judge can confirm that `usability: 1` at license.md line 6 is the version of `usability.md` that stands now, which I still could not: `turn.py first-user` now lists `usability.md` in `given`, but the read guard still refuses it as outside `given`, so I could not open it (the generator reports its line 3 reads `version: 1`; line 5's `checklist: 1` matches checklist.md's version 1)."
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The licence's standard text is the one the SPDX License List gives, and B-2 is tried by a word-by-word diff of the file against https://raw.githubusercontent.com/spdx/license-list-data/main/text/<SPDX ID>.txt (license.md:15-17, 71-75).",
+   "why": "The checklist serves any licence, so it needs one source that holds the standard text of every licence by a fixed identifier; SPDX is the shared list tools that read licences use, and comparing words with line breaks aside shows only the filled-in year and holder for a standard MIT text, as tried on the MIT text with 2026 and lovaizu."
+  },
+  {
+   "chosen": "The LICENSE is plain text: the licence's title first, then its standard text with the year and holder filled in at its copyright line; where the text has no title (the BSD licences) the title is the SPDX full name; where it keeps no copyright line for the work (the GNU GPL) the line `Copyright (c) <year> <holder>` stands first (license.md:29-42).",
+   "why": "The decision asks for a copyright line with year and holder and the standard text unchanged for a licence of any kind; SPDX's BSD texts have no title and the GPL's only copyright line is the FSF's own, so these two cases need a fixed place for the title and the work's copyright line."
+  },
+  {
+   "chosen": "Placeholders in the standard text outside the copyright line F-1 fills in, such as the GNU GPL appendix's `<year>` and `<name of author>`, stay as part of the text (license.md:79-81).",
+   "why": "That appendix tells how to apply the licence to each source file and is part of the standard text, so filling it in would change the text B-2 asks to keep unchanged."
+  },
+  {
+   "chosen": "The year on the copyright line is judged against the year of the repository's first commit, or a range from it (license.md:94-99).",
+   "why": "The LICENSE at the root covers the repository, whose first commit is the first publication the reader can check from what they have; a range is common practice and stays true."
+  },
+  {
+   "chosen": "Four Benefit items: which licence from the top (usability B-1), the exact terms (standard text unchanged), the copyright line, and the licence the README names; the usability points on wording, such as terms known, one name per thing and every word used, are left out (license.md:20-21).",
+   "why": "Those three parts are what the scope decision names and the first lines are what a reader opening the file meets; the licence's words are the licence's own and may not be changed, so no item can ask a maker to change them."
+  },
+  {
+   "chosen": "No item has `Judged on: the built product`.",
+   "why": "A LICENSE is read as it is written; nothing in it depends on the tool being built."
+  }
+ ]
+}

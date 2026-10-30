@@ -1,0 +1,55 @@
+{
+ "focal_entities": [
+  {
+   "work": "checklist-license"
+  },
+  {
+   "stage": "ux"
+  },
+  {
+   "kind": "checklist"
+  },
+  {
+   "path": ".rn/checklists/license.md"
+  },
+  {
+   "audience": "whoever makes a license work in this repository and whoever judges it"
+  },
+  {
+   "has": "."
+  },
+  {
+   "has": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/usability.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "making and judging each license work"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/checklist.md"
+  },
+  {
+   "source": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/usability.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Scope: The license checklist serves a LICENSE file of any licence, not MIT alone: whoever reads it learns the exact terms under which they may use, copy, change and share the work, from the licence's standard text unchanged, a copyright line with year and holder, and the same licence the README names."
+  },
+  {
+   "chosen": "usability.md is given to whoever uses the checklist: F-3 of checklist.md judges the checklist against usability.md's current version, which a judge without the file cannot answer"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/fix.md"
+  }
+ ]
+}
