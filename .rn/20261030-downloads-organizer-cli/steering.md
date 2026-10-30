@@ -2,7 +2,7 @@
 rn: 0.9.0
 pr: https://github.com/lovaizu/playground/pull/22
 stage: goal
-signoff: none
+signoff: goal
 artifact-language: English
 conversation-language: Japanese
 ---
@@ -28,7 +28,7 @@ G1: A command-line tool that groups the files of the user's Downloads folder by 
 
 ## Next
 
-Step 5 of /rn:up on goal: stop at the goal sign-off
+Step 5 of /rn:up on goal: wait for the user's answer, /rn:ty to approve, /rn:gm <feedback> to ask for a change.
 
 ## Open
 
