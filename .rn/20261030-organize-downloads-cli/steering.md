@@ -56,10 +56,9 @@ it does.
 
 ## Next
 
-Step 2 of /rn:up on t4.2: settle the language and the list's name order with the user, then step 3 on t4.2
+Step 2 of /rn:up on t4.2: settle how the README's steps are checked on macOS and Linux, then step 3 on t4.2 again
 
 ## Open
 
-- research.md:15-19 recommends POSIX sh for the tool; the language is the user's to settle before the architecture is made.
-- research.md:170-175 leaves the list's name order open: it follows the locale, so whether the tool sorts in one fixed order (LC_ALL=C) changes what the user sees.
+- docs/architecture.md:196-198 has the README checked by a person following its install and use steps on macOS and on Linux before each change is merged; no decision names who, and this session runs on Linux alone, so it would fall to the user, who chose not to check on their own Downloads.
 - For learnings: in call 0008, turn's first user was refused reading usability.md by its read guard although turn.py first-user listed it in given, so F-3 of checklist.md came back left; the orchestrator checked it holds (usability.md line 3, version: 1, matches license.md line 6).

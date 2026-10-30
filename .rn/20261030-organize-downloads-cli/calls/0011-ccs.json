@@ -1,0 +1,82 @@
+{
+ "focal_entities": [
+  {
+   "work": "t4.2"
+  },
+  {
+   "stage": "architecture"
+  },
+  {
+   "kind": "architecture"
+  },
+  {
+   "path": "docs/architecture.md"
+  },
+  {
+   "path": "docs/architecture.svg"
+  },
+  {
+   "audience": "the user approving the architecture at the architecture sign-off, and whoever builds the tool and its tests to it"
+  },
+  {
+   "has": ".rn/20261030-organize-downloads-cli/steering.md"
+  },
+  {
+   "has": ".rn/20261030-organize-downloads-cli/ux.md"
+  },
+  {
+   "has": "README.md"
+  },
+  {
+   "has": ".rn/20261030-organize-downloads-cli/research.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving how the tool is built and checked, and building the tool, its tests and the workflow that runs them on macOS and Linux"
+  },
+  {
+   "serves": "AC1: Run plainly, with no instruction to move, on the trial folder, the tool prints a list giving each file of the six types (Images, Documents, Archives, Audio, Video, Installers, told apart by extension) with the type folder it would move to, each file of no type as not moved, and the same-name file as not moved because of the same name; afterwards every file and folder is where it was. The trial folder is a folder holding files of all six types, a file with no extension, a file with an extension of none of the six types, a folder, a hidden file such as `.DS_Store`, and a file whose name is already taken in the type folder it would move to."
+  },
+  {
+   "serves": "AC2: Run told to move, on the trial folder, the tool moves each file the list gives as moving into its type folder inside the trial folder, and leaves the files of no type, the folder, the hidden file and the same-name file where they were; afterwards the trial folder holds the same files, by name and content, as before, none lost, renamed or overwritten, and nothing outside it is changed."
+  },
+  {
+   "serves": "AC3: Given no folder, the tool organizes `~/Downloads`; given a folder, it organizes that folder and leaves `~/Downloads` as it was."
+  },
+  {
+   "serves": "AC4: AC1, AC2 and AC3 each hold on macOS and on Linux."
+  },
+  {
+   "serves": "AC5: The README says how to install the tool and how to use it, and a user following it on macOS or Linux gets the tool installed and runs both a plain run and a run told to move."
+  },
+  {
+   "serves": "AC6: Tests check the behaviour AC1, AC2 and AC3 name, and pass on macOS and on Linux."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/architecture.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Language: The tool is one POSIX shell script (#!/bin/sh) using only POSIX utilities, so the one downloaded file runs on macOS and Linux with nothing else installed; its tests are written in POSIX sh too."
+  },
+  {
+   "decision": "Name order of the list: The list gives files in one fixed order on every system, byte order as the C locale sorts (names starting with a capital before those starting with a small letter), whatever the user's language setting, so macOS and Linux print the same list and the tests check one order."
+  },
+  {
+   "chosen": "docs/architecture.svg is a path of the work beside docs/architecture.md: the architecture checklist's F-1 asks for the logical view as an SVG file beside the document, shown in it as an image"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/fix.md"
+  }
+ ]
+}

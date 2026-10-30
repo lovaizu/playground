@@ -1,0 +1,123 @@
+{
+ "work": [
+  "docs/architecture.md",
+  "docs/architecture.svg"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/architecture.md",
+   "item": "F-1",
+   "lines": [
+    "docs/architecture.md:1-37",
+    "docs/architecture.md:38-59",
+    "docs/architecture.md:60-143",
+    "docs/architecture.md:144-201",
+    "docs/architecture.svg:1-63"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/architecture.md",
+   "item": "B-1",
+   "lines": [
+    "docs/architecture.md:3-36"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/architecture.md",
+   "item": "B-2",
+   "lines": [
+    "docs/architecture.md:38-58"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/architecture.md",
+   "item": "B-3",
+   "lines": [
+    "docs/architecture.svg:27-57",
+    "docs/architecture.md:64-110"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/architecture.md",
+   "item": "B-4",
+   "lines": [
+    "docs/architecture.md:114-142"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/architecture.md",
+   "item": "B-5",
+   "lines": [
+    "docs/architecture.md:146-201"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/architecture.md",
+   "item": "B-6",
+   "lines": [
+    "docs/architecture.md:11-36",
+    "docs/architecture.md:74-110",
+    "docs/architecture.md:131-135",
+    "docs/architecture.md:149-201",
+    "docs/architecture.svg:43-57"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/architecture.md",
+   "item": "B-7",
+   "lines": [
+    "docs/architecture.md:1-201"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-mmcr1r0h/rn/checklists/product/architecture.md",
+   "item": "B-8",
+   "lines": [
+    "docs/architecture.md:1-201"
+   ]
+  }
+ ],
+ "left": [],
+ "chosen": [
+  {
+   "chosen": "Six logical components: Command reader, File lister, Type finder, Move checker, Mover and Reporter, all code and all shell functions in the one script (docs/architecture.md:64-110, docs/architecture.svg:30-41).",
+   "why": "Each takes one step every story shares, so the plain run and the run told to move differ only in whether the Mover acts, which keeps the plain run's list true (KR1.3); only the Mover touches files, so the heaviest checks fall on one part."
+  },
+  {
+   "chosen": "Four user stories: the plain run, the run told to move, naming a folder, and a mistyped command (docs/architecture.md:38-58).",
+   "why": "Each is one thing the user types at the tool's edge, and together they hold up each of the UX's five scenes."
+  },
+  {
+   "chosen": "The script sets LC_ALL=C before any component acts, not only for listing (docs/architecture.md:81-87).",
+   "why": "The user decided on byte order; setting it once for the whole script also puts the system's reasons for a refused move in English, as the UX's `cannot move: permission denied` lines are."
+  },
+  {
+   "chosen": "The Reporter prints once every file has its outcome (docs/architecture.md:66-72).",
+   "why": "The UX's lists align the name column to the longest name, which is known only after every file is decided."
+  },
+  {
+   "chosen": "Tests at tests/sort-downloads-test.sh and the workflow at .github/workflows/test.yml, run on every push and pull request (docs/architecture.md:119-123, 141-142).",
+   "why": "A tests folder and a workflow named for what it runs are the common places a builder looks; the repository has no earlier practice for either."
+  },
+  {
+   "chosen": "shellcheck --shell=sh checks the script on ubuntu-24.04 (docs/architecture.md:174-177).",
+   "why": "The POSIX-only principle needs a part that checks it; the research finds shellcheck already on that runner, so it needs nothing installed."
+  },
+  {
+   "chosen": "Only the Mover is checked beyond the story tests among the tool's components; no property tests or mutation testing (docs/architecture.md:166-186).",
+   "why": "Only a Mover failure can lose or overwrite a file, which cannot be undone; the other parts' failures show in the list and are put right by hand."
+  },
+  {
+   "chosen": "The figure is a white- or dark-backed SVG that switches its colours by prefers-color-scheme, with code components as plain rectangles and a dashed frame for the one product (docs/architecture.svg:3-18, 59-62).",
+   "why": "F-1 asks for a figure readable in light and dark and a legend for the boxes' shape; no component is done by an AI, so the legend names that too."
+  },
+  {
+   "chosen": "The test script prints which ln it runs on each runner (docs/architecture.md:158-166).",
+   "why": "The research leaves unchecked whether ubuntu-26.04's ln is the Rust one, so the printed ln is what lets the reader trust which ln the Mover was tried on."
+  },
+  {
+   "chosen": "The test script is checked by shellcheck and by seeing each test fail once on a copy of the tool broken on purpose; the workflow only by its runs; the README by a person following it on macOS and Linux before a change is merged; LICENSE and docs/ by being read (docs/architecture.md:188-201).",
+   "why": "A test that never fails would let a file-losing fault reach the user unseen, while a wrong README step or a LICENSE or docs fault costs no file and shows at once."
+  }
+ ]
+}
