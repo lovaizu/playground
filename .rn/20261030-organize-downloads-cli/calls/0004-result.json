@@ -1,0 +1,99 @@
+{
+ "work": [
+  ".rn/20261030-organize-downloads-cli/ux.md"
+ ],
+ "items": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-7dmnr09f/rn/checklists/product/ux.md",
+   "item": "F-1",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:1-152"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-7dmnr09f/rn/checklists/product/ux.md",
+   "item": "B-1",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:3-3",
+    ".rn/20261030-organize-downloads-cli/ux.md:7-9"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-7dmnr09f/rn/checklists/product/ux.md",
+   "item": "B-2",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:13-29"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-7dmnr09f/rn/checklists/product/ux.md",
+   "item": "B-3",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:44-63",
+    ".rn/20261030-organize-downloads-cli/ux.md:65-88",
+    ".rn/20261030-organize-downloads-cli/ux.md:90-111",
+    ".rn/20261030-organize-downloads-cli/ux.md:113-146"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-7dmnr09f/rn/checklists/product/ux.md",
+   "item": "B-4",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:148-152"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-7dmnr09f/rn/checklists/product/ux.md",
+   "item": "B-5",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:1-4",
+    ".rn/20261030-organize-downloads-cli/ux.md:5-10",
+    ".rn/20261030-organize-downloads-cli/ux.md:11-30",
+    ".rn/20261030-organize-downloads-cli/ux.md:31-147",
+    ".rn/20261030-organize-downloads-cli/ux.md:148-152"
+   ]
+  },
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-7dmnr09f/rn/checklists/product/ux.md",
+   "item": "B-6",
+   "lines": [
+    ".rn/20261030-organize-downloads-cli/ux.md:31-147"
+   ]
+  }
+ ],
+ "left": [],
+ "chosen": [
+  {
+   "chosen": "The command name `organize-downloads`, run as `organize-downloads [--move | --undo] [folder]`, with the folder as an optional last argument.",
+   "why": "T2 puts the tool's README at `organize-downloads/README.md`, so one name serves the folder and the command; long options name the move and the undo the criteria speak of, and a plain argument for the folder is how command-line tools usually take a path."
+  },
+  {
+   "chosen": "The exact lines the tool shows: `<name> -> <Kind>/` for a move, `<name> stays: <reason>` with the reasons `hidden file`, `still downloading`, `folder`, `a file of the same name is in <Kind>/` and `<Kind> is a file, not a folder`; for undo `<Kind>/<name> -> <name>`, `<Kind>/<name> not put back: <reason>` and `removed empty folder <Kind>/`; a header line naming the folder and a count line at the end.",
+   "why": "The completion criterion of T1 asks that the builder takes the messages from the UX without asking; one line per entry, the same in preview and move, lets the user compare what they agreed to with what was done."
+  },
+  {
+   "chosen": "The extensions each kind holds, told by the text after the last dot, whatever its letter case; a file with no extension goes to Others.",
+   "why": "AC2 names the kinds but not their extensions; the lists hold the common extensions of each kind on macOS and Linux, and ignoring case keeps `photo.JPG` with `photo.jpg`."
+  },
+  {
+   "chosen": "A file named like a kind's folder keeps the files of that kind where they are, shown as `stays: <kind> is a file, not a folder`.",
+   "why": "Without it the kind's folder cannot be made without renaming or overwriting that file, which AC5 forbids."
+  },
+  {
+   "chosen": "Lines stand in alphabetical order of names, letter case aside, and in an undo the file lines come first by file name, then the removed folders by name; subfolders are listed as `stays: folder`, apart from the kinds' folders, which get no line and are not counted.",
+   "why": "The user finds a file's line where they expect it and sees that each of their own subfolders is left alone as AC4 says, while the kinds' folders, being where files go, would only add a line to every run."
+  },
+  {
+   "chosen": "Undo goes back only to the last move run, once; a second undo, or one after a move run that moved nothing, shows `Nothing to undo in <folder>.`",
+   "why": "AC10 speaks only of the last move run; undoing it twice would have nothing true to put back."
+  },
+  {
+   "chosen": "Errors: `organize-downloads: no folder at <path>` for a missing folder, `organize-downloads: use --move or --undo, not both` for both options, each changing nothing; `--help` shows the usage line and what each option does.",
+   "why": "These are the cases a user meets by a typing slip, and the builder needs their messages; changing nothing keeps AC5."
+  },
+  {
+   "chosen": "Box kinds in the figures written as mermaid entity codes, `#lt;person#gt;`, rather than bare angle brackets.",
+   "why": "Mermaid strips bare `<person>` as an HTML tag, so the kind would not show in the rendered figure the user reads on the pull request."
+  }
+ ]
+}
