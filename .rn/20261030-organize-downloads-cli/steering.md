@@ -45,7 +45,7 @@ it does.
   as AC1, AC2 and AC3 ask; checked by an AI that did not make it, reading it in the user's place
   against the ux checklist.
 
-  - [ ] 1. Settle with the user the command's name, how they tell it to move, and how they give a
+  - [x] 1. Settle with the user the command's name, how they tell it to move, and how they give a
     folder. The orchestrator, with the user.
   - [ ] 2. Make the UX from the plan's decisions and the answers of action 1,
     `.rn/20261030-organize-downloads-cli/ux.md` as a ux work. turn.
@@ -64,7 +64,7 @@ it does.
 
 ## Next
 
-Step 4 of /rn:up on T1: action 1, settle the command's name, how to tell it to move, and how to give a folder
+Step 4 of /rn:up on T1: action 2, make the UX
 
 ## Open
 

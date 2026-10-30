@@ -1,0 +1,21 @@
+{
+ "focal_entities": [
+  {
+   "work": "t1.2"
+  },
+  {
+   "stage": "ux"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Command name: The command is named sort-downloads."
+  },
+  {
+   "decision": "How to tell it to move: The user tells the tool to move by adding the option --move, as in sort-downloads --move; without it nothing moves."
+  },
+  {
+   "decision": "How to give a folder: The user gives a folder by writing it after the command, as in sort-downloads ~/Desktop or sort-downloads --move ~/Desktop; with none written, ~/Downloads is organized."
+  }
+ ]
+}
