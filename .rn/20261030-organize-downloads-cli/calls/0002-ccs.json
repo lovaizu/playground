@@ -1,0 +1,85 @@
+{
+ "focal_entities": [
+  {
+   "work": "plan"
+  },
+  {
+   "stage": "goal"
+  },
+  {
+   "kind": "plan"
+  },
+  {
+   "path": ".rn/20261030-organize-downloads-cli/calls/0002-steering.md"
+  },
+  {
+   "audience": "the user at the goal sign-off, approving what the finished work will do and why, and rn's orchestrator in any later conversation, carrying the work on without asking them again"
+  },
+  {
+   "has": "."
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving the goal and the acceptance criteria, then carrying each later work to them"
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": "/tmp/rn/20261030-acceptance-7dmnr09f/rn/checklists/session/plan.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "Purpose: The user cannot quickly find the file they want in their Downloads folder; the tool sorts its files by kind so they are easy to find."
+  },
+  {
+   "decision": "How files are sorted: The tool creates a folder for each kind (such as Images, Documents) inside the Downloads folder and moves files into it. Only files directly in the Downloads folder are handled. It only moves files: it never deletes, renames or overwrites anything."
+  },
+  {
+   "decision": "Kinds: A file's kind is told by its extension, sorted into broad kinds: Images, Documents, Videos, Audio, Archives, Installers, Code, and Others for files that fit none."
+  },
+  {
+   "decision": "Same name in the kind's folder: When the kind's folder already holds a file of the same name, the file is not moved: it stays directly in Downloads, and the tool shows that it was left because a file of the same name is there."
+  },
+  {
+   "decision": "Preview before moving: Run with no option, the tool only previews: it shows which file would move to which folder and moves nothing. It moves files only when an option tells it to."
+  },
+  {
+   "decision": "Systems it runs on: The tool runs on macOS and Linux; Windows is not needed."
+  },
+  {
+   "decision": "Folder it works on: By default the tool works on ~/Downloads; an argument can name another folder instead."
+  },
+  {
+   "decision": "Hidden and unfinished files: Hidden files (names starting with a dot, such as .DS_Store) and files a browser is still downloading (such as .crdownload, .part, .download) are never moved, so the system and downloads in progress are not broken."
+  },
+  {
+   "decision": "What shows it done: On a test folder holding files of each kind, a file whose name is already in its kind's folder, hidden files, unfinished downloads and a subfolder, on macOS and on Linux each: a preview moves nothing, and the move option moves files as decided, with no file deleted, renamed or overwritten. The README says how to install the tool and how to use it. Tests check what was decided."
+  },
+  {
+   "decision": "Undoing the last move: The last move run can be undone: undoing puts each file that run moved back where it was. This is an acceptance criterion, and the tests check it."
+  },
+  {
+   "decision": "Same name at the original place when undoing: When undoing, a file whose name is already at its original place is not put back: it stays in its kind's folder, and the tool shows that it was not put back because a file of the same name is there."
+  },
+  {
+   "decision": "Where the record of the last move run is kept: The record of the last move run is kept outside the folder worked on, in the user's place for app data (~/.local/state on Linux, ~/Library/Application Support on macOS), one for each folder organized, so the folder gains nothing but the kinds' folders."
+  },
+  {
+   "decision": "Kinds' folders left empty by undoing: Undoing removes each kind's folder that the undone run made and that is empty once its files are put back; it removes no folder that was there before the run and none that still holds anything, so the folder is as it was before the run."
+  },
+  {
+   "decision": "Moved file missing from its kind's folder when undoing: When undoing, a file the run moved that is no longer in its kind's folder is skipped, the tool shows that it was not put back because it was not found, and the other files are put back."
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-7dmnr09f/rn/checklists/fix.md"
+  }
+ ]
+}
