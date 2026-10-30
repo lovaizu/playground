@@ -43,8 +43,9 @@ G1: A command-line tool that groups the files of the user's Downloads folder by 
 
 ## Next
 
-Step 4 of /rn:up on T3: write the UX again
+Step 5 of /rn:up on ux: stop at the ux sign-off, once rn can close t1.1 and t2.1
 
 ## Open
 
+- rn.py proposal ux stops: turn has not returned t1.1 (call 0006) or t2.1 (call 0009), the calls the decisions confirmed after their results opened; rn.py ccs t1.1 stops as the steering holds no action T1.1, ticked done by the orchestrator before the work was made again from those decisions (orchestrator.md step 3 says to make it again first), and a task T1 cannot be written again under its ID; T3 and T4, added to make both again, do not close t1.1 or t2.1, and the decisions are not carried to t3.1 (call 0010 holds none of them). No step of rn goes on from here.
 - To carry into the plan at the build stage: the build makes downloads-organizer/LICENSE (MIT, its copyright holder still to be asked) and downloads-organizer/docs/development.md before the README is merged, adds the one line in the top README.md pointing to downloads-organizer/README.md, and checks every README link leads to a file
