@@ -1,0 +1,61 @@
+{
+ "focal_entities": [
+  {
+   "work": "t2.1"
+  },
+  {
+   "stage": "ux"
+  },
+  {
+   "kind": "readme"
+  },
+  {
+   "path": "downloads-organizer/README.md"
+  },
+  {
+   "audience": "the user approving the README at the ux sign-off, and whoever builds the tool and checks the README against it"
+  },
+  {
+   "has": ".rn/20261030-downloads-organizer-cli/steering.md"
+  },
+  {
+   "has": ".rn/20261030-downloads-organizer-cli/ux.md"
+  }
+ ],
+ "goal_orientation": [
+  {
+   "purpose": "approving what a newcomer reads to install the tool and run it to show, move and undo, then building the tool to match it"
+  },
+  {
+   "serves": "AC7: The README says how to install and how to use the tool, such that a reader following it alone on macOS or Linux installs the tool and runs it to show, to move and to undo."
+  }
+ ],
+ "retrieved_artifacts": [
+  {
+   "checklist": ".rn/20261030-downloads-organizer-cli/calls/0007-checklist-1.md"
+  }
+ ],
+ "constraints": [
+  {
+   "decision": "How the tool is installed: The tool is written in Python 3 and installed with pipx from the repository: pipx install \"git+https://github.com/lovaizu/playground.git#subdirectory=downloads-organizer\", needing Python 3.9 or later and pipx, which a reader may first install with brew install pipx or sudo apt install pipx."
+  },
+  {
+   "decision": "Licence: The tool is under the MIT licence, in a LICENSE file at downloads-organizer/LICENSE, which the README's licence section points to; the rest of the repository is not touched by it. Who the copyright line names is still to be settled when the LICENSE file is made."
+  },
+  {
+   "chosen": "The README's Development section links to downloads-organizer/docs/development.md, a development document made at the architecture or the build stage for whoever builds or changes the tool (code layout, running the tests, the way to the architecture): the user decided it, kept as the plan's decision 'Development document', when turn's generator asked"
+  },
+  {
+   "chosen": "The README links to downloads-organizer/LICENSE and downloads-organizer/docs/development.md as they are, with no words saying they are not there yet; the build stage makes both files before the README is merged and checks that every link of the README leads to a file: the decisions 'Licence' and 'Development document' already say both files are made later and linked to, and words saying 'not yet there' would go stale"
+  },
+  {
+   "artifact-language": "English"
+  },
+  {
+   "conversation-language": "Japanese"
+  },
+  {
+   "fix": "/tmp/rn/20261030-acceptance-xyatir05/rn/checklists/fix.md"
+  }
+ ]
+}

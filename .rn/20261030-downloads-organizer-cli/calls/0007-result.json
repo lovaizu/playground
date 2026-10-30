@@ -1,0 +1,53 @@
+{
+ "work": [
+  "downloads-organizer/README.md"
+ ],
+ "items": [
+  {
+   "checklist": ".rn/20261030-downloads-organizer-cli/calls/0007-checklist-1.md",
+   "item": "B-1",
+   "lines": [
+    "downloads-organizer/README.md:3-3"
+   ]
+  },
+  {
+   "checklist": ".rn/20261030-downloads-organizer-cli/calls/0007-checklist-1.md",
+   "item": "B-2",
+   "lines": [
+    "downloads-organizer/README.md:5-64"
+   ]
+  },
+  {
+   "checklist": ".rn/20261030-downloads-organizer-cli/calls/0007-checklist-1.md",
+   "item": "B-3",
+   "lines": [
+    "downloads-organizer/README.md:66-86"
+   ]
+  }
+ ],
+ "left": [
+  {
+   "checklist": ".rn/20261030-downloads-organizer-cli/calls/0007-checklist-1.md",
+   "item": "F-1",
+   "need": "The headings and order follow the template, but the receiver following the Development and License links (README.md:129, 133) still reaches no docs/development.md or LICENSE in downloads-organizer/, which steering.md's Open line leaves to the build stage, outside this work, so the receiver needs those links to lead to something that is there."
+  }
+ ],
+ "chosen": [
+  {
+   "chosen": "The example is the UX's whole way on its show-scene folder: show, move, find the file, then undo with nothing in the way, each output copied word for word from ux.md.",
+   "why": "The template asks for one account from start to result; the whole way covers show, move and undo, which AC7 names, and copying the UX's outputs keeps the README and the UX saying the same thing for the builder to match."
+  },
+  {
+   "chosen": "Documentation points fuller use to `downloads-organizer --help`, which is to print each way to run the tool and each group's extensions, and points version changes to the GitHub commit history of downloads-organizer/.",
+   "why": "No separate usage page or changelog exists or is in the CCS; --help is where a command-line user looks first and keeps the extension table in one place (the code) rather than copying it into the README; this makes --help printing the extensions a promise the build must keep."
+  },
+  {
+   "chosen": "Requirements add `sudo dnf install pipx` for Fedora and `pipx ensurepath` with a new terminal, beyond the brew and apt commands of the install decision.",
+   "why": "Without ensurepath the installed command may not be on PATH, so the reader's first run would fail; dnf covers the other common Linux family."
+  },
+  {
+   "chosen": "Why sets each benefit against sorting by hand in a file manager and against kinds of other tools (ones that sort files as they arrive, ones that rename a file whose name is taken), naming no particular product, and orders them: see every move first, undo in one command, every file left is named, a taken name never replaces or renames, find by type last.",
+   "why": "B-3 asks what this tool gives that the other ways do not, with what only it gives first; grouping by type is what sorting by hand also gives, so it comes last, and naming no product keeps each claim one the reader finds true rather than one about a tool's version."
+  }
+ ]
+}

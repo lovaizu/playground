@@ -26,18 +26,10 @@ G1: A command-line tool that groups the files of the user's Downloads folder by 
 - AC11: After an undo, each group folder that the undone run made and that is empty once the files are back is gone; a group folder that holds anything, or that was there before that run, stays as it is.
 - AC12: Run with the instruction to undo where no run with the instruction to move has been made since the last undo, or none at all, the tool moves nothing and says there is no run to undo.
 
-## Tasks
-
-- T2: The tool's README, written from the UX of T1, saying how to install the tool and run it to show, to move and to undo. Serves AC7.
-
-  Completion criterion: a reader with only the README, on macOS or Linux, finds in it each step to install the tool and to run it to show, to move and to undo, each command and what it shows matching the UX of T1, and the user approves it at the ux sign-off.
-
-  - [ ] 1. Write the README from the UX of T1, `downloads-organizer/README.md` as a readme work. turn.
-
 ## Next
 
-Step 4 of /rn:up on T2: write the README
+Step 4 of /rn:up on T2: weigh what it brought
 
 ## Open
 
-None.
+- To carry into the plan at the build stage: the build makes downloads-organizer/LICENSE (MIT, its copyright holder still to be asked) and downloads-organizer/docs/development.md before the README is merged, adds the one line in the top README.md pointing to downloads-organizer/README.md, and checks every README link leads to a file
