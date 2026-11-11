@@ -1,0 +1,7 @@
+# The lefthook settings of this repository, which setup.sh of
+# lovaizu/repofiles never writes.
+pre-commit:
+  jobs:
+    # This repository holds only English.
+    - name: japanese
+      skip: true
