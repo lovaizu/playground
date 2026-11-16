@@ -1,7 +1,7 @@
 {
   "goal": {
     "decided": "Callers of the invoicer library see in each function's and class's signature what it takes and what it gives, so they call it right without reading its body.",
-    "by": "reasoning"
+    "by": "user"
   },
   "deliverables": [
     {
