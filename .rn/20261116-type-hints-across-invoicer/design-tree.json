@@ -1,0 +1,80 @@
+{
+  "goal": {
+    "decided": "Callers of the invoicer library see in each function's and class's signature what it takes and what it gives, so they call it right without reading its body.",
+    "by": "reasoning"
+  },
+  "deliverables": [
+    {
+      "name": "Callers see in every signature of invoicer what it takes and gives, and every call behaves as before",
+      "path": "invoicer",
+      "kind": "refactor-code",
+      "inputs": [],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the test command",
+              "decided": "python3 -m unittest, as pyproject.toml gives no test command and the repository has no tests",
+              "by": "research"
+            },
+            {
+              "about": "the types of each signature",
+              "decided": "Line(description: str, price: Decimal, quantity: int = 1), amount() -> Decimal; parse_lines(text: str) -> list[Line]; tax_of(amount: Decimal, rate: Decimal) -> Decimal; subtotal(lines: Iterable[Line]) -> Decimal; total(lines: Iterable[Line], rate: Decimal) -> Decimal; render(lines: Sequence[Line], rate: Decimal, currency: str = \"EUR\") -> str",
+              "by": "research"
+            },
+            {
+              "about": "what a caller's type checker reads",
+              "decided": "an empty invoicer/py.typed, included in the built package",
+              "by": "research"
+            }
+          ]
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the annotation style",
+              "decided": "builtin generics such as list[Line], with Iterable and Sequence from collections.abc, valid at run time on Python 3.9; no from __future__ import and no typing.List",
+              "by": "research"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
