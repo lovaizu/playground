@@ -23,7 +23,7 @@
             },
             {
               "about": "the types of each signature",
-              "decided": "Line(description: str, price: Decimal, quantity: int = 1), amount() -> Decimal; parse_lines(text: str) -> list[Line]; tax_of(amount: Decimal, rate: Decimal) -> Decimal; subtotal(lines: Iterable[Line]) -> Decimal; total(lines: Iterable[Line], rate: Decimal) -> Decimal; render(lines: Sequence[Line], rate: Decimal, currency: str = \"EUR\") -> str",
+              "decided": "Line.__init__(self, description: str, price: Decimal, quantity: int = 1) -> None, amount() -> Decimal, __repr__() -> str; parse_lines(text: str) -> list[Line]; tax_of(amount: Decimal, rate: Decimal) -> Decimal; subtotal(lines: Iterable[Line]) -> Decimal; total(lines: Iterable[Line], rate: Decimal) -> Decimal; render(lines: Sequence[Line], rate: Decimal, currency: str = \"EUR\") -> str",
               "by": "research"
             },
             {
