@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N4 and N5 with their reasons and practices"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "N5 good; N4 more: no order among KR1.2, KR2.2, KR3.2"
     }
   ]
 }

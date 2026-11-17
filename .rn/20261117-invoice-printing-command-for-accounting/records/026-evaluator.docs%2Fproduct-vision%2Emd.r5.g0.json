@@ -14,6 +14,15 @@
       "of": "evaluator",
       "step": 3,
       "gave": "N1 and N2 good; N3 more, as the concept says the command only calls the library"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Answered N1, N2, N3"
     }
-  ]
+  ],
+  "kept": {
+    "role": "evaluator",
+    "result": "done"
+  }
 }
