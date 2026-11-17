@@ -46,7 +46,7 @@ Do this for each invoice:
 6. In File Explorer, open the folder that holds `lines.csv`, type `powershell` in the address bar, and press Enter. PowerShell opens in that folder.
 7. In PowerShell, type `invoicer lines.csv --rate 19`, with the client's tax rate in place of 19, and press Enter.
 
-If PowerShell shows this line in place of the invoice, a price in column B still has thousands grouping, such as 1,200.00:
+If PowerShell shows this line in place of the invoice, a price still has thousands grouping:
 
 ```console
 invoicer: error: lines.csv, row 1: the price must be a number written with a point, such as 12.50, not '1,200.00'
