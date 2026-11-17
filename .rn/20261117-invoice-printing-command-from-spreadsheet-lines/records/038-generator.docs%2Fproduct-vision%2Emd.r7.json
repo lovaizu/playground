@@ -224,6 +224,191 @@
       "of": "generator",
       "step": 3,
       "gave": "Every Cut decision taken as it stands; the one change is the show-the-rate clause joining Nothing wrong prints. Settled without asking: the ranking line reads KR1.1 and KR2.1 come first, fixing the verb agreement. Nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.4",
+      "gave": "With invoicer taken out, O1 reads the accountant sends each client a correct invoice, and O2 the installer gets a machine ready: ends, not features."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N3.1",
+      "gave": "Each sentence asked whether it would change with the insides alone; the new tax line clause is what the accountant sees on the printed invoice, so it stays; no runtime is named."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.7",
+      "gave": "E2E records: KR1.1 each printed invoice marked helped or wrong total; KR1.2 the times the spreadsheet opens and the invoice prints; KR2.1 each setup marked command not running; KR2.2 the setup start and first run times."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.8",
+      "gave": "Choice no line names, decided by the ideas: whether to ask the accountant to confirm the rate before printing. Nothing wrong prints decides it: show the rate on the tax line, no extra prompt."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings are the template reference headings, Roles, Objectives and key results, Concept; kept."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "The first line under each heading is the template own: the first role, the first objective, the one way; each says what the section gives."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read headings and first lines for the maintainer and accounting team purposes; each leads to the section it needs."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Each sentence has a reader: maintainers and the accounting team need each role, objective, key result and idea; none marked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "No sentence marked, so no other document sought."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "No sentence to move within the deliverable."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "No sentence to move outside it; nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "No sentence cut."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "Words checked in the new clause; each carries a point the accountant needs."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "Articles and small structure words kept."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "docs/product-vision.md read to its end as each reader; nothing a purpose needs is missing."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "The tax line clause comes after the client tax rate is introduced in Roles, O1 and the one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "Nothing depends on an outside page; the tax line example is stated in place."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "The new clause starts from the client tax rate, already known, and ends with the new point, catching a mistype before sending."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "No conditional instruction in the vision."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "The exception to ranking, no order across objectives, is carried by the line that key results show their own objective, right after the rule."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "docs/product-vision.md read to its end from the top; no place needed a look back or ahead."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "Passages kept in the forms chosen: bulleted roles and ideas, nested key results, prose ranking line."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence diagram needed; the moments of use stay in the ideas."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "No structure diagram needed; the vision describes no parts."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "The idea line holds one point for the template one short sentence: what the accountant gets instead of a wrong invoice, the rate on the tax line its second half."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "The accountant is the subject with active verbs gets, sees, catch."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "Pronouns checked: they is the accountant, one is the client tax rate, each within five words of a single fitting noun."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "No noun made from a verb left to turn back."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Objects stay next to their verbs."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "docs/product-vision.md read to its end as a translator would; the ranking line verb fixed to come for its plural subject."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "Words match the chosen ones; tax line in its usual meaning."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No coined term to define."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "Abbreviations: O and KR are the template IDs under Objectives and key results; EUR is in the person example as it prints."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "Each fact stated in full at its one place."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "No repeated fact to replace with a link."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "Kept names written the same throughout, with accountant, installer and invoicer in code format; the new clause uses the client tax rate."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "docs/product-vision.md made: Nothing wrong prints now says the accountant sees the client tax rate on the tax line, such as Tax (7%) 7.00 EUR, to catch a mistype before the invoice goes out; the ranking line verb agrees; all else as signed off."
     }
   ]
 }
