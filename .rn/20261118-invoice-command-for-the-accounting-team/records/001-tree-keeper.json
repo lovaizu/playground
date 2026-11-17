@@ -1924,6 +1924,106 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: 9f05096; doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed after the README was sent back: read the tree at d3c37b3; README.md N9 good already false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer (done) before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit 24d6389."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit 24d6389 message holds the grounds with the person words word for word."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "README.md stays doing after the send-back; invoicer stays done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Not run: the main conversation judged the README rounds; this change sets no good true."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "No good set true in this change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "README N9 decision changed; its good was already false and stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "The change does not touch invoicer, which stays done; its refusal text already matches the decision quote."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote 24d6389: README.md N9 saving the lines gains thousands grouping and the refusal message, by user; N9 good false; doing []. Checked again: 86581a1 not an ancestor of HEAD, 0 compiled files tracked."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/1 (README.md) and its N9; also read invoicer, which the decision quotes."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: the quoted message matches invoicer/lines.py line 149 to 150; install steps and the spreadsheet program and system stand; README name, N1, N4, N6 stand."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "saving the lines written over its old text."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "invoicer stays one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked README.md and its N9, and the quoted refusal against invoicer: all agree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: 24d6389; doing []."
     }
   ],
   "kept": {

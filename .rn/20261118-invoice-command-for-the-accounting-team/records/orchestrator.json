@@ -679,6 +679,76 @@
       "of": "orchestrator",
       "step": 5,
       "gave": "Held the README round 1 evaluator start the guard gave: round 1 ended in lacks and round 2 is making the README now"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Reviewed the tree: README round 2 holds every decision; only the License section the person ruled out stops rn check"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No open point; the person accepted the README without a License section"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Tree as written in 9f05096 holds"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "README generator gave lacks only for the License section the person ruled out; no resume, as nothing changes it"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Read the README against its Cut: PowerShell named, nothing on licensing, walkthrough totals checked by hand; no evaluator round passed, as the generator could not give done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "No round of the README was judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "86581a1 not in history, no pycache tracked; pushed PR 29 and put up README.md at the person ask; waiting for /rn:ty or /rn:gm"
+    },
+    {
+      "of": "orchestrator",
+      "step": 8,
+      "gave": "Not this case: a run was found"
+    },
+    {
+      "of": "gm",
+      "step": 1,
+      "gave": "tree.py send-back: README.md sent back"
+    },
+    {
+      "of": "gm",
+      "step": 2,
+      "gave": "The person typed words, so no comments to read"
+    },
+    {
+      "of": "gm",
+      "step": 3,
+      "gave": "Ran a 1,200.00 row and got the refusal; resumed the tree-keeper: README N9 saving the lines gains thousands grouping and what to do, by user"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked 24d6389: N9 saving the lines gains thousands grouping, by user; N9 false"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Started rn:generator for README.md round 3 with the text the guard gave"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Held the README round 2 evaluator start the guard gave: round 2 ended in lacks and round 3 is making the README now"
     }
   ]
 }

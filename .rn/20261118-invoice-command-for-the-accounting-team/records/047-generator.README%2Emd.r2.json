@@ -610,5 +610,9 @@
       "step": 7,
       "gave": "Ended with done after the Made; rn check names only the missing License section beyond this step, which the person ruled out by user and accepts as the one reason the review cannot pass."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "lacks"
+  }
 }
