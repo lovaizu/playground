@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "N1 and N2 good; N3 more: the installer role names Python, an inside choice"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each of N1, N2, N3 answered; ending with done"
     }
   ]
 }
