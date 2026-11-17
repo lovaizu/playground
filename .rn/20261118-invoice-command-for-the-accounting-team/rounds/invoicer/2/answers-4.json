@@ -30,7 +30,7 @@
     },
     {
       "question": "N6",
-      "good_when": "A maintainer who meets `amount.quantize(CENT, rounding=ROUND_HALF_UP)` in invoicer/tax.py reads right there why the tax and each amount round half up rather than by Python's own `round`, which rounds 0.005 to the even cent, so they don't 'simplify' it into a rounding that prints 39.99 where accounting expects 40.00; and a maintainer who meets invoicer/totals.py beside render's own sum reads why both exist. The rest already says why where it looks odd, such as the `utf-8-sig` comment, the ASCII-only quantity pattern, the `_LIMIT` comment, and the refusal of rates between 0 and 1."
+      "good_when": "A maintainer who meets `amount.quantize(CENT, rounding=ROUND_HALF_UP)` in invoicer/tax.py reads right there why the tax and each amount round half up rather than by Python's own `round`, which rounds to the even cent, so they don't 'simplify' it into a rounding that prints a line of 0.005 as 0.00 where accounting expects 0.01; and a maintainer who meets invoicer/totals.py beside render's own sum reads why both exist. The rest already says why where it looks odd, such as the `utf-8-sig` comment, the ASCII-only quantity pattern, the `_LIMIT` comment, and the refusal of rates between 0 and 1."
     }
   ]
 }
