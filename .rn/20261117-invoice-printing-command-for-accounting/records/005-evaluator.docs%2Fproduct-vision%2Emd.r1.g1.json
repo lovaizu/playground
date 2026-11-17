@@ -20,5 +20,9 @@
       "step": 4,
       "gave": "Each condition of the group, N4 and N5, is answered in the Answers; ending with done."
     }
-  ]
+  ],
+  "kept": {
+    "role": "evaluator",
+    "result": "done"
+  }
 }
