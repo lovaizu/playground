@@ -474,6 +474,11 @@
       "of": "generator",
       "step": 5,
       "gave": "Tried by throwaway.py as accounting would: the command installed from the setup alone, a file as a spreadsheet saves CSV UTF-8 (byte order mark, CRLF), invoicer acme-november.csv --rate 19 and --rate 7.7%: exit 0, totals 2390.47 and 2163.48, checked by hand; each wrong input exits 2 with a message naming what to fix; 23 tests OK. Nothing to mend."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Wrote the Made in rounds/invoicer/1/made.json: where each of the five decisions lands, no More kept, and eight points settled with their grounds (rate as percent, command line, price with a point, quantity from 1, UTF-8 with BOM, LineError, refusal form, tests)."
     }
   ]
 }

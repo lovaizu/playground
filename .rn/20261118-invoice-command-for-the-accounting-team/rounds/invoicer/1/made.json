@@ -1,0 +1,67 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/0",
+      "where": "invoicer/command.py main reads the file LINES (UTF-8, byte order mark allowed) and passes it to invoicer.lines.parse_lines, which reads one row per line, <description>;<price>;<quantity> (lines.ROW); tests/test_lines.py test_reads_each_row_as_a_line, tests/test_command.py test_reads_lines_saved_with_a_byte_order_mark"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/1",
+      "where": "invoicer/command.py: the required option --rate PERCENT on each run, read by _rate; tests/test_command.py test_prints_the_invoice_of_the_lines_at_the_rate_given, test_reads_a_rate_written_with_a_percent_sign, test_takes_a_rate_of_zero, test_takes_a_rate_of_a_hundred, test_refuses_a_run_without_a_rate"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/2",
+      "where": "invoicer/command.py main, last line: print(render(lines, arguments.rate)) to standard output; tests/test_command.py test_prints_the_invoice_of_the_lines_at_the_rate_given asserts the whole printed text"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/0",
+      "where": "pyproject.toml [project.scripts] invoicer = \"invoicer.command:main\" and [tool.setuptools] packages = [\"invoicer\"], so `pipx install <repository>` gives the invoicer command; its head comment says Python 3.9 or later, no other package, and the pipx install. Tried: installing from the setup alone gives bin/invoicer, which prints the invoice"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/7/decisions/0",
+      "where": "invoicer/lines.py LineError raised by _line, _price, _quantity naming the row (from 1, blank rows counted) and what is wrong; invoicer/command.py main turns it and a missing file, a file not UTF-8, an empty file, and a wrong --rate into `invoicer: error: <file>, row N: ...` with exit 2, before printing anything; tests/test_command.py test_prints_nothing_when_a_row_is_wrong and each test_refuses_*, tests/test_lines.py each test_refuses_*"
+    }
+  ],
+  "more": [],
+  "settled": [
+    {
+      "point": "how accounting types the tax rate",
+      "decided": "As a percent from 0 to 100, with or without %, such as `--rate 19` or `--rate 7.7%`; anything else is refused, naming what was typed",
+      "ground": "Accounting states a client's tax rate as a percent, and the printed invoice doesn't show the rate, so a misread rate would go unseen; reading it as a percent with bounds makes 120 or 7,7 a refusal, not a wrong invoice. The code turns it into the fraction that invoicer.render takes."
+    },
+    {
+      "point": "the command line",
+      "decided": "`invoicer LINES --rate PERCENT`: the saved file, then the rate as a named, required option",
+      "ground": "The request asks for one command with the rate set for each invoice; naming the option makes the line read the same in the README and in what accounting types, and argparse gives `invoicer --help` and the usage on each refusal."
+    },
+    {
+      "point": "how a price must be written",
+      "decided": "A number with a point, such as 12.50; a price with a comma, such as 10,50, is refused with the row and `written with a point, such as 12.50`",
+      "ground": "The lines' form is the one parse_lines already reads (decision N3); a comma could be a decimal comma or a thousands mark, so it is refused, not guessed (code N8.3). The README should tell accounting to format the price column with a point before saving."
+    },
+    {
+      "point": "which quantities a row takes",
+      "decided": "A whole number from 1, written in digits; 0, 1.5 or +3 is refused with the row",
+      "ground": "An invoice line bills at least one of something; a refusal lets accounting fix the spreadsheet rather than print a wrong invoice (decision N8)."
+    },
+    {
+      "point": "the file's text encoding",
+      "decided": "UTF-8, with or without the byte order mark that a spreadsheet's CSV UTF-8 export writes; any other is refused with `save it from the spreadsheet as CSV UTF-8`",
+      "ground": "Spreadsheets save CSV UTF-8 with a byte order mark, which would otherwise end up in the first description; an older encoding would garble accented descriptions, so it is refused with what to do instead."
+    },
+    {
+      "point": "what parse_lines raises for a wrong row",
+      "decided": "invoicer.LineError, a ValueError naming the row, in place of the bare ValueError or decimal.InvalidOperation it let through before; exported from the package with parse_lines",
+      "ground": "Decision N8 needs the row and what is wrong; a caller that caught ValueError still catches it, while one that caught decimal.InvalidOperation for a bad price would not, which no code in the repository does."
+    },
+    {
+      "point": "how a refusal reads and exits",
+      "decided": "The usage line, then `invoicer: error: <file>, row N: <what is wrong and what to write>`, exit code 2, nothing on standard output",
+      "ground": "One way for every refusal (refactor N8), the form argparse already gives a missing --rate, so accounting meets one kind of message."
+    },
+    {
+      "point": "the tests and how to run them",
+      "decided": "23 unittest tests in tests/, run by `python3 -m unittest discover -s tests`, which pyproject.toml's head comment gives",
+      "ground": "No test or runner existed; unittest comes with Python, so the tests need nothing beyond what the command needs (refactor N1.2)."
+    }
+  ]
+}
