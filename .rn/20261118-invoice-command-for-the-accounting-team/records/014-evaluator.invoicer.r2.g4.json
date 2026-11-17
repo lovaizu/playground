@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N2 to N6 in answers-4.json: N5 good; N2, N3, N4, N6 more"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of N2 to N6 answered; ending with done"
     }
   ]
 }
