@@ -1824,6 +1824,106 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: f8b6e6b; doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed after the README generator gave lacks: read the tree at 87db247; README.md N4 decision 0 and N9 decision 2 as held."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer (done) before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit 9f05096."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit 9f05096 message holds the grounds with the person words word for word."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "README.md stays doing; invoicer stays done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "README.md round 1 has no answers yet; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "README.md N4 stays good: read README.md as it stands, no License section and no word on licensing, which the decision asks; the person put readme N4 out of this work."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "N4 decision changed, but the README as it stands meets it, so N4 stays good as the main conversation decided; N9 stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "The change does not touch invoicer, which stays done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote 9f05096: README.md N4 the license (no License section, nothing on licensing) and N9 the spreadsheet program and system (PowerShell named), by user; doing []. Checked again: 86581a1 not an ancestor of HEAD, 0 compiled files tracked."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/1 (README.md), its N4 and N9."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: N9 install steps and saving the lines fit PowerShell by name; README name, N1, N6 stand. README.md line 45 still says Open in Terminal, which the N9 decision now changes for the next round."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Both decisions written over their old text."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "invoicer stays one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked README.md, its N4 and N9: all agree; README as it stands has no License section; line 45 Open in Terminal noted."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: 9f05096; doing []."
     }
   ],
   "kept": {

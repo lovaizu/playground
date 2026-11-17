@@ -610,5 +610,9 @@
       "step": 7,
       "gave": "rn check of done: shortened the opening sentence to 20 words; it still says README.md lacks the template section ## License, which the Cut decision on N4 rules out, so the generator ends lacks."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "lacks"
+  }
 }

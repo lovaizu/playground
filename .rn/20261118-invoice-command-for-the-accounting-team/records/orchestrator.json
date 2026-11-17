@@ -649,6 +649,36 @@
       "of": "orchestrator",
       "step": 4,
       "gave": "README generator stopped at session end after step 3 with uncommitted README.md and images/; resumed it with the person words"
+    },
+    {
+      "of": "gm",
+      "step": 1,
+      "gave": "tree.py send-back gave 1: no sign-off waited; took the words as the answer to the README lacks"
+    },
+    {
+      "of": "gm",
+      "step": 2,
+      "gave": "The person typed words, so no comments to read"
+    },
+    {
+      "of": "gm",
+      "step": 3,
+      "gave": "Resumed the tree-keeper: README N4 no License section and nothing on licensing, N9 PowerShell named plainly, both by user"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked 9f05096: N4 no License section, N9 PowerShell by name, both by user"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Started rn:generator for README.md round 2 with the text the guard gave"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Held the README round 1 evaluator start the guard gave: round 1 ended in lacks and round 2 is making the README now"
     }
   ]
 }
