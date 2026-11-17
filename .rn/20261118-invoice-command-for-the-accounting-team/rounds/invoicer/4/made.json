@@ -1,0 +1,59 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/0",
+      "where": "invoicer/lines.py parse_lines (csv.reader with semicolons, quoted cells read as typed), unchanged this round; tests/test_command.py test_prints_a_description_saved_in_quotes_as_typed, test_prints_a_description_holding_a_semicolon"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/1",
+      "where": "invoicer/command.py --rate PERCENT, required on each run, unchanged this round"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/2",
+      "where": "invoicer/totals.py subtotal, tax, total take Iterable[Line], read once, total reckoning the subtotal once and adding tax_of of it; invoicer/render.py render reads its lines into a list once and prints the figures of invoicer.totals; tests/test_totals.py test_subtotal_of_a_generator_of_lines_adds_its_amounts, test_tax_of_a_generator_of_lines_is_that_of_its_subtotal, test_total_of_a_generator_of_lines_adds_the_tax, test_render_of_a_generator_of_lines_prints_their_subtotal_and_total"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/3",
+      "where": "invoicer/lines.py _WHOLE and _price, unchanged this round; tests/test_command.py test_prints_a_credit_line"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/0",
+      "where": "pyproject.toml [project.scripts] invoicer = invoicer.command:main, and its opening comment on pipx install, unchanged this round"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/1",
+      "where": "pyproject.toml version = 1.5.0, unchanged this round"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/2",
+      "where": ".gitignore leaving out __pycache__, and no compiled file tracked since fcb2254, unchanged this round"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/7/decisions/0",
+      "where": "invoicer/lines.py _line, _price, _quantity, and invoicer/command.py main's refusals, unchanged this round; tests/test_command.py refusal tests"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/7/decisions/1",
+      "where": "invoicer/command.py _rate, unchanged this round; tests/test_command.py test_refuses_a_rate_below_one_as_a_fraction, test_takes_a_rate_of_zero"
+    }
+  ],
+  "more": [
+    {
+      "best_practice": "refactor-code",
+      "condition": "N1",
+      "where": "invoicer/totals.py total, which reckons the subtotal once, so invoicer.total of a generator of 20.00 of lines at 0.19 gives 23.80 as 1.4.0 did; tests/test_totals.py test_total_of_a_generator_of_lines_adds_the_tax, test_render_of_a_generator_of_lines_prints_their_subtotal_and_total"
+    }
+  ],
+  "settled": [
+    {
+      "point": "render given a generator of lines",
+      "decided": "render also takes any iterable of lines, a generator included, reading it into a list once, so it prints the same subtotal, tax and total as for a list",
+      "ground": "render read its lines for the rows and again for each sum, so a generator printed a subtotal of 0 and a total of 0.00 under its rows; the decision \"what it prints\" asks that the printed invoice and the package's subtotal and total give the same figures, which fails for render as it did for total."
+    },
+    {
+      "point": "how total reads its lines once",
+      "decided": "total reckons the subtotal once and adds the tax of that subtotal by tax_of, rather than calling subtotal and tax, which each read the lines",
+      "ground": "It keeps the one reckoning in invoicer/totals.py that the decision asks for, and needs no copy of the lines."
+    }
+  ]
+}
