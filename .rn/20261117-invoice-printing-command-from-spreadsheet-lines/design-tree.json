@@ -23,13 +23,18 @@
             },
             {
               "about": "who sets the command up for the team",
-              "decided": "A developer installs Python and invoicer on the accounting team's machines; the team doesn't install anything.",
+              "decided": "A developer installs Python and invoicer on each accountant's machine; the accountant installs nothing.",
               "by": "user"
             },
             {
               "about": "the roles",
-              "decided": "Two roles: the accountant, one on the accounting team who prints a client's invoice; and the installer, a developer who sets the command up on the accountants' machines. The vision names each thing one way throughout: `invoicer` for the product, invoicer's command for what the accountant runs, `accountant` for one who prints, and the accountant's machine for where it runs.",
+              "decided": "Two roles: the accountant, one on the accounting team who prints a client's invoice; and the installer, a developer who sets up invoicer's command on each accountant's machine.",
               "by": "user"
+            },
+            {
+              "about": "the names the vision uses",
+              "decided": "The vision names each thing one way throughout: `invoicer` for the product, invoicer's command for what the accountant runs, `accountant` for one who prints, and the accountant's machine for where it runs.",
+              "by": "reasoning"
             }
           ]
         },
@@ -92,12 +97,12 @@
             },
             {
               "about": "the ideas",
-              "decided": "Their sheet as it is: the command takes the lines as the accountant already keeps them, so there's no new format to learn. Nothing wrong prints: where a line or the rate can't be read, nothing prints, and the message says which line or value to fix. The rate is given each time an invoice is printed; no rate is remembered per client. Each sentence of an idea states one point.",
+              "decided": "Their sheet as it is: the command takes the lines as the accountant already keeps them, so there's no new format to learn. Nothing wrong prints: where a line or the rate can't be read, nothing prints, and the message says which line or value to fix. The rate is given each time an invoice is printed; no rate is remembered per client.",
               "by": "user"
             },
             {
               "about": "the moments of use",
-              "decided": "The installer installs Python and invoicer on an accountant's machine and sees the command run, with nothing to configure, since the command takes the sheet as it is and the rate at each print; the accountant gives the command the lines and the client's rate; the invoice prints, or a message says what to fix and the accountant fixes it and runs it again.",
+              "decided": "The installer installs Python and invoicer on an accountant's machine and sees the command run, with nothing to configure, since the command takes the sheet as it is and the rate each time they print an invoice; the accountant gives the command the lines and the client's rate; the invoice prints, or a message says what to fix and the accountant fixes it and runs it again.",
               "by": "reasoning"
             }
           ]
