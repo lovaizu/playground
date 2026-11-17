@@ -4,6 +4,11 @@
       "of": "generator",
       "step": 1,
       "gave": "Read the Cut with its six decisions and no More, the stub README, pyproject.toml, the invoicer code and tests, the design tree and the earlier README records. The people: accounting colleagues on Windows laptops with Microsoft 365 Excel, who save an invoice lines from Excel and print the invoice at the client rate in PowerShell with no Python; and the developer who does the one-time pipx setup on each accounting machine and checks that it works."
+    },
+    {
+      "of": "generator",
+      "step": 2,
+      "gave": "Read readme best-practice.md with template.md, and refactor-doc best-practice.md, to their end before any change."
     }
   ]
 }
