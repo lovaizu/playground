@@ -1,0 +1,96 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/0",
+      "where": "Roles, Developer: the people who call invoicer as a library from their own code; Objectives and key results, O2 with KR2.1 and KR2.2: their own code keeps giving the results it gave before; Concept, the ideas One rounding everywhere and The command adds to invoicer without changing it."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/1",
+      "where": "Roles, Developer: they install the command once for the accounting team; Objectives and key results, O3 with KR3.1 and KR3.2, which count only that install."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/0",
+      "where": "Roles, Accounting team: only who they are and that they print each client's invoice with the command; the Concept ideas Invoice lines from the spreadsheet and Tax rate set at each print alone say where the invoice lines come from and that the rate is set at each print; the names invoice lines and their own code throughout, KR1.2 and KR2.1 included."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/0",
+      "where": "Objectives and key results, under the key results: the numbered list KR2.1, KR1.1, KR3.1, KR1.2, KR2.2, KR3.2, then the sentences The developers keep a change only if no key result ranked before the one it improves gets worse. Key results have no targets. A measure made a target stops being a good measure, by Goodhart's law."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/4/decisions/0",
+      "where": "Objectives and key results: O1 alone holds printing without asking a developer; O3 and KR3.1 count only the developer's one install and the command running; Concept, the idea One rounding everywhere, for O2, which says the developers' own code keeps its totals and the printed total, which O1 takes, matches what's owed."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/0",
+      "where": "Concept: the one way invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the math, and the ideas Invoice lines from the spreadsheet, Tax rate set at each print and never saved per client, and One rounding everywhere, in the person's words."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/1",
+      "where": "Concept: the ideas A print that goes wrong tells the accounting team what to fix, in their words, for O1, and The command adds to invoicer without changing it, for O2, as worded; no idea for the install."
+    }
+  ],
+  "more": [
+    {
+      "best_practice": "product-vision",
+      "condition": "N5",
+      "where": "Objectives and key results: O3 is a developer installs the command once, and the command runs for the accounting team from then on, and KR3.1 is the share of installs that end without the command running for the accounting team, so printing without a developer counts under O1 alone; Concept: One rounding everywhere names O2 alone, and every idea names one objective."
+    },
+    {
+      "best_practice": "refactor-doc",
+      "condition": "N4",
+      "where": "Objectives and key results: the numbered list of all six key results, first to last, so any two compare by their place."
+    },
+    {
+      "best_practice": "refactor-doc",
+      "condition": "N5",
+      "where": "Objectives and key results, after the numbered list: four sentences of one point each, with the developers as the subject of the keep rule, ranked before the one it improves in place of none before it, and no targets and Goodhart's law as two sentences."
+    },
+    {
+      "best_practice": "refactor-doc",
+      "condition": "N7",
+      "where": "Concept, the ideas Invoice lines from the spreadsheet and Tax rate set at each print and never saved per client; Roles and KR1.2 no longer name the spreadsheet or the rate."
+    },
+    {
+      "best_practice": "refactor-doc",
+      "condition": "N8",
+      "where": "Throughout: invoice lines for the lines from the spreadsheet (Roles' spreadsheet lines and the idea's a line in the spreadsheet replaced), and their own code for what the developers write (O2's own programs and KR2.1's existing library calls replaced)."
+    },
+    {
+      "best_practice": "product-vision",
+      "condition": "N6",
+      "where": "Concept: the ideas A print that goes wrong tells the accounting team what to fix, in their words, for the moment a print goes wrong, and The command adds to invoicer without changing it, for an update of invoicer under their own code, beside the ideas for taking the invoice lines, setting the rate, and the totals."
+    }
+  ],
+  "settled": [
+    {
+      "point": "how O3 and its key results count only the one install",
+      "decided": "O3 reads a developer installs the command once, and the command runs for the accounting team from then on; KR3.1 becomes the share of installs that end without the command running for the accounting team, in place of the share after which the accounting team asks a developer for help.",
+      "ground": "The N5 decision gives O3 only the developer's one install and O1 alone the accounting team printing without help; the old O3 and KR3.1 counted the accounting team's help, so product-vision N4.2 asks a how-well share of the install task itself."
+    },
+    {
+      "point": "where KR1.2's print task starts",
+      "decided": "KR1.2 is the time from starting a client's invoice to holding it printed, fixing invoice lines included.",
+      "ground": "The N3 decision keeps the source of the invoice lines in the Concept alone, so KR1.2 no longer names the spreadsheet; fixing lines is part of the task, as product-vision N4.3 counts the role's own time and the new idea has the accounting team fix a bad line and print again."
+    },
+    {
+      "point": "the ranking as a numbered list",
+      "decided": "The six key results stand in a numbered list, first to last, under The key results rank in this order, first to last.",
+      "ground": "refactor-doc N4.1 gives an order a numbered list, and the More asks that a developer see the whole order at a glance."
+    },
+    {
+      "point": "five ideas in the concept",
+      "decided": "The Concept keeps all five ideas, past the template's at most three.",
+      "ground": "The person decided both new ideas join the concept as worded, and each holds the one way at a moment no other idea covers (product-vision N6.7)."
+    },
+    {
+      "point": "the one names inside the person's wording of the new ideas",
+      "decided": "The new ideas say the accounting team for the team, an invoice line for a line in the spreadsheet, and the developers and their own code for you and your own code; the rest is as worded.",
+      "ground": "The N3 decision gives one name to each thing, invoice lines and their own code, and refactor-doc N8.4 writes each kept name the same way each time; the vision speaks of the developers, not to them."
+    },
+    {
+      "point": "the rounding idea's sentences",
+      "decided": "The rounding idea keeps the person's sentence and splits what it gives into two: the developers' own code keeps the totals it got before, and the printed total matches what's owed.",
+      "ground": "The N5 decision has the rounding serve O2, with O1 taking its totals from it, so its gift to O2 is said first; refactor-doc N5.1 gives one point to each sentence. The passives in the person's accepted draft stay, as they accepted it as written."
+    }
+  ]
+}
