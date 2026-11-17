@@ -1,0 +1,26 @@
+{
+  "good": [
+    {
+      "question": "N1",
+      "lines": [
+        "invoicer/command.py:1 \"\"\"What the `invoicer` command takes from whoever runs it, and what it prints.\"\"\"",
+        "invoicer/lines.py:1 \"\"\"The lines of an invoice, and which rows of text, `<description>;<price>;<quantity>`, give one.\"\"\"",
+        "invoicer/render.py:1 \"\"\"The layout of the invoice as text.\"\"\"",
+        "invoicer/tax.py:1 \"\"\"The rounding to the cent of an amount, and of the tax of an amount.\"\"\"",
+        "invoicer/totals.py:1 \"\"\"The amounts that an invoice states, each to the cent: each line's, the subtotal, the tax, and",
+        "invoicer/totals.py:2 the total, which the printed invoice and the package's callers both take from here. Each function",
+        "invoicer/__init__.py:1 \"\"\"invoicer: the lines of an invoice, their totals with tax, and the invoice as text.\"\"\""
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N2",
+      "good_when": "Whoever builds on the invoicer package, such as a colleague scripting the month's invoices for accounting, learns from what `render` and `tax_of` say beside their names alone what to pass as the rate, 0.19 or 19 for a client taxed at 19%, what kinds of values they take and give, and what `render`'s currency is for and which values it takes, so that they never print an invoice at a hundred times, or a hundredth of, the client's tax without noticing, as they can today unless they read the bodies down to invoicer.totals."
+    },
+    {
+      "question": "N3",
+      "good_when": "Everything the invoicer does is something the colleague from accounting or a caller of the package was promised and that a test shows still holds: today `render` takes a currency that no case asks for or checks, so the printed invoice says EUR for every client, a client billed in another currency included, with nothing telling whether another currency would print right, and a line built with no quantity counts as one, which no case asks for either; once good, each such thing is either one that a case names and checks, or gone."
+    }
+  ]
+}
