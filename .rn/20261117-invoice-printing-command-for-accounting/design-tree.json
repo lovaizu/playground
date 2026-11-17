@@ -14,7 +14,7 @@
       "necessary_conditions": [
         {
           "id": "N1",
-          "good": true,
+          "good": false,
           "decisions": [
             {
               "about": "the roles besides the accounting team",
@@ -30,11 +30,11 @@
         },
         {
           "id": "N2",
-          "good": true,
+          "good": false,
           "decisions": [
             {
               "about": "each objective with its role as subject",
-              "decided": "O2 has the developers as its subject: they keep their own code giving the same results through each update of invoicer, without editing it. O3 states what the developer is left with: the accounting team prints on a command the developer installed once.",
+              "decided": "O2 has the developers as its subject: they keep their own code giving the same results through each update of invoicer, without editing it. O3 states what the developer is left with in their own work: a command they install once and never need to set up again; printing stays O1's alone.",
               "by": "reasoning"
             }
           ]
