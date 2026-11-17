@@ -4,6 +4,11 @@
       "of": "generator",
       "step": 1,
       "gave": "Read the Cut, docs/product-vision.md as it stands, no inputs, no More kept. Its people are the developers of invoicer, who know from it whom invoicer serves: the accounting team, who print each client invoice at that client tax rate from their invoice lines without asking a developer, and the developers, who call the library from their own code, keep its behavior, and install the command once."
+    },
+    {
+      "of": "generator",
+      "step": 2,
+      "gave": "Read product-vision best-practice.md with its template.md, and refactor-doc best-practice.md, to their end before any change."
     }
   ]
 }
