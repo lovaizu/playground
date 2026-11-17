@@ -66,7 +66,7 @@
           "decisions": [
             {
               "about": "the ranking of the key results",
-              "decided": "The template's ranking paragraph, naming the first key results in the order KR2.1, KR1.1 and KR3.1 come first, then KR1.2, KR2.2 and KR3.2 in the order the document lists them; the template's sentence on no targets and Goodhart's law stays as the template writes it.",
+              "decided": "The template's ranking paragraph, naming the first key results in the order KR2.1, KR1.1 and KR3.1 come first; the template's sentence on no targets and Goodhart's law stays as the template writes it.",
               "by": "reasoning"
             },
             {
@@ -99,11 +99,6 @@
             {
               "about": "the concept: the one way and its ideas",
               "decided": "The one way: invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the math. Its three ideas: invoice lines from the spreadsheet, for O1: the accounting team prints from the invoice lines they keep, and the command names any bad line and what's wrong; tax rate set at each print and never saved per client, for O1: the accounting team sets the tax rate anew for each invoice they print, so each client gets their own rate; same results for developers' own code, for O2: the command only calls the library, which rounds tax to the cent the same way every time. The install takes no idea.",
-              "by": "user"
-            },
-            {
-              "about": "no idea for the install, kept as a departure",
-              "decided": "The concept holds no idea for the install, as the person chose.",
               "by": "user"
             }
           ]
