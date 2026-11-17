@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "evaluator",
+      "step": 1,
+      "gave": "Read the invoicer as its maintainers meet it: pyproject.toml, README.md, the five modules of invoicer, tests/test_command.py and tests/test_lines.py"
+    }
+  ]
+}
