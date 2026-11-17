@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "evaluator",
+      "step": 1,
+      "gave": "Read invoicer 1.5.0 as its callers meet it (package, command, pyproject, README), ran its 70 tests (OK), and compared each function with 1.4.0 on main"
+    }
+  ]
+}
