@@ -484,6 +484,11 @@
       "of": "generator",
       "step": 5,
       "gave": "Tried in a throwaway copy as a developer installs it and accounting runs it: installed from the repository into a fresh environment, a file saved as CSV UTF-8 with a byte order mark, CRLF, a quoted cell with doubled quotes, a quoted cell holding ;, an empty row ;; and a discount printed the invoice to the cent at --rate 19 and 0%, exit 0; a heading row was refused with exit 2 and the message to save without it; the 62 tests pass. Nothing to mend."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Wrote the Made in rounds/invoicer/3/made.json: where each of the 9 decisions and the 4 Mores kept land, and 5 points settled with their grounds; it says that the 8 tracked compiled files are not yet untracked."
     }
   ]
 }

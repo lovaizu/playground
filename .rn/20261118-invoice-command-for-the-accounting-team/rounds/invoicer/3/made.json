@@ -1,0 +1,89 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/0",
+      "where": "invoicer/lines.py parse_lines reads the rows by csv.reader with ; over io.StringIO(text, newline=\"\"), so a quoted cell with doubled quotes, a ; or a new row of text reads as typed, and a row of empty cells such as ;; gives no line; its docstring says so. Tests: test_command.py test_prints_a_description_saved_in_quotes_as_typed, test_prints_a_description_holding_a_semicolon, test_skips_a_row_whose_cells_are_all_empty; test_lines.py test_reads_a_cell_saved_in_quotes_as_typed, test_reads_a_cell_holding_a_semicolon_saved_in_quotes, test_numbers_a_row_after_a_cell_holding_a_new_row, test_skips_a_row_of_empty_cells."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/1",
+      "where": "invoicer/command.py: the required --rate PERCENT of each run, read by _rate and passed to render; unchanged this round."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/2",
+      "where": "invoicer/totals.py line_amount, subtotal, tax and total are the one place the stated amounts are reckoned, each to the cent; invoicer/render.py takes each row's amount, the subtotal, the tax and the total from there and only lays them out (_row); invoicer/__init__.py exports the same subtotal and total. Tests: tests/test_totals.py, and the existing test_command.py amount tests."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/3",
+      "where": "invoicer/lines.py: a negative price and a quantity of 0 or below are still read (_WHOLE allows a minus, _price only bounds the size); test_command.py test_prints_a_credit_line and the test_lines.py credit and discount tests still pass."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/0",
+      "where": "pyproject.toml [project.scripts] invoicer = invoicer.command:main, with setuptools, and its opening comment on pipx install; installed from the repository into a fresh environment and run in a throwaway copy."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/1",
+      "where": "pyproject.toml version = 1.5.0, with a comment saying what 1.5.0 adds and changes from 1.4.0; the note Changed in 1.5.0 in the docstrings of invoicer/render.py render, invoicer/lines.py parse_lines, invoicer/totals.py subtotal and total."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/2",
+      "where": ".gitignore leaves __pycache__/ out, so no new compiled file is committed. Not yet carried out: the 8 compiled files that 314d881 committed under invoicer/__pycache__ and tests/__pycache__ are still tracked; untracking them needs git rm, which the generator may not run."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/7/decisions/0",
+      "where": "invoicer/lines.py _line refuses a first row that isn't blank with neither price nor quantity a number as a heading, saying to save the lines without the heading row, and refuses an empty description, each with the row number, which command.py prints as one line after the file name with exit 2 and nothing printed. Folder, unreadable file, too large a number, and more than three fields stay as before. Tests: test_command.py test_refuses_a_heading_row_asking_to_leave_it_out, test_refuses_a_row_with_an_empty_description; test_lines.py test_refuses_a_heading_row_naming_it, test_refuses_a_wrong_price_on_the_first_row_as_a_price, test_refuses_a_row_after_the_first_as_a_price_not_a_heading, test_refuses_an_empty_description_naming_the_row."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/7/decisions/1",
+      "where": "invoicer/command.py _rate: refuses a rate above 0 and below 1, with or without %, asking for the percent, and takes 0 for an invoice with no tax; unchanged this round, with its tests in test_command.py."
+    }
+  ],
+  "more": [
+    {
+      "best_practice": "code",
+      "condition": "N8",
+      "where": "invoicer/lines.py parse_lines reads quoted cells by csv as the spreadsheet writes them, so the description prints as typed and a quoted ; gives three fields; _line refuses a heading row with a message to leave it out, and an empty description with a message to write what the line is for."
+    },
+    {
+      "best_practice": "code",
+      "condition": "N1",
+      "where": "invoicer/totals.py, whose opening says it alone decides the stated amounts, reckons the line amounts, subtotal, tax and total; invoicer/render.py no longer reckons any and its opening says it decides the layout."
+    },
+    {
+      "best_practice": "refactor-code",
+      "condition": "N7",
+      "where": "The subtotal and total rule is written once, in invoicer/totals.py; render.py and the package's subtotal and total both use it, so they cannot differ by a cent; tests/test_totals.py test_render_prints_the_subtotal_and_total_that_the_package_gives pins it."
+    },
+    {
+      "best_practice": "refactor-code",
+      "condition": "N1",
+      "where": "pyproject.toml version 1.5.0 with its comment, and the note Changed in 1.5.0 in the docstrings of render, parse_lines, subtotal and total, saying what 1.4.0 gave."
+    }
+  ],
+  "settled": [
+    {
+      "point": "how a row is split into cells",
+      "decided": "By Python's csv module with ; as the separator, over the text with newline left to csv",
+      "ground": "The lines' form decision asks that a quoted cell read as the colleague typed it; csv reads the quoting a spreadsheet writes, and keeps the row numbers the spreadsheet shows even where a cell holds a new row of text."
+    },
+    {
+      "point": "a row whose cells are all empty",
+      "decided": "Skipped as a blank row, such as ;; or ; ; ",
+      "ground": "A spreadsheet saves an empty row inside the lines as ;;, which the colleague sees as an empty row, not a wrong line; 1.4.0 and round 2 refused it as a wrong price."
+    },
+    {
+      "point": "how a heading row is told from a wrong row",
+      "decided": "The first row that isn't blank, where neither its price nor its quantity is a number",
+      "ground": "A heading sits on top and names its columns in words; a first row with only a mistyped price, or a later row, keeps the price message, so a colleague who mistyped is never told to remove a heading."
+    },
+    {
+      "point": "where the stated amounts live",
+      "decided": "invoicer/totals.py offers line_amount, subtotal, tax and total, each to the cent; render.py only lays them out",
+      "ground": "The decision asks for one place used by both the printed invoice and the package's subtotal and total; totals.py already held the package's ones, and tax.py keeps the rounding."
+    },
+    {
+      "point": "how callers of 1.4.0 learn what changed",
+      "decided": "A comment above the version in pyproject.toml, and a note Changed in 1.5.0 in each changed docstring",
+      "ground": "The repository has no changelog, and these are where a caller looks at the version and at the name it calls."
+    }
+  ]
+}
