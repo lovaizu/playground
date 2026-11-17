@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N1, N2 and N3 of the product-vision best practice, with their reasons and practices."
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N1, N2 and N3 as good, each with the lines that meet it, in answers-0.json."
     }
   ]
 }
