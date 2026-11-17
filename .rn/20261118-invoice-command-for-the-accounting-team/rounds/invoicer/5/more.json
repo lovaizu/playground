@@ -1,0 +1,1 @@
+[{"best_practice": "code", "condition": "N8", "decision": "deliverables/0/necessary_conditions/7/decisions/0", "good_when": "A cell whose opening quotation mark never closes, typed by hand or left by a copy and paste, makes a long file stop with a Python traceback (`_csv.Error: field larger than field limit`), and in a short file the message hides the mark that caused it."}]

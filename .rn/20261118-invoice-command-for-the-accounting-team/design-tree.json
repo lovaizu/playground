@@ -24,7 +24,7 @@
         },
         {
           "id": "N3",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "the lines' form",
@@ -90,7 +90,7 @@
           "decisions": [
             {
               "about": "a wrong line",
-              "decided": "Refused before anything is printed, with one line naming the row or the file and what to fix, never a Python traceback: also for a folder or a file that can't be read in place of the saved file, a number too large to print, a row of more than three fields, an empty description, and a heading row, with a message to leave the heading out",
+              "decided": "Refused before anything is printed, with one line naming the row or the file and what to fix, never a Python traceback: also for a folder or a file that can't be read in place of the saved file, a number too large to print, a row of more than three fields, an empty description, a heading row, with a message to leave the heading out, and a quotation mark that never closes, naming the row where it opens",
               "by": "reasoning"
             },
             {
