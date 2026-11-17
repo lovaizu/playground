@@ -4,6 +4,11 @@
       "of": "generator",
       "step": 1,
       "gave": "Read the Cut, README.md as it stands, invoicer/lines.py and command.py: its people are accounting colleagues who save invoice lines from Excel and type one command in PowerShell with the client tax rate, writing no Python, and the developer who does the one-time pipx setup. This round adds to N9 how accounting keeps the price column free of thousands grouping in Excel and what to do when a row is refused for it, quoting the message; the rest stands."
+    },
+    {
+      "of": "generator",
+      "step": 2,
+      "gave": "Read readme best-practice.md N1 to N10 with template.md, and refactor-doc best-practice.md N1 to N8, before any change."
     }
   ]
 }
