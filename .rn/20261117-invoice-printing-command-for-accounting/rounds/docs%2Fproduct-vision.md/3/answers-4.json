@@ -1,0 +1,30 @@
+{
+  "good": [
+    {
+      "question": "N6",
+      "lines": [
+        "## Objectives and key results",
+        "- Accounting team\\",
+        "  The people who print each client's invoice with invoicer's command.",
+        "- Developer\\",
+        "  The people who call invoicer's library from their own code, and install the command once for the",
+        "invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the",
+        "  The command only calls the library, which rounds tax to the cent the same way every time."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N3",
+      "good_when": "A developer reading from the top understands each sentence without knowing anything the page hasn't told them yet: they know which spreadsheet the accounting team's invoice lines come from before the page calls it 'the spreadsheet', and they know what 'before' means in O2 (the results their code gave before they updated invoicer) when they read O2, not only once they reach its key results."
+    },
+    {
+      "question": "N4",
+      "good_when": "A developer who weighs a change sees at a glance the order in which the key results come, first, second, and third, and that a change is kept only when no key result earlier in that order gets worse, without decoding a comma-separated run of IDs in a sentence."
+    },
+    {
+      "question": "N5",
+      "good_when": "A developer, or a machine translation of the page, reads each sentence one way only: the priority sentence says in one sentence which key result comes first, second, and third, and in another sentence when a change is kept; and the sentence on same results says plainly whether the command does nothing but call the library or calls nothing but the library, with the library's rounding told as its own point."
+    }
+  ]
+}

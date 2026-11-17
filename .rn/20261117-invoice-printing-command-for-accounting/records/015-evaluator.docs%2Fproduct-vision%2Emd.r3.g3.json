@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N2 in good and N1 in more: the precedence rule among key results shows in no heading or first sentence."
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group is answered; ending with done."
     }
   ]
 }
