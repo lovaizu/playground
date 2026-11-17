@@ -2,7 +2,7 @@
 
 `invoicer` is a PowerShell command that prints an invoice from rows saved in Excel, at the tax rate you type.
 
-`invoicer` is for you when you work in accounting, bill clients from invoice lines kept in Excel, and write no Python. With it, you print each client's invoice at their tax rate yourself, without asking a developer.
+`invoicer` is for you when you work in accounting, bill clients from invoice lines in Excel, and write no Python. With it, you print each client's invoice at their tax rate yourself, without asking a developer.
 
 ## Non-goals
 

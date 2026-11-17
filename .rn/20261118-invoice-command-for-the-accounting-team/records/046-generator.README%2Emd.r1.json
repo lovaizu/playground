@@ -604,6 +604,11 @@
       "of": "generator",
       "step": 6,
       "gave": "Wrote the Made in rounds/README.md/1/made.json: where each of the six Cut decisions lands, and six points settled with their grounds: the main.zip URL, the colleague Windows account, the four Non-goals, Open in Terminal, the three doubts, help in the issues."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "rn check of done: shortened the opening sentence to 20 words; it still says README.md lacks the template section ## License, which the Cut decision on N4 rules out, so the generator ends lacks."
     }
   ]
 }
