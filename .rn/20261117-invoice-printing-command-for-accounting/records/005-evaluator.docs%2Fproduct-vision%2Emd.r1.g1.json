@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read docs/product-vision.md as the developers meet it: Roles, three objectives with two key results each, and Concept."
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N4 (key results for how well and how fast, each with a better direction) and N5 (distinct objectives, each piece of work serving one) with their reasons and practices."
     }
   ]
 }
