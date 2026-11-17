@@ -2,15 +2,15 @@
   "decisions": [
     {
       "path": "deliverables/0/necessary_conditions/0/decisions/0",
-      "where": "docs/product-vision.md, Roles: the Developer role, who call invoicer as a library from their own code, beside the Accounting team; Objectives and key results: O2 (the developers' own programs keep giving the invoices they gave before) with KR2.1 (the share of existing library calls that give a different result after a change) and KR2.2 (the edits a developer makes to keep their code working); Concept: the One rounding everywhere idea, for O1 and O2."
+      "where": "docs/product-vision.md, Roles: the Developer role, the people who call invoicer as a library from their own code, beside the Accounting team; Objectives and key results: O2 (the developers' own programs keep giving the invoices they gave before), with KR2.1 (the share of existing library calls that give a different result after a change to invoicer) and KR2.2 (the edits a developer makes to keep their own code working); Concept: the One rounding everywhere idea, for O1 and O2."
     },
     {
       "path": "deliverables/0/necessary_conditions/0/decisions/1",
-      "where": "docs/product-vision.md, Roles: the Developer role installs the command once for the accounting team, and the Accounting team role prints without touching Python tooling; Objectives and key results: O3 (a developer installs the command once, and after that the accounting team's invoices take none of the developer's time) with KR3.1 and KR3.2."
+      "where": "docs/product-vision.md, Roles: the Developer role installs the command for the accounting team, so installing needs no role of its own; Objectives and key results: O3 (a developer installs the command once, and after that the accounting team's invoices take none of the developer's time), with KR3.1 (installs after which the accounting team asks a developer for help) and KR3.2 (the developer's time to install). That the accounting team never touches Python tooling, and that the README tells them only how to run the command, is for the README; the vision states only the developer's end."
     },
     {
       "path": "deliverables/0/necessary_conditions/5/decisions/0",
-      "where": "docs/product-vision.md, Concept: the one way as its first sentence, word for word as accepted, then the three ideas: Lines from the spreadsheet (nothing retyped), Tax rate set at each print (not saved per client, so each client gets an invoice at their own rate), and One rounding everywhere (the command and the library round the tax to the cent the same way, so the printed total matches what the client owes). The ideas are reworded only into active voice, as the repository's commit check asks, with each fact kept."
+      "where": "docs/product-vision.md, Concept: the one way as its first sentence, word for word as the person accepted it, then the three ideas: Lines from the spreadsheet (no one retypes a line), Tax rate set at each print and never saved per client (each client gets their own rate), and One rounding everywhere (the command and the library always round tax to the cent alike, so printed totals match what clients owe). The ideas are reworded only to sentences of at most 20 words in active voice, as rn's template check and the repository's commit check ask, with each fact kept."
     }
   ],
   "more": [],
@@ -18,17 +18,17 @@
     {
       "point": "the roles' names",
       "decided": "Accounting team and Developer.",
-      "ground": "The goal and the person's answers use these words, and the vision's readers, invoicer's developers, use them too (refactor-doc N6); each role clause states the part of the job they come for (product-vision N1.2)."
+      "ground": "The goal and the person's answers use these words, and the vision's readers, invoicer's developers, use them too (refactor-doc N6); each role's clause states the part of the job they come for (product-vision N1.2)."
     },
     {
       "point": "the objectives",
       "decided": "Three: O1 the accounting team bills each client what that client owes, without asking a developer; O2 the developers' own programs keep giving the invoices they gave before; O3 a developer installs the command once, and after that the accounting team's invoices take none of the developer's time.",
-      "ground": "Product-vision N2: O1 comes from the goal; O2 from the person's words that the library behavior stays; O3 from the decision that installing belongs to the developer role. Each can be reached without the others, and each planned piece of work serves one (N5): the print command, the rate at print, and the README for O1; the library behavior kept for O2; the one install for O3."
+      "ground": "Product-vision N2: O1 comes from the goal, O2 from the person's words that the library behavior stays, and O3 from the decision that installing belongs to the developer role. Each can be reached without the others, and each planned piece of work serves one (N5): the print command, the rate at each print, and the README for O1; the library behavior kept for O2; the one install for O3."
     },
     {
       "point": "the key results",
-      "decided": "For each objective, how well as the share of tasks that fail, then how fast; all lower is better, no targets. KR1.1 print tasks ending with no invoice, a wrong total, or a developer asked; KR1.2 time from taking a client's lines to holding the printed invoice; KR2.1 existing library calls giving a different result after a change; KR2.2 edits a developer makes to their own code after updating invoicer; KR3.1 installs after which the accounting team asks a developer for help; KR3.2 the developer's time to install.",
-      "ground": "Product-vision N4: a run shows the failures, so how well counts the share that fails; KR2.2 counts the developer's edits, not time, since the time depends mostly on their own code; each key result is counted from what an end-to-end run records."
+      "decided": "For each objective, how well as the share of tasks that fail, then how fast; all lower is better, with no targets. KR1.1 print tasks that end without the right invoice, or with a developer's help; KR1.2 the time from taking a client's lines to holding the printed invoice; KR2.1 existing library calls that give a different result after a change; KR2.2 the edits a developer makes to their own code after updating invoicer; KR3.1 installs after which the accounting team asks a developer for help; KR3.2 the developer's time to install.",
+      "ground": "Product-vision N4: a run shows the failures, so how well counts the share that fails; KR2.2 counts the developer's edits, not time, since the time depends mostly on their own code; an end-to-end run records what each key result is counted from."
     },
     {
       "point": "an idea for the install moment",
@@ -36,9 +36,9 @@
       "ground": "Product-vision N6.5: no total is made while a developer installs the command, so the one way needs no idea to hold there, and adding one would mean asking the person for an idea that no moment needs."
     },
     {
-      "point": "a first sentence under each heading",
-      "decided": "Roles opens with 'invoicer serves two kinds of people, each with a goal of their own.'; Objectives and key results opens with what an objective and its two key results are; Concept follows its one way with a line that the three ideas keep it holding.",
-      "ground": "Refactor-doc N1.7: the first sentence under each heading says what the section gives the reader."
+      "point": "the ranking line's key result names",
+      "decided": "The template's ranking line names each first key result: 'KR1.1, KR2.1, KR3.1 comes first'.",
+      "ground": "The template's `KR<n>.1` stands for a number, and rn's template check takes the first key results by number; the rest of the line stays as the template writes it."
     }
   ]
 }

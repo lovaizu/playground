@@ -1,8 +1,10 @@
 {
   "record": ".rn/20261117-invoice-printing-command-for-accounting/records/003-generator.docs%2Fproduct-vision%2Emd.r1.json",
-  "step": 6,
+  "step": 7,
   "work": [
     ".rn/20261117-invoice-printing-command-for-accounting/records/003-generator.docs%2Fproduct-vision%2Emd.r1.json",
-    ".rn/20261117-invoice-printing-command-for-accounting/rounds/docs%2Fproduct-vision.md/1/made.json"
+    ".rn/20261117-invoice-printing-command-for-accounting/rounds/docs%2Fproduct-vision.md/1/made.json",
+    ".rn/20261117-invoice-printing-command-for-accounting/rounds/docs%2Fproduct-vision.md/1/try.jsonl",
+    "docs/product-vision.md"
   ]
 }
