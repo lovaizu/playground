@@ -1,0 +1,71 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/0",
+      "where": "docs/product-vision.md, Roles: the accountant's line, \"prints a client's invoice from their spreadsheet, at that client's tax rate\"; and the Concept's one way, \"takes the invoice lines as the accountant keeps them, plus the client's tax rate, and returns the finished invoice\"."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/1",
+      "where": "docs/product-vision.md, Roles: the installer's line, \"A developer who installs Python and invoicer on the accounting team's machines, so the team installs nothing\"."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/2",
+      "where": "docs/product-vision.md, Roles: the two items `accountant` and `installer`, each with who they are."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/1/decisions/0",
+      "where": "docs/product-vision.md, Objectives and key results: `O1`."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/1/decisions/1",
+      "where": "docs/product-vision.md, Objectives and key results: `O2`."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/0",
+      "where": "docs/product-vision.md, Objectives and key results: each task is the span its key results measure, from opening the spreadsheet to the printed invoice (`KR1.2`), and from starting a setup to the command running for the accountant (`KR2.1`, `KR2.2`)."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/1",
+      "where": "docs/product-vision.md, Objectives and key results: `KR1.1`, `KR1.2`, `KR2.1`, `KR2.2`, each with \"Lower is better.\"; the paragraph below them ranks `KR1.1` and `KR2.1` first and states that key results have no targets."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/4/decisions/0",
+      "where": "docs/product-vision.md, Objectives and key results: `O1` (the accountant's end, which the command and the README's part for the accountant serve) and `O2` (the installer's end, which the README's setup section serves) stand as two objectives, so each piece serves one. The vision lists no pieces of work, since the template has no place for them; the plan names them."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/0",
+      "where": "docs/product-vision.md, Concept: the first sentence, \"`invoicer` takes the invoice lines as the accountant keeps them, plus the client's tax rate, and returns the finished invoice.\""
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/1",
+      "where": "docs/product-vision.md, Concept: the three ideas \"Their spreadsheet as it is\", \"Nothing wrong prints\", and \"Rate given each time\", each with what it gives."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/2",
+      "where": "docs/product-vision.md, Concept: \"Their spreadsheet as it is\" and \"Rate given each time\" are for `O1` and `O2`, and each says the installer configures none, which holds the installer's setup moment; \"Nothing wrong prints\" holds the moment the invoice prints or the command names what to fix. The vision doesn't list the moments, since the template has no place for them."
+    }
+  ],
+  "more": [],
+  "settled": [
+    {
+      "point": "the product's name in the vision",
+      "decided": "The title and the Concept name the product `invoicer`.",
+      "ground": "The Cut's decisions name invoicer as what the installer installs, and the command lives in invoicer. The repository's README names no other product."
+    },
+    {
+      "point": "which objectives the first and third ideas serve",
+      "decided": "\"Their spreadsheet as it is\" and \"Rate given each time\" are marked for `O1` and `O2`. \"Nothing wrong prints\" is marked for `O1` only.",
+      "ground": "The moments decision says the installer configures nothing because the command takes the spreadsheet as it is and the rate at each print. So those two ideas also hold O2. The template lets one idea name several objectives joined by \"and\"."
+    },
+    {
+      "point": "the ranking sentence with two objectives",
+      "decided": "The template's ranking sentence names both `KR1.1` and `KR2.1`, joined by \"and\", as the first key result of each objective.",
+      "ground": "N4.5 ranks how well before how fast within each objective. The template's code span `KR<n>.1` may stand for several joined by \"and\". The verb \"comes\" is the template's fixed word, so it stays singular."
+    },
+    {
+      "point": "the wording of the ideas within 20 words a sentence",
+      "decided": "The ideas are shortened as follows. The accountant learns no new format, and the installer configures none. An unreadable line or rate stops the print, and the command names what to fix. The accountant gives each invoice its rate, and the installer configures none.",
+      "ground": "The template check caps each sentence at 20 words, counting an idea's name and what it gives as one sentence. Each shortened idea keeps the person's meaning. Nothing wrong prints, and the message says which line or value to fix. No rate is kept per client."
+    }
+  ]
+}
