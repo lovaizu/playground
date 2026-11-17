@@ -419,6 +419,15 @@
       "of": "generator",
       "step": 6,
       "gave": "Made written: where each of the twelve decisions lands, no More kept this round, and one point settled without asking, KR1.1 within 20 words, with its ground."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Ending with done; rn check run on the record and the Made."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "done"
+  }
 }
