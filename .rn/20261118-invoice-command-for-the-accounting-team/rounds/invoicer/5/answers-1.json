@@ -1,0 +1,37 @@
+{
+  "good": [
+    {
+      "question": "N4",
+      "lines": [
+        "pyproject.toml:1: # Needs only Python 3.9 or later, with no other package. Install the invoicer command with",
+        "pyproject.toml:3: # `python3 -m unittest discover -s tests`.",
+        "pyproject.toml:10: requires-python = \">=3.9\"",
+        "pyproject.toml:13: invoicer = \"invoicer.command:main\"",
+        "tests/test_command.py:22:         folder = tempfile.TemporaryDirectory()",
+        "tests/test_command.py:23:         self.addCleanup(folder.cleanup)",
+        "tests/test_command.py:28:         path = os.path.join(self.folder, \"lines.csv\")"
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "tests/test_command.py:10: from invoicer.command import main",
+        "tests/test_command.py:39:                 main(list(argv))",
+        "tests/test_lines.py:8: from invoicer.lines import LineError, parse_lines",
+        "tests/test_totals.py:8: from invoicer import Line, render, subtotal, total",
+        "tests/test_totals.py:9: from invoicer.totals import line_amount, tax",
+        "invoicer/totals.py:2: the total, which the printed invoice and the package's callers both take from here. Each function"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N5",
+      "good_when": "A maintainer reading the test names finds a test for every case that the docstrings state, so a failure names the case that broke. Today these stated cases have no test of their own: a refund or credit line whose amount reaches -1000000000 is refused while one just above it is taken, with only the positive end tested; a quantity at -1000000000 is refused while -999999999 is taken, again with only the positive end tested; a quantity written in another script's digits, such as Arabic-Indic digits, is refused, as lines.py's comment says it must be; and the spaces around each cell are dropped, which the docstring states but which only shows up unnamed inside test_reads_each_row_as_a_line, as the trailing space of `Design `. The help that `invoicer --help` prints is how an accounting colleague learns the row form `<description>;<price>;<quantity>` and that the rate is a percent such as 19, yet no case names what it shows."
+    },
+    {
+      "question": "N7",
+      "good_when": "A maintainer who breaks any behavior sees a test fail. Today some changes pass all 70 tests unnoticed (each checked by changing the code in a throwaway copy, and coverage.py with branch coverage): letting a quantity in other scripts' digits through, so that `Design;100.00;٣` prints a line of 3; checking the amount limit on the positive side only, so that a credit of -1999999999.98 prints; dropping the row form from the LINES help, the percent wording from the --rate help, or the command's description from `invoicer --help`; and changing what a Line looks like when printed for debugging, which is invoicer/lines.py line 37, the one line that no test runs. Once these are covered, each of those breaks fails a test that names its case."
+    }
+  ]
+}
