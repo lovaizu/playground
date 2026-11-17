@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read invoicer as the accounting colleague meets it: the invoicer command, how it reads the saved lines, and the printed invoice, with its setup in pyproject.toml"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N8 in the code best practice: refuse a wrong outside input before acting, with a message that names the program, what is wrong, where, and what is accepted; catch only fixable errors by type; checks that survive python -O"
     }
   ]
 }
