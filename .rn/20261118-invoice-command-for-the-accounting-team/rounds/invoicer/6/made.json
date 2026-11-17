@@ -1,0 +1,63 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/0",
+      "where": "invoicer/lines.py: parse_lines and _rows read the file as CSV with semicolons through csv.reader, so a quoted cell reads as typed; invoicer/command.py opens it as utf-8-sig. Tests: test_reads_a_cell_saved_in_quotes_as_typed, test_reads_a_cell_holding_a_semicolon_saved_in_quotes, test_prints_a_description_saved_in_quotes_as_typed, test_prints_a_description_holding_a_semicolon."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/1",
+      "where": "invoicer/command.py: --rate, required on each run, read by _rate into the fraction render takes."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/2",
+      "where": "invoicer/totals.py (line_amount, subtotal, tax, total, each to the cent, the one place both render and the package's callers use), invoicer/tax.py to_cent taking a whole number, invoicer/render.py reading any iterable once; command.py prints render's text. Tests in tests/test_totals.py and test_prints_each_amount_to_the_cent, test_prints_a_subtotal_that_adds_up_the_amounts_as_printed."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/3",
+      "where": "invoicer/lines.py: _price and _quantity take a negative price and a quantity of 0 or below. Tests: test_prints_a_credit_line and the lines tests of negative price, negative quantity and quantity 0."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/0",
+      "where": "pyproject.toml: [project.scripts] invoicer = invoicer.command:main, so pipx install of the repository gives the invoicer command; its opening comment gives the pipx command."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/1",
+      "where": "pyproject.toml version 1.5.0 with its comment; the Changed in 1.5.0 note in the docstrings of parse_lines, render, subtotal and total, the parse_lines one now also naming that a cell such as \"Pro\" x is refused where 1.4.0 read it."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/2",
+      "where": ".gitignore holds __pycache__/; no compiled file is committed."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/7/decisions/0",
+      "where": "This round: invoicer/lines.py _rows reads with csv.reader(strict=True) and turns csv.Error into LineError `row N: a cell starts with a quotation mark but doesn't end with one that closes it; remove that mark, or end the cell with one and write each quotation mark inside it twice`, N being the row where the cell opens; command.py prints it after the file's path, exit 2, nothing on standard output. The parse_lines docstring Refuses names it. Tests: test_refuses_a_quotation_mark_that_never_closes_naming_the_row_where_it_opens and test_refuses_a_quotation_mark_that_never_closes_in_a_long_file and test_refuses_a_cell_with_text_after_its_closing_quotation_mark in tests/test_lines.py, test_refuses_a_quotation_mark_that_never_closes_naming_the_row_where_it_opens in tests/test_command.py. The other refusals (folder, unreadable file, number too large, more than three fields, empty description, heading row) stand in command.py and lines.py with their tests."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/7/decisions/1",
+      "where": "invoicer/command.py _rate: refuses a rate outside 0 to 100 and one above 0 and below 1, with or without %, asking for the percent; 0 gives no tax. Tests: test_refuses_a_rate_below_one_as_a_fraction, test_refuses_a_rate_below_one_written_with_a_percent_sign, test_takes_a_rate_of_zero, test_takes_a_rate_of_zero_written_with_a_percent_sign."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/7/decisions/2",
+      "where": "invoicer/command.py: --rate kept with action=append, and main refuses more than one with `the tax rate is given more than once; give it once, such as --rate 19`. Test: test_refuses_a_rate_given_twice."
+    }
+  ],
+  "more": [
+    {
+      "best_practice": "code",
+      "condition": "N8",
+      "where": "invoicer/lines.py _rows: csv.reader(strict=True) raises where a quoted cell runs to the end of the text, and past 131072 characters raises for the cell's size, so neither a long file nor a short one reaches the caller as _csv.Error or as a later fault that hides the mark; both become the one LineError naming the row where the mark opens. Tried: a 30002-row and a 3-row file each exit 2 with that line and no traceback. Tests: test_refuses_a_quotation_mark_that_never_closes_in_a_long_file, test_refuses_a_quotation_mark_that_never_closes_naming_the_row_where_it_opens (lines and command)."
+    }
+  ],
+  "settled": [
+    {
+      "point": "a cell with text after its closing quotation mark, such as \"Pro\" x;10.50;1",
+      "decided": "Refused with the same message as a mark that never closes, naming its row, where round 5 read it as Pro x",
+      "ground": "csv's strict mode, which the unclosed mark needs, also refuses it. It reads in no one way, a spreadsheet never saves it (it would save \"\"\"Pro\"\" x\"), and reading it as Pro x drops marks the colleague typed, so refusing it is what the decision a wrong line asks: no guess, one line saying what to fix. A mark inside a cell that doesn't start with one, such as 5\" screen, still reads as typed (test_reads_a_quotation_mark_inside_a_cell_that_starts_without_one)."
+    },
+    {
+      "point": "the refusal's wording",
+      "decided": "row N: a cell starts with a quotation mark but doesn't end with one that closes it; remove that mark, or end the cell with one and write each quotation mark inside it twice",
+      "ground": "One wording holds for both the mark that never closes and text after the closing mark, so the code reads no csv message text to tell them apart; it says where (the row where the cell opens), what is wrong, and the two ways to fix it, as code N8.5 asks."
+    }
+  ]
+}
