@@ -1,7 +1,7 @@
 {
   "goal": {
     "decided": "The accounting team prints each client's invoice themselves, from the invoice lines they keep in a spreadsheet and at that client's tax rate, without writing Python.",
-    "by": "reasoning"
+    "by": "user"
   },
   "deliverables": [
     {
