@@ -67,7 +67,8 @@
             },
             {
               "about": "the currency",
-              "decided": null
+              "decided": "Always EUR; the accountant enters no currency, and only the client's tax rate changes from invoice to invoice.",
+              "by": "user"
             },
             {
               "about": "Excel and Google Sheets",
@@ -77,6 +78,11 @@
             {
               "about": "PDF and printers",
               "decided": "A non-goal: the command makes no PDF and sends nothing to a printer; the accountant prints the saved text file or attaches it to an email.",
+              "by": "user"
+            },
+            {
+              "about": "other currencies",
+              "decided": "A non-goal: the command prints amounts in EUR only.",
               "by": "user"
             }
           ]
