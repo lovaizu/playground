@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read invoicer as the accounting colleague meets it: the command, its help and refusals, the lines, tax, totals and render modules, and the tests"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N2 to N6 of refactor-code with their reasons and practices"
     }
   ]
 }
