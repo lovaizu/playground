@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "answered N1, N2 and N3, each in more, in answers-0.json"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "each of N1, N2 and N3 answered; ending with done"
     }
   ]
 }
