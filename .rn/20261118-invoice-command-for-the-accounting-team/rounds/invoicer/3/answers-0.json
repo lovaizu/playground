@@ -1,0 +1,17 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "Whoever keeps the accounting colleague's invoicer command, asked to change how the tax on an invoice is reckoned, such as tax on each line instead of on the subtotal, or tax rounded down instead of half up, reads only the first sentence of each module and is sent to exactly one module for each change. Today invoicer/tax.py opens with 'The rounding to the cent of an amount, and of the tax of an amount.', which joins how every amount is rounded with how the tax is reckoned, while invoicer/totals.py opens claiming 'the tax' among the amounts the invoice states, so a change to the tax names both modules and the maintainer must read bodies to choose."
+    },
+    {
+      "question": "N2",
+      "good_when": "Someone who calls what the invoicer package offers, beside the command, gets the colleague's invoice right from what each name says alone. Today `tax_of(amount, rate)` and `render(lines, rate, currency=\"EUR\")`, both offered in invoicer/__init__.py's __all__, state neither the types they take nor that the rate is a fraction such as 0.19 rather than the percent 19 the colleague types on the command line: `tax_of(Decimal(\"100\"), 19)` quietly gives 1900.00, and an amount given as a float stops with a TypeError, while neither `render` says what its lines must be, what currency takes, nor what it gives for no line. invoicer/tax.py's `to_cent`, which invoicer/totals.py calls, likewise states no types."
+    },
+    {
+      "question": "N3",
+      "good_when": "Whoever keeps the command carries only what the colleague's invoice asks for, each part of it shown to still hold by a case that names it. Today `render` in invoicer/render.py takes a `currency` that no case of the command or the package ever sets to anything but EUR, and `Line` in invoicer/lines.py takes a quantity that defaults to 1, which no case leaves out, so both are behaviors the maintainer must keep working with nothing telling them whether they still hold."
+    }
+  ]
+}
