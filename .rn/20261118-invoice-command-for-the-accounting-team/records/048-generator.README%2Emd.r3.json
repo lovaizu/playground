@@ -9,6 +9,271 @@
       "of": "generator",
       "step": 2,
       "gave": "Read readme best-practice.md N1 to N10 with template.md, and refactor-doc best-practice.md N1 to N8, before any change."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.1",
+      "gave": "Role kept from the Cut: colleagues from accounting who bill clients from invoice lines in Excel and write no Python; inputs: the Cut names none, read to its end."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.2",
+      "gave": "Benefit kept from the goal: print each client invoice at their tax rate yourself, without asking a developer."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.3",
+      "gave": "What it gives kept: prints an invoice from rows saved in Excel, at the tax rate you type."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.4",
+      "gave": "pyproject.toml read to its end: invoicer 1.5.0, requires-python >=3.9, the invoicer script at invoicer.command:main, installed by pipx."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.5",
+      "gave": "Kind kept as a PowerShell command, the word accounting meets it by, since they type it in PowerShell."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.1",
+      "gave": "Invoice tools readers know make a PDF, carry the client name, an invoice number and a date, offer currencies and a rate per line; kept from round 1."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.2",
+      "gave": "Printing an invoice leads a reader to expect a file to send; covered by the no-PDF item, which says to copy the text into the letter. Prices over 1,000 with grouping are an expectation the command does not meet as typed, which the Cut settles in the everyday steps, not in Non-goals."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.3",
+      "gave": "No closed-without-doing requests bear on invoicer in the issues; none added."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.4",
+      "gave": "The command takes only LINES and --rate and prints EUR text, so it meets none of the four; tried in a throwaway copy, a price saved as 1,200.00 is refused naming row 1 with exit 2, and 1200.00 prints the invoice with exit 0."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.5",
+      "gave": "Each of the four would turn away a reader who needs it, so all four are kept."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.6",
+      "gave": "The person saw the four Non-goals in rounds 1 and 2 and asked only for the thousands grouping steps, so no question is put again."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.7",
+      "gave": "All four kept for Non-goals; none moves to a status line."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.1",
+      "gave": "Version 1.5.0 in pyproject.toml, above 1.0."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.2",
+      "gave": "The use toward the goal tried in a throwaway copy: rows with a price of 1200.00 print the invoice with exit 0, and the same price saved as 1,200.00 is refused naming row 1 with exit 2."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.3",
+      "gave": "No archived mark or notice; the developers keep it up."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.4",
+      "gave": "Ready: 1.5.0, the use works once the price column has no grouping, and someone keeps it up; no status line."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.1",
+      "gave": "Not carried out, as the Cut decides by user that no LICENSE file is added and the README says nothing about licensing."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.2",
+      "gave": "Not carried out: no license is named, by the user decision in the Cut."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.3",
+      "gave": "Not carried out: no works of others are listed, as the README says nothing about licensing, by the user decision in the Cut."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.1",
+      "gave": "Use: accounting prints a client invoice at the client tax rate, the goal of the Cut."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.2",
+      "gave": "Task kept: three lines, one a discount, at two tax rates, as the person asked to see a couple of rates and signed off the run in round 2."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.3",
+      "gave": "The printed invoice with its tax and total at 19 and at 7.7 shows that the rate is theirs to set per client; what they spent is one typed command."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.4",
+      "gave": "Cut: keep the rows, the typed command and every output line, and the refusal line exactly as PowerShell shows it; drop the usage line printed above it, which does not bear on the fix."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.1",
+      "gave": "The one way: the rate you type for each client turns your saved rows into that client invoice."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.1",
+      "gave": "Problem today: accounting asks a developer for each invoice at the client rate."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.2",
+      "gave": "Doubts: are the totals right to the cent; what if a row or rate is wrong; does Excel save the rows as invoicer reads them."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.3",
+      "gave": "The person raised prices over 1,000 saved with thousands grouping; by the Cut it is answered in the everyday steps of the Walkthrough, where accounting meets it, so How it works keeps its three doubts."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.4",
+      "gave": "All three would change whether accounting trusts the invoice, and the walkthrough settles none of them; kept."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.5",
+      "gave": "Answers: rounding half up to the cent and adding the printed amounts; refusing with the row named; reading semicolons and a decimal point."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.6",
+      "gave": "Nothing is missing: each doubt has its answer in the command."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.7",
+      "gave": "No idea is missing, so nothing is asked."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.8",
+      "gave": "No way to make it work is missing, so nothing is handed back."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.1",
+      "gave": "From pyproject.toml: Python 3.9 or later, and pipx install of the repository; the script name invoicer."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.2",
+      "gave": "pipx needs Python and installs for the signed-in Windows account only, so the developer signs in as the colleague; the zip URL needs no Git."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.3",
+      "gave": "Checks: whoami shows the colleague; py --version shows Python; invoicer --help prints its usage line."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.1",
+      "gave": "The repository has no docs folder or changelog; its issues are on."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.2",
+      "gave": "The issues serve help, for the developers to report a fault or ask for a change."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.3",
+      "gave": "Help has a place, the issues, so nothing is asked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.1",
+      "gave": "README.md read to its end: opening, Non-goals, Requirements and Installation for the developer, Walkthrough for accounting, How it works for trust, Documentation for help."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.2",
+      "gave": "Readers from the Cut N1: accounting, who print each invoice; the developer, who sets the command up once on each accounting machine."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.3",
+      "gave": "Accounting knows Excel, its Format Cells dialog and File Explorer, not Python or PowerShell, and comes to print an invoice, often with prices over 1,000 shown with grouping; the developer knows py and pipx, and comes to set the command up for a colleague."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.4",
+      "gave": "The Walkthrough keeps the once-only Excel setting apart from the steps for each invoice; the grouping fix goes in the steps for each invoice, as each invoice sheet has its own cell format, and the refusal fix right after them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.5",
+      "gave": "Each doubt already has its own heading under How it works; the grouping refusal is a step accounting follows, not a doubt, so it takes no heading."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.1",
+      "gave": "The grouping fix is steps in order, so a numbered step; the refusal is a condition and its fix, so a sentence with the line PowerShell shows as a console block."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.1",
+      "gave": "Words of the readers: the person writes thousands grouping and price column; Excel names the dialog Format Cells, the category Number, and the box Use 1000 Separator (,)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.2",
+      "gave": "Chosen: Format Cells, Number and Use 1000 Separator (,) as Excel names them, in bold as the other Excel names; thousands grouping for what the box sets."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.1",
+      "gave": "Facts in more than one place: the usage line, which --help shows; the refusal message, which the command prints; the decimal point, in the once-only Excel setting."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.2",
+      "gave": "The usage line stays once in Installation; the refusal line is quoted once, in the Walkthrough, as the sign accounting matches, by the Cut decision."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.3",
+      "gave": "No two places state a fact differently, so nothing is asked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.1",
+      "gave": "Names grouped: price column and column B for the one column; thousands grouping and 1000 separator for the one format; rows and lines stay two things."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.2",
+      "gave": "Column B kept, as step 1 places the price in column B; thousands grouping kept for the format, with Use 1000 Separator (,) only as the name of the box in Excel."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.3",
+      "gave": "Thousands separator in the once-only setting names the Excel option, not the cell format, and stays as Excel names it; no name refers to two things."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Decided: every decision of the Cut taken as it stands. Settled: a new step in the steps for each invoice, before saving, sets column B by Format Cells to Number with 2 decimal places and Use 1000 Separator (,) cleared, as Excel saves each cell as it shows it; after the steps, if PowerShell shows the refusal line, quoted as the command prints it, accounting does that step in the workbook, saves lines.csv again and types the command again. Nothing asks."
     }
   ]
 }
