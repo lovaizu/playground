@@ -864,6 +864,111 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Sent round-5 fixes: names decision and idea marking, with two mores"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No generator asks or lacks"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Read round 5: ten good; kept product-vision N6 and refactor-doc N8; refactor-doc N4 N5 template-bound, signed off unmet by the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up: two fixable mores open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Rate reason settled from the person request words; no point waits"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "465c0c4 fell short on N9 and N8.3; sent rewording, rate reason, and goods"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round-6 generator start until the tree agrees"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "5e07521 agrees but for N3 and N5 goods (N8.4); sent them back to false"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started round-6 generator with the guard text; goods are not in its Cut"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Generator making"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
     }
   ]
 }
