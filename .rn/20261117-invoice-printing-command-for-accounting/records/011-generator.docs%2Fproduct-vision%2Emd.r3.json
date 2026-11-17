@@ -409,6 +409,11 @@
       "of": "generator",
       "step": 4,
       "gave": "docs/product-vision.md made: the rank is the template paragraph naming KR2.1, KR1.1 and KR3.1 first, with the template sentence on no targets and Goodhart law; the Concept holds the one way and the three merged ideas word for word; Roles and objectives unchanged."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried as a developer reading it in a throwaway copy, exit 0: the rank names KR2.1, KR1.1 and KR3.1 first in one line; the Concept holds three ideas, each naming one objective; the spreadsheet and the tax rate appear only in the Concept."
     }
   ]
 }
