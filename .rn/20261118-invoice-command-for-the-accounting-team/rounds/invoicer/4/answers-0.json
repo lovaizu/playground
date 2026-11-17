@@ -1,0 +1,17 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "A maintainer asked to change how the tax on an invoice is worked out, such as rounding it another way or taking it line by line, reads only the first sentence of each module and knows the one module to open. Today two openings claim the tax: tax.py, 'The rounding to the cent of an amount, and of the tax of an amount.', and totals.py, '... each line's, the subtotal, the tax, and the total'. The package's own opening, 'invoicer: the lines of an invoice, their totals with tax, and the invoice as text.', lists what the modules hold. It doesn't say the one thing the package alone decides, so a maintainer who wants to offer one more name to callers can't tell from it that this is the place."
+    },
+    {
+      "question": "N2",
+      "good_when": "A caller who has only the signatures and docstrings of render, tax_of and to_cent calls them right the first time. They know the types each one takes and gives. They know the rate is a fraction such as Decimal(\"0.19\"), not a percent such as 19, which render's docstring never mentions. They know what the currency parameter of render does and which values it takes. They know the rounding that tax_of applies. They know what happens when the call is wrong, such as a float rate or amount, so they don't have to read the bodies to find out. Today 'def render(lines, rate, currency=\"EUR\"):', 'def tax_of(amount, rate):' and 'def to_cent(amount):' carry no types, and their docstrings leave out the form of the rate, the currency, and each refusal."
+    },
+    {
+      "question": "N3",
+      "good_when": "Every behavior that the invoicer package keeps answers a case of its specification, so the maintainer carries only behavior that a test tells them still holds. No case and no test asks for the invoice printed in a currency other than euros, which render's 'currency=\"EUR\"' parameter gives. None asks for the line of one item that Line gives where no quantity is passed, through 'quantity: int = 1'. None asks for a price written without a point or in exponent form, such as 12 or 1e2, which parse_lines takes although its docstring says a price is 'a number written with a point'. Each of these is either a case with its own test, or no longer a behavior of the code."
+    }
+  ]
+}

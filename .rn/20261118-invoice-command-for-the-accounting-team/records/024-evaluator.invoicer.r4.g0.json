@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N1, N2 and N3 of the code best practice with their reasons and practices, and the template notes of Module opening and Interface"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N1, N2 and N3 in more, each with good_when, in answers-0.json"
     }
   ]
 }
