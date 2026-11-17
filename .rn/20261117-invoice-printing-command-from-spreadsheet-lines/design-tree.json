@@ -92,7 +92,7 @@
           "decisions": [
             {
               "about": "the one way",
-              "decided": "The accountant gives invoicer's command the invoice lines as they already keep them in their spreadsheet, plus the client's tax rate, and invoicer prints the finished invoice.",
+              "decided": "The accountant gives invoicer's command the invoice lines as they already keep them in their spreadsheet, plus the client's tax rate, and invoicer's command prints the finished invoice.",
               "by": "user"
             },
             {
@@ -102,7 +102,7 @@
             },
             {
               "about": "the moments of use",
-              "decided": "The installer installs Python and invoicer on an accountant's machine and sees the command run, with nothing to configure, since the command takes the sheet as it is and the rate each time they print an invoice; the accountant gives the command the lines and the client's rate; the invoice prints, or a message says what to fix and the accountant fixes it and runs it again.",
+              "decided": "The installer sets up invoicer's command on an accountant's machine and sees it run, with nothing to configure, since the command takes the sheet as it is and the rate each time the accountant prints an invoice; the accountant gives the command the lines and the client's rate; the invoice prints, or a message says what to fix and the accountant fixes it and runs it again.",
               "by": "reasoning"
             },
             {
