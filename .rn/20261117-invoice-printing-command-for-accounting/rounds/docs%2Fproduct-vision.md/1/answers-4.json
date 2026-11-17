@@ -1,0 +1,33 @@
+{
+  "good": [
+    {
+      "question": "N3",
+      "lines": [
+        "  The people who print each client's invoice at its tax rate with invoicer's command, from their",
+        "  The people who call invoicer as a library from their own code, and install the command for the",
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "  The command and the library always round tax to the cent alike, so printed totals match what"
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "## Objectives and key results",
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "  - KR1.2: the time from taking a client's invoice lines from the spreadsheet to holding the",
+        "- O2: the developers' own programs keep giving the invoices they gave before.",
+        "invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N4",
+      "good_when": "A developer weighing a change sees at a glance the whole order in which the key results rank, from the one that matters most to the one that matters least, and so knows for any two key results which one wins, instead of guessing from 'KR1.1, KR2.1, KR3.1 comes first' where KR1.2, KR2.2, and KR3.2 stand."
+    },
+    {
+      "question": "N5",
+      "good_when": "A developer reads each sentence about ranking the key results and about their missing targets one way on the first read, also through a machine translation: they know who keeps or drops a change, which key results 'none before it' covers, and they meet 'key results have no targets' and its reason, Goodhart's law, as separate points."
+    }
+  ]
+}

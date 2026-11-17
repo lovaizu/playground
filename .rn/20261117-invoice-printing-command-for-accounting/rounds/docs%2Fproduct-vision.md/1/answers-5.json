@@ -1,0 +1,13 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N7",
+      "good_when": "A developer reads where the accounting team's invoice lines come from, and that the tax rate is set at each print, in one place only, so that the role of the accounting team and the concept can't come to say different things about them, and the developer never has to wonder which of the two holds."
+    },
+    {
+      "question": "N8",
+      "good_when": "A developer meets one name for each thing from start to end: one name for the lines the accounting team takes from their spreadsheet (now both \"spreadsheet lines\" and \"invoice lines\"), and one name for what the developers write that calls invoicer (now both \"their own code\" and \"their own programs\"), so they never take one thing for two."
+    }
+  ]
+}
