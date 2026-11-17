@@ -494,6 +494,11 @@
       "of": "generator",
       "step": 7,
       "gave": "Ends with lacks: untracking the 8 compiled files under invoicer/__pycache__ and tests/__pycache__ needs git rm --cached (or deleting them), which no command allowed to the generator does; everything else is made, tried, and in the Made."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Updated the Made: invoicer N4 compiled files is carried out by .gitignore leaving __pycache__/ out and by fcb2254, which the main conversation made to untrack the 8 compiled files; 86581a1 is not in the branch history, as the main conversation checked. A rate of 0 prints Tax 0.00, tried in a throwaway copy."
     }
   ],
   "kept": {

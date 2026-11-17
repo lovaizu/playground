@@ -299,6 +299,16 @@
       "of": "orchestrator",
       "step": 4,
       "gave": "Started rn:generator for invoicer round 3 with the text the guard gave"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Round 3 generator stopped at session end after step 7; resumed it with the person words on pycache and 0 percent"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Round 3 generator gave lacks: could not git rm the pycache files; as the person asked, untracked them in fcb2254 and resumed it to end"
     }
   ]
 }

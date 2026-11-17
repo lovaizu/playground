@@ -26,7 +26,7 @@
     },
     {
       "path": "deliverables/0/necessary_conditions/3/decisions/2",
-      "where": ".gitignore leaves __pycache__/ out, so no new compiled file is committed. Not yet carried out: the 8 compiled files that 314d881 committed under invoicer/__pycache__ and tests/__pycache__ are still tracked; untracking them needs git rm, which the generator may not run."
+      "where": ".gitignore leaves __pycache__/ out, so no compiled file is committed again; commit fcb2254, made by the main conversation at the person's request, untracked the 8 compiled files that 314d881 had committed under invoicer/__pycache__ and tests/__pycache__, so HEAD tracks no __pycache__ file. The copies left on disk are ignored by .gitignore."
     },
     {
       "path": "deliverables/0/necessary_conditions/7/decisions/0",
