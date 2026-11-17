@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "N4 good: O1 and O2 each have a share-that-fails key result and a time key result with the role own time, each Lower is better, how-well ranked first, no targets. N5 good: O1 (accountant prints correct invoices) and O2 (installer readies the machine) are reached apart, and KR1.1 counts only where the command runs, so setup work serves O2 alone and printing work O1 alone."
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Both conditions of the group answered in answers-1.json; ending with done."
     }
   ]
 }
