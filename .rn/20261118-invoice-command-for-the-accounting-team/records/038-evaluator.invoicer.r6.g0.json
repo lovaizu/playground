@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "read invoicer as its people meet it: the command, its help and messages, and the package"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "read N1, N2 and N3 of code with their reasons, practices and the template notes"
     }
   ]
 }
