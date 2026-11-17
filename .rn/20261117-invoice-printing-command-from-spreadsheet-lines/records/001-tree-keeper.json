@@ -4524,6 +4524,251 @@
       "of": "tree-keeper",
       "step": 1,
       "gave": "Resumed to set N3 and N5 good back to false: best practices read; tree at 5e07521, goods N2-N5 true, N1 N6 false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged, by user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal already confirmed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Plan unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Input kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "No deliverable added or moved."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "Work packages unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "Case does not hold: no meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Inputs and preconditions unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "Case does not hold: no check script deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Conditions in order; N2 N4 good true, N1 N3 N5 N6 false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "No decision changed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "Later deliverables keep empty decisions."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "No point here rests on a fact a source could state."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "No point settled in this change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "Nothing put to the person."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "No decision changed; by values as they were."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "Names unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "Names unchanged; none holds path or kind."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "Every deliverable still serves the unchanged goal."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, commit 331e29d: changed N3 and N5 goods of deliverables/0; touched deliverables/0, 1, 2, 4, 6; doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Case does not hold: no research or meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Grounds are the message of commit 331e29d."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing, not done, as four goods are false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No new round; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "N2 and N4 stay true; their decisions last changed before round 5."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "N3 and N5 set back to false, as decisions their mores name changed after round 5."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "Not reached: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched per tree.py write: deliverables/0, 1, 2, 4, 6."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: only goods changed; no name, input, or decision rests on them."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Nothing rewritten, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Goods written over with no note."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0, commit 331e29d: N3 and N5 good false; doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0, 1, 2, 4, 6: all agree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: goods written, touched nodes agree, none newly doing."
     }
   ],
   "kept": {

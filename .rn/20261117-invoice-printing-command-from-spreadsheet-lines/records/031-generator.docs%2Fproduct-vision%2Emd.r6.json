@@ -9,6 +9,221 @@
       "of": "generator",
       "step": 2,
       "gave": "Read product-vision best-practice.md with its template.md, and refactor-doc best-practice.md, to their end."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.1",
+      "gave": "The job, from N1 decision 0: invoicer gives the accountant a command that prints a client invoice from the invoice lines they keep in a spreadsheet, at that client tax rate."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.2",
+      "gave": "Roles named by their job, from N1 decision 2: accountant, one who prints a client invoice; installer, one who sets up the command on each accountant machine."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.3",
+      "gave": "The accountant prints only once the installer has set up the command, per N1 decision 1, so the installer stays a role."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.4",
+      "gave": "No person job is left unclear; the decisions settle both roles, so nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.5",
+      "gave": "No split: every accountant counts a printed correct invoice as the job done."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.6",
+      "gave": "No merge: the installer counts a ready machine, the accountant a printed invoice."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.7",
+      "gave": "Two roles, so neither is named user."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.1",
+      "gave": "O1 and O2 taken from N2 decisions 0 and 1, each with its role as subject."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.2",
+      "gave": "Each objective ends in the role own work: a client gets a correct invoice; a machine is ready to print."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.3",
+      "gave": "Two distinct ends, as a setup can finish with no invoice printed; one objective each."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.1",
+      "gave": "Tasks from N4 decision 0: invoice lines and the client tax rate to the printed invoice; a bare machine to the accountant running the command."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.2",
+      "gave": "KR1.1 and KR2.1 measure the failing share, per N4 decision 1."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.3",
+      "gave": "KR1.2 and KR2.2 measure the time with the role own time included, per N4 decision 1."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.4",
+      "gave": "Each key result says Lower is better."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.5",
+      "gave": "KR1 ranks before KR2 within each objective, stated once in the template ranking line, kept as the person chose."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.6",
+      "gave": "No targets; the template line gives the plain reason."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.1",
+      "gave": "Pieces from N5 decision 0: the invoice command, the README part for the accountant, the README setup section."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.2",
+      "gave": "The command and the README accountant part serve O1; the setup section serves O2."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.3",
+      "gave": "The setup section serves O2 without O1, so the two stay apart."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.4",
+      "gave": "Each idea marked for O1 alone, per N6 decision 3, as the accountant meets each at every print and the installer once."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.5",
+      "gave": "Every piece serves an objective; nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.1",
+      "gave": "The one way and the ideas come from the person, held in N6 decisions 0 and 1; no new question."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.2",
+      "gave": "The one way kept in one sentence: invoicer command prints the finished invoice from the invoice lines and the client tax rate."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.3",
+      "gave": "Each of the three ideas gets what it gives the accountant toward a correct invoice, and what it spares the installer where it spares something, per N6 decision 3 and the N6 More; the rate idea now says why: the client tax rate differs from client to client."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.4",
+      "gave": "Moments from N6 decision 2: the installer sets up and sees it run; the accountant gives the invoice lines and the client tax rate; the invoice prints, or a message says what to fix."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.5",
+      "gave": "Setup is held by the spreadsheet-as-is and the rate-each-time ideas (nothing to set up); giving input by the spreadsheet-as-is idea; the print by nothing-wrong-prints. Every moment has an idea."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.6",
+      "gave": "No idea proposed; all three are the person own, so nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.7",
+      "gave": "All three ideas kept; the one way would fail at a moment without any one of them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.1",
+      "gave": "docs/product-vision.md read to its end: Roles names who it serves, Objectives and key results what they reach and how it is measured, Concept the one way and its ideas."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.2",
+      "gave": "Readers, from the Cut name: the accounting team, who check that it serves their printing, and invoicer maintainers, who lean each choice on it."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.3",
+      "gave": "Accountants know invoices, spreadsheets and tax rates, not Python; maintainers know the code and come to learn whom it serves and why each idea holds."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.4",
+      "gave": "The template three sections each hold one topic; no split."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.5",
+      "gave": "Each idea has its own list item with its name, so a reader finds it; headings stay the template ones."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.1",
+      "gave": "Roles, objectives and ideas are items in no order, so bulleted lists; no steps or comparisons call for another form."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.1",
+      "gave": "Readers words come from the person request: invoice, invoice lines, spreadsheet, tax rate, client."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.2",
+      "gave": "Words chosen from the person request: the client tax rate, the invoice line, the spreadsheet; no value, no unreadable rate."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.1",
+      "gave": "The fact that the accountant installs nothing sits in the installer role alone; the idea lines say only what each idea spares the installer."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.2",
+      "gave": "Each fact keeps one place: the roles in Roles, the measures in key results, the why of each idea in its line."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.3",
+      "gave": "No two places state a fact differently; nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.1",
+      "gave": "Grouped names: line, value and rate in the Nothing wrong prints idea; rate alone in the rate idea; spreadsheet and sheet."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.2",
+      "gave": "Kept, per N1 decision 3: the client tax rate, the invoice line, the spreadsheet; value, rate alone and line alone dropped."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.3",
+      "gave": "No name refers to two things once value is gone."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Each Cut decision taken as it stands. Settled without asking: each idea line gets two short sentences, the accountant gain then the installer one; idea names follow the names rule. No point left open."
     }
   ]
 }
