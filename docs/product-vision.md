@@ -26,8 +26,8 @@ law. They show whether a change brought its objective closer.
 `invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate.
 
 - Their spreadsheet as it is, for `O1`\
-  `invoicer`'s command takes the invoice lines as the `accountant` already keeps them, so no invoice line is copied by hand into a new format. The `installer` sets up no format on the `accountant`'s machine.
+  The `accountant` copies no invoice line by hand into a new format; the `installer` sets up none.
 - Nothing wrong prints, for `O1`\
-  Where an invoice line or the client's tax rate can't be read, `invoicer`'s command prints no invoice, so no client gets a wrong one. Its message names the invoice line or the client's tax rate for the `accountant` to fix.
+  The `accountant` gets a message naming the unreadable invoice line or the client's tax rate, never a wrong invoice.
 - The client's tax rate given each time, for `O1`\
-  The client's tax rate differs from client to client, so the `accountant` gives the one for the invoice in hand each time they print. The `installer` sets up no client's tax rate on the `accountant`'s machine.
+  Since the client's tax rate differs per client, the `accountant` gives it for each invoice; the `installer` sets up none.
