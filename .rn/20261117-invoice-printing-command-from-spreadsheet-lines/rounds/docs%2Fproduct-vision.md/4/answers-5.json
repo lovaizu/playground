@@ -1,0 +1,22 @@
+{
+  "good": [
+    {
+      "question": "N7",
+      "lines": [
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without a developer's help.",
+        "- `O2`: the `installer` gets an `accountant`'s machine ready to print invoices without anyone's further help.",
+        "`invoicer` prints the finished invoice from the invoice lines as the `accountant`'s spreadsheet holds them, plus the client's tax rate.",
+        "- The spreadsheet as it is, for `O1` and `O2`\\",
+        "- Nothing wrong prints, for `O1`\\",
+        "- The rate given each time, for `O1` and `O2`\\",
+        "  Each time the `accountant` prints an invoice, they give the client's tax rate, so the `installer` sets up no rates."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N8",
+      "good_when": "An accountant reading O1 and KR1.1 knows who 'a developer' is: whether help from the installer, who is also a developer, counts against them, or only help from invoicer's maintainers, so the accounting team and the maintainers count the same invoices as needing a developer's help. The reader also meets one name for the thing that prints the invoice, and never wonders whether 'invoicer' and 'invoicer's command' are two things."
+    }
+  ]
+}
