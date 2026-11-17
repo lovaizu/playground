@@ -224,6 +224,191 @@
       "of": "generator",
       "step": 3,
       "gave": "Took each of the 13 decisions of the Cut as it stands; settled without asking the wording that fits the 20-word sentence limit and the template line forms; no point left to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.4",
+      "gave": "O1 and O2 read with invoicer taken out still name ends: a correct invoice sent, a machine ready to print; neither reads as a feature."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N3.1",
+      "gave": "Python taken out of the installer line, which now says only that the installer sets up the command so the accountant installs nothing; no sentence names a runtime or how the command works inside."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.7",
+      "gave": "An E2E run records for KR1.1 each invoice on a set-up machine that needed help or had a wrong total; for KR1.2 the spreadsheet opened and the invoice printed; for KR2.1 whether the command runs after setup; for KR2.2 setup start and the command first run."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.8",
+      "gave": "At setup, whether the installer configures rates or a sheet format: the one way and its ideas decide none, since the sheet is taken as it is and the rate comes each time; at a bad line, print nothing, as its idea says."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings Roles, Objectives and key results, Concept are the template fixed headings, kept as they are."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "First lines under each heading are the template form, a role item, an objective item, the one way; not reworded, as the person chose to keep the template fixed sentences."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read only the headings and first lines as the accountant and as a maintainer; each finds who it serves, its objectives, and the one way without a section skipped wrongly."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Every sentence has a reader: roles and ideas for the accountant and installer, key results and ranking for the maintainers; Python marked as needed by no reader of the vision."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "Installing Python belongs to the README setup section, whose readers are installers, as N1 decision 3 says."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "The README lies outside docs/product-vision.md, so nothing moved into a document of this deliverable."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "No ask needed: the person already placed installing Python in the README setup section, kept in N1 decision 1 and its grounds for the README."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "Cut installing Python and invoicer in place of the accountant from the installer line."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "Words cut: further words of the ideas, such as Neither the accountant nor the installer; each kept word carries a step, value, or condition."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "Articles, that, and as kept in each sentence."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "docs/product-vision.md read to its end as the accountant, the installer and a maintainer; each still finds the step, value or condition their purpose needs."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "Roles come before the objectives that name them, and the one way before the ideas that carry it; the accountant meets the command in Roles before KR1.1 names it."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "No sentence depends on something outside the document; Goodhart law comes with its plain reason in the template line."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "Sentences start with the known, such as the accountant, and end with the new, such as no new format or the line or value to fix."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "Conditions lead: where the command runs in KR1.1, and for an unreadable line or rate in the second idea."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "No rule with an exception in the vision."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "docs/product-vision.md read to its end from the top; no place needed a look back or ahead beyond the template labels O and KR, which the template fixes."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "Each role, objective, key result and idea stays one list item."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence to draw: the vision states no steps passed between parts."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "No structure to draw, as the vision leaves the parts to the architecture."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "Each written sentence makes one point; the template ranking and no-targets lines left as the person chose."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "Actors as subjects with active verbs: the accountant learns, gives; the command prints, takes, remembers."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "Pronouns checked: they refers to the accountant only, none refers to the rate within five words."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "Nouns from verbs kept only where the template sets them, such as setup in KR2.1 and KR2.2."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Each object sits next to its verb, such as prints the finished invoice, gives the client tax rate."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "docs/product-vision.md read to its end word by word as a machine translator; each written sentence reads one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "Words replaced: a developer help became anyone help and someone help; sheet became spreadsheet; installing Python became sets up the command."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No term of my own to define; O and KR labels come from the template, which the person chose to keep."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "Abbreviations O and KR stand as the template sets them; E2E appears nowhere in the vision."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "Each fact stated in full in its one section: who installs in Roles, measures in Objectives and key results, the rate rule in Concept."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "No second place left that restates a fact, so no link needed; the third idea no longer restates that the installer sets up no rates."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "invoicer prints replaced by invoicer command prints in the one way and the ideas; invoicer stands alone only in the title; each name in code format the same way each time."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "docs/product-vision.md made: Python out of the installer line, KR1.1 counts only where the command runs, each idea marked for O1 alone, no developer in O1 and KR1.1, and invoicer command is what prints throughout."
     }
   ]
 }
