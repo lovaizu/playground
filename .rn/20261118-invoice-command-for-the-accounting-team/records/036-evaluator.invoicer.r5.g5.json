@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read invoicer as accounting meets it: command.py, lines.py, totals.py, tax.py, render.py, __init__.py, pyproject.toml, README.md"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N7 (each rule once, in the module with that job) and N8 (each kind of thing done one way, reason beside each difference) with their practices"
     }
   ]
 }

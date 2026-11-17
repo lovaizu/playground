@@ -20,5 +20,9 @@
       "step": 4,
       "gave": "Each condition of the group, N1, N2 and N3, is answered in answers-0.json; ending with done."
     }
-  ]
+  ],
+  "kept": {
+    "role": "evaluator",
+    "result": "done"
+  }
 }
