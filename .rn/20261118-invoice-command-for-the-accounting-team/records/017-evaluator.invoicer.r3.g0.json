@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read invoicer as the accounting colleague meets it: the invoicer command, its help and refusals, the lines it reads, the printed invoice, README and pyproject"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N1, N2 and N3 of the code best practice with their reasons and practices"
     }
   ]
 }
