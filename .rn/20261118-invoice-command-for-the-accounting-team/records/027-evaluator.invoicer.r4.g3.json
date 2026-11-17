@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N1 of refactor-code: each caller, person, script or code, gets every behavior it got before a change of structure, kept by small steps under tests that pin each behavior"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "N1 in more: a whole-number price in a Line breaks render, subtotal and total, and parse_lines now refuses quantities like +2 or 1_000, none named in a Changed note or pinned by a test"
     }
   ]
 }
