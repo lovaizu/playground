@@ -479,6 +479,111 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Sent round-2 key results decision and two mores"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No generator asks or lacks"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Read round 2: kept refactor-doc N4 N7; dropped N1 N5 N6 as template-fixed or never met"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up: mores open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "48c2709 fell short on N9: cross-objective order and the no-targets reason; sent the mending change"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round-3 generator start until the tree agrees"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote 5a1573a; agrees"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started rn:generator round 3 for docs/product-vision.md with the guard text"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Generator making"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
     }
   ]
 }
