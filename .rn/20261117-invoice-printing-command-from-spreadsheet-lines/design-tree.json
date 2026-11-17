@@ -10,7 +10,7 @@
       "kind": "product-vision",
       "inputs": [],
       "preconditions": [],
-      "status": "open",
+      "status": "doing",
       "necessary_conditions": [
         {
           "id": "N1",
@@ -86,8 +86,19 @@
           "good": false,
           "decisions": [
             {
-              "about": "the one way and its ideas",
-              "decided": null
+              "about": "the one way",
+              "decided": "The accountant gives the command the invoice lines as they already keep them in their spreadsheet, plus the client's tax rate, and gets the finished invoice back.",
+              "by": "user"
+            },
+            {
+              "about": "the ideas",
+              "decided": "Their sheet as it is: the command takes the lines as the accountant already keeps them, so there's no new format to learn. Nothing wrong prints: where a line or the rate can't be read, nothing prints, and the message says which line or value to fix. The rate is given each time an invoice is printed; no rate is remembered per client.",
+              "by": "user"
+            },
+            {
+              "about": "the moments of use",
+              "decided": "The setup done by the installer; the accountant gives the command the lines and the client's rate; the invoice prints, or a message says what to fix and the accountant fixes it and runs it again.",
+              "by": "reasoning"
             }
           ]
         }
