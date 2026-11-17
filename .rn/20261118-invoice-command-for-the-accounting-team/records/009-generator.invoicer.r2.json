@@ -469,6 +469,11 @@
       "of": "generator",
       "step": 4,
       "gave": "Made: tax.to_cent and tax_of over it; render prints each amount, the subtotal of the amounts as printed, the tax and the total to the cent; lines.parse_lines reads negative prices and quantities of 0 or below, refuses a price, quantity or amount not between -1000000000 and 1000000000; command refuses a folder, a file without read permission, and a rate above 0 and below 1 written without %. 20 tests added or changed; 43 pass."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in throwaway copies as accounting would, after pip install of the repository: a CSV UTF-8 file with CRLF and BOM, prices 89.5, 100, 12.345 and a credit of -25 at --rate 19 prints every amount to the cent and a total of subtotal plus tax (exit 0); --rate 0.07, a folder, 1e400, four fields, a chmod 0 file and a quantity of 11 digits each refused with one line and exit 2. 43 tests OK, three shuffled runs OK, coverage 97%."
     }
   ]
 }
