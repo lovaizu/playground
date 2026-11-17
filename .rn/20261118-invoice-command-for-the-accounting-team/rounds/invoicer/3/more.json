@@ -1,0 +1,1 @@
+[{"best_practice": "refactor-code", "condition": "N1", "decision": "deliverables/0/necessary_conditions/2/decisions/2", "good_when": "With round 3's single reckoning of totals, `invoicer.total(lines, rate)` given a generator of lines reads it twice and quietly returns the subtotal without tax, 20.00 where 1.4.0 gave 23.80."}]

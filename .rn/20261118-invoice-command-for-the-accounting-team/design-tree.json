@@ -14,7 +14,7 @@
       "necessary_conditions": [
         {
           "id": "N1",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
@@ -38,7 +38,7 @@
             },
             {
               "about": "what it prints",
-              "decided": "The invoice text that invoicer.render gives, printed to the terminal, with every amount, each line's, the subtotal, the tax, and the total, shown to the cent whatever decimals the saved row had, and the total equal to the subtotal and the tax as printed; the subtotal and total are reckoned in one place, which both the printed invoice and the package's subtotal and total use",
+              "decided": "The invoice text that invoicer.render gives, printed to the terminal, with every amount, each line's, the subtotal, the tax, and the total, shown to the cent whatever decimals the saved row had, and the total equal to the subtotal and the tax as printed; the subtotal and total are reckoned in one place, which both the printed invoice and the package's subtotal and total use, and the package's subtotal and total take any iterable of lines, a generator included, and give the printed figures",
               "by": "reasoning"
             },
             {
@@ -50,7 +50,7 @@
         },
         {
           "id": "N4",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "how accounting gets the command with no Python on their side",
@@ -71,7 +71,7 @@
         },
         {
           "id": "N5",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
@@ -81,12 +81,12 @@
         },
         {
           "id": "N7",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N8",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "a wrong line",
