@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "N5 good; N4 more: no order among KR1.2, KR2.2, KR3.2"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group answered"
     }
   ]
 }
