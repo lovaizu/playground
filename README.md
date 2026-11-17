@@ -40,10 +40,19 @@ Do this for each invoice:
 
 1. Put each line of the invoice in a row: its description in column A, price in B, quantity in C.
 2. Leave out a heading row, and write a discount as a negative price, such as -20.00.
-3. Choose **File** > **Save a Copy**, or **Save As**, and choose the type **CSV UTF-8 (Comma delimited) (\*.csv)**.
-4. Name the file `lines.csv`, and choose **Save**.
-5. In File Explorer, open the folder that holds `lines.csv`, type `powershell` in the address bar, and press Enter. PowerShell opens in that folder.
-6. In PowerShell, type `invoicer lines.csv --rate 19`, with the client's tax rate in place of 19, and press Enter.
+3. Right-click the heading of column **B**, which holds the prices, and choose **Format Cells**. On the **Number** tab, choose **Number**, set **Decimal places** to 2, clear **Use 1000 Separator (,)**, and choose **OK**. Excel then shows each price without thousands grouping, such as 1200.00, and saves it the same way.
+4. Choose **File** > **Save a Copy**, or **Save As**, and choose the type **CSV UTF-8 (Comma delimited) (\*.csv)**.
+5. Name the file `lines.csv`, and choose **Save**.
+6. In File Explorer, open the folder that holds `lines.csv`, type `powershell` in the address bar, and press Enter. PowerShell opens in that folder.
+7. In PowerShell, type `invoicer lines.csv --rate 19`, with the client's tax rate in place of 19, and press Enter.
+
+If PowerShell shows this line in place of the invoice, a price in column B still has thousands grouping, such as 1,200.00:
+
+```console
+invoicer: error: lines.csv, row 1: the price must be a number written with a point, such as 12.50, not '1,200.00'
+```
+
+Do step 3 again in your spreadsheet, save `lines.csv` again by steps 4 and 5, and type the command again.
 
 These rows in Excel give the invoices below:
 

@@ -274,6 +274,326 @@
       "of": "generator",
       "step": 3,
       "gave": "Decided: every decision of the Cut taken as it stands. Settled: a new step in the steps for each invoice, before saving, sets column B by Format Cells to Number with 2 decimal places and Use 1000 Separator (,) cleared, as Excel saves each cell as it shows it; after the steps, if PowerShell shows the refusal line, quoted as the command prints it, accounting does that step in the workbook, saves lines.csv again and types the command again. Nothing asks."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.6",
+      "gave": "Opening kept by the template: what invoicer is and gives, then who it is for and what they achieve."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.7",
+      "gave": "Each of the two opening sentences carries something the other lacks; none deleted."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.8",
+      "gave": "No vague or praising word in the opening."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.9",
+      "gave": "A developer who bills no one, or someone who keeps no lines in Excel, can tell from the opening that it is not for them."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.8",
+      "gave": "Each kept expectation stands as a thing invoicer does not do."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.9",
+      "gave": "The no-PDF item says to copy the text into the letter; the others have no other way."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.5",
+      "gave": "The product is ready, so no status line is written."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.4",
+      "gave": "Not carried out: no License section is written, by the user decision in the Cut; README.md holds no word about licensing."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.5",
+      "gave": "Not carried out: no license link to follow, by the user decision in the Cut."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.1",
+      "gave": "Sections in the template order, without License: opening, Non-goals, Requirements, Installation, Walkthrough, How it works, Documentation."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.2",
+      "gave": "In the Walkthrough, the grouping step that every invoice needs sits in the steps, and the refusal fix, which only some meet, comes right after them; the list separator fix stays in How it works."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.3",
+      "gave": "README.md read to its end as a newcomer from accounting; after step 7 the next question, what if it refuses my big price, is answered at once by the paragraph after the steps."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.4",
+      "gave": "No answer stands before its question; nothing moved."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.5",
+      "gave": "Each next section answers the question written; nothing added."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.5",
+      "gave": "Run anew on invoicer 1.5.0 installed by pip from a fresh copy with an empty home folder: a price saved as 1,200.00 printed exactly the quoted refusal line with exit 2, and 1200.00 printed the invoice with exit 0; the two Walkthrough invoices are checked again in step 5."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.6",
+      "gave": "The refusal line is a console block as PowerShell shows it, beside the rows table and the two invoice blocks."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.7",
+      "gave": "The result first kept: At the end, you have the client invoice in PowerShell, with the tax at the rate you typed."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.8",
+      "gave": "A colleague from accounting can say after reading that the same rows give each client invoice at the rate they type, and that a price shown as 1,200.00 must be set to 1200.00 first."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.2",
+      "gave": "The one way kept in one sentence of the reader words: You type each client tax rate, and invoicer turns your saved rows into the invoice at that rate."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.3",
+      "gave": "That sentence stands first in How it works, before the figure and the answers."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.4",
+      "gave": "A newcomer reading it alone can say: I type the rate, and it makes the invoice from my rows."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.9",
+      "gave": "The three answers kept as parts of one mechanism below the one way: read the rows, refuse a wrong one, add at the typed rate to the cent."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.10",
+      "gave": "The figure images/how-it-works.svg kept as it stands, with each doubt beside its part; the grouping fix is a step, not a part of the mechanism."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.11",
+      "gave": "Parts labeled in the reader words: rows, tax rate, invoice, totals."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.12",
+      "gave": "No part has a name of invoicer own beyond the command name."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.13",
+      "gave": "A newcomer can say back that the printed amounts add up to the total and that a wrong row prints no invoice."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.4",
+      "gave": "Each install step is a py command the developer can copy; each everyday step says what to choose or type and where, the new step 3 by the names Excel shows: the letter B, Format Cells, Number, Decimal places, Use 1000 Separator (,)."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.5",
+      "gave": "The setup ends with the sign that invoicer --help prints its usage line in a new PowerShell window; step 3 ends with the sign that Excel shows 1200.00."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.4",
+      "gave": "One link: the issues of lovaizu/playground, for the developers to report a fault or ask for a change."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.5",
+      "gave": "The link is the issues URL of the public repository named in the install URL, as in rounds 1 and 2."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings kept: the template section names, and each doubt as the question the reader asks."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "First sentences say what each section gives, such as At the end, you have the client invoice in PowerShell under Walkthrough."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read by headings and first sentences: accounting finds the Walkthrough with its grouping step, the developer finds Requirements and Installation; neither is sent to a section they do not need."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Each new sentence has a reader, accounting: step 3 for each invoice with prices over 1,000, the condition and refusal line for when it is missed, and the fix."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "No sentence marked, so no other document is looked for."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "Nothing moved."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "Nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "No marked sentence to cut."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "No needless words in step 3 or the refusal paragraph."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "The small words kept, such as the, then and in place of."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "README.md read to its end as accounting and as the developer; each still finds every step, value and condition, and no other part cites a step number that moved."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "Step 3 comes after step 1, which places the prices in column B, and before saving in step 4; the refusal paragraph comes after step 7, which runs the command."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "No sentence leans on anything outside the README."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "Step 3 starts from the letter B, which accounting knows, and ends with what is new, 1200.00 shown and saved without grouping."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "The refusal condition comes before its fix: If PowerShell shows this line in place of the invoice."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "The discount as a negative price stays right after the rule of one line per row."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "README.md read to its end from the top; the fix points back to steps 3 to 5 by number, which the reader has just done, so no look ahead is needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "Step 3 is one numbered item, the steps renumbered 1 to 7."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence to draw beyond the numbered steps."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "The structure stays in images/how-it-works.svg."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "Step 3 split into three sentences: open Format Cells; set Number without the separator; what Excel then shows and saves. The fix split from its condition."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "Actors as subjects: the reader as the implied subject of each step, Excel shows and saves, PowerShell shows."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "The one pronoun, it in saves it the same way, stands right after each price."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "No noun made from a verb."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Objects next to their verbs: right-click the letter B, set Decimal places, clear Use 1000 Separator, save lines.csv."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "README.md read to its end word by word; step 3 and the refusal paragraph read one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "Excel names written as Excel shows them, in bold; no other word differs."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No term to define: thousands grouping is shown by its example, 1,200.00."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "EUR written out at first use as euros (EUR); CSV appears as the Excel type name; no new abbreviation."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "The usage line is stated once, in Installation; the refusal line once, in the Walkthrough."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "No other place restates either line, so no link is needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "Column B, thousands grouping and lines.csv written the same way in each place."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "README.md Walkthrough: new step 3 in the steps for each invoice sets column B by Format Cells to Number with 2 decimal places and Use 1000 Separator (,) cleared, so Excel shows and saves 1200.00; the steps renumbered 1 to 7; after them, if PowerShell shows the quoted refusal line, accounting does step 3 again, saves lines.csv again by steps 4 and 5, and types the command again. The rest stands, with no License section and no word about licensing."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "The commit check found above in step 3; rewritten as Right-click the heading of column B, which holds the prices, the words Excel users know for it. Use 1000 Separator (,) and the CSV type keep their parentheses, as Excel names them so; EUR is written out at first use."
     }
   ]
 }
