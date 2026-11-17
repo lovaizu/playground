@@ -479,6 +479,15 @@
       "of": "generator",
       "step": 6,
       "gave": "Wrote the Made in rounds/invoicer/5/made.json: where each of the ten decisions is carried out, where the two Mores kept are made good, and the two points settled without asking, each with its ground."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Made written; ending with done once the check gives 0."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "done"
+  }
 }
