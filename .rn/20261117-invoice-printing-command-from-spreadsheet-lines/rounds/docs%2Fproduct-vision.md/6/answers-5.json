@@ -1,0 +1,29 @@
+{
+  "good": [
+    {
+      "question": "N7",
+      "lines": [
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "  A developer who sets up `invoicer`'s command on each `accountant`'s machine, so the `accountant` installs nothing.",
+        "`KR1.1` and `KR2.1` comes first: keep a change that improves a key result only if none before it gets",
+        "`invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate.",
+        "  The `accountant` copies no invoice line by hand into a new format; the `installer` sets up none.",
+        "  The `accountant` gets a message naming the unreadable invoice line or the client's tax rate, never a wrong invoice.",
+        "  Since the client's tax rate differs per client, the `accountant` gives it for each invoice; the `installer` sets up none."
+      ]
+    },
+    {
+      "question": "N8",
+      "lines": [
+        "- `accountant`\\",
+        "- `installer`\\",
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without anyone's help.",
+        "  - `KR1.2`: the time from opening the spreadsheet to the printed invoice, the `accountant`'s own time included. Lower is better.",
+        "- `O2`: the `installer` gets an `accountant`'s machine ready to print invoices without anyone's further help.",
+        "  - `KR2.1`: the share of setups after which `invoicer`'s command doesn't run for the `accountant`. Lower is better.",
+        "`invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate."
+      ]
+    }
+  ],
+  "more": []
+}

@@ -1,0 +1,33 @@
+{
+  "good": [
+    {
+      "question": "N1",
+      "lines": [
+        "# Product vision of `invoicer`",
+        "## Roles",
+        "- `accountant`\\",
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "## Objectives and key results",
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without anyone's help.",
+        "## Concept",
+        "`invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate."
+      ]
+    },
+    {
+      "question": "N2",
+      "lines": [
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "  A developer who sets up `invoicer`'s command on each `accountant`'s machine, so the `accountant` installs nothing.",
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without anyone's help.",
+        "- `O2`: the `installer` gets an `accountant`'s machine ready to print invoices without anyone's further help.",
+        "`KR1.1` and `KR2.1` comes first: keep a change that improves a key result only if none before it gets",
+        "law. They show whether a change brought its objective closer.",
+        "`invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate.",
+        "  The `accountant` copies no invoice line by hand into a new format; the `installer` sets up none.",
+        "  The `accountant` gets a message naming the unreadable invoice line or the client's tax rate, never a wrong invoice.",
+        "  Since the client's tax rate differs per client, the `accountant` gives it for each invoice; the `installer` sets up none."
+      ]
+    }
+  ],
+  "more": []
+}
