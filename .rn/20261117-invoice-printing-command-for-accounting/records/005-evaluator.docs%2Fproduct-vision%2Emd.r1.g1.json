@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N4 in good and N5 in more: O1 and O3 both count the accounting team printing without a developer, and rounding is named for O1 and O2."
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group, N4 and N5, is answered in the Answers; ending with done."
     }
   ]
 }
