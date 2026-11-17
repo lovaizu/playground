@@ -1,0 +1,136 @@
+{
+  "goal": {
+    "decided": "The accounting team prints each client's invoice from the line items they keep in their spreadsheet, at that client's tax rate, without writing any Python. Once it holds, a colleague from accounting saves the line items from the spreadsheet, runs one command with the client's tax rate, and gets the invoice with its subtotal, tax, and total, by the README alone.",
+    "by": "reasoning"
+  },
+  "deliverables": [
+    {
+      "name": "An accountant prints an invoice from the line items saved from their spreadsheet with one command, setting the client's tax rate on it",
+      "path": "invoicer/cli.py",
+      "kind": "code",
+      "inputs": [
+        "invoicer/lines.py",
+        "invoicer/render.py",
+        "invoicer/tax.py",
+        "invoicer/totals.py"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the line items' form",
+              "decided": "Each line `<description>;<price>;<quantity>`, as invoicer/lines.py parse_lines reads it",
+              "by": "research"
+            },
+            {
+              "about": "the tax rate's form",
+              "decided": "The rate as the decimal that invoicer/tax.py tax_of multiplies the subtotal by, such as 0.19",
+              "by": "research"
+            }
+          ]
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    },
+    {
+      "name": "A colleague from accounting prints a client's invoice by the README alone, without writing any Python",
+      "path": "README.md",
+      "kind": "readme",
+      "inputs": [
+        "invoicer/cli.py"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N9",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N10",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    }
+  ]
+}
