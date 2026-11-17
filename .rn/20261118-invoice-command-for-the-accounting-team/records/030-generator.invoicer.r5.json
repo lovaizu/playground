@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Read the Cut, invoicer as it stands (command.py, lines.py, render.py, totals.py, tax.py, __init__.py, tests, pyproject.toml) and the two Mores kept. Its people: colleagues from accounting, who run `invoicer LINES --rate PERCENT` on the lines saved from their spreadsheet and get the invoice to send, and code that calls the package as it called 1.4.0. The Mores: a whole-number price stops render, subtotal and total with AttributeError in tax.to_cent; `--rate 19 --rate 7` quietly prints at 7%."
+    }
+  ]
+}

@@ -339,6 +339,26 @@
       "of": "orchestrator",
       "step": 5,
       "gave": "Checked round 4 Made: 66 tests pass, total gives 302.26 for a list and a generator, no pycache tracked; started the six evaluators the guard gave"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Reviewed the tree by round 4: rate given twice and unclosed quote came back from round 3; decided once: refuse the first, leave the second as a spreadsheet never writes it"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Read invoicer round 4: took in whole-number price regression and rate given twice; left the rest; code N1, N2, N4-N7 good, N3 and N8 false"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked ed82b0d: whole-number price and rate given twice written; code N3, N8 false, rest good"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Started rn:generator for invoicer round 5 with the text the guard gave"
     }
   ]
 }

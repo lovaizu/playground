@@ -1,0 +1,11 @@
+{
+  "record": ".rn/20261118-invoice-command-for-the-accounting-team/records/030-generator.invoicer.r5.json",
+  "step": 1,
+  "work": [
+    ".rn/20261118-invoice-command-for-the-accounting-team/records/001-tree-keeper.json",
+    ".rn/20261118-invoice-command-for-the-accounting-team/records/025-evaluator.invoicer.r4.g1.json",
+    ".rn/20261118-invoice-command-for-the-accounting-team/records/orchestrator.json",
+    ".rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/4/try.jsonl",
+    ".rn/20261118-invoice-command-for-the-accounting-team/records/030-generator.invoicer.r5.json"
+  ]
+}
