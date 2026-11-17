@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N1, N2, N3 in more in answers-0.json: the total is computed apart from totals.py and money format has no owner (N1); render, tax_of, subtotal, total leave rate as fraction, rounding and types unsaid (N2); unused total(), currency, default quantity and package exports lack cases, and amounts print unrounded (N3)."
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group, N1, N2, N3, is answered in answers-0.json; ending with done."
     }
   ]
 }
