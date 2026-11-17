@@ -31,7 +31,13 @@
         {
           "id": "N2",
           "good": true,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "each objective with its role as subject",
+              "decided": "O2 has the developers as its subject: they keep their own code giving the same results through each update of invoicer, without editing it. O3 states what the developer is left with: the accounting team prints on a command the developer installed once.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N3",
@@ -57,7 +63,7 @@
         },
         {
           "id": "N5",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "one objective for each piece of work",
