@@ -43,11 +43,12 @@
         },
         {
           "id": "N4",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "the license",
-              "decided": null
+              "decided": "Left out of this pull request as the company's separate call: no LICENSE file is added, and the README names no license",
+              "by": "user"
             }
           ]
         },
