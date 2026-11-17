@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "N7 in good; N8 in more, as the tax rate is also called rate and value"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "each condition of the group answered; ending with done"
     }
   ]
 }

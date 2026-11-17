@@ -1,0 +1,30 @@
+{
+  "good": [
+    {
+      "question": "N1",
+      "lines": [
+        "## Roles",
+        "- `accountant`\\",
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "## Objectives and key results",
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without anyone's help.",
+        "## Concept",
+        "`invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate."
+      ]
+    },
+    {
+      "question": "N2",
+      "lines": [
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "  A developer who sets up `invoicer`'s command on each `accountant`'s machine, so the `accountant` installs nothing.",
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without anyone's help.",
+        "- `O2`: the `installer` gets an `accountant`'s machine ready to print invoices without anyone's further help.",
+        "Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's",
+        "  The `accountant` learns no new format, since `invoicer`'s command takes the lines as they already keep them.",
+        "  For an unreadable line or rate, `invoicer`'s command prints only a message naming the line or value to fix.",
+        "  Each time the `accountant` prints an invoice, they give the client's tax rate, as `invoicer`'s command remembers none."
+      ]
+    }
+  ],
+  "more": []
+}
