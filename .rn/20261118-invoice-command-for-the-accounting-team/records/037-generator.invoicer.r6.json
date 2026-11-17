@@ -959,6 +959,15 @@
       "of": "generator",
       "step": 6,
       "gave": "Made in .rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/6/made.json holds, as the deliverable is unchanged in this pass: where each of the 10 Cut decisions lands, where the code N8 More is made good, and the two points settled (a cell with text after its closing mark refused; the refusal wording)."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Ending with done: Made written, every step and practice recorded in order in this pass."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "done"
+  }
 }
