@@ -1,0 +1,20 @@
+{
+  "decisions": [
+    {"path": "deliverables/0/necessary_conditions/0/decisions/0", "where": "docs/product-vision.md, Roles: the accountant line, who prints a client's invoice at that client's tax rate with invoicer's command; and Concept, the one way."},
+    {"path": "deliverables/0/necessary_conditions/0/decisions/1", "where": "docs/product-vision.md, Roles: the installer line, installing Python and invoicer in place of the accountant."},
+    {"path": "deliverables/0/necessary_conditions/0/decisions/2", "where": "docs/product-vision.md, Roles: the two roles, `accountant` and `installer`."},
+    {"path": "deliverables/0/necessary_conditions/0/decisions/3", "where": "docs/product-vision.md, throughout: `invoicer`, `invoicer`'s command, `accountant`, and the `accountant`'s machine, each named one way."},
+    {"path": "deliverables/0/necessary_conditions/1/decisions/0", "where": "docs/product-vision.md, Objectives and key results: the O1 line."},
+    {"path": "deliverables/0/necessary_conditions/1/decisions/1", "where": "docs/product-vision.md, Objectives and key results: the O2 line."},
+    {"path": "deliverables/0/necessary_conditions/3/decisions/0", "where": "docs/product-vision.md, Objectives and key results: KR1.1 and KR1.2 measure O1's task from the spreadsheet to the printed invoice; KR2.1 and KR2.2 measure O2's task from a bare machine to the command running."},
+    {"path": "deliverables/0/necessary_conditions/3/decisions/1", "where": "docs/product-vision.md, Objectives and key results: the four key result lines, each with Lower is better and no rank note; the order within each objective stated once, in the template's ranking line; each key result sits under the one objective it measures, and the template's line that key results show whether a change brought its objective closer carries that no order runs across objectives, with no sentence added; the no-targets line with its plain reason."},
+    {"path": "deliverables/0/necessary_conditions/4/decisions/0", "where": "docs/product-vision.md, Objectives and key results: each key result sits under the one objective it measures; the pieces themselves are the README's to carry."},
+    {"path": "deliverables/0/necessary_conditions/5/decisions/0", "where": "docs/product-vision.md, Concept: the first sentence, invoicer prints the finished invoice from the invoice lines as the accountant's spreadsheet holds them, plus the client's tax rate."},
+    {"path": "deliverables/0/necessary_conditions/5/decisions/1", "where": "docs/product-vision.md, Concept: the three ideas, The spreadsheet as it is, Nothing wrong prints, and The rate given each time."},
+    {"path": "deliverables/0/necessary_conditions/5/decisions/2", "where": "docs/product-vision.md, Concept: the ideas' lines, the installer has no format to set up and no rates (setup), the accountant gives the lines as they are and the rate each time they print (giving), and a message names what to fix where a line or the rate can't be read (the result)."}
+  ],
+  "more": [],
+  "settled": [
+    {"point": "KR1.1's wording within 20 words", "decided": "`KR1.1`: the share of invoices the `accountant` couldn't print without a developer's help, or printed with a wrong total. Lower is better.", "ground": "rn's template check takes no sentence over 20 words, and the Cut's or that came out with a wrong total made KR1.1 21 words; or printed with a wrong total says the same in fewer words."}
+  ]
+}
