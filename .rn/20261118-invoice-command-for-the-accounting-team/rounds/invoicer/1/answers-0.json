@@ -1,0 +1,17 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "Whoever is asked to change how the invoice's total comes out, such as rounding it differently for a client, reads the modules' first sentences and opens one module, and the printed invoice then shows the changed total. Today totals.py says it holds 'The totals of an invoice', yet the invoice the colleague prints adds its subtotal and tax in render.py on its own, so a change in totals.py never reaches the paper. Likewise, whoever must change how money appears on the invoice, its cents and its currency, finds one module whose first sentence says it decides that; today no opening sentence names it, and a line saved as 89.5 or 12.345 x 3 prints as '89.5 EUR' and '37.035 EUR', with a total of '2721.075 EUR'."
+    },
+    {
+      "question": "N2",
+      "good_when": "Someone who calls render, tax_of, subtotal or total learns from the signature and its comment alone what to pass and what comes back: that the rate is a fraction such as 0.19 and not the 19 the colleague types, that amounts are Decimals, that tax is rounded half up to the cent while the lines and subtotal aren't, what the currency is and when it may differ from EUR, and what an empty list of lines gives. Today these names carry no types and one-line comments, so a caller who passes 19 gets a tax nineteen times the amount without any refusal, and the only names offered are the ones another module or a case actually calls."
+    },
+    {
+      "question": "N3",
+      "good_when": "Every behavior that the maintainer carries answers a case the tests name, and every case shows on paper what the colleague gets. Today the code holds behaviors no case asks for and no test guards: a total() that the printed invoice never uses, a currency other than EUR that no case passes, a Line whose quantity defaults to 1 though every saved row gives one, and package-level names offered for callers that don't exist. And the colleague's invoice shows each amount to the cent, as the case of the printed invoice shows them ('200.00', '250.50'), for every row they save, not only for rows where they happened to type two decimals: today '100' prints as '100 EUR', '1e3' as '2E+3 EUR', and a negative price passes onto the invoice without any case saying it should."
+    }
+  ]
+}

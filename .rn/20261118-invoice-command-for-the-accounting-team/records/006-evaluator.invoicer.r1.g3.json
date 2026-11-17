@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N1 in more: callers of invoicer.parse_lines from 1.4.0 lose InvalidOperation, and rows of quantity 0, negative quantity, Infinity price, or non-ASCII digits, unpinned and unannounced; written in rounds/invoicer/1/answers-3.json."
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group, N1, is answered; ending with done."
     }
   ]
 }
