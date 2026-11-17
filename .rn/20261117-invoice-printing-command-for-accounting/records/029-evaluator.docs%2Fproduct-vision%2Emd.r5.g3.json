@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N1 (headings and first sentences say what each section gives) and N2 (only what readers need) with their reasons and practices"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N1 and N2 in good, with the deliverable lines that meet each, in answers-3.json"
     }
   ]
 }

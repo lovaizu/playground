@@ -1,0 +1,28 @@
+{
+  "good": [
+    {
+      "question": "N6",
+      "lines": [
+        "## Objectives and key results",
+        "  The people who print each client's invoice with invoicer's command.",
+        "  The people who call invoicer's library from their own code, and install the command once for the",
+        "invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the",
+        "  The command only calls the library, which rounds tax to the cent the same way every time."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N3",
+      "good_when": "A developer reading \"Invoice lines from the spreadsheet\" already knows which spreadsheet is meant and whose it is, without guessing or looking it up elsewhere, because the document has told them before that line."
+    },
+    {
+      "question": "N4",
+      "good_when": "A developer sees at a glance the order in which the key results are weighed against each other, first to last, including where KR1.2, KR2.2, and KR3.2 stand, without piecing the order together from the sentence \"KR2.1, KR1.1, KR3.1 comes first\"."
+    },
+    {
+      "question": "N5",
+      "good_when": "A developer, or a machine translation of the page, reads each sentence one way: each sentence tells one thing, says who does it, and does so in a grammatical form. Today \"KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it gets worse.\" packs the order and a rule into one sentence and doesn't say who keeps the change, and \"The accounting team prints from the invoice lines they keep, and the command names any bad line and what's wrong.\" and \"The command only calls the library, which rounds tax to the cent the same way every time.\" each tell two things with two different actors."
+    }
+  ]
+}
