@@ -1,0 +1,2 @@
+{"command": "! grep -nE \"DELETE_TEMPLATE_COMMENT|<role>|<who they are>|<objective>|<key result>|<direction>|<Product>|<the one way>|<idea>|<what it gives>\" docs/product-vision.md", "code": 0, "out": "", "err": ""}
+{"command": "grep -cE \"^- (O[0-9]|  - KR[0-9]\\.[12])|^  - KR\" docs/product-vision.md; grep -c \"Lower is better\" docs/product-vision.md", "code": 0, "out": "9\n6\n", "err": ""}

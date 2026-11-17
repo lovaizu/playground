@@ -409,6 +409,11 @@
       "of": "generator",
       "step": 4,
       "gave": "Made docs/product-vision.md from the template: Roles (accounting team; developer, who calls the library and installs the command once), Objectives and key results (O1 to O3, two ranked key results each, lower is better, no targets), and Concept (the one way and three ideas as the person accepted them), then refactored by refactor-doc."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried docs/product-vision.md in a throwaway copy as a developer reads it: a grep for template comments and placeholders found none (exit 0); counts show 3 objectives with 6 key results and 6 directions, each key result with its direction. Also the commit hook (Vale) flagged a missing Oxford comma and passive voice in the Concept ideas; rewritten in active voice with the same facts."
     }
   ]
 }
