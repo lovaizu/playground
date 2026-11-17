@@ -474,6 +474,11 @@
       "of": "generator",
       "step": 5,
       "gave": "Tried in throwaway copies with an empty home, installed by pip install --target from the setup alone: a file saved as CSV UTF-8 with a byte order mark, a quoted cell, a whole-number price and a discount prints the invoice to the cent, exit 0; --rate 19 --rate 7 and --rate=19 --rate=19 exit 2 with no invoice and the one-line message; subtotal and total of Line(\"Hosting\", 50, 1) give 50.00 and 59.50; 70 tests pass, also in three shuffled orders and against the installed package."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Wrote the Made in rounds/invoicer/5/made.json: where each of the ten decisions is carried out, where the two Mores kept are made good, and the two points settled without asking, each with its ground."
     }
   ]
 }

@@ -1,0 +1,68 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/0",
+      "where": "invoicer/lines.py parse_lines (csv.reader with semicolons, quoted cells read as typed), unchanged this round; tests/test_command.py test_prints_a_description_saved_in_quotes_as_typed, test_prints_a_description_holding_a_semicolon"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/1",
+      "where": "invoicer/command.py --rate PERCENT, required on each run, now given once (see deliverables/0/necessary_conditions/7/decisions/2)"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/2",
+      "where": "invoicer/tax.py to_cent reads the amount by Decimal(amount), so a line whose price is a whole number is stated to the cent; invoicer/lines.py Line takes price: Decimal | int and keeps it as given, as 1.4.0 did; invoicer/totals.py subtotal, tax, total and invoicer/render.py render take any iterable of such lines, their docstrings saying so; tests/test_totals.py test_render_prints_a_line_whose_price_is_a_whole_number, test_subtotal_of_a_line_whose_price_is_a_whole_number, test_total_of_a_line_whose_price_is_a_whole_number, with the generator and to-the-cent tests unchanged"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/3",
+      "where": "invoicer/lines.py _WHOLE and _price, unchanged this round; tests/test_command.py test_prints_a_credit_line"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/0",
+      "where": "pyproject.toml [project.scripts] invoicer = invoicer.command:main, and its opening comment on pipx install, unchanged this round; installed from the setup alone in a throwaway copy, it gives bin/invoicer"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/1",
+      "where": "pyproject.toml version = 1.5.0, unchanged this round; a whole-number price now works as in 1.4.0, so nothing new differs from 1.4.0"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/2",
+      "where": ".gitignore leaving out __pycache__, and no compiled file tracked, unchanged this round"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/7/decisions/0",
+      "where": "invoicer/lines.py _line, _price, _quantity, and invoicer/command.py main's refusals, unchanged this round; tests/test_command.py refusal tests"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/7/decisions/1",
+      "where": "invoicer/command.py _rate, unchanged this round; tests/test_command.py test_refuses_a_rate_below_one_as_a_fraction, test_takes_a_rate_of_zero"
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/7/decisions/2",
+      "where": "invoicer/command.py _parser keeps each --rate by action=\"append\", and main refuses more than one by parser.error before the file is read, printing nothing to standard output and `invoicer: error: argument --rate: the tax rate is given more than once; give it once, such as --rate 19`; main's docstring names the refusal; tests/test_command.py test_refuses_a_rate_given_twice"
+    }
+  ],
+  "more": [
+    {
+      "best_practice": "refactor-code",
+      "condition": "N1",
+      "where": "invoicer/tax.py to_cent, Decimal(amount).quantize, so render, subtotal, total and tax_of of Line(\"Hosting\", 50, 1) give 50.00 and 59.50 at 0.19 as 1.4.0 did, with no AttributeError; tests/test_totals.py test_render_prints_a_line_whose_price_is_a_whole_number, test_subtotal_of_a_line_whose_price_is_a_whole_number, test_total_of_a_line_whose_price_is_a_whole_number"
+    },
+    {
+      "best_practice": "code",
+      "condition": "N8",
+      "where": "invoicer/command.py _parser (--rate with action=\"append\") and main's check of len(arguments.rate), so `--rate 19 --rate 7` exits 2 with no invoice and a message to give the rate once; tests/test_command.py test_refuses_a_rate_given_twice"
+    }
+  ],
+  "settled": [
+    {
+      "point": "where a whole-number price becomes a Decimal",
+      "decided": "tax.to_cent reads the amount it rounds by Decimal(amount); Line keeps the price it was given",
+      "ground": "Rounding to the cent is tax.py's decision, and every stated amount goes through to_cent, so one change there makes render, subtotal, total and tax_of all take a whole number. Decimal() reads an int exactly. Converting in Line instead would change Line.price from 50 to Decimal('50') for code that reads it, which 1.4.0 didn't do."
+    },
+    {
+      "point": "how a second --rate is seen, and the message",
+      "decided": "--rate uses action=\"append\", and main refuses a list of more than one with parser.error: `argument --rate: the tax rate is given more than once; give it once, such as --rate 19`, also when both rates are the same",
+      "ground": "argparse otherwise keeps only the last value, so main could never see the first. parser.error is how every other refusal in command.py is made, and it gives the same `invoicer: error: argument --rate:` opening as the other rate refusals. Each value still goes through _rate first, so a wrong value such as 0.19 is named before the repeat is."
+    }
+  ]
+}
