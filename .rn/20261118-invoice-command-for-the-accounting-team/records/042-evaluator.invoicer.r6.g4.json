@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N2-N6 of refactor-code best-practice.md with their reasons and practices"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N2 and N5 good; N3, N4, N6 more, in rounds/invoicer/6/answers-4.json"
     }
   ]
 }
