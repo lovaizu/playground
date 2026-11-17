@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N8",
+      "good_when": "Whoever in accounting runs invoicer is told, before any invoice is printed, about every wrong input they gave, and can fix it from that message alone, however they gave it. Today they get that for a missing, unreadable or non-UTF-8 file, a heading row, a comma in a price, a wrong quantity, a tax rate written as a fraction, and more. Two cases are still missing. First, when they give the rate twice, such as `invoicer lines.csv --rate 19 --rate 7`, they still get an invoice, printed at 7% with no warning. Instead, invoicer should tell them they gave two tax rates and ask for the one rate of their client. Second, when a cell in a long file opens a quotation mark that never closes, they get a Python trace that ends in `_csv.Error: field larger than field limit (131072)`. In a short file they get `row 1: ... three fields, not 1` followed by the rest of the file. Instead, at any file length, they should be told the row where the quoted cell begins and that its quotation mark is never closed, so they know to close it or remove it in the spreadsheet."
+    }
+  ]
+}
