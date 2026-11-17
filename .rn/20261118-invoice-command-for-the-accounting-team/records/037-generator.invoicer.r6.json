@@ -4,6 +4,11 @@
       "of": "generator",
       "step": 1,
       "gave": "Read the Cut, its decisions and the one More kept (code N8: a quotation mark that never closes ends in a _csv.Error traceback in a long file, and hides the mark in a short one), and invoicer as it stands: command.py, lines.py, render.py, totals.py, tax.py, pyproject.toml, .gitignore and the tests. Its people are the accounting colleagues, who run `invoicer LINES --rate PERCENT` on a file saved from their spreadsheet and get the invoice printed, or one line saying what to fix, and the developers and code that use the package. lines.py reads with csv.reader, which raises _csv.Error for an unclosed quote in a long file and, in a short one, reads the rest of the file into one cell, so the refusal names a later fault or none."
+    },
+    {
+      "of": "generator",
+      "step": 2,
+      "gave": "Read code best-practice.md with template.md, and refactor-code best-practice.md, to their end before any change."
     }
   ]
 }
