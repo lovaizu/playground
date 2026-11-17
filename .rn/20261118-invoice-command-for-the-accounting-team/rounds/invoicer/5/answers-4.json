@@ -1,0 +1,55 @@
+{
+  "good": [
+    {
+      "question": "N2",
+      "lines": [
+        "invoicer/command.py:38:        # utf-8-sig drops the byte order mark that a spreadsheet's CSV UTF-8 starts with.",
+        "invoicer/command.py:78:        # Each --rate given is kept, so that main refuses a second one, where argparse would take",
+        "invoicer/lines.py:13:# A quantity, a minus allowed for a credit line, of at most 9 digits, so below _LIMIT; ASCII",
+        "invoicer/lines.py:69:    # newline=\"\" leaves a new row of text inside a quoted cell to csv, as its documentation asks.",
+        "invoicer/render.py:16:    # The rows and each sum read the lines, so a generator is read into a list once.",
+        "invoicer/tax.py:11:    # Decimal() reads a whole number exactly, as a line built with a price such as 50 gives one.",
+        "invoicer/totals.py:26:    return sum((line_amount(line) for line in lines), Decimal(0))"
+      ]
+    },
+    {
+      "question": "N5",
+      "lines": [
+        "invoicer/command.py:13:def main(argv: Sequence[str] | None = None) -> None:",
+        "invoicer/lines.py:44:def parse_lines(text: str) -> list[Line]:",
+        "invoicer/lines.py:81:def _line(number: int, cells: list[str], first: bool) -> Line:",
+        "invoicer/command.py:88:def _rate(percent: str) -> Decimal:",
+        "invoicer/render.py:8:def render(lines, rate, currency=\"EUR\"):",
+        "invoicer/totals.py:35:def total(lines: Iterable[Line], rate: Decimal) -> Decimal:",
+        "invoicer/tax.py:8:def to_cent(amount):"
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "invoicer/command.py:78:        # Each --rate given is kept, so that main refuses a second one, where argparse would take",
+        "invoicer/command.py:79:        # the last and print the invoice at it with no word.",
+        "invoicer/command.py:80:        action=\"append\",",
+        "invoicer/lines.py:13:# A quantity, a minus allowed for a credit line, of at most 9 digits, so below _LIMIT; ASCII",
+        "invoicer/lines.py:14:# only, as int() would also take digits of other scripts.",
+        "invoicer/lines.py:16:# The size that a price and an amount must stay below either side of zero: far beyond any line",
+        "invoicer/lines.py:17:# of an invoice, so that a number past it is a mistyped cell, such as 1e400, and every sum of",
+        "invoicer/lines.py:18:# amounts stays exact to the cent.",
+        "invoicer/render.py:16:    # The rows and each sum read the lines, so a generator is read into a list once.",
+        "invoicer/render.py:17:    lines = list(lines)",
+        "invoicer/tax.py:11:    # Decimal() reads a whole number exactly, as a line built with a price such as 50 gives one.",
+        "tests/test_command.py:309:        hasattr(os, \"geteuid\") and os.geteuid() == 0, \"root reads a file whatever its permissions\""
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N3",
+      "good_when": "A maintainer can read each line of the code as it stands and know what a name holds. Today, a maintainer reading `line_amount(line)` in render.py takes it to be the same as `line.amount()`, the unrounded price times the quantity, but it is the amount rounded to the cent as the invoice states it, so they have to open totals.py to see which figure the invoice prints. In lines.py, `_price(number, price)` and `_quantity(number, quantity)` read as if `number` were the cell's number, but it is the row's number in the spreadsheet, while `_number(price)` beside them gives the number that a cell holds. In command.py, `arguments.lines` reads as the invoice's lines, but it holds the path of the saved file."
+    },
+    {
+      "question": "N4",
+      "good_when": "Each thing the maintainer meets has one name, and each name means one thing, so a change made under one name reaches every place it should and no other. Today, `amount` means two figures: the unrounded price times the quantity (`Line.amount`, and the `the amount, the price times the quantity` limit in lines.py) and the amount to the cent that the invoice states (`line_amount`, `the lines' amounts` in `subtotal`). The same figure is also called `stated` in `total`. `lines` means both the file of rows (`LINES`, `arguments.lines`) and the list of Line that `parse_lines` gives. `number` means both a row's place in the spreadsheet and the value a cell writes (`_number`). `tax` means both the module `invoicer.tax`, which rounds any amount to the cent, and the function `invoicer.totals.tax`, which gives the tax of the lines. A maintainer who changes how amounts are rounded, or who searches for where the tax is worked out, can't tell from the names alone which places hold which thing."
+    }
+  ]
+}
