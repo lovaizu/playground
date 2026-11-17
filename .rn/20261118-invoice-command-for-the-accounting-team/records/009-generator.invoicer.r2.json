@@ -499,6 +499,11 @@
       "of": "generator",
       "step": 5,
       "gave": "Tried the installed invoicer: --rate 0.5% and 0.19 refused in one line asking for the percent, exit 2; --rate 0 and 0% print Tax 0.00 and Total 210.50; 1 and 19 print 2.11 and 40.00 of tax. 44 tests OK, three shuffled runs OK."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Made updated: the settled point on a rate between 0 and 1 written with % dropped; the N8 decision and the code N8 More now name the refusal of every rate above 0 and below 1 and the tests that pin 0.5% refused and 0 and 0% taken."
     }
   ],
   "kept": {
