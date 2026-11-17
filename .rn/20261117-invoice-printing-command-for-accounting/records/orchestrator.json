@@ -459,6 +459,41 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No tree change this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round 2 generator start, as round 1 is still being judged and its more is not yet read"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Started one evaluator for each of the six groups the guard gave: product-vision N1-N3, N4-N5, N6, and refactor-doc N1-N2, N3-N6, N7-N8"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Round 1 has not ended; its evaluators are running"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up until the round is judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
     }
   ]
 }

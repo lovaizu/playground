@@ -1,0 +1,34 @@
+{
+  "good": [
+    {
+      "question": "N1",
+      "lines": [
+        "- Accounting team\\",
+        "  The people who print each client's invoice at its tax rate with invoicer's command, from their",
+        "  spreadsheet lines.",
+        "- Developer\\",
+        "  The people who call invoicer as a library from their own code, and install the command for the",
+        "  accounting team."
+      ]
+    },
+    {
+      "question": "N2",
+      "lines": [
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "- O2: the developers' own programs keep giving the invoices they gave before.",
+        "- O3: a developer installs the command once, and after that the accounting team's invoices take",
+        "  none of the developer's time."
+      ]
+    },
+    {
+      "question": "N3",
+      "lines": [
+        "invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the",
+        "  The accounting team works from the invoice lines they already keep in their spreadsheet, so no",
+        "  The accounting team sets the tax rate anew for each invoice they print, so each client gets their",
+        "  The command and the library always round tax to the cent alike, so printed totals match what"
+      ]
+    }
+  ],
+  "more": []
+}
