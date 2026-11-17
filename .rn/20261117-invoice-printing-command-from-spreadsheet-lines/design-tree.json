@@ -166,7 +166,7 @@
             },
             {
               "about": "what printing gives",
-              "decided": "invoicer's existing invoice text, shown in the terminal, and saved to a file where the accountant asks for it.",
+              "decided": "invoicer's invoice text, with its tax line showing the client's tax rate, such as `Tax (7%) 7.00 EUR`; shown in the terminal, and saved to a file where the accountant asks for it.",
               "by": "user"
             },
             {
