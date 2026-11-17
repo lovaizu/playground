@@ -1,0 +1,31 @@
+{
+  "good": [
+    {
+      "question": "N7",
+      "lines": [
+        "  The people who print each client's invoice with invoicer's command.",
+        "  The people who call invoicer's library from their own code, and install the command once for the",
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "- O2: after updating invoicer, the developers get the results their own code gave before, without",
+        "- O3: the developers are left with a command they install once and never need to set up again.",
+        "- Invoice lines from the spreadsheet, for O1\\",
+        "- Tax rate set at each print and never saved per client, for O1\\",
+        "- Same results for developers' own code, for O2\\"
+      ]
+    },
+    {
+      "question": "N8",
+      "lines": [
+        "- Accounting team\\",
+        "- Developer\\",
+        "  The people who call invoicer's library from their own code, and install the command once for the",
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "- O2: after updating invoicer, the developers get the results their own code gave before, without",
+        "  - KR2.1: the share of library calls in the developers' own code that give a different result",
+        "  - KR3.1: the share of installs after which the command doesn't run for the accounting team, or",
+        "  The command only calls the library, which rounds tax to the cent the same way every time."
+      ]
+    }
+  ],
+  "more": []
+}

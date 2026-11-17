@@ -1,7 +1,10 @@
 {
   "record": ".rn/20261117-invoice-printing-command-for-accounting/records/024-evaluator.docs%2Fproduct-vision%2Emd.r4.g5.json",
-  "step": 2,
+  "step": 3,
   "work": [
-    ".rn/20261117-invoice-printing-command-for-accounting/records/024-evaluator.docs%2Fproduct-vision%2Emd.r4.g5.json"
+    ".rn/20261117-invoice-printing-command-for-accounting/records/021-evaluator.docs%2Fproduct-vision%2Emd.r4.g2.json",
+    ".rn/20261117-invoice-printing-command-for-accounting/records/024-evaluator.docs%2Fproduct-vision%2Emd.r4.g5.json",
+    ".rn/20261117-invoice-printing-command-for-accounting/records/orchestrator.json",
+    ".rn/20261117-invoice-printing-command-for-accounting/rounds/docs%2Fproduct-vision.md/4/answers-5.json"
   ]
 }
