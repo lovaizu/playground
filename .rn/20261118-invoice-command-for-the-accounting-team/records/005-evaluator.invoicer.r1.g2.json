@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read invoicer as the accounting colleague meets it: README, pyproject, the invoicer package and its command"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N8 in the code best practice, its reason and practices N8.1 to N8.7"
     }
   ]
 }
