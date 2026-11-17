@@ -28,7 +28,7 @@
           "decisions": [
             {
               "about": "the lines' form",
-              "decided": "A file saved from the spreadsheet with one row per line, `<description>;<price>;<quantity>`, as invoicer.lines.parse_lines reads it",
+              "decided": "A file saved from the spreadsheet as CSV UTF-8 with semicolons, one row per line, `<description>;<price>;<quantity>`, read as the spreadsheet writes it, so a cell the spreadsheet put in quotes, because it holds a quotation mark or a semicolon, reads as the colleague typed it",
               "by": "reasoning"
             },
             {
@@ -38,7 +38,7 @@
             },
             {
               "about": "what it prints",
-              "decided": "The invoice text that invoicer.render gives, printed to the terminal, with every amount, each line's, the subtotal, the tax, and the total, shown to the cent whatever decimals the saved row had, and the total equal to the subtotal and the tax as printed",
+              "decided": "The invoice text that invoicer.render gives, printed to the terminal, with every amount, each line's, the subtotal, the tax, and the total, shown to the cent whatever decimals the saved row had, and the total equal to the subtotal and the tax as printed; the subtotal and total are reckoned in one place, which both the printed invoice and the package's subtotal and total use",
               "by": "reasoning"
             },
             {
@@ -56,6 +56,16 @@
               "about": "how accounting gets the command with no Python on their side",
               "decided": "A developer installs the command once on each accounting machine with `pipx install` from the repository, so the package's setup gives an installable command; after that, accounting types the command and never touches Python",
               "by": "user"
+            },
+            {
+              "about": "the package's version",
+              "decided": "1.5.0, as render's text and parse_lines' refusals differ from 1.4.0",
+              "by": "reasoning"
+            },
+            {
+              "about": "compiled files",
+              "decided": "The repository keeps no compiled Python files: .gitignore leaves __pycache__ out, and none is committed",
+              "by": "reasoning"
             }
           ]
         },
@@ -80,8 +90,8 @@
           "decisions": [
             {
               "about": "a wrong line or rate",
-              "decided": "Refused before anything is printed, with one line naming the row or the argument and what to fix, never a Python traceback: also for a folder or a file that can't be read in place of the saved file, a number too large to print, a row of more than three fields, and a rate above 0 and below 1, which could be meant as a fraction, refused with a message to write the percent, such as 19",
-              "by": "reasoning"
+              "decided": "Refused before anything is printed, with one line naming the row or the argument and what to fix, never a Python traceback: also for a folder or a file that can't be read in place of the saved file, a number too large to print, a row of more than three fields, an empty description, a heading row, with a message to leave the heading out, and a rate above 0 and below 1, which could be meant as a fraction, with a message to write the percent, such as 19; a rate of 0 prints an invoice with no tax",
+              "by": "user"
             }
           ]
         }
