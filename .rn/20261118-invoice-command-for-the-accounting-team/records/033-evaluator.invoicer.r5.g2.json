@@ -20,5 +20,9 @@
       "step": 4,
       "gave": "N8, the one condition of the group, is answered in the Answers"
     }
-  ]
+  ],
+  "kept": {
+    "role": "evaluator",
+    "result": "done"
+  }
 }
