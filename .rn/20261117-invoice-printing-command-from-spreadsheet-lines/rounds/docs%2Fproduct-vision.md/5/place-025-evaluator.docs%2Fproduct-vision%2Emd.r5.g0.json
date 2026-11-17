@@ -1,9 +1,8 @@
 {
   "record": ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/records/025-evaluator.docs%2Fproduct-vision%2Emd.r5.g0.json",
-  "step": 2,
+  "step": 3,
   "work": [
     ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/records/025-evaluator.docs%2Fproduct-vision%2Emd.r5.g0.json",
-    ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/records/orchestrator.json",
-    ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/records/027-evaluator.docs%2Fproduct-vision%2Emd.r5.g2.json"
+    ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/rounds/docs%2Fproduct-vision.md/5/answers-0.json"
   ]
 }
