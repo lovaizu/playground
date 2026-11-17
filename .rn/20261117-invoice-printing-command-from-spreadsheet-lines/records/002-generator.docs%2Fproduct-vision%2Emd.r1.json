@@ -224,6 +224,191 @@
       "of": "generator",
       "step": 3,
       "gave": "Decided: every Cut decision taken as it stands; settled without asking the product name invoicer, the KR numbering per objective, and the two ideas that hold the installer setup marked for O1 and O2. No point left open."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.4",
+      "gave": "O1 and O2 read without the product name are already ends the role reaches (a correct invoice sent, a machine ready), not features; no rewrite."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N3.1",
+      "gave": "Each sentence names only what the roles do and see: the command, its message, the printed invoice, installing Python and invoicer. No sentence names how the command reads lines or computes totals."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.7",
+      "gave": "E2E records: KR1.1 each invoice run marked failed where the accountant asked for help or the total differs from the expected one; KR1.2 the times the spreadsheet opens and the invoice prints; KR2.1 each setup marked by whether the command then runs for the accountant; KR2.2 the times the setup starts and the command first runs. Each is countable, so no rewrite."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.8",
+      "gave": "Unnamed choices decided by the ideas: a missing rate is never filled from a past invoice (rate given each time); a line in an odd column order is read, not refused for format (spreadsheet as it is); a line with no amount prints nothing (nothing wrong prints). The ideas decide each one way, so none rewritten."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings are the template ones (Roles, Objectives and key results, Concept), each a reference heading that starts with the thing name."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "First lines under each heading give the section: Roles opens on the accountant and who they are, Objectives on O1, Concept on the one way sentence."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read headings and first lines for each purpose: a maintainer judging a change finds the key results; an accountant checking their job finds Roles and Concept. No rewrite."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Each sentence is needed by a maintainer or an accountant; none marked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "No sentence marked, so no other document sought."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "Nothing to move within docs/product-vision.md."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "No sentence needs a place outside the deliverable; the README setup note in the Cut grounds is for the README points, not this document, so nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "Nothing cut, as no sentence was marked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "Words cut to fit the 20-word limit: sheet as it is idea and nothing wrong prints idea rewritten short; the rate idea from the installer stores none to configures none."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "Articles and that kept in each sentence."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "docs/product-vision.md read to its end as a maintainer and as an accountant: the nothing wrong prints idea had lost what to fix, so put back names what to fix."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "Order holds: roles before objectives that name them, the spreadsheet in Roles before the invoice lines in Concept, setups in O2 before the installer ideas."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "Nothing depends on a document outside; Goodhart law is named in the template sentence itself."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "Sentences open on the known role and end on the new: the accountant ... a correct invoice; the installer ... ready to print invoices."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "The document gives no instructions, so no condition to put first."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "No rule with an exception."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "docs/product-vision.md read to its end from the top: no place needed a look back or ahead."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "Roles, objectives with key results, and ideas written as bulleted items, one item each."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence to show; the template holds no diagram."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "No structure to show; no diagram drawn."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "Each sentence makes one point; the ideas pair what the accountant and the installer get, joined by and, as one gain of one idea."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "Actors as subjects with active verbs: the accountant sends, the installer gets, the command names, the accountant gives each invoice its rate."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "Pronouns checked: their in Roles refers to the one accountant; them in Concept to the invoice lines, within five words. None ambiguous."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "No noun made from a verb left where the verb reads better; setup kept, as the readers use it."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Each object stands next to its verb."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "docs/product-vision.md read to its end word by word: the template ranking sentence reads KR1.1 and KR2.1 comes first, a compound subject the template fixes to comes; every other sentence reads one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "Sheet replaced by spreadsheet in the first idea, the readers word; message kept out in favour of the command naming what to fix."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "accountant and installer are defined in Roles, where the reader first meets them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "Abbreviations O and KR come from the heading Objectives and key results, where the reader first meets them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "Each fact stated in full in its section: who installs in Roles, the measures under their objective, how the command behaves in Concept."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "No fact repeated, so no link needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "Kept names written the same each time: `accountant`, `installer`, the command, tax rate, spreadsheet, invoice lines, `O1`/`O2`, `KR1.1` to `KR2.2`."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "Made docs/product-vision.md from the template: Roles with accountant and installer, O1 and O2 with two key results each, the Concept with the one way and three ideas; every Cut decision lands there."
     }
   ]
 }
