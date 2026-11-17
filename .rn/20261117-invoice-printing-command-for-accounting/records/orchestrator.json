@@ -914,6 +914,16 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No tree change this turn"
     }
   ]
 }
