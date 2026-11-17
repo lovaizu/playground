@@ -1,0 +1,21 @@
+{
+  "good": [
+    {
+      "question": "N7",
+      "lines": [
+        "`KR1.1` and `KR2.1` comes first: keep a change that improves a key result only if none before it gets",
+        "Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's",
+        "- Nothing wrong prints, for `O1`\\",
+        "  An unreadable line or rate stops the print, and the command names what to fix.",
+        "- Rate given each time, for `O1` and `O2`\\",
+        "  The accountant gives each invoice its rate, and the installer configures none."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N8",
+      "good_when": "The accounting team and invoicer's maintainers meet one name for the tool, written the same way everywhere, so they never wonder whether `invoicer`, plain invoicer, and \"the command\" are three things; and one name for the people who print invoices and their machines, so \"the accounting team\" and \"the team's machines\" read as the same people and machines as \"the accountant\" and \"an accountant's machine\", not a separate group set up differently."
+    }
+  ]
+}

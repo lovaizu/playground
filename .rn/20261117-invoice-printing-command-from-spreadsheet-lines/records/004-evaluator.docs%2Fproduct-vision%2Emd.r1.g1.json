@@ -20,5 +20,9 @@
       "step": 4,
       "gave": "Each condition of the group answered, N4 in good and N5 in more; ending with done."
     }
-  ]
+  ],
+  "kept": {
+    "role": "evaluator",
+    "result": "done"
+  }
 }
