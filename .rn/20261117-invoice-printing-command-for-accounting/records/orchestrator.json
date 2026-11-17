@@ -984,6 +984,41 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open; N1 asks to split the developer role the person named, judged at round end"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No tree change this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No start due"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Three of six round 3 evaluators ended: N1, N2, N3 more, N4 more, N5 good, N6 more; the round has not ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up until the round is judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
     }
   ]
 }
