@@ -1334,6 +1334,181 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No new point of the person beyond the one to ask at round end"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No tree change this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No start due"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Five of six round 4 evaluators ended: refactor N1, N2, N7, N8 good; the round has not ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up until the round is judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Round 4 mores on the role split, the command line, the ranking and an install idea recur against the person decisions and the template form; whether to put up with them unmet is the person own, so asked"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No tree change this turn; the KR1.1 print task fix waits on the person answer"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round 5 generator until the person decides"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Round 4 ended and read: good PV N2 N5, refactor N1 N2 N7 N8; more PV N1 N3 N4 N6 and refactor N3 N4 N5 N6; only KR1.1 print task would be met by its people, the rest rest on the person words or the template"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Not put up: conditions not good; the person decides whether to put it up with the template-bound and person-bound ones unmet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Person kept the four departures and settled the KR1.1 wording; no point of theirs is open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Resumed the tree-keeper with the four departures and KR1.1 by user, the refactor N6 more kept, N2 good"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "The round 5 generator starts once the tree holds the change"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Round 4 judged; only refactor N6 kept as a more"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Put up after round 5 makes KR1.1, as the person asked"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Checked 5290977 against design-tree N9 and N10: the old ranking clause conflicts with the departure, and N6 holds a duplicate; sent both back"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round 5 generator until the tree holds the fix"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Round 4 judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Put up after round 5"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Checked e23a1b1: the ranking decision ranks only the first key results, the duplicate is gone"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started the round 5 generator of the product vision with the guard text"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "The generator has not given done yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round 5 judging yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Put up after round 5 is judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
     }
   ]
 }

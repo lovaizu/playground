@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Read the Cut, docs/product-vision.md as it stands, round 4 Made, and the one More kept (refactor-doc N6 on KR1.1). Its people: the developers of invoicer, who build for two roles, the accounting team printing each client invoice at its own rate without a developer, and the developers who call the library and install the command once."
+    }
+  ]
+}

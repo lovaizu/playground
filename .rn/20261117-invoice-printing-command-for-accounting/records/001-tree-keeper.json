@@ -3799,6 +3799,506 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: N1, N2 reset and O3 reworded at fb86300, all touched nodes agree"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with round 4 of the product vision: read the tree at fb86300 plus round 4 record commits (N5 good true, the rest false) beside the unchanged best practice"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal unchanged, confirmed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "No deliverable added or dropped"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Each decision lands under the condition its more named: N1, N3, N4 twice, N6"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Each about names its point in a few words"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The product vision takes from none"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "No research needed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "No point settled by reasoning in this change"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "The four departures and the KR1.1 wording were put to the person and settled by them"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "Each new decision says by user, as the person chose each"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 at 5290977: four departures and the KR1.1 wording written by user, the refactor-doc N6 more kept against KR1.1, and N2 good set true"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "All 6 deliverables still serve the goal"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, committed 5290977, touched deliverables/0 with its N1, N3, N4, N6, and deliverables/1, 2, 4, doing []"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "The round 4 grounds with the person words are the message of 5290977 and stay out of the tree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other 5 stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Round 4 as reported"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "N2 set true, round 4 judged it good with its decision unchanged since fb86300; N5 stays true; N1, N3, N4, N6 stay false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "N1, N3, N4, N6 got new decisions and stay false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No done deliverable is touched"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched: deliverables/0 with its N1, N3, N4, N6, and deliverables/1, 2, 4; also read the N2 and N5 decisions"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "N1 decisions 0-2 agree on one Developer role; N3 decision 1 agrees with N6 idea 3; KR1.1 counting printed invoices that needed a developer help fits O1 alone as N5 decides; N6 decision 1 restates the install taking no idea, already said in decision 0, and agrees; README, architecture and tests hold no decisions. Does not agree: N4 decision 0 says then KR1.2, KR2.2 and KR3.2 in the order the document lists them, which reads as ranking them, while the new N4 decision 2 says the template line does not rank them among themselves"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node rewritten by me, as only the main conversation decides a change"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "New decisions written fresh"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "This change adds departures, the KR1.1 wording and N2 good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 with its N1-N6, and deliverables/1, 2, 4: all agree except N4 decision 0, whose wording ranks KR1.2, KR2.2, KR3.2 in document order against the new decision 2"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: round 4 written at 5290977 with the KR1.1 more kept; one disagreement under N4 passed to the main conversation"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the fixes to my two findings: read the tree at 5290977 (N4 with three decisions, N6 with two) beside the unchanged best practice"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal unchanged, confirmed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "No deliverable added or dropped"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "The about of N4 decision 0 stays as written"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The product vision takes from none"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "No research needed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "N4 decision 0 stays by reasoning, now the template paragraph alone"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "No point put to the user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "N4 decision 0 by reasoning; the N6 install choice stays in decision 0 by user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 at e23a1b1: N4 decision 0 cut to the template paragraph with KR2.1, KR1.1 and KR3.1 first, and N6 decision 1 dropped"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "All 6 deliverables still serve the goal"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, committed e23a1b1, touched deliverables/0 with its N4 and N6, and deliverables/1, 2, 4, doing []"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "The grounds are the message of e23a1b1 and stay out of the tree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other 5 stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Round 4 as reported"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "N2 and N5 stay true; N1, N3, N4, N6 stay false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "N4 and N6 decisions changed and stay false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No done deliverable is touched"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched: deliverables/0 with its N4 and N6, and deliverables/1, 2, 4; also read N4 decisions 1 and 2"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each read beside the change: N4 decision 0 now ranks only the first key results, agreeing with decision 2 that the line does not rank the second ones; KR1.1 wording unaffected; N6 decision 0 still says the install takes no idea, by user; README, architecture and tests hold no decisions. All agree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node rewritten, so no further pass"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "N4 decision 0 written over its old text"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "This change trims the N4 ranking decision and drops a repeated N6 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 with its N4 and N6, and deliverables/1, 2, 4: all agree; both earlier findings resolved"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: N4 ranking trimmed and N6 repeat dropped at e23a1b1, all touched nodes agree"
     }
   ],
   "kept": {
