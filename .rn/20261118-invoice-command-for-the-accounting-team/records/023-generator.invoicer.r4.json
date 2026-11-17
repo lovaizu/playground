@@ -964,6 +964,15 @@
       "of": "generator",
       "step": 6,
       "gave": "Made at .rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/4/made.json holds as written: the nine decisions, the refactor-code N1 More kept, and two settled points."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Ending with done: Made written, every practice of code and refactor-code recorded in order in this pass, 66 tests pass."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "done"
+  }
 }
