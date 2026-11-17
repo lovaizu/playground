@@ -4,6 +4,11 @@
       "of": "generator",
       "step": 1,
       "gave": "Read the Cut, docs/product-vision.md as it stands, and no inputs (the Cut names none). The vision is for invoicer maintainers, who build for the accountant (prints a client invoice from the spreadsheet at that client tax rate) and the installer (sets up the command on the accountant machine). The one change since done_at is the show-the-rate clause joining Nothing wrong prints."
+    },
+    {
+      "of": "generator",
+      "step": 2,
+      "gave": "Read product-vision best-practice.md with template.md, and refactor-doc best-practice.md, to their end before any change."
     }
   ]
 }
