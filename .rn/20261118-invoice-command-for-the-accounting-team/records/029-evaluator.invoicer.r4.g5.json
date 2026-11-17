@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read README.md, pyproject.toml, invoicer/*.py and the tests as the people meet them"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N7 and N8 of refactor-code with their reasons and practices"
     }
   ]
 }
