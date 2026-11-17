@@ -594,6 +594,16 @@
       "of": "refactor-doc",
       "practice": "N6.3",
       "gave": "The commit check found above in step 3; rewritten as Right-click the heading of column B, which holds the prices, the words Excel users know for it. Use 1000 Separator (,) and the CSV type keep their parentheses, as Excel names them so; EUR is written out at first use."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.6",
+      "gave": "Run in a throwaway copy with an empty home folder: this Linux machine has no py or pipx and its Python is externally managed, so the package was installed by pip --user --break-system-packages from the fresh copy; invoicer --help printed usage: invoicer [-h] --rate PERCENT LINES. The py and pipx lines on Windows were tried in round 1 from the zip and installed 1.5.0."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy with an empty home folder, with rows as Excel saves CSV UTF-8, a byte order mark, semicolons and CRLF: invoicer --help printed its usage line; the Walkthrough rows at --rate 19 and 7.7 printed exactly the two Walkthrough invoices with exit 0; a price saved as 1,200.00 printed exactly the quoted refusal line with exit 2; the same row saved as 1200.00, as step 3 makes Excel save it, printed the invoice with exit 0. Nothing to mend."
     }
   ]
 }
