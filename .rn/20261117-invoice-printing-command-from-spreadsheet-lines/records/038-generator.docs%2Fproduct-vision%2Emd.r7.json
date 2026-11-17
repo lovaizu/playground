@@ -424,6 +424,15 @@
       "of": "generator",
       "step": 7,
       "gave": "The check asked the ranking line to keep the template form and the Nothing wrong prints line to stay within 20 words a sentence: the ranking line is back to the template verb, the tax line clause is its own sentence, and the Made says so."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "The check held the idea line to one sentence of at most 20 words: Nothing wrong prints now reads The accountant gets a message saying what to fix, and sees the client tax rate on the tax line: Tax (7%) 7.00 EUR. The Made says what that line gave up and why."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "done"
+  }
 }

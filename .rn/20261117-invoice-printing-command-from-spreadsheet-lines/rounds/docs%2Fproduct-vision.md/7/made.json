@@ -42,7 +42,7 @@
     },
     {
       "path": "deliverables/0/necessary_conditions/5/decisions/1",
-      "where": "Concept, the three ideas: Their spreadsheet as it is; Nothing wrong prints, now with a second sentence: the `accountant` checks the client's tax rate on the tax line, such as `Tax (7%) 7.00 EUR`, before sending; The client's tax rate given each time."
+      "where": "Concept, the three ideas: Their spreadsheet as it is; Nothing wrong prints, whose line now reads: The `accountant` gets a message saying what to fix, and sees the client's tax rate on the tax line: `Tax (7%) 7.00 EUR`; The client's tax rate given each time."
     },
     {
       "path": "deliverables/0/necessary_conditions/5/decisions/2",
@@ -57,8 +57,8 @@
   "settled": [
     {
       "point": "the wording of the show-the-rate clause",
-      "decided": "It is a second sentence on the Nothing wrong prints line, after the message sentence: The `accountant` checks the client's tax rate on the tax line, such as `Tax (7%) 7.00 EUR`, before sending.",
-      "ground": "The Cut puts the clause in this idea. One sentence holding both would make two points in over 20 words (refactor-doc N5.1), so each point gets its own short sentence. Checking the rate before sending is how the accountant spots a mistyped rate before the invoice goes out, in the person's own example. It uses the name the client's tax rate, which the names decision keeps for the rate."
+      "decided": "The Nothing wrong prints line is one sentence: The `accountant` gets a message saying what to fix, and sees the client's tax rate on the tax line: `Tax (7%) 7.00 EUR`. To fit, the message half says what to fix, the Cut's words for the moment of use, in place of naming the unreadable invoice line or the client's tax rate, and the words never a wrong invoice go, as the idea's name Nothing wrong prints says it.",
+      "ground": "The Cut puts the show-the-rate clause in this idea. The template gives an idea one sentence of what it gives, and rn's check holds a sentence to 20 words, so the old 19-word message sentence and the new clause could not both stay whole. The person's example is kept as given. The clause uses the name the client's tax rate, which the names decision keeps for the rate. Which invoice line or rate the message names stays decided in the Cut's ideas decision, for the README and the command to carry."
     }
   ]
 }

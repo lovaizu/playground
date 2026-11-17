@@ -28,6 +28,6 @@ law. They show whether a change brought its objective closer.
 - Their spreadsheet as it is, for `O1`\
   The `accountant` copies no invoice line by hand into a new format; the `installer` sets up none.
 - Nothing wrong prints, for `O1`\
-  The `accountant` gets a message naming the unreadable invoice line or the client's tax rate, never a wrong invoice. The `accountant` checks the client's tax rate on the tax line, such as `Tax (7%) 7.00 EUR`, before sending.
+  The `accountant` gets a message saying what to fix, and sees the client's tax rate on the tax line: `Tax (7%) 7.00 EUR`.
 - The client's tax rate given each time, for `O1`\
   Since the client's tax rate differs per client, the `accountant` gives it for each invoice; the `installer` sets up none.
