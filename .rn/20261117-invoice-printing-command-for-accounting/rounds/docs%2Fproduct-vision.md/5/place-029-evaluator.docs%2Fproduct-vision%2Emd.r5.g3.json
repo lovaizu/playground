@@ -1,11 +1,10 @@
 {
   "record": ".rn/20261117-invoice-printing-command-for-accounting/records/029-evaluator.docs%2Fproduct-vision%2Emd.r5.g3.json",
-  "step": 3,
+  "step": 4,
   "work": [
     ".rn/20261117-invoice-printing-command-for-accounting/records/029-evaluator.docs%2Fproduct-vision%2Emd.r5.g3.json",
-    ".rn/20261117-invoice-printing-command-for-accounting/rounds/docs%2Fproduct-vision.md/5/.rn/20261117-invoice-printing-command-for-accounting/records/orchestrator.json",
-    ".rn/20261117-invoice-printing-command-for-accounting/rounds/docs%2Fproduct-vision.md/5/answers-3.json",
-    ".rn/20261117-invoice-printing-command-for-accounting/rounds/docs%2Fproduct-vision.md/5/answers-4.json",
-    ".rn/20261117-invoice-printing-command-for-accounting/rounds/docs%2Fproduct-vision.md/5/answers-5.json"
+    ".rn/20261117-invoice-printing-command-for-accounting/records/030-evaluator.docs%2Fproduct-vision%2Emd.r5.g4.json",
+    ".rn/20261117-invoice-printing-command-for-accounting/rounds/docs%2Fproduct-vision.md/5/answers-5.json",
+    ".rn/20261117-invoice-printing-command-for-accounting/rounds/docs%2Fproduct-vision.md/5/place-030-evaluator.docs%2Fproduct-vision%2Emd.r5.g4.json"
   ]
 }
