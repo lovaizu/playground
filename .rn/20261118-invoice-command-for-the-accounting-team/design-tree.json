@@ -83,7 +83,7 @@
       ]
     },
     {
-      "name": "A colleague from accounting prints an invoice from the README alone, with no developer to ask",
+      "name": "A developer sets the command up once on an accounting machine, and from then on a colleague from accounting prints each invoice from the README alone, with no developer to ask",
       "path": "README.md",
       "kind": "readme",
       "inputs": [],
