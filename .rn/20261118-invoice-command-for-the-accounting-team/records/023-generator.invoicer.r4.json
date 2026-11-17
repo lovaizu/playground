@@ -4,6 +4,11 @@
       "of": "generator",
       "step": 1,
       "gave": "Read the Cut, invoicer as it stands (lines, totals, tax, render, command, tests, pyproject 1.5.0) and the one More kept. Its people: colleagues from accounting, who run the invoicer command on the lines saved from their spreadsheet at the client's rate, and the maintainers and code that call the package's subtotal and total, who are after the same figures the invoice prints. The More: totals.total and render read their lines twice, so a generator gives a total without tax."
+    },
+    {
+      "of": "generator",
+      "step": 2,
+      "gave": "Read best-practices/code/best-practice.md with its template.md, and best-practices/refactor-code/best-practice.md, to their end, before any change."
     }
   ]
 }
