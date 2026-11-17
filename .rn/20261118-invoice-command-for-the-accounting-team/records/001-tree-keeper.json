@@ -1224,6 +1224,206 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: 0ba8910; doing []; invoicer stays doing with N8 false."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed after round 6 of invoicer: read the tree at 0ba8910, tree.py round invoicer (code N8 good), and turn.py, which marks doing but not done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer (done) before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "Two tree.py writes, exit 0 each, from mktemp -d folders, files checked first: 5e1c40c (code N8 good, README N9 saving the lines) and 2233799 (invoicer done)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit 5e1c40c holds the grounds of the good and the README decision; 2233799 why invoicer is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "invoicer marked done in 2233799, once each good it held was true; README.md stays open, as turn.py waits on the sign-off of invoicer."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Ran tree.py round invoicer: round 6 good code N4, N6, N8 and refactor-code N2, N5."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Code N8 set good, good in round 6; every code condition then good."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "No decision under invoicer changed; README N9 gained one, its good false already."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No change touches a done deliverable; invoicer was marked done after the change, and 5e1c40c holds it whole for any later rework."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote 5e1c40c (code N8 good; README N9 saving the lines by reasoning) and 2233799 (invoicer done, one line); doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/0 (invoicer) and deliverables/1 (README.md) with its N9."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: saving the lines matches invoicer lines form, a price with a point, and the refused heading row; README name, N1 readers, N6 walkthrough and N9 install steps stand with it."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "New decision added; no old text to write over."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "invoicer kept as one line: name, path, kind, status done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked invoicer and README.md with its N9: all agree with the change."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: 5e1c40c and 2233799; invoicer done; doing []; README.md waits on the sign-off of invoicer."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed after invoicer was signed off: read the tree at 2233799; README.md N9 held install steps by user and saving the lines by reasoning; 86581a1 is not an ancestor of HEAD and no compiled files are tracked."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer (done) before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit 141221d; README.md marked doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit 141221d message holds the grounds with the person words word for word."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "tree.py write marked README.md doing, its precondition invoicer signed off."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "README.md has had no round yet; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every README.md good is false; nothing made yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Only the by of a README N9 decision changed; its good is false already."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "The change does not touch invoicer, which is done; nothing to reopen."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote 141221d: README.md N9 install steps and saving the lines by user; README.md marked doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/1 (README.md) and its N9."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: README name, N1 readers, N6 walkthrough at two rates, both N9 decisions, and invoicer done as its precondition."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "saving the lines by written over its old value."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "invoicer stays one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked README.md and its N9: all agree with the change."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: 141221d; doing [README.md]."
     }
   ],
   "kept": {
