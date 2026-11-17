@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "A script or program that used invoicer 1.4.0 keeps working on 1.5.0 except for the changes that the `Changed in 1.5.0` notes name, with a test that shows each kept behavior. Today some callers break in ways that no note names and no test pins. A script that builds its lines in code with a whole-number price, such as `Line(\"Hosting\", 50, 1)`, got an invoice and totals from render, subtotal and total in 1.4.0. In 1.5.0 the same call stops with `AttributeError: 'int' object has no attribute 'quantize'`, and that error names neither the line nor the price it doesn't take. parse_lines in 1.4.0 also read a quantity written `+2` or `1_000` and rows separated by a line separator other than a new line, such as U+2028. 1.5.0 refuses all of them, and its note names only prices, such as 1e400. Each caller either gets what it got before, or finds the change named in the note of the function it calls, along with a message that says what to write instead."
+    }
+  ]
+}

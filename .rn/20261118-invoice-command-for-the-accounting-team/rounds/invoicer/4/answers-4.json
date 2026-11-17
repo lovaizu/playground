@@ -1,0 +1,59 @@
+{
+  "good": [
+    {
+      "question": "N2",
+      "lines": [
+        "    # utf-8-sig drops the byte order mark that a spreadsheet's CSV UTF-8 starts with.",
+        "    # newline=\"\" leaves a new row of text inside a quoted cell to csv, as its documentation asks.",
+        "    # The rows and each sum read the lines, so a generator is read into a list once.",
+        "# A quantity, a minus allowed for a credit line, of at most 9 digits, so below _LIMIT; ASCII",
+        "# only, as int() would also take digits of other scripts.",
+        "__all__ = [\"Line\", \"LineError\", \"parse_lines\", \"render\", \"subtotal\", \"tax_of\", \"total\"]",
+        "invoicer = \"invoicer.command:main\""
+      ]
+    },
+    {
+      "question": "N5",
+      "lines": [
+        "def parse_lines(text: str) -> list[Line]:",
+        "    \"\"\"The lines of a text of one row each, `<description>;<price>;<quantity>`, as ROW shows it.",
+        "def _line(number: int, cells: list[str], first: bool) -> Line:",
+        "def _price(number: int, price: str) -> Decimal:",
+        "def _quantity(number: int, quantity: str) -> int:",
+        "def render(lines, rate, currency=\"EUR\"):",
+        "    \"\"\"One row of the invoice: the label, then the amount in a column of its own.\"\"\"",
+        "def subtotal(lines: Iterable[Line]) -> Decimal:",
+        "    stated = subtotal(lines)",
+        "    return stated + tax_of(stated, rate)",
+        "def main(argv: Sequence[str] | None = None) -> None:"
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "        # utf-8-sig drops the byte order mark that a spreadsheet's CSV UTF-8 starts with.",
+        "    # newline=\"\" leaves a new row of text inside a quoted cell to csv, as its documentation asks.",
+        "    # The rows and each sum read the lines, so a generator is read into a list once.",
+        "# A quantity, a minus allowed for a credit line, of at most 9 digits, so below _LIMIT; ASCII",
+        "# only, as int() would also take digits of other scripts.",
+        "# The size that a price and an amount must stay below either side of zero: far beyond any line",
+        "# of an invoice, so that a number past it is a mistyped cell, such as 1e400, and every sum of",
+        "# amounts stays exact to the cent.",
+        "            \"the tax rate must be 0 or a percent from 1 to 100, as a rate between 0 and 1 may \"",
+        "    \"\"\"The line of row `number`, or LineError where it gives none, the row being the first that",
+        "    isn't blank where `first`, so it may be a heading.\"\"\"",
+        "        hasattr(os, \"geteuid\") and os.geteuid() == 0, \"root reads a file whatever its permissions\""
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N3",
+      "good_when": "A maintainer who reads `rows = [_row(line.description, line_amount(line), currency) for line in lines]` in render, or `return to_cent(line.amount())` in totals, can tell from the names alone which of the two is the line's amount rounded to the cent, as the invoice prints it, and which is the bare price times quantity, without opening invoicer/totals.py or invoicer/lines.py; today `line.amount()` and `line_amount(line)` read as the same thing, and only their docstrings tell that one is unrounded and the other is the stated amount."
+    },
+    {
+      "question": "N4",
+      "good_when": "In invoicer/command.py's main, the maintainer meets the name `lines` for one thing only, the invoice's lines that parse_lines gives, as everywhere else in the package; today `arguments.lines` holds the path of the saved file (`path = arguments.lines`) and, three lines on, `lines` holds the list of Line, so one name stands for both the file and what's read from it. Likewise the word `amount` names one thing throughout: today it is the unrounded price times quantity in `Line.amount()` and in the refusal `the amount, the price times the quantity, must be ...`, and the amount to the cent in `line_amount` and in render's `each amount as invoicer.totals states it, to the cent`, so a maintainer changing the rounding or the limit can't tell from the word which one a place means."
+    }
+  ]
+}

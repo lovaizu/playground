@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N8 in more: a repeated --rate silently takes the last, an unclosed quotation mark gets a three-fields message that hides it, and quoted words at a description start lose their marks"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group, N8, is answered in answers-2.json; ending with done"
     }
   ]
 }
