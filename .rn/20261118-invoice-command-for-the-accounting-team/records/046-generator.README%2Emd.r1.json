@@ -594,6 +594,11 @@
       "of": "generator",
       "step": 4,
       "gave": "Made README.md by the readme template, with images/how-it-works.svg: opening, four Non-goals, Requirements and Installation for the developer pipx setup on Windows ending in invoicer --help, the Walkthrough with the once-only Excel decimal point setting, the steps to save lines.csv as CSV UTF-8 and run invoicer in PowerShell, and the run at 19 and 7.7 percent, three doubts in How it works, the issues in Documentation; no License section, by the Cut decision."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy with an empty home, on Linux: the pip, ensurepath and pipx install steps exit 0, and a new shell prints the usage line the README quotes; lines.csv with a byte order mark and CRLF rows, as Excel saves CSV UTF-8, prints at 19 and 7.7 percent exactly the invoices the Walkthrough shows; a comma-separated row is refused as row 1 with 1 field, as How it works says. Untried, as no Windows machine is at hand: the py launcher, PowerShell, Open in Terminal and the Excel menus."
     }
   ]
 }
