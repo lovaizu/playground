@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read invoicer as its maintainers meet it: README, pyproject.toml, invoicer/*.py, tests/*.py, and its change from invoicer 1.4.0 on main; its 23 tests pass by python3 -m unittest discover -s tests."
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N1 of refactor-code: each caller, a person, a script, or other code, gets every behavior it got before a change of structure, by small steps that keep every behavior under tests."
     }
   ]
 }

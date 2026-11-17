@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N8",
+      "good_when": "Whatever I get wrong when I run invoicer, it stops before printing an invoice and tells me in one line what to fix, as it already does for a missing --rate, a rate like 7,7 or 150, a file name I mistyped, a file not saved as CSV UTF-8, an empty file, a row with commas instead of semicolons, a price like 12,50, and a quantity like 1.5. Today three of my mistakes still end in a Python traceback that tells me nothing I can act on: giving it a folder instead of the saved file (IsADirectoryError), giving it a file I'm not allowed to read (PermissionError), and a price cell that the spreadsheet saved as a huge number such as 1e400 (decimal.InvalidOperation, after it has already started on the totals). And when I type the rate as a fraction, --rate 0.19 meaning 19 percent, it quietly prints an invoice with 0.38 EUR of tax instead of 38.00 EUR, so a wrong invoice can go out to the client; I'm good when a rate I could have meant two ways is refused with a message saying to write the percent, such as 19, rather than guessed."
+    }
+  ]
+}
