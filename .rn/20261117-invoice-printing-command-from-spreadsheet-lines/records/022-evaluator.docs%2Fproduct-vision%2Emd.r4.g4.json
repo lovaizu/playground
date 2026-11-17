@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "N3, N4, N5, N6 read in refactor-doc best-practice.md with their reasons and practices"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answers written: N3 good; N4, N5, N6 more"
     }
   ]
 }
