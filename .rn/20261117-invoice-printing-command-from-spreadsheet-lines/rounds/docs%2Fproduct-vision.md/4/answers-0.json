@@ -1,0 +1,26 @@
+{
+  "good": [
+    {
+      "question": "N1",
+      "lines": [
+        "- `accountant`\\",
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "- `installer`\\",
+        "  A developer who sets up `invoicer`'s command on each `accountant`'s machine, installing Python and `invoicer` in place of the `accountant`."
+      ]
+    },
+    {
+      "question": "N2",
+      "lines": [
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without a developer's help.",
+        "- `O2`: the `installer` gets an `accountant`'s machine ready to print invoices without anyone's further help."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N3",
+      "good_when": "The maintainers can change what `invoicer` is built with or how it is delivered, such as moving off Python, and the vision still reads true: the `installer`'s role says only what they get done for the `accountant`, `invoicer`'s command set up and running on the `accountant`'s machine, and not which language runtime the command happens to need today."
+    }
+  ]
+}
