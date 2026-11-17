@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N2-N6 of refactor-code with their reasons and practices"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N2 N5 N6 in good; N3 and N4 in more: line.amount vs line_amount, and lines naming the path and the Line list"
     }
   ]
 }

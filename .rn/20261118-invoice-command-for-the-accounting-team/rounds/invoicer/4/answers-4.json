@@ -3,7 +3,7 @@
     {
       "question": "N2",
       "lines": [
-        "    # utf-8-sig drops the byte order mark that a spreadsheet's CSV UTF-8 starts with.",
+        "        # utf-8-sig drops the byte order mark that a spreadsheet's CSV UTF-8 starts with.",
         "    # newline=\"\" leaves a new row of text inside a quoted cell to csv, as its documentation asks.",
         "    # The rows and each sum read the lines, so a generator is read into a list once.",
         "# A quantity, a minus allowed for a credit line, of at most 9 digits, so below _LIMIT; ASCII",

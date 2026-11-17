@@ -20,5 +20,9 @@
       "step": 4,
       "gave": "Each condition of group 3 answered: N1 in more; ending with done"
     }
-  ]
+  ],
+  "kept": {
+    "role": "evaluator",
+    "result": "done"
+  }
 }
