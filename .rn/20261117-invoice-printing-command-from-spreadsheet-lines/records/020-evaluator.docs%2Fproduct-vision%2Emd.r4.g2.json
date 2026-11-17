@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N6 with its reason and practices in the product-vision best practice"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N6 in good: the concept states the one way first, then three ideas covering setup, input, rate, and failure"
     }
   ]
 }

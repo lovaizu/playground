@@ -1,0 +1,25 @@
+{
+  "good": [
+    {
+      "question": "N4",
+      "lines": [
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without a developer's help.",
+        "  - `KR1.1`: the share of invoices the `accountant` couldn't print without a developer's help, or printed with a wrong total. Lower is better.",
+        "  - `KR1.2`: the time from opening the spreadsheet to the printed invoice, the `accountant`'s own time included. Lower is better.",
+        "- `O2`: the `installer` gets an `accountant`'s machine ready to print invoices without anyone's further help.",
+        "  - `KR2.1`: the share of setups after which `invoicer`'s command doesn't run for the `accountant`. Lower is better.",
+        "  - `KR2.2`: the `installer`'s time from starting a setup to `invoicer`'s command running. Lower is better.",
+        "`KR1.1` and `KR2.1` comes first: keep a change that improves a key result only if none before it gets",
+        "worse.",
+        "Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's",
+        "law. They show whether a change brought its objective closer."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N5",
+      "good_when": "A maintainer who picks up any planned piece of work, including each idea of the Concept, can tell from the vision the one objective it serves, the accountant's or the installer's, and so knows whose result to check it against. As it stands, two Concept ideas say they serve both O1 and O2 (\"The spreadsheet as it is, for `O1` and `O2`\", \"The rate given each time, for `O1` and `O2`\"), and an accountant who can't print because their machine was never set up right counts as a failure under both KR1.1 (\"couldn't print without a developer's help\") and KR2.1 (\"doesn't run for the `accountant`\"). That leaves the maintainers unable to tell whose objective one fix moves, and the accounting team unable to tell whether a failure was a setup failure or a printing failure."
+    }
+  ]
+}
