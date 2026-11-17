@@ -425,5 +425,9 @@
       "step": 7,
       "gave": "Ended done; rn check asked for sentences of at most 20 words in O2 and KR3.1 and the template form of the ranking line; O2 and KR3.1 shortened, the ranking line put back in the template form, and the Made rewritten to match."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "done"
+  }
 }
