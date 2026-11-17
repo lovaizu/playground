@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N1 of refactor-code: each caller, a person, a script, or other code, gets every behavior it got before a change of structure, by small steps that keep every behavior under tests."
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N1 in more: callers of invoicer.parse_lines from 1.4.0 lose InvalidOperation, and rows of quantity 0, negative quantity, Infinity price, or non-ASCII digits, unpinned and unannounced; written in rounds/invoicer/1/answers-3.json."
     }
   ]
 }
