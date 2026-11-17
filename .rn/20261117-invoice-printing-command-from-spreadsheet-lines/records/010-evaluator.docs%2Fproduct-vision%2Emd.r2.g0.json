@@ -20,5 +20,9 @@
       "step": 4,
       "gave": "Each of N1, N2 and N3 is answered; ending with done."
     }
-  ]
+  ],
+  "kept": {
+    "role": "evaluator",
+    "result": "done"
+  }
 }

@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "answered N4 and N5 in good"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "each condition of the group answered; ending with done"
     }
   ]
 }
