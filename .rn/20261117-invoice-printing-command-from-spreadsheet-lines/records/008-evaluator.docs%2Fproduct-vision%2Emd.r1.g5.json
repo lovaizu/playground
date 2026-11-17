@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "read N7 and N8 of refactor-doc with their reasons and practices"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "N7 good; N8 more: the tool and the accountants each go by more than one name"
     }
   ]
 }
