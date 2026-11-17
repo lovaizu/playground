@@ -1,0 +1,22 @@
+{
+  "good": [
+    {
+      "question": "N2",
+      "lines": [
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "- O2: after updating invoicer, the developers get the results their own code gave before, without\n  editing their code.",
+        "- O3: the developers are left with a command they install once and never need to set up again."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "The developers see the one who calls invoicer's library from their own code and the one who installs the command for the accounting team as two kinds of people, each with the result they come for, so a developer who only installs the command, or only calls the library, finds their own role and the objective that serves them, and neither gets a product fitted to someone else."
+    },
+    {
+      "question": "N3",
+      "good_when": "Every line of the vision says what the accounting team and the developers do and get, such as each print giving the same totals for the same lines, so the vision still holds for the developers when the way the command and the library are built inside changes while they see the same."
+    }
+  ]
+}
