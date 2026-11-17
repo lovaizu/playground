@@ -1,7 +1,7 @@
 {
   "goal": {
     "decided": "The accounting team prints each client's invoice from the line items they keep in their spreadsheet, at that client's tax rate, without writing any Python. Once it holds, a colleague from accounting saves the line items from the spreadsheet, runs one command with the client's tax rate, and gets the invoice with its subtotal, tax, and total, by the README alone.",
-    "by": "reasoning"
+    "by": "user"
   },
   "deliverables": [
     {
@@ -40,6 +40,16 @@
               "about": "the tax rate's form",
               "decided": "The rate as the decimal that invoicer/tax.py tax_of multiplies the subtotal by, such as 0.19",
               "by": "research"
+            },
+            {
+              "about": "the command's shape",
+              "decided": "`invoicer <line-items file> --rate <rate>` prints the invoice as invoicer/render.py render gives it on standard output; pyproject.toml installs it as the console script `invoicer`",
+              "by": "reasoning"
+            },
+            {
+              "about": "the currency",
+              "decided": "EUR, render's default in invoicer/render.py",
+              "by": "research"
             }
           ]
         },
@@ -51,7 +61,13 @@
         {
           "id": "N5",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the tests",
+              "decided": "One test for each refusal case, named by its case, and two tests that print a two-line invoice at 0.19 and at another rate, showing the rate is set per invoice",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N6",
@@ -66,7 +82,13 @@
         {
           "id": "N8",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the refusals",
+              "decided": "Refuses a missing or unreadable file, a line not `<description>;<price>;<quantity>`, a price not a number, a quantity not a whole number, and a missing rate or one outside 0 to 1 (such as 19 for 0.19): prints nothing of the invoice, writes on standard error the line number or value and the form expected, and exits non-zero",
+              "by": "reasoning"
+            }
+          ]
         }
       ]
     },
