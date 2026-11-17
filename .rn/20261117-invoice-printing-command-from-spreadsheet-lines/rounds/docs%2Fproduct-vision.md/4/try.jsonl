@@ -1,0 +1,1 @@
+{"command": "grep -n \"comes first\\|objective closer\\|ranked after\\|without help\" docs/product-vision.md", "code": 0, "out": "19:`KR1.1` and `KR2.1` comes first: keep a change that improves a key result only if none before it gets\n22:law. They show whether a change brought its objective closer.\n", "err": ""}
