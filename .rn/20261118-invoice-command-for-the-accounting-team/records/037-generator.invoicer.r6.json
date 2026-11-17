@@ -469,6 +469,11 @@
       "of": "generator",
       "step": 4,
       "gave": "Made in invoicer/lines.py: _rows reads the rows by csv.reader with strict=True and turns csv.Error into LineError naming the row where the quoted cell opens; parse_lines docstring names the refusal and the change from 1.4.0. Tests: three in tests/test_lines.py for the refusal (short file, long file, text after the closing mark), one pinning 5\" screen, and one in tests/test_command.py for the long file; 75 tests pass."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in throwaway copies with the command installed in a fresh venv: a file saved with quoted cells (Design \"Pro\", Hosting; EU) printed the invoice at 19%, exit 0; a 3-row file and a 30002-row file whose row opens \"Pro or \"Support and never closes each exited 2, printed nothing, and named the file and the row where the mark opens, with no traceback; tests 75 OK."
     }
   ]
 }
