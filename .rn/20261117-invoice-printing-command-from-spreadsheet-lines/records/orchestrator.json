@@ -1004,6 +1004,306 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits; product-vision N6 oscillates with N5, taken to the person at put-up with the template-bound two"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Sent goods N1 N3 N5 true to the tree-keeper"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No generator asks or lacks"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Read round 6: eleven good; product-vision N6 and refactor-doc N4 N5 unmet; none sent to a seventh round"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Put-up waits for the goods write"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits; the sign-off is the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote 10fdfbd; agrees"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No start due"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Pushed PR 26 and put up docs/product-vision.md; put-up accepted with N6 and refactor-doc N4 N5 unmet; waiting for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "ty",
+      "step": 1,
+      "gave": "tree.py approve: docs/product-vision.md signed off"
+    },
+    {
+      "of": "ty",
+      "step": 2,
+      "gave": "Plan unchanged; sent vision done and README points to the tree-keeper"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "README points settled or left open for the person after the vision was done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Five README points are the person: spreadsheet file, printing output, currency, rate on invoice, license; asking one at a time once written"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Sent the vision done and README points"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No start due"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Spreadsheet file settled by the person (CSV); next point theirs: what printing gives; asking it"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Sent the CSV answer and its non-goal to the tree-keeper"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No start due"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Output settled by the person (text, file optional); next point theirs: the currency; asking it"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Sent the text answer and its non-goal to the tree-keeper"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No start due"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Currency settled by the person (EUR); next point theirs: showing the client tax rate on the invoice; asking it"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Sent the EUR answer and its non-goal to the tree-keeper"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No start due"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Vision written whole again as open from 10fdfbd, goods false, with the show-the-rate idea"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Show-the-rate settled by the person; license still theirs, asked after the vision rework"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Sent the reopened vision and the README N8 decision to the tree-keeper"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Vision generator start comes once the tree holds it"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "License is the person point; asked after the vision is back"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "9f0932c fell short on README N2 decision 2; sent the mend; README points held"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started round-7 generator for docs/product-vision.md with the guard text"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Generator making"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
     }
   ]
 }
