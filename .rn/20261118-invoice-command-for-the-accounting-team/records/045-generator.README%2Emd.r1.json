@@ -9,6 +9,11 @@
       "of": "generator",
       "step": 2,
       "gave": "Read readme best-practice.md with template.md, and refactor-doc best-practice.md, to their end"
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Took the Cut decisions as they stand and decided the other points; asked which license the README names, as the repository holds no license file and the readme template requires a License section that links one; recommended MIT in a LICENSE file"
     }
   ]
 }
