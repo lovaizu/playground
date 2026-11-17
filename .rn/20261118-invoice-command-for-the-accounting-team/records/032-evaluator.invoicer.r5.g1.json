@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read invoicer as the accounting colleague meets it: pyproject.toml, invoicer/*.py, tests/*.py"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N4, N5, N6, N7 of the code best practice with their reasons and practices"
     }
   ]
 }
