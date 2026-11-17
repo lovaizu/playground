@@ -22,13 +22,14 @@
               "by": "reasoning"
             },
             {
-              "about": "the roles",
-              "decided": "One role, `user`: one on the accounting team who prints a client's invoice.",
-              "by": "reasoning"
+              "about": "who sets the command up for the team",
+              "decided": "A developer installs Python and invoicer on the accounting team's machines; the team doesn't install anything.",
+              "by": "user"
             },
             {
-              "about": "who sets the command up for the team",
-              "decided": null
+              "about": "the roles",
+              "decided": "Two roles: the accountant, one on the accounting team who prints a client's invoice; and the installer, a developer who sets the command up on the accounting team's machines.",
+              "by": "user"
             }
           ]
         },
@@ -38,7 +39,12 @@
           "decisions": [
             {
               "about": "the objective",
-              "decided": "O1: the user sends each client a correct invoice at that client's tax rate without a developer's help.",
+              "decided": "O1: the accountant sends each client a correct invoice at that client's tax rate without a developer's help.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the installer's objective",
+              "decided": "O2: the installer gets an accountant's machine ready to print invoices without anyone's further help.",
               "by": "reasoning"
             }
           ]
@@ -54,12 +60,12 @@
           "decisions": [
             {
               "about": "the task",
-              "decided": "From the invoice lines in the spreadsheet and the client's tax rate to the printed invoice.",
+              "decided": "O1: from the invoice lines in the spreadsheet and the client's tax rate to the printed invoice. O2: from a machine with nothing of invoicer on it to the accountant running the command on it.",
               "by": "reasoning"
             },
             {
               "about": "the key results",
-              "decided": "KR1: the share of invoices the user couldn't print without help or that came out with a wrong total; lower is better. KR2: the time from opening the spreadsheet to the printed invoice, the user's own time included; lower is better. KR1 ranks before KR2; no targets.",
+              "decided": "O1 KR1: the share of invoices the accountant couldn't print without help or that came out with a wrong total; lower is better. O1 KR2: the time from opening the spreadsheet to the printed invoice, the accountant's own time included; lower is better. O2 KR1: the share of setups after which the command doesn't run for the accountant; lower is better. O2 KR2: the installer's time from starting a setup to the command running; lower is better. KR1 ranks before KR2 in each; no targets.",
               "by": "reasoning"
             }
           ]
@@ -70,7 +76,7 @@
           "decisions": [
             {
               "about": "the pieces of work and their objective",
-              "decided": "The invoice command and its README, each serving O1.",
+              "decided": "The invoice command and the README's part for the accountant serve O1; the README's setup section serves O2.",
               "by": "reasoning"
             }
           ]
@@ -88,7 +94,7 @@
       ]
     },
     {
-      "name": "Someone on the accounting team learns from the README alone how to print an invoice from their spreadsheet at a client's tax rate",
+      "name": "An accountant learns from the README alone how to print an invoice from their spreadsheet at a client's tax rate, and a developer how to set the command up for them",
       "path": "README.md",
       "kind": "readme",
       "inputs": [
