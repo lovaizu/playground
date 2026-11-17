@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "evaluator",
+      "step": 1,
+      "gave": "Read invoicer/ (command, lines, render, tax, totals), its tests, README and pyproject.toml as a maintainer meets them"
+    }
+  ]
+}
