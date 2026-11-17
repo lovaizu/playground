@@ -409,6 +409,11 @@
       "of": "generator",
       "step": 4,
       "gave": "docs/product-vision.md made: an opening line with the job, Roles with its first line and two roles, O and KR defined, ranking within each objective, no targets with a plain reason, the one way and three ideas, one point to a sentence, one name for each thing."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy: read docs/product-vision.md top to end as an accountant and a maintainer (exit 0); a grep for returns, the print, Goodhart, configure, the team machines, comes first and template comments found none (exit 0, after a first pattern matched the printed invoice, a right use)."
     }
   ]
 }
