@@ -219,6 +219,11 @@
       "of": "orchestrator",
       "step": 4,
       "gave": "Started rn:generator for invoicer round 1 with the text the guard gave"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "The invoicer generator stopped at the session end after step 3; resumed it to go on from its uncommitted work"
     }
   ]
 }

@@ -1,8 +1,17 @@
+# Needs only Python 3.9 or later, with no other package. Install the invoicer command with
+# `pipx install <path or URL of this repository>`. Run the tests from this folder with
+# `python3 -m unittest discover -s tests`.
 [project]
 name = "invoicer"
 version = "1.4.0"
 description = "The lines of an invoice, their totals with tax, and the invoice as text."
 requires-python = ">=3.9"
+
+[project.scripts]
+invoicer = "invoicer.command:main"
+
+[tool.setuptools]
+packages = ["invoicer"]
 
 [build-system]
 requires = ["setuptools>=61"]

@@ -129,6 +129,346 @@
       "of": "generator",
       "step": 3,
       "gave": "Took the five decisions of the cut as they stand and settled the rest from the purpose: the command invoicer LINES --rate PERCENT installed by a pyproject script entry for pipx; the rate typed as a percent 0-100, with or without %; the file read as UTF-8 with a byte order mark allowed; each wrong row refused with its row number before printing; refusals as argparse errors, exit 2. Nothing left open, so no asks."
+    },
+    {
+      "of": "code",
+      "practice": "N1.5",
+      "gave": "Module openings: command.py \"What the invoicer command takes from whoever runs it, and what it prints.\"; lines.py \"The lines of an invoice, and which rows of text, <description>;<price>;<quantity>, give one.\" Each names one decision."
+    },
+    {
+      "of": "code",
+      "practice": "N1.6",
+      "gave": "Changes tried on first sentences alone: a new option such as --currency names command.py; a fourth column or comma decimals names lines.py; another rounding names tax.py; another layout names render.py. Each names one module."
+    },
+    {
+      "of": "code",
+      "practice": "N2.2",
+      "gave": "Types on each offered name: main(argv: Sequence[str] | None) -> None; parse_lines(text: str) -> list[Line]; Line(description: str, price: Decimal, quantity: int = 1), amount() -> Decimal; ROW: str; LineError(ValueError)."
+    },
+    {
+      "of": "code",
+      "practice": "N2.3",
+      "gave": "Docstrings of main and parse_lines say Takes, Gives (the empty case: [] where every row is blank), and Refuses (SystemExit 2 with usage and invoicer: error: ..., nothing on stdout; LineError naming the row from 1, blank rows counted)."
+    },
+    {
+      "of": "code",
+      "practice": "N2.4",
+      "gave": "Checked each test against the docs: row numbers counting blank rows, the order of lines, the [] for blank text, the % suffix, the 0 and 100 ends, exit 2 with nothing on stdout are each stated in the docstrings; nothing relied on only the body."
+    },
+    {
+      "of": "code",
+      "practice": "N3.2",
+      "gave": "Wrote LineError alone first and saw the lines tests fail, then the body of lines.py; a stub main(argv) that did nothing and saw 14 command tests fail, then the body of command.py."
+    },
+    {
+      "of": "code",
+      "practice": "N3.3",
+      "gave": "Ran python3 -m unittest discover -s tests by throwaway.py after each body: 9 lines tests OK, then all 23 OK, and again after each refactor step. The trace: tests run."
+    },
+    {
+      "of": "code",
+      "practice": "N3.4",
+      "gave": "Read each body: every branch answers a case (the % suffix, NaN, the 0-100 ends, the missing file, not UTF-8, no lines, each row refusal); no option or fallback without a case, none removed."
+    },
+    {
+      "of": "code",
+      "practice": "N4.1",
+      "gave": "pyproject.toml: [project.scripts] invoicer = invoicer.command:main, [tool.setuptools] packages = [invoicer], and a head comment: Python 3.9 or later, no other package, pipx install, and the test command. No lock file, as the code has no dependency."
+    },
+    {
+      "of": "code",
+      "practice": "N4.2",
+      "gave": "Each command test makes its own temporary folder in setUp and removes it by addCleanup; the lines tests touch no file."
+    },
+    {
+      "of": "code",
+      "practice": "N4.3",
+      "gave": "The tests run no real tool beyond Python itself; nothing to turn off."
+    },
+    {
+      "of": "code",
+      "practice": "N4.4",
+      "gave": "Ran the 23 tests three times in shuffled orders, seeds 11, 2026 and 90817 printed: 0 failed each time."
+    },
+    {
+      "of": "code",
+      "practice": "N4.5",
+      "gave": "In a throwaway copy with an empty home: pip install --target of the repository by its setup alone (the machine has no venv or pipx) gave bin/invoicer, which printed the invoice; the tests passed there. Nothing missing from the setup."
+    },
+    {
+      "of": "code",
+      "practice": "N5.3",
+      "gave": "One test per case: 9 in tests/test_lines.py, 14 in tests/test_command.py, each name saying its case with no and."
+    },
+    {
+      "of": "code",
+      "practice": "N5.4",
+      "gave": "Expected values worked from the cases by hand before running: 100.00x2 + 10.50 = 210.50; at 19% 39.995 rounds half up to 40.00, total 250.50; at 7.7% 16.2085 gives 16.21; at 100% 210.50 and 421.00; at 0% 0.00."
+    },
+    {
+      "of": "code",
+      "practice": "N5.5",
+      "gave": "Each test keeps its rate, rows and expected text in its body; shared helpers only build the temporary file (saved), run main capturing output (run_command), and lay out a printed row (row)."
+    },
+    {
+      "of": "code",
+      "practice": "N5.6",
+      "gave": "No loop or branch in any test body; each input is a test of its own (rate above 100, negative, not a number, NaN)."
+    },
+    {
+      "of": "code",
+      "practice": "N5.7",
+      "gave": "Failure messages where the values alone do not say it: the refused rate is named; 210.50 at 7.7% is 16.2085."
+    },
+    {
+      "of": "code",
+      "practice": "N5.8",
+      "gave": "Ran the tests before the code: lines refusals failed by LineError not raised, ValueError of unpacking and of int(2.5); command tests failed by exit 0 where 2 was due and empty output; the three reading tests passed, pinning what parse_lines already did. The trace: tests run."
+    },
+    {
+      "of": "code",
+      "practice": "N6.1",
+      "gave": "Tests use the real modules and real files in their own temporary folder; no test double, as nothing is slow or outside."
+    },
+    {
+      "of": "code",
+      "practice": "N6.2",
+      "gave": "Tests reach only main, parse_lines, LineError and the fields of Line that callers read; no internal name (_rate, _price, _line) is called."
+    },
+    {
+      "of": "code",
+      "practice": "N6.3",
+      "gave": "Changed a body without its interface: extracted lines._line out of parse_lines and moved the row form into ROW; all 23 tests still passed, none rewritten."
+    },
+    {
+      "of": "code",
+      "practice": "N7.1",
+      "gave": "Each test asserts the whole result of its Then: the full printed invoice text, the full list of lines, the exact refusal message with exit 2 and empty stdout."
+    },
+    {
+      "of": "code",
+      "practice": "N7.2",
+      "gave": "No Test strategy names a tool; ran coverage.py (installed only in the throwaway home) with --branch: command.py 100%, lines.py 98% (line 25 Line.__repr__), totals.py 71% (lines 15-16 total), render.py and tax.py 100%. The trace: coverage run."
+    },
+    {
+      "of": "code",
+      "practice": "N7.3",
+      "gave": "The lines no test runs, Line.__repr__ and totals.total, are older names the package offers in __all__ for callers outside this cut; no case of the cut calls them, and removing them could break those callers, so they stay untouched. Every new line and branch is run."
+    },
+    {
+      "of": "code",
+      "practice": "N7.4",
+      "gave": "No Test strategy exists, so none names an interface for property-based tests; none written."
+    },
+    {
+      "of": "code",
+      "practice": "N7.5",
+      "gave": "No property-based test ran, so no failing input to weigh."
+    },
+    {
+      "of": "code",
+      "practice": "N7.6",
+      "gave": "The round takes no CI report of mutation testing (CI runs only lint), so there are no surviving mutants to list."
+    },
+    {
+      "of": "code",
+      "practice": "N7.7",
+      "gave": "No mutant listed by N7.6, nothing to name or remove."
+    },
+    {
+      "of": "code",
+      "practice": "N7.8",
+      "gave": "No mutant listed by N7.6, nothing to mark as changing nothing."
+    },
+    {
+      "of": "code",
+      "practice": "N7.9",
+      "gave": "No mutant listed by N7.6, no test to tighten."
+    },
+    {
+      "of": "code",
+      "practice": "N8.2",
+      "gave": "Each input is read into its inside form where it comes in: --rate into a Decimal fraction by argparse type=_rate; the file into text by open(utf-8-sig); each row into a Line of str, finite Decimal and int from 1 by lines._line, _price, _quantity; no raw text reaches render."
+    },
+    {
+      "of": "code",
+      "practice": "N8.3",
+      "gave": "Refused, not guessed: a price with a comma (10,50 could be ten and a half or a thousands mark), a rate with a comma, NaN or infinity, a quantity of 1.5 or +3 or 0, a row of other than three fields."
+    },
+    {
+      "of": "code",
+      "practice": "N8.4",
+      "gave": "main catches only FileNotFoundError, UnicodeDecodeError and LineError, each by its type, as each tells accounting what to fix; any other error stops with its trace. No bare except."
+    },
+    {
+      "of": "code",
+      "practice": "N8.5",
+      "gave": "Each message says the program, what, where and what is accepted, such as: invoicer: error: lines.csv, row 3: the price must be a number written with a point, such as 12.50, not ten."
+    },
+    {
+      "of": "code",
+      "practice": "N8.6",
+      "gave": "Every check is an if that raises (LineError, ArgumentTypeError, parser.error); no assert."
+    },
+    {
+      "of": "code",
+      "practice": "N8.7",
+      "gave": "Ran the installed invoicer command with a comma price, a header row, two fields, quantity 1.5, an empty file, a Latin-1 file, a missing file, no --rate, rate 0.19x and 120: each exits 2 with nothing printed, and each message alone says the row or argument and what to write instead."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.4",
+      "gave": "Before the structure steps (extract _line, ROW constant, LineError in __init__): grep of parse_lines and Line found no test before this work; the reading of rows, blank-row skipping and stripping had none."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.5",
+      "gave": "Pinned what parse_lines did before any change: test_reads_each_row_as_a_line (spaces stripped, Decimal price, int quantity), test_skips_a_blank_row, test_gives_no_line_for_a_text_of_blank_rows; they passed against the old body."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.6",
+      "gave": "Structure steps taken one at a time, each leaving the tests runnable: extract lines._line; add ROW and use it in lines and command; export LineError from __init__."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.7",
+      "gave": "No step renamed a name a test uses; no expected result changed."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.8",
+      "gave": "Ran the tests after the steps: 23 OK; none failed, nothing undone."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.9",
+      "gave": "No behavior looked wrong against its name, the cut or its callers; the row refusals that now raise LineError (a ValueError) in place of a bare ValueError or decimal.InvalidOperation are the change that decision N8 asks for, not a structure step, and are put in the Made for sign-off."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.1",
+      "gave": "grep of each name: every new name is used (_SEPARATOR, ROW, _WHOLE, _line, _price, _quantity, _parser, _rate, LineError); Line.__repr__ and totals.total are offered by __all__ to outside callers, so kept."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.2",
+      "gave": "No function only passes its call on: _parser builds the options, _line splits and checks a row, _price and _quantity check one field each."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.3",
+      "gave": "No parameter is given the same value at every call; the number parameter of _price and _quantity varies by row, and argv of main is None from the entry point and a list from tests."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.4",
+      "gave": "Comments kept say what code cannot: why utf-8-sig, why ASCII digits only, what ROW is shown for, how the test sum rounds; none repeats its code."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N3.1",
+      "gave": "Read each name where used: percent (the rate as typed), rate (the fraction), row (a text row), number (its row number), saved (the open file), wrong (the LineError), run_command, saved, row in tests."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N3.2",
+      "gave": "Each matched its definition; the loop result was named found and became a comprehension with _line, and args became arguments; no other rename needed."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.5",
+      "gave": "One rename only: the typed tax rate is percent in command._rate, the fraction keeps rate as in tax_of and render; messages say the tax rate."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.1",
+      "gave": "One sentence each: main reads the arguments and file into lines and prints their invoice or refuses; _parser builds the command line; _rate turns a typed percent into a fraction; parse_lines gives the line of each non-blank row; _line, _price, _quantity check one row or field; each test checks one case."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.2",
+      "gave": "No line stopped the reading; the comprehension in parse_lines has one filter and one call, and the 0 <= value <= 100 check reads plainly."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.3",
+      "gave": "parse_lines read rows and checked each field in one: extracted _line, _price and _quantity, each named for its task. main reads, refuses and prints, steps a caller never wants apart, so it stays one."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.4",
+      "gave": "No function reads a global setting; the row number each check names is passed in as number."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.5",
+      "gave": "parse_lines mixed the loop over rows with the field checks; the checks moved into _line, _price and _quantity, so each line of parse_lines and main is one step."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.6",
+      "gave": "Each one-caller function (_parser, _rate, _line, _price, _quantity) has a name that says what it gives without its caller; none folded back."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.1",
+      "gave": "Marked as odd to a stranger: encoding utf-8-sig in place of utf-8; the [0-9]+ regex where int() would do; value = None after InvalidOperation."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.2",
+      "gave": "The digits regex is a named constant, _WHOLE; value = None lets one message serve both a non-number and a non-finite number, plain from the if below it."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.3",
+      "gave": "Comments where no name says the reason: utf-8-sig drops the byte order mark that a spreadsheet CSV UTF-8 starts with; _WHOLE is ASCII only, as int() also takes digits of other scripts."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.4",
+      "gave": "Every marked line had its reason, so none is left for an asks."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.5",
+      "gave": "Read each docstring against its code: the parse_lines docstring now says spaces dropped around each field, the refusals, and the row numbering, as the body does; none stale."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.4",
+      "gave": "The row form is written once as lines.ROW, from _SEPARATOR, and command.py imports it for its no-line message and help; the separator is written once as _SEPARATOR."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.5",
+      "gave": "No shared function takes a flag that picks a branch."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.6",
+      "gave": "No module uses another module internal name; command.py uses only ROW, LineError, parse_lines and render, all offered."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.7",
+      "gave": "Every place that needs a rule is Python and reads one definition; the pyproject entry names invoicer.command:main, which main docstring says."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.5",
+      "gave": "Each refusal is written the chosen way: rows raise LineError naming the row, the command turns every refusal into parser.error (or ArgumentTypeError for --rate), so each reads invoicer: error: ... with exit 2; tests are unittest TestCases."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.6",
+      "gave": "One place keeps a different way, with its reason in its docstring: _rate raises argparse.ArgumentTypeError, not parser.error, so that argparse names the option --rate in the message."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "Made invoicer/command.py (invoicer LINES --rate PERCENT), row refusals with row numbers in invoicer/lines.py (LineError, ROW), LineError exported in invoicer/__init__.py, the pipx-installable entry point in pyproject.toml, and 23 tests in tests/test_lines.py and tests/test_command.py, all passing."
     }
   ]
 }
