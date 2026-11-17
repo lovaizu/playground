@@ -1,0 +1,33 @@
+{
+  "good": [
+    {
+      "question": "N3",
+      "lines": [
+        "- `accountant`\\",
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without anyone's help.",
+        "`invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate.",
+        "- The spreadsheet as it is, for `O1`\\"
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "`invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate.",
+        "  For an unreadable line or rate, `invoicer`'s command prints only a message naming the line or value to fix.",
+        "  - `KR1.1`: where `invoicer`'s command runs, the share of invoices that needed someone's help or had a wrong total. Lower is better."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N4",
+      "good_when": "A maintainer weighing a change sees at a glance the full order in which the four key results come, so they know for every pair, including `KR1.2` against `KR2.2`, which one must not get worse, instead of piecing the order together from a sentence that names only the first two."
+    },
+    {
+      "question": "N5",
+      "good_when": "Each sentence tells the accountant or the maintainer one thing, said by whoever acts: who keeps or drops a change and by which rule, why key results carry no targets, why the installer's work spares the accountant any install, and why the accountant gives the tax rate each time each read as a point of its own, in a sentence whose grammar reads one way, also through a machine translator."
+    }
+  ]
+}
