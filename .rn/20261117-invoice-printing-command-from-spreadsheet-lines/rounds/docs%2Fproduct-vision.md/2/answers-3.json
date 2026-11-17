@@ -1,0 +1,24 @@
+{
+  "good": [
+    {
+      "question": "N2",
+      "lines": [
+        "- `accountant`\\",
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "- `installer`\\",
+        "  A developer who sets up `invoicer`'s command on each `accountant`'s machine, installing Python and `invoicer` in place of the `accountant`.",
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without a developer's help.",
+        "- `O2`: the `installer` gets an `accountant`'s machine ready to print invoices without anyone's further help.",
+        "`invoicer` prints the finished invoice from the invoice lines as the `accountant`'s spreadsheet holds them, plus the client's tax rate.",
+        "  Where `invoicer` can't read a line or the rate, it prints no invoice, only a message naming what to fix.",
+        "  Each time the `accountant` prints an invoice, they give the client's tax rate, so the `installer` sets up no rates."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "Someone on the accounting team or a maintainer who opens the vision learns from its first lines that it says who the invoice command serves and what it lets them do, and each of Roles, Objectives and key results, and Concept opens with a sentence that says what that part tells them, such as who uses the command, what counts as the command doing its job for them, and what the command does with their spreadsheet, so they go straight to the part they came for without reading its lists to find out."
+    }
+  ]
+}
