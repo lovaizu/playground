@@ -224,6 +224,191 @@
       "of": "generator",
       "step": 3,
       "gave": "Each Cut decision taken as it stands. Settled without asking: each idea line gets two short sentences, the accountant gain then the installer one; idea names follow the names rule. No point left open."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.4",
+      "gave": "With invoicer taken out, O1 reads as a correct invoice sent to each client and O2 as a machine made ready; neither reads as a feature."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N3.1",
+      "gave": "The new idea lines say only what the accountant and the installer do and get: no copying by hand, no invoice when something cannot be read, nothing to set up; no runtime named."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.7",
+      "gave": "An E2E run records each invoice that needed help or had a wrong total, each setup after which the command does not run, and the start and end times of each task; each key result counts from these."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.8",
+      "gave": "At setup, whether to ship a per-client rate file: the rate idea decides no, so the installer sets up nothing. At input, whether to ask for a fixed template: the spreadsheet idea decides no. At print, whether to print with a guessed rate: nothing wrong prints decides no."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings are the template fixed ones, kept as the person chose; idea names begin with the reader words: Their spreadsheet, Nothing wrong, The client tax rate."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "First lines under each heading say what the section gives: the roles, O1 and its measures, the one way; unchanged this round."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read headings and first lines for each reader purpose; the accountant finds the ideas under Concept, the maintainer the measures under Objectives."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Each new sentence has a reader: the accountant gains for the accounting team, the installer gains for the maintainers choosing setup."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "No sentence marked, so none to place elsewhere."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "Nothing to move within the deliverable."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "Nothing to move outside it; nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "Cut the old as invoicer command remembers none, now said as what the installer is spared."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "Cut only, from the old nothing-wrong line; no filler words in the new lines."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "Kept the articles and so that show how each idea line is built."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "docs/product-vision.md read to its end as each reader; each still finds the roles, measures and ideas their purpose needs."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "The installer and the accountant machine are met in Roles before the idea lines use them; the invoice line and the client tax rate in the one way before the ideas."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "No sentence leans on anything outside the document."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "The rate line starts with the known client tax rate and ends with the new: given each time."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "The condition Where an invoice line or the client tax rate cannot be read comes before what the command does."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "No rule with an exception in the vision."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "docs/product-vision.md read to its end from the top; no place needed a look back or ahead."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "The lists stay one item per role, objective, key result and idea."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence to draw."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "No structure to draw."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "Each idea line split into two sentences: what it gives the accountant, then what it spares the installer or what the message names."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "Actors as subjects with active verbs: the command takes, the installer sets up, the accountant gives, its message names."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "Its message stands right after invoicer command; the one for the invoice in hand names the client tax rate in its sentence; they is the accountant alone."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "No noun made from a verb in the new lines."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Objects stand next to their verbs: takes the invoice lines, sets up no format, names the invoice line."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "docs/product-vision.md read to its end as a machine translator would; each new sentence reads one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "value replaced by the client tax rate; line by the invoice line."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No coined term added this round."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "No abbreviation added this round; O and KR labels stay as the template fixes them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "Each fact stated in full in its one place."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "No fact repeated, so no link needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "The client tax rate, the invoice line, invoicer command, accountant, installer and the accountant machine are written the same way each time, roles in code format."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "docs/product-vision.md Concept rewritten: each idea line says what it gives the accountant toward a correct invoice and what it spares the installer; the client tax rate and the invoice line named the same throughout; the rate idea says the client tax rate differs from client to client."
     }
   ]
 }
