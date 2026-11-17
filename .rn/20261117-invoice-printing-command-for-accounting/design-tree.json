@@ -15,7 +15,16 @@
         {
           "id": "N1",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the roles besides the accounting team",
+              "decided": null
+            },
+            {
+              "about": "who installs the command for the accounting team",
+              "decided": null
+            }
+          ]
         },
         {
           "id": "N2",
@@ -40,7 +49,12 @@
         {
           "id": "N6",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the concept: the one way and its ideas",
+              "decided": null
+            }
+          ]
         }
       ]
     },
