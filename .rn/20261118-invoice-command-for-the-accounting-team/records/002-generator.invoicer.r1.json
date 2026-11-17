@@ -479,6 +479,15 @@
       "of": "generator",
       "step": 6,
       "gave": "Wrote the Made in rounds/invoicer/1/made.json: where each of the five decisions lands, no More kept, and eight points settled with their grounds (rate as percent, command line, price with a point, quantity from 1, UTF-8 with BOM, LineError, refusal form, tests)."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Ended with done once the Made was written and rn check gave 0."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "done"
+  }
 }
