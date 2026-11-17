@@ -1124,6 +1124,106 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: ed82b0d; doing []; invoicer stays doing with N3 and N8 false."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed after round 5 of invoicer: read the tree at ed82b0d and tree.py round invoicer; checked Line(Hosting, 50, 1) gives subtotal 50.00 and total 59.50 at 19%."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit 0ba8910; rounds/invoicer/5/more.json keeps the code N8 more."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit 0ba8910 message holds the grounds of the decision and the goods."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote 0ba8910: N8 a wrong line refuses a quotation mark that never closes; code N1 to N7 good, N8 false; code N8 more kept; doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/0 with its N8, and deliverables/1 (README.md)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: a wrong line with N3 lines form (closed quoted cells read as typed, an unclosed one refused), a wrong rate and a rate given twice; README.md unchanged in what it rests on."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "a wrong line written over its old text."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done; none to cut to one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "invoicer stays doing, as N8 is false; README.md open."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Ran tree.py round invoicer: round 5 good code N1, N4, N6 and refactor-code N2, N5, N6; mores for the rest."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Code N1 to N7 good: N3 checked against the code (whole-number price totals 59.50 at 19%); the rest as the main conversation judged by the goal state."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Decision changed under code N8; its good stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No deliverable is done; nothing to reopen."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked invoicer, its N8, and README.md: all agree with the change."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: 0ba8910; doing []; invoicer stays doing with N8 false."
     }
   ],
   "kept": {

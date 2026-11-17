@@ -364,6 +364,26 @@
       "of": "orchestrator",
       "step": 5,
       "gave": "Checked round 5 Made: 70 tests pass, whole-number price totals 59.50, rate given twice refused, no pycache tracked; started the six evaluators the guard gave"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Reviewed the tree by round 5: the unclosed quotation mark came back a third round and its traceback breaks the a wrong line decision; decided again there"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Read invoicer round 5: took in only the unclosed quotation mark; left the rest; code N1-N7 good, N8 false"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked 0ba8910: unclosed quotation mark decided; code N1-N7 good, N8 false"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Started rn:generator for invoicer round 6 with the text the guard gave"
     }
   ]
 }
