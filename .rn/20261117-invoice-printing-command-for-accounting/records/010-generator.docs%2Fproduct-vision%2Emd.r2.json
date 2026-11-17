@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Read the Cut, docs/product-vision.md as it stands, and the six Mores kept; no inputs and no done_at. The deliverable is for the developers of invoicer, who use it to know whom invoicer serves (the accounting team, who print invoices with the command, and the developers who call the library and install the command) and what each achieves, so that each change leans toward those ends."
+    }
+  ]
+}

@@ -529,6 +529,251 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open yet; the N6 more touches the concept the person gave, judged once the round ends"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No tree change this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round 2 generator start while three evaluators of round 1 still run"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Three of six evaluators ended: refactor-doc N1-N2 good, product-vision N4 good with N5 more, N6 more; the round has not ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up until the round is judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No tree change this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round 2 generator start while two evaluators of round 1 still run"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Four of six evaluators ended; product-vision N1-N3 good; the round has not ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up until the round is judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No tree change this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round 2 generator start while one evaluator of round 1 still runs"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Five of six evaluators ended; refactor-doc N7 and N8 more; the round has not ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up until the round is judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "The N6 more asks for concept ideas, which the person gave, so it is theirs; the other mores are settled by reasoning"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Resumed the tree-keeper with decisions for N5, the ranking, and facts and names, keeping five mores, and the N6 ideas point open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round 2 generator until the tree holds the changed decisions and the person answers the concept point"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Read round 1 by tree.py round: six mores; N5, refactor N4, N5, N7, N8 change decisions under the product vision; N6 goes to the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up; the deliverable has conditions not good"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "The concept ideas point waits for the person, asked in the last message"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Checked 335bedd: three decisions by reasoning and five mores kept, the N6 point open; N1 and N2 good flags go in with the next change"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round 2 generator until the person answers the concept point, so round 2 makes the vision once"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Round 1 already read and its mores kept"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up; the concept point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Person settled the concept ideas: both added as worded, none for the install; no point of theirs is open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Resumed the tree-keeper to settle the ideas by user, keep the N6 more, and mark N1 and N2 good"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "The round 2 generator starts once the tree holds the ideas"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Round 1 read; the N6 more now kept against the person decision"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open; the tree-keeper wording notes keep the person meaning, their exact words are in the commit, and one name for lines is the generator to hold"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Checked 24ad941: the ideas settled by user, the N6 more kept, N1 and N2 good"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started the round 2 generator of the product vision with the guard text"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "The generator has not given done yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round 2 judging yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
     }
   ]
 }
