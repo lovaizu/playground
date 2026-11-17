@@ -479,6 +479,11 @@
       "of": "generator",
       "step": 4,
       "gave": "Made invoicer: lines.py reads rows by csv with ; (quoted cells as typed, ;; rows skipped) and refuses a heading and an empty description; totals.py states each amount to the cent with line_amount, subtotal, tax, total, which render.py uses; version 1.5.0 with Changed in 1.5.0 notes; .gitignore leaves __pycache__/ out; 18 new tests, 62 pass. Not done: the 8 committed .pyc files under invoicer/__pycache__ and tests/__pycache__ are still tracked, as removing them needs git rm, which the commands allowed to the generator do not include."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy as a developer installs it and accounting runs it: installed from the repository into a fresh environment, a file saved as CSV UTF-8 with a byte order mark, CRLF, a quoted cell with doubled quotes, a quoted cell holding ;, an empty row ;; and a discount printed the invoice to the cent at --rate 19 and 0%, exit 0; a heading row was refused with exit 2 and the message to save without it; the 62 tests pass. Nothing to mend."
     }
   ]
 }
