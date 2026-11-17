@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N1 of refactor-code: every caller gets every behavior it got before a change of structure"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N1 in more: 1.5.0 parse_lines refuses quantities like +3, 1_000 and non-ASCII digits, and rows split by page breaks or Unicode line separators, which 1.4.0 read, with no word in its Changed note"
     }
   ]
 }
