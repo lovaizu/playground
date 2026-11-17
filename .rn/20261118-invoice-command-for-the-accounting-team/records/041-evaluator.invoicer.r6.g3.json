@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read the invoicer deliverable as accounting colleagues meet it: README, pyproject, the invoicer package and its tests"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N1 of refactor-code: every caller gets every behavior it got before a change of structure"
     }
   ]
 }
