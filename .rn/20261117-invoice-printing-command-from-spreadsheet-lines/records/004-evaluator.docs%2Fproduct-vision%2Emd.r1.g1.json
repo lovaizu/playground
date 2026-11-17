@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N4 and N5 in the product-vision best practice, with their reasons and practices."
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "N4 good: each objective has a failure-share and a time key result, directions given, well ranked before fast. N5 more: two concept ideas are marked as serving both O1 and O2, so a piece of work does not map to one objective."
     }
   ]
 }

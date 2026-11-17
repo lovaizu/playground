@@ -1,0 +1,17 @@
+{
+  "good": [
+    {
+      "question": "N6",
+      "lines": [
+        "`invoicer` takes the invoice lines as the accountant keeps them, plus the client's tax rate, and returns the finished invoice.",
+        "- Their spreadsheet as it is, for `O1` and `O2`\\",
+        "  The accountant learns no new format, and the installer configures none.",
+        "- Nothing wrong prints, for `O1`\\",
+        "  An unreadable line or rate stops the print, and the command names what to fix.",
+        "- Rate given each time, for `O1` and `O2`\\",
+        "  The accountant gives each invoice its rate, and the installer configures none."
+      ]
+    }
+  ],
+  "more": []
+}

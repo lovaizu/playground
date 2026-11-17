@@ -1,0 +1,30 @@
+{
+  "good": [
+    {
+      "question": "N1",
+      "lines": [
+        "## Roles",
+        "- `accountant`\\",
+        "  One on the accounting team who prints a client's invoice from their spreadsheet, at that client's tax rate.",
+        "## Objectives and key results",
+        "- `O1`: the accountant sends each client a correct invoice at that client's tax rate without a developer's help.",
+        "## Concept",
+        "`invoicer` takes the invoice lines as the accountant keeps them, plus the client's tax rate, and returns the finished invoice."
+      ]
+    },
+    {
+      "question": "N2",
+      "lines": [
+        "  One on the accounting team who prints a client's invoice from their spreadsheet, at that client's tax rate.",
+        "  A developer who installs Python and invoicer on the accounting team's machines, so the team installs nothing.",
+        "- `O1`: the accountant sends each client a correct invoice at that client's tax rate without a developer's help.",
+        "- `O2`: the installer gets an accountant's machine ready to print invoices without anyone's further help.",
+        "`KR1.1` and `KR2.1` comes first: keep a change that improves a key result only if none before it gets",
+        "Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's",
+        "`invoicer` takes the invoice lines as the accountant keeps them, plus the client's tax rate, and returns the finished invoice.",
+        "  An unreadable line or rate stops the print, and the command names what to fix."
+      ]
+    }
+  ],
+  "more": []
+}

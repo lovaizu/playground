@@ -1,0 +1,21 @@
+{
+  "good": [
+    {
+      "question": "N4",
+      "lines": [
+        "  - `KR1.1`: the share of invoices the accountant couldn't print without help or that came out with a wrong total. Lower is better.",
+        "  - `KR1.2`: the time from opening the spreadsheet to the printed invoice, the accountant's own time included. Lower is better.",
+        "  - `KR2.1`: the share of setups after which the command doesn't run for the accountant. Lower is better.",
+        "  - `KR2.2`: the installer's time from starting a setup to the command running. Lower is better.",
+        "`KR1.1` and `KR2.1` comes first: keep a change that improves a key result only if none before it gets",
+        "worse."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N5",
+      "good_when": "A maintainer who picks up a piece of invoicer's work can read off the vision the one objective it serves, the accountant's or the installer's, and so knows whose key results to check after the change; today the vision itself marks reading the spreadsheet as it is and giving the rate each time as serving both O1 and O2, so a maintainer weighing a change to either can't tell whether it is the accountant or the installer it must not fail."
+    }
+  ]
+}
