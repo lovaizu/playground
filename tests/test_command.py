@@ -365,6 +365,21 @@ class CommandTest(unittest.TestCase):
             err,
         )
 
+    def test_refuses_a_quotation_mark_that_never_closes_naming_the_row_where_it_opens(self):
+        # Given a long file whose row 3 opens a cell with a quotation mark that never closes, then
+        # the command prints nothing, and its message names the file and row 3, never a traceback.
+        path = self.saved(LINES + '"Pro;10.50;1\n' + "Support;5.00;1\n" * 30000)
+
+        code, out, err = self.run_command(path, "--rate", "19")
+
+        self.assertEqual((code, out), (2, ""))
+        self.assertIn(
+            f"invoicer: error: {path}, row 3: a cell starts with a quotation mark but doesn't end "
+            "with one that closes it; remove that mark, or end the cell with one and write each "
+            "quotation mark inside it twice",
+            err,
+        )
+
     def test_refuses_a_row_of_more_than_three_fields(self):
         path = self.saved("Design;100.00;2;paid\n")
 

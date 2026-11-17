@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import io
 import re
+from collections.abc import Iterator
 from decimal import Decimal, InvalidOperation
 
 _SEPARATOR = ";"
@@ -54,28 +55,52 @@ def parse_lines(text: str) -> list[Line]:
     Gives: one Line for each row that isn't blank, in the rows' order, or [] where every row is
     blank.
     Refuses: LineError, at the first wrong row, naming it by its number from 1, blank rows
-    counted, as the spreadsheet that saved the text numbers them. A row is wrong where it has
-    other than three fields, an empty description, a price that isn't a number with a point, a
-    quantity that isn't a whole number, or a price, a quantity or an amount not between
-    -1000000000 and 1000000000. The first row that isn't blank, where neither its price nor its
+    counted, as the spreadsheet that saved the text numbers them. A row is wrong where a cell
+    starts with a quotation mark but doesn't end with one that closes it, such as `"Pro;10.50;1`
+    or `"Pro" x;10.50;1`, named as the row where the cell opens; where it has other than three
+    fields, an empty description, a price that isn't a number with a point, a quantity that isn't
+    a whole number, or a price, a quantity or an amount not between -1000000000 and 1000000000. The first row that isn't blank, where neither its price nor its
     quantity is a number, is refused as a heading, such as `Description;Price;Quantity`, with a
     message to leave the heading out.
     Changed in 1.5.0: 1.4.0 split each row of text at every semicolon, so it kept a quoted cell's
     quotes and refused a quoted cell holding a semicolon; it read an empty description and any
     number, such as 1e400; and it refused a wrong row, a heading and a row of empty cells among
     them, with a ValueError or an InvalidOperation of the decimal module that named no row,
-    where it now raises LineError, a ValueError, or skips the row of empty cells.
+    where it now raises LineError, a ValueError, or skips the row of empty cells; it read a cell
+    such as `"Pro" x` with its quotation marks, where it now refuses it.
     """
-    # newline="" leaves a new row of text inside a quoted cell to csv, as its documentation asks.
-    rows = csv.reader(io.StringIO(text, newline=""), delimiter=_SEPARATOR)
     lines = []
     first = True
-    for number, cells in enumerate(rows, start=1):
+    for number, cells in _rows(text):
         if all(not cell.strip() for cell in cells):
             continue
         lines.append(_line(number, cells, first))
         first = False
     return lines
+
+
+def _rows(text: str) -> Iterator[tuple[int, list[str]]]:
+    """Each row of the text with its number from 1, as the spreadsheet numbers it, and its cells,
+    or LineError at the row where a quoted cell opens that doesn't end with its closing mark."""
+    # newline="" leaves a new row of text inside a quoted cell to csv, as its documentation asks.
+    # strict makes csv raise where a quoted cell runs to the end of the text, which it would
+    # otherwise read as one cell holding all the rows after it, or where text follows the
+    # closing mark; past 131072 characters it raises for the cell's size instead.
+    rows = csv.reader(io.StringIO(text, newline=""), delimiter=_SEPARATOR, strict=True)
+    number = 1
+    while True:
+        try:
+            cells = next(rows)
+        except StopIteration:
+            return
+        except csv.Error:
+            raise LineError(
+                f"row {number}: a cell starts with a quotation mark but doesn't end with one that "
+                "closes it; remove that mark, or end the cell with one and write each quotation "
+                "mark inside it twice"
+            ) from None
+        yield number, cells
+        number += 1
 
 
 def _line(number: int, cells: list[str], first: bool) -> Line:

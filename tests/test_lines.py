@@ -50,6 +50,54 @@ class ParseLinesTest(unittest.TestCase):
 
         self.assertIn("row 2:", str(refused.exception), "the row is numbered as in the spreadsheet")
 
+    def test_refuses_a_quotation_mark_that_never_closes_naming_the_row_where_it_opens(self):
+        # Given row 2 whose cell opens with a quotation mark that no mark closes, then the refusal
+        # names row 2, not the rest of the text read into one cell. Supports
+        # test_refuses_a_quotation_mark_that_never_closes_naming_the_row_where_it_opens.
+        with self.assertRaises(LineError) as refused:
+            parse_lines('Design;100.00;2\n"Pro;10.50;1\nSupport;5.00;1\n')
+
+        self.assertEqual(
+            str(refused.exception),
+            "row 2: a cell starts with a quotation mark but doesn't end with one that closes it; "
+            "remove that mark, or end the cell with one and write each quotation mark inside it "
+            "twice",
+        )
+
+    def test_refuses_a_quotation_mark_that_never_closes_in_a_long_file(self):
+        # Given 30000 rows after the mark, more than the csv module holds in one cell, then
+        # parse_lines refuses it as in a short file, with no error of the csv module. Supports
+        # test_refuses_a_quotation_mark_that_never_closes_naming_the_row_where_it_opens.
+        with self.assertRaises(LineError) as refused:
+            parse_lines('Design;100.00;2\n"Pro;10.50;1\n' + "Support;5.00;1\n" * 30000)
+
+        self.assertEqual(
+            str(refused.exception),
+            "row 2: a cell starts with a quotation mark but doesn't end with one that closes it; "
+            "remove that mark, or end the cell with one and write each quotation mark inside it "
+            "twice",
+        )
+
+    def test_refuses_a_cell_with_text_after_its_closing_quotation_mark(self):
+        # Given `"Pro" x`, which reads in no one way and a spreadsheet never saves, then row 2 is
+        # refused, not read as `Pro x`. Supports
+        # test_refuses_a_quotation_mark_that_never_closes_naming_the_row_where_it_opens.
+        with self.assertRaises(LineError) as refused:
+            parse_lines('Design;100.00;2\n"Pro" x;10.50;1\n')
+
+        self.assertEqual(
+            str(refused.exception),
+            "row 2: a cell starts with a quotation mark but doesn't end with one that closes it; "
+            "remove that mark, or end the cell with one and write each quotation mark inside it "
+            "twice",
+        )
+
+    def test_reads_a_quotation_mark_inside_a_cell_that_starts_without_one(self):
+        # Given `5" screen`, typed with no quotes around the cell, then the mark is read as typed.
+        (line,) = parse_lines('5" screen;120.00;1')
+
+        self.assertEqual(line.description, '5" screen')
+
     def test_skips_a_row_of_empty_cells(self):
         # Supports test_skips_a_row_whose_cells_are_all_empty.
         lines = parse_lines("Design;100.00;2\n;;\n ; ; \nHosting;10.50;1")
