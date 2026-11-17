@@ -419,6 +419,15 @@
       "of": "generator",
       "step": 6,
       "gave": "Made written: where each of the 13 decisions and each of the 3 Mores kept lands, and 4 points settled without asking, each with its ground."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Ending done, with the Made written."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "done"
+  }
 }
