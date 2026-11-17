@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "evaluator",
+      "step": 1,
+      "gave": "Read invoicer as the colleague meets it: README, pyproject.toml, invoicer/*.py and tests; 66 tests pass"
+    }
+  ]
+}
