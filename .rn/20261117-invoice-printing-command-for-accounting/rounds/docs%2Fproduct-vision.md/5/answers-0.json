@@ -1,0 +1,29 @@
+{
+  "good": [
+    {
+      "question": "N1",
+      "lines": [
+        "- Accounting team\\",
+        "  The people who print each client's invoice with invoicer's command.",
+        "- Developer\\",
+        "  The people who call invoicer's library from their own code, and install the command once for the",
+        "  accounting team."
+      ]
+    },
+    {
+      "question": "N2",
+      "lines": [
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "- O2: after updating invoicer, the developers get the results their own code gave before, without",
+        "  editing their code.",
+        "- O3: the developers are left with a command they install once and never need to set up again."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N3",
+      "good_when": "The developers read in the concept only what they and the accounting team see: that a printed invoice's totals match what their own code gets from invoicer for the same lines, rounded to the cent the same way every time, with nothing that tells them how the command is built inside, so the vision stays true whichever way the command comes to get its totals."
+    }
+  ]
+}

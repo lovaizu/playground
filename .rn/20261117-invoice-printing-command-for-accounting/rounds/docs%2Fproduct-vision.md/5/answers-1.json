@@ -1,0 +1,22 @@
+{
+  "good": [
+    {
+      "question": "N5",
+      "lines": [
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "- O2: after updating invoicer, the developers get the results their own code gave before, without",
+        "  editing their code.",
+        "- O3: the developers are left with a command they install once and never need to set up again.",
+        "- Invoice lines from the spreadsheet, for O1\\",
+        "- Tax rate set at each print and never saved per client, for O1\\",
+        "- Same results for developers' own code, for O2\\"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N4",
+      "good_when": "A developer whose change makes one key result better and another worse can always tell from the vision whether to keep it. Today the vision says KR2.1, KR1.1 and KR3.1 come first and that a change is kept only if no key result before the improved one gets worse, but it gives no order among KR1.2, KR2.2 and KR3.2, so a change that speeds up the accounting team's printing (KR1.2) while adding edits to the developers' own code (KR2.2), or lengthening their install (KR3.2), leaves the developer unable to say whether it brings invoicer's users closer to their goals."
+    }
+  ]
+}
