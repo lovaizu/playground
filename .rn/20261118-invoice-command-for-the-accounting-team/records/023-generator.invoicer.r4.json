@@ -84,6 +84,16 @@
       "of": "generator",
       "step": 4,
       "gave": "invoicer/totals.py: subtotal, tax, total take Iterable[Line], total reckons the subtotal once; invoicer/render.py reads its lines into a list once; tests/test_totals.py gains four generator tests; 66 pass."
+    },
+    {
+      "of": "code",
+      "practice": "N8.7",
+      "gave": "Installed the package by pip from the repository in a throwaway copy and ran invoicer lines.csv --rate 19: the invoice prints, exit 0; --rate 0.19 is refused with the message to write the percent, exit 2."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy: installed invoicer prints the two-line invoice at 19 percent (Total 250.50, exit 0) and refuses --rate 0.19 (exit 2); a Python caller passing a generator of one 20.00 line gets subtotal 20.00, total 23.80, and render prints Subtotal 20.00, Tax 3.80, Total 23.80 (exit 0). pipx and venv are absent there, so pip --target stood in for pipx install."
     }
   ]
 }
