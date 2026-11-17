@@ -469,6 +469,11 @@
       "of": "generator",
       "step": 4,
       "gave": "Made: tax.to_cent reads the amount by Decimal(), so render, subtotal, total and tax_of take a whole-number price; command.py keeps each --rate and refuses a second before reading the file; docstrings of Line, to_cent, render, totals and main say so; four tests added, 70 pass."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in throwaway copies with an empty home, installed by pip install --target from the setup alone: a file saved as CSV UTF-8 with a byte order mark, a quoted cell, a whole-number price and a discount prints the invoice to the cent, exit 0; --rate 19 --rate 7 and --rate=19 --rate=19 exit 2 with no invoice and the one-line message; subtotal and total of Line(\"Hosting\", 50, 1) give 50.00 and 59.50; 70 tests pass, also in three shuffled orders and against the installed package."
     }
   ]
 }

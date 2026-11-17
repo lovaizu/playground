@@ -1,15 +1,8 @@
 {
   "record": ".rn/20261118-invoice-command-for-the-accounting-team/records/030-generator.invoicer.r5.json",
-  "step": 4,
+  "step": 5,
   "work": [
     ".rn/20261118-invoice-command-for-the-accounting-team/records/030-generator.invoicer.r5.json",
-    ".rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/5/try.jsonl",
-    "invoicer/command.py",
-    "invoicer/lines.py",
-    "invoicer/render.py",
-    "invoicer/tax.py",
-    "invoicer/totals.py",
-    "tests/test_command.py",
-    "tests/test_totals.py"
+    ".rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/5/try.jsonl"
   ]
 }
