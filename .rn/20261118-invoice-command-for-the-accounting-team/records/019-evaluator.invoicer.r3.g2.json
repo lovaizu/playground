@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N8 in code best-practice.md: refuse wrong outside input before acting, with a message naming program, what, where, and what is accepted"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N8 in more: a repeated --rate prints at the last rate unasked, and an unclosed quotation mark in a long file ends in a csv.Error trace"
     }
   ]
 }
