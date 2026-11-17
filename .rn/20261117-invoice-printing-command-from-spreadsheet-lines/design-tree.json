@@ -70,7 +70,7 @@
             },
             {
               "about": "the key results",
-              "decided": "O1 KR1: the share of invoices the accountant couldn't print without help or that came out with a wrong total; lower is better. O1 KR2: the time from opening the spreadsheet to the printed invoice, the accountant's own time included; lower is better. O2 KR1: the share of setups after which the command doesn't run for the accountant; lower is better. O2 KR2: the installer's time from starting a setup to the command running; lower is better. Within each objective KR1 ranks before KR2: KR1.1 before KR1.2, and KR2.1 before KR2.2. No targets, with the plain reason that aiming at a number improves the number in place of the users' result.",
+              "decided": "O1 KR1: the share of invoices the accountant couldn't print without a developer's help or that came out with a wrong total; lower is better. O1 KR2: the time from opening the spreadsheet to the printed invoice, the accountant's own time included; lower is better. O2 KR1: the share of setups after which the command doesn't run for the accountant; lower is better. O2 KR2: the installer's time from starting a setup to the command running; lower is better. Within each objective KR1 ranks before KR2, stated once, in the template's ranking line, with no rank notes on the key result lines. No targets.",
               "by": "reasoning"
             }
           ]
