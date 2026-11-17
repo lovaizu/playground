@@ -1,0 +1,3 @@
+{"command": "python3 /Users/kiyo/work/lovaizu/ccpm/.claude/worktrees/rn-rebuild/plugins/rn/scripts/template.py product-vision docs/product-vision.md", "code": 0, "out": "", "err": ""}
+{"command": "grep -nE \"Python|developer|invoicer` prints|O2`\\\\\\\\$\" docs/product-vision.md", "code": 0, "out": "8:  A developer who sets up `invoicer`'s command on each `accountant`'s machine, so the `accountant` installs nothing.\n", "err": "sh: 1: prints: not found\nsh: 1: O2: not found\n"}
+{"command": "grep -nE \"Python|developer|for .O1. and|O2.\\\\\\\\$\" docs/product-vision.md", "code": 0, "out": "8:  A developer who sets up `invoicer`'s command on each `accountant`'s machine, so the `accountant` installs nothing.\n", "err": ""}

@@ -409,6 +409,11 @@
       "of": "generator",
       "step": 4,
       "gave": "docs/product-vision.md made: Python out of the installer line, KR1.1 counts only where the command runs, each idea marked for O1 alone, no developer in O1 and KR1.1, and invoicer command is what prints throughout."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy: template.py product-vision on the vision exits 0 with no fault; a search finds no Python, no idea marked for O2, and developer only in the installer role line, as N1 decision 2 gives."
     }
   ]
 }
