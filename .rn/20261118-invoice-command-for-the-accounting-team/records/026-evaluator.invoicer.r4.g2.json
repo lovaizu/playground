@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read invoicer as accounting meets it: README, pyproject, the invoicer command and its modules, and the tests"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N8 in the code best practice: refuse a wrong input from outside before acting, with a message to fix it from, and its practices 1 to 7"
     }
   ]
 }
