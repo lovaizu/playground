@@ -1,0 +1,2278 @@
+{
+  "entries": [
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Read the design tree best practice whole (best-practice.md, best-practice.json, design-tree.schema.json, N1-N10); the design tree is absent, as no change has written it yet."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "At start no change was given, so tree.py write was not run; the tree stays absent."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "No change was written, so no node was touched and none needed checking."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending at start with done: the best practice and tree are read, the tree is absent, nothing changed."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the first change: the best practice is read whole (N1-N10 and the schema), and the design tree is still absent, so this change writes it."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 1 for the change (goal plus seven deliverables, as a whole tree): the change must be {\"nodes\": {<path>: <node>}, \"more\": [<more>]}. Not mended; the tree stays absent and is left for the main conversation to send again."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "tree.py write wrote nothing and gave no touched list, so no node was checked."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: nothing changed; tree.py write said the change must be {\"nodes\": {<path>: <node>}, \"more\": [<more>]}, for the main conversation to send again."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Decide item of the main conversation: the change drafts the goal as one sentence with the accounting team as subject; not written, as tree.py write gave 1 for form."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Decide item of the main conversation: its grounds ask why down to the team printing each client invoice at the right rate; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Decide item of the main conversation: the goal is not yet confirmed by the person; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "The change keeps by reasoning until the person confirms, as N1.4 asks; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "Not reached: no deliverable was written, as tree.py write gave 1 for form."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Decide item of the main conversation: the change lists a command with its README; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Decide item of the main conversation: kinds product-vision, readme, architecture, software-design, test-design, code, test-implementation; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Decide item of the main conversation: its grounds name the kinds the best practices take as inputs; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "Decide item of the main conversation: its grounds add the design files absent from the repo and change README.md; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "Decide item of the main conversation: one integration test as the work package; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Decide item of the main conversation: each deliverable names a best practice folder as kind; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "Case does not hold: every deliverable in the change has a folder; no meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "Case does not hold: no specific deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Decide item of the main conversation: inputs and preconditions given as paths; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "Case does not hold: no specific deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "Decide item of the main conversation; no check deliverable in the change; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Not reached: tree.py write gave 1 for form before checking order; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "Ran tree.py write with the change on stdin and the grounds as <ground>; it gave 1: the change must be {\"nodes\": {<path>: <node>}, \"more\": [<more>]}; tree left absent."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Case does not hold: no research or meta deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Decide item of the main conversation: each deliverable lists its kind conditions with good false; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Not yet: decisions stay empty until each deliverable is reached (N5.4), per the grounds; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "Case does not hold: no specific deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The change leaves every decision list empty, none put early to the person; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "Not reached: no point is open yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Not reached: no research deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "Not reached: no research deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "Not reached: no research deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Not reached: no point is open yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "Not reached: no point is put to the person yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "The goal carries by reasoning; no other decision in the change; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Gave the main conversation grounds as <ground>, the person request word for word; no commit, as tree.py write gave 1."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "Decide item of the main conversation: each name in the change says what holds, with the people gaining it as subject; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "No name in the change holds its path or kind; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Not reached: tree.py write gave 1, so nothing was marked doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Not reached: no deliverable has had a round."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Not reached: every good stays false, no round judged any."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Not reached: no decision changed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "Not reached: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Not reached: tree.py write gave 1 and printed no touched list."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Not reached: no node touched, none read for agreement."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Not reached: no node rewritten."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Not reached: no decision changed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the first change: the best practice is read whole and the design tree is still absent."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Decide item of the main conversation: the change drafts the goal as one sentence with the accounting team as subject; not written, as tree.py write gave 1 for form."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Decide item of the main conversation: its grounds ask why down to the team printing each client invoice at the right rate; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Decide item of the main conversation: the goal is not yet confirmed by the person; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "The change keeps by reasoning until the person confirms, as N1.4 asks; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "Not reached: no deliverable was written, as tree.py write gave 1 for form."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Decide item of the main conversation: the change lists a command with its README; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Decide item of the main conversation: kinds product-vision, readme, architecture, software-design, test-design, code, test-implementation; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Decide item of the main conversation: its grounds name the kinds the best practices take as inputs; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "Decide item of the main conversation: its grounds add the design files absent from the repo and change README.md; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "Decide item of the main conversation: one integration test as the work package; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Decide item of the main conversation: each deliverable names a best practice folder as kind; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "Case does not hold: every deliverable in the change has a folder; no meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "Case does not hold: no specific deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Decide item of the main conversation: inputs and preconditions given as paths; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "Case does not hold: no specific deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "Decide item of the main conversation; no check deliverable in the change; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Not reached: tree.py write gave 1 for form before checking order; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "Ran tree.py write with the change on stdin and the grounds as <ground>; it gave 1: the change must be {\"nodes\": {<path>: <node>}, \"more\": [<more>]}; tree left absent."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Case does not hold: no research or meta deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Decide item of the main conversation: each deliverable lists its kind conditions with good false; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Not yet: decisions stay empty until each deliverable is reached (N5.4), per the grounds; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "Case does not hold: no specific deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The change leaves every decision list empty, none put early to the person; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "Not reached: no point is open yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Not reached: no research deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "Not reached: no research deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "Not reached: no research deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Not reached: no point is open yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "Not reached: no point is put to the person yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "The goal carries by reasoning; no other decision in the change; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Gave the main conversation grounds as <ground>, the person request word for word; no commit, as tree.py write gave 1."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "Decide item of the main conversation: each name in the change says what holds, with the people gaining it as subject; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "No name in the change holds its path or kind; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Not reached: tree.py write gave 1, so nothing was marked doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Not reached: no deliverable has had a round."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Not reached: every good stays false, no round judged any."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Not reached: no decision changed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "Not reached: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Not reached: tree.py write gave 1 and printed no touched list."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Not reached: no node touched, none read for agreement."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Not reached: no node rewritten."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Not reached: no decision changed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 1: the change must be {\"nodes\": {<path>: <node>}, \"more\": [<more>]}. Not mended; the tree stays absent for the main conversation to send again."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Nothing written and no touched list, so no node was checked."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: nothing changed; tree.py write said the change must be {\"nodes\": {<path>: <node>}, \"more\": [<more>]}."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the first change: the best practice is read whole and the design tree is still absent."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Decide item of the main conversation: the change drafts the goal as one sentence with the accounting team as subject; not written, as tree.py write gave 1 for form."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Decide item of the main conversation: its grounds ask why down to the team printing each client invoice at the right rate; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Decide item of the main conversation: the goal is not yet confirmed by the person; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "The change keeps by reasoning until the person confirms, as N1.4 asks; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Decide item of the main conversation: the change lists a command with its README; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Decide item of the main conversation: kinds product-vision, readme, architecture, software-design, test-design, code, test-implementation; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Decide item of the main conversation: its grounds name the kinds the best practices take as inputs; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "Decide item of the main conversation: its grounds add the design files absent from the repo and change README.md; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "Decide item of the main conversation: one integration test as the work package; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Decide item of the main conversation: each deliverable names a best practice folder as kind; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "Case does not hold: every deliverable in the change has a folder; no meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "Case does not hold: no specific deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Decide item of the main conversation: inputs and preconditions given as paths; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "Case does not hold: no specific deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "Decide item of the main conversation; no check deliverable in the change; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Decide item of the main conversation: each deliverable lists its kind conditions with good false; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Not yet: decisions stay empty until each deliverable is reached (N5.4), per the grounds; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "Case does not hold: no specific deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The change leaves every decision list empty, none put early to the person; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "Not reached: no point is open yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Not reached: no research deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "Not reached: no research deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "Not reached: no research deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Not reached: no point is open yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "Not reached: no point is put to the person yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "The goal carries by reasoning; no other decision in the change; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "Decide item of the main conversation: each name in the change says what holds, with the people gaining it as subject; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "No name in the change holds its path or kind; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "Not reached: no deliverable was written, as tree.py write gave 1 for form."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Not reached: tree.py write gave 1 for form before checking order; nothing written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "Ran tree.py write with the change on stdin and the grounds as <ground>; it gave 1: the change must be {\"nodes\": {<path>: <node>}, \"more\": [<more>]}; tree left absent."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Case does not hold: no research or meta deliverable in the change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Gave the main conversation grounds as <ground>, the person request word for word; no commit, as tree.py write gave 1."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Not reached: tree.py write gave 1, so nothing was marked doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Not reached: no deliverable has had a round."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Not reached: every good stays false, no round judged any."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Not reached: no decision changed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "Not reached: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Not reached: tree.py write gave 1 and printed no touched list."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Not reached: no node touched, none read for agreement."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Not reached: no node rewritten."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Not reached: no decision changed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 1: the change must be {\"nodes\": {<path>: <node>}, \"more\": [<more>]}. Not mended; the tree stays absent for the main conversation to send again."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Nothing written and no touched list, so no node was checked."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: nothing changed; tree.py write said the change must be {\"nodes\": {<path>: <node>}, \"more\": [<more>]}."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the change resent as {nodes: {goal, deliverables}, more: []}: the best practice is read whole and the design tree is still absent, so this change writes it."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal written as one sentence with the accounting team as subject, from the request quoted in the ground."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "The goal names no deliverable: printing each client invoice at its rate without Python, as the main conversation asked why."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Not yet confirmed by the person; the main conversation puts it to them."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal written with by reasoning; it becomes user once the person confirms."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Tree holds the command (invoicer/cli.py) and its README, the two things the team uses."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Each deliverable has a best-practices folder as kind: product-vision, readme, architecture, software-design, test-design, code, test-implementation."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Checked each kind inputs/preconditions in its best-practice.json; each named kind has a deliverable, except prompt for test-implementation, which this product lacks."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "Product vision, architecture, software design, test design added at new paths; README.md changed at its path, per the ground."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "One integration test for the team one story, as the work package."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Each kind is the folder opened at N2.2."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "Case does not hold: every deliverable has a folder; no meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Inputs and preconditions are paths matching each kind best practice inputs/preconditions, checked kind by kind."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "Case does not hold: no deliverable results rest on a check script."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Each deliverable holds its kind condition IDs in best-practice order with good false; checked against each best-practice.json."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Not yet: points are written as the work reaches each deliverable; all decision lists empty."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "No point settled or put to the person ahead of its inputs; every decision list is empty."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "Not reached: no point open yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Not reached: no point open yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "Not reached: no point put to the person."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "The one decision, the goal, carries by reasoning."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "Each name says what holds, with the people who gain it as subject."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "No name holds its path or kind."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "Each deliverable serves part of the goal sentence (the command, its README, and the designs and test behind them); none dropped."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order checked: each deliverable comes after every path its inputs and preconditions name."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, commit 321d698: changed goal and deliverables/0-6, touched deliverables/1-6, doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Case does not hold: no research or meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Grounds given as <ground> with the person request word for word; commit 321d698 holds them; the tree holds none."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "All seven open; tree.py write marked none doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Not reached: no deliverable has had a round."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good false, as no round has judged any."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Not reached: no decision changed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "Not reached: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched per tree.py write: deliverables/1-6."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Read deliverables/1-6 beside the change: each names only paths in the tree, kinds matching their folders, and rests on nothing made false; all agree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node needs rewriting, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Not reached: first write, no decision overwritten."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 and committed 321d698: changed goal, deliverables/0-6; touched deliverables/1-6; doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/1-6 against the change and their best practices: all agree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: tree written, touched nodes agree, none marked doing."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the goal confirmed: best practice read; tree at 321d698 holds the goal by reasoning and seven open deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal sentence unchanged: one sentence with the accounting team as subject."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal still names no deliverable; unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "The person confirmed the goal as drafted, in the words quoted in the ground."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by is now user (commit 6379c79)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Plan unchanged; deliverables still those the goal needs."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Plan unchanged; kinds as at 321d698."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Plan unchanged; input kinds as checked at 321d698."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "Plan unchanged; no file added or changed by this change."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "Plan unchanged; one integration test remains the work package."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "Case does not hold: no meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Inputs and preconditions unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "Case does not hold: no check script deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Conditions unchanged, all good false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Not yet: decision lists still empty."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "No point settled ahead of its inputs."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "Not reached: no point open."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Not reached: no point open."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "Not reached: no point put to the person."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "Goal by user, as the person confirmed it."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "Names unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "Names unchanged; none holds path or kind."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "Goal sentence unchanged, so each deliverable still serves its part of it; none dropped."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, commit 6379c79: changed goal, touched [], doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Case does not hold: no research or meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Ground with the person words word for word is the message of commit 6379c79."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "All seven still open; none marked doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Not reached: no round yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "No decision answering a condition changed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "Not reached: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "tree.py write touched []: the goal is the top node and only its by changed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Read the seven deliverables beside the change anyway: the goal sentence is unchanged, so none names or rests on anything replaced; all agree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Nothing rewritten, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "by written over reasoning with no note of the old value."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0, commit 6379c79: changed goal (by user), touched [], doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "No node touched; the seven deliverables still agree, as the goal sentence is unchanged."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: goal by user written, nothing touched, none doing."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the product vision decisions: best practice read, and product-vision best practice read for its decide items; tree at 6379c79 holds goal by user and deliverables/0 with empty decisions."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged, by user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal already confirmed by the person."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Plan signed off and unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Input kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "No deliverable added or moved."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "Work packages unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "Case does not hold: no meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Inputs and preconditions unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "Case does not hold: no check script deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Product vision conditions N1-N6 unchanged in order, good false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Checked each point against the product-vision decide items: N1 job/roles/setup (N1.1, N1.7, N1.3), N2 objective, N4 task and key results, N5 pieces of work, N6 one way; N3 has only a make item, so none."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "Product vision takes no inputs, so its points may come up now; later deliverables keep empty decisions."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "No point here rests on a fact a source could state."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Case does not hold: no research deliverable needed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Job, roles, objective, task, key results, pieces settled by reasoning. The roles point (one role) rests on the open setup point: a separate installer would be a second role by product-vision N1.3."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "Setup point and the one way left null for the person, as their answers change what the user gets."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "Each settled decision says by reasoning; open points carry no by."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "Names unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "Names unchanged; none holds path or kind."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "Every deliverable still serves the unchanged goal."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, commit dd58e4d: changed 8 decisions under deliverables/0; touched deliverables/0, its N1 N2 N4 N5 N6, deliverables/1, 2, 4, 6; doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Case does not hold: no research or meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Grounds with the person words word for word are the message of commit dd58e4d; the tree holds none."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "All seven open; tree.py write marked none doing, though deliverables/0 now takes decisions."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Not reached: no round yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Conditions with new decisions were already good false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "Not reached: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched per tree.py write: deliverables/0 and its N1 N2 N4 N5 N6, deliverables/1, 2, 4, 6."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each touched node agrees: names, inputs, kinds name nothing replaced; later deliverables hold no decisions to conflict. Noted: the roles decision and README audience rest on the open setup point."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Nothing rewritten, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "New decisions only; none overwritten."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0, commit dd58e4d: 8 decisions under deliverables/0 written; doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 (N1 N2 N4 N5 N6) and deliverables/1, 2, 4, 6: all agree; noted that the roles decision and the README audience rest on the open setup point."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: decisions written, touched nodes agree, none doing."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the setup answer: best practices read; tree at dd58e4d holds one role user, setup point null, O1 only."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged, by user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal already confirmed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Plan unchanged; the setup section is part of the README deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Input kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "No deliverable added or moved."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "Work packages unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "Case does not hold: no meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Inputs and preconditions unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "Case does not hold: no check script deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Product vision conditions unchanged, good false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "New points match product-vision decide items: setup (N1.3), roles (N1.2), O2 (N2.3), O2 task and key results (N4), pieces split by objective (N5.4)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "README points stay empty until the product vision is done; the person README wish is kept in the commit ground."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "No point here rests on a fact a source could state."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "O2, its task and key results, and the pieces settled by reasoning from the person answer."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "Setup point answered by the person; the one way (N6) stays open for them."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "Setup and roles by user from the person answer; others by reasoning; N6 open, no by."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "README name now names both its people, the accountant and the developer who sets it up."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "README name holds no path or kind."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "Every deliverable still serves the unchanged goal."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, commit 588aeb9: changed 7 decisions under deliverables/0 and deliverables/1 name; touched deliverables/0 (N1 N2 N4 N5), 1, 2, 4, 6; doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Case does not hold: no research or meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Grounds with the person words word for word are the message of commit 588aeb9."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "All seven open; tree.py write marked none doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Not reached: no round yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Changed decisions answer conditions already good false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "Not reached: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched per tree.py write: deliverables/0 and its N1 N2 N4 N5, deliverables/1, 2, 4, 6."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each touched node agrees: no node still names the dropped role user; README name covers both roles; architecture, test design, integration test hold no decisions and name nothing replaced."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Nothing rewritten, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Roles, objective, task, key results, pieces, README name written over the old text with no note of it."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0, commit 588aeb9: 7 decisions under deliverables/0 and the README name written; doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 (N1 N2 N4 N5) and deliverables/1, 2, 4, 6: all agree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: change written, touched nodes agree, none doing."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the concept: best practices read; tree at 588aeb9 holds N6 the one way and its ideas open."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged, by user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal already confirmed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Plan unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Input kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "No deliverable added or moved."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "Work packages unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "Case does not hold: no meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Inputs and preconditions unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "Case does not hold: no check script deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Product vision conditions unchanged, good false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "N6 points match product-vision decide items: one way (N6.2), ideas (N6.3), moments (N6.4)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "Later deliverables keep empty decisions until the product vision is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "No point here rests on a fact a source could state."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Moments of use settled by reasoning."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "One way and ideas answered by the person; no point left open in the product vision."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "One way and ideas by user; moments by reasoning."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "Names unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "Names unchanged; none holds path or kind."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "Every deliverable still serves the unchanged goal."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, commit c1d9cda: changed deliverables/0 and its N6 decisions 0-2; touched deliverables/0, its N6, deliverables/1, 2, 4, 6; doing docs/product-vision.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Case does not hold: no research or meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Grounds with the person words word for word are the message of commit c1d9cda."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "tree.py write marked docs/product-vision.md doing; the other six open."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Not reached: no round yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "N6 was already good false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "Not reached: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched per tree.py write: deliverables/0 and its N6, deliverables/1, 2, 4, 6."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each touched node agrees: N6 fits N1, N2, N4; test design name (refuses a wrong spreadsheet or rate) fits nothing-wrong-prints. Noted: moments start at setup done, so the installer O2 has no moment."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Nothing rewritten, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "N6 open point written over with no note of it."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0, commit c1d9cda: N6 decisions written; doing docs/product-vision.md."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 (N6) and deliverables/1, 2, 4, 6: all agree; noted the installer O2 has no moment of use."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: N6 written, touched nodes agree, product vision doing."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the moments rewritten: best practices read; tree at c1d9cda, product vision doing, N6 moments start at setup done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged, by user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal already confirmed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Plan unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Input kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "No deliverable added or moved."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "Work packages unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "Case does not hold: no meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Inputs and preconditions unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "Case does not hold: no check script deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Product vision conditions unchanged, good false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Moments point matches product-vision N6.4, now from the installer first meeting the product."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "Later deliverables keep empty decisions."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "No point here rests on a fact a source could state."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Setup moment settled by reasoning from the person ideas."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "No idea proposed beyond the person, so nothing put to them."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "Moments by reasoning."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "Names unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "Names unchanged; none holds path or kind."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "Every deliverable still serves the unchanged goal."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, commit 1c0f15d: changed deliverables/0 N6 decision 2; touched deliverables/0, its N6, deliverables/1, 2, 4, 6; doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Case does not hold: no research or meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Grounds are the message of commit 1c0f15d."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other six open; none newly marked."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Not reached: no round yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "N6 was already good false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "Not reached: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched per tree.py write: deliverables/0 and its N6, deliverables/1, 2, 4, 6."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each touched node agrees: setup moment fits the O2 task and the README developer setup; the other deliverables hold no decisions and name nothing replaced."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Nothing rewritten, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Moments decision written over its old text with no note of it."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0, commit 1c0f15d: moments of use rewritten; doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 (N6) and deliverables/1, 2, 4, 6: all agree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: moments written, touched nodes agree, none newly doing."
+    }
+  ],
+  "kept": {
+    "role": "tree-keeper",
+    "result": "done"
+  }
+}

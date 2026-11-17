@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Read the Cut whole; docs/product-vision.md does not exist yet and the Cut names no inputs, no done_at and no More. People: invoicer maintainers who build the invoice command, reading for the two roles (the accountant who prints a client invoice, the installer who sets the command up), their objectives O1 and O2, and the one way."
+    }
+  ]
+}

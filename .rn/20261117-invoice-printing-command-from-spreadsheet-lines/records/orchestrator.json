@@ -1,0 +1,309 @@
+{
+  "entries": [
+    {
+      "of": "up",
+      "step": 1,
+      "gave": "Started run; entered worktree .claude/worktrees/rn-20261117-invoice-printing-command-from-spreadsheet-lines"
+    },
+    {
+      "of": "up",
+      "step": 2,
+      "gave": "Started rn:tree-keeper with the guard text; it gave done, tree absent until first write"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal drafted with the accounting team as subject from the request"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Why-chain ends at printing each client invoice themselves at its rate, no deliverable named"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Person uses a command and a README"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Kinds: code for the command, readme for README.md"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Inputs: product-vision, architecture, software-design, test-design"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "No such files in repo; README.md is a placeholder; added each at a new path"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "One integration test as the work package for the one story"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Each kind written as its best practice folder"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Inputs and preconditions as paths; prompt omitted, product has none"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Each deliverable holds its kind conditions with good false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "No decisions until inputs are done"
+    },
+    {
+      "of": "up",
+      "step": 3,
+      "gave": "Goal and plan drafted; tree-keeper wrote both, commit 321d698"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Checked tree against design tree practice: goal, 7 deliverables in order, kinds and conditions agree"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "The goal is the person point; put to them alone with recommendation"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal put to the person beside the request words"
+    },
+    {
+      "of": "up",
+      "step": 4,
+      "gave": "Goal put to the person; awaiting their confirmation"
+    },
+    {
+      "of": "ty",
+      "step": 1,
+      "gave": "tree.py approve gave 1: no sign-off waited; the person words confirm the goal point instead"
+    },
+    {
+      "of": "ty",
+      "step": 2,
+      "gave": "Plan unchanged; tree-keeper wrote goal by user, commit 6379c79"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Pushed (PR 26, draft) and put up the plan; waiting for /rn:ty or /rn:gm"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote goal by user (6379c79); checked against design tree practice, agrees"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Guard gave no start due for generator or evaluator; none started"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done; nothing to check"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended; nothing to read"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Pushed (PR 26, draft) and put up the plan; waiting for the person sign-off"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Goal settled by the person; no open point waits; the plan sign-off is theirs"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree holds goal by user (6379c79) and the plan; agrees with design tree practice"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Guard gave no start due; none started"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Pushed (PR 26, draft) and put up the plan; waiting for the person sign-off"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "ty",
+      "step": 1,
+      "gave": "tree.py approve: plan signed off at 2026-11-17T10:22:17Z"
+    },
+    {
+      "of": "ty",
+      "step": 2,
+      "gave": "Plan unchanged; tree-keeper wrote product vision points (dd58e4d); none marked doing yet"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Product vision points written from its decide items"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Job, roles, objective, key results, pieces settled by reasoning"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "Each settled point names by reasoning"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "Setup role and concept left open for the person, asked one at a time"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Two open points are the person: setup role first, then concept; asking the first"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote dd58e4d; agrees; roles decision rests on the setup answer"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Guard gave no start due"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up: product vision points open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Setup point settled by the person; concept is the next point of theirs; asking it"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote 588aeb9: two roles, O2, README name; agrees; accounting team in names 5 and 6 still true"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Guard gave no start due"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up: concept open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Concept settled by the person; installer moment settled by reasoning; no point waits"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote c1d9cda and 1c0f15d; agree; product vision doing"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started rn:generator for docs/product-vision.md with the guard text"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Generator still making; nothing to check"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    }
+  ]
+}

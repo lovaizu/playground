@@ -1,0 +1,10 @@
+{
+  "record": ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/records/002-generator.docs%2Fproduct-vision%2Emd.r1.json",
+  "step": 1,
+  "work": [
+    ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/records/001-tree-keeper.json",
+    ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/records/002-generator.docs%2Fproduct-vision%2Emd.r1.json",
+    ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/records/orchestrator.json",
+    ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/sign-offs.json"
+  ]
+}
