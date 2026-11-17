@@ -1,0 +1,29 @@
+{
+  "good": [
+    {
+      "question": "N3",
+      "lines": [
+        "- `accountant`\\",
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "- `installer`\\",
+        "  A developer who sets up `invoicer`'s command on each `accountant`'s machine, installing Python and `invoicer` in place of the `accountant`.",
+        "`invoicer` prints the finished invoice from the invoice lines as the `accountant`'s spreadsheet holds them, plus the client's tax rate.",
+        "  Where `invoicer` can't read a line or the rate, it prints no invoice, only a message naming what to fix."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N4",
+      "good_when": "A maintainer weighing a change sees at a glance the whole order of the four key results, which one comes first, second, third, and fourth, so they know which one wins when two of them pull against each other, instead of working out from one sentence that KR1.1 and KR2.1 come first and guessing where KR1.2 and KR2.2 stand."
+    },
+    {
+      "question": "N5",
+      "good_when": "Each sentence tells the reader one thing, with whoever acts doing it, so that the accountant and the maintainer, and a machine translation, read it one way on the first read: the rule on which key results come first, why key results have no targets, what the installer does, and why the accountant gives the rate each time each read as plain separate statements, with no 'comes first' where two key results are meant, and no 'a measure made a target' to untangle."
+    },
+    {
+      "question": "N6",
+      "good_when": "Someone on the accounting team who has never worked with objectives and key results knows what an objective and a key result are, and what O1 and KR1.1 stand for, when they first meet them, rather than learning what key results are for only after reading all four, and they meet no name such as Goodhart's law that they'd have to look up to follow the point."
+    }
+  ]
+}
