@@ -10,7 +10,7 @@
     },
     {
       "path": "deliverables/0/necessary_conditions/1/decisions/0",
-      "where": "Objectives and key results: O2, \"after each update of invoicer, the developers get the same results from their own code as before the update, without editing their code\"; O3, \"the developers are left with a command they install once and never need to set up again\"; printing is named only under O1."
+      "where": "Objectives and key results: O2, \"after updating invoicer, the developers get the results their own code gave before, without editing their code\"; O3, \"the developers are left with a command they install once and never need to set up again\"; printing is named only under O1."
     },
     {
       "path": "deliverables/0/necessary_conditions/2/decisions/0",
@@ -18,7 +18,7 @@
     },
     {
       "path": "deliverables/0/necessary_conditions/3/decisions/0",
-      "where": "Objectives and key results: the ranking paragraph, \"KR2.1, KR1.1 and KR3.1 come first, then KR1.2, KR2.2 and KR3.2: keep a change that improves a key result only if none before it gets worse.\", and the template's sentence on no targets and Goodhart's law, as the template writes it."
+      "where": "Objectives and key results: the template's ranking paragraph, \"KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it gets worse.\", with KR1.2, KR2.2 and KR3.2 after them in the order the document lists them; and the template's sentence on no targets and Goodhart's law, as the template writes it."
     },
     {
       "path": "deliverables/0/necessary_conditions/4/decisions/0",
@@ -38,19 +38,19 @@
     {
       "best_practice": "refactor-doc",
       "condition": "N3",
-      "where": "Objectives and key results: O2 says \"as before the update\" right after \"after each update of invoicer\", so before means the results their own code gave before they updated invoicer."
+      "where": "Objectives and key results: O2 opens with \"after updating invoicer\" and then says \"the results their own code gave before\", so before means the results their own code gave before they updated invoicer."
     }
   ],
   "settled": [
     {
       "point": "KR3.1 under the reworded O3",
-      "decided": "KR3.1 counts the share of installs that end without the command running for the accounting team, or after which a developer sets the command up again.",
+      "decided": "KR3.1 counts the share of installs after which the command doesn't run for the accounting team, or needs setting up again.",
       "ground": "product-vision N4: the first key result measures the share of the role's tasks that fail to reach the objective's result. O3 now names a command the developers never need to set up again, so an install after which a developer sets it up again misses that result as well, and KR3.1 counts it."
     },
     {
       "point": "the wording of the ranking paragraph",
-      "decided": "\"KR2.1, KR1.1 and KR3.1 come first, then KR1.2, KR2.2 and KR3.2: keep a change that improves a key result only if none before it gets worse.\"",
-      "ground": "The N4 decision names the first key results in the order KR2.1, KR1.1 and KR3.1, then KR1.2, KR2.2 and KR3.2, in the template's paragraph. The earlier line, \"KR2.1, KR1.1, KR3.1 comes first\", left out the second three and read as one key result; the new line names all six, with \"come\" for the plural (refactor-doc N5), and keeps the template's own words after the colon."
+      "decided": "The paragraph stays in the template's form, \"KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it gets worse.\"; KR1.2, KR2.2 and KR3.2 come after in the order the document lists them, without being named in the line.",
+      "ground": "The N4 decision puts the ranking in the template's paragraph, and the template is the best practice's own form, which rn's check holds the line to; naming the second three in the line leaves that form. The template's \"none before it\" ranks the rest in the order the document lists them, as the decision says."
     },
     {
       "point": "the name of the role in O2 and O3",
