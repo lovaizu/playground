@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read the invoicer package as accounting meets it: the invoicer command, its help and refusals, and the lines, totals, tax and render modules it prints through."
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N4 to N7 of the code best practice with their reasons and practices: tests that pass in any order on a fresh setup, one named test per case, tests through the interfaces only, and a failing test for any broken behavior."
     }
   ]
 }
