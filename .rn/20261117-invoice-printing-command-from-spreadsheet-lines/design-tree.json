@@ -33,7 +33,7 @@
             },
             {
               "about": "the names the vision uses",
-              "decided": "The vision names each thing one way throughout: `invoicer` for the product alone, invoicer's command for what the accountant runs and what prints the invoice, `accountant` for one who prints, and the accountant's machine for where it runs. The vision names no runtime; installing Python is the README setup section's to say.",
+              "decided": "The vision names each thing one way throughout: `invoicer` for the product alone, invoicer's command for what the accountant runs and what prints the invoice, `accountant` for one who prints, the accountant's machine for where it runs, the client's tax rate for the rate the accountant gives, and the invoice line for one line of the spreadsheet. The vision names no runtime; installing Python is the README setup section's to say.",
               "by": "reasoning"
             }
           ]
@@ -107,7 +107,7 @@
             },
             {
               "about": "the objective each idea serves",
-              "decided": "Each of the three ideas is marked for O1 alone, since the accountant meets each at every print and the installer meets it once.",
+              "decided": "Each of the three ideas is marked for O1 alone, since the accountant meets each at every print and the installer meets it once. An idea's line says what it gives the accountant toward a correct invoice, and may also say what it spares the installer, such as nothing to set up.",
               "by": "reasoning"
             }
           ]
