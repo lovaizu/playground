@@ -424,6 +424,41 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open; the reworded concept ideas and the Python tooling line moved to the README go to the sign-off as decisions taken without asking"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No tree change this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started no new generator: the product vision is made and now goes to its evaluators"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Read the product vision and its Made: roles, three objectives with key results, and the concept, first sentence word for word; it meets its Cut, so started the evaluator for N1 to N3"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "The round has not ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up until the round is judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
     }
   ]
 }

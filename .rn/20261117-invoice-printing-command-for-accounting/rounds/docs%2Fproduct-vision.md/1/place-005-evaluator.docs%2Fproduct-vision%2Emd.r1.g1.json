@@ -1,0 +1,9 @@
+{
+  "record": ".rn/20261117-invoice-printing-command-for-accounting/records/005-evaluator.docs%2Fproduct-vision%2Emd.r1.g1.json",
+  "step": 1,
+  "work": [
+    ".rn/20261117-invoice-printing-command-for-accounting/records/003-generator.docs%2Fproduct-vision%2Emd.r1.json",
+    ".rn/20261117-invoice-printing-command-for-accounting/records/orchestrator.json",
+    ".rn/20261117-invoice-printing-command-for-accounting/records/005-evaluator.docs%2Fproduct-vision%2Emd.r1.g1.json"
+  ]
+}
