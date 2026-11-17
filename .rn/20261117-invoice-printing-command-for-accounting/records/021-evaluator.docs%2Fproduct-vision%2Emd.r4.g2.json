@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N6 in best-practice.md: one way first, then ideas that keep it holding at each moment of use, from first meeting the product to reaching the objective"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N6 in more: no idea keeps the one way holding at the install moment (O3), and the update idea does not say rounding stays the same across updates (O2)"
     }
   ]
 }
