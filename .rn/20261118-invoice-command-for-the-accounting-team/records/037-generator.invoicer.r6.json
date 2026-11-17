@@ -9,6 +9,11 @@
       "of": "generator",
       "step": 2,
       "gave": "Read code best-practice.md with template.md, and refactor-code best-practice.md, to their end before any change."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Decided: take the Cut decision \"a wrong line\" as it stands; in lines.py read rows by csv.reader with strict=True, through one generator _rows that numbers rows as the spreadsheet does and turns csv.Error into LineError naming the row where the quoted cell opens, with a message to remove the mark or close the cell. Settled by the purpose: a cell with text after its closing mark, such as \"Pro\" x, is refused by the same message, as it reads in no one way and a spreadsheet never saves it. No asks."
     }
   ]
 }
