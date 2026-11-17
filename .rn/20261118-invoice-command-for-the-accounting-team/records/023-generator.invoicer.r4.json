@@ -9,6 +9,11 @@
       "of": "generator",
       "step": 2,
       "gave": "Read best-practices/code/best-practice.md with its template.md, and best-practices/refactor-code/best-practice.md, to their end, before any change."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Decided: take each decision of the Cut as it stands; settle that subtotal, tax, total and render take Iterable[Line] read once (total reckons the subtotal once and adds tax_of of it; render lists its lines once), as the decision asks that the printed invoice and the package give the same figures for any iterable; nothing left open for the person."
     }
   ]
 }
