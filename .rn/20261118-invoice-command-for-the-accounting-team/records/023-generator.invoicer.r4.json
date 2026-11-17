@@ -959,6 +959,11 @@
       "of": "generator",
       "step": 5,
       "gave": "Tried in a throwaway copy this pass: installed invoicer prints the two-line invoice at 19 percent (Total 250.50, exit 0), refuses --rate 0.19 (exit 2); earlier a caller passing a generator of one 20.00 line got total 23.80 and the rendered Total 23.80."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Made at .rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/4/made.json holds as written: the nine decisions, the refactor-code N1 More kept, and two settled points."
     }
   ]
 }
