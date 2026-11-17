@@ -1,0 +1,32 @@
+{
+  "good": [
+    {
+      "question": "N1",
+      "lines": [
+        "## Roles",
+        "- Accounting team\\",
+        "  The people who print each client's invoice at its tax rate with invoicer's command, from their",
+        "## Objectives and key results",
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "## Concept",
+        "invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the"
+      ]
+    },
+    {
+      "question": "N2",
+      "lines": [
+        "- Accounting team\\",
+        "  The people who print each client's invoice at its tax rate with invoicer's command, from their",
+        "- Developer\\",
+        "  The people who call invoicer as a library from their own code, and install the command for the",
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "- O2: the developers' own programs keep giving the invoices they gave before.",
+        "- O3: a developer installs the command once, and after that the accounting team's invoices take",
+        "KR1.1, KR2.1, KR3.1 comes first: keep a change that improves a key result only if none before it",
+        "Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's",
+        "invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the"
+      ]
+    }
+  ],
+  "more": []
+}
