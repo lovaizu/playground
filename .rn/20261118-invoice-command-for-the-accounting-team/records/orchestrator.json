@@ -644,6 +644,11 @@
       "of": "orchestrator",
       "step": 4,
       "gave": "Started rn:generator for README.md round 1 from step 3 with the text the guard gave"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "README generator stopped at session end after step 3 with uncommitted README.md and images/; resumed it with the person words"
     }
   ]
 }

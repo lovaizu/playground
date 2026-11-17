@@ -274,6 +274,326 @@
       "of": "generator",
       "step": 3,
       "gave": "Took the six Cut decisions as they stand: no License section and no LICENSE file; the developer pipx setup on Windows with invoicer --help as the check; accounting everyday steps in Excel and PowerShell in the Walkthrough, with the decimal point set in Excel Options; a run at 19 and 7.7 percent. Settled: install from the public main.zip URL so no Git is needed; sign in as the colleague, as pipx installs for one account; Non-goals PDF, currency EUR only, no client details, one rate per invoice; help in the repository issues. No asks."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.6",
+      "gave": "Wrote the opening by the template: invoicer is a PowerShell command that prints an invoice from rows saved in Excel, at the tax rate you type; for you when you work in accounting and bill clients from invoice lines in Excel; you print each invoice at the client rate yourself, without a developer or Python."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.7",
+      "gave": "Took out each of the three sentences in turn: each one alone says what, who for, or what they achieve, so none deleted; no status sentence, as it is ready."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.8",
+      "gave": "No vague or praising word in the opening."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.9",
+      "gave": "Read as a developer who bills no one: work in accounting and bill clients from invoice lines kept in Excel tells them it is not theirs to use day to day; kept."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.8",
+      "gave": "Non-goals lists four: no PDF, no client name, number or date, EUR only, one tax rate for the whole invoice."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.9",
+      "gave": "The PDF item says the text can be copied into the letter, and the details item says it prints the lines and totals; the others have no other way."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.5",
+      "gave": "Ready, so no status line at the top."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.4",
+      "gave": "No License section written, by the Cut decision on N4: the README names no license; rn template check asks for the section, a conflict handed back."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.5",
+      "gave": "No license link to follow, as the README names none; no LICENSE file added."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.1",
+      "gave": "Sections in the template order: opening, Non-goals, Requirements, Installation, Walkthrough, How it works, Documentation; License left out by the Cut decision."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.2",
+      "gave": "Within the Walkthrough, the once-only Excel setting comes before the steps for each invoice; within Requirements, who does the setup comes first."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.3",
+      "gave": "Read README.md from the top as a colleague from accounting: after the opening, what does it not do; after Non-goals, who sets it up, which Requirements answers; after Installation, how do I print one, which the Walkthrough answers; after it, can I trust the totals and what if I mistype, which How it works answers."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.4",
+      "gave": "No answer stands before its question; nothing moved."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.5",
+      "gave": "Each next section answers the question written; the first requirement names the developer, so accounting knows the setup is not theirs."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.5",
+      "gave": "Ran the task in a throwaway copy with an empty home: pipx install of the repository, lines.csv with a byte order mark and CRLF rows as Excel saves it, invoicer lines.csv --rate 19 and --rate 7.7, each exit 0; outputs kept as they came."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.6",
+      "gave": "Wrote the rows as an Excel table of columns A to C, and each command with its invoice as a console code block, with the PowerShell prompt PS>."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.7",
+      "gave": "The Walkthrough opens with the result: the client invoice in PowerShell, with the tax at the rate typed."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.8",
+      "gave": "A newcomer from accounting can say: I save my rows as lines.csv, type invoicer with the client rate, and get the invoice, tax 36.20 at 19% and 14.67 at 7.7% for the same rows."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.2",
+      "gave": "The one way in one sentence: You type each client tax rate, and invoicer turns your saved rows into the invoice at that rate."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.3",
+      "gave": "That sentence stands first in How it works, before the figure and the three answers."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.4",
+      "gave": "A newcomer reading only it can say back: I give the rate each time and it makes the invoice from my rows."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.9",
+      "gave": "The mechanism below the one way: lines.csv from Excel, read row by row, each amount to the cent and the tax at the typed rate, the invoice in PowerShell; each answer says which of these parts answers it."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.10",
+      "gave": "Drew images/how-it-works.svg: the four parts as one flow, the --rate input into the amounts, and each of the three doubts beside the part that answers it, with what the reader gets."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.11",
+      "gave": "Labels in accounting words: lines.csv saved from Excel, reads each row, amounts to the cent, the invoice in PowerShell, the client tax rate."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.12",
+      "gave": "The only own name is --rate, explained in the figure as the client tax rate typed on each run."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.13",
+      "gave": "A newcomer can say back: it rounds each line to the cent so the totals add up, refuses a wrong row or rate by naming it, and reads Excel semicolons."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.4",
+      "gave": "Installation holds the three commands to copy: py -m pip install --user pipx, py -m pipx ensurepath, py -m pipx install of the main.zip URL."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.5",
+      "gave": "The steps end with the sign: in a new PowerShell window, invoicer --help prints its usage line, quoted."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.6",
+      "gave": "Ran the three install steps in a throwaway copy with an empty home, on Linux, as no Windows machine is at hand: python3 for py, --break-system-packages that Debian alone needs, and the pushed branch zip for main.zip, as main lacks the command until merge; each exit 0, and a new shell printed usage: invoicer [-h] --rate PERCENT LINES. The Windows py launcher, PowerShell and Excel steps stay untried."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.4",
+      "gave": "Documentation gives one link, the issues of lovaizu/playground by URL, for the developers to report a fault or ask for a change."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.5",
+      "gave": "The issues URL opens the issue list of lovaizu/playground, has_issues true by the GitHub API; images/how-it-works.svg opens from the README folder."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings are fixed by the readme template; the doubt headings start with the reader question words, such as What if a row or the tax rate is wrong?"
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "Each first sentence says what the section gives: the first requirement names the developer who sets it up, the Walkthrough opens with the invoice you have at the end, each doubt opens with what invoicer does."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read headings and first sentences for each purpose: accounting finds the Walkthrough and skips Requirements by its developer line; the developer finds Requirements and Installation."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Each sentence serves accounting or the developer; none marked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "No sentence marked, so no other document sought."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "Nothing moved."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "Nothing to ask about."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "The stub sentence about the Playground went, as it serves no reader of invoicer."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "Cut words: of its own in the row step, so that sentences stay at 20 words or fewer."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "Articles and that kept throughout."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "Read README.md again from the top as each reader: accounting still finds the column order, no heading row, the save type and file name, and the command; the developer finds the account, Python, commands and sign."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "The once-only Excel setting stands before the save step that needs it; lines.csv is named in the save step before the command uses it."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "Outside facts linked: python.org for Python, the issues by URL; Excel and Windows menu names spelled out."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "Sentences start from the known, such as Excel separates the cells with the list separator of Windows, which is ; for euro formats."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "Conditions first: If invoicer says that a row has 1 field, set List separator; In a new PowerShell window, invoicer --help prints."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "The exception to the price rule, a discount as a negative price, follows the row rule in the next step."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "Read README.md from the top: no place needed a look back or ahead."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "Wrote the Excel setting and the steps for each invoice as numbered lists, the rows as a table, Non-goals and Requirements as bulleted lists."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence between parties to draw; no Mermaid diagram."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "The mechanism, its parts and what passes between them, drawn as images/how-it-works.svg with its layout set."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "Split the cent answer into one point each: the subtotal adds up the printed amounts, each rounded half up; the tax is rounded too, so the amounts add up to the total."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "Actors as subjects: invoicer prints, Excel separates the cells, pipx installs, you type; the steps are imperatives addressed to the reader."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "Replaced Fix it in Excel with Fix the row in Excel, as it could mean the row or the tax rate."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "No noun made from a verb left, such as installation outside its template heading."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Objects next to their verbs, such as Set Decimal separator to a point, Name the file lines.csv."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "Read README.md to its end word by word: each sentence reads one way; the menu paths are bold names joined by >."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "Each word is the chosen one: row for an Excel row, line for a line of the invoice, tax rate throughout, the Excel and Windows menu names as they show them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No term of the team to define: pipx stays for the developer, who knows it, and --rate is explained in the figure."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "CSV stands only inside the Excel type name CSV UTF-8 (Comma delimited), which accounting picks as Excel shows it, so it is not written out, unlike the plan in N6.2; PDF and EUR are the words accounting uses."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "The form of a row is stated in full once, in the Walkthrough steps 1 and 2, with the table showing it."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "The options are not repeated: Installation names invoicer --help, which shows them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "Each kept name written the same way: invoicer in code format, lines.csv in code format, tax rate in lowercase."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "Made README.md by the readme template, with images/how-it-works.svg: opening, four Non-goals, Requirements and Installation for the developer pipx setup on Windows ending in invoicer --help, the Walkthrough with the once-only Excel decimal point setting, the steps to save lines.csv as CSV UTF-8 and run invoicer in PowerShell, and the run at 19 and 7.7 percent, three doubts in How it works, the issues in Documentation; no License section, by the Cut decision."
     }
   ]
 }

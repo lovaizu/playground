@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="470" viewBox="0 0 820 470" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="14">
+  <title>How invoicer works</title>
+  <rect width="820" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="30" font-size="16" font-weight="bold" fill="#222222">You type each client's tax rate, and invoicer turns your saved rows into the invoice at that rate.</text>
+
+  <!-- The flow -->
+  <rect x="20" y="70" width="300" height="70" rx="8" fill="#e8f0fe" stroke="#3367d6"/>
+  <text x="170" y="100" text-anchor="middle" font-weight="bold">lines.csv, saved from Excel</text>
+  <text x="170" y="122" text-anchor="middle">one row for each line of the invoice</text>
+
+  <rect x="20" y="180" width="300" height="70" rx="8" fill="#e8f0fe" stroke="#3367d6"/>
+  <text x="170" y="210" text-anchor="middle" font-weight="bold">invoicer reads each row</text>
+  <text x="170" y="232" text-anchor="middle">description; price; quantity</text>
+
+  <rect x="20" y="290" width="300" height="70" rx="8" fill="#e8f0fe" stroke="#3367d6"/>
+  <text x="170" y="320" text-anchor="middle" font-weight="bold">amounts to the cent</text>
+  <text x="170" y="342" text-anchor="middle">subtotal, then tax at --rate</text>
+
+  <rect x="20" y="390" width="300" height="60" rx="8" fill="#e6f4ea" stroke="#188038"/>
+  <text x="170" y="425" text-anchor="middle" font-weight="bold">the invoice in PowerShell</text>
+
+  <line x1="170" y1="140" x2="170" y2="178" stroke="#333333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="170" y1="250" x2="170" y2="288" stroke="#333333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="170" y1="360" x2="170" y2="388" stroke="#333333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- The tax rate you type -->
+  <rect x="500" y="290" width="300" height="60" rx="8" fill="#e8f0fe" stroke="#3367d6"/>
+  <text x="510" y="315" font-weight="bold">--rate 19</text>
+  <text x="510" y="337">the client's tax rate, typed on each run</text>
+  <line x1="498" y1="320" x2="324" y2="320" stroke="#333333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Doubts beside the part that answers each -->
+  <rect x="500" y="70" width="300" height="70" rx="8" fill="#fef7e0" stroke="#b06000"/>
+  <text x="510" y="95" font-weight="bold">Does Excel save the rows right?</text>
+  <text x="510" y="117">Cells split by ; and prices with a point,</text>
+  <text x="510" y="134">as Excel and Windows are set once</text>
+  <line x1="498" y1="105" x2="322" y2="105" stroke="#b06000" stroke-dasharray="5,4"/>
+
+  <rect x="500" y="180" width="300" height="70" rx="8" fill="#fef7e0" stroke="#b06000"/>
+  <text x="510" y="205" font-weight="bold">What if a row or the rate is wrong?</text>
+  <text x="510" y="227">No invoice: one line names the row</text>
+  <text x="510" y="244">or the rate, and what to fix</text>
+  <line x1="498" y1="215" x2="322" y2="215" stroke="#b06000" stroke-dasharray="5,4"/>
+
+  <rect x="500" y="380" width="300" height="70" rx="8" fill="#fef7e0" stroke="#b06000"/>
+  <text x="510" y="405" font-weight="bold">Are the totals right to the cent?</text>
+  <text x="510" y="427">Each amount rounded half up, so the</text>
+  <text x="510" y="444">amounts printed add up to the totals</text>
+  <line x1="498" y1="410" x2="322" y2="350" stroke="#b06000" stroke-dasharray="5,4"/>
+</svg>
