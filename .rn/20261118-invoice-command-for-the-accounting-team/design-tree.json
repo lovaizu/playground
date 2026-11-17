@@ -88,7 +88,8 @@
             },
             {
               "about": "the spreadsheet program and system",
-              "decided": null
+              "decided": "Microsoft 365 Excel on Windows laptops: accounting saves from Excel and types the command in PowerShell, and the developer does the Windows pipx setup",
+              "by": "user"
             }
           ]
         },
