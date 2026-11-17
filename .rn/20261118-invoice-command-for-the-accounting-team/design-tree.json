@@ -14,12 +14,12 @@
       "necessary_conditions": [
         {
           "id": "N1",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N2",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
@@ -38,14 +38,19 @@
             },
             {
               "about": "what it prints",
-              "decided": "The invoice text that invoicer.render gives, printed to the terminal",
+              "decided": "The invoice text that invoicer.render gives, printed to the terminal, with every amount, each line's, the subtotal, the tax, and the total, shown to the cent whatever decimals the saved row had, and the total equal to the subtotal and the tax as printed",
+              "by": "reasoning"
+            },
+            {
+              "about": "credit and discount lines",
+              "decided": "A row with a negative price or a quantity of 0 or below, which parse_lines read before, is still read and printed, as on a credit or discount line",
               "by": "reasoning"
             }
           ]
         },
         {
           "id": "N4",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "how accounting gets the command with no Python on their side",
@@ -61,7 +66,7 @@
         },
         {
           "id": "N6",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
@@ -75,7 +80,7 @@
           "decisions": [
             {
               "about": "a wrong line or rate",
-              "decided": "Refused before anything is printed, with a message naming the row and what is wrong, so accounting can fix the spreadsheet themselves",
+              "decided": "Refused before anything is printed, with one line naming the row or the argument and what to fix, never a Python traceback: also for a folder or a file that can't be read in place of the saved file, a number too large to print, a row of more than three fields, and a rate above 0 and below 1, which could be meant as a fraction, refused with a message to write the percent, such as 19",
               "by": "reasoning"
             }
           ]
