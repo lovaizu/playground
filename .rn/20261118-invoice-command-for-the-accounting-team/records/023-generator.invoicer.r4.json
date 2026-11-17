@@ -954,6 +954,11 @@
       "of": "generator",
       "step": 4,
       "gave": "Deliverable as made: invoicer/totals.py (Iterable[Line], total reckons the subtotal once), invoicer/render.py (lists its lines once), tests/test_totals.py (four generator tests); 66 pass."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy this pass: installed invoicer prints the two-line invoice at 19 percent (Total 250.50, exit 0), refuses --rate 0.19 (exit 2); earlier a caller passing a generator of one 20.00 line got total 23.80 and the rendered Total 23.80."
     }
   ]
 }
