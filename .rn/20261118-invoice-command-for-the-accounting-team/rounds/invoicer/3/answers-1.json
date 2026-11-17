@@ -1,0 +1,38 @@
+{
+  "good": [
+    {
+      "question": "N4",
+      "lines": [
+        "requires-python = \">=3.9\"",
+        "# Needs only Python 3.9 or later, with no other package. Install the invoicer command with",
+        "# `python3 -m unittest discover -s tests`.",
+        "        folder = tempfile.TemporaryDirectory()",
+        "        self.addCleanup(folder.cleanup)",
+        "        path = os.path.join(self.folder, \"lines.csv\")",
+        "        hasattr(os, \"geteuid\") and os.geteuid() == 0, \"root reads a file whatever its permissions\""
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "from invoicer.command import main",
+        "                main(list(argv))",
+        "from invoicer.lines import LineError, parse_lines",
+        "from invoicer import Line, render, subtotal, total",
+        "from invoicer.totals import line_amount, tax",
+        "        lines = parse_lines(\"Design ;100.00;2\\nHosting;10.50;1\\n\")",
+        "        printed = render(HALF_CENTS, RATE).splitlines()"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N5",
+      "good_when": "Every case that the package's own names promise to a caller has its own test named for it, so that a maintainer whose test fails knows which promise broke. Today four promises have none: a credit line whose amount reaches -1000000000 is refused, as the docstring of parse_lines says (the positive end has test_refuses_an_amount_at_the_limit, the negative end has nothing); a Line made with only a description and a price counts as one item; render prints an invoice in a currency other than EUR when it is given one; and subtotal gives 0 for an invoice with no line, as its docstring says."
+    },
+    {
+      "question": "N7",
+      "good_when": "Breaking any behavior that the package offers makes a test fail. Today three changes leave all 62 tests passing: dropping the check on the size of a negative amount, so that a credit line of 500000000.00 at quantity -2 is printed instead of refused; changing the quantity that a Line gets when none is given; and changing how a Line shows itself in a traceback or the console (Line.__repr__, lines.py line 36, is the one line that no test runs). A maintainer who breaks any of these sees a test fail."
+    }
+  ]
+}
