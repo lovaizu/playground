@@ -1,0 +1,30 @@
+{
+  "good": [
+    {
+      "question": "N1",
+      "lines": [
+        "- `accountant`\\",
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "- `installer`\\",
+        "  A developer who sets up `invoicer`'s command on each `accountant`'s machine, so the `accountant` installs nothing."
+      ]
+    },
+    {
+      "question": "N2",
+      "lines": [
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without anyone's help.",
+        "- `O2`: the `installer` gets an `accountant`'s machine ready to print invoices without anyone's further help."
+      ]
+    },
+    {
+      "question": "N3",
+      "lines": [
+        "`invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate.",
+        "  The `accountant` copies no invoice line by hand into a new format; the `installer` sets up none.",
+        "  The `accountant` gets a message saying what to fix, and sees the client's tax rate on the tax line: `Tax (7%) 7.00 EUR`.",
+        "  Since the client's tax rate differs per client, the `accountant` gives it for each invoice; the `installer` sets up none."
+      ]
+    }
+  ],
+  "more": []
+}
