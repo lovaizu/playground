@@ -594,6 +594,11 @@
       "of": "generator",
       "step": 4,
       "gave": "README.md Walkthrough steps 5 and 6: accounting opens the folder of lines.csv in File Explorer, types powershell in the address bar, PowerShell opens in that folder, and in PowerShell they type invoicer lines.csv --rate 19. The rest stands, with no License section and no word about licensing."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy with an empty home folder: invoicer 1.5.0 installed by pip from the fresh copy, as this Linux machine has no py, pipx or venv; from the folder that holds lines.csv, invoicer --help printed its usage line and invoicer lines.csv --rate 19 and --rate 7.7 printed exactly the two Walkthrough invoices, each with exit 0; a comma row exited 2 naming row 1. Nothing to mend."
     }
   ]
 }
