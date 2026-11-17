@@ -89,7 +89,7 @@
             },
             {
               "about": "saving the lines",
-              "decided": "How accounting saves an invoice's lines from the spreadsheet for the command: CSV UTF-8 with semicolons, one row per line as description, price, quantity, prices written with a point such as 12.50, no heading row, and how to set the price column to a point in their spreadsheet before saving",
+              "decided": "How accounting saves an invoice's lines from the spreadsheet for the command: CSV UTF-8 with semicolons, one row per line as description, price, quantity, prices written with a point such as 12.50, no heading row, and how to set the price column to a point in their spreadsheet before saving; also how to keep the price column free of thousands grouping in Excel, so that 1200.00 is saved rather than 1,200.00, and what to do when a row is refused for that reason, quoting the message: `the price must be a number written with a point, such as 12.50, not '1,200.00'`",
               "by": "user"
             },
             {
