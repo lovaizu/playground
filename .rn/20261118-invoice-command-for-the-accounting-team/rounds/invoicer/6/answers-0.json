@@ -1,0 +1,17 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "A maintainer who reads only the first sentence of each module names exactly one module for each change they're asked for. Today two changes don't: to change how the tax is figured, such as per line in place of on the subtotal, both tax.py, 'The rounding to the cent of an amount, and of the tax of an amount', and totals.py, 'The amounts that an invoice states ... the tax', claim the tax; and lines.py, 'The lines of an invoice, and which rows of text ... give one', joins what a line is with the layout of the file saved from the spreadsheet, two things that change for different reasons, such as the spreadsheet saving with commas while a line stays as it is."
+    },
+    {
+      "question": "N2",
+      "good_when": "A caller of the package calls each name it offers right from its signature and its docstring alone. Today render, exported in __all__, states no types, doesn't say that rate is a fraction such as Decimal(\"0.19\") rather than the percent the command takes, nor what currency is or what it prints for no lines; tax_of, also exported, states no types, nor that its rate is a fraction, nor that it rounds half up; to_cent states no types; and CENT is offered by its name while only tax.py itself uses it, so a maintainer can't tell whether changing it breaks a caller."
+    },
+    {
+      "question": "N3",
+      "good_when": "Every behavior the maintainer carries is one a case of the tests asks for, so a test tells them whether it still holds. Today render's currency parameter, which no test passes, Line's default quantity of 1, which no test leaves out, Line's __repr__, which no test reads, and tax_of offered in __all__, which no test calls, are behaviors that no case asks for and that the maintainer must keep working with no test to tell them they still do."
+    }
+  ]
+}
