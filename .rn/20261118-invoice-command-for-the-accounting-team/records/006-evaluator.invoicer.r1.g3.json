@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "evaluator",
+      "step": 1,
+      "gave": "Read invoicer as its maintainers meet it: README, pyproject.toml, invoicer/*.py, tests/*.py, and its change from invoicer 1.4.0 on main; its 23 tests pass by python3 -m unittest discover -s tests."
+    }
+  ]
+}
