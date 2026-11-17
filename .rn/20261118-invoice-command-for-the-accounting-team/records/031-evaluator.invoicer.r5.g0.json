@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N1 in good; N2 in more, as render and tax_of leave unsaid whether the rate is a fraction or a percent and what currency takes; N3 in more, as render currency and the default quantity of Line answer no case."
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group, N1, N2 and N3, is answered in answers-0.json; ending with done."
     }
   ]
 }
