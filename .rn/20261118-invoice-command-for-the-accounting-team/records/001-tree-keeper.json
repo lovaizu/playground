@@ -1424,6 +1424,206 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: 141221d; doing [README.md]."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed after the README generator gave asks: read the tree at 141221d; README.md N9 held two decisions, index 2 free."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer (done) before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit e8b9f76."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit e8b9f76 message holds why the point is open and the person to answer it."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "README.md stays doing; tree.py marks doing but does not take it back for a new open point."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "README.md round 1 is still making; no answers yet; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every README.md good stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "README N9 gained an open point; its good is false already."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "The change does not touch invoicer, which is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote e8b9f76: README.md N9 the spreadsheet program and system, decided null; doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/1 (README.md) and its N9."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: install steps and saving the lines name no program or system, so the open point makes nothing in them false; README name, N1 and N6 stand."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "New open point added; no old text to write over."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "invoicer stays one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked README.md and its N9: all agree with the change."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: e8b9f76; doing []; README.md stays doing with the open point."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the person answer: read the tree at e8b9f76; README.md N9 decision 2 was open."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer (done) before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit d0f17db."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit d0f17db message holds the person words word for word."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "README.md stays doing; invoicer done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "README.md round 1 has no answers yet; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every README.md good stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "README N9 point settled; its good is false already."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "The change does not touch invoicer, which is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote d0f17db: README.md N9 the spreadsheet program and system, Microsoft 365 Excel on Windows with PowerShell and the Windows pipx setup, by user; doing []. Checked again: 86581a1 not an ancestor of HEAD, 0 compiled files tracked."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/1 (README.md) and its N9."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: install steps (Windows pipx, then PowerShell steps) and saving the lines (CSV UTF-8 with semicolons and a point, as set in Excel) fit Excel on Windows; README name, N1 and N6 stand."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "The open point written over with its answer."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "invoicer stays one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked README.md and its N9: all agree with the change."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: d0f17db; doing []; README.md doing with no open point."
     }
   ],
   "kept": {

@@ -474,6 +474,76 @@
       "of": "orchestrator",
       "step": 4,
       "gave": "Started rn:generator for README.md round 1 with the text the guard gave"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "The README generator asks which spreadsheet program and system accounting uses; the person point, written open before asking"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Held the README resume start until the tree holds the person answer"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Reviewed the tree: invoicer done and signed off; the README is doing, with one open point"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Asking the person which spreadsheet program and system accounting uses, recommending Excel on Windows; the tree holds it open (e8b9f76)"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked e8b9f76: the open point under README N9, decided null"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Held the README resume start, as its point is still open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "No round of the README has ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Nothing to put up while the README waits on the point"
+    },
+    {
+      "of": "orchestrator",
+      "step": 8,
+      "gave": "Not this case: a run was found"
+    },
+    {
+      "of": "ty",
+      "step": 1,
+      "gave": "tree.py approve gave 1: no sign-off waited; took the words as the answer to the spreadsheet point"
+    },
+    {
+      "of": "ty",
+      "step": 2,
+      "gave": "Plan unchanged; resumed the tree-keeper to settle README N9 the spreadsheet program and system: Excel on Windows, by user"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked d0f17db: Excel on Windows by user; no point open under README"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Started rn:generator for README.md round 1 from step 3 with the text the guard gave"
     }
   ]
 }

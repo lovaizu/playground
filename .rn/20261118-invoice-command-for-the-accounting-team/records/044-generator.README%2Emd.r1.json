@@ -15,5 +15,9 @@
       "step": 3,
       "gave": "Asked which spreadsheet program and system accounting machines use, as the saving, terminal and pipx steps differ by them; recommended Excel on Windows"
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "asks"
+  }
 }
