@@ -9,6 +9,31 @@
       "of": "generator",
       "step": 2,
       "gave": "Read product-vision/best-practice.md (N1 to N6) with its template.md, and refactor-doc/best-practice.md (N1 to N8), to their end, before any change."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.1",
+      "gave": "The job, from the goal and invoicer/ (the README names none): invoicer turns the lines of an invoice into the invoice, with its subtotal, tax at a rate, and total."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.2",
+      "gave": "Roles by the part of the job they come for: one who prints a client s invoice from the lines kept in a spreadsheet (the accounting team, from the goal); one who builds invoicer s lines, totals, and invoice text into their own program (the library s callers, from the public names of invoicer/__init__.py)."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.3",
+      "gave": "The accounting team s job may need someone to install the command where they run it; neither the goal nor the repository says who, so it goes to the user."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.4",
+      "gave": "The goal settles the accounting team s job; the library caller s job and who installs the command are unclear, so both go to the user with my guesses as recommendations."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.1",
+      "gave": "The concept s one way and its ideas come from whoever conceived invoicer, and no input gives them, so the question goes to the user before the concept is written."
     }
   ]
 }
