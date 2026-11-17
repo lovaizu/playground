@@ -1,0 +1,54 @@
+{
+  "good": [
+    {
+      "question": "N2",
+      "lines": [
+        "        # utf-8-sig drops the byte order mark that a spreadsheet's CSV UTF-8 starts with.",
+        "    # newline=\"\" leaves a new row of text inside a quoted cell to csv, as its documentation asks.",
+        "# A quantity, a minus allowed for a credit line, of at most 9 digits, so below _LIMIT; ASCII",
+        "# only, as int() would also take digits of other scripts.",
+        "def tax_of(amount, rate):",
+        "    return subtotal(lines) + tax(lines, rate)",
+        "__all__ = [\"Line\", \"LineError\", \"parse_lines\", \"render\", \"subtotal\", \"tax_of\", \"total\"]"
+      ]
+    },
+    {
+      "question": "N5",
+      "lines": [
+        "def parse_lines(text: str) -> list[Line]:",
+        "    rows = csv.reader(io.StringIO(text, newline=\"\"), delimiter=_SEPARATOR)",
+        "        if all(not cell.strip() for cell in cells):",
+        "        lines.append(_line(number, cells, first))",
+        "    rows = [_row(line.description, line_amount(line), currency) for line in lines]",
+        "    rows.append(_row(\"Subtotal\", subtotal(lines), currency))",
+        "    return sum((line_amount(line) for line in lines), Decimal(0))",
+        "    if 0 < value < 1:",
+        "    return value / 100"
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "        # utf-8-sig drops the byte order mark that a spreadsheet's CSV UTF-8 starts with.",
+        "    # newline=\"\" leaves a new row of text inside a quoted cell to csv, as its documentation asks.",
+        "# only, as int() would also take digits of other scripts.",
+        "# The size that a price and an amount must stay below either side of zero: far beyond any line",
+        "# of an invoice, so that a number past it is a mistyped cell, such as 1e400, and every sum of",
+        "# amounts stays exact to the cent.",
+        "            \"the tax rate must be 0 or a percent from 1 to 100, as a rate between 0 and 1 may \"",
+        "    100 written with or without `%`; argparse names the option in the refusal.\"\"\"",
+        "        hasattr(os, \"geteuid\") and os.geteuid() == 0, \"root reads a file whatever its permissions\""
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N3",
+      "good_when": "A maintainer reading render or subtotal can tell from the name alone that line_amount gives the amount rounded to the cent while Line.amount() gives it unrounded, and reading _line, _price or _quantity can tell from the name alone that `number` is the row's number in the spreadsheet, without opening a definition or a docstring to find out."
+    },
+    {
+      "question": "N4",
+      "good_when": "Each thing a maintainer meets in invoicer goes by one name, and each name means one thing: the tax rate typed as a percent (19 on --rate) and the fraction that render and totals take (0.19) no longer both go by `rate`; the amount to the cent and the unrounded amount no longer both go by `amount`; `lines` no longer names both the file of lines (arguments.lines, LINES) and the list of Line read from it in main; and `number` no longer names both the row's number and the decimal that _number reads, so a change to one never reaches the other by mistake."
+    }
+  ]
+}

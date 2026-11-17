@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N1 in more: total() given a generator now drops the tax, and parse_lines now refuses a quantity written +3, 1_000 or in full-width numerals, neither noted as changed in 1.5.0"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Ended with done, N1 answered"
     }
   ]
 }
