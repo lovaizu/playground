@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N1, N2 and N3 as good, each with the lines that meet it, in answers-0.json."
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each of N1, N2 and N3 is answered; ending with done."
     }
   ]
 }
