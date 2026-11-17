@@ -38,7 +38,7 @@
             },
             {
               "about": "what it prints",
-              "decided": "The invoice text that invoicer.render gives, printed to the terminal, with every amount, each line's, the subtotal, the tax, and the total, shown to the cent whatever decimals the saved row had, and the total equal to the subtotal and the tax as printed; the subtotal and total are reckoned in one place, which both the printed invoice and the package's subtotal and total use, and the package's subtotal and total take any iterable of lines, a generator included, and give the printed figures",
+              "decided": "The invoice text that invoicer.render gives, printed to the terminal, with every amount, each line's, the subtotal, the tax, and the total, shown to the cent whatever decimals the saved row had, and the total equal to the subtotal and the tax as printed; the subtotal and total are reckoned in one place, which both the printed invoice and the package's subtotal and total use, and the package's render, subtotal and total take any iterable of lines, a generator included, and lines whose price is a whole number, as 1.4.0 did, and give the printed figures",
               "by": "reasoning"
             },
             {
@@ -86,7 +86,7 @@
         },
         {
           "id": "N8",
-          "good": true,
+          "good": false,
           "decisions": [
             {
               "about": "a wrong line",
@@ -97,6 +97,11 @@
               "about": "a wrong rate",
               "decided": "Refused before anything is printed, with one line saying what to fix; a rate above 0 and below 1, with or without %, which could be meant as a fraction, is refused with a message to write the percent, such as 19; a rate of 0 prints an invoice with no tax",
               "by": "user"
+            },
+            {
+              "about": "a rate given twice",
+              "decided": "Refused before anything is printed, with one line saying to give the rate once",
+              "by": "reasoning"
             }
           ]
         }
