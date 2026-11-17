@@ -14,7 +14,7 @@
       "necessary_conditions": [
         {
           "id": "N1",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "the roles besides the accounting team",
