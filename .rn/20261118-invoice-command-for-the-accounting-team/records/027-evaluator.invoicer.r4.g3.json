@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "N1 in more: a whole-number price in a Line breaks render, subtotal and total, and parse_lines now refuses quantities like +2 or 1_000, none named in a Changed note or pinned by a test"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of group 3 answered: N1 in more; ending with done"
     }
   ]
 }
