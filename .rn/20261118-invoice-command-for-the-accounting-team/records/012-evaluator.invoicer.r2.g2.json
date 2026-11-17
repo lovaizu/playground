@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "evaluator",
+      "step": 1,
+      "gave": "Read invoicer as accounting meets it: invoicer/*.py, pyproject.toml, README.md, --help; ran the command on 28 inputs, wrong ones among them"
+    }
+  ]
+}
