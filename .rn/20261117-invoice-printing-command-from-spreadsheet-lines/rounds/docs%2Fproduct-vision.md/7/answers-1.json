@@ -1,0 +1,17 @@
+{
+  "good": [
+    {
+      "question": "N5",
+      "lines": [
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without anyone's help.",
+        "- `O2`: the `installer` gets an `accountant`'s machine ready to print invoices without anyone's further help."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N4",
+      "good_when": "A maintainer who changes how invoicer is set up sees from the setup key results whether the installer now needs someone's help more often, just as the accountant's first key result shows invoices that needed someone's help: a setup that ends with the command running, but only after the installer had to ask someone, counts against O2 rather than as a success, so a change that makes setups lean on others is not kept as an improvement."
+    }
+  ]
+}
