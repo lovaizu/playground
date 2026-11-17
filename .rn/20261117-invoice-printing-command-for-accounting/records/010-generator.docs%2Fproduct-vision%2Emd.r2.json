@@ -409,6 +409,11 @@
       "of": "generator",
       "step": 4,
       "gave": "docs/product-vision.md made: Roles say only who each role is; O3 and KR3.1 count only the one install; the rounding serves O2; all six key results ranked in a numbered list with the keep rule, no targets and Goodhart law as separate sentences; the Concept holds the invoice lines, the rate at each print, and the two new ideas as worded."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried as a developer reading it in a throwaway copy, each exit 0: the spreadsheet and the tax rate appear only in the Concept (3 lines); the six key results show in one numbered order; each idea names one objective."
     }
   ]
 }
