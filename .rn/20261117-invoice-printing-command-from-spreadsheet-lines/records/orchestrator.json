@@ -444,6 +444,41 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No change to write"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No generator asks or lacks"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Round-2 generator done; read the vision: all twelve decisions land, template-fixed words remain; started six evaluators"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Round 2 evaluators running"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
     }
   ]
 }
