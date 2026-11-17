@@ -56,7 +56,7 @@
         },
         {
           "id": "N3",
-          "good": true,
+          "good": false,
           "decisions": []
         },
         {
@@ -77,7 +77,7 @@
         },
         {
           "id": "N5",
-          "good": true,
+          "good": false,
           "decisions": [
             {
               "about": "the pieces of work and their objective",
