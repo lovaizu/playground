@@ -1,0 +1,9 @@
+{
+  "record": ".rn/20261118-invoice-command-for-the-accounting-team/records/010-evaluator.invoicer.r2.g0.json",
+  "step": 1,
+  "work": [
+    "invoicer/__pycache__/command.cpython-314.pyc",
+    "tests/__pycache__/test_command.cpython-314.pyc",
+    ".rn/20261118-invoice-command-for-the-accounting-team/records/010-evaluator.invoicer.r2.g0.json"
+  ]
+}
