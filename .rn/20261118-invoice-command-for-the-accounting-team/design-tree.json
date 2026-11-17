@@ -14,7 +14,7 @@
       "necessary_conditions": [
         {
           "id": "N1",
-          "good": true,
+          "good": false,
           "decisions": []
         },
         {
@@ -50,7 +50,7 @@
         },
         {
           "id": "N4",
-          "good": true,
+          "good": false,
           "decisions": [
             {
               "about": "how accounting gets the command with no Python on their side",
@@ -89,8 +89,13 @@
           "good": false,
           "decisions": [
             {
-              "about": "a wrong line or rate",
-              "decided": "Refused before anything is printed, with one line naming the row or the argument and what to fix, never a Python traceback: also for a folder or a file that can't be read in place of the saved file, a number too large to print, a row of more than three fields, an empty description, a heading row, with a message to leave the heading out, and a rate above 0 and below 1, which could be meant as a fraction, with a message to write the percent, such as 19; a rate of 0 prints an invoice with no tax",
+              "about": "a wrong line",
+              "decided": "Refused before anything is printed, with one line naming the row or the file and what to fix, never a Python traceback: also for a folder or a file that can't be read in place of the saved file, a number too large to print, a row of more than three fields, an empty description, and a heading row, with a message to leave the heading out",
+              "by": "reasoning"
+            },
+            {
+              "about": "a wrong rate",
+              "decided": "Refused before anything is printed, with one line saying what to fix; a rate above 0 and below 1, with or without %, which could be meant as a fraction, is refused with a message to write the percent, such as 19; a rate of 0 prints an invoice with no tax",
               "by": "user"
             }
           ]
