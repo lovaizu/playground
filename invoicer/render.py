@@ -1,23 +1,24 @@
-"""The invoice as text."""
+"""The layout of the invoice as text."""
 
 from decimal import Decimal
 
-from invoicer.tax import tax_of, to_cent
+from invoicer.totals import line_amount, subtotal, tax, total
 
 
 def render(lines, rate, currency="EUR"):
-    """The invoice's text: a row for each line, then the subtotal, the tax, and the total.
+    """The invoice's text: a row for each line, then the subtotal, the tax, and the total, each
+    amount as invoicer.totals states it, to the cent.
 
-    It shows each amount to the cent, and the subtotal adds up the lines' amounts as it shows
-    them, so that the printed rows add up, and the total is the subtotal and the tax as shown.
+    Changed in 1.5.0: 1.4.0 showed each amount with the decimals it had, such as `89.5` or
+    `37.035`, and a subtotal of the unrounded amounts.
     """
-    amounts = [to_cent(line.amount()) for line in lines]
-    rows = [
-        f"{line.description:<30}{amount:>12} {currency}" for line, amount in zip(lines, amounts)
-    ]
-    subtotal = sum(amounts, Decimal(0))
-    tax = tax_of(subtotal, rate)
-    rows.append(f"{'Subtotal':<30}{subtotal:>12} {currency}")
-    rows.append(f"{'Tax':<30}{tax:>12} {currency}")
-    rows.append(f"{'Total':<30}{subtotal + tax:>12} {currency}")
+    rows = [_row(line.description, line_amount(line), currency) for line in lines]
+    rows.append(_row("Subtotal", subtotal(lines), currency))
+    rows.append(_row("Tax", tax(lines, rate), currency))
+    rows.append(_row("Total", total(lines, rate), currency))
     return "\n".join(rows)
+
+
+def _row(label: str, amount: Decimal, currency: str) -> str:
+    """One row of the invoice: the label, then the amount in a column of its own."""
+    return f"{label:<30}{amount:>12} {currency}"

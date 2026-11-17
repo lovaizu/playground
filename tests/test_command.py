@@ -125,6 +125,69 @@ class CommandTest(unittest.TestCase):
             + "\n",
         )
 
+    def test_prints_a_description_saved_in_quotes_as_typed(self):
+        # Given the cell `Design "Pro"`, which the spreadsheet saves in quotes with its quotes
+        # doubled, then the invoice shows it as typed.
+        path = self.saved('"Design ""Pro""";100.00;2\n')
+
+        code, out, err = self.run_command(path, "--rate", "19")
+
+        self.assertEqual((code, err), (0, ""))
+        self.assertEqual(out.splitlines()[0], row('Design "Pro"', "200.00"))
+
+    def test_prints_a_description_holding_a_semicolon(self):
+        # Given a cell typed as Design; phase 1, which the spreadsheet saves in quotes, then the
+        # row gives one line of three fields, and the invoice shows the cell as typed.
+        path = self.saved('"Design; phase 1";100.00;2\n')
+
+        code, out, err = self.run_command(path, "--rate", "19")
+
+        self.assertEqual((code, err), (0, ""))
+        self.assertEqual(out.splitlines()[0], row("Design; phase 1", "200.00"))
+
+    def test_skips_a_row_whose_cells_are_all_empty(self):
+        # Given an empty row, which the spreadsheet saves as ;;, between two lines, then the
+        # invoice is that of the two lines.
+        path = self.saved("Design;100.00;2\n;;\nHosting;10.50;1\n")
+
+        code, out, err = self.run_command(path, "--rate", "19")
+
+        self.assertEqual((code, err), (0, ""))
+        self.assertEqual(
+            out.splitlines(),
+            [
+                row("Design", "200.00"),
+                row("Hosting", "10.50"),
+                row("Subtotal", "210.50"),
+                row("Tax", "40.00"),
+                row("Total", "250.50"),
+            ],
+        )
+
+    def test_refuses_a_heading_row_asking_to_leave_it_out(self):
+        path = self.saved("Description;Price;Quantity\n" + LINES)
+
+        code, out, err = self.run_command(path, "--rate", "19")
+
+        self.assertEqual((code, out), (2, ""))
+        self.assertIn(
+            f"invoicer: error: {path}, row 1: a heading, as neither its price 'Price' nor its "
+            "quantity 'Quantity' is a number; save the lines without the heading row",
+            err,
+        )
+
+    def test_refuses_a_row_with_an_empty_description(self):
+        path = self.saved(LINES + ";5.00;1\n")
+
+        code, out, err = self.run_command(path, "--rate", "19")
+
+        self.assertEqual((code, out), (2, ""))
+        self.assertIn(
+            f"invoicer: error: {path}, row 3: the description is empty; write what the line is "
+            "for, as the client reads it on the invoice",
+            err,
+        )
+
     def test_reads_a_rate_written_with_a_percent_sign(self):
         code, out, _ = self.run_command(self.saved(LINES), "--rate", "7.7%")
 

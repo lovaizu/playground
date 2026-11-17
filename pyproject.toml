@@ -3,7 +3,9 @@
 # `python3 -m unittest discover -s tests`.
 [project]
 name = "invoicer"
-version = "1.4.0"
+# 1.5.0 adds the invoicer command, and changes what render, parse_lines, subtotal and total give
+# from 1.4.0, as the note `Changed in 1.5.0` in each one's docstring says.
+version = "1.5.0"
 description = "The lines of an invoice, their totals with tax, and the invoice as text."
 requires-python = ">=3.9"
 

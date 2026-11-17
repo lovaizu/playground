@@ -26,6 +26,79 @@ class ParseLinesTest(unittest.TestCase):
     def test_gives_no_line_for_a_text_of_blank_rows(self):
         self.assertEqual(parse_lines("\n \n"), [])
 
+    def test_reads_a_cell_saved_in_quotes_as_typed(self):
+        # Supports test_prints_a_description_saved_in_quotes_as_typed.
+        (line,) = parse_lines('"Design ""Pro""";100.00;2')
+
+        self.assertEqual(line.description, 'Design "Pro"')
+
+    def test_reads_a_cell_holding_a_semicolon_saved_in_quotes(self):
+        # Supports test_prints_a_description_holding_a_semicolon.
+        (line,) = parse_lines('"Design; phase 1";100.00;2')
+
+        self.assertEqual(
+            (line.description, line.price, line.quantity),
+            ("Design; phase 1", Decimal("100.00"), 2),
+        )
+
+    def test_numbers_a_row_after_a_cell_holding_a_new_row(self):
+        # Given a cell typed on two rows of text, which the spreadsheet keeps in one row, then
+        # the next row is numbered as the spreadsheet numbers it, 2. Supports
+        # test_prints_nothing_when_a_row_is_wrong.
+        with self.assertRaises(LineError) as refused:
+            parse_lines('"Design\nphase 1";100.00;2\nSupport;ten;1')
+
+        self.assertIn("row 2:", str(refused.exception), "the row is numbered as in the spreadsheet")
+
+    def test_skips_a_row_of_empty_cells(self):
+        # Supports test_skips_a_row_whose_cells_are_all_empty.
+        lines = parse_lines("Design;100.00;2\n;;\n ; ; \nHosting;10.50;1")
+
+        self.assertEqual([line.description for line in lines], ["Design", "Hosting"])
+
+    def test_refuses_a_heading_row_naming_it(self):
+        # Supports test_refuses_a_heading_row_asking_to_leave_it_out; the blank row 1 is counted.
+        with self.assertRaises(LineError) as refused:
+            parse_lines("\nDescription;Price;Quantity\nDesign;100.00;2")
+
+        self.assertEqual(
+            str(refused.exception),
+            "row 2: a heading, as neither its price 'Price' nor its quantity 'Quantity' is a "
+            "number; save the lines without the heading row",
+        )
+
+    def test_refuses_a_wrong_price_on_the_first_row_as_a_price(self):
+        # Given a first row whose quantity is a number, then it isn't taken for a heading.
+        with self.assertRaises(LineError) as refused:
+            parse_lines("Design;ten;1")
+
+        self.assertEqual(
+            str(refused.exception),
+            "row 1: the price must be a number written with a point, such as 12.50, not 'ten'",
+        )
+
+    def test_refuses_a_row_after_the_first_as_a_price_not_a_heading(self):
+        # Given a row after the first with neither price nor quantity a number, then it is
+        # refused for its price, as only the first row can be the heading.
+        with self.assertRaises(LineError) as refused:
+            parse_lines("Design;100.00;2\nSupport;ten;three")
+
+        self.assertEqual(
+            str(refused.exception),
+            "row 2: the price must be a number written with a point, such as 12.50, not 'ten'",
+        )
+
+    def test_refuses_an_empty_description_naming_the_row(self):
+        # Supports test_refuses_a_row_with_an_empty_description.
+        with self.assertRaises(LineError) as refused:
+            parse_lines("  ;100.00;2")
+
+        self.assertEqual(
+            str(refused.exception),
+            "row 1: the description is empty; write what the line is for, as the client reads "
+            "it on the invoice",
+        )
+
     def test_refuses_a_row_of_two_fields_naming_it(self):
         # Row 3 counts the blank row 2, as the spreadsheet numbers it.
         with self.assertRaises(LineError) as refused:
