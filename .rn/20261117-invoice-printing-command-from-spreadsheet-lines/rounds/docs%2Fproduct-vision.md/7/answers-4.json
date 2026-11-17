@@ -1,0 +1,34 @@
+{
+  "good": [
+    {
+      "question": "N3",
+      "lines": [
+        "- `accountant`\\",
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "- `installer`\\",
+        "  A developer who sets up `invoicer`'s command on each `accountant`'s machine, so the `accountant` installs nothing.",
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without anyone's help.",
+        "- Their spreadsheet as it is, for `O1`\\"
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "## Objectives and key results",
+        "`invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate.",
+        "  The `accountant` gets a message saying what to fix, and sees the client's tax rate on the tax line: `Tax (7%) 7.00 EUR`.",
+        "Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N4",
+      "good_when": "A maintainer weighing a change sees at a glance the full order in which the four key results count, from first to last, and so knows for each pair of key results which one a change may not make worse; today the order of KR1.2 and KR2.2 against each other is left for them to guess."
+    },
+    {
+      "question": "N5",
+      "good_when": "The accounting team and the maintainers, also when reading in a second language or through a machine translation, read each sentence one way only: they know what the `installer` sets up none of in each Concept item, they know that the message saying what to fix comes when something in the spreadsheet is wrong and that nothing prints then, and the sentence on which key results come first reads as correct English, with each point in a sentence of its own."
+    }
+  ]
+}
