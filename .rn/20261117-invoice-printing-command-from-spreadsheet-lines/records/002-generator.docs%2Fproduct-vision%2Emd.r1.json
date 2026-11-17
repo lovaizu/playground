@@ -409,6 +409,11 @@
       "of": "generator",
       "step": 4,
       "gave": "Made docs/product-vision.md from the template: Roles with accountant and installer, O1 and O2 with two key results each, the Concept with the one way and three ideas; every Cut decision lands there."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy: template.py product-vision docs/product-vision.md exits 0 with no fault (form, no placeholder, no sentence over 20 words); the document read whole as a maintainer and an accountant reads through."
     }
   ]
 }
