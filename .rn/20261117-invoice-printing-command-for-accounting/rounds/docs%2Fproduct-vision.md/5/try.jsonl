@@ -1,0 +1,1 @@
+{"command": "grep -n \"KR1.1\\|come first\\|DELETE_TEMPLATE_COMMENT\" docs/product-vision.md", "code": 0, "out": "14:  - KR1.1: the share of printed invoices that are wrong or needed a developer's help. Lower is\n30:KR2.1, KR1.1 and KR3.1 come first: keep a change that improves a key result only if none before it\n", "err": ""}
