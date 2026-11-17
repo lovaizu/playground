@@ -9,6 +9,126 @@
       "of": "generator",
       "step": 2,
       "gave": "Read code best-practice.md with template.md, and refactor-code best-practice.md, to their end, before any change."
+    },
+    {
+      "of": "code",
+      "practice": "N1.1",
+      "gave": "Unit cases opened from the Cut (no architecture): existing 23 tests plus new cases: each amount to the cent (89.5, 100, 12.345x3), subtotal as the sum of the printed amounts, credit lines (negative price, negative quantity, quantity 0), refusals of a folder, an unreadable file, a price/quantity/amount out of -1e9..1e9 (1e400), a row of four fields, a rate between 0 and 1 without %; edges: rate 1 taken, 0.5% taken, 999999999.99 taken, 1000000000 refused."
+    },
+    {
+      "of": "code",
+      "practice": "N1.2",
+      "gave": "Left to the code: how a line amount is rounded (half up to the cent, as tax_of already rounds), whether the subtotal sums the rounded or the unrounded amounts (the rounded, so the printed lines add up), the limit on a number (below 1000000000 either side of zero), and how a rate below 1 is told from a percent (refused unless written with %)."
+    },
+    {
+      "of": "code",
+      "practice": "N1.3",
+      "gave": "Each decision to one module: rounding to the cent in tax.py (to_cent, used by tax_of and render), the invoice text in render.py, reading rows and their limits in lines.py, the command line, the file and the rate in command.py. No new module."
+    },
+    {
+      "of": "code",
+      "practice": "N1.4",
+      "gave": "No variant that the cases call for, so no pattern."
+    },
+    {
+      "of": "code",
+      "practice": "N2.1",
+      "gave": "Offered: tax.to_cent (render and tax_of call it), alongside the names already offered; the limit and quantity pattern stay internal in lines.py."
+    },
+    {
+      "of": "code",
+      "practice": "N3.1",
+      "gave": "Each planned branch named by its case: to_cent by the cent cases; the limit by the 1e400 and edge cases; the minus in the quantity by the credit case; IsADirectoryError and PermissionError by the folder and unreadable cases; the fraction refusal by --rate 0.19 and its % edge. No option or parameter added."
+    },
+    {
+      "of": "code",
+      "practice": "N5.1",
+      "gave": "No module added; supporting cases in test_lines.py for parse_lines (negative price, negative quantity, quantity 0, four fields, price/quantity/amount limits and their edges) support test_command cases test_prints_a_credit_line and test_refuses_a_price_too_large_to_print."
+    },
+    {
+      "of": "code",
+      "practice": "N5.2",
+      "gave": "No case found that supports no unit case of the part; nothing to ask."
+    },
+    {
+      "of": "code",
+      "practice": "N8.1",
+      "gave": "Inputs from outside: argv (LINES, --rate) in command.main via argparse and _rate; the file at LINES where main opens it; its text in lines.parse_lines, each row read in _line, _price, _quantity."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.1",
+      "gave": "Test command from pyproject.toml head comment: python3 -m unittest discover -s tests."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.2",
+      "gave": "The manifest gives the command, so no search for a runner needed."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.3",
+      "gave": "Ran the tests in a throwaway copy before any change: 23 run, OK."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.1",
+      "gave": "Things and names: a line (Line, line), a row of text (row), its amount (amount(), and in render amount for the subtotal), the tax rate (rate, percent), the file of lines (LINES, path, saved)."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.2",
+      "gave": "No architecture or README text for these; the Cut says line, row, price, quantity, tax rate, subtotal, total."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.3",
+      "gave": "No two names for one thing to merge beyond those the Cut uses."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.4",
+      "gave": "One name for two things: amount in render named the subtotal while Line.amount names a line amount; render names it subtotal_amount... renamed to subtotal in render, as the Cut names it."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.1",
+      "gave": "Rules written in more than one place: rounding to the cent half up (tax.py; now also needed by render), the row form ROW (lines.py, used by command), the limit on a number (new, lines.py only), the column formats of render (left as the round records keep that More)."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.2",
+      "gave": "Rounding of a line amount and of the tax would change together, as an invoice rounds every amount one way, so they are one rule."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.3",
+      "gave": "Rounding kept by tax.py, which already holds CENT and ROUND_HALF_UP and which render already imports; render calls to_cent from it."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.1",
+      "gave": "Kinds: refusing a row (LineError naming the row), refusing an argument (argparse.ArgumentTypeError), refusing the file (parser.error), rounding to the cent, tests of the command (run_command helper) and of parse_lines (assertRaises with the whole message)."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.2",
+      "gave": "Each kind is done one way now; the new refusals of a folder and an unreadable file go through parser.error like the missing file, and the limits through LineError like the other row refusals."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.3",
+      "gave": "No style settings (no ruff config); took the way the code uses most, as listed."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.4",
+      "gave": "No new way chosen."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Decided: every Cut decision taken as it stands. Settled by purpose: line amounts rounded half up to the cent by tax.to_cent, the subtotal the sum of the rounded amounts, the total subtotal plus tax; a price, a quantity and a line amount each between -1000000000 and 1000000000, else refused naming the row; quantity a whole number with an optional minus, 0 allowed; a folder or unreadable file refused by parser.error; a rate above 0 and below 1 refused unless written with %. Nothing left open, so no asks."
     }
   ]
 }
