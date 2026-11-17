@@ -419,6 +419,15 @@
       "of": "generator",
       "step": 6,
       "gave": "Made written in rounds/docs%2Fproduct-vision.md/5/made.json: a place for each of the eleven Cut decisions, the refactor-doc N6 More made good in KR1.1, and one point settled, the plural come of the ranking line."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Ending with done once rn check gives 0."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "done"
+  }
 }

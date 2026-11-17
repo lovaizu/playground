@@ -26,7 +26,7 @@
     },
     {
       "path": "deliverables/0/necessary_conditions/3/decisions/0",
-      "where": "Objectives and key results: the template's ranking paragraph, \"KR2.1, KR1.1 and KR3.1 come first: keep a change that improves a key result only if none before it gets worse.\", and the template's sentence on no targets and Goodhart's law, as the template writes it."
+      "where": "Objectives and key results: the template's ranking paragraph, naming KR2.1, KR1.1 and KR3.1 in that order, \"KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it gets worse.\", and the template's sentence on no targets and Goodhart's law, as the template writes it."
     },
     {
       "path": "deliverables/0/necessary_conditions/3/decisions/1",
@@ -54,9 +54,9 @@
   ],
   "settled": [
     {
-      "point": "the verb of the ranking line",
-      "decided": "\"KR2.1, KR1.1 and KR3.1 come first\", with \"and\" before the last id and the plural \"come\".",
-      "ground": "The N4 decision 0 words it so; three key results are the subject, so the verb is plural (refactor-doc N5, the sentence reads one way to a machine translator), and the template's \"comes\" fits its one KR<n>.1."
+      "point": "the wording of the ranking line",
+      "decided": "The line stays in the template's form, \"KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it gets worse.\", naming the three in the decision's order, without \"and\" or the plural \"come\".",
+      "ground": "N4 decision 0 puts the ranking in the template's paragraph, and rn's check holds the line to the template's form, \"`KR<n>.1` comes first\", and to sentences of at most 20 words; \"KR2.1, KR1.1 and KR3.1 come first\" leaves that form and makes the sentence 21 words. The decision's order, KR2.1, then KR1.1, then KR3.1, stands in the line as written."
     }
   ]
 }
