@@ -247,7 +247,7 @@
       ]
     },
     {
-      "name": "The developers see, before the command is built, that its parts give the accounting team a printed invoice at each client's rate",
+      "name": "The developers see, before the command is built, that its parts give the accounting team a printed invoice at each client's rate, and that the library calls developers rely on give what they gave before",
       "path": "tests",
       "kind": "test-design",
       "inputs": [
