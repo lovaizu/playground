@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Read the Cut, the five decisions and the package invoicer (lines.parse_lines, tax.tax_of with a fraction rate, totals, render, pyproject with no scripts entry, no tests). Its people: accounting colleagues who save the lines from a spreadsheet and run one command with the client tax rate to print the invoice, and the developer who installs it once per machine with pipx."
+    }
+  ]
+}

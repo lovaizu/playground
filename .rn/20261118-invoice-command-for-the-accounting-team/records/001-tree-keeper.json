@@ -1,0 +1,633 @@
+{
+  "entries": [
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Read the design tree best practice whole (best-practice.md, best-practice.json, design-tree.schema.json: N1-N11, C1-C5); the tree at .rn/20261118-invoice-command-for-the-accounting-team/design-tree.json is absent, as no change has written it yet."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "At the start: no change given yet, so nothing written; tree.py write not run."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "At the start: no change written, so no touched nodes to check."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending the start with done: the best practice is read and the tree is absent until the first change."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the goal and two-deliverable plan: re-read the best practice; the tree was absent before the write."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "WRONG WRITE: the sandbox refused the command that put the sent change and ground into /tmp/tk-in, but that folder already held a change.json and ground.txt from earlier, so tree.py write exited 0 committing 86581a1 with that stale change and ground, not the one sent (paths invoicer/cli.py, other decisions). Attempts to write the sent change over it were refused by the sandbox. Left for the main conversation to decide."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "touched was deliverables/1 (README.md) of the stale tree; it disagrees with the sent change: it names invoicer/cli.py and pyproject.toml where the sent change names invoicer, and its decisions are not the sent ones."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write ran, but on a stale change from /tmp/tk-in, not the sent one; commit 86581a1 holds the wrong tree and ground."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Read touched deliverables/1 (README.md): it disagrees with the change sent; not rewritten, as only the main conversation decides a change."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done, reporting that the tree holds a stale change (86581a1), not the sent one, and that the sent change still needs writing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Sent change orders invoicer before README.md (which takes invoicer as precondition); the stale tree written orders invoicer/cli.py before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds in both the sent and the written tree; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "NOT met: commit 86581a1 carries a stale ground from /tmp/tk-in, not the main conversation grounds with the request quoted word for word."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Both deliverables open; tree.py write marked none doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No rounds yet for either deliverable; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good is false; nothing made yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "No good was true, so none to set back."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No deliverable is done; nothing to reopen."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "tree.py write gave touched [deliverables/1] for the stale change written."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "First write; no old decision text to write over."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done; none to cut to one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done, reporting that commit 86581a1 holds a stale change and ground, not the sent one; the sent change still needs writing."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed to replace 86581a1: re-read the design tree best practice, the tree as 86581a1 left it, and the code and readme best practices whose conditions the change places decisions under."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "The sent change orders invoicer (no inputs, no preconditions) before README.md (precondition invoicer)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 on the sent change from a mktemp -d folder, files checked first; commit bbc35d7; goal and deliverables equal the change field for field."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "invoicer comes before README.md, which waits on it; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit bbc35d7 message is the main conversation grounds, opening with the replaces-86581a1 line, the request quoted word for word."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote the sent change unchanged over goal and deliverables: commit bbc35d7, replacing 86581a1; doing []. git show --stat HEAD shows only design-tree.json; tree equals the change (invoicer code, inputs []; README.md readme, preconditions [invoicer])."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/0 with its N1, N2, N3, N4, N8; deliverables/1 with its N1, N2, N3, N4, N6, N9, N10."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "No touched node names cli.py, pyproject.toml or any stale decision. All agree except invoicer N4: code N4 asks whether tests pass on a fresh machine from the setup alone, but its point is how accounting gets the command, an install and distribution point. Noted for the main conversation, not rewritten."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "The change wrote every node of 86581a1 over, so the tree reads only as what holds now."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done; none to cut to one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Both deliverables open as sent; tree.py write marked none doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No rounds yet for either deliverable; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good is false; nothing made yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "No good was true, so none to set back."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No deliverable is done; nothing to reopen."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked each touched node by N9: all agree with the change except invoicer N4, whose point (how accounting gets the command with no Python) does not answer code N4 (tests pass on a fresh machine); noted for the main conversation."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: bbc35d7 wrote the sent change, replacing 86581a1; doing []; invoicer N4 placement noted."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the goal confirmed by the person: read HEAD ac27af0 (parent ea10f6e, 86581a1 gone, tree same as bbc35d7) and its tree; best practice as read."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit b15b384 changes only the goal by, reasoning to user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit b15b384 message holds the grounds with the person words quoted word for word."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote the change: commit b15b384 on ac27af0, changed [goal], touched [], doing []; goal by is user, text unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched is empty: the goal is the top node and only its by changed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "No node touched; both deliverable names still serve the unchanged goal text."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "The goal by is written over, so it reads as what holds now."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done; none to cut to one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Both deliverables stay open; tree.py write marked none doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No rounds yet for either deliverable; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good is false; nothing made yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "No decision under a condition changed; no good to set back."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No deliverable is done; nothing to reopen."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "touched is empty; goal text unchanged, so every node still agrees."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: b15b384 sets the goal by to user; touched [], doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the person answer A for invoicer N4: read the tree at b15b384; paths in the change name invoicer N4 and README.md N1 and N9 decisions as held."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit 0d235e8 changes the three decisions only."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit 0d235e8 message holds the grounds with the person words quoted word for word."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote the change: commit 0d235e8; changed invoicer N4 d0, README.md N1 d0, README.md N9 d0, all by user; doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/0 with its N4; deliverables/1 with its N1 and N9."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "invoicer, its N4, README N1 and N9, and the goal agree. README.md name (prints an invoice from the README alone, with no developer to ask) names only accounting, not the developer the change adds as reader, so it may no longer say all the README brings (N7.1); noted, not rewritten."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "README.md N1 readers written over its old text; the two open points written over their nulls."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done; none to cut to one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Both deliverables stay open; tree.py write marked none doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No rounds yet for either deliverable; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good is false; nothing made yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "invoicer N4, README N1 and N9 decisions changed; their good was already false, so stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No deliverable is done; nothing to reopen."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked touched nodes: all agree; README.md name names only accounting while its readers now include the setup developer, noted for the main conversation."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: 0d235e8 wrote the three decisions; doing []; README.md name noted."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the README.md name change: read the tree at 0d235e8."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit 8ed1fa8 changes README.md name only."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit 8ed1fa8 message holds the grounds, with the person words it rests on quoted word for word."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote the change: commit 8ed1fa8, changed [deliverables/1] (name), touched [], doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "tree.py gave touched []; by N9.1 I also listed the goal, README.md N1 and N9 decisions, and invoicer (its precondition)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: the goal (one-time setup, then accounting alone), README N1 readers (both), README N9 install steps (setup then everyday), invoicer N4 (pipx once by a developer)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "README.md name written over its old text."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done; none to cut to one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Both deliverables stay open; tree.py write marked none doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No rounds yet for either deliverable; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good is false; nothing made yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "No decision changed; no good to set back."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No deliverable is done; nothing to reopen."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked the goal, README.md N1 and N9, and invoicer against the new name: all agree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: 8ed1fa8 renamed README.md; touched [], doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed after the sign-off with README.md N6 the walkthrough: read the tree at 8ed1fa8; README N6 (index 5) held no decisions."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged and signed off: invoicer before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit 4ab5ee5 adds README N6 decision and marks invoicer doing."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit 4ab5ee5 message holds the grounds with the person words quoted word for word."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote the change: commit 4ab5ee5; changed deliverables/0 (status doing) and README N6 decision 0 by user; doing [invoicer]."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/1 and its N6; also read the goal, README N1 and N9, and invoicer N3 (its precondition) by N9.1."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: the README name and N1 (accounting everyday steps), N9 (setup then everyday), invoicer N3 (rate set each run, render output, lines form), and the goal (rate per client)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "New decision added; no old text to write over."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done; none to cut to one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "tree.py write marked invoicer doing, its turn first; README.md stays open as it waits on invoicer."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No rounds yet for either deliverable; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good is false; nothing made yet."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "README N6 gained a decision; its good was false and stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No deliverable is done; nothing to reopen."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked README.md, its N6, N1 and N9, invoicer N3 and the goal against the walkthrough decision: all agree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: 4ab5ee5 wrote README N6 the walkthrough by user; doing [invoicer]."
+    }
+  ],
+  "kept": {
+    "role": "tree-keeper",
+    "result": "done"
+  }
+}

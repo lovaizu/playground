@@ -1,0 +1,224 @@
+{
+  "entries": [
+    {
+      "of": "up",
+      "step": 1,
+      "gave": "Started run 20261118-invoice-command-for-the-accounting-team and entered its worktree on branch rn-20261118-invoice-command-for-the-accounting-team"
+    },
+    {
+      "of": "up",
+      "step": 2,
+      "gave": "Started rn:tree-keeper with the text the guard gave; it gave done"
+    },
+    {
+      "of": "up",
+      "step": 3,
+      "gave": "Resumed the tree-keeper with the goal and the plan to write"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Wrote the request as: accounting prints an invoice from spreadsheet lines with one command, at a rate set per invoice"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Asked why until no deliverable named: accounting prints each invoice themselves without asking a developer"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "State: a colleague saves the lines, runs one command with the client rate, gets the invoice, from the README alone"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Listed the command and the README as what accounting uses in the goal state"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Kinds: code for invoicer, readme for README.md"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Listed input kinds: architecture, software-design, test-design for code; product-vision for readme"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "No files of those kinds exist; none needed for one small command, so their vital few are decisions of the code and README"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "README.md takes invoicer as a precondition, since its walkthrough runs the command"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Settled lines form (repo parse_lines), rate per run, print render text, refusal of wrong input, readers by reasoning"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "Left open for the person: how accounting gets the command with no Python on their side"
+    },
+    {
+      "of": "up",
+      "step": 2,
+      "gave": "Started rn:tree-keeper with the text the guard gave; it gave done"
+    },
+    {
+      "of": "up",
+      "step": 3,
+      "gave": "Drafted the goal and two deliverables, and resumed the tree-keeper to write them"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked the tree-keeper write: first commit 86581a1 came from stale files; sent back; bbc35d7 now holds the drafted goal and plan field for field"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Putting the goal and its state to the person beside their request"
+    },
+    {
+      "of": "up",
+      "step": 4,
+      "gave": "Put the drafted goal to the person to confirm"
+    },
+    {
+      "of": "ty",
+      "step": 1,
+      "gave": "tree.py approve gave 1: no sign-off waited, as the goal was put as a point; took the /rn:ty words as the answer to it"
+    },
+    {
+      "of": "ty",
+      "step": 2,
+      "gave": "Plan unchanged; rebuilt the branch without 86581a1 as the person asked (ac27af0 on ea10f6e, same tree); resumed the tree-keeper to write the goal by user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "The person confirmed the goal as written; by becomes user"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Next point for the person: how accounting gets the command with no Python on their side"
+    },
+    {
+      "of": "ty",
+      "step": 1,
+      "gave": "tree.py approve gave 1: no sign-off waited; took the words as the answer to the install point"
+    },
+    {
+      "of": "ty",
+      "step": 2,
+      "gave": "Plan holds; resumed the tree-keeper to settle invoicer N4 (pipx, by user), README N1 readers and N9 install steps by user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "The install point, readers, and install steps are by user from the person words"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked 0d235e8; sent the README name change for both readers (design-tree N7.1)"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "README deliverable renamed to name the developer setup and accounting everyday printing"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Pushed (PR https://github.com/lovaizu/playground/pull/29) and put up the plan; waiting for /rn:ty or /rn:gm"
+    },
+    {
+      "of": "up",
+      "step": 1,
+      "gave": "The run 20261118-invoice-command-for-the-accounting-team holds; still in its worktree"
+    },
+    {
+      "of": "up",
+      "step": 2,
+      "gave": "The tree-keeper, started with the guard text, was resumed for each change; no generator or evaluator was due"
+    },
+    {
+      "of": "up",
+      "step": 3,
+      "gave": "Goal and plan written to the tree: ac27af0, b15b384, 0d235e8, 8ed1fa8"
+    },
+    {
+      "of": "up",
+      "step": 4,
+      "gave": "The person confirmed the goal as written and chose a one-time pipx install"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Reviewed the tree by the person answers: both deliverables still bring accounting to the goal; README readers widened to the setup developer"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No point of the person left open; command name, rate form, and wording settled by makers within the decisions"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked each tree-keeper write against the design tree practice; sent back the stale write, which is now out of the history"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "The guard gave no generator or evaluator due before the plan sign-off"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No generator has given done yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "No round has run yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Pushed to https://github.com/lovaizu/playground/pull/29 and put up the plan; waiting for /rn:ty or /rn:gm"
+    },
+    {
+      "of": "orchestrator",
+      "step": 8,
+      "gave": "Not this case: a run was found"
+    },
+    {
+      "of": "ty",
+      "step": 1,
+      "gave": "tree.py approve: the plan signed off"
+    },
+    {
+      "of": "ty",
+      "step": 2,
+      "gave": "Plan unchanged; resumed the tree-keeper with the sign-off and the README walkthrough decision (two tax rates, by user)"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked 4ab5ee5: README N6 walkthrough at two rates by user; invoicer doing"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Started rn:generator for invoicer round 1 with the text the guard gave"
+    }
+  ]
+}
