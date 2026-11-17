@@ -14,6 +14,76 @@
       "of": "generator",
       "step": 3,
       "gave": "Decided: take each decision of the Cut as it stands; settle that subtotal, tax, total and render take Iterable[Line] read once (total reckons the subtotal once and adds tax_of of it; render lists its lines once), as the decision asks that the printed invoice and the package give the same figures for any iterable; nothing left open for the person."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.1",
+      "gave": "Took the test command from pyproject.toml: python3 -m unittest discover -s tests."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.3",
+      "gave": "Ran it in a throwaway copy: 62 tests pass before any change."
+    },
+    {
+      "of": "code",
+      "practice": "N1.1",
+      "gave": "Unit cases for the decision: subtotal, tax, total and render each take any iterable of lines, a generator included, and give the figures they give for the same lines as a list."
+    },
+    {
+      "of": "code",
+      "practice": "N3.1",
+      "gave": "No new option, mode or branch: total reckons the subtotal once and adds tax_of of it, and render takes its lines into a list once, as it reads them for the rows and the sums."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.1",
+      "gave": "The reckoning of subtotal, tax and total stays only in invoicer/totals.py; render keeps calling it, and tax_of and to_cent stay in tax.py."
+    },
+    {
+      "of": "code",
+      "practice": "N5.3",
+      "gave": "Added four tests in tests/test_totals.py, one per case: test_subtotal_of_a_generator_of_lines_adds_its_amounts, test_tax_of_a_generator_of_lines_is_that_of_its_subtotal, test_total_of_a_generator_of_lines_adds_the_tax, test_render_of_a_generator_of_lines_prints_their_subtotal_and_total."
+    },
+    {
+      "of": "code",
+      "practice": "N5.8",
+      "gave": "Ran the new tests before the body changed: total of a generator failed with 20.00 != 23.80, and render of a generator printed Subtotal 0, the reasons their Then names; subtotal and tax already read once and pass, pinning that."
+    },
+    {
+      "of": "code",
+      "practice": "N3.2",
+      "gave": "Least code: totals.total reckons the subtotal once and adds tax_of of it; render reads its lines into a list once. 66 tests pass."
+    },
+    {
+      "of": "code",
+      "practice": "N2.3",
+      "gave": "Docstrings of subtotal, tax, total and render say the lines may be any iterable, a generator included, read once; type hints of subtotal, tax and total are Iterable[Line]."
+    },
+    {
+      "of": "code",
+      "practice": "N4.4",
+      "gave": "Ran the 66 tests three times in shuffled orders, seeds 1, 2 and 3, each OK."
+    },
+    {
+      "of": "code",
+      "practice": "N7.2",
+      "gave": "coverage.py is not installed in the throwaway copy, so line coverage was taken with python3 -m trace --count --missing over the test run: no line of invoicer/totals.py or invoicer/render.py goes unrun."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.8",
+      "gave": "After the change of totals.total and of render, the 66 tests pass; every behavior of a list of lines holds, and a generator now gives what 1.4.0 gave for total, 23.80 for 20.00 at 19 percent."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.3",
+      "gave": "render.py: comment beside lines = list(lines) says why, as the rows and each sum read the lines."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "invoicer/totals.py: subtotal, tax, total take Iterable[Line], total reckons the subtotal once; invoicer/render.py reads its lines into a list once; tests/test_totals.py gains four generator tests; 66 pass."
     }
   ]
 }

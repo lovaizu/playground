@@ -34,6 +34,31 @@ class TotalsTest(unittest.TestCase):
     def test_total_is_the_subtotal_and_the_tax_as_stated(self):
         self.assertEqual(str(total(HALF_CENTS, RATE)), "0.04")
 
+    def test_subtotal_of_a_generator_of_lines_adds_its_amounts(self):
+        self.assertEqual(str(subtotal(line for line in HALF_CENTS)), "0.03")
+
+    def test_tax_of_a_generator_of_lines_is_that_of_its_subtotal(self):
+        self.assertEqual(str(tax((line for line in HALF_CENTS), RATE)), "0.01")
+
+    def test_total_of_a_generator_of_lines_adds_the_tax(self):
+        # Given 20.00 of lines at 19 percent, then the total is 23.80, as 1.4.0 gave, not the
+        # subtotal 20.00 alone.
+        lines = (line for line in [Line("Design", Decimal("10.00"), 2)])
+
+        self.assertEqual(str(total(lines, RATE)), "23.80")
+
+    def test_render_of_a_generator_of_lines_prints_their_subtotal_and_total(self):
+        printed = render((line for line in HALF_CENTS), RATE).splitlines()
+
+        self.assertEqual(
+            printed[-3:],
+            [
+                "Subtotal".ljust(30) + "0.03".rjust(12) + " EUR",
+                "Tax".ljust(30) + "0.01".rjust(12) + " EUR",
+                "Total".ljust(30) + "0.04".rjust(12) + " EUR",
+            ],
+        )
+
     def test_render_prints_the_subtotal_and_total_that_the_package_gives(self):
         # Supports test_prints_a_subtotal_that_adds_up_the_amounts_as_printed.
         printed = render(HALF_CENTS, RATE).splitlines()
