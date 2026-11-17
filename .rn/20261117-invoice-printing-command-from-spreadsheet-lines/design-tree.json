@@ -62,7 +62,8 @@
             },
             {
               "about": "what printing gives",
-              "decided": null
+              "decided": "invoicer's existing invoice text, shown in the terminal, and saved to a file where the accountant asks for it.",
+              "by": "user"
             },
             {
               "about": "the currency",
@@ -71,6 +72,11 @@
             {
               "about": "Excel and Google Sheets",
               "decided": "A non-goal: the command reads no Excel or Google Sheets file, only CSV.",
+              "by": "user"
+            },
+            {
+              "about": "PDF and printers",
+              "decided": "A non-goal: the command makes no PDF and sends nothing to a printer; the accountant prints the saved text file or attaches it to an email.",
               "by": "user"
             }
           ]
