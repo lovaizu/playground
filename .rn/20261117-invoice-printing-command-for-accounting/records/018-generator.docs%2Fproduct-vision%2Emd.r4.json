@@ -224,6 +224,191 @@
       "of": "generator",
       "step": 3,
       "gave": "Took each Cut decision as it stands. Settled by the purpose and best practices: O2 and O3 wording with the developers as subject; KR3.1 also counts installs after which a developer sets the command up again; the ranking line written as the N4 decision names it. Nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.4",
+      "gave": "With invoicer taken out, O1 reads as billing each client, O2 as the same results from their own code with no edits, O3 as a command that needs no more setup; none reads as a feature."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N3.1",
+      "gave": "Each sentence says what the users do and get; the command only calling the library is the person idea, kept as the N6 decision words it, as it is what gives developers the same results."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.7",
+      "gave": "E2E records: KR1.1 each print task, its invoice judged right and any developer help; KR1.2 its start and end times; KR2.1 each library call result before and after an update; KR2.2 the diff of their own code after an update; KR3.1 each install, whether the command runs and any later setup; KR3.2 its start and end times."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.8",
+      "gave": "Choices decided by the one way: a bad line is named, not guessed at, so no one redoes the math; the rate is asked at each print; an update keeps the rounding, so totals stay right in their own code."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings are the template headings, each a reference named by its thing."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "The first line under each heading says what it gives: a role and who they are, an objective, the one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read headings and first lines for each purpose of the developers; none leads them past a section they need or into one they do not."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Each sentence serves the developers deciding what to build or judging a change; none marked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "No sentence marked, so no other document to look for."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "Nothing to move within the deliverable."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "Nothing to place outside the deliverable, so nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "Nothing to cut."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "Words in the new O2 and O3 each carry a point; no filler."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "Small structure words kept: the, as, after, before."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "docs/product-vision.md read to its end as the developers; each step, value and condition they need is there."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "Roles come before the objectives that name them; O2 says before the update in the same sentence, so before needs nothing later."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "Goodhart law is named in its sentence with what it says; nothing else depends on outside."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "O2 starts with the update the developers know and ends with the new point, without editing their code."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "The O2 condition, after each update of invoicer, comes before what the developers get."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "No rule with an exception in the document."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "docs/product-vision.md read to its end from the top; no place needed a look back or ahead."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "Lists keep one item for each role, objective, key result and idea."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence to draw."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "No structure to draw."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "O2, O3 and KR3.1 each make one point; KR3.1 counts one share with its two ways to fail."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "O2 and O3 now have the developers as subject with active verbs, get and are left with."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "Wrote their code and the command in place of it where it could read two ways in O2 and KR3.1."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "Update in O2 is the readers own word for the act; no other verb noun."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Objects sit next to their verbs: get the same results, install once, set up again."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "docs/product-vision.md read to its end word by word; the ranking line now reads one way, three first then three, with come for the plural."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "Words already the chosen ones; set up again added in O3 and KR3.1 as the decision words it."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No coined term, so nothing to define."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "O, KR and their numbers are the template own labels; no other abbreviation."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "No fact moved, so nothing to state in full elsewhere."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "No fact in two places, so no link to write."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "O2 and O3 name the developers, as KR2.2 and KR3.1 name a developer for one of them; invoice lines and their own code spelled the same throughout."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "docs/product-vision.md: O2 has the developers as subject and says before the update; O3 says what the developers are left with, a command they install once and never need to set up again; KR3.1 counts setting it up again; the ranking line names all six as the N4 decision does."
     }
   ]
 }
