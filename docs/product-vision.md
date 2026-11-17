@@ -5,8 +5,8 @@
 - Accounting team\
   The people who print each client's invoice with invoicer's command.
 - Developer\
-  The people who call invoicer as a library from their own code, and install the command once for
-  the accounting team.
+  The people who call invoicer's library from their own code, and install the command once for the
+  accounting team.
 
 ## Objectives and key results
 
@@ -50,8 +50,8 @@ math.
   The accounting team works from the invoice lines they already keep in their spreadsheet, so
   nothing is retyped.
 - Tax rate set at each print and never saved per client, for O1\
-  The accounting team sets the tax rate for each invoice when they print it, so each client is
-  billed at their own rate.
+  The accounting team sets each invoice's tax rate as they print it, so each client pays their own
+  rate.
 - One rounding everywhere, for O2\
   The tax is rounded to the cent the same way every time, both in the command and for developers
   calling the library. The developers' own code keeps the totals it got before. The printed total
