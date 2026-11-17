@@ -8,111 +8,7 @@
       "name": "The accounting team and invoicer's maintainers share one account of who the invoice command serves and what it lets them do",
       "path": "docs/product-vision.md",
       "kind": "product-vision",
-      "inputs": [],
-      "preconditions": [],
-      "status": "doing",
-      "necessary_conditions": [
-        {
-          "id": "N1",
-          "good": true,
-          "decisions": [
-            {
-              "about": "the job",
-              "decided": "invoicer gives the accountant a command that prints a client's invoice from the invoice lines they keep in a spreadsheet, at that client's tax rate.",
-              "by": "reasoning"
-            },
-            {
-              "about": "who sets the command up for the team",
-              "decided": "A developer installs Python and invoicer on each accountant's machine; the accountant installs nothing.",
-              "by": "user"
-            },
-            {
-              "about": "the roles",
-              "decided": "Two roles: the accountant, one on the accounting team who prints a client's invoice; and the installer, a developer who sets up invoicer's command on each accountant's machine.",
-              "by": "user"
-            },
-            {
-              "about": "the names the vision uses",
-              "decided": "The vision names each thing one way throughout: `invoicer` for the product alone, invoicer's command for what the accountant runs and what prints the invoice, `accountant` for one who prints, the accountant's machine for where it runs, the client's tax rate for the rate the accountant gives, and the invoice line for one line of the spreadsheet. The vision names no runtime; installing Python is the README setup section's to say.",
-              "by": "reasoning"
-            }
-          ]
-        },
-        {
-          "id": "N2",
-          "good": true,
-          "decisions": [
-            {
-              "about": "the objective",
-              "decided": "O1: the accountant sends each client a correct invoice at that client's tax rate without anyone's help.",
-              "by": "reasoning"
-            },
-            {
-              "about": "the installer's objective",
-              "decided": "O2: the installer gets an accountant's machine ready to print invoices without anyone's further help.",
-              "by": "reasoning"
-            }
-          ]
-        },
-        {
-          "id": "N3",
-          "good": true,
-          "decisions": []
-        },
-        {
-          "id": "N4",
-          "good": true,
-          "decisions": [
-            {
-              "about": "the task",
-              "decided": "O1: from the invoice lines in the spreadsheet and the client's tax rate to the printed invoice. O2: from a machine with nothing of invoicer on it to the accountant running the command on it.",
-              "by": "reasoning"
-            },
-            {
-              "about": "the key results",
-              "decided": "O1 KR1: the share of invoices on a machine where the command runs that the accountant couldn't print without anyone's help or that came out with a wrong total; lower is better. O1 KR2: the time from opening the spreadsheet to the printed invoice, the accountant's own time included; lower is better. O2 KR1: the share of setups after which the command doesn't run for the accountant; lower is better. O2 KR2: the installer's time from starting a setup to the command running; lower is better. Within each objective KR1 ranks before KR2, stated once, in the template's ranking line, with no rank notes on the key result lines. Key results of different objectives have no order between them, since each piece of work serves one objective; the template's line that key results show whether a change brought its objective closer carries this, with no sentence added. No targets, for the plain reason that the template's line gives: a measure made a target stops being a good measure.",
-              "by": "reasoning"
-            }
-          ]
-        },
-        {
-          "id": "N5",
-          "good": true,
-          "decisions": [
-            {
-              "about": "the pieces of work and their objective",
-              "decided": "The invoice command and the README's part for the accountant serve O1; the README's setup section serves O2.",
-              "by": "reasoning"
-            }
-          ]
-        },
-        {
-          "id": "N6",
-          "good": false,
-          "decisions": [
-            {
-              "about": "the one way",
-              "decided": "The accountant gives invoicer's command the invoice lines as they already keep them in their spreadsheet, plus the client's tax rate, and invoicer's command prints the finished invoice.",
-              "by": "user"
-            },
-            {
-              "about": "the ideas",
-              "decided": "Their sheet as it is: the command takes the invoice lines as the accountant already keeps them, so there's no new format to learn. Nothing wrong prints: where an invoice line or the client's tax rate can't be read, nothing prints, and the message says which invoice line or the client's tax rate to fix. The client's tax rate is given each time an invoice is printed, since each client has their own rate; no rate is remembered per client.",
-              "by": "user"
-            },
-            {
-              "about": "the moments of use",
-              "decided": "The installer sets up invoicer's command on an accountant's machine and sees it run, with nothing to configure, since the command takes the sheet as it is and the client's tax rate each time the accountant prints an invoice; the accountant gives the command the invoice lines and the client's tax rate; the invoice prints, or a message says what to fix and the accountant fixes it and runs it again.",
-              "by": "reasoning"
-            },
-            {
-              "about": "the objective each idea serves",
-              "decided": "Each of the three ideas is marked for O1 alone, since the accountant meets each at every print and the installer meets it once. An idea's line says what it gives the accountant toward a correct invoice, and may also say what it spares the installer, such as nothing to set up.",
-              "by": "reasoning"
-            }
-          ]
-        }
-      ]
+      "status": "done"
     },
     {
       "name": "An accountant learns from the README alone how to print an invoice from their spreadsheet at a client's tax rate, and a developer how to set the command up for them",
@@ -127,22 +23,72 @@
         {
           "id": "N1",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the people",
+              "decided": "The opening speaks to the accountant, one on the accounting team who prints a client's invoice; a short setup section speaks to the installer, a developer who sets the command up, and the accountant's part starts at running the command.",
+              "by": "user"
+            },
+            {
+              "about": "what they achieve",
+              "decided": "The accountant sends each client a correct invoice at that client's tax rate without anyone's help.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the one thing",
+              "decided": "invoicer's command prints the finished invoice from the invoice lines in the accountant's spreadsheet, plus the client's tax rate.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the kind",
+              "decided": "A command the accountant runs in a terminal, installed with the invoicer Python package.",
+              "by": "research"
+            }
+          ]
         },
         {
           "id": "N2",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "remembering a rate per client",
+              "decided": "A non-goal: the command remembers no client's tax rate; the accountant gives it for each invoice.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the spreadsheet file the command reads",
+              "decided": null
+            },
+            {
+              "about": "what printing gives",
+              "decided": null
+            },
+            {
+              "about": "the currency",
+              "decided": null
+            }
+          ]
         },
         {
           "id": "N3",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "readiness",
+              "decided": "Ready once the integration test of O1's use passes on the version pyproject.toml names; until then the top says what works.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N4",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the license",
+              "decided": null
+            }
+          ]
         },
         {
           "id": "N5",
@@ -152,27 +98,61 @@
         {
           "id": "N6",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the walkthrough's use and task",
+              "decided": "O1's use: one invoice of a few invoice lines for one client at that client's tax rate, and one unreadable invoice line refused with a message naming it.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N7",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the one way",
+              "decided": "The vision's one way, said as what the accountant sees: give the command your invoice lines as they are and the client's tax rate, and it prints the finished invoice.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N8",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the problems and doubts",
+              "decided": "Problem: printing an invoice means asking a developer. Doubts: will it read my sheet as I keep it; will the total be right; what if a line is wrong. Each is answered by one of the vision's three ideas.",
+              "by": "reasoning"
+            },
+            {
+              "about": "showing the client's tax rate on the invoice",
+              "decided": null
+            }
+          ]
         },
         {
           "id": "N9",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "requirements and install",
+              "decided": "Python 3.9 or later, from pyproject.toml's requires-python; the installer's commands are run and checked from a fresh start at making.",
+              "by": "research"
+            }
+          ]
         },
         {
           "id": "N10",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "where to go",
+              "decided": "The product vision for fuller use, and the repository's issues at github.com/lovaizu/playground for help.",
+              "by": "reasoning"
+            }
+          ]
         }
       ]
     },
