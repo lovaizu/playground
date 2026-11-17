@@ -9,6 +9,126 @@
       "of": "generator",
       "step": 2,
       "gave": "Read code/best-practice.md with template.md (N1-N8) and refactor-code/best-practice.md (N1-N8) to their end before any change."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.1",
+      "gave": "pyproject.toml gives no test command, nor does README.md (it says only Playground), and the cut names no architecture."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.2",
+      "gave": "find finds no test_*.py and no Test strategy exists, so the runner is the one that comes with Python: python3 -m unittest discover -s tests -t . (stdlib, Python 3.14 on the machine)."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.3",
+      "gave": "Ran the runner by throwaway.py: no tests exist yet, so none ran; no failing test, nothing to ask."
+    },
+    {
+      "of": "code",
+      "practice": "N1.1",
+      "gave": "No architecture or unit cases exist, so from the request and the cut I wrote the unit cases of the command first: prints the invoice of the lines at the rate given; reads a rate with a percent sign; takes rate 0 and 100 (ends); refuses a rate above 100, below 0, not a number, NaN; refuses a run without a rate; refuses a missing file, a file not saved as UTF-8, a file with no lines; reads a file with a byte order mark; prints nothing when a row is wrong. And of lines.parse_lines: reads rows, skips blank rows, refuses a row of other than three fields, a price that is no number written with a point, a quantity that is no whole number from 1, each naming the row. The trace: the cut and invoicer/ read to their end."
+    },
+    {
+      "of": "code",
+      "practice": "N1.2",
+      "gave": "Decisions left to the code: how the rate is written on the command line (a percent, 0 to 100, as accounting says it, with or without %, over the fraction tax_of takes); how the command takes the file and rate (invoicer LINES --rate PERCENT); the text encoding read (UTF-8, a byte order mark allowed, as spreadsheets save CSV UTF-8); which values a row refuses (price a finite number with a point, quantity a whole number from 1); the form and exit code of a refusal (argparse error: usage, then invoicer: error: <file>, row N: ..., exit 2)."
+    },
+    {
+      "of": "code",
+      "practice": "N1.3",
+      "gave": "One new module, invoicer/command.py, decides what the command takes from whoever runs it and what it prints, as it can change while the parse, tax and render stay. The row format and what a row refuses stay in invoicer/lines.py, which already decides it. Tax, totals and render stay as they are."
+    },
+    {
+      "of": "code",
+      "practice": "N1.4",
+      "gave": "No decision has variants that the cases call for now (one input form, one output), so no pattern and no variant modules."
+    },
+    {
+      "of": "code",
+      "practice": "N2.1",
+      "gave": "Offered: invoicer.command.main (the pyproject script entry and the tests call it), invoicer.lines.parse_lines, Line and the new LineError (command.py and tests call them). Internal: command._parser, command._percent, command._read, lines._price, lines._quantity."
+    },
+    {
+      "of": "code",
+      "practice": "N3.1",
+      "gave": "Planned: the LINES argument and --rate (cases: prints the invoice, refuses a run without a rate); the % suffix (case: reads a rate with a percent sign); the 0-100 check (cases at both ends and beyond); the NaN/infinite check (case: refuses NaN); the UTF-8 with BOM read (cases: BOM, not UTF-8); the missing-file catch (case); the no-lines refusal (case). Dropped: a --currency option, an output file, a comma decimal reading, a header row skip: no case asks for them."
+    },
+    {
+      "of": "code",
+      "practice": "N5.1",
+      "gave": "No module is added inside the part beyond command.py, whose cases are the unit cases; lines.parse_lines cases support test_prints_nothing_when_a_row_is_wrong: test_reads_each_row_as_a_line, test_skips_a_blank_row, test_refuses_a_row_of_two_fields_naming_it, test_refuses_a_price_written_with_a_comma_naming_the_row, test_refuses_a_price_that_is_not_finite, test_refuses_a_quantity_that_is_not_whole, test_refuses_a_quantity_of_zero (the end of the class from 1)."
+    },
+    {
+      "of": "code",
+      "practice": "N5.2",
+      "gave": "No case is needed that supports no unit case; nothing to ask."
+    },
+    {
+      "of": "code",
+      "practice": "N8.1",
+      "gave": "Inputs from outside: the LINES path and --rate text, both in command.main via argparse; the file content, read in command._read; each row of it, in lines.parse_lines."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.1",
+      "gave": "Things and names: an invoice line (Line, line, lines); a row of the saved file (row, in parse_lines); the tax rate as a fraction (rate in tax_of, total, render); the tax rate as accounting types it (would also be rate)."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.2",
+      "gave": "The cut says line and row as the code does (one row per line), and the tax rate; README.md holds only Playground."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.3",
+      "gave": "No thing has two names: line and row stay apart as the cut keeps them (row of the file, line of the invoice)."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.4",
+      "gave": "rate would name two things, the fraction and the percent typed: rate keeps the fraction, as tax_of and render use it; the typed one is percent in command.py, and the option is --rate as the cut says the tax rate."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.1",
+      "gave": "Rules and where written: the row format <description>;<price>;<quantity> (lines.py docstring and split), the cent rounding (tax.py CENT), the column layout (render.py), the percent-to-fraction (command.py only)."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.2",
+      "gave": "The places alike: subtotal plus tax_of in totals.total and in render.render, both change with the tax rule, as each calls tax_of; the 30/12 widths in render.py repeat on each row and change together."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.3",
+      "gave": "The row format and its refusals stay in lines.py, whose job it is; the refusal message names the field separator from one constant there. The percent reading stays in command.py, the one module that takes typed input. render.py and totals.py are outside this cut and keep their own layout; left as they are."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.1",
+      "gave": "Kinds done in many places: reporting a wrong input, checking an input, laying out a module (docstring sentence first), laying out a test."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.2",
+      "gave": "Ways now: reporting a wrong input, parse_lines lets ValueError or decimal.InvalidOperation escape with no row; no other check exists. Modules all open with a one-line docstring; no tests exist."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.3",
+      "gave": "No style settings for Python (lefthook only skips japanese), so the code ways stay: a one-line module docstring first, plain functions, Decimal for money."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.4",
+      "gave": "A new way for a wrong input: lines.LineError (a ValueError) naming the row, raised for every row refusal, which the command turns into one argparse error, so every refusal of the command reads invoicer: error: ... and exits 2; it removes the fault that the escaping errors named no row. Tests: unittest, one TestCase per module."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Took the five decisions of the cut as they stand and settled the rest from the purpose: the command invoicer LINES --rate PERCENT installed by a pyproject script entry for pipx; the rate typed as a percent 0-100, with or without %; the file read as UTF-8 with a byte order mark allowed; each wrong row refused with its row number before printing; refusals as argparse errors, exit 2. Nothing left open, so no asks."
     }
   ]
 }
