@@ -689,6 +689,146 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "After four rounds the vision cannot pass refactor-doc N1 N4 N5 N6 under the template fixed words; how to go on is the person point; asking it"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "No change written until the person answers"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No generator asks or lacks"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Read round 4: fixable product-vision N3 N5 and refactor-doc N8; template-bound refactor-doc N1 N4 N5 N6 recur each round"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up: conditions not all good"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Person chose option 1: three fixes, template sentences kept, sign off knowing four checks unmet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Sent the three fixes and their mores to the tree-keeper with the person words"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No generator asks or lacks"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Round 4 judged: kept product-vision N3 N5 and refactor-doc N8; template-bound ones left by the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "6344b24 fell short on N9 at N6 decisions 0 and 2; sent the mend"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round-5 generator start until the tree agrees"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote 7062bcb; agrees"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started round-5 generator for docs/product-vision.md with the guard text"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Generator making"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
     }
   ]
 }

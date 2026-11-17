@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Read the Cut, docs/product-vision.md as it stands, and the three Mores kept; no inputs. The vision is for the accountant, who prints a client invoice with invoicer command, the installer, who sets that command up on the accountant machine, and invoicer maintainers, who weigh each change against O1 and O2."
+    }
+  ]
+}
