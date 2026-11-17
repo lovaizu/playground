@@ -9,6 +9,11 @@
       "of": "generator",
       "step": 2,
       "gave": "Read readme best-practice.md with template.md, and refactor-doc best-practice.md, to their end"
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Asked which spreadsheet program and system accounting machines use, as the saving, terminal and pipx steps differ by them; recommended Excel on Windows"
     }
   ]
 }
