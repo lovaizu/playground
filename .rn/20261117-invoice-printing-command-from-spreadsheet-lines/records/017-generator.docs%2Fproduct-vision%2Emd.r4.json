@@ -4,6 +4,11 @@
       "of": "generator",
       "step": 1,
       "gave": "Read the Cut, docs/product-vision.md to its end; the Cut names no inputs and no More kept. The people: the accountant, who prints a client invoice from their spreadsheet lines at the client tax rate, and the installer, a developer who sets invoicer up on each accountant machine; invoicer maintainers weigh a change by the key results."
+    },
+    {
+      "of": "generator",
+      "step": 2,
+      "gave": "Read product-vision best-practice.md with its template.md, and refactor-doc best-practice.md, to their end."
     }
   ]
 }
