@@ -1,0 +1,376 @@
+{
+  "goal": {
+    "decided": "The accounting team prints each client's invoice themselves, from the invoice lines they keep in a spreadsheet and at that client's tax rate, without writing Python.",
+    "by": "reasoning"
+  },
+  "deliverables": [
+    {
+      "name": "The accounting team and invoicer's maintainers share one account of who the invoice command serves and what it lets them do",
+      "path": "docs/product-vision.md",
+      "kind": "product-vision",
+      "inputs": [],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    },
+    {
+      "name": "Someone on the accounting team learns from the README alone how to print an invoice from their spreadsheet at a client's tax rate",
+      "path": "README.md",
+      "kind": "readme",
+      "inputs": [
+        "docs/product-vision.md"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N9",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N10",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    },
+    {
+      "name": "invoicer's developers know which part reads the spreadsheet's lines, which takes the tax rate, and which prints the invoice, and why",
+      "path": "docs/architecture.md",
+      "kind": "architecture",
+      "inputs": [
+        "docs/product-vision.md",
+        "README.md"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N9",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N10",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N11",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N12",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N13",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N14",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N15",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N16",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    },
+    {
+      "name": "invoicer's developers know the modules and interfaces of the invoice command before they write it",
+      "path": "docs/software-design.md",
+      "kind": "software-design",
+      "inputs": [
+        "docs/architecture.md"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    },
+    {
+      "name": "invoicer's developers know which cases show that the command prints a right invoice and refuses a wrong spreadsheet or rate",
+      "path": "docs/test-design.md",
+      "kind": "test-design",
+      "inputs": [
+        "docs/product-vision.md",
+        "README.md",
+        "docs/architecture.md",
+        "docs/software-design.md"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    },
+    {
+      "name": "The accounting team runs one command that prints an invoice from their spreadsheet's lines at the tax rate they give it",
+      "path": "invoicer/cli.py",
+      "kind": "code",
+      "inputs": [
+        "docs/architecture.md",
+        "docs/software-design.md",
+        "docs/test-design.md"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    },
+    {
+      "name": "The accounting team can trust that a spreadsheet's lines and a client's rate give the invoice they expect, end to end",
+      "path": "tests/integration/test_print_invoice.py",
+      "kind": "test-implementation",
+      "inputs": [
+        "docs/product-vision.md",
+        "docs/architecture.md",
+        "docs/test-design.md"
+      ],
+      "preconditions": [
+        "docs/test-design.md",
+        "invoicer/cli.py"
+      ],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    }
+  ]
+}
