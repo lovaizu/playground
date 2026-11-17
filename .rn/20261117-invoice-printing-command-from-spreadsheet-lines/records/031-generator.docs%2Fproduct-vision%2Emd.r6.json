@@ -414,6 +414,11 @@
       "of": "generator",
       "step": 5,
       "gave": "Tried in a throwaway copy: cat docs/product-vision.md exit 0, reading as an accountant and a maintainer would; grep for template comments and placeholders finds none, exit 0. Nothing to mend."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Made written: where each of the 13 Cut decisions and both Mores kept land, and three points settled with their grounds."
     }
   ]
 }
