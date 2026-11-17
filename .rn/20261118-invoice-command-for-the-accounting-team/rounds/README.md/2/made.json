@@ -1,0 +1,61 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/1/necessary_conditions/0/decisions/0",
+      "where": "README.md: the opening names the colleague from accounting who bills clients from Excel and writes no Python; the first item of Requirements names the developer who does the setup; the Walkthrough holds accounting's everyday steps."
+    },
+    {
+      "path": "deliverables/1/necessary_conditions/3/decisions/0",
+      "where": "README.md has no License section and no word about licensing, and no LICENSE file is added. This is the one section that rn's readme check (N4) asks for and the README leaves out, by the person's decision."
+    },
+    {
+      "path": "deliverables/1/necessary_conditions/5/decisions/0",
+      "where": "README.md, Walkthrough: the rows in Excel as a table, what accounting types in PowerShell, and the invoice printed for the same rows at 19% and at 7.7%. The output was rerun this round on invoicer 1.5.0 and matches exactly."
+    },
+    {
+      "path": "deliverables/1/necessary_conditions/8/decisions/0",
+      "where": "README.md, Requirements and Installation: the developer, signed in as the colleague, checks Python by py --version, runs py -m pip install --user pipx, py -m pipx ensurepath and py -m pipx install of the main.zip URL, and sees in a new PowerShell window that invoicer --help prints its usage line. The everyday steps follow in the Walkthrough, with no Python in them."
+    },
+    {
+      "path": "deliverables/1/necessary_conditions/8/decisions/1",
+      "where": "README.md, Walkthrough: the once-only Excel setting of a point as the decimal separator in File > Options > Advanced; then one invoice line in each row as description, price, quantity in columns A to C, no heading row, a discount as a negative price, saved as CSV UTF-8 under the name lines.csv. How it works, Does Excel save the rows the way invoicer reads them: the semicolons come from the Windows list separator, and how to set it."
+    },
+    {
+      "path": "deliverables/1/necessary_conditions/8/decisions/2",
+      "where": "README.md, Walkthrough steps 5 and 6: in File Explorer, accounting opens the folder that holds lines.csv, types powershell in the address bar and presses Enter, and PowerShell opens in that folder; then, in PowerShell, they type invoicer lines.csv --rate 19. Open in Terminal is gone. The opening, Installation and the Walkthrough's result line also name PowerShell, and Requirements and Installation are the developer's Windows pipx setup."
+    }
+  ],
+  "more": [],
+  "settled": [
+    {
+      "point": "how accounting opens PowerShell in the folder that holds lines.csv",
+      "decided": "In File Explorer, open the folder that holds lines.csv, type powershell in the address bar, and press Enter; PowerShell opens in that folder",
+      "ground": "The person wants the everyday steps to say plainly that accounting types the command in PowerShell. Typing powershell in File Explorer's address bar opens Windows PowerShell itself, in that folder, on both Windows 10 and 11, so accounting still types only the file name. Open in Terminal opens whatever profile Windows Terminal is set to, under the name Terminal."
+    },
+    {
+      "point": "where the developer installs from",
+      "decided": "py -m pipx install https://github.com/lovaizu/playground/archive/refs/heads/main.zip",
+      "ground": "Kept from round 1, which the person saw. pyproject.toml says to install by pipx from a path or URL of the repository. lovaizu/playground is public, so the main.zip URL needs no Git on the accounting laptop. The URL works once this pull request is merged into main."
+    },
+    {
+      "point": "whose Windows account the setup is done in",
+      "decided": "The developer signs in to Windows as the colleague from accounting, and whoami shows it",
+      "ground": "Kept from round 1. pipx installs the command and adds it to PATH for the signed-in Windows account only, so a setup done in the developer's own account leaves the colleague without the command."
+    },
+    {
+      "point": "Non-goals",
+      "decided": "invoicer makes no PDF; adds no client name, invoice number or date; shows every amount in euros only; and takes one tax rate for the whole invoice",
+      "ground": "Kept from round 1. invoicer --help shows only LINES and --rate, and the output is text with EUR fixed. A reader who needs any of the four decides against it before starting."
+    },
+    {
+      "point": "the doubts that How it works answers",
+      "decided": "Are the totals right to the cent; what if a row or the tax rate is wrong; does Excel save the rows the way invoicer reads them",
+      "ground": "Kept from round 1. These doubts decide whether accounting trusts the invoice and can work without a developer. A row saved with commas was refused this round, naming row 1, with exit 2."
+    },
+    {
+      "point": "where to go for help",
+      "decided": "The issues of lovaizu/playground, for the developers",
+      "ground": "Kept from round 1. The repository has no docs folder or changelog, and its issues are on."
+    }
+  ]
+}

@@ -599,6 +599,11 @@
       "of": "generator",
       "step": 5,
       "gave": "Tried in a throwaway copy with an empty home folder: invoicer 1.5.0 installed by pip from the fresh copy, as this Linux machine has no py, pipx or venv; from the folder that holds lines.csv, invoicer --help printed its usage line and invoicer lines.csv --rate 19 and --rate 7.7 printed exactly the two Walkthrough invoices, each with exit 0; a comma row exited 2 naming row 1. Nothing to mend."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Made written in rounds/README.md/2/made.json: where each of the six decisions lands, no More, and six settled points with their grounds, the new one being how accounting opens PowerShell in the folder."
     }
   ]
 }
