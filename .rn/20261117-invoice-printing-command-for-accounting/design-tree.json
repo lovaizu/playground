@@ -36,17 +36,35 @@
         {
           "id": "N3",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "where each fact and name lives",
+              "decided": "Roles says only who each role is and the part of the job they come for; the Concept alone says where the invoice lines come from and that the rate is set at each print; one name for each thing: invoice lines, and their own code.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N4",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the ranking of the key results",
+              "decided": "All six key results in one order: KR2.1, KR1.1, KR3.1, KR1.2, KR2.2, KR3.2; the developers keep a change only if no key result ranked above the one it improves gets worse; that key results have no targets, and its reason, Goodhart's law, are two sentences.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N5",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "one objective for each piece of work",
+              "decided": "The accounting team printing without a developer's help belongs to O1 alone; O3 counts only the developer's one install of the command; the one rounding of tax serves O2, as the library behavior developers rely on, and O1 takes its totals from it.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N6",
@@ -56,6 +74,10 @@
               "about": "the concept: the one way and its ideas",
               "decided": "The one way: invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the math. Its ideas: the accounting team works from the lines they already keep in their spreadsheet, so nothing is retyped; they set the tax rate for each invoice when they print it, and it is not saved per client, so each client is billed at their own rate; the tax is rounded to the cent the same way every time, both in the command and for developers calling the library, so the printed total matches what is owed.",
               "by": "user"
+            },
+            {
+              "about": "the concept's ideas for a failed print, an update of invoicer, and the install",
+              "decided": null
             }
           ]
         }
