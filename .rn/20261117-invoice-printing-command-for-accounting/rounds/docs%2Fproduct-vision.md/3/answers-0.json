@@ -1,0 +1,17 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "The developers find each kind of person who comes to invoicer with a job of their own as a role apart, named by what they come to get done: the one who calls the library from their own code, who counts their job done when that code keeps working, and the one who sets the command up for the accounting team, who counts it done when the accounting team can print, instead of both under the one job title Developer."
+    },
+    {
+      "question": "N2",
+      "good_when": "The developers read each objective as one end that one role reaches in their own work, with that role as the one who reaches it: for the developer who calls the library, what they reach in their own work rather than what their code does; for the developer who sets up the command, what they are left with once it is done rather than the install task itself."
+    },
+    {
+      "question": "N3",
+      "good_when": "The developers read only what the accounting team and the developers do and get, such as the same tax and totals for the same invoice lines every time, with nothing about how the command and the library are built or call each other, so the vision stays true however invoicer is built inside."
+    }
+  ]
+}
