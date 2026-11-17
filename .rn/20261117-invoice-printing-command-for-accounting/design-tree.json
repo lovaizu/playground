@@ -23,7 +23,8 @@
             },
             {
               "about": "who installs the command for the accounting team",
-              "decided": null
+              "decided": "A developer installs the command once for the accounting team, so installing belongs to the developer role; the accounting team never touches Python tooling, and the README tells them only how to run the command.",
+              "by": "user"
             }
           ]
         },
