@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read docs/product-vision.md to its end as a developer: Roles, Objectives and key results with a precedence rule after the list, and Concept."
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N1 and N2 of refactor-doc with their reasons and practices."
     }
   ]
 }
