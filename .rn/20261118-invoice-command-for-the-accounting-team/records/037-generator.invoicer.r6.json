@@ -954,6 +954,11 @@
       "of": "generator",
       "step": 5,
       "gave": "Tried with invoicer installed in a fresh venv in a throwaway copy, on a CSV UTF-8 file with a byte order mark, quoted cells (Website design \"Pro\", Hosting; EU region), a price 45.5 and a discount line: --rate 19, 7.7% and 0 each exit 0, subtotal 1362.50, tax 258.88, 104.91 and 0.00, totals 1621.38, 1467.41 and 1362.50. A file whose row 2 opens \"Hosting and never closes exits 2 and prints only the one line naming bad.csv and row 2."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Made in .rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/6/made.json holds, as the deliverable is unchanged in this pass: where each of the 10 Cut decisions lands, where the code N8 More is made good, and the two points settled (a cell with text after its closing mark refused; the refusal wording)."
     }
   ]
 }
