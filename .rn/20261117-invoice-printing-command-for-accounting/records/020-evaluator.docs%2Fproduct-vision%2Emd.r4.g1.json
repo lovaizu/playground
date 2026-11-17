@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N4 and N5 with their reasons and practices"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "N5 good; N4 more: the ranking leaves the how-fast key results unordered"
     }
   ]
 }
