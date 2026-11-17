@@ -20,5 +20,9 @@
       "step": 4,
       "gave": "Both conditions of the group answered in answers-1.json; ending with done."
     }
-  ]
+  ],
+  "kept": {
+    "role": "evaluator",
+    "result": "done"
+  }
 }
