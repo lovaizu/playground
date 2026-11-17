@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "read N1, N2 and N3 of code with their reasons, practices and the template notes"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "answered N1, N2 and N3, each in more, in answers-0.json"
     }
   ]
 }
