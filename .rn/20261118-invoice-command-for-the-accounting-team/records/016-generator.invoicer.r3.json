@@ -489,6 +489,15 @@
       "of": "generator",
       "step": 6,
       "gave": "Wrote the Made in rounds/invoicer/3/made.json: where each of the 9 decisions and the 4 Mores kept land, and 5 points settled with their grounds; it says that the 8 tracked compiled files are not yet untracked."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Ends with lacks: untracking the 8 compiled files under invoicer/__pycache__ and tests/__pycache__ needs git rm --cached (or deleting them), which no command allowed to the generator does; everything else is made, tried, and in the Made."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "lacks"
+  }
 }
