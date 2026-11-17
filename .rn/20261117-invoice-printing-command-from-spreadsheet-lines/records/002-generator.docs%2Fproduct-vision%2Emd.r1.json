@@ -419,6 +419,15 @@
       "of": "generator",
       "step": 6,
       "gave": "Wrote the Made: where each of the eleven Cut decisions lands in docs/product-vision.md, no More kept, and four points settled with their grounds."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Ending done once rn check gives 0."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "done"
+  }
 }
