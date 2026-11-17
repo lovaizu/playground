@@ -479,6 +479,476 @@
       "of": "generator",
       "step": 6,
       "gave": "Made written in .rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/6/made.json: where each of the 10 Cut decisions lands, where the code N8 More is made good, and two points settled (a cell with text after its closing mark is refused; the refusal wording)."
+    },
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Second pass, as rn check found refactor-code deciding practices recorded after making. Re-read the Cut and invoicer as it now stands, with _rows in lines.py and the new tests. Its people: the accounting colleagues who run invoicer LINES --rate PERCENT on a file saved from their spreadsheet and get the printed invoice or one line saying what to fix, and the developers and code that use the package."
+    },
+    {
+      "of": "generator",
+      "step": 2,
+      "gave": "Both best practices, code with its template and refactor-code, read in this conversation before the first change; nothing changed in them since."
+    },
+    {
+      "of": "code",
+      "practice": "N1.1",
+      "gave": "Specification for this round: the Cut decision a wrong line and the code N8 More. Unit cases: test_refuses_a_quotation_mark_that_never_closes_naming_the_row_where_it_opens (command), and in lines the same name, test_refuses_a_quotation_mark_that_never_closes_in_a_long_file, test_refuses_a_cell_with_text_after_its_closing_quotation_mark."
+    },
+    {
+      "of": "code",
+      "practice": "N1.2",
+      "gave": "Left to the code: how the unclosed mark is found (csv strict mode, so the quoting rule stays in csv) and the message wording."
+    },
+    {
+      "of": "code",
+      "practice": "N1.3",
+      "gave": "The decision belongs to invoicer/lines.py, which decides which rows of text give a line; no module added."
+    },
+    {
+      "of": "code",
+      "practice": "N1.4",
+      "gave": "No variants called for; none made."
+    },
+    {
+      "of": "code",
+      "practice": "N2.1",
+      "gave": "Offered names unchanged (Line, LineError, parse_lines, ROW); the row reader is internal, _rows."
+    },
+    {
+      "of": "code",
+      "practice": "N3.1",
+      "gave": "One branch, the csv.Error catch in _rows, called for by the three lines cases; no option or parameter."
+    },
+    {
+      "of": "code",
+      "practice": "N5.1",
+      "gave": "Lines cases, each supporting the command case test_refuses_a_quotation_mark_that_never_closes_naming_the_row_where_it_opens: short file (row 2 opens \"Pro, never closes: LineError row 2), long file (30000 rows after: same LineError, no csv error), text after the closing mark (\"Pro\" x: LineError row 2)."
+    },
+    {
+      "of": "code",
+      "practice": "N5.2",
+      "gave": "Every case supports a unit case of the command; none to take back."
+    },
+    {
+      "of": "code",
+      "practice": "N8.1",
+      "gave": "Inputs from outside: the command line (LINES, --rate) at command.main, the saved file at command.main, and its text at _rows, where csv first reads it."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.1",
+      "gave": "pyproject.toml gives the test command python3 -m unittest discover -s tests."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.2",
+      "gave": "The manifest gives the command; the tests use unittest."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.3",
+      "gave": "Ran the tests in a throwaway copy at the start of this pass: 75 tests, OK."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.1",
+      "gave": "Things handled: a row (row, cells, number), a line, a cell, a quotation mark; named so throughout lines.py and its messages."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.2",
+      "gave": "No architecture input; the Cut says row, cell and quotation mark, as the code and messages do."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.3",
+      "gave": "No two names for one thing in the new code."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.4",
+      "gave": "rows names the csv reader inside _rows, and _rows the generator; each one thing in its scope."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.1",
+      "gave": "Rules searched: the separator (_SEPARATOR, only lines.py), the reading of quoted cells (csv.reader, once, in _rows), the row numbering from 1 (once, in _rows)."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.2",
+      "gave": "The refusal message is written once in lines.py; the tests repeat it as each case expected value, as code N5.5 asks, which a change of the rule need not follow."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.3",
+      "gave": "Each rule stays in lines.py, whose job is reading rows."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.1",
+      "gave": "Kinds done in many places: refusing a row (LineError \"row N: ...\" in lines.py), refusing the command line (parser.error in command.py)."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.2",
+      "gave": "Row refusals are LineError with the row prefix throughout lines.py, and command.py turns each into parser.error once."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.3",
+      "gave": "No style settings name a way; the new refusal takes the way lines.py uses."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.4",
+      "gave": "No new way chosen."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Decisions stand as in the first pass: the Cut decision a wrong line taken as it stands, carried out by csv.reader strict=True in _rows turning csv.Error into LineError naming the row where the cell opens; settled by the purpose, a cell with text after its closing mark is refused with the same message. No asks."
+    },
+    {
+      "of": "code",
+      "practice": "N1.5",
+      "gave": "lines.py opening still holds: which rows of text give a line; the unclosed quotation mark is one such rule."
+    },
+    {
+      "of": "code",
+      "practice": "N1.6",
+      "gave": "Change tried: refuse another quoting fault; the module openings name lines.py alone."
+    },
+    {
+      "of": "code",
+      "practice": "N2.2",
+      "gave": "_rows typed str to Iterator[tuple[int, list[str]]]; parse_lines signature unchanged."
+    },
+    {
+      "of": "code",
+      "practice": "N2.3",
+      "gave": "parse_lines docstring Refuses names a cell that starts with a quotation mark but does not end with one that closes it, named as the row where it opens; Changed in 1.5.0 names \"Pro\" x, read by 1.4.0 with its marks."
+    },
+    {
+      "of": "code",
+      "practice": "N2.4",
+      "gave": "Each new test passes text and asserts a LineError message or a description, as the parse_lines docstring states them."
+    },
+    {
+      "of": "code",
+      "practice": "N3.2",
+      "gave": "_rows with strict=True and the one csv.Error catch is the least code that made the failing tests pass, written after seeing them fail."
+    },
+    {
+      "of": "code",
+      "practice": "N3.3",
+      "gave": "Tests run in a throwaway copy in this pass: 75, OK."
+    },
+    {
+      "of": "code",
+      "practice": "N3.4",
+      "gave": "Each branch of _rows (StopIteration, csv.Error, a row) answers a case; nothing to remove."
+    },
+    {
+      "of": "code",
+      "practice": "N4.1",
+      "gave": "pyproject.toml unchanged: Python 3.9 or later, no other package, the test command in its opening comment."
+    },
+    {
+      "of": "code",
+      "practice": "N4.2",
+      "gave": "The new command test writes its file in its own temporary folder via saved(); the lines tests pass text only."
+    },
+    {
+      "of": "code",
+      "practice": "N4.3",
+      "gave": "The tests run no real tool beyond Python; nothing to turn off."
+    },
+    {
+      "of": "code",
+      "practice": "N4.4",
+      "gave": "Ran the 75 tests in three shuffled orders, seeds 41, 5150 and 90210 printed by the run: OK each."
+    },
+    {
+      "of": "code",
+      "practice": "N4.5",
+      "gave": "In a throwaway copy, a fresh venv set up from pyproject.toml alone: tests OK, and the installed invoicer command ran."
+    },
+    {
+      "of": "code",
+      "practice": "N5.3",
+      "gave": "One test per designed case: three in tests/test_lines.py, one in tests/test_command.py, and test_reads_a_quotation_mark_inside_a_cell_that_starts_without_one pinning 5\" screen."
+    },
+    {
+      "of": "code",
+      "practice": "N5.4",
+      "gave": "Expected row numbers and messages come from the cases: the row where the mark opens, 2 in lines, 3 after the two LINES rows in the command."
+    },
+    {
+      "of": "code",
+      "practice": "N5.5",
+      "gave": "Each test keeps its text and expected message in its own body; only saved() and run_command() are shared."
+    },
+    {
+      "of": "code",
+      "practice": "N5.6",
+      "gave": "No loops or branches in the new tests; the long file is a repeated string."
+    },
+    {
+      "of": "code",
+      "practice": "N5.7",
+      "gave": "Each new assertion compares a whole message or description that the test name explains; no message needed."
+    },
+    {
+      "of": "code",
+      "practice": "N5.8",
+      "gave": "Before the code, the long-file tests failed with _csv.Error field larger than field limit, the short one with the three-fields message, and the \"Pro\" x one with LineError not raised, each for its Then."
+    },
+    {
+      "of": "code",
+      "practice": "N6.1",
+      "gave": "Real modules and a file in a temporary folder; no test double."
+    },
+    {
+      "of": "code",
+      "practice": "N6.2",
+      "gave": "The new tests call parse_lines and main only; none reaches _rows."
+    },
+    {
+      "of": "code",
+      "practice": "N6.3",
+      "gave": "The row reading moved from parse_lines into _rows with no test changed, and all tests passed."
+    },
+    {
+      "of": "code",
+      "practice": "N7.1",
+      "gave": "Each new test asserts the whole message or description; the command test the exit code, empty output and the full error line."
+    },
+    {
+      "of": "code",
+      "practice": "N7.2",
+      "gave": "coverage.py is not installed and no Test strategy names a tool; python3 -m trace --count --missing over the tests in this pass leaves one line unrun in invoicer, Line.__repr__, none in the other modules; every line of _rows runs."
+    },
+    {
+      "of": "code",
+      "practice": "N7.3",
+      "gave": "Line.__repr__, the one unrun line, is not this round code and no kept More names it; left as round 5 left it."
+    },
+    {
+      "of": "code",
+      "practice": "N7.4",
+      "gave": "No Test strategy names an interface for property-based tests; none written."
+    },
+    {
+      "of": "code",
+      "practice": "N7.5",
+      "gave": "No property-based test, so no failing input."
+    },
+    {
+      "of": "code",
+      "practice": "N7.6",
+      "gave": "The round takes no CI mutation report; none to list."
+    },
+    {
+      "of": "code",
+      "practice": "N7.7",
+      "gave": "No mutant listed."
+    },
+    {
+      "of": "code",
+      "practice": "N7.8",
+      "gave": "No mutant listed."
+    },
+    {
+      "of": "code",
+      "practice": "N7.9",
+      "gave": "No mutant listed."
+    },
+    {
+      "of": "code",
+      "practice": "N8.2",
+      "gave": "The saved text is read into rows at _rows, where csv first meets it; a quoting fault becomes a LineError there, before any line is built or printed."
+    },
+    {
+      "of": "code",
+      "practice": "N8.3",
+      "gave": "A cell like \"Pro\" x reads in no one way, so it is refused, not guessed as Pro x."
+    },
+    {
+      "of": "code",
+      "practice": "N8.4",
+      "gave": "csv.Error caught by its own type, only around next(rows), where the code can say which row to fix; no bare except."
+    },
+    {
+      "of": "code",
+      "practice": "N8.5",
+      "gave": "The message gives the program (invoicer: error:), the file, the row where the cell opens, what is wrong, and the fix: remove that mark, or end the cell with one and write each quotation mark inside it twice."
+    },
+    {
+      "of": "code",
+      "practice": "N8.6",
+      "gave": "The check is an except that raises, not an assert, so it holds under python -O."
+    },
+    {
+      "of": "code",
+      "practice": "N8.7",
+      "gave": "In this pass, the installed invoicer on a 2-row and a 30002-row file whose row 2 opens \"Pro and never closes: exit 2, nothing printed, the file, row 2 and the fix in one line; the fix is clear from the message alone."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.4",
+      "gave": "parse_lines is the changed function; tests reach its blank rows, quoted cells, numbering and refusals; its reading of 5\" screen, which strict mode could touch, had no test."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.5",
+      "gave": "Pinned by test_reads_a_quotation_mark_inside_a_cell_that_starts_without_one, passing before and after strict mode."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.6",
+      "gave": "Steps: extract the row reading into _rows; add strict=True with the csv.Error refusal; the docstring; tests run after each."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.7",
+      "gave": "No name a test uses was renamed; no expectation changed."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.8",
+      "gave": "Tests after the change, run again in this pass: 75 OK; no step undone."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.9",
+      "gave": "No behavior looks wrong against its name or the Cut beyond what the Cut decides; nothing to ask."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.1",
+      "gave": "_rows is named by parse_lines; no new name is unused."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.2",
+      "gave": "_rows adds the numbering and the refusal; not a pass-through."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.3",
+      "gave": "_rows takes only the text; no parameter given one value at every call."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.4",
+      "gave": "The comment over csv.reader says why strict is on and why csv.Error covers the long file, which the code cannot say; kept."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N3.1",
+      "gave": "At its use, _rows(text) reads as the numbered rows of the text."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N3.2",
+      "gave": "Its definition gives each row with its number and cells, as the name says; no rename."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.5",
+      "gave": "No rename needed."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.1",
+      "gave": "parse_lines gives the line of each row that is not blank; _rows gives each row with its number, refusing a quoted cell that does not close; each new test refuses or reads one text."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.2",
+      "gave": "The while loop around next() is plain named steps; a for loop cannot catch the error at its row."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.3",
+      "gave": "Reading the rows and building the lines were joined in parse_lines; the reading is extracted into _rows."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.4",
+      "gave": "No outside setting read; _SEPARATOR is the module own rule."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.5",
+      "gave": "parse_lines reads at one level: rows, skip blank, build line."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.6",
+      "gave": "_rows has one caller, but its name says what it does; kept."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.1",
+      "gave": "Marked: strict=True, and catching csv.Error as a quoting fault."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.2",
+      "gave": "No short name says why strict is on; a comment says it."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.3",
+      "gave": "The comment beside csv.reader: strict makes csv raise where a quoted cell runs to the end of the text or text follows its closing mark, and past 131072 characters for the size."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.4",
+      "gave": "Every marked line has its reason; nothing to ask."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.5",
+      "gave": "The newline=\"\" comment moved with the reader and holds; the parse_lines docstring names the new refusal."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.4",
+      "gave": "The row numbering, once an enumerate in parse_lines, is written once in _rows."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.5",
+      "gave": "No flag parameter added."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.6",
+      "gave": "command.py reaches lines.py only through ROW, LineError and parse_lines."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.7",
+      "gave": "All places are Python reading one definition; no cross-language note."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.5",
+      "gave": "The new refusal is written in the chosen way; nothing else to rewrite."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.6",
+      "gave": "No place keeps another way; raise ... from None drops the csv cause, as the message replaces it for whoever ran the command."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "invoicer as made stands: lines.py _rows reads with csv.reader(strict=True) and turns csv.Error into LineError naming the row where the quoted cell opens; parse_lines docstring names it; five new tests; 75 tests pass. No change in this pass."
     }
   ]
 }
