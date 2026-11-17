@@ -9,6 +9,221 @@
       "of": "generator",
       "step": 2,
       "gave": "Read product-vision best-practice.md with template.md, and refactor-doc best-practice.md, to their end before any change."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.1",
+      "gave": "The job, from the Cut decision on the job: invoicer gives the accountant a command that prints a client invoice from the spreadsheet invoice lines at that client tax rate."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.2",
+      "gave": "Roles named by the part of the job they come for: accountant, one who prints a client invoice; installer, one who sets up the command."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.3",
+      "gave": "The accountant job gets done only if a developer installs Python and invoicer on the machine (Cut decision on who sets it up), so the installer is a role."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.4",
+      "gave": "No person job left unclear: the Cut decision on the roles settles both; nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.5",
+      "gave": "No split: every accountant counts a correct printed invoice as the job done; every installer a machine where the command runs."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.6",
+      "gave": "No merge: accountant and installer count different results as their job done."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.7",
+      "gave": "Two roles, so neither is named user."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.1",
+      "gave": "O1 and O2 taken from the Cut decisions on the objectives, each one sentence with the role as subject."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.2",
+      "gave": "Asked why: printing matters because the client gets a correct invoice at their rate; setup matters because the machine is ready with no further help. Both are ends in the role own work."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.3",
+      "gave": "Two distinct ends: an installer can ready a machine without any invoice sent, and the reverse, so one objective each."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.1",
+      "gave": "Tasks from the Cut decision on the task: O1 from spreadsheet lines and the client tax rate to the printed invoice; O2 from a machine with nothing of invoicer to the accountant running the command."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.2",
+      "gave": "KR1.1 and KR2.1 measure how well as the failing share (help needed or wrong total; command not running after setup), per the Cut decision on key results."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.3",
+      "gave": "KR1.2 and KR2.2 measure how fast as the time from task start to result, the role own time included."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.4",
+      "gave": "Each key result has Lower is better."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.5",
+      "gave": "Within each objective KR1 ranks before KR2, stated once in the template ranking line; no order across objectives."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.6",
+      "gave": "No targets, by the template line on Goodhart law."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.1",
+      "gave": "Pieces of work from the Cut: the invoice command, the README part for the accountant, the README setup section."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.2",
+      "gave": "The command and the README accountant part serve O1; the README setup section serves O2."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.3",
+      "gave": "O1 and O2 stay apart: the setup section serves O2 without O1, the README accountant part O1 without O2."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.4",
+      "gave": "No piece names more than one objective, so none to split."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.5",
+      "gave": "Every piece serves an objective; nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.1",
+      "gave": "The one way and the ideas come from the person, as the Cut decisions on the one way and the ideas give them, the show-the-rate idea in the person own words; nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.2",
+      "gave": "One way kept as one sentence of what the accountant sees: the command prints the finished invoice from the spreadsheet invoice lines plus the client tax rate."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.3",
+      "gave": "Each idea with what it gives toward O1; Nothing wrong prints now also gives the client tax rate on the tax line, such as Tax (7%) 7.00 EUR, to catch a mistyped rate before the invoice goes out."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.4",
+      "gave": "Moments from the Cut: installer sets up and sees it run; accountant gives lines and rate; invoice prints with the rate on its tax line, or a message says what to fix and the accountant runs again."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.5",
+      "gave": "Each moment has an idea: setup by sheet as it is and rate each time (nothing to configure); giving lines by sheet as it is; printing by Nothing wrong prints, which now covers a readable but mistyped rate."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.6",
+      "gave": "No idea proposed by me; the show-the-rate idea is the person own, so nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.7",
+      "gave": "Three ideas kept, the template maximum; show-the-rate joins Nothing wrong prints, which it serves, per the Cut, rather than a fourth idea."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.1",
+      "gave": "docs/product-vision.md read to its end. Roles names who it serves; Objectives and key results what each achieves and how it is measured; Concept the one way and its ideas."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.2",
+      "gave": "Readers from the Cut name: invoicer maintainers, who decide what to build, and the accounting team, who check the vision says what they need."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.3",
+      "gave": "Maintainers know Python and invoicer, and come to learn whom the command serves and which way to lean; the accounting team knows its spreadsheet and invoices, and comes to see its work described right."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.4",
+      "gave": "The template three sections each hold one topic; no split."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.5",
+      "gave": "Each role, objective, key result and idea is an item with its own ID or name; the template headings stay."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.1",
+      "gave": "Roles and ideas are items in no order, so bulleted; key results nest under their objective; the ranking and no-target lines are an argument, so prose."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.1",
+      "gave": "Readers words from the person answers in the Cut: invoice lines, spreadsheet, tax rate, tax line, Tax (7%) 7.00 EUR."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.2",
+      "gave": "Words chosen by the Cut decision on names; tax line taken from the person words for the invoice line that shows the tax; nothing coined to define."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.1",
+      "gave": "Facts stated twice: the installer sets up none appears under two ideas, each for its own reason; no fact stated twice the same way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.2",
+      "gave": "Each fact keeps its place: the rate on the tax line under Nothing wrong prints, the rate given each time under its own idea."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.3",
+      "gave": "No two places state a fact differently; nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.1",
+      "gave": "Names grouped: invoicer, invoicer command, accountant, installer, accountant machine, the client tax rate, invoice line, spreadsheet, tax line; a mistyped rate would be a second name for the client tax rate."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.2",
+      "gave": "Keep the client tax rate for the rate throughout, per the Cut decision on names, and write the new clause with it, not a mistyped rate."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.3",
+      "gave": "No name refers to two things: invoice line (a spreadsheet line) and tax line (a line of the printed invoice) stay distinct."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Every Cut decision taken as it stands; the one change is the show-the-rate clause joining Nothing wrong prints. Settled without asking: the ranking line reads KR1.1 and KR2.1 come first, fixing the verb agreement. Nothing to ask."
     }
   ]
 }
