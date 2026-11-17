@@ -47,7 +47,7 @@
           "decisions": [
             {
               "about": "the license",
-              "decided": "Left out of this pull request as the company's separate call: no LICENSE file is added, and the README names no license",
+              "decided": "Left out of this pull request as the company's separate call: no LICENSE file is added, and the README has no License section and says nothing about licensing",
               "by": "user"
             }
           ]
@@ -94,7 +94,7 @@
             },
             {
               "about": "the spreadsheet program and system",
-              "decided": "Microsoft 365 Excel on Windows laptops: accounting saves from Excel and types the command in PowerShell, and the developer does the Windows pipx setup",
+              "decided": "Microsoft 365 Excel on Windows laptops: accounting saves from Excel, opens PowerShell, and types the command there, which the everyday steps say plainly by name; the developer does the Windows pipx setup",
               "by": "user"
             }
           ]
