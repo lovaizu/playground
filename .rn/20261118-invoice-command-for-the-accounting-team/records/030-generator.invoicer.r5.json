@@ -9,6 +9,11 @@
       "of": "generator",
       "step": 2,
       "gave": "Read code/best-practice.md with template.md, and refactor-code/best-practice.md, to their end, before any change."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Decided: the Cut decisions as they stand. Settled without asking: (1) tax.to_cent reads the amount by Decimal(amount), exact for a whole number, so Line keeps the price it was given, as 1.4.0 did, and render, subtotal, total and tax_of take a whole-number price; (2) --rate is kept by action append and refused in main where given more than once, with the message: argument --rate: the tax rate is given more than once; give it once, such as --rate 19."
     }
   ]
 }
