@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read invoicer/ as the accounting colleague meets it: the invoicer command with LINES and --rate, and the package lines, totals, tax, render"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N8 in code best-practice.md: refuse wrong outside input before acting, with a message naming program, what, where, and what is accepted"
     }
   ]
 }
