@@ -774,6 +774,146 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Generator asked two points; read the template: at most three ideas, a fixed ranking paragraph. Ranking settled by reasoning, as the template is the best practice form; how the five ideas fit three is the person own, as they gave the words"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Resumed the tree-keeper to write the ranking by the template and the ideas-fit point open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round 2 evaluators: the generator gave asks, so the vision is not made; the generator resumes once the person answers"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "The generator gave asks, not done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round 2 judging yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up; the ideas-fit point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "The ideas-fit point waits for the person, asked in the last message; N6 decisions 0 and 1 are rewritten with their answer"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Checked da42394: the ranking by the template, the ideas-fit point open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round 3 generator until the person answers the ideas-fit point, so the vision is made once"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round is being judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up; the ideas-fit point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Person settled the ideas fit: three ideas as worded; no point of theirs is open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Resumed the tree-keeper to write the concept whole with three ideas and drop the two decisions it replaces"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "The round 3 generator starts once the tree holds the concept"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done this turn"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round is being judged"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Checked 47ceddf: the concept whole with three ideas by user, the replaced decisions dropped"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started the round 3 generator of the product vision with the guard text"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "The generator has not given done yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round 3 judging yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
     }
   ]
 }

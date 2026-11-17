@@ -425,5 +425,9 @@
       "step": 7,
       "gave": "rn check holds docs/product-vision.md to the template, which the Cut decisions N4/0 and N6/1 go past: the ranking paragraph takes only the template words with KR<n>.1 names, so neither a numbered order of all six nor no targets and Goodhart law as two sentences fits, and the concept takes at most three ideas of one sentence each, where the person decided five. Sentences over 20 words shortened. Ends with asks, putting the point to the person with a recommendation."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "asks"
+  }
 }

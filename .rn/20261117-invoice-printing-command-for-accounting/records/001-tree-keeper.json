@@ -2799,6 +2799,506 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: N6 ideas settled and N1, N2 good at 24ad941, N6 more accepted, touched nodes agree, notes passed on"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the round 2 generator asks: read the tree at 24ad941 plus round 2 record commits, and product-vision template.md lines 20-22 and 37-47, which confirm the fixed ranking paragraph and at most three ideas"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal unchanged, confirmed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "No deliverable added or dropped"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Each about names its point in a few words"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The product vision takes from none"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "The template was read: it fixes the ranking paragraph and allows at most three ideas, as the grounds say"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "No research needed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "The ranking is settled by reasoning, the template being the best practice own form, with KR2.1 first from the person words"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "How five ideas fit three is left decided null for the person, who gave all five"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "The ranking says by reasoning; the open point has no by"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 at da42394: the ranking decision written over by the template paragraph, by reasoning, and an open point under N6 on how the five ideas fit three"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "All 6 deliverables still serve the goal"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, committed da42394, touched deliverables/0 with its N4 and N6, and deliverables/1, 2, 4, doing []"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "The round 2 grounds are the message of da42394 and stay out of the tree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other 5 stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Round 2 asks as reported by the grounds"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "N1 and N2 stay true; N3-N6 stay false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "N4 decision changed, so N4 stays false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No done deliverable is touched"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched: deliverables/0 with its N4 and N6, and deliverables/1, 2, 4; also read the N5 decision and the earlier N6 decisions"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each read beside the change: the N5 decision does not rest on the ranking wording; N6 decisions 0 and 1 hold the five ideas the open point will fit, and stay true until the person answers; README, architecture and tests hold no decisions. All agree. Noted: the round 1 refactor-doc N4 and N5 mores stand against the ranking decision now written over; the template wording none before it is the phrase the N5 more found ambiguous, so the next evaluator may raise it again; and N6 decision 1, Two ideas join the concept, may need rewriting once the person settles the fit"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node was rewritten, so no further pass"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "The ranking written over its old text with no note of before"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "This change rewrites the ranking decision and adds an open ideas point, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 with its N4, N5, N6, and deliverables/1, 2, 4: all agree; noted the round 1 mores now overridden and that N6 decisions 0 and 1 may need rewriting once the fit is settled"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: ranking rewritten and N6 fit point open at da42394, touched nodes agree, notes passed on"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the ideas-fit answer: read the tree at da42394 (N6 with three decisions, the third open) beside the unchanged best practice"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal unchanged, confirmed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "No deliverable added or dropped"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "The about of decision 0 stays as written"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The product vision takes from none"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "The template allows at most three ideas; the concept now holds three"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "No research needed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Settled by the person accepting the merge"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "The person answered the last open point; no product vision point stays open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "by is user, as the person accepted the three ideas"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 at 47ceddf: N6 decision 0 rewritten as the whole concept with three ideas, decisions 2 and 1 dropped"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "All 6 deliverables still serve the goal"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, committed 47ceddf, changed N6 decisions 0, 1, 2, touched deliverables/0 with its N6, and deliverables/1, 2, 4, doing []"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "The grounds, with the three accepted ideas and the person words, are the message of 47ceddf and stay out of the tree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other 5 stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Round 2 as reported"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "N1 and N2 stay true; N3-N6 stay false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "N6 decision changed, so N6 stays false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No done deliverable is touched"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched: deliverables/0 with its N6, and deliverables/1, 2, 4; also read N1, N3, N4, N5 decisions of the same deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each read beside the change: N3 holds, as the Concept alone says where the invoice lines come from and that the rate is set at each print, and idea 1 now says invoice lines; N5 holds, ideas 1 and 2 for O1 and the rounding idea for O2; the N1 decision that library behavior stays agrees with idea 3; the tests name on library calls agrees; README and architecture hold no decisions. All agree. Noted: the round 1 product-vision N6 more was kept against decision 1, now dropped, and its ask is carried by the new decision 0"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node was rewritten by me, so no further pass"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Decision 0 written over its old text and decisions 1 and 2 dropped, with git keeping the earlier wording"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "This change rewrites the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 with its N1, N3-N6, and deliverables/1, 2, 4: all agree; noted the round 1 N6 more now rests on decision 0"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: concept rewritten with three ideas and decisions 1, 2 dropped at 47ceddf, all touched nodes agree"
     }
   ],
   "kept": {
