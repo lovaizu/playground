@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N8 in more: empty description, quoted description, sub-cent price print without refusal; semicolon in description and heading row refused without saying what to change"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group, N8, answered; ending with done"
     }
   ]
 }
