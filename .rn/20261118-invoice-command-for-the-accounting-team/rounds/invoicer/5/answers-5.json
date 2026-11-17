@@ -1,0 +1,13 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N7",
+      "good_when": "A maintainer who changes one rule of the invoice changes it in one place and nowhere else goes stale. Today four rules are written in more than one place. (1) The size limit: if they lower _LIMIT in invoicer/lines.py, the quantity check doesn't follow, because it lives on its own in the pattern `-?[0-9]{1,9}` (_WHOLE), linked to _LIMIT only by the comment 'so below _LIMIT'. The parse_lines docstring would also still say 'between -1000000000 and 1000000000' twice. (2) The separator: if they change _SEPARATOR, ROW follows it, but the `invoicer --help` text in invoicer/command.py still tells accounting to save the file 'with semicolons'. (3) What counts as a number: in lines.py, _number reads a Decimal and turns away InvalidOperation and non-finite values. command._rate does the same thing again in its own way. So a change to which numbers are accepted, such as allowing a comma for the decimal point, lands in prices and not in rates, or the other way round. (4) The rate range: '0 or a percent from 1 to 100' is written in _rate's checks, in both of its messages, and again in prose in main's docstring. Once it's good, the maintainer finds each of these rules in the one module whose job it is, and every other place that shows the rule reads it from there."
+    },
+    {
+      "question": "N8",
+      "good_when": "A maintainer who learns how one module of invoicer is written can read the rest the same way, and any difference tells them something real. Today it doesn't. (1) Types: command.py, lines.py and totals.py annotate every function and import `annotations`. render.render has no annotations although its helper _row does, and tax.to_cent and tax.tax_of have none at all, with no reason given, so the maintainer can't tell whether a rate or amount there may be other than a Decimal. (2) Docstrings: main and parse_lines say what they take, give and refuse under 'Takes:', 'Gives:' and 'Refuses:'. subtotal, tax, total, render and tax_of, which the package also offers its callers, say it in free prose. A maintainer can't tell whether a function without 'Refuses:' refuses nothing or just wasn't written up that way. (3) Turning a cell or an option into a number: lines._number returns None from inside the except, while command._rate sets value = None and tests it afterwards. That's one kind of thing done two ways with no reason beside it. Once it's good, each of these is done one way throughout, and where a place must differ, the reason is written beside it, the way main already says why it exits through parser.error and _rate says why it raises ArgumentTypeError."
+    }
+  ]
+}
