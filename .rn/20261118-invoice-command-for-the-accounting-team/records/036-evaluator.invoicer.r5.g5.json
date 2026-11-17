@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N7 (each rule once, in the module with that job) and N8 (each kind of thing done one way, reason beside each difference) with their practices"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N7 and N8 in more, in answers-5.json"
     }
   ]
 }
