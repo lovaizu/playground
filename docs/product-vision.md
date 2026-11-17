@@ -11,8 +11,8 @@
 ## Objectives and key results
 
 - O1: the accounting team bills each client what that client owes, without asking a developer.
-  - KR1.1: the share of print tasks that end without the right invoice, or with a developer's
-    help. Lower is better.
+  - KR1.1: the share of printed invoices that are wrong or needed a developer's help. Lower is
+    better.
   - KR1.2: the time from starting a client's invoice to holding it printed, fixing invoice lines
     included. Lower is better.
 - O2: after updating invoicer, the developers get the results their own code gave before, without
@@ -27,7 +27,7 @@
   - KR3.2: the developer's time from starting the install to the command running for the
     accounting team. Lower is better.
 
-KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it
+KR2.1, KR1.1 and KR3.1 come first: keep a change that improves a key result only if none before it
 gets worse.
 Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's
 law. They show whether a change brought its objective closer.

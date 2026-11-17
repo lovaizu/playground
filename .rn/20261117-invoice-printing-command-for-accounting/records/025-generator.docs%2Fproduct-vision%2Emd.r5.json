@@ -224,6 +224,191 @@
       "of": "generator",
       "step": 3,
       "gave": "Decided: every Cut decision taken as it stands; KR1.1 takes the person wording; the ranking line names KR2.1, KR1.1 and KR3.1 come first; the four departures stay. Settled without asking: come in place of comes, as three key results are its subject. Nothing open."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.4",
+      "gave": "With invoicer taken out, O1, O2 and O3 still read as ends the roles reach, not features."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N3.1",
+      "gave": "Every sentence states what the roles do and get, but the command only calls the library, which N3 decision 1 keeps as the person departure."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.7",
+      "gave": "E2E records: KR1.1 each printed invoice, marked wrong or helped by a developer; KR1.2 start and print times; KR2.1 each library call result before and after an update; KR2.2 the edits in their own code; KR3.1 each install that fails to run or is set up again; KR3.2 install start and first run times."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.8",
+      "gave": "Choices such as whether to save a rate per client or round in the command decide by the ideas: never saved per client, the library rounds once; ideas unchanged."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings stay the template ones: Roles, Objectives and key results, Concept, each a reference named by its thing."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "The first line under each heading is its first item, which says what the section gives, as the template sets."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Headings and first lines read for each purpose lead the developers to each section they need; none rewritten."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Every sentence serves the developers; none marked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "No sentence marked, so no other document sought."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "Nothing to move within docs/product-vision.md."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "Nothing to place outside docs/product-vision.md; nothing asked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "No sentence cut."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "KR1.1 now says in fewer words what it counts: printed invoices that are wrong or needed a developer help."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "Articles and that kept; the ranking line joins its last two ids with and."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "docs/product-vision.md read to its end as the developers: each step, value and condition they need is there."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "Roles before the objectives naming them, objectives before key results, key results before the ranking line, objectives before the ideas that name them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "Goodhart law is stated in the sentence that names it; nothing else depends on outside text."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "KR1.1 starts from printed invoices, known from O1, and ends with what is counted."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "O2 opens with its condition, after updating invoicer; no other condition."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "No rule with an exception in the document."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "docs/product-vision.md read to its end from the top; no place needed a look back or ahead."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "Lists stay one item per role, objective, key result and idea."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence to draw; no Mermaid diagram."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "No structure to draw; no SVG."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "KR1.1 makes one point; the ranking line and its reason stay in the template form, per N4 decisions 0 and 2."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "Actors are subjects: the accounting team, the developers, the command, the library."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "Each they and their refers to the role named just before it."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "Verbs over nouns: KR1.1 says needed a developer help in place of a help task noun."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Objects sit next to their verbs throughout."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "docs/product-vision.md read to its end word by word; KR1.1 and the ranking line read one way, the plural come agreeing with three key results."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "print tasks replaced with printed invoices in KR1.1."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No coined term left to define."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "O and KR ids are the template own labels; no abbreviation to write out."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "The lines and the rate stated in full in the Concept only."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "No other place states them, so no link needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "Kept names written the same way throughout, KR ids in one spelling."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "docs/product-vision.md: KR1.1 now reads the share of printed invoices that are wrong or needed a developer help; the ranking line reads KR2.1, KR1.1 and KR3.1 come first. All else stands, the four departures kept."
     }
   ]
 }
