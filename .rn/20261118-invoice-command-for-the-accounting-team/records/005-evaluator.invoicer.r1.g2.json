@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N8 in the code best practice, its reason and practices N8.1 to N8.7"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N8 in more: folder, unreadable file and a huge price end in a traceback, and a rate of 0.19 is guessed as 0.19 percent"
     }
   ]
 }

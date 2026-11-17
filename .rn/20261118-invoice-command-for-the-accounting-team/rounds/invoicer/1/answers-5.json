@@ -1,0 +1,13 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N7",
+      "good_when": "A maintainer who changes how the total of an invoice is reached, such as rounding it or adding a discount, changes it in one place and both the printed invoice and invoicer.total follow it; today the printed Total is worked out again in render.py (`{amount + tax:>12}` after its own `tax_of(amount, rate)`) beside totals.total, so a change to one leaves the other printing a different total. A maintainer who widens a column of the printed invoice, or changes how an amount and its currency are laid out, changes one place, where today `:<30`, `:>12` and ` {currency}` are written four times in render.py. And a maintainer who lets the accounting team write numbers with a comma, as a German spreadsheet saves them, changes one rule for what counts as a number with a point, where today the price in lines._price and the rate in command._rate each parse and check it, and each say \"written with a point\" in their own words."
+    },
+    {
+      "question": "N8",
+      "good_when": "A maintainer who learns how one module of invoicer is written reads every other the same way, or finds beside a difference why it is there: today command.py and lines.py carry type hints, `from __future__ import annotations`, and docstrings that say what each function Takes, Gives and Refuses, while render.py, totals.py and tax.py have no type hints and one-line docstrings that leave unsaid what `rate` is (a fraction such as 0.19, not a percent such as 19), what `lines` must hold, or what `currency` may be, with nothing saying why those modules differ."
+    }
+  ]
+}
