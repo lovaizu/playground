@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N2 to N6 of refactor-code with their reasons and practices"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N2 to N6 in answers-4.json: N5 good; N2, N3, N4 and N6 more"
     }
   ]
 }

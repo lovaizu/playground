@@ -1,0 +1,37 @@
+{
+  "good": [
+    {
+      "question": "N5",
+      "lines": [
+        "def main(argv: Sequence[str] | None = None) -> None:",
+        "with open(path, encoding=\"utf-8-sig\") as saved:",
+        "lines = parse_lines(saved.read())",
+        "print(render(lines, arguments.rate))",
+        "for number, row in enumerate(text.splitlines(), start=1)",
+        "return Line(description, _price(number, price), _quantity(number, quantity))",
+        "if value is None or not value.is_finite() or not 0 <= value <= 100:",
+        "\"\"\"The invoice's text: a row for each line, then the subtotal, the tax, and the total.\"\"\"",
+        "return (amount * rate).quantize(CENT, rounding=ROUND_HALF_UP)",
+        "def run_command(self, *argv):"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N2",
+      "good_when": "A maintainer reading invoicer reads only what the invoice command and its tests use, or what a person is told to rely on. Today they meet a total() in totals.py that the command, render and the tests never call, since render works out the total on its own. They also meet a currency parameter of render that every call leaves at EUR, and a quantity that Line defaults to 1 though every line it gets comes with its quantity. So they spend reading time on things no caller needs, keep them in step, and can't tell whether changing them breaks anyone."
+    },
+    {
+      "question": "N3",
+      "good_when": "A maintainer can tell what each name holds from where it is used. Today arguments.lines in main holds the path of the saved file, while lines a few lines later holds the parsed invoice lines. arguments.rate and render's rate hold a fraction such as 0.19, while the colleague types --rate 19 and the help calls that the rate, and _rate reads as if it gave that rate back rather than turning a percent into a fraction. amount in render and totals holds the subtotal of all the lines, not one line's amount. And saved holds a file object in main but a path in the tests. Read where they stand, each of these leads the maintainer to the wrong value, such as passing 19 where 0.19 is meant."
+    },
+    {
+      "question": "N4",
+      "good_when": "Each thing the maintainer meets in invoicer has one word, and each word means one thing. Today rate means a percent such as 19 on the command line and in its help, but a fraction such as 0.19 in arguments.rate, render and tax_of. lines means both the file the colleague gives and the parsed invoice lines. amount means both one line's price times quantity (Line.amount) and the sum of all the lines (amount = subtotal(lines)). And row means a row of the saved spreadsheet text in lines.py, but a printed row of the invoice in render.py and in the tests' row(). With one word per thing, a maintainer who changes how rates, amounts or rows work finds every place that's about it, and none that isn't."
+    },
+    {
+      "question": "N6",
+      "good_when": "Where invoicer looks odd, the maintainer finds out why right there, so they don't straighten away something the accounting colleague relies on. Today tax_of rounds half up, where Python's own rounding would round half to even, and nothing in tax.py says why. Only a test comment mentions half up, so a maintainer could swap it and change the printed taxes. And render prints each line's amount, the subtotal and the total unrounded, while only the tax is rounded to the cent. A price such as 10.555 prints as 10.555 EUR next to a tax in whole cents, with nothing saying whether that's meant or why."
+    }
+  ]
+}
