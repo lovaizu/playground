@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N1, N2, N3 of the product-vision best practice with their reasons and practices"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "N2 good; N1 more (library callers and command installers merged in one Developer role); N3 more (the command only calls the library is an inside detail)"
     }
   ]
 }
