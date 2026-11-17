@@ -484,6 +484,11 @@
       "of": "generator",
       "step": 7,
       "gave": "Ending with done: the Made is written and rn check reads the record and the Made."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Resumed: checked the person condition that a rate of 0 still prints an invoice with no tax; tests/test_command.py test_takes_a_rate_of_zero pins it (exit 0, Tax 0.00, Total equal to the subtotal) and passes; tried invoicer at --rate 19, 7.7 and 0 on a file with a credit line, each exit 0. Ending with done."
     }
   ],
   "kept": {
