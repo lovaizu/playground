@@ -86,7 +86,7 @@
         },
         {
           "id": "N8",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "a wrong line",
@@ -177,6 +177,11 @@
               "about": "install steps",
               "decided": "The one-time `pipx install` setup, written for the developer who does it on each accounting machine, with how to see that the command works; then the everyday steps for accounting, with no Python in them",
               "by": "user"
+            },
+            {
+              "about": "saving the lines",
+              "decided": "How accounting saves an invoice's lines from the spreadsheet for the command: CSV UTF-8 with semicolons, one row per line as description, price, quantity, prices written with a point such as 12.50, no heading row, and how to set the price column to a point in their spreadsheet before saving",
+              "by": "reasoning"
             }
           ]
         },
