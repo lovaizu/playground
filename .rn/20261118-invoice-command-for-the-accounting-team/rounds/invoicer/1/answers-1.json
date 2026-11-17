@@ -1,0 +1,36 @@
+{
+  "good": [
+    {
+      "question": "N4",
+      "lines": [
+        "# Needs only Python 3.9 or later, with no other package. Install the invoicer command with",
+        "# `pipx install <path or URL of this repository>`. Run the tests from this folder with",
+        "# `python3 -m unittest discover -s tests`.",
+        "requires-python = \">=3.9\"",
+        "        folder = tempfile.TemporaryDirectory()",
+        "        self.addCleanup(folder.cleanup)",
+        "        path = os.path.join(self.folder, \"lines.csv\")"
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "from invoicer.command import main",
+        "                main(list(argv))",
+        "from invoicer.lines import LineError, parse_lines",
+        "            [(line.description, line.price, line.quantity) for line in lines],",
+        "    \"\"\"One row of the printed invoice, in the columns that invoicer.render lays out.\"\"\""
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N5",
+      "good_when": "Every kind of row the colleague from accounting may save has a test named for it, so a maintainer whose test fails knows which kind broke: a row with more than three fields, such as a description that holds a semicolon, is refused with its row number just as a row of two fields is; a quantity written in digits other than 0 to 9 is refused; a price of Infinity is refused as NaN is; and a negative price, as on a credit line, is either taken or refused, with a test that says which."
+    },
+    {
+      "question": "N7",
+      "good_when": "Every way the invoice could come out wrong fails a test. Today the tests still pass when the tax is rounded half to even instead of half up (210.50 at 19% gives 40.00 either way), when only rows of fewer than three fields are refused, so a row of four fields stops the command with a Python trace instead of a message naming the row, and when a quantity in digits other than 0 to 9 is taken. Once it's good, a cent that rounds differently under half up than under half even, a row of four fields, and such a quantity each fail a test when broken, and each line of invoicer either serves a case that a test runs or is gone: today no test runs the total of invoicer.totals or how a Line shows itself, so either could break unseen."
+    }
+  ]
+}

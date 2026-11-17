@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N4, N5, N6 and N7 of the code best practice, with their reasons and practices"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N4 and N6 in good, N5 and N7 in more, in rounds/invoicer/1/answers-1.json"
     }
   ]
 }
