@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answers in answers-1.json: N4 and N6 good, N5 and N7 more, after shuffled runs, a fresh install on Python 3.9, branch coverage and hand mutants"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each of N4, N5, N6 and N7 answered; ending with done"
     }
   ]
 }
