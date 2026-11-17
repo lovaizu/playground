@@ -1,0 +1,69 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/0",
+      "where": "Roles, the `accountant` line (prints a client's invoice at that client's tax rate, with `invoicer`'s command); Concept, the one-way sentence."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/1",
+      "where": "Roles, the `installer` line: a developer sets up `invoicer`'s command on each `accountant`'s machine, so the `accountant` installs nothing."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/2",
+      "where": "Roles: the two items `accountant` and `installer`."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/3",
+      "where": "The whole: `invoicer` for the product, `invoicer`'s command, `accountant`, the `accountant`'s machine, the client's tax rate (also in the new tax line clause), and invoice line, each written one way; no runtime named."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/1/decisions/0",
+      "where": "Objectives and key results, `O1`."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/1/decisions/1",
+      "where": "Objectives and key results, `O2`."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/0",
+      "where": "Objectives and key results: the tasks frame `KR1.1` and `KR1.2` (spreadsheet to printed invoice) and `KR2.1` and `KR2.2` (setup start to the command running)."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/1",
+      "where": "Objectives and key results: `KR1.1`, `KR1.2`, `KR2.1`, `KR2.2`, each with Lower is better; the ranking line `KR1.1` and `KR2.1` come first; the template's no-targets and show-whether-a-change-brought-its-objective-closer lines."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/4/decisions/0",
+      "where": "Objectives and key results: `O1` is the accountant's end that the command and the README's accountant part serve, `O2` the installer's end that the setup section serves; each key result shows its own objective, so no piece serves two."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/0",
+      "where": "Concept, the first sentence: `invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/1",
+      "where": "Concept, the three ideas: Their spreadsheet as it is; Nothing wrong prints, now with the clause that the `accountant` sees the client's tax rate on the tax line, such as `Tax (7%) 7.00 EUR`, so they catch a mistyped one before the invoice goes out; The client's tax rate given each time."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/2",
+      "where": "Concept: setup with nothing to configure in the `installer` clauses of the first and third ideas; giving the lines and rate in the one way; the invoice printing with the rate on its tax line, or a message naming what to fix, in Nothing wrong prints."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/3",
+      "where": "Concept: each idea is marked for `O1`, its line saying what it gives the `accountant`, with the first and third also saying the `installer` sets up none."
+    }
+  ],
+  "more": [],
+  "settled": [
+    {
+      "point": "the wording of the show-the-rate clause",
+      "decided": "It joins the Nothing wrong prints line as the second half of its one sentence: the `accountant` sees the client's tax rate on the tax line, such as `Tax (7%) 7.00 EUR`, so they catch a mistyped one before the invoice goes out.",
+      "ground": "The template gives each idea one short sentence of what it gives, and the Cut puts the clause in this idea; it uses the person's own example and the name the client's tax rate, which the names decision keeps for the rate."
+    },
+    {
+      "point": "the verb of the ranking line",
+      "decided": "`KR1.1` and `KR2.1` come first, in place of comes first.",
+      "ground": "The two key results are a plural subject, so the verb agrees with them (refactor-doc N5.6, read as a translator would); the meaning stays as signed off."
+    }
+  ]
+}
