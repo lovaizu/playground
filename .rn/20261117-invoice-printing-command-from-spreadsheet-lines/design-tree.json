@@ -57,7 +57,8 @@
             },
             {
               "about": "the spreadsheet file the command reads",
-              "decided": null
+              "decided": "A CSV file, as the accounting team already keeps its invoice lines, read with nothing extra to install.",
+              "by": "user"
             },
             {
               "about": "what printing gives",
@@ -66,6 +67,11 @@
             {
               "about": "the currency",
               "decided": null
+            },
+            {
+              "about": "Excel and Google Sheets",
+              "decided": "A non-goal: the command reads no Excel or Google Sheets file, only CSV.",
+              "by": "user"
             }
           ]
         },
