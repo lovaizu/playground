@@ -604,6 +604,11 @@
       "of": "generator",
       "step": 5,
       "gave": "Tried in a throwaway copy with an empty home folder, with rows as Excel saves CSV UTF-8, a byte order mark, semicolons and CRLF: invoicer --help printed its usage line; the Walkthrough rows at --rate 19 and 7.7 printed exactly the two Walkthrough invoices with exit 0; a price saved as 1,200.00 printed exactly the quoted refusal line with exit 2; the same row saved as 1200.00, as step 3 makes Excel save it, printed the invoice with exit 0. Nothing to mend."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Made written in rounds/README.md/3/made.json: where each of the six decisions lands, no More, and eight settled points with their grounds, the new ones being the Format Cells step for column B and where the quoted refusal and its fix stand."
     }
   ]
 }
