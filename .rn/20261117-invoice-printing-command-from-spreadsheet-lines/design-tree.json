@@ -33,7 +33,7 @@
             },
             {
               "about": "the names the vision uses",
-              "decided": "The vision names each thing one way throughout: `invoicer` for the product, invoicer's command for what the accountant runs, `accountant` for one who prints, and the accountant's machine for where it runs.",
+              "decided": "The vision names each thing one way throughout: `invoicer` for the product alone, invoicer's command for what the accountant runs and what prints the invoice, `accountant` for one who prints, and the accountant's machine for where it runs. The vision names no runtime; installing Python is the README setup section's to say.",
               "by": "reasoning"
             }
           ]
@@ -44,7 +44,7 @@
           "decisions": [
             {
               "about": "the objective",
-              "decided": "O1: the accountant sends each client a correct invoice at that client's tax rate without a developer's help.",
+              "decided": "O1: the accountant sends each client a correct invoice at that client's tax rate without anyone's help.",
               "by": "reasoning"
             },
             {
@@ -70,7 +70,7 @@
             },
             {
               "about": "the key results",
-              "decided": "O1 KR1: the share of invoices the accountant couldn't print without a developer's help or that came out with a wrong total; lower is better. O1 KR2: the time from opening the spreadsheet to the printed invoice, the accountant's own time included; lower is better. O2 KR1: the share of setups after which the command doesn't run for the accountant; lower is better. O2 KR2: the installer's time from starting a setup to the command running; lower is better. Within each objective KR1 ranks before KR2, stated once, in the template's ranking line, with no rank notes on the key result lines. Key results of different objectives have no order between them, since each piece of work serves one objective; the template's line that key results show whether a change brought its objective closer carries this, with no sentence added. No targets, for the plain reason that the template's line gives: a measure made a target stops being a good measure.",
+              "decided": "O1 KR1: the share of invoices on a machine where the command runs that the accountant couldn't print without anyone's help or that came out with a wrong total; lower is better. O1 KR2: the time from opening the spreadsheet to the printed invoice, the accountant's own time included; lower is better. O2 KR1: the share of setups after which the command doesn't run for the accountant; lower is better. O2 KR2: the installer's time from starting a setup to the command running; lower is better. Within each objective KR1 ranks before KR2, stated once, in the template's ranking line, with no rank notes on the key result lines. Key results of different objectives have no order between them, since each piece of work serves one objective; the template's line that key results show whether a change brought its objective closer carries this, with no sentence added. No targets, for the plain reason that the template's line gives: a measure made a target stops being a good measure.",
               "by": "reasoning"
             }
           ]
@@ -103,6 +103,11 @@
             {
               "about": "the moments of use",
               "decided": "The installer installs Python and invoicer on an accountant's machine and sees the command run, with nothing to configure, since the command takes the sheet as it is and the rate each time they print an invoice; the accountant gives the command the lines and the client's rate; the invoice prints, or a message says what to fix and the accountant fixes it and runs it again.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the objective each idea serves",
+              "decided": "Each of the three ideas is marked for O1 alone, since the accountant meets each at every print and the installer meets it once.",
               "by": "reasoning"
             }
           ]
