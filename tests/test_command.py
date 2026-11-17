@@ -61,6 +61,70 @@ class CommandTest(unittest.TestCase):
             + "\n",
         )
 
+    def test_prints_each_amount_to_the_cent(self):
+        # Given prices saved without two decimals, then each amount shows its cents, 12.345 times
+        # 3 is 37.035 rounded half up to 37.04, and the subtotal 226.54 at 19 percent gives the
+        # tax 43.0426 rounded to 43.04.
+        path = self.saved("Design;89.5;1\nHosting;100;1\nSupport;12.345;3\n")
+
+        code, out, err = self.run_command(path, "--rate", "19")
+
+        self.assertEqual((code, err), (0, ""))
+        self.assertEqual(
+            out,
+            "\n".join(
+                [
+                    row("Design", "89.50"),
+                    row("Hosting", "100.00"),
+                    row("Support", "37.04"),
+                    row("Subtotal", "226.54"),
+                    row("Tax", "43.04"),
+                    row("Total", "269.58"),
+                ]
+            )
+            + "\n",
+        )
+
+    def test_prints_a_subtotal_that_adds_up_the_amounts_as_printed(self):
+        # Given three lines of 0.005 each, each printed as 0.01, then the subtotal is 0.03, not
+        # the 0.015 of the unrounded amounts.
+        path = self.saved("Pen;0.005;1\nPencil;0.005;1\nEraser;0.005;1\n")
+
+        code, out, _ = self.run_command(path, "--rate", "0")
+
+        self.assertEqual(code, 0)
+        self.assertEqual(
+            out.splitlines()[-3:],
+            [row("Subtotal", "0.03"), row("Tax", "0.00"), row("Total", "0.03")],
+        )
+
+    def test_prints_a_credit_line(self):
+        # Given a discount at a negative price, a returned item at a negative quantity, and a
+        # cancelled line of quantity 0, then each is printed and counted in the subtotal 169.50,
+        # whose tax at 19 percent is 32.205 rounded half up to 32.21.
+        path = self.saved(
+            "Design;100.00;2\nDiscount;-20.00;1\nReturned hosting;10.50;-1\nCancelled;50.00;0\n"
+        )
+
+        code, out, err = self.run_command(path, "--rate", "19")
+
+        self.assertEqual((code, err), (0, ""))
+        self.assertEqual(
+            out,
+            "\n".join(
+                [
+                    row("Design", "200.00"),
+                    row("Discount", "-20.00"),
+                    row("Returned hosting", "-10.50"),
+                    row("Cancelled", "0.00"),
+                    row("Subtotal", "169.50"),
+                    row("Tax", "32.21"),
+                    row("Total", "201.71"),
+                ]
+            )
+            + "\n",
+        )
+
     def test_reads_a_rate_written_with_a_percent_sign(self):
         code, out, _ = self.run_command(self.saved(LINES), "--rate", "7.7%")
 
@@ -78,6 +142,30 @@ class CommandTest(unittest.TestCase):
 
         self.assertEqual(code, 0)
         self.assertEqual(out.splitlines()[-2:], [row("Tax", "210.50"), row("Total", "421.00")])
+
+    def test_takes_a_rate_of_one(self):
+        code, out, _ = self.run_command(self.saved(LINES), "--rate", "1")
+
+        self.assertEqual(code, 0)
+        self.assertIn(row("Tax", "2.11"), out.splitlines(), "210.50 at 1% is 2.105")
+
+    def test_refuses_a_rate_below_one_as_a_fraction(self):
+        # Given --rate 0.19, meant as 19%, then the command prints no invoice with 0.19% of tax,
+        # and asks for the percent.
+        code, out, err = self.run_command(self.saved(LINES), "--rate", "0.19")
+
+        self.assertEqual((code, out), (2, ""))
+        self.assertIn(
+            "invoicer: error: argument --rate: the tax rate is a percent, such as 19 for 19%, "
+            "not the fraction '0.19'; write 0.19% for a rate below 1 percent",
+            err,
+        )
+
+    def test_takes_a_rate_below_one_written_with_a_percent_sign(self):
+        code, out, _ = self.run_command(self.saved(LINES), "--rate", "0.5%")
+
+        self.assertEqual(code, 0)
+        self.assertIn(row("Tax", "1.05"), out.splitlines(), "210.50 at 0.5% is 1.0525")
 
     def test_refuses_a_rate_above_a_hundred(self):
         code, out, err = self.run_command(self.saved(LINES), "--rate", "100.01")
@@ -125,6 +213,32 @@ class CommandTest(unittest.TestCase):
             err,
         )
 
+    def test_refuses_a_folder_in_place_of_the_file(self):
+        code, out, err = self.run_command(self.folder, "--rate", "19")
+
+        self.assertEqual((code, out), (2, ""))
+        self.assertIn(
+            f"invoicer: error: {self.folder}: is a folder; give the path of the file of lines "
+            "saved from the spreadsheet",
+            err,
+        )
+
+    @unittest.skipIf(
+        hasattr(os, "geteuid") and os.geteuid() == 0, "root reads a file whatever its permissions"
+    )
+    def test_refuses_a_file_that_cannot_be_read(self):
+        path = self.saved(LINES)
+        os.chmod(path, 0)
+
+        code, out, err = self.run_command(path, "--rate", "19")
+
+        self.assertEqual((code, out), (2, ""))
+        self.assertIn(
+            f"invoicer: error: {path}: no permission to read it; save it again from the "
+            "spreadsheet in a folder of your own",
+            err,
+        )
+
     def test_refuses_a_file_not_saved_as_utf8(self):
         path = self.saved("Café;3.00;1\n", encoding="cp1252")
 
@@ -166,6 +280,30 @@ class CommandTest(unittest.TestCase):
         self.assertIn(
             f"invoicer: error: {path}, row 3: the price must be a number written with a point, "
             "such as 12.50, not 'ten'",
+            err,
+        )
+
+    def test_refuses_a_row_of_more_than_three_fields(self):
+        path = self.saved("Design;100.00;2;paid\n")
+
+        code, out, err = self.run_command(path, "--rate", "19")
+
+        self.assertEqual((code, out), (2, ""))
+        self.assertIn(
+            f"invoicer: error: {path}, row 1: a row must be <description>;<price>;<quantity>, "
+            "three fields, not 4: 'Design;100.00;2;paid'",
+            err,
+        )
+
+    def test_refuses_a_price_too_large_to_print(self):
+        path = self.saved("Design;1e400;1\n")
+
+        code, out, err = self.run_command(path, "--rate", "19")
+
+        self.assertEqual((code, out), (2, ""))
+        self.assertIn(
+            f"invoicer: error: {path}, row 1: the price must be between -1000000000 and "
+            "1000000000, not '1e400'",
             err,
         )
 

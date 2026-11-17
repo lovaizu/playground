@@ -129,6 +129,346 @@
       "of": "generator",
       "step": 3,
       "gave": "Decided: every Cut decision taken as it stands. Settled by purpose: line amounts rounded half up to the cent by tax.to_cent, the subtotal the sum of the rounded amounts, the total subtotal plus tax; a price, a quantity and a line amount each between -1000000000 and 1000000000, else refused naming the row; quantity a whole number with an optional minus, 0 allowed; a folder or unreadable file refused by parser.error; a rate above 0 and below 1 refused unless written with %. Nothing left open, so no asks."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.4",
+      "gave": "Searched tests for render, parse_lines, _rate and main: render reached only through main (whole output asserted at two decimals); parse_lines refusals all pinned; nothing pins tax.CENT or totals beyond render."
+    },
+    {
+      "of": "code",
+      "practice": "N5.8",
+      "gave": "Ran the 20 new or changed tests before the code: 15 fail, each for its Then (89.5 printed, 0.015 subtotal, credit rows refused, no refusal of 1e400, 0.19 or the limits, traceback on a folder and an unreadable file); the four edge tests that pass today (rate 1, 0.5%, 999999999.99, 499999999.99x2) pin behavior kept."
+    },
+    {
+      "of": "code",
+      "practice": "N1.5",
+      "gave": "tax.py opening now reads How an amount, and the tax of an amount, are rounded to the cent; the other modules openings still state their one decision (render: the invoice as text; lines: which rows give a line; command: what the command takes and prints)."
+    },
+    {
+      "of": "code",
+      "practice": "N1.6",
+      "gave": "Tried changes from openings alone: round to whole euros -> tax.py; a credit line in a separate column -> render.py; a larger limit on a price -> lines.py; a new option such as --currency -> command.py. Each names one module."
+    },
+    {
+      "of": "code",
+      "practice": "N2.2",
+      "gave": "New offered name tax.to_cent written untyped like tax_of beside it, as the type hints of the older modules are a More left in the round records; lines.py and command.py keep their types."
+    },
+    {
+      "of": "code",
+      "practice": "N2.3",
+      "gave": "Doc comments updated: to_cent (half up, examples), render (amounts to the cent, subtotal of amounts as shown), parse_lines (negative price, quantity 0 or negative, limits, refusals), main (rate below 1 needs %, folder, permission), _rate."
+    },
+    {
+      "of": "code",
+      "practice": "N2.4",
+      "gave": "Checked each test value against the doc comments: rounding half up, the subtotal of amounts as shown, -1 and 0 quantities, the exact limits, 0.5% taken and 0.19 refused, folder and permission refusals are each stated."
+    },
+    {
+      "of": "code",
+      "practice": "N3.2",
+      "gave": "Wrote the least code under each failing test: to_cent and its use in render for the cent tests, the minus and the 9-digit bound in _WHOLE for the credit and quantity tests, the _LIMIT checks for price and amount, two except clauses, one fraction check in _rate."
+    },
+    {
+      "of": "code",
+      "practice": "N3.3",
+      "gave": "Ran the tests after the code: 43 run, OK."
+    },
+    {
+      "of": "code",
+      "practice": "N3.4",
+      "gave": "Read each body: the quantity no longer needs an int() < 1 check, removed; no option, mode or fallback without a case."
+    },
+    {
+      "of": "code",
+      "practice": "N4.1",
+      "gave": "pyproject.toml unchanged: Python 3.9 or later, no dependency, the pipx install and the test command in its head; no new dependency added."
+    },
+    {
+      "of": "code",
+      "practice": "N4.2",
+      "gave": "The new command tests make their file or use their own temporary folder (folder case, chmod 0 case) from setUp, removed by addCleanup."
+    },
+    {
+      "of": "code",
+      "practice": "N4.3",
+      "gave": "The tests run no real tool beyond Python; the permission test skips under root, who reads any file."
+    },
+    {
+      "of": "code",
+      "practice": "N4.4",
+      "gave": "Ran the tests shuffled with seeds 7, 314 and 2026: 43 run, 0 failed, 0 skipped each."
+    },
+    {
+      "of": "code",
+      "practice": "N4.5",
+      "gave": "In a throwaway copy with an empty home, the setup alone (pip install of the repository) gives bin/invoicer, which prints the invoice; the tests run there by the manifest command, 43 OK."
+    },
+    {
+      "of": "code",
+      "practice": "N5.3",
+      "gave": "One test per case: 8 in test_command (cents, subtotal as printed, credit line, rate 1, rate 0.19 refused, 0.5% taken, folder, unreadable, four fields, 1e400) and 12 in test_lines (four fields, price limit and edges, negative price, negative quantity, quantity 0, quantity limit and edge, amount limit and edge); no name needs and."
+    },
+    {
+      "of": "code",
+      "practice": "N5.4",
+      "gave": "Expected values worked out from each Then by hand before running: 37.035 to 37.04, 226.54 x 0.19 = 43.0426 to 43.04, 169.50 x 0.19 = 32.205 to 32.21, 210.50 x 0.01 = 2.105 to 2.11, x 0.005 = 1.0525 to 1.05."
+    },
+    {
+      "of": "code",
+      "practice": "N5.5",
+      "gave": "Each test holds its rows and expected rows in its own body; only saved, run_command and row are shared setup."
+    },
+    {
+      "of": "code",
+      "practice": "N5.6",
+      "gave": "No loop or branch in any test; the root skip is a decorator, not a branch in the body."
+    },
+    {
+      "of": "code",
+      "practice": "N5.7",
+      "gave": "Failure messages added where name and values do not say it: the refused price/quantity is named, 210.50 at 1% is 2.105, at 0.5% is 1.0525."
+    },
+    {
+      "of": "code",
+      "practice": "N6.1",
+      "gave": "Real modules and real temporary files in every test; no test double."
+    },
+    {
+      "of": "code",
+      "practice": "N6.2",
+      "gave": "Tests call only main and parse_lines and read Line fields that Line offers; none reaches _LIMIT, _WHOLE, _rate or _price."
+    },
+    {
+      "of": "code",
+      "practice": "N6.3",
+      "gave": "Changed bodies without changing interfaces (rewrote tax_of over to_cent, replaced the int() < 1 check by the pattern, render no longer calls totals.subtotal): tests still pass, none rewritten."
+    },
+    {
+      "of": "code",
+      "practice": "N7.1",
+      "gave": "The cent, subtotal and credit tests assert the whole printed text or the last rows in full; the refusals assert code, empty output and the whole message."
+    },
+    {
+      "of": "code",
+      "practice": "N7.2",
+      "gave": "coverage.py with branches: command 100%, lines 98% (34, Line.__repr__), render 100%, tax 100%, totals 57% (10, 15-16)."
+    },
+    {
+      "of": "code",
+      "practice": "N7.3",
+      "gave": "Uncovered: Line.__repr__ and totals.subtotal/total, which render no longer calls; all are names the package offers in __all__ to callers outside, and total() unused and the older modules are Mores left in the round records, so kept and not removed; no case of the command calls for them."
+    },
+    {
+      "of": "code",
+      "practice": "N7.4",
+      "gave": "No Test strategy names an interface for property-based tests; none written."
+    },
+    {
+      "of": "code",
+      "practice": "N7.5",
+      "gave": "No property-based test ran, so no failing input to weigh."
+    },
+    {
+      "of": "code",
+      "practice": "N7.6",
+      "gave": "The round takes no CI mutation report (the repository CI runs lint only); no mutant listed."
+    },
+    {
+      "of": "code",
+      "practice": "N7.7",
+      "gave": "No mutant listed, nothing to remove."
+    },
+    {
+      "of": "code",
+      "practice": "N7.8",
+      "gave": "No mutant listed, nothing to mark."
+    },
+    {
+      "of": "code",
+      "practice": "N7.9",
+      "gave": "No mutant listed; the >= at each limit is pinned by the at-the-limit and just-below tests on both sides."
+    },
+    {
+      "of": "code",
+      "practice": "N8.2",
+      "gave": "Each input read where it enters: the rate in _rate (range, fraction), the file at open (missing, folder, permission, encoding), each row in _line/_price/_quantity (fields, number, whole, limits) before render runs."
+    },
+    {
+      "of": "code",
+      "practice": "N8.3",
+      "gave": "A rate above 0 and below 1 without % can be read two ways (a fraction or a percent), so it is refused, not guessed; with % it reads one way and is taken."
+    },
+    {
+      "of": "code",
+      "practice": "N8.4",
+      "gave": "Caught by own type only IsADirectoryError and PermissionError, beside FileNotFoundError, UnicodeDecodeError and LineError, each with what to fix; any other OSError keeps its trace."
+    },
+    {
+      "of": "code",
+      "practice": "N8.5",
+      "gave": "Each new message names invoicer, the file and row or --rate, what was wrong, and what is taken, such as invoicer: error: big.csv, row 1: the price must be between -1000000000 and 1000000000, not 1e400."
+    },
+    {
+      "of": "code",
+      "practice": "N8.6",
+      "gave": "Every new check is an if that raises; no assert."
+    },
+    {
+      "of": "code",
+      "practice": "N8.7",
+      "gave": "Ran the installed invoicer on 1e400, four fields, chmod 0 file, a folder, --rate 0.19: each refused with exit 2 and one line from which the input can be fixed without the code."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.5",
+      "gave": "Behaviors kept that no test reached before: tax_of rounding half up is pinned through the command (39.995 to 40.00, 32.205 to 32.21); a price of 999999999.99 and an amount of 999999999.98 pinned as taken."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.6",
+      "gave": "Structure steps taken one at a time with the tests run between: extract to_cent from tax_of; have render call to_cent; drop render import of totals.subtotal."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.7",
+      "gave": "No name that a test uses was renamed; the changed expectations (quantity message, quantity 0 now read) are behavior the Cut decisions N3 credit lines change, not a rename."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.8",
+      "gave": "Tests run after each step: 43 OK; no step undone."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.9",
+      "gave": "The behavior that looked wrong, refusing negative prices and quantities, came back to the callers by the Cut decision on credit lines; totals.subtotal still sums unrounded amounts as its doc says, which no caller in the repository now uses, so nothing to ask."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.1",
+      "gave": "Searched each name: CENT used by to_cent, _BETWEEN by three messages, _LIMIT by the checks; subtotal and total are named in __init__ __all__, the package interface, so kept."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.2",
+      "gave": "tax_of now only passes amount * rate to to_cent, but it adds the multiplication and is offered by the package, so kept."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.3",
+      "gave": "No new parameter; render currency left as the round records keep that More."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.4",
+      "gave": "Comments read against code: the _WHOLE and _LIMIT comments say what the code cannot (why 9 digits, why the limit); the utf-8-sig comment stays."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N3.1",
+      "gave": "Read new names where used: to_cent rounds to the cent; _LIMIT the size a number stays below; _BETWEEN the range as messages say it; written_as_percent whether the rate ends in %; amounts the line amounts as printed; subtotal in render the subtotal printed."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N3.2",
+      "gave": "Each definition matches the words; render amount for the subtotal renamed subtotal; no other rename."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.5",
+      "gave": "Renamed render local amount (the subtotal) to subtotal, the one rename, with tests run."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.1",
+      "gave": "One sentence each: to_cent rounds an amount half up to the cent; render lays out each line amount, the subtotal, tax and total to the cent; _line reads a row into a Line within the limit; _price reads a price within the limit; _quantity reads a whole quantity; _rate reads the percent into a fraction; each new test checks one case."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.2",
+      "gave": "No line stopped the reading; the render comprehension over zip stays one plain step."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.3",
+      "gave": "No sentence joins two tasks a caller wants apart; _line reads the fields and checks the amount of the line it builds, one task."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.4",
+      "gave": "Functions read _LIMIT and _BETWEEN, module constants named and commented at the top of the module, as _WHOLE and ROW already are; no hidden global setting."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.5",
+      "gave": "No function mixes two levels."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.6",
+      "gave": "No new single-caller function without a name of its own; to_cent has two callers."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.1",
+      "gave": "Marked as looking odd: the 9-digit bound in _WHOLE, the limit of a billion, render summing rounded amounts instead of calling subtotal(), the fraction refusal of a rate below 1."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.2",
+      "gave": "Named where a name says it: _LIMIT, _BETWEEN, written_as_percent."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.3",
+      "gave": "Wrote the reasons in place: _WHOLE comment (9 digits keep it below _LIMIT), _LIMIT comment (a mistyped cell, sums exact to the cent), render docstring (subtotal adds the amounts as shown), _rate docstring (below 1 needs %)."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.4",
+      "gave": "Every mark had a reason from the Cut; nothing left to ask."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.5",
+      "gave": "Corrected comments that no longer held: parse_lines, _quantity and main docstrings no longer say a quantity from 1 or omit the new refusals; tax.py opening says it rounds amounts too."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.4",
+      "gave": "Rounding to the cent written once in tax.to_cent, used by tax_of and render; the limit once in lines._LIMIT, its words once in _BETWEEN."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.5",
+      "gave": "No shared function with a flag picking a branch."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.6",
+      "gave": "No code uses another module underscore name; render uses to_cent, which tax offers."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.7",
+      "gave": "Every place reads one Python definition; no cross-language copy."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.5",
+      "gave": "New refusals written the chosen ways: rows by LineError naming the row, the file by parser.error, the rate by ArgumentTypeError; new tests in the existing assertRaises and run_command forms."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.6",
+      "gave": "No place keeps a different way."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "Made: tax.to_cent and tax_of over it; render prints each amount, the subtotal of the amounts as printed, the tax and the total to the cent; lines.parse_lines reads negative prices and quantities of 0 or below, refuses a price, quantity or amount not between -1000000000 and 1000000000; command refuses a folder, a file without read permission, and a rate above 0 and below 1 written without %. 20 tests added or changed; 43 pass."
     }
   ]
 }
