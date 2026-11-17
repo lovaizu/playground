@@ -20,5 +20,9 @@
       "step": 4,
       "gave": "Each condition of the group answered"
     }
-  ]
+  ],
+  "kept": {
+    "role": "evaluator",
+    "result": "done"
+  }
 }
