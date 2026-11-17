@@ -72,17 +72,8 @@
           "decisions": [
             {
               "about": "the concept: the one way and its ideas",
-              "decided": "The one way: invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the math. Its ideas: the accounting team works from the lines they already keep in their spreadsheet, so nothing is retyped; they set the tax rate for each invoice when they print it, and it is not saved per client, so each client is billed at their own rate; the tax is rounded to the cent the same way every time, both in the command and for developers calling the library, so the printed total matches what is owed.",
+              "decided": "The one way: invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the math. Its three ideas: invoice lines from the spreadsheet, for O1: the accounting team prints from the invoice lines they keep, and the command names any bad line and what's wrong; tax rate set at each print and never saved per client, for O1: the accounting team sets the tax rate anew for each invoice they print, so each client gets their own rate; same results for developers' own code, for O2: the command only calls the library, which rounds tax to the cent the same way every time. The install takes no idea.",
               "by": "user"
-            },
-            {
-              "about": "the concept's ideas for a failed print, an update of invoicer, and the install",
-              "decided": "Two ideas join the concept, as worded: a print that goes wrong tells the team what to fix, in their words: when a line in the spreadsheet can't be read, the command names that line and what's wrong with it, so the team fixes it and prints again without asking a developer; and the command adds to invoicer without changing it: it only calls the library developers already use, so updating invoicer gives their own code the same results as before. The install takes no idea.",
-              "by": "user"
-            },
-            {
-              "about": "how the five ideas fit the template's three",
-              "decided": null
             }
           ]
         }
