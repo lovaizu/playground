@@ -624,6 +624,106 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: 4ab5ee5 wrote README N6 the walkthrough by user; doing [invoicer]."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed after round 1 of invoicer: read the tree at 4ab5ee5, tree.py round invoicer, and how tree.py write takes mores (deliverable, best_practice, condition, decision, good_when) and goods (path to a condition good)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit e086b0b writes the three decisions, code N1 N2 N4 N6 good, and the three mores to rounds/invoicer/1/more.json."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit e086b0b message holds the main conversation grounds for each decision, the mores taken, and the goods."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote e086b0b: invoicer N3 what it prints and credit and discount lines, N8 a wrong line or rate, all by reasoning; code N1 N2 N4 N6 good; three mores kept. Not written: refactor-code conditions, which the tree form has no place for (condition holds only id, good, decisions; IDs N1-N8 collide with code). good_when of each more is the main conversation words for what it took."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/0, its N3 and N8, and deliverables/1 (README.md)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: invoicer name; N3 lines form and tax rate with the new N3 and N8 decisions; README.md name, N6 walkthrough and N9. Noted: N8 refuses any rate above 0 and below 1, so a true rate under 1 percent cannot be typed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "invoicer N3 what it prints and N8 a wrong line or rate written over their old text."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done; none to cut to one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "invoicer stays doing, README.md open; tree.py write marked none new."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Ran tree.py round invoicer: round 1 with good code N4, N6, refactor-code N5, and the mores of the others."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Set good code N1, N2, N4, N6 as the main conversation judged by N8.3; code N3, N5, N7, N8 stay false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Decisions changed under code N3 and N8; both good stay false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No deliverable is done; nothing to reopen."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked invoicer, its N3 and N8, and README.md: all agree; noted the N8 rate bound under 1 percent and the refactor-code conditions not written."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: e086b0b; doing [] new, invoicer stays doing; refactor-code conditions left for the main conversation."
     }
   ],
   "kept": {

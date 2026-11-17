@@ -234,6 +234,26 @@
       "of": "orchestrator",
       "step": 5,
       "gave": "Started the six evaluators of invoicer round 1 the guard gave: code N1-N3, N4-N7, N8; refactor-code N1, N2-N6, N7-N8"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Read invoicer round 1: took in cents on the invoice (code N3), no traceback and ambiguous rate refused (code N8), credit lines kept (refactor-code N1 part); left the maintainer-only mores; asked the tree-keeper to set their conditions good"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Took in three mores that fail accounting invoice; kept the rest in the round records"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked e086b0b: the three decisions and code goods written; refactor-code conditions have no place in the tree, accepted"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Started rn:generator for invoicer round 2 with the text the guard gave"
     }
   ]
 }

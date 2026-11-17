@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Read the Cut, invoicer as round 1 left it (command.py, lines.py, render.py, tax.py, totals.py, tests, pyproject.toml), round 1 made.json and try.jsonl, and the three Mores kept. People: accounting colleagues who save an invoice's lines from a spreadsheet and run `invoicer LINES --rate PERCENT` to print it at the client's rate, with no Python; and the developer who pipx-installs it once. They achieve an invoice correct enough to send a client: every amount to the cent, credit lines allowed, and every wrong input refused with one actionable line."
+    }
+  ]
+}
