@@ -1,0 +1,36 @@
+{
+  "good": [
+    {
+      "question": "N5",
+      "lines": [
+        "def main(argv: Sequence[str] | None = None) -> None:\n    \"\"\"Runs `invoicer LINES --rate PERCENT`, the entry point that pyproject.toml installs.",
+        "    try:\n        # utf-8-sig drops the byte order mark that a spreadsheet's CSV UTF-8 starts with.\n        with open(path, encoding=\"utf-8-sig\") as saved:\n            lines = parse_lines(saved.read())",
+        "    print(render(lines, arguments.rate))",
+        "    return [\n        _line(number, row)\n        for number, row in enumerate(text.splitlines(), start=1)\n        if row.strip()\n    ]",
+        "    description, price, quantity = fields\n    line = Line(description, _price(number, price), _quantity(number, quantity))",
+        "def _rate(percent: str) -> Decimal:\n    \"\"\"The tax rate as the fraction that `invoicer.render` takes, of 0 or a percent from 1 to\n    100 written with or without `%`; argparse names the option in the refusal.\"\"\"",
+        "    amounts = [to_cent(line.amount()) for line in lines]",
+        "    subtotal = sum(amounts, Decimal(0))\n    tax = tax_of(subtotal, rate)",
+        "def tax_of(amount, rate):\n    \"\"\"The tax on the amount at the rate, rounded to the cent.\"\"\"\n    return to_cent(amount * rate)"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N2",
+      "good_when": "A maintainer who opens the package reads only code that the invoicer command and its callers reach: today invoicer/totals.py offers `subtotal` and `total`, which nothing but the package's export list names, and which sum the lines' unrounded amounts, so they give a total that can differ by a cent from the Total the command prints; render's `currency=\"EUR\"` is given by no call; and `Line`'s `quantity: int = 1` is never left out by any call. Once it's good, each line the maintainer reads gives them something the printed invoice rests on, and they no longer have to work out which of two totals is the real one."
+    },
+    {
+      "question": "N3",
+      "good_when": "A maintainer reads each name where it stands and knows what it holds: today `path = arguments.lines` takes a file's path from a name that says lines, the same `lines` that two lines later holds the parsed Line objects; and in `_price(number, price)` and `_quantity(number, quantity)` the bare `number` is the row's number, read beside a price that is itself a number and messages that say \"the price must be a number\". Once it's good, a name such as the path of the saved file or the row's number says so at every use, without opening argparse's setup or the function's caller."
+    },
+    {
+      "question": "N4",
+      "good_when": "A maintainer meets each thing under one name and each name for one thing: today `lines` names both the path of the saved file (the argument `arguments.lines`, shown as LINES) and the list of Line objects in `main`; `subtotal` and `total` name the sum of the unrounded amounts in invoicer/totals.py and, in invoicer/render.py, the sum of the amounts as printed to the cent, which can differ by a cent; and `rate` is a percent at `--rate` but a fraction in `render(lines, rate)` and `tax_of(amount, rate)`. Once it's good, a change to how the subtotal or the rate works reaches every place that means that thing, and none that means another."
+    },
+    {
+      "question": "N6",
+      "good_when": "A maintainer who meets `amount.quantize(CENT, rounding=ROUND_HALF_UP)` in invoicer/tax.py reads right there why the tax and each amount round half up rather than by Python's own `round`, which rounds 0.005 to the even cent, so they don't 'simplify' it into a rounding that prints 39.99 where accounting expects 40.00; and a maintainer who meets invoicer/totals.py beside render's own sum reads why both exist. The rest already says why where it looks odd, such as the `utf-8-sig` comment, the ASCII-only quantity pattern, the `_LIMIT` comment, and the refusal of rates between 0 and 1."
+    }
+  ]
+}
