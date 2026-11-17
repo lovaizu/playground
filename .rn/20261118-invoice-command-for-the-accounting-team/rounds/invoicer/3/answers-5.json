@@ -1,0 +1,13 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N7",
+      "good_when": "A maintainer who changes how the invoice states its amounts, such as how the tax is worked out or how a line's amount is rounded, changes it in one place, and every caller of the package, as well as the printed invoice, gets the new amounts. Right now invoicer/totals.py opens by saying that 'the printed invoice and the package's callers both take' the stated amounts from it, but the package's front door (invoicer/__init__.py) offers tax_of from invoicer/tax.py, which taxes any single amount, and leaves out the invoice's own tax and line_amount from totals. So a caller who wants the invoice's tax has to rebuild the rule 'tax on the subtotal of the rounded line amounts' themselves, such as tax_of(subtotal(lines), rate), and that caller's figures drift from the printed invoice the moment the rule in totals changes. Also, the limit on a price, quantity or amount is kept once as _LIMIT in invoicer/lines.py, but the parse_lines docstring writes '-1000000000 and 1000000000' out by hand twice, so the help someone reads goes stale the moment the limit changes."
+    },
+    {
+      "question": "N8",
+      "good_when": "A maintainer who learned how one module of invoicer is written can read every other module the same way, and any difference between modules has a stated reason. Right now command.py, lines.py and totals.py give every function its parameter and return types, while tax.py gives none (to_cent, tax_of) and render.py gives them to its helper _row but not to the public render(lines, rate, currency), so the maintainer can't tell whether a rate is a percent or a fraction, or what render returns, without reading other modules. In the same way, main and parse_lines describe what they take, give and refuse under Takes/Gives/Refuses, while render, subtotal, tax, total and tax_of describe the same things in free prose, so the maintainer has to look for what a function refuses in a different place depending on which module it's in."
+    }
+  ]
+}
