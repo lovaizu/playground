@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N8 in good: running invoicer with 38 wrong rates and files, each was refused before any invoice printed, naming the file, the row and what is accepted"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group answered; ending done"
     }
   ]
 }
