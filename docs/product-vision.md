@@ -27,8 +27,8 @@
   - KR3.2: the developer's time from starting the install to the command running for the
     accounting team. Lower is better.
 
-KR2.1, KR1.1 and KR3.1 come first: keep a change that improves a key result only if none before
-it gets worse.
+KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it
+gets worse.
 Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's
 law. They show whether a change brought its objective closer.
 

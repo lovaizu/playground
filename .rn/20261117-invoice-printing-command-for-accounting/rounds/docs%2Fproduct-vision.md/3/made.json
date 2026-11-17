@@ -14,7 +14,7 @@
     },
     {
       "path": "deliverables/0/necessary_conditions/3/decisions/0",
-      "where": "Objectives and key results, the paragraph after the key results: KR2.1, KR1.1 and KR3.1 come first: keep a change that improves a key result only if none before it gets worse; then the template's sentence on no targets and Goodhart's law, as the template writes it."
+      "where": "Objectives and key results, the paragraph after the key results: KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it gets worse; then the template's sentence on no targets and Goodhart's law, as the template writes it."
     },
     {
       "path": "deliverables/0/necessary_conditions/4/decisions/0",
@@ -31,6 +31,12 @@
       "point": "where the rank's later key results stand",
       "decided": "The rank paragraph names only KR2.1, KR1.1 and KR3.1 as coming first; KR1.2, KR2.2 and KR3.2 follow in the order the document lists them, as the template's before reads them, and are not written out again.",
       "ground": "Cut decision N4/0 takes the template's ranking paragraph, which names only the first key results, and the round 2 ground quotes the words to write as KR2.1, KR1.1 and KR3.1 come first, with the rest in the document's order; writing them out would go past the template again."
+    }
+    ,
+    {
+      "point": "how the rank line names the three first key results",
+      "decided": "KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it gets worse.",
+      "ground": "The template's form takes the key results joined by commas or and, before its fixed words comes first, and no sentence over 20 words; KR2.1, KR1.1 and KR3.1 come first takes 21 words and leaves the fixed words, so the commas alone keep the decided order inside both."
     }
   ]
 }
