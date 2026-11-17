@@ -409,6 +409,11 @@
       "of": "generator",
       "step": 4,
       "gave": "docs/product-vision.md made: Nothing wrong prints now says the accountant sees the client tax rate on the tax line, such as Tax (7%) 7.00 EUR, to catch a mistype before the invoice goes out; the ranking line verb agrees; all else as signed off."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy as a maintainer reads it: no template comment or placeholder left, three ideas each for O1, the vision reads whole with the tax line clause in Nothing wrong prints; exit 0, nothing to mend."
     }
   ]
 }
