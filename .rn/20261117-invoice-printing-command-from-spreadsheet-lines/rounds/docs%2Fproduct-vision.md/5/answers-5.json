@@ -1,0 +1,20 @@
+{
+  "good": [
+    {
+      "question": "N7",
+      "lines": [
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "  A developer who sets up `invoicer`'s command on each `accountant`'s machine, so the `accountant` installs nothing.",
+        "`invoicer`'s command prints the finished invoice from the invoice lines in the `accountant`'s spreadsheet, plus the client's tax rate.",
+        "  For an unreadable line or rate, `invoicer`'s command prints only a message naming the line or value to fix.",
+        "  Each time the `accountant` prints an invoice, they give the client's tax rate, as `invoicer`'s command remembers none."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N8",
+      "good_when": "An accountant reading what happens when something can't be read knows it is about the client's tax rate they gave, called by the same name as everywhere else, and doesn't wonder whether the 'value' to fix is some other figure, such as a cell in one of their spreadsheet lines."
+    }
+  ]
+}
