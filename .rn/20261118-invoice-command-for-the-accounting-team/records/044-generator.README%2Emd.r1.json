@@ -4,6 +4,11 @@
       "of": "generator",
       "step": 1,
       "gave": "Read the Cut, the stub README and the invoicer code: readers are accounting colleagues who print invoices with no Python, and the developer who installs it once by pipx"
+    },
+    {
+      "of": "generator",
+      "step": 2,
+      "gave": "Read readme best-practice.md with template.md, and refactor-doc best-practice.md, to their end"
     }
   ]
 }
