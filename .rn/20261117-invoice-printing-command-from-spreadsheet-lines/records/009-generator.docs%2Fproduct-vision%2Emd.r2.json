@@ -419,6 +419,25 @@
       "of": "generator",
       "step": 6,
       "gave": "Made written: where each of the twelve Cut decisions and the five kept Mores land, and six points settled without asking, each with its ground."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "rn check run on done: it found lines beside the template, sentences over 20 words, and line items with more sentences than the template takes; carrying these out."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Read the template check: the vision may hold only the template blocks, the ranking and no-targets paragraph in the template words, each idea in its title and one sentence, at most three ideas, and no sentence over 20 words; remaking to fit."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Remade docs/product-vision.md to the template the check holds it to (no lines beside it, the ranking paragraph word for word, one sentence per idea, 20 words at most), and rewrote the Made to match, naming in settled what the template keeps from the N5 and N6 Mores."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "done"
+  }
 }
