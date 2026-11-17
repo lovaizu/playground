@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N1, N2 and N3 in more: tax reckoning named by two modules, tax_of and render leave the rate unit and types unstated, render currency and Line default quantity asked by no case"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group answered in answers-0.json; ending with done"
     }
   ]
 }
