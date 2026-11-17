@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read docs/product-vision.md as its people meet it: two roles, O1 and O2 each with a well and a fast key result, and a concept of three ideas, two of them tagged for both O1 and O2."
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N4 and N5 in the product-vision best practice, with their reasons and practices."
     }
   ]
 }
