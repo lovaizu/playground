@@ -1,12 +1,7 @@
 {
   "record": ".rn/20261118-invoice-command-for-the-accounting-team/records/009-generator.invoicer.r2.json",
-  "step": 4,
+  "step": 5,
   "work": [
-    ".rn/20261118-invoice-command-for-the-accounting-team/records/009-generator.invoicer.r2.json",
-    ".rn/20261118-invoice-command-for-the-accounting-team/records/orchestrator.json",
-    ".rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/2/made.json",
-    ".rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/2/try.jsonl",
-    "invoicer/command.py",
-    "tests/test_command.py"
+    ".rn/20261118-invoice-command-for-the-accounting-team/records/009-generator.invoicer.r2.json"
   ]
 }
