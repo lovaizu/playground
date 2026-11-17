@@ -10,7 +10,7 @@
       "kind": "code",
       "inputs": [],
       "preconditions": [],
-      "status": "open",
+      "status": "doing",
       "necessary_conditions": [
         {
           "id": "N1",
@@ -126,7 +126,13 @@
         {
           "id": "N6",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the walkthrough",
+              "decided": "A real run: the lines saved from a spreadsheet, what accounting types, and the invoice printed for the same lines at two different tax rates",
+              "by": "user"
+            }
+          ]
         },
         {
           "id": "N7",
