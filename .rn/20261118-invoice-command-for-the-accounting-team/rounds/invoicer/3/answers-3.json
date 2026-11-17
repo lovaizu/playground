@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "A script or program that called invoicer 1.4.0 gets from 1.5.0 the same result it got before, except where a `Changed in 1.5.0` note tells it otherwise. Right now two changes come without a note. First, a caller that hands `total` its lines one at a time, as a generator such as `total((line for line in rows), rate)`, used to get the subtotal plus the tax (23.80 EUR for 10.00 x 1 and 5.00 x 2 at 19%). It now quietly gets the subtotal with no tax at all (20.00 EUR). Nothing fails, so an invoice total can come out short of its tax without anyone noticing. Second, `parse_lines` used to accept a quantity written as `+3`, `1_000` or in full-width digits such as `１２`, and now refuses each one with LineError. The price still accepts a leading `+` (`+12.50`), so the same cell typed the same way is fine in one column and an error in the other. Once this is good, every result a 1.4.0 caller relied on comes out the same, or the caller is told beforehand what changed."
+    }
+  ]
+}

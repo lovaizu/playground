@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N8 in more: a repeated --rate prints at the last rate unasked, and an unclosed quotation mark in a long file ends in a csv.Error trace"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Ending with done: N8 answered in answers-2.json"
     }
   ]
 }
