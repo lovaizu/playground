@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "A colleague or a script that called invoicer 1.4.0's parse_lines, or ran the new command, on rows they already had gets the same lines from 1.5.0 as from 1.4.0, or learns from the 'Changed in 1.5.0' note that a row is now refused. Today three inputs fail with no word in that note, which only names quoted cells, empty descriptions, numbers such as 1e400, and how errors are raised. A quantity written with a plus sign or an underscore, such as '+3' or '1_000', or in digits of another script, such as '٣', gave 3, 1000 and 3 in 1.4.0. 1.5.0 refuses each one with 'the quantity must be a whole number'. Rows split by a page break or a Unicode line separator, which 1.4.0 read as separate lines, now come back as one row with five fields, refused. Prices written with a plus sign or an underscore are still read as before. Once this is fixed, every 1.4.0 caller either gets its invoice exactly as before or finds the new refusal named in the note before it hits one."
+    }
+  ]
+}

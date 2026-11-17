@@ -1,0 +1,40 @@
+{
+  "good": [
+    {
+      "question": "N2",
+      "lines": [
+        "invoicer/command.py:38         # utf-8-sig drops the byte order mark that a spreadsheet's CSV UTF-8 starts with.",
+        "invoicer/command.py:78-80         # Each --rate given is kept, so that main refuses a second one, where argparse would take / # the last and print the invoice at it with no word.",
+        "invoicer/lines.py:14-15 # A quantity, a minus allowed for a credit line, of at most 9 digits, so below _LIMIT; ASCII / # only, as int() would also take digits of other scripts.",
+        "invoicer/render.py:16     # The rows and each sum read the lines, so a generator is read into a list once.",
+        "invoicer/tax.py:11     # Decimal() reads a whole number exactly, as a line built with a price such as 50 gives one.",
+        "invoicer/totals.py:41-42     stated = subtotal(lines) / return stated + tax_of(stated, rate)",
+        "invoicer/__init__.py:8 __all__ = [\"Line\", \"LineError\", \"parse_lines\", \"render\", \"subtotal\", \"tax_of\", \"total\"]"
+      ]
+    },
+    {
+      "question": "N5",
+      "lines": [
+        "invoicer/lines.py:72-79     lines = [] / first = True / for number, cells in _rows(text): / if all(not cell.strip() for cell in cells): / continue / lines.append(_line(number, cells, first)) / first = False / return lines",
+        "invoicer/lines.py:125     line = Line(description, _price(number, price), _quantity(number, quantity))",
+        "invoicer/totals.py:26     return sum((line_amount(line) for line in lines), Decimal(0))",
+        "invoicer/render.py:17-22     lines = list(lines) / rows = [_row(line.description, line_amount(line), currency) for line in lines] / rows.append(_row(\"Subtotal\", subtotal(lines), currency)) / rows.append(_row(\"Tax\", tax(lines, rate), currency)) / rows.append(_row(\"Total\", total(lines, rate), currency)) / return \"\\n\".join(rows)",
+        "invoicer/command.py:58-60     if not lines: / parser.error(f\"{path}: holds no line; each row must be {ROW}\") / print(render(lines, rate))"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N3",
+      "good_when": "A maintainer can tell from a name where it's used whether an amount is already rounded to the cent. Right now `line.amount()` in lines.py gives the unrounded price times quantity, and `line_amount(line)` in render.py and totals.py gives that amount rounded half up to the cent. Nothing in the two names says one is exact and the other is stated to the cent, so they have to open both definitions to know which one goes on the invoice. They can also tell from `from invoicer.tax import tax_of, to_cent` in totals.py that the rounding of every line amount lives in that module, which the name `tax` doesn't tell them. And in command.py, `arguments.lines` says at its use that it holds the path of the saved file, not lines."
+    },
+    {
+      "question": "N4",
+      "good_when": "Each word the maintainer meets in invoicer names one thing. Right now 'amount' names both the exact price times quantity (`Line.amount()`, the limit check in `_line`, the message 'the amount, the price times the quantity') and the amount stated to the cent on the invoice (`line_amount`, the totals.py docstring 'The amounts that an invoice states, each to the cent'). And in `main`, 'lines' names the path of the file (`arguments.lines`, `path = arguments.lines`) and then, two lines later, the list of Line objects (`lines = parse_lines(...)`). A change to how a line's amount is rounded, or to what `lines` holds in main, then reaches exactly the places that mean that thing."
+    },
+    {
+      "question": "N6",
+      "good_when": "A maintainer who finds a check that looks redundant learns right there why it stays. In `_rate` (command.py:95), `not value.is_finite()` looks like it repeats `0 <= value <= 100`, since infinity is out of range anyway. But a rate such as `nan` would make the comparison itself raise decimal.InvalidOperation instead of giving the usage error, and nothing beside the line says so. Someone tidying it away would bring back a traceback for the accounting colleague. In `_rows` (lines.py:90-103), they learn why the rows are pulled one at a time with `while True` / `next(rows)` instead of a plain `for` loop, so that the row number in the message is the row that failed. And they learn whether a closed cell longer than 131072 characters is meant to be told 'a cell starts with a quotation mark but doesn't end with one', which the comment on line 88 hints at but doesn't settle."
+    }
+  ]
+}

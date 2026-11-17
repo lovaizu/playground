@@ -1,0 +1,31 @@
+{
+  "good": [
+    {
+      "question": "N8",
+      "lines": [
+        "invoicer/command.py:         with open(path, encoding=\"utf-8-sig\") as saved:",
+        "invoicer/command.py:             lines = parse_lines(saved.read())",
+        "invoicer/command.py:             f\"{path}: no such file; give the path of the file of lines saved from the spreadsheet\"",
+        "invoicer/command.py:             f\"{path}: is a folder; give the path of the file of lines saved from the spreadsheet\"",
+        "invoicer/command.py:             f\"{path}: no permission to read it; save it again from the spreadsheet in a folder \"",
+        "invoicer/command.py:         parser.error(f\"{path}: not saved as UTF-8 text; save it from the spreadsheet as CSV UTF-8\")",
+        "invoicer/command.py:         parser.error(f\"{path}, {wrong}\")",
+        "invoicer/command.py:         parser.error(f\"{path}: holds no line; each row must be {ROW}\")",
+        "invoicer/command.py:     print(render(lines, rate))",
+        "invoicer/command.py:             \"argument --rate: the tax rate is given more than once; give it once, such as --rate 19\"",
+        "invoicer/command.py:             \"the tax rate must be a percent from 0 to 100, written with a point, \"",
+        "invoicer/command.py:             \"the tax rate must be 0 or a percent from 1 to 100, as a rate between 0 and 1 may \"",
+        "invoicer/command.py:             f\"be meant as a fraction; write the percent, such as 19 for 19%, not {percent!r}\"",
+        "invoicer/lines.py:             f\"row {number}: a row must be {ROW}, three fields, not {len(cells)}: \"",
+        "invoicer/lines.py:             f\"row {number}: a heading, as neither its price {price!r} nor its quantity \"",
+        "invoicer/lines.py:             f\"{quantity!r} is a number; save the lines without the heading row\"",
+        "invoicer/lines.py:             f\"row {number}: the description is empty; write what the line is for, as the client \"",
+        "invoicer/lines.py:             f\"row {number}: the price must be a number written with a point, such as 12.50, \"",
+        "invoicer/lines.py:             f\"row {number}: the quantity must be a whole number {_BETWEEN}, such as 3, \"",
+        "invoicer/lines.py:             f\"row {number}: the amount, the price times the quantity, must be {_BETWEEN}, \"",
+        "invoicer/lines.py:                 f\"row {number}: a cell starts with a quotation mark but doesn't end with one that \""
+      ]
+    }
+  ],
+  "more": []
+}
