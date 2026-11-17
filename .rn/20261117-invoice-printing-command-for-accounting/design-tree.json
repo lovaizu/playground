@@ -18,7 +18,8 @@
           "decisions": [
             {
               "about": "the roles besides the accounting team",
-              "decided": null
+              "decided": "The developers who call invoicer as a library from their own code are a role besides the accounting team, and the library behavior they rely on stays as it is.",
+              "by": "user"
             },
             {
               "about": "who installs the command for the accounting team",
