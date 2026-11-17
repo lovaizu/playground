@@ -1624,6 +1624,206 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: d0f17db; doing []; README.md doing with no open point."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed after the README generator gave asks again: read the tree at d0f17db; README.md N4 held no decisions."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer (done) before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit 3e766d8."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit 3e766d8 message holds why the license is open and whose it is."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "README.md stays doing; invoicer done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "README.md round 1 has no answers yet; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every README.md good stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "README N4 gained an open point; its good is false already."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "The change does not touch invoicer, which is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote 3e766d8: README.md N4 the license, decided null; doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/1 (README.md) and its N4."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: no node names a license, so the open point makes nothing false. Noted: a license file the answer may need lies under neither deliverable path, and invoicer is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "New open point added; no old text to write over."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "invoicer stays one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked README.md and its N4: all agree; noted where a license file would lie."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: 3e766d8; doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the person answer on the license: read the tree at 3e766d8; README.md N4 decision 0 was open."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer (done) before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit f8b6e6b."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no deliverable added, no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit f8b6e6b message holds the person words word for word and why N4 is good."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "README.md stays doing; invoicer stays done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "README.md round 1 has no answers yet; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "README.md N4 set good, judged by the goal state as the person put the license out of this work; the rest stay false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "README N4 decision settled in the same change that set it good; no other good changes."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "The change does not touch invoicer, which stays done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote f8b6e6b: README.md N4 the license left out by user, N4 good; doing []. Checked again: 86581a1 not an ancestor of HEAD, 0 compiled files tracked."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/1 (README.md) and its N4."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: no other node names a license or a LICENSE file; invoicer and README N1, N6, N9 stand. The earlier note on where a license file lies no longer holds."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "The open point written over with its answer."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "invoicer stays one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked README.md and its N4: all agree with the change."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: f8b6e6b; doing []."
     }
   ],
   "kept": {

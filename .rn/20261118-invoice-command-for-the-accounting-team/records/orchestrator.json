@@ -544,6 +544,106 @@
       "of": "orchestrator",
       "step": 4,
       "gave": "Started rn:generator for README.md round 1 from step 3 with the text the guard gave"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Reviewed the tree: the README waits on a second point of the person, its license"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "The license is the person point; gh shows the repo public with no license; writing it open, then asking with MIT recommended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked d0f17db; sent the open license point to the tree-keeper"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Held the README restart until the license is answered"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No generator gave done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 8,
+      "gave": "Not this case: a run was found"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Reviewed the tree: the license point is open under README N4 (3e766d8)"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Asking the person which license, recommending MIT, with a LICENSE file added beside the README"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked 3e766d8: the license open, decided null"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Held the README restart, as its license point is open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No generator gave done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 8,
+      "gave": "Not this case: a run was found"
+    },
+    {
+      "of": "ty",
+      "step": 1,
+      "gave": "tree.py approve gave 1: no sign-off waited; took the words as the answer to the license point"
+    },
+    {
+      "of": "ty",
+      "step": 2,
+      "gave": "Plan unchanged; resumed the tree-keeper: license left out by user, no LICENSE file, README N4 set good"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked f8b6e6b: license left out by user, README N4 good"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Started rn:generator for README.md round 1 from step 3 with the text the guard gave"
     }
   ]
 }

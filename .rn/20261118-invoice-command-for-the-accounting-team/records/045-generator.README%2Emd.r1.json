@@ -15,5 +15,9 @@
       "step": 3,
       "gave": "Took the Cut decisions as they stand and decided the other points; asked which license the README names, as the repository holds no license file and the readme template requires a License section that links one; recommended MIT in a LICENSE file"
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "asks"
+  }
 }
