@@ -42,8 +42,8 @@ Do this for each invoice:
 2. Leave out a heading row, and write a discount as a negative price, such as -20.00.
 3. Choose **File** > **Save a Copy**, or **Save As**, and choose the type **CSV UTF-8 (Comma delimited) (\*.csv)**.
 4. Name the file `lines.csv`, and choose **Save**.
-5. In File Explorer, right-click the folder that holds `lines.csv`, and choose **Open in Terminal**.
-6. Type `invoicer lines.csv --rate 19`, with the client's tax rate in place of 19, and press Enter.
+5. In File Explorer, open the folder that holds `lines.csv`, type `powershell` in the address bar, and press Enter. PowerShell opens in that folder.
+6. In PowerShell, type `invoicer lines.csv --rate 19`, with the client's tax rate in place of 19, and press Enter.
 
 These rows in Excel give the invoices below:
 

@@ -14,6 +14,586 @@
       "of": "generator",
       "step": 3,
       "gave": "Decided: every decision of the Cut taken as it stands; the one point open, where accounting opens PowerShell, settled as typing powershell in the address bar of the folder in File Explorer, so the step names PowerShell and opens it in that folder; nothing asks."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.1",
+      "gave": "Role kept from the Cut: colleagues from accounting who bill clients from invoice lines in Excel and write no Python; inputs: the Cut names none, read to its end."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.2",
+      "gave": "Benefit kept from the goal: print each client invoice at their tax rate yourself, without asking a developer."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.3",
+      "gave": "What it gives kept: prints an invoice from rows saved in Excel, at the tax rate you type."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.4",
+      "gave": "pyproject.toml read to its end: invoicer 1.5.0, requires-python >=3.9, the invoicer script at invoicer.command:main, installed by pipx."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.5",
+      "gave": "Kind kept as a PowerShell command, the word accounting meets it by, since they type it in PowerShell."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.1",
+      "gave": "Invoice tools readers know make a PDF, carry the client name, an invoice number and a date, offer currencies and a rate per line; kept from round 1."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.2",
+      "gave": "Printing an invoice leads a reader to expect a file to send; covered by the no-PDF item, which says to copy the text into the letter."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.3",
+      "gave": "No closed-without-doing requests bear on invoicer in the issues; none added."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.4",
+      "gave": "The command takes only LINES and --rate, as --help printed in the throwaway try, and prints EUR text; it meets none of the four."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.5",
+      "gave": "Each of the four would turn away a reader who needs it, so all four are kept."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.6",
+      "gave": "The person saw the four Non-goals in round 1 and asked only for PowerShell and no licensing, so no question is put again."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.7",
+      "gave": "All four kept for Non-goals; none moves to a status line."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.1",
+      "gave": "Version 1.5.0 in pyproject.toml, above 1.0."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.2",
+      "gave": "The use toward the goal tried in a throwaway copy: the rows at 19 and 7.7 print the invoice with exit 0, and a comma row is refused naming row 1 with exit 2."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.3",
+      "gave": "No archived mark or notice; the developers keep it up."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.4",
+      "gave": "Ready: 1.5.0, the use works, and someone keeps it up; no status line."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.1",
+      "gave": "Not carried out, as the Cut decides by user that no LICENSE file is added and the README says nothing about licensing."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.2",
+      "gave": "Not carried out: no license is named, by the user decision in the Cut."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.3",
+      "gave": "Not carried out: no works of others are listed, as the README says nothing about licensing, by the user decision in the Cut."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.1",
+      "gave": "Use: accounting prints a client invoice at the client tax rate, the goal of the Cut."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.2",
+      "gave": "Task: three lines, one a discount, at two tax rates, as the person asked to see a couple of rates."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.3",
+      "gave": "The printed invoice with its tax and total at 19 and at 7.7 shows that the rate is theirs to set per client; what they spent is one typed command."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.4",
+      "gave": "Cut: keep the rows, the typed command and every output line; nothing to drop."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.1",
+      "gave": "The one way: the rate you type for each client turns your saved rows into that client invoice."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.1",
+      "gave": "Problem today: accounting asks a developer for each invoice at the client rate."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.2",
+      "gave": "Doubts: are the totals right to the cent; what if a row or rate is wrong; does Excel save the rows as invoicer reads them."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.3",
+      "gave": "The person raised wrong rows and rates refused with the row named, and the decimal point; both are in the list already."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.4",
+      "gave": "All three would change whether accounting trusts the invoice, and the walkthrough settles none of them; kept."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.5",
+      "gave": "Answers: rounding half up to the cent and adding the printed amounts; refusing with the row named; reading semicolons and a decimal point."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.6",
+      "gave": "Nothing is missing: each doubt has its answer in the command."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.7",
+      "gave": "No idea is missing, so nothing is asked."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.8",
+      "gave": "No way to make it work is missing, so nothing is handed back."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.1",
+      "gave": "From pyproject.toml: Python 3.9 or later, and pipx install of the repository; the script name invoicer."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.2",
+      "gave": "pipx needs Python and installs for the signed-in Windows account only, so the developer signs in as the colleague; the zip URL needs no Git."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.3",
+      "gave": "Checks: whoami shows the colleague; py --version shows Python; invoicer --help prints its usage line."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.1",
+      "gave": "The repository has no docs folder or changelog; its issues are on."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.2",
+      "gave": "The issues serve help, for the developers to report a fault or ask for a change."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.3",
+      "gave": "Help has a place, the issues, so nothing is asked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.1",
+      "gave": "README.md read to its end: opening, Non-goals, Requirements and Installation for the developer, Walkthrough for accounting, How it works for trust, Documentation for help."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.2",
+      "gave": "Readers from the Cut N1: accounting, who print each invoice; the developer, who sets the command up once on each accounting machine."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.3",
+      "gave": "Accounting knows Excel and File Explorer, not Python or PowerShell, and comes to print an invoice; the developer knows py and pipx, and comes to set the command up for a colleague."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.4",
+      "gave": "The Walkthrough already splits the once-only Excel setting from the steps for each invoice; no further split."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.5",
+      "gave": "Each doubt already has its own heading under How it works."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.1",
+      "gave": "Steps in order stay numbered lists, the rows stay a table, the Non-goals and requirements stay bulleted, and the answers stay prose."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.1",
+      "gave": "Words of the readers: the person writes PowerShell; Windows names the window Windows PowerShell and the address bar in File Explorer."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.2",
+      "gave": "Chosen: PowerShell for the window, address bar for where to type it; Terminal dropped."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.1",
+      "gave": "Facts in more than one place: the usage line, which --help shows; the semicolon, stated in the list separator answer alone; the decimal point, in the Excel setting alone."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.2",
+      "gave": "The usage line stays once in Installation as the sign that --help prints, which the command itself states."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.3",
+      "gave": "No two places state a fact differently, so nothing is asked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.1",
+      "gave": "Names grouped: Terminal and PowerShell for the one window; rows and lines for the Excel rows and invoice lines, which are two things and stay apart."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.2",
+      "gave": "PowerShell kept for the window, as the readers and the person use it; Terminal dropped."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.3",
+      "gave": "No name refers to two things once Terminal is gone."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.6",
+      "gave": "Opening kept by the template: what invoicer is and gives, then who it is for and what they achieve."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.7",
+      "gave": "Each of the two opening sentences carries something the other lacks; none deleted."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.8",
+      "gave": "No vague or praising word in the opening."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.9",
+      "gave": "A developer who bills no one, or someone who keeps no lines in Excel, can tell from the opening that it is not for them."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.8",
+      "gave": "Each kept expectation stands as a thing invoicer does not do."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.9",
+      "gave": "The no-PDF item says to copy the text into the letter; the others have no other way."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.5",
+      "gave": "The product is ready, so no status line is written."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.4",
+      "gave": "Not carried out: no License section is written, by the user decision in the Cut; README.md holds no word about licensing."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.5",
+      "gave": "Not carried out: no license link to follow, by the user decision in the Cut."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.1",
+      "gave": "Sections in the template order, without License: opening, Non-goals, Requirements, Installation, Walkthrough, How it works, Documentation."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.2",
+      "gave": "In the Walkthrough, the once-only Excel setting comes before the steps for each invoice, and the list separator fix, which only some need, stays in How it works."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.3",
+      "gave": "README.md read to its end as a newcomer from accounting; after step 5 the next question, where do I type, is answered at once by In PowerShell in step 6."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.4",
+      "gave": "No answer stands before its question; nothing moved."
+    },
+    {
+      "of": "readme",
+      "practice": "N5.5",
+      "gave": "Each next section answers the question written; nothing added."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.5",
+      "gave": "Run anew on invoicer 1.5.0 installed by pip from a fresh copy with an empty home folder: the rows at 19 and 7.7 print exactly the two invoices in the Walkthrough."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.6",
+      "gave": "The rows as a table as Excel shows them, and each typed command with its output as a console block with the PS prompt."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.7",
+      "gave": "The result first: At the end, you have the client invoice in PowerShell, with the tax at the rate you typed."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.8",
+      "gave": "A colleague from accounting can say after reading that the same rows give each client invoice at the rate they type."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.2",
+      "gave": "The one way kept in one sentence of the reader words: You type each client tax rate, and invoicer turns your saved rows into the invoice at that rate."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.3",
+      "gave": "That sentence stands first in How it works, before the figure and the answers."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.4",
+      "gave": "A newcomer reading it alone can say: I type the rate, and it makes the invoice from my rows."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.9",
+      "gave": "The three answers kept as parts of one mechanism below the one way: read the rows, refuse a wrong one, add at the typed rate to the cent."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.10",
+      "gave": "The figure images/how-it-works.svg kept as it stands, with each doubt beside its part; nothing in it names Terminal."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.11",
+      "gave": "Parts labeled in the reader words: rows, tax rate, invoice, totals."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.12",
+      "gave": "No part has a name of invoicer own beyond the command name."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.13",
+      "gave": "A newcomer can say back that the printed amounts add up to the total and that a wrong row prints no invoice."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.4",
+      "gave": "Each install step is a py command the developer can copy, and each everyday step says what to type and where: the address bar, then PowerShell."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.5",
+      "gave": "The setup ends with the sign that invoicer --help prints its usage line in a new PowerShell window."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.6",
+      "gave": "Run in a throwaway copy with an empty home folder: this Linux machine has no py, pipx or venv, so the package was installed by pip from the fresh copy; invoicer --help printed usage: invoicer [-h] --rate PERCENT LINES, and both runs exited 0. The py and pipx lines on Windows were tried in round 1 from the zip and installed 1.5.0."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.4",
+      "gave": "One link: the issues of lovaizu/playground, for the developers to report a fault or ask for a change."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.5",
+      "gave": "The link is the issues URL of the public repository named in the install URL, as in round 1."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings kept: the template section names, and each doubt as the question the reader asks."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "First sentences say what each section gives, such as At the end, you have the client invoice in PowerShell under Walkthrough."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read by headings and first sentences: accounting finds the Walkthrough, the developer finds Requirements and Installation; neither is sent to a section they do not need."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Each sentence has a reader: the new sentence PowerShell opens in that folder tells accounting that the window they type in is PowerShell."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "No sentence marked, so no other document is looked for."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "Nothing moved."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "Nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "The right-click wording and Open in Terminal cut with the old step 5."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "No needless words in steps 5 and 6."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "The small words kept, such as the and in that folder."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "README.md read to its end as accounting and as the developer; each still finds every step, value and condition."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "Step 6 In PowerShell comes after step 5, which opens PowerShell."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "No sentence leans on anything outside the README."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "Step 5 starts from File Explorer and the folder, which accounting knows, and ends with PowerShell, which is new."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "The list separator condition stays before its fix: If invoicer says that a row has 1 field."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "The discount as a negative price stays right after the rule of one line per row."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "README.md read to its end from the top; no place needed a look back or ahead."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "Steps 5 and 6 stay one numbered item each."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence to draw beyond the numbered steps."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "The structure stays in images/how-it-works.svg."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "Step 5 split into two sentences: what accounting does, then PowerShell opens in that folder."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "Actors as subjects: the reader as the implied subject of each step, and PowerShell opens."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "No unclear pronoun in steps 5 and 6."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "No noun made from a verb."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Objects next to their verbs: open the folder, type powershell, type invoicer lines.csv."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "README.md read to its end word by word; steps 5 and 6 read one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "Terminal replaced by PowerShell throughout; no other word differs."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No term to define."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "EUR written out at first use as euros (EUR); CSV appears as the Excel type name."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "The usage line is stated once, in Installation."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "No other place restates it, so no link is needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "PowerShell written the same way in each place; Terminal no longer appears."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "README.md Walkthrough steps 5 and 6: accounting opens the folder of lines.csv in File Explorer, types powershell in the address bar, PowerShell opens in that folder, and in PowerShell they type invoicer lines.csv --rate 19. The rest stands, with no License section and no word about licensing."
     }
   ]
 }
