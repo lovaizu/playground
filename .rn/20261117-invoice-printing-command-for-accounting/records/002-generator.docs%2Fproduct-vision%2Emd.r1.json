@@ -35,5 +35,9 @@
       "practice": "N6.1",
       "gave": "The concept s one way and its ideas come from whoever conceived invoicer, and no input gives them, so the question goes to the user before the concept is written."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "asks"
+  }
 }

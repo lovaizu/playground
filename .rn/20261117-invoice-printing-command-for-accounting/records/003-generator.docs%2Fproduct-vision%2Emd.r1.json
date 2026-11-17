@@ -1,0 +1,229 @@
+{
+  "entries": [
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Read the Cut (no inputs, three decisions: the developer role beside the accounting team with the library behavior kept, a developer installs the command once, and the concept as the person accepted it; no More kept), docs/product-vision.md (not yet made), README.md and invoicer/. The people of the deliverable are the developers of invoicer, who use the vision to know whom invoicer serves: the accounting team, who print each client invoice at its own rate from their spreadsheet lines, and the developers, who call the library from their own code and install the command once for the accounting team."
+    },
+    {
+      "of": "generator",
+      "step": 2,
+      "gave": "Read product-vision/best-practice.md (N1 to N6) with its template.md, and refactor-doc/best-practice.md (N1 to N8), to their end, before any change."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.1",
+      "gave": "The job, from the goal and invoicer/ (the README names none): invoicer turns the lines of an invoice into the invoice, with its subtotal, the tax at a rate, and the total."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.2",
+      "gave": "Two roles by the part of the job they come for: the accounting team, who print a client invoice from the lines in their spreadsheet (the goal); the developers, who call invoicer as a library from their own code (decision 0/0). Named by the words the goal and the person use, as those are the words the readers use."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.3",
+      "gave": "The accounting team gets its job done only once someone installs the command; decision 0/1 gives that to the developer role, so it needs no role of its own."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.4",
+      "gave": "No job is left unclear: the goal gives the accounting team job, and decisions 0/0 and 0/1 give the developer jobs (calling the library, installing the command). No question to the user."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.5",
+      "gave": "No split: within the accounting team everyone counts a printed invoice with the right total as the job done; within the developers, the one who calls the library and the one who installs are the same people by decision 0/1, and their ends become two objectives rather than two roles."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.6",
+      "gave": "No merge: the accounting team counts a printed invoice as done, the developers count their own program working as before; different results."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.7",
+      "gave": "Two roles, so neither is named user: accounting team and developer."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.1",
+      "gave": "Ends with the role as subject: the accounting team bills each client what that client owes; the developers keep their own programs giving the invoices they gave before; a developer sets the command up for the accounting team."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.2",
+      "gave": "Why chains: printing an invoice matters because the client is billed what they owe, without the team asking a developer (the goal); calling the library matters because the developers own programs keep billing right without changes on their side (decision 0/0); installing matters because after one install the accounting team invoices take none of the developers time (decision 0/1)."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.3",
+      "gave": "Three distinct ends, as each can be reached without the others: O1 the accounting team bills each client what that client owes, without asking a developer; O2 the developers programs keep giving the invoices they gave before; O3 a developer sets the command up once, and after that the accounting team invoices take none of their time."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.1",
+      "gave": "Pieces of work from the decisions (the repository has no open issues and its README names no feature): the print command that reads the spreadsheet lines; the rate given at each print and not saved per client; the tax rounded to the cent the same way in the command and the library; the library behavior kept as it is; one install by a developer; a README that tells the accounting team only how to run the command."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.2",
+      "gave": "Print command from spreadsheet lines: O1. Rate at each print: O1. Same rounding in command and library: O1 and O2. Library behavior kept: O2. One install by a developer: O3. README with only how to run: O1."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.3",
+      "gave": "No merge: the rate at each print serves O1 and not O2 or O3; keeping the library behavior serves O2 and not O1 or O3; the one install serves O3 and not O2. Each pair has a piece serving one without the other."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.4",
+      "gave": "The same rounding names O1 and O2; split into the command rounding the tax to the cent (O1) and the library keeping its rounding to the cent (O2)."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.5",
+      "gave": "Every piece serves an objective, so no question to the user."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.1",
+      "gave": "Tasks: O1, from a client lines in the spreadsheet to the printed invoice; O2, from a developer updating invoicer to their own program giving its invoices again; O3, from a developer starting the install to the accounting team printing on their own."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.2",
+      "gave": "How well, each as the share that fails since a run shows the failures: KR1.1 the share of print tasks that end with no invoice, an invoice whose total differs from what the client owes, or a developer asked for help; KR2.1 the share of the developers existing library calls that give a different result after a change to invoicer; KR3.1 the share of installs after which the accounting team asks a developer for help to print."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.3",
+      "gave": "How fast: KR1.2 the time from the accounting team taking a client lines to holding the printed invoice; KR2.2 the edits a developer makes to their own code after updating invoicer, counted as effort since the time depends mostly on their own code; KR3.2 the developer time from starting the install to the command running for the accounting team."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.4",
+      "gave": "Every key result: Lower is better."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.5",
+      "gave": "Ranked how well before how fast in each objective: KRn.1 before KRn.2, as the template rule states."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.6",
+      "gave": "No targets on any key result."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.1",
+      "gave": "Asked in the earlier round; the person answered, and decision 5/0 gives the one way and its ideas as they accepted them."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.2",
+      "gave": "The one way, from decision 5/0 as written: invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the math."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.3",
+      "gave": "Three ideas from decision 5/0: lines from the spreadsheet, for O1, so nothing is retyped; the rate set at each print and not saved per client, for O1, so each client is billed at their own rate; one rounding to the cent in the command and the library, for O1 and O2, so the printed total matches what is owed."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.4",
+      "gave": "Moments: a developer installs the command; the accounting team takes a client lines from the spreadsheet; they set that client rate; they print the invoice and send it; a developer calls the library from their own code."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.5",
+      "gave": "Taking the lines: the spreadsheet idea holds the way. Setting the rate: the rate-at-print idea. Printing and sending, and calling the library: the one rounding idea. Installing: no total is made there, so the way needs no idea to hold; none proposed."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.6",
+      "gave": "No idea proposed beyond what the person gave, so no question."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.7",
+      "gave": "All three ideas kept: taking out any one leaves the way broken at its moment (retyped lines, a wrong rate, or a total off by a cent); three is within what the template allows."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.1",
+      "gave": "docs/product-vision.md does not exist yet, so there is nothing to read before the change; its sections come from the template: Roles (who invoicer serves), Objectives and key results (what each achieves and how a change is judged), Concept (the one way every choice leans to)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.2",
+      "gave": "Readers, from the Cut name: the developers of invoicer, who come to know whom invoicer serves and what each role achieves, to choose what to build and judge a change."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.3",
+      "gave": "The developers know Python and the invoicer library and its callers; they come to learn what the accounting team needs from the command and what must stay as it is for library callers."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.4",
+      "gave": "The three template sections each hold one topic a developer reads whole for one purpose; no split."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.5",
+      "gave": "Items a developer looks for (a role, an objective, a key result, an idea) each carry a name of their own (role name, O1, KR1.1) that a link points to; no further headings needed in a document this short."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.1",
+      "gave": "Roles and objectives are items in no order: bulleted lists as the template gives; key results ranked: numbered names KRn.1 then KRn.2; the concept ideas: a bulleted list; the rules on ranking and targets stay prose as they argue by because."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.1",
+      "gave": "Readers words: the goal and the person answers (accounting team, developers, invoice lines, spreadsheet, tax rate, client, rounded to the cent, library, install, command), and invoicer docstrings (lines, subtotal, tax, total, invoice)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.2",
+      "gave": "Chosen words: accounting team, developer, invoice lines, spreadsheet, tax rate (rate after first use), client, invoice, total, the command, the library. No coined term needs a definition."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.1",
+      "gave": "Facts that could be stated twice: the one rounding (concept idea and O2), the rate not saved per client (concept idea), the install by a developer (Roles and O3)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.2",
+      "gave": "One place each: the rounding and the rate in the Concept ideas, where a developer looks for how totals stay right; who installs in Roles, with O3 stating only the end."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.3",
+      "gave": "No two places state a fact differently; nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.1",
+      "gave": "Names grouped: developer and library caller for one role; invoice lines and lines; tax rate and rate; command and print command."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.2",
+      "gave": "Kept: developer (dropping library caller), invoice lines, tax rate, the command."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.3",
+      "gave": "No name refers to two things: invoice is always the printed or returned invoice, total always the amount with tax."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Decided: two roles (accounting team; developer, who calls the library and installs the command once), three objectives O1 to O3 with two ranked key results each, lower is better, no targets, and the concept as decision 5/0 gives it with its three ideas. Every point settled by the decisions or the best practices; nothing to ask."
+    }
+  ]
+}

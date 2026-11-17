@@ -1049,6 +1049,1256 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: no node changed by the sign-off, docs/product-vision.md marked doing at b7f8008, all touched nodes agree"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with three open product vision points: read the tree at b7f8008 (product vision doing, no decisions) and the product-vision N1 and N6 decide items beside the unchanged best practice"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal unchanged, confirmed by the person"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "deliverables/0/necessary_conditions/0 is N1 and /5 is N6 of the product vision, as the change names them"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Each about is a few words for a point of a decide item: the other roles and who installs the command come from the product-vision N1 items naming each role and anyone whose job the role needs; the concept from the N6 item asking how the product brings users to their objectives"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "No specific deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The product vision takes from no deliverable, so its points may come up now"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "The grounds say neither the goal nor the repository settles them"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Each point is the person to answer, not a fact a trial finds, so no research deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "No research deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "No research deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "None of the three is settled, as the answers differ in what the person gets"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "All three are left decided null for the main conversation to put to the person one at a time, roles first"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "The open points carry no by, as none is settled"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 at 9830f96: two open points under the product vision N1 and one under N6, each decided null"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "All 6 deliverables still serve the goal"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, committed 9830f96, printing changed (the three decisions), touched deliverables/0, its N1 and N6, and deliverables/1, 2, 4, doing []"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "This change only adds open points under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "The grounds are the message of 9830f96 and stay out of the tree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other 5 stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No deliverable has had a round judged by an evaluator yet"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "N1 and N6 stay good false with open points"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "No settled decision changed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No done deliverable is touched"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched: deliverables/0 with its N1 and N6, and deliverables/1 (README), 2 (architecture), 4 (tests) that take from it"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each read beside the change: the product vision name says the accounting team among them, leaving other roles open; N1 and N6 good stay false; its N2-N5 hold no decisions resting on these points; README, architecture and tests hold no decisions yet. All agree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node was rewritten, so no further pass"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Nothing old written over"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 with its N1 and N6, and deliverables/1, 2, 4, against the change: all agree"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: three open points written at 9830f96, all touched nodes agree, none newly marked doing"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the roles answer: read the tree at 9830f96 (three open product vision points) and the product-vision conditions N1-N6 beside the unchanged best practice"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal unchanged, confirmed by the person"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "The new developer role adds a need, that library behavior stays as it is, which no deliverable name or check yet covers; noted for the main conversation, not changed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "The about stays as written; the decision answers it"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "No specific deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The product vision takes from no deliverable, so the point could be settled now"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "Only the person knew it"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "No research needed, the person answered"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "No research deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "No research deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Settled by the person answer, not by reasoning"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "The person answered the first point put to them; the other two stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "by is user, as the person said it"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 at 840a44d: product vision N1 roles decision settled by user, with the person words quoted in the commit message"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "All 6 deliverables still serve the goal"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, committed 840a44d, touched deliverables/0, its N1, and deliverables/1, 2, 4, doing []"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "The grounds with the person words are the message of 840a44d and stay out of the tree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other 5 stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No round judged yet"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "N1 stays good false, two of its points not all settled and not yet judged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "No earlier settled decision changed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No done deliverable is touched"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched: deliverables/0 and its N1, and deliverables/1 (README), 2 (architecture), 4 (tests)"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each read beside the change: none names a path, kind or decision the change replaced, and none rests on something it made false, so all hold. Noted for the main conversation: the README and tests names speak only of the accounting team, nothing in the plan yet checks that library behavior stays as it is, and the library constraint may belong under the developer role objective or key results (product-vision N2, N4) rather than N1 Roles"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node was rewritten, so no further pass"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "decided written over null with no note of before"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 with its N1, and deliverables/1, 2, 4: all agree by N9.2; noted that README and tests names cover only the accounting team, no deliverable yet checks library behavior stays, and the constraint may fit product-vision N2 or N4 better"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: roles decision settled by user at 840a44d, all touched nodes agree, notes passed to the main conversation"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the test design name change: read the tree at 840a44d (roles settled, 6 deliverables) beside the unchanged best practice"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal unchanged, confirmed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "The library constraint is now covered by the test design name, closing the gap noted at 840a44d"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "The test design stays one work package, its cases checking both the command and the library calls"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Kind stays test-design"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Inputs unchanged and still match test-design best practice inputs"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "The person constraint now has a check in the test design, as the grounds give"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "Test design decisions stay empty until its inputs are done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "The name change is settled by reasoning per the grounds; names carry no by, so it lives in the commit"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "The new name says what holds toward the goal with the developers as subject"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "The name holds no path or kind"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 at 4285a42: tests (deliverables/4) name widened to cover the library calls giving what they gave before"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "The test design still serves the goal, and now also the person constraint on library behavior"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, committed 4285a42, changed deliverables/4, touched deliverables/5, doing []"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "The grounds are the message of 4285a42 and stay out of the tree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other 5 stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No round judged yet"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Test design goods stay false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "No decision answering a condition changed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No done deliverable is touched"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched: deliverables/5 (invoicer/cli.py), which names tests in its inputs"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "invoicer/cli.py read beside the change: its name speaks of the command and does not contradict the added library cases; it holds no decisions; agrees"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node was rewritten, so no further pass"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Name written over the old one with no note of before"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "This change only widens the test design name, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/4 (changed) and deliverables/5 (touched) against the change: both agree"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: test design name widened at 4285a42, the touched code deliverable agrees, none newly doing"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the installer answer: read the tree at 4285a42 (installer point open) and the readme conditions N1-N10 beside the unchanged best practice"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal unchanged, confirmed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Installing belongs to the developer role, so no new role and no new deliverable is needed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "The about stays as written; the decision answers it"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The product vision takes from none, so the point could be settled now"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "Only the person knew it"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "No research needed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Settled by the person answer"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "The person answered the second point; the concept stays open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "by is user, as the person said it"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 at 6745e8d: product vision N1 installer decision settled by user, with the person words quoted in the commit message"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "All 6 deliverables still serve the goal"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, committed 6745e8d, touched deliverables/0, its N1, and deliverables/1, 2, 4, doing []"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "The grounds with the person words are the message of 6745e8d and stay out of the tree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other 5 stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No round judged yet"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "N1 stays good false until judged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "No earlier settled decision changed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No done deliverable is touched"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched: deliverables/0 and its N1, and deliverables/1 (README), 2 (architecture), 4 (tests)"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each read beside the change: none names anything the change replaced, and none rests on something it made false; the README name (accounting team learns how to print) fits the README telling them only how to run. All agree. Noted for the main conversation: readme best practice N9 asks that a reader with nothing set up can install the product by the README alone, which meets the decision that the README tells the accounting team only how to run it, at the README turn"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node was rewritten, so no further pass"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "decided written over null with no note of before"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "This change settles one product vision point, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 with its N1, and deliverables/1, 2, 4: all agree; noted the tension between the decision and readme N9 (installation by the README alone)"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: installer decision settled by user at 6745e8d, all touched nodes agree, readme N9 tension passed to the main conversation"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the concept answer: read the tree at 6745e8d (concept open) beside the unchanged best practice, and invoicer/tax.py and totals.py for how the library rounds tax today"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal unchanged, confirmed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "The concept adds no deliverable the goal fails without"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "The rounding idea for command and library is covered by the widened test design name"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "The about stays as written; the decision answers it"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The product vision takes from none"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "The library rounding was read in invoicer/tax.py: ROUND_HALF_UP to the cent, used by totals.total"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "No research needed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "Settled by the person accepting the draft"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "The person answered the last open point; no product vision point stays open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "by is user, as the person accepted the draft and added the rate is not saved per client"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 at 92c91d1: product vision N6 concept settled by user; the commit message quotes the accepted draft and the person words word for word"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "All 6 deliverables still serve the goal"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, committed 92c91d1, touched deliverables/0, its N6, and deliverables/1, 2, 4, doing []"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "The grounds, with the accepted draft and the person words, are the message of 92c91d1 and stay out of the tree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other 5 stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "No round judged yet"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "N6 stays good false until judged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "No earlier settled decision changed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No done deliverable is touched"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched: deliverables/0 and its N6, and deliverables/1 (README), 2 (architecture), 4 (tests); also read the N1 decisions of the same deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each read beside the change: the README name (a client tax rate), the tests name (each client rate, library calls unchanged) and the code name (the rate they set) fit a rate set per invoice and not saved; the N1 decision that library behavior stays agrees with one rounding, as the library already rounds half up to the cent in one place the command can reuse. All agree. Noted: the decision text reshapes the accepted draft (labels, semicolons, the not-saved clause inserted) while keeping its content; the draft word for word is in the commit"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node was rewritten, so no further pass"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "decided written over null with no note of before"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "This change settles the product vision concept, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 with its N1 and N6, and deliverables/1, 2, 4, against the change: all agree"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: concept settled by user at 92c91d1, all touched nodes agree, none newly doing"
     }
   ],
   "kept": {
