@@ -1,7 +1,7 @@
 {
   "goal": {
     "decided": "Our accounting colleagues print each invoice themselves, at that client's tax rate, without asking a developer. Once it holds, a colleague from accounting saves an invoice's lines from their spreadsheet, runs one command with the client's tax rate, and gets the printed invoice, following the README alone and writing no Python.",
-    "by": "reasoning"
+    "by": "user"
   },
   "deliverables": [
     {
