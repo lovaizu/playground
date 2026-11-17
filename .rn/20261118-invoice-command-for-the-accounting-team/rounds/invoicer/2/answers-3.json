@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "A script or other code that already used invoicer 1.4.0 keeps getting what it got before, or is plainly told what changed for it. Today a script still installed as 1.4.0 meets three changes nothing tells it of. (1) render's text changed: for the lines Pen;0.005;1, Pencil;0.005;1, Eraser;0.005;1 and Design;89.5;1 at 0.19, it printed 0.005 and 89.5, Subtotal 89.515 and Total 106.525. Now it prints 0.01 and 89.50, Subtotal 89.53 and Total 106.54. invoicer.subtotal() and invoicer.total() still give 89.515 and 106.525 for those lines, so a script that checks the printed invoice against total() now finds them disagreeing. (2) A script that caught decimal.InvalidOperation for a price that isn't a number, such as 'ten', no longer catches it, because parse_lines now raises LineError, which is a ValueError and not an InvalidOperation. (3) Rows that parse_lines used to read now get refused, such as a quantity of '+3', '1_000' or a digit of another script. Rows it used to read without complaint, such as a price of 1e400 or NaN, get refused too. The colleague from accounting running the new invoicer command loses nothing, since the command is new. The people this affects are the existing code callers of the package. Each of them either still gets the old text, totals and errors, or learns from the package's version and its notes which behaviors changed, so it can adjust before an upgrade breaks it."
+    }
+  ]
+}
