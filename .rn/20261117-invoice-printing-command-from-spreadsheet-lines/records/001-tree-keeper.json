@@ -3269,6 +3269,256 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: mend written, touched nodes agree, none newly doing."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed after round 3 generator asks: best practices read; tree at 5a1573a (generator records since), N4 decision 1 says the vision states no cross order where it gives the order."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged, by user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal already confirmed."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Plan unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "Input kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "No deliverable added or moved."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "Work packages unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Kinds unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "Case does not hold: no meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Inputs and preconditions unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "Case does not hold: no check script deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "Product vision conditions unchanged, good false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "Key results point keeps its about; no point added or dropped."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "Case does not hold: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "Later deliverables keep empty decisions."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "The template fixed sentences were the fact; the generator found them via rn check."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "Case does not hold: no research deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "The generator asks settled by reasoning, as both answers give the readers the same."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "Not put to the person, by orchestrator step 1."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "Key results stay by reasoning."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "Names unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "Names unchanged; none holds path or kind."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "Every deliverable still serves the unchanged goal."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, commit d08ae31: changed N4 decision 1 of deliverables/0; touched deliverables/0, its N4, deliverables/1, 2, 4, 6; doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Case does not hold: no research or meta deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Grounds are the message of commit d08ae31."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; others open."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Round 3 generator gave asks; no judging yet; not run."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Every good stays false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "N4 already good false."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "Not reached: no specific deliverable."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched per tree.py write: deliverables/0 and its N4, deliverables/1, 2, 4, 6."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: the decision no longer asks a sentence the template forbids, and still rests on the pieces decision. Risk noted: the kept N4/N7 more good_when still ask to see the cross order at a glance; an evaluator may read them literally."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Nothing rewritten, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Key results written over the old text with no note of it."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "Not reached: no deliverable is done."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "Not reached: no research deliverable."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0, commit d08ae31: key results settled after the generator asks; doing []."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 (N4) and deliverables/1, 2, 4, 6: all agree; noted the kept N4/N7 mores may still be read as asking for a stated cross order."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: decision written, touched nodes agree, none newly doing."
     }
   ],
   "kept": {

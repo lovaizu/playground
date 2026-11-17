@@ -430,5 +430,9 @@
       "step": 7,
       "gave": "rn check refused the no-order sentences: the template ranking paragraph takes only `KR1.1` and `KR2.1` comes first with its fixed three sentences, and no paragraph beside it. The key results decision asks the vision to say no order runs across objectives where it states the order, which the template leaves no place for. Ending with asks; the vision stands template-valid with the rank notes gone and KR1.1 saying a developer help."
     }
-  ]
+  ],
+  "kept": {
+    "role": "generator",
+    "result": "asks"
+  }
 }

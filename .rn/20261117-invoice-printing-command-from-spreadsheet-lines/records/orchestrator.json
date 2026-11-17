@@ -584,6 +584,76 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Generator ask is not the person point: both answers give readers the same; settled by reasoning, drop the clause"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Sent the key results decision without the clause to the tree-keeper"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Resume the generator once the tree holds it; evaluator start held until the generator gives done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Generator gave asks, not done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote d08ae31; agrees"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started round-4 generator with the guard text; held the round-3 evaluator, as round 3 gave asks and round 4 rewrites the file it would judge"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Generator making"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
     }
   ]
 }
