@@ -64,7 +64,7 @@
           "decisions": [
             {
               "about": "the tests",
-              "decided": "One test for each refusal case, named by its case, and two tests that print a two-line invoice at 0.19 and at another rate, showing the rate is set per invoice",
+              "decided": "One test for each refusal case, named by its case, and tests that print a two-line invoice at 0.19, at another rate, and at 0, showing the rate is set per invoice and a zero-rated invoice prints",
               "by": "reasoning"
             }
           ]
@@ -85,7 +85,7 @@
           "decisions": [
             {
               "about": "the refusals",
-              "decided": "Refuses a missing or unreadable file, a line not `<description>;<price>;<quantity>`, a price not a number, a quantity not a whole number, and a missing rate or one outside 0 to 1 (such as 19 for 0.19): prints nothing of the invoice, writes on standard error the line number or value and the form expected, and exits non-zero",
+              "decided": "Refuses a missing or unreadable file, a line not `<description>;<price>;<quantity>`, a price not a number, a quantity not a whole number, and a missing rate, a negative rate, or one above 1 (such as 19 for 0.19), with 0 and 1 themselves accepted: prints nothing of the invoice, writes on standard error the line number or value and the form expected, and exits non-zero",
               "by": "reasoning"
             }
           ]
