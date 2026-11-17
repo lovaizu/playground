@@ -474,6 +474,11 @@
       "of": "generator",
       "step": 5,
       "gave": "Tried in throwaway copies as accounting would, after pip install of the repository: a CSV UTF-8 file with CRLF and BOM, prices 89.5, 100, 12.345 and a credit of -25 at --rate 19 prints every amount to the cent and a total of subtotal plus tax (exit 0); --rate 0.07, a folder, 1e400, four fields, a chmod 0 file and a quantity of 11 digits each refused with one line and exit 2. 43 tests OK, three shuffled runs OK, coverage 97%."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Wrote the Made at rounds/invoicer/2/made.json: where each of the six Cut decisions and the three Mores kept land, and six points settled with their grounds (cent rounding half up, subtotal of printed amounts, the billion limit, 0.5% taken, the permission message, a quantity of 0)."
     }
   ]
 }
