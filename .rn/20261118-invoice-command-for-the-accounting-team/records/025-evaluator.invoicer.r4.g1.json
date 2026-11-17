@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N4 and N6 in good: 66 tests pass on a fresh copy set up from pyproject.toml alone and in five shuffled orders, each through the public interfaces. N5 and N7 in more: 6 of 15 probe mutants survive, such as the unchecked negative amount limit, render ignoring its currency and a rate of 19%% accepted, and those cases have no named test."
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each of N4, N5, N6 and N7 is answered in answers-1.json; ending with done."
     }
   ]
 }
