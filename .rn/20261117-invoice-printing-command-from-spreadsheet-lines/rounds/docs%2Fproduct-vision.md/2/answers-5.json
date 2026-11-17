@@ -1,0 +1,23 @@
+{
+  "good": [
+    {
+      "question": "N8",
+      "lines": [
+        "- `accountant`\\",
+        "  One on the accounting team who prints a client's invoice at that client's tax rate, with `invoicer`'s command.",
+        "- `installer`\\",
+        "  A developer who sets up `invoicer`'s command on each `accountant`'s machine, installing Python and `invoicer` in place of the `accountant`.",
+        "- `O1`: the `accountant` sends each client a correct invoice at that client's tax rate without a developer's help.",
+        "- `O2`: the `installer` gets an `accountant`'s machine ready to print invoices without anyone's further help.",
+        "`invoicer` prints the finished invoice from the invoice lines as the `accountant`'s spreadsheet holds them, plus the client's tax rate.",
+        "  Each time the `accountant` prints an invoice, they give the client's tax rate, so the `installer` sets up no rates."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N7",
+      "good_when": "The accounting team and invoicer's maintainers find the order in which the key results count in one place, and read from it alone which key result a change must not worsen before another may improve, including whether KR2.1 counts before or after KR1.2. Today KR1.2 and KR2.2 each say what they rank after, and the sentence below the list says again that KR1.1 and KR2.1 come first, so a reader pieces the order together from three places that could drift apart. Likewise, the help that O1 rules out reads the same wherever it is stated: O1 says without a developer's help, while KR1.1 counts invoices printed without any help."
+    }
+  ]
+}
