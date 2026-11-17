@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Read the Cut (no inputs, no decisions, no More kept; docs/product-vision.md does not exist yet), the design tree, README.md (a playground note), pyproject.toml and invoicer/ (lines.py, tax.py, totals.py, render.py: a Python library that parses semicolon-separated invoice lines, computes subtotal and tax at a rate, and renders the invoice as text; no command yet). The deliverable s people are invoicer s developers, who use the vision to know whom invoicer serves: the accounting team, who print each client s invoice at its tax rate from their spreadsheet lines, and the developers who call the library from their own code."
+    }
+  ]
+}

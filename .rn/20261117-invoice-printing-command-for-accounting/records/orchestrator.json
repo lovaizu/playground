@@ -1,0 +1,149 @@
+{
+  "entries": [
+    {
+      "of": "up",
+      "step": 1,
+      "gave": "Started run 20261117-invoice-printing-command-for-accounting and entered its worktree"
+    },
+    {
+      "of": "up",
+      "step": 2,
+      "gave": "Started the tree-keeper with the guard text; it gave done with no change written"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal drafted from the request: The accounting team prints each client invoice at that client tax rate from the invoice lines they keep in a spreadsheet, without asking a developer"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "Deliverables the team holds: the command in the invoicer package, and the README telling them how to run it"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "No product vision, architecture, software design or test design exists for invoicer, and README.md says only Playground, so each is added; test-implementation left out as no report serves the goal"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "Kinds: product-vision, readme, architecture, software-design, test-design, code"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "Inputs follow each kind best practice inputs, by path"
+    },
+    {
+      "of": "up",
+      "step": 3,
+      "gave": "Drafted the goal and a plan of six deliverables, product vision to code, and resumed the tree-keeper to write both"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote the goal and six deliverables in 39955e2; checked against the design tree best practice, it matches the change sent"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal put to the person beside the words of the request"
+    },
+    {
+      "of": "up",
+      "step": 4,
+      "gave": "Put the drafted goal to the person to confirm"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Person confirmed the goal word for word; tree-keeper resumed to write by user"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Goal settled by user in f87eb2c; pushed to draft PR 27 and put up the plan, waiting for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Goal confirmed by the person; the plan points about format, printing and rate wait on the product vision, so no point is put now"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote the goal by user in f87eb2c; read the tree, the goal holds the confirmed words and six deliverables stand as sent"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Guard gives no generator or evaluator due; started none while the plan sign-off waits"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No generator gave done; nothing to check"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round has run; nothing to read"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Pushed to draft PR https://github.com/lovaizu/playground/pull/27 and put up the plan by tree.py put-up plan; it waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    },
+    {
+      "of": "ty",
+      "step": 1,
+      "gave": "tree.py approve signed off the plan"
+    },
+    {
+      "of": "ty",
+      "step": 2,
+      "gave": "Plan unchanged by the sign-off; resumed the tree-keeper to write it so the product vision is marked doing"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point of the person is open in the tree; product vision points come up from its generator"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote the sign-off in b7f8008 and marked docs/product-vision.md doing; read the commit and the tree, one deliverable doing"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started the generator on docs/product-vision.md with the guard text"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "The generator has not given done yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round has ended yet"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "No deliverable is ready to put up; the plan is signed off"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "A run exists, so the no-run ending does not apply"
+    }
+  ]
+}
