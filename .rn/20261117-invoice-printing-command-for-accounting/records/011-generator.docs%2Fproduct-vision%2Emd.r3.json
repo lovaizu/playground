@@ -9,6 +9,221 @@
       "of": "generator",
       "step": 2,
       "gave": "Read product-vision best-practice.md with its template.md, and refactor-doc best-practice.md, to their end before any change."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.1",
+      "gave": "The job, from the goal: invoicer turns the invoice lines the accounting team keeps into each client invoice with right totals."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.2",
+      "gave": "Roles by their part of the job: the accounting team, who print each client invoice with the command; the developer, who calls invoicer as a library from their own code (Cut decision N1/0)."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.3",
+      "gave": "The accounting team prints only once someone installs the command; a developer installs it once, so installing belongs to the developer role (Cut decision N1/1)."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.4",
+      "gave": "No person left unclear: the Cut decisions N1/0 and N1/1 settle both roles and the install, so nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.5",
+      "gave": "No split: every member of the accounting team counts a right printed invoice as done; every developer counts their own code still working and the command installed."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.6",
+      "gave": "No merge: the accounting team and the developers count different results as done."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.7",
+      "gave": "Two roles, so neither is named user."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.1",
+      "gave": "O1 the accounting team bills each client what that client owes, without asking a developer; O2 the developers own code keeps giving the results it gave before; O3 a developer installs the command once, and it runs for the accounting team from then on. Kept as they stand."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.2",
+      "gave": "Why asked of each: billing what is owed, code that keeps working, and an install done once are ends in the roles own work, not things invoicer does."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.3",
+      "gave": "Three distinct ends: a developer can keep their own code working without installing the command, and install it without the accounting team printing; so three objectives."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.1",
+      "gave": "Tasks: O1 from starting a client invoice to holding it printed; O2 from updating invoicer to their own code running as before; O3 from starting the install to the command running for the accounting team."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.2",
+      "gave": "How well, as failure shares: KR1.1 print tasks that end without the right invoice or with a developer help; KR2.1 library calls in their own code that give a different result after an update; KR3.1 installs that end without the command running for the accounting team."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.3",
+      "gave": "How fast: KR1.2 time from starting a client invoice to holding it printed, fixing invoice lines included; KR2.2 edits to their own code after an update, as effort; KR3.2 the developer time for the install."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.4",
+      "gave": "Each of the six key results says Lower is better."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.5",
+      "gave": "The rank as Cut decision N4/0 sets, in the template paragraph: KR2.1, KR1.1 and KR3.1 come first, then KR1.2, KR2.2 and KR3.2 in the order the document lists them; keep a change that improves a key result only if none before it gets worse. The numbered list of round 2 goes."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.6",
+      "gave": "No targets: the template sentence on no targets and Goodhart law stays as the template writes it (Cut decision N4/0)."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.1",
+      "gave": "Work the Cut decisions name: print from the invoice lines in the spreadsheet, naming any bad line; the rate set at each print; the command only calling the library that rounds tax the same way; the one install."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.2",
+      "gave": "Invoice lines and a bad line named O1; rate at each print O1; the command only calling the library with its one rounding O2 (O1 takes its totals from it, Cut decision N5/0); the install O3."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.3",
+      "gave": "Each pair has a piece that serves one alone: the invoice lines O1 not O2, the same results for their own code O2 not O1, the install O3 alone; no merge."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.4",
+      "gave": "No piece names more than one objective: the rounding names O2 alone, as Cut decision N5/0 sets."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.5",
+      "gave": "Every piece serves an objective; nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.1",
+      "gave": "The person gave the one way and the three ideas, and settled how the five merge into three (Cut decision N6/0); nothing more to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.2",
+      "gave": "The one way, as Cut decision N6/0 states it: invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the math."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.3",
+      "gave": "Three ideas, word for word as the person accepted them, each with what it gives: invoice lines from the spreadsheet O1; tax rate set at each print and never saved per client O1; same results for developers own code O2."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.4",
+      "gave": "Moments: the developer installs the command; the accounting team takes the invoice lines, sets the rate, prints, meets a bad line and prints again; a developer updates invoicer under their own code and calls the library."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.5",
+      "gave": "Each moment has its idea: taking lines and a bad line, invoice lines from the spreadsheet; the rate, set at each print; an update and library calls, same results for developers own code. The install takes no idea, as Cut decision N6/0 says."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.6",
+      "gave": "No new idea proposed; the person said yes to the three merged ideas as worded (Cut decision N6/0)."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.7",
+      "gave": "Three ideas kept, the template most: each holds the one way at a moment no other covers. The five of round 2 merge into these three, so the bad line idea and the command only calling the library live inside them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.1",
+      "gave": "docs/product-vision.md read to its end. Roles says who comes; Objectives and key results says what each achieves, how it is measured and the rank; Concept says the one way and its ideas."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.2",
+      "gave": "Readers: the developers of invoicer, who weigh a change against whom invoicer serves and what each achieves."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.3",
+      "gave": "The developers know invoicer and its library; they come to learn the roles, the objectives and their rank, and the concept."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.4",
+      "gave": "Three sections of one topic each, as the template sets; a developer reads each whole for its purpose, so no split."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.5",
+      "gave": "Each role, objective, key result and idea is a list item with its own name, as the template sets; no new headings."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.1",
+      "gave": "Roles, objectives and ideas stay bulleted lists; the rank goes back to the template paragraph in prose, as Cut decision N4/0 sets over the round 1 N4 more."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.1",
+      "gave": "Readers words from the goal and the person: invoice lines, spreadsheet, tax rate, print, library, their own code, install, accounting team."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.2",
+      "gave": "Chosen: invoice lines, their own code, the accounting team, the command, the library; no coined term to define."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.1",
+      "gave": "Facts in more than one place, after the merge: none. The source of the invoice lines and the rate at each print are in the Concept alone; printing without a developer in O1 alone; the same results for their own code in O2 as the end and in the Concept as the idea."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.2",
+      "gave": "The Concept keeps the source of the invoice lines and the rate at each print (Cut decision N3/0); O1 keeps printing without a developer (Cut decision N5/0)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.3",
+      "gave": "No two places state a fact differently; nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.1",
+      "gave": "Grouped names: their own code and developers own code, the person words for the same code; invoice lines throughout; the accounting team throughout."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.2",
+      "gave": "Kept: own code, with developers or their before it as the sentence needs; the idea name same results for developers own code stays word for word, as the person accepted it (Cut decision N6/0)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.3",
+      "gave": "No name refers to two things."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Took each Cut decision as it stands: the rank goes back to the template paragraph naming KR2.1, KR1.1 and KR3.1 first, with the template sentence on no targets; the Concept takes the one way and the three merged ideas as worded. Roles and objectives stay. No point left open."
     }
   ]
 }
