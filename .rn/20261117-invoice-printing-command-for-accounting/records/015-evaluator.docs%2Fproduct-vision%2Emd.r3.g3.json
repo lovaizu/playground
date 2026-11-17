@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N1 and N2 of refactor-doc with their reasons and practices."
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N2 in good and N1 in more: the precedence rule among key results shows in no heading or first sentence."
     }
   ]
 }

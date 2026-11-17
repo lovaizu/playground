@@ -1,0 +1,24 @@
+{
+  "good": [
+    {
+      "question": "N2",
+      "lines": [
+        "- Accounting team\\",
+        "  The people who print each client's invoice with invoicer's command.",
+        "- Developer\\",
+        "  The people who call invoicer's library from their own code, and install the command once for the",
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "- O2: the developers' own code keeps giving the results it gave before.",
+        "- O3: a developer installs the command once, and the command runs for the accounting team from",
+        "KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it",
+        "invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "A developer who weighs a change that helps one role's key result and hurts another's finds, from the headings and the first sentences alone, that the document says which key result comes first, so they reach that rule without reading every objective and key result before it."
+    }
+  ]
+}
