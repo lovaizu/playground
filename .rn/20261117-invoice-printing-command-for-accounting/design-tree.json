@@ -10,7 +10,7 @@
       "kind": "product-vision",
       "inputs": [],
       "preconditions": [],
-      "status": "open",
+      "status": "doing",
       "necessary_conditions": [
         {
           "id": "N1",
