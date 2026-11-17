@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N2 and N5 good; N3, N4, N6 more, in rounds/invoicer/6/answers-4.json"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each of N2-N6 answered; ending with done"
     }
   ]
 }
