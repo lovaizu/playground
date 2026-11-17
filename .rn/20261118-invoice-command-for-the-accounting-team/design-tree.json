@@ -1,0 +1,158 @@
+{
+  "goal": {
+    "decided": "Our accounting colleagues print each invoice themselves, at that client's tax rate, without asking a developer. Once it holds, a colleague from accounting saves an invoice's lines from their spreadsheet, runs one command with the client's tax rate, and gets the printed invoice, following the README alone and writing no Python.",
+    "by": "reasoning"
+  },
+  "deliverables": [
+    {
+      "name": "A colleague from accounting turns the lines saved from their spreadsheet into a printed invoice at their client's tax rate with one command",
+      "path": "invoicer",
+      "kind": "code",
+      "inputs": [],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the lines' form",
+              "decided": "A file saved from the spreadsheet with one row per line, `<description>;<price>;<quantity>`, as invoicer.lines.parse_lines reads it",
+              "by": "reasoning"
+            },
+            {
+              "about": "the tax rate",
+              "decided": "Set on each run of the command, for that invoice",
+              "by": "reasoning"
+            },
+            {
+              "about": "what it prints",
+              "decided": "The invoice text that invoicer.render gives, printed to the terminal",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": [
+            {
+              "about": "how accounting gets the command with no Python on their side",
+              "decided": null
+            }
+          ]
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": [
+            {
+              "about": "a wrong line or rate",
+              "decided": "Refused before anything is printed, with a message naming the row and what is wrong, so accounting can fix the spreadsheet themselves",
+              "by": "reasoning"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "A colleague from accounting prints an invoice from the README alone, with no developer to ask",
+      "path": "README.md",
+      "kind": "readme",
+      "inputs": [],
+      "preconditions": [
+        "invoicer"
+      ],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the readers",
+              "decided": "Colleagues from accounting who keep an invoice's lines in a spreadsheet and write no Python",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N9",
+          "good": false,
+          "decisions": [
+            {
+              "about": "install steps",
+              "decided": null
+            }
+          ]
+        },
+        {
+          "id": "N10",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    }
+  ]
+}
