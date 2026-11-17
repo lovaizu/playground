@@ -3299,6 +3299,506 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: concept rewritten with three ideas and decisions 1, 2 dropped at 47ceddf, all touched nodes agree"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with round 3 of the product vision: read the tree at 47ceddf plus round 3 record commits (N1 and N2 good true, N3-N6 false, N2 without decisions) beside the unchanged best practice"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal unchanged, confirmed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "No deliverable added or dropped"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "The decision lands under product vision N2 (index 1) and the good under N5 (index 4), as the change names them"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "The about names the point in a few words"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The product vision takes from none"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "No research needed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "The N2 decision settled by reasoning, as the grounds give"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "No point put to the user in this change"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "The new decision says by reasoning"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 at d8b8678: product vision N2 decision on each objective subject by reasoning with two mores accepted, and N5 good set true"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "All 6 deliverables still serve the goal"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, committed d8b8678, changed N2 decision 0 and N5, touched deliverables/0 with its N2, and deliverables/1, 2, 4, doing []"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "The round 3 grounds are the message of d8b8678 and stay out of the tree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other 5 stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Round 3 as reported by the grounds"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "N5 set true as round 3 judged it good. Does not agree: N1 is true in the tree since 24ad941, yet round 3 named it in more and the grounds say it stays false; by N8.3 it would be false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Does not agree: N2 is true in the tree, yet its decision just changed with a product-vision N2 more kept against it; by N8.4 it would be set back to false"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No done deliverable is touched"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched: deliverables/0 with its N2, and deliverables/1, 2, 4; also read N1, N3, N5, N6 decisions of the same deliverable"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "N1 install decision fits O3; N3 naming holds with their own code; N6 idea 3 for O2 fits O2; README, architecture and tests hold no decisions. Does not agree: the N5 decision says printing without a developer belongs to O1 alone and O3 counts only the one install, while the new O3 reads the accounting team prints on a command the developer installed once, which brings printing back under O3, the overlap N5 removed, with N5 just set good"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node rewritten by me, as only the main conversation decides a change"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "The N2 decision written fresh, no note of before"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "This change sets one decision, two mores and one good under the product vision, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 with its N1-N6, and deliverables/1, 2, 4. Three do not agree: N1 good true though round 3 named it in more; N2 good true though its decision just changed; the new O3 wording may put printing back under O3 against the N5 decision. The rest agree"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: round 3 written at d8b8678 with two mores accepted; three disagreements passed to the main conversation"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed with the fixes to my three findings: read the tree at d8b8678 (N1, N2, N5 good true) beside the unchanged best practice"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.1",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.2",
+      "gave": "Goal unchanged"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.3",
+      "gave": "Goal unchanged, confirmed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.4",
+      "gave": "Goal by stays user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.1",
+      "gave": "No deliverable added or dropped"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.2",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.3",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.4",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N2.5",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.1",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.2",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N3.3",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.1",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.2",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.3",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.1",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.2",
+      "gave": "The about stays as written"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.3",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.4",
+      "gave": "The product vision takes from none"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.5",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.6",
+      "gave": "No research needed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.7",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.8",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.9",
+      "gave": "The O3 wording settled by reasoning, keeping printing O1 alone"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.10",
+      "gave": "No point put to the user"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.1",
+      "gave": "by stays reasoning"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.1",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N7.2",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "tree.py write gave 0 at fb86300: N1 and N2 good set back to false, and the N2 decision reworded so O3 is the one install and printing stays O1 alone"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N1.5",
+      "gave": "All 6 deliverables still serve the goal"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write gave 0, committed fb86300, changed N1, N2 and N2 decision 0, touched deliverables/0 with its N2, and deliverables/1, 2, 4, doing []"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N5.11",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "The grounds are the message of fb86300 and stay out of the tree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "Product vision stays doing; the other 5 stay open"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Round 3 as reported"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "N1 now false, as round 3 named it in more; N5 stays true"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "N2 now false after its decision changed"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No done deliverable is touched"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "Touched: deliverables/0 with its N2, and deliverables/1, 2, 4; also read N1, N3, N5, N6 decisions"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Each read beside the change: the N5 decision (O3 counts only the one install, printing O1 alone) now agrees with O3; the N1 install decision fits; N3 naming holds; N6 idea 3 for O2 fits; README, architecture and tests hold no decisions. All agree"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "No node rewritten, so no further pass"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Decision written over its old text with no note of before"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "This change resets two goods and rewords the N2 decision, so this practice has nothing new to check"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked deliverables/0 with its N1-N6, and deliverables/1, 2, 4: all agree; the three earlier findings are resolved"
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: N1, N2 reset and O3 reworded at fb86300, all touched nodes agree"
     }
   ],
   "kept": {

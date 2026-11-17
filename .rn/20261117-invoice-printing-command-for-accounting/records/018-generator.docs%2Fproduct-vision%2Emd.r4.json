@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Read the Cut, docs/product-vision.md as it stands, and both Mores; no inputs. Its people: the developers of invoicer, who build for the accounting team (print each client invoice without a developer) and for the developers who call the library from their own code and install the command once."
+    }
+  ]
+}
