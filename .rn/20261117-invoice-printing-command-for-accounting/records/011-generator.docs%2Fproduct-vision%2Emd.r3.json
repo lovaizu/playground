@@ -224,6 +224,191 @@
       "of": "generator",
       "step": 3,
       "gave": "Took each Cut decision as it stands: the rank goes back to the template paragraph naming KR2.1, KR1.1 and KR3.1 first, with the template sentence on no targets; the Concept takes the one way and the three merged ideas as worded. Roles and objectives stay. No point left open."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.4",
+      "gave": "With invoicer taken out, O1 billing each client what they owe, O2 their own code giving the same results, and O3 an install done once still read as ends, not features."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N3.1",
+      "gave": "Each sentence says what the roles do and see: the command naming a bad line, the rate set at each print, and the command only calling the library that rounds the same way are what the accounting team and the developers see; none names a part inside invoicer."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.7",
+      "gave": "E2E records: KR1.1 each print task marked wrong invoice or developer helped; KR1.2 the times a print task starts and the invoice is printed; KR2.1 each library call result before and after an update; KR2.2 the edits in their own code after an update; KR3.1 whether the command runs for the accounting team after an install; KR3.2 the times an install starts and the command first runs."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.8",
+      "gave": "Choices decided by the concept: a bad invoice line stops the print with that line and what is wrong named, not a guessed total; the rate is asked at each print, not stored per client; a new option for the command goes only through the library calls developers use, so their results stay the same. Each idea decides its moment one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings Roles, Objectives and key results, Concept are reference headings named by the thing, as the template sets; kept."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "First lines under each heading give the section: the first role, the first objective, and the one way of the concept."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read only the headings and first lines for a developer weighing a change: they lead to Objectives and key results for the rank and to Concept for a choice; no rewrite needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Each sentence serves the developers weighing a change; the round 2 sentences nothing is retyped, the printed total matches, and Updating invoicer therefore gives went with the merge into three ideas; none left marked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "No sentence marked, so no other document to look for."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "Nothing to move within docs/product-vision.md."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "Nothing goes outside docs/product-vision.md, and no fact is lost: the facts of the dropped sentences live in the three ideas the person accepted; nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "Cut the numbered rank list and the separate rank sentences, which the template paragraph now carries (Cut decision N4/0), and the five round 2 ideas, which the three merged ideas carry (Cut decision N6/0)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "Word cuts: no filler left; the template and the person words stay as given."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "Articles and that kept throughout."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "docs/product-vision.md read to its end as a developer: the rank still names which key results lead, the bad line and the same results for their own code still show in the Concept."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "Roles come before the objectives that name them; the key results before the rank that names them; the one way names invoice lines before the ideas use them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "Goodhart law is named in its sentence with what it says; nothing else depends on outside the document."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "Sentences start from the known: the rank starts with the key results the reader just read; each idea starts with the role or the command, then what is new."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "The one condition left, only if none before it gets worse, is the template wording and follows the rule it limits; kept."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "No exception to a rule in the document."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "docs/product-vision.md read to its end from the top; no place needed a look back or ahead."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "Roles, objectives with key results, and ideas are written one list item each; the rank is the template paragraph (Cut decision N4/0)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence of who passes what to whom; no sequence diagram."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "No structure of parts; no structure diagram, as the vision leaves the insides to the architecture."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "Each idea is one short sentence, as the template asks and the person worded it; the rank paragraph keeps the template sentences, as Cut decision N4/0 sets over the round 1 N5 more."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "Actors as subjects: the accounting team prints and sets the rate; the command names a bad line and calls the library; the library rounds tax."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "Pronouns: they in the ideas refers to the accounting team, its one noun close by; They show in the template refers to key results, the subject just before; which refers to the library next to it."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "No noun made from a verb left to turn back."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Objects sit next to their verbs throughout."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "docs/product-vision.md read to its end as a machine translator; each sentence reads one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "Words already the chosen ones: invoice lines, own code, the accounting team, the command, the library; nothing replaced."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No coined term to define."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "Abbreviations O and KR are spelled out by the heading Objectives and key results, where the reader first meets them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "The Concept states in full where the invoice lines come from and that the rate is set at each print and never saved per client."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "No other place states those facts, so no link needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "Each kept name written the same way each time: invoice lines, own code, the accounting team, the command, the library."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "docs/product-vision.md made: the rank is the template paragraph naming KR2.1, KR1.1 and KR3.1 first, with the template sentence on no targets and Goodhart law; the Concept holds the one way and the three merged ideas word for word; Roles and objectives unchanged."
     }
   ]
 }

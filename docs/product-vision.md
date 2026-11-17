@@ -27,19 +27,10 @@
   - KR3.2: the developer's time from starting the install to the command running for the
     accounting team. Lower is better.
 
-The key results rank in this order, first to last:
-
-1. KR2.1
-2. KR1.1
-3. KR3.1
-4. KR1.2
-5. KR2.2
-6. KR3.2
-
-The developers keep a change only if no key result ranked before the one it improves gets worse.
-Key results have no targets.
-A measure made a target stops being a good measure, by Goodhart's law.
-The key results show whether a change brought its objective closer.
+KR2.1, KR1.1 and KR3.1 come first: keep a change that improves a key result only if none before
+it gets worse.
+Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's
+law. They show whether a change brought its objective closer.
 
 ## Concept
 
@@ -47,18 +38,10 @@ invoicer turns invoice lines into an invoice whose totals are right without anyo
 math.
 
 - Invoice lines from the spreadsheet, for O1\
-  The accounting team works from the invoice lines they already keep in their spreadsheet, so
-  nothing is retyped.
+  The accounting team prints from the invoice lines they keep, and the command names any bad line
+  and what's wrong.
 - Tax rate set at each print and never saved per client, for O1\
-  The accounting team sets each invoice's tax rate as they print it, so each client pays their own
-  rate.
-- One rounding everywhere, for O2\
-  The tax is rounded to the cent the same way every time, both in the command and for developers
-  calling the library. The developers' own code keeps the totals it got before. The printed total
-  matches what's owed.
-- A print that goes wrong tells the accounting team what to fix, in their words, for O1\
-  When an invoice line can't be read, the command names that line and what's wrong with it. The
-  accounting team fixes the line and prints again without asking a developer.
-- The command adds to invoicer without changing it, for O2\
-  The command only calls the library the developers already use. Updating invoicer therefore
-  gives their own code the same results as before.
+  The accounting team sets the tax rate anew for each invoice they print, so each client gets
+  their own rate.
+- Same results for developers' own code, for O2\
+  The command only calls the library, which rounds tax to the cent the same way every time.
