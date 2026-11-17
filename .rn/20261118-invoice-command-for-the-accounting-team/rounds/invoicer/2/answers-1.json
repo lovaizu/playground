@@ -1,0 +1,38 @@
+{
+  "good": [
+    {
+      "question": "N4",
+      "lines": [
+        "# Needs only Python 3.9 or later, with no other package. Install the invoicer command with",
+        "# `pipx install <path or URL of this repository>`. Run the tests from this folder with",
+        "# `python3 -m unittest discover -s tests`.",
+        "requires-python = \">=3.9\"",
+        "        folder = tempfile.TemporaryDirectory()",
+        "        self.addCleanup(folder.cleanup)",
+        "        path = os.path.join(self.folder, \"lines.csv\")",
+        "        hasattr(os, \"geteuid\") and os.geteuid() == 0, \"root reads a file whatever its permissions\""
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "from invoicer.command import main",
+        "                main(list(argv))",
+        "            except SystemExit as stopped:",
+        "        with redirect_stdout(out), redirect_stderr(err):",
+        "from invoicer.lines import LineError, parse_lines",
+        "            [(line.description, line.price, line.quantity) for line in lines],"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N5",
+      "good_when": "Each limit that the help and the messages promise holds on both sides of zero, with a test of its own that says so: a credit line whose quantity is -1000000000, or whose amount reaches -1000000000, such as a refund of -600000000 twice, is refused naming its row, just as the same line on the positive side is, and a quantity typed in digits of another script, such as an Arabic-Indic three, is refused as not a whole number rather than read as 3. Whoever looks after the command then tells from a failing test's name which of these promises to the accounting colleague broke, and each test of reading the rows says which case of the command it backs, the file that holds no line among them."
+    },
+    {
+      "question": "N7",
+      "good_when": "Whatever the command does that the accounting colleague relies on, a test catches once it breaks: today the tests still pass when a negative amount past the limit is let through onto the invoice, when a quantity written in non-ASCII digits is quietly read as a number, when a rate typed as 19%% is taken as 19, and when the subtotal and total that the invoicer package offers beside the command give any sum at all, even one that differs from the totals the printed invoice shows. Once it's good, each of these either fails a test when broken or is gone, so that every number on the printed invoice and every refusal is one the tests hold."
+    }
+  ]
+}
