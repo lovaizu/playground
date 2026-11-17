@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "A script or program that already called invoicer 1.4.0's parse_lines with the lines saved from a spreadsheet gets the same lines from 1.5.0 for every row that 1.4.0 read, or is told beforehand, in the note of what changed in 1.5.0, that a row is now refused. Today 1.4.0 read a quantity written `+3` or `1_000` as 3 and 1000, and `0000000003` as 3. 1.5.0 refuses each of these rows with a LineError, even saying of `0000000003` that it must be a whole number between -1000000000 and 1000000000, which 3 is, while it still reads a price written `+12.50`. The `Changed in 1.5.0` note of parse_lines speaks only of quoted cells, empty descriptions, numbers such as 1e400, headings and rows of empty cells, so whoever upgrades finds out only when an invoice that printed before now fails."
+    }
+  ]
+}

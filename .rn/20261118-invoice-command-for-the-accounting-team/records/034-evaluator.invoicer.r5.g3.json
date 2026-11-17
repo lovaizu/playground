@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N1 of refactor-code: each caller, person, script or code, gets every behavior it got before a change of structure"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "N1 in more: parse_lines now refuses quantities +3, 1_000 and 0000000003 that 1.4.0 read, with no word in its Changed in 1.5.0 note"
     }
   ]
 }
