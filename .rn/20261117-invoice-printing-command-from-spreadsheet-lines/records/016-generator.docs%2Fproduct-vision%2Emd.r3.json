@@ -409,6 +409,11 @@
       "of": "generator",
       "step": 4,
       "gave": "docs/product-vision.md made: KR1.1 says without a developer help; the ranked after notes are gone; the ranking line names KR1.1 first within O1 and KR2.1 first within O2, followed by why O1 and O2 key results have no order between them."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy as a maintainer looking for the order: grep exit 0; the order appears only in the ranking line and the no-order line after it, with no ranked after note and no bare without help left."
     }
   ]
 }
