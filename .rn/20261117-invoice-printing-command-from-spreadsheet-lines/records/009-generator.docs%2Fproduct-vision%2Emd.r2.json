@@ -9,6 +9,221 @@
       "of": "generator",
       "step": 2,
       "gave": "Read product-vision best-practice.md with template.md, and refactor-doc best-practice.md, to their end before any change."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.1",
+      "gave": "The job, from Cut decision 0/0: invoicer gives the accountant a command that prints a client invoice from the invoice lines they keep in a spreadsheet, at that client tax rate."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.2",
+      "gave": "Roles named by job, from Cut decision 0/2: accountant, one who prints a client invoice; installer, one who sets up the command on each accountant machine."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.3",
+      "gave": "The installer is the someone else whose job the accountant job needs (Cut decision 0/1): a developer installs Python and invoicer on each accountant machine."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.4",
+      "gave": "No job left unclear: the Cut decides both roles and their jobs, so nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.5",
+      "gave": "No split: every accountant counts the printed correct invoice as the job done, every installer the command running."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.6",
+      "gave": "No merge: accountant and installer count different results as their job done."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N1.7",
+      "gave": "Two roles, so neither is named user."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.1",
+      "gave": "O1 and O2 taken as the Cut decides them (1/0, 1/1), each with its role as the subject."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.2",
+      "gave": "Each objective already names an end in the role work (a correct invoice sent to the client; a machine ready to print), not something invoicer does."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.3",
+      "gave": "Two distinct ends, so two objectives: an installer can finish a setup that no one yet prints with."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.1",
+      "gave": "Tasks from Cut decision 3/0: for O1 from the invoice lines and the rate to the printed invoice; for O2 from a machine without invoicer to the accountant running the command."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.2",
+      "gave": "KR1.1 and KR2.1 measure how well as the share that fails, from Cut decision 3/1."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.3",
+      "gave": "KR1.2 and KR2.2 measure how fast as the time of the task, the role own time included, from Cut decision 3/1."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.4",
+      "gave": "Each key result: Lower is better."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.5",
+      "gave": "Ranked within each objective, KR1.1 before KR1.2 and KR2.1 before KR2.2, as Cut decision 3/1 asks."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.6",
+      "gave": "No targets, with the plain reason that people who aim at a number improve the number in place of the users result."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.1",
+      "gave": "Pieces of work from Cut decision 4/0: the invoice command, the README part for the accountant, the README setup section. The repository holds no product yet to add from."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.2",
+      "gave": "The command and the README accountant part serve O1; the README setup section serves O2."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.3",
+      "gave": "O1 and O2 stay apart: the setup section serves O2 without O1, the accountant part O1 without O2."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.4",
+      "gave": "No piece names more than one objective, so none to split."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N5.5",
+      "gave": "Every piece serves an objective, so nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.1",
+      "gave": "The person already gave the one way and the ideas (Cut decisions 5/0 and 5/1, by user), so no question."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.2",
+      "gave": "The one way in one sentence as Cut decision 5/0 states it: the accountant gives the command the lines and the rate, and invoicer prints the finished invoice."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.3",
+      "gave": "Three ideas from Cut decision 5/1, each with what it gives toward O1 or O2: their spreadsheet as it is, nothing wrong prints, the rate given each time."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.4",
+      "gave": "Moments from Cut decision 5/2: the installer installs and sees the command run; the accountant gives the lines and the rate; the invoice prints, or a message says what to fix and the accountant runs it again."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.5",
+      "gave": "Each moment has an idea holding it: setup by the sheet as it is and the rate each time; giving lines and rate by the same two; the print or the fix by nothing wrong prints."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.6",
+      "gave": "No idea proposed beyond the person ideas, so none to ask about."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.7",
+      "gave": "All three ideas kept: taking any out leaves a moment unheld (a new format to learn, a wrong invoice printed, rates to set up)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.1",
+      "gave": "docs/product-vision.md read to its end. Roles says who invoicer serves; Objectives and key results says what each role achieves and how a change is judged; Concept says the one way and its ideas."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.2",
+      "gave": "Readers from the Cut name: the accounting team, who come to know what invoicer lets them do; invoicer maintainers, the developers, who come to judge a change and set up machines."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.3",
+      "gave": "Accountants know their spreadsheet, invoices and tax rates, and not OKR labels or developer words; maintainers know Python and commands, and come to learn what counts as better."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.4",
+      "gave": "The three template sections each hold one topic, which both readers read whole; no split."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.5",
+      "gave": "Each role, objective, key result and idea is its own list item with its label, which a reader finds and a link can name; no further headings, as the template sets the sections."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.1",
+      "gave": "Roles, key results and ideas are items in no order, so bulleted lists; the ranking states pairs in order, kept in one plain sentence; the no-targets reason is an argument, so prose."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.1",
+      "gave": "The readers own words, from the person words in the Cut: print, the finished invoice, the invoice lines, spreadsheet, tax rate, set up, install. No product documentation exists yet."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.2",
+      "gave": "Chosen: prints in place of returns and the print; set up in place of configure; objective and key result marked to define, with O and KR written out where first met."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.1",
+      "gave": "Facts stated twice: that the key results show whether a change brought its objective closer (the definition and the closing line); that invoicer takes the lines as kept (the one way and the first idea)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.2",
+      "gave": "The key results purpose stays in the first sentence of its section, where O and KR are defined; taking the lines as kept stays in the one way, and the first idea says only what it gives."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.3",
+      "gave": "No two places state a fact differently, so nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.1",
+      "gave": "Names grouped: `invoicer`, invoicer, the command for the product and what is run; accountant, the accounting team for who prints; the team machines, an accountant machine for where it runs."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.2",
+      "gave": "Kept, by Cut decision 0/3: `invoicer` for the product, `invoicer`s command for what is run, `accountant` for one who prints, the `accountant`s machine for where it runs; `installer` for the developer who sets it up."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.3",
+      "gave": "No name refers to two things once the kept names hold."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Each Cut decision taken as it stands; settled without asking: the opening line carrying the job, O and KR defined in the first line of their section, Goodhart named no more, the closing line on what key results show merged into that definition, role names in code format throughout. Nothing to ask."
     }
   ]
 }
