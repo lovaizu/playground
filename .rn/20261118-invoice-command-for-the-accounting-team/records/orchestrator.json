@@ -319,6 +319,21 @@
       "of": "orchestrator",
       "step": 5,
       "gave": "Started the six evaluators of invoicer round 3 the guard gave"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Read invoicer round 3: took in only total() dropping tax on a generator, a regression this branch made; left the rest; asked to set code N1, N2, N4-N8 good, N3 false"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked f5a48ad: what it prints takes a generator; code N1, N2, N4-N8 good, N3 false"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Started rn:generator for invoicer round 4 with the text the guard gave"
     }
   ]
 }
