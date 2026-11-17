@@ -1,0 +1,21 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N3",
+      "good_when": "A developer reading from the top knows which spreadsheet the accounting team keeps its invoice lines in before the Concept speaks of \"the spreadsheet\", so they understand the first concept item without guessing or looking elsewhere."
+    },
+    {
+      "question": "N4",
+      "good_when": "A developer sees at a glance the order in which the key results come, which one is first, which next, and where KR1.2, KR2.2, and KR3.2 stand, so they can tell which key result must not get worse when a change improves another."
+    },
+    {
+      "question": "N5",
+      "good_when": "A developer, or a machine translation of the page, reads each sentence one way: the sentence on which key result comes first says plainly whether the three are ranked or tied and what \"none before it\" means, the sentence on invoice lines from the spreadsheet tells one thing at a time, and \"They\" after the Goodhart's law sentence plainly means the key results."
+    },
+    {
+      "question": "N6",
+      "good_when": "A developer knows what one \"print task\" in KR1.1 counts, such as one invoice printed for one client or one run of the command, in words they and the accounting team already use, so they can measure KR1.1 the same way each time."
+    }
+  ]
+}
