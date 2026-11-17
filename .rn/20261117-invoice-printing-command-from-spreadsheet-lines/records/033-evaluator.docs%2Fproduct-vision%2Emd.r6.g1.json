@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read docs/product-vision.md as the accounting team and maintainers meet it: two roles (accountant, installer), O1 and O2 with two key results each, a ranking line, and a concept with three ideas."
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N4 (a how-well and a how-fast key result per objective, each with its better direction, ranked, no targets, countable from an E2E run) and N5 (objectives distinct so each piece of work serves one) with their reasons and practices."
     }
   ]
 }
