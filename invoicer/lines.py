@@ -21,14 +21,15 @@ _BETWEEN = f"between -{_LIMIT} and {_LIMIT}"
 
 
 class Line:
-    """One line of an invoice: what it's for, its price, and how many."""
+    """One line of an invoice: what it's for, its price, a Decimal or a whole number, and how
+    many."""
 
-    def __init__(self, description: str, price: Decimal, quantity: int = 1) -> None:
+    def __init__(self, description: str, price: Decimal | int, quantity: int = 1) -> None:
         self.description = description
         self.price = price
         self.quantity = quantity
 
-    def amount(self) -> Decimal:
+    def amount(self) -> Decimal | int:
         """The price times the quantity, unrounded."""
         return self.price * self.quantity
 

@@ -20,14 +20,19 @@ def main(argv: Sequence[str] | None = None) -> None:
     Gives: nothing; prints to standard output the invoice text that `invoicer.render` gives for
     the lines at the rate.
     Refuses: SystemExit with code 2, printing nothing to standard output, and to standard error
-    the usage and `invoicer: error: <what's wrong>`, where --rate is missing, isn't a percent
-    from 0 to 100, or lies between 0 and 1, with or without `%`, as it may be a fraction such as
-    0.19;
+    the usage and `invoicer: error: <what's wrong>`, where --rate is missing, is given more than
+    once, isn't a percent from 0 to 100, or lies between 0 and 1, with or without `%`, as it may
+    be a fraction such as 0.19;
     where LINES doesn't exist, is a folder, is a file that this user has no permission to read,
     isn't UTF-8 text, or holds no line; or where a row is wrong, with the row's number.
     """
     parser = _parser()
     arguments = parser.parse_args(argv)
+    if len(arguments.rate) > 1:
+        parser.error(
+            "argument --rate: the tax rate is given more than once; give it once, such as --rate 19"
+        )
+    rate = arguments.rate[0]
     path = arguments.lines
     try:
         # utf-8-sig drops the byte order mark that a spreadsheet's CSV UTF-8 starts with.
@@ -52,7 +57,7 @@ def main(argv: Sequence[str] | None = None) -> None:
         parser.error(f"{path}, {wrong}")
     if not lines:
         parser.error(f"{path}: holds no line; each row must be {ROW}")
-    print(render(lines, arguments.rate))
+    print(render(lines, rate))
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -70,6 +75,9 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--rate",
         required=True,
+        # Each --rate given is kept, so that main refuses a second one, where argparse would take
+        # the last and print the invoice at it with no word.
+        action="append",
         type=_rate,
         metavar="PERCENT",
         help="the client's tax rate in percent, such as 19 or 7.7",

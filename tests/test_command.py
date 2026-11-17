@@ -265,6 +265,18 @@ class CommandTest(unittest.TestCase):
         self.assertEqual((code, out), (2, ""))
         self.assertIn("not 'NaN'", err, "the refused rate is named")
 
+    def test_refuses_a_rate_given_twice(self):
+        # Given --rate 19 and then --rate 7, then the command prints no invoice at either rate,
+        # and asks for the rate once.
+        code, out, err = self.run_command(self.saved(LINES), "--rate", "19", "--rate", "7")
+
+        self.assertEqual((code, out), (2, ""))
+        self.assertIn(
+            "invoicer: error: argument --rate: the tax rate is given more than once; give it "
+            "once, such as --rate 19",
+            err,
+        )
+
     def test_refuses_a_run_without_a_rate(self):
         code, out, err = self.run_command(self.saved(LINES))
 

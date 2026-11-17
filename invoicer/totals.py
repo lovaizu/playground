@@ -1,5 +1,6 @@
 """The amounts that an invoice states, each to the cent: each line's, the subtotal, the tax, and
-the total, which the printed invoice and the package's callers both take from here."""
+the total, which the printed invoice and the package's callers both take from here. Each function
+takes lines whose price is a Decimal or a whole number, and gives a Decimal."""
 
 from __future__ import annotations
 

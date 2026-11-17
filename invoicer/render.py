@@ -8,7 +8,7 @@ from invoicer.totals import line_amount, subtotal, tax, total
 def render(lines, rate, currency="EUR"):
     """The invoice's text: a row for each line, then the subtotal, the tax, and the total, each
     amount as invoicer.totals states it, to the cent. The lines may be any iterable, a generator
-    included, which it reads once.
+    included, which it reads once, and a line's price a Decimal or a whole number.
 
     Changed in 1.5.0: 1.4.0 showed each amount with the decimals it had, such as `89.5` or
     `37.035`, and a subtotal of the unrounded amounts.

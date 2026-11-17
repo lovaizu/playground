@@ -59,6 +59,28 @@ class TotalsTest(unittest.TestCase):
             ],
         )
 
+    def test_render_prints_a_line_whose_price_is_a_whole_number(self):
+        # Supports test_prints_the_invoice_of_the_lines_at_the_rate_given. Given a line built with
+        # the price 50, as 1.4.0 took it, then 50 times 2 is printed as 100.00, and its tax at 19
+        # percent as 19.00.
+        printed = render([Line("Hosting", 50, 2)], RATE).splitlines()
+
+        self.assertEqual(
+            printed,
+            [
+                "Hosting".ljust(30) + "100.00".rjust(12) + " EUR",
+                "Subtotal".ljust(30) + "100.00".rjust(12) + " EUR",
+                "Tax".ljust(30) + "19.00".rjust(12) + " EUR",
+                "Total".ljust(30) + "119.00".rjust(12) + " EUR",
+            ],
+        )
+
+    def test_subtotal_of_a_line_whose_price_is_a_whole_number(self):
+        self.assertEqual(str(subtotal([Line("Hosting", 50, 2)])), "100.00")
+
+    def test_total_of_a_line_whose_price_is_a_whole_number(self):
+        self.assertEqual(str(total([Line("Hosting", 50, 2)], RATE)), "119.00")
+
     def test_render_prints_the_subtotal_and_total_that_the_package_gives(self):
         # Supports test_prints_a_subtotal_that_adds_up_the_amounts_as_printed.
         printed = render(HALF_CENTS, RATE).splitlines()

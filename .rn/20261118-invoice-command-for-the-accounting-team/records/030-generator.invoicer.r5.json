@@ -129,6 +129,346 @@
       "of": "refactor-code",
       "practice": "N8.4",
       "gave": "No new way chosen."
+    },
+    {
+      "of": "code",
+      "practice": "N1.5",
+      "gave": "Openings kept, each naming its decision; totals.py adds that each function takes a price that is a Decimal or a whole number and gives a Decimal."
+    },
+    {
+      "of": "code",
+      "practice": "N1.6",
+      "gave": "From the openings alone: a change of how an amount is rounded names tax.py; a change of what --rate takes names command.py; a new field of a line names lines.py; a new row of the invoice names render.py."
+    },
+    {
+      "of": "code",
+      "practice": "N2.2",
+      "gave": "Line takes price: Decimal | int and amount() gives Decimal | int; the older tax.py stays without hints, as the Cut leaves the type hints of the older modules out."
+    },
+    {
+      "of": "code",
+      "practice": "N2.3",
+      "gave": "Docstrings now say: Line and to_cent take a Decimal or a whole number; render and the totals take lines whose price is either; main refuses --rate given more than once."
+    },
+    {
+      "of": "code",
+      "practice": "N2.4",
+      "gave": "Checked each new test against its interface: the whole-number price and the refusal of a second --rate are both in the docstrings they call."
+    },
+    {
+      "of": "code",
+      "practice": "N3.2",
+      "gave": "Least code for each test: Decimal(amount) in to_cent for the three whole-number price tests; action append and one len check in main for the rate given twice."
+    },
+    {
+      "of": "code",
+      "practice": "N3.3",
+      "gave": "Ran the tests after the code: 70 tests pass."
+    },
+    {
+      "of": "code",
+      "practice": "N3.4",
+      "gave": "Read the changed bodies: no option, mode or branch that no case calls for."
+    },
+    {
+      "of": "code",
+      "practice": "N4.1",
+      "gave": "pyproject.toml unchanged: Python 3.9 or later, no other package, the test command in its head comment."
+    },
+    {
+      "of": "code",
+      "practice": "N4.2",
+      "gave": "The new command test saves its file in the temporary folder of its own setUp; the totals tests use no file."
+    },
+    {
+      "of": "code",
+      "practice": "N4.3",
+      "gave": "The tests run no real tool beyond Python."
+    },
+    {
+      "of": "code",
+      "practice": "N4.4",
+      "gave": "Ran the 70 tests in three shuffled orders, seeds 11, 22 and 33: each passes."
+    },
+    {
+      "of": "code",
+      "practice": "N4.5",
+      "gave": "In a throwaway copy with an empty home, pip install --target from the setup alone gave bin/invoicer, and the tests copied out of the repository passed against the installed package. A venv could not be made there, as ensurepip is missing on this machine."
+    },
+    {
+      "of": "code",
+      "practice": "N5.3",
+      "gave": "Wrote one test for each designed case, beside the cases they support: three in tests/test_totals.py, one in tests/test_command.py; no name needs and."
+    },
+    {
+      "of": "code",
+      "practice": "N5.4",
+      "gave": "Expected values from each Then: 50 times 2 is 100.00, 19 percent of it 19.00, the total 119.00; the refusal message as decided in step 3."
+    },
+    {
+      "of": "code",
+      "practice": "N5.5",
+      "gave": "Each new test keeps its line, price and rates in its own body; only the existing saved and run_command helpers are shared."
+    },
+    {
+      "of": "code",
+      "practice": "N5.6",
+      "gave": "No loop or branch in the new tests."
+    },
+    {
+      "of": "code",
+      "practice": "N5.7",
+      "gave": "The new tests compare whole values whose names and comments say what they check; no further failure message needed."
+    },
+    {
+      "of": "code",
+      "practice": "N5.8",
+      "gave": "Ran the four new tests before the code: the three whole-number price tests failed with AttributeError int has no quantize, and test_refuses_a_rate_given_twice with exit 0 and the invoice printed, each the reason its Then names."
+    },
+    {
+      "of": "code",
+      "practice": "N6.1",
+      "gave": "The new tests use the real modules and a file in their own temporary folder; no test double."
+    },
+    {
+      "of": "code",
+      "practice": "N6.2",
+      "gave": "The new tests call Line, render, subtotal and total from invoicer, and main from invoicer.command; nothing internal."
+    },
+    {
+      "of": "code",
+      "practice": "N6.3",
+      "gave": "Renamed the internal _rate to _percent_rate in a throwaway copy: all tests still pass."
+    },
+    {
+      "of": "code",
+      "practice": "N7.1",
+      "gave": "Each new test asserts the whole result: all printed rows, the full subtotal and total, and the exit code, the empty output and the whole message."
+    },
+    {
+      "of": "code",
+      "practice": "N7.2",
+      "gave": "coverage.py is not on this machine, so lines were measured by python3 -m trace: the only unrun line in the package is Line.__repr__, there before this round; every changed line runs."
+    },
+    {
+      "of": "code",
+      "practice": "N7.3",
+      "gave": "Line.__repr__ serves a caller reading a Line, a behavior of 1.4.0 that this round leaves as it was; no line of this round goes unrun."
+    },
+    {
+      "of": "code",
+      "practice": "N7.4",
+      "gave": "No Test strategy names an interface for property-based tests; none written."
+    },
+    {
+      "of": "code",
+      "practice": "N7.5",
+      "gave": "No property-based test, so no failing input to weigh."
+    },
+    {
+      "of": "code",
+      "practice": "N7.6",
+      "gave": "The round takes no CI report of mutation testing; no mutant to list."
+    },
+    {
+      "of": "code",
+      "practice": "N7.7",
+      "gave": "No mutant listed, so nothing to remove."
+    },
+    {
+      "of": "code",
+      "practice": "N7.8",
+      "gave": "No mutant listed, so none to mark."
+    },
+    {
+      "of": "code",
+      "practice": "N7.9",
+      "gave": "No mutant listed, so no test to tighten."
+    },
+    {
+      "of": "code",
+      "practice": "N8.2",
+      "gave": "Every --rate is read through _rate into a fraction where it comes in; main then takes only a list of one rate on to the invoice."
+    },
+    {
+      "of": "code",
+      "practice": "N8.3",
+      "gave": "Two rates can not be read in one way, so the command refuses them instead of taking the last."
+    },
+    {
+      "of": "code",
+      "practice": "N8.4",
+      "gave": "No new catch; Decimal() of a whole number raises nothing to catch."
+    },
+    {
+      "of": "code",
+      "practice": "N8.5",
+      "gave": "The message names the program, the option, what is wrong and what it takes: invoicer: error: argument --rate: the tax rate is given more than once; give it once, such as --rate 19."
+    },
+    {
+      "of": "code",
+      "practice": "N8.6",
+      "gave": "The check is an if that calls parser.error, so it runs under python -O too."
+    },
+    {
+      "of": "code",
+      "practice": "N8.7",
+      "gave": "Ran the installed invoicer with --rate 19 --rate 7 and with --rate=19 --rate=19: exit 2, no invoice, and the message alone says to give the rate once; --rate 0.19 --rate 7 names the fraction first, as each value is read where it comes in."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.4",
+      "gave": "Searched tests for to_cent, tax_of, Line and the --rate option: no test reached a whole-number price or a second --rate."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.5",
+      "gave": "Both were behaviors to change, not to pin, as the Cut decides them; their tests assert the decided behavior, the 1.4.0 one for a whole-number price."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.6",
+      "gave": "Small steps: to_cent first, then the --rate append with its check, then the docstrings, the tests run after each."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.7",
+      "gave": "No name renamed; no expected result of an existing test changed."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.8",
+      "gave": "The tests ran after each step: the 66 existing tests pass throughout, 70 with the new ones."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.9",
+      "gave": "Callers now get what 1.4.0 gave for a whole-number price: Line keeps the price as given, and render, subtotal, total and tax_of give Decimals to the cent. No other behavior looks wrong against the Cut."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.1",
+      "gave": "No function, class or constant added that nothing names."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.2",
+      "gave": "No function added that only passes the call on."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.3",
+      "gave": "No parameter added."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.4",
+      "gave": "The two comments added say what the code cannot: why Decimal() wraps the amount, and why --rate is appended."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N3.1",
+      "gave": "The new local rate, read in main, holds the one tax rate given."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N3.2",
+      "gave": "Its definition, arguments.rate[0] after the check, matches; arguments.rate now holds a list, read only in main, two lines from where it is set."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.5",
+      "gave": "No name differs from the word kept; nothing renamed."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.1",
+      "gave": "main: reads the rate and the lines from the command line and prints their invoice, refusing a wrong one. to_cent: rounds an amount half up to the cent. Each new test: one call and its whole result."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.2",
+      "gave": "No line stopped the reading."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.3",
+      "gave": "The sentences need no and that joins tasks a caller would want apart."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.4",
+      "gave": "Nothing outside each function was needed for its sentence."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.5",
+      "gave": "main keeps one level: each check is a step of reading the command line."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.6",
+      "gave": "No function with one caller and no name of its own added."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.1",
+      "gave": "Marked as looking roundabout: Decimal() of what may already be a Decimal, and action append on an option taken once."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.2",
+      "gave": "No name of a few words says either reason, so each has a comment."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.3",
+      "gave": "Comments from the Cut decisions: in to_cent, Decimal() reads a whole number exactly, as a line built with a price such as 50 gives one; on --rate, each is kept so that main refuses a second, where argparse would take the last."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.4",
+      "gave": "Every reason was found in the Cut; nothing left to ask."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.5",
+      "gave": "Docstrings corrected to what the code now does: Line, to_cent, render and the totals opening name a whole-number price; main names a rate given more than once."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.4",
+      "gave": "The reading of an amount for rounding is written once, in tax.to_cent, which line_amount and tax_of both call."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.5",
+      "gave": "No flag-picked branch added."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.6",
+      "gave": "No code uses another module internal name."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.7",
+      "gave": "No rule written in two languages by this round."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.5",
+      "gave": "The new refusal is written as the others in command.py, by parser.error with argument --rate:."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.6",
+      "gave": "No place keeps a different way."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "Made: tax.to_cent reads the amount by Decimal(), so render, subtotal, total and tax_of take a whole-number price; command.py keeps each --rate and refuses a second before reading the file; docstrings of Line, to_cent, render, totals and main say so; four tests added, 70 pass."
     }
   ]
 }
