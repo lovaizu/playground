@@ -1,0 +1,17 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "A maintainer asked to change how the invoice's subtotal or total is worked out reads the modules' first sentences and opens the one module where that is decided, and the change shows up on the printed invoice. Today the first sentences send them to totals.py, \"The totals of an invoice.\", but the invoice the command prints works out its own subtotal and total in render.py, rounding each line to the cent first. totals.py sums the unrounded amounts, so its totals can differ from the printed ones. The maintainer either changes the wrong module and nothing printed changes, or finds two places that disagree and can't tell which one is right."
+    },
+    {
+      "question": "N2",
+      "good_when": "A maintainer or caller who calls render, tax_of, to_cent, subtotal or total, all offered from the package, learns from the signature and doc comment alone what each one takes and gives. They see that the rate is a fraction such as 0.19, not the percent 19 the command takes. They see that lines are Line objects and amounts are Decimals. They know what each one does with an empty list. Today none of these names gives its types, and none says what form the rate takes, so a caller who passes 19 gets a tax nineteen times too large with no warning. They have to read the bodies, or command.py's _rate, to find out."
+    },
+    {
+      "question": "N3",
+      "good_when": "A maintainer carries only behaviors that a case of the specification asks for and a test checks. Today they also carry several that no case asks for and no test runs. These are totals.py's subtotal and total, which the command never uses and whose results differ from the printed totals. They also include the currency parameter of render, which no case sets to anything but EUR. They also include the default quantity of 1 on Line, which no row ever relies on, since every row must have three fields. They also include the package's re-export of names that only the modules use among themselves. So a maintainer can change or remove any behavior and trust the tests to say whether it still holds, with no code left that nothing checks."
+    }
+  ]
+}
