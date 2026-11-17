@@ -1,8 +1,8 @@
 {
   "record": ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/records/031-generator.docs%2Fproduct-vision%2Emd.r6.json",
-  "step": 4,
+  "step": 5,
   "work": [
     ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/records/031-generator.docs%2Fproduct-vision%2Emd.r6.json",
-    "docs/product-vision.md"
+    ".rn/20261117-invoice-printing-command-from-spreadsheet-lines/rounds/docs%2Fproduct-vision.md/6/try.jsonl"
   ]
 }

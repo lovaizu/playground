@@ -409,6 +409,11 @@
       "of": "generator",
       "step": 4,
       "gave": "docs/product-vision.md Concept rewritten: each idea line says what it gives the accountant toward a correct invoice and what it spares the installer; the client tax rate and the invoice line named the same throughout; the rate idea says the client tax rate differs from client to client."
+    },
+    {
+      "of": "generator",
+      "step": 5,
+      "gave": "Tried in a throwaway copy: cat docs/product-vision.md exit 0, reading as an accountant and a maintainer would; grep for template comments and placeholders finds none, exit 0. Nothing to mend."
     }
   ]
 }
