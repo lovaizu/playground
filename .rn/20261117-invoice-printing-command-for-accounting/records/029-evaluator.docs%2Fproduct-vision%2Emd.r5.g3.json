@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read docs/product-vision.md as developers would: roles, OKRs O1-O3, concept"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N1 (headings and first sentences say what each section gives) and N2 (only what readers need) with their reasons and practices"
     }
   ]
 }
