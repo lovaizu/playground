@@ -314,6 +314,11 @@
       "of": "orchestrator",
       "step": 5,
       "gave": "Checked round 3 Made: tests pass, 1.5.0, no pycache tracked, quoted cells, credit, heading message, totals agree; starting the evaluators the guard gives"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Started the six evaluators of invoicer round 3 the guard gave"
     }
   ]
 }
