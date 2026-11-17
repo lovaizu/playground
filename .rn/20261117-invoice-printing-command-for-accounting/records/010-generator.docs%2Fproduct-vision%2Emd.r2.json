@@ -224,6 +224,191 @@
       "of": "generator",
       "step": 3,
       "gave": "Took each Cut decision as it stands; settled by the best practices the O3 and KR3.1 rewording to the one install, KR1.2 starting at the print task without naming the spreadsheet, the ranking as a numbered list, and keeping five concept ideas; no point left open."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.4",
+      "gave": "With invoicer taken out, O1 billing each client what they owe, O2 their own code giving the same results, and O3 an install done once still read as ends, not features."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N3.1",
+      "gave": "Each sentence says what the roles do and see: the command naming a bad line, the command only calling the library and the same results after an update are what the developers and the accounting team see; none names a part inside invoicer."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.7",
+      "gave": "E2E records: KR1.1 each print task marked wrong invoice or developer helped; KR1.2 the times a print task starts and the invoice is printed; KR2.1 each library call result before and after an update; KR2.2 the edits in their own code after an update; KR3.1 whether the command runs for the accounting team after an install; KR3.2 the times an install starts and the command first runs."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.8",
+      "gave": "Choices decided by the concept: a bad invoice line stops the print with that line and what is wrong named, not a guessed total; a new option for the command goes only through the library calls developers use, never changing a result; the rate is asked at each print, not stored. Each idea decides its moment one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings Roles, Objectives and key results, Concept are reference headings named by the thing; kept."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "First lines under each heading give the section: each role, the first objective, and the one way of the concept."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read only the headings and first lines for a developer weighing a change: they lead to Objectives and key results for the ranking and to Concept for a choice; no rewrite needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Each sentence serves the developers weighing a change; marked the tax rate in the accounting team role and the spreadsheet in KR1.2, which the Concept states."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "The marked words have their place in the Concept of this same document; no other document needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "The Concept already states the source of the invoice lines and the rate at each print, so nothing moved."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "No marked sentence states a fact found nowhere else, and nothing goes outside docs/product-vision.md; nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "Cut at its tax rate and from their spreadsheet lines from the accounting team role, and from the spreadsheet from KR1.2."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "Word cuts: no filler words left; therefore kept as it carries the because."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "Articles and that kept throughout."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "docs/product-vision.md read to its end as a developer: the accounting team role still says who they are, and the Concept still gives the spreadsheet and the rate at each print."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "Roles come before the objectives that name them; the objectives before the key results and ranking; invoice lines named in the goal-like one way before the ideas use them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "Goodhart law is named in its sentence with what it says; nothing else depends on outside the document."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "Sentences start from the known: The key results rank in this order, then the list; The developers keep a change, then the condition."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "The one condition, When an invoice line cannot be read, comes before what the command does."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "No exception to a rule in the document."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "docs/product-vision.md read to its end from the top; no place needed a look back or ahead."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "The ranking written as a numbered list of the six key results, one item each."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence of who passes what to whom; no sequence diagram."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "No structure of parts; no structure diagram, as the vision leaves the insides to the architecture."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "Split the ranking passage into one point each: the order; the developers keep a change only if no key result ranked above the one it improves gets worse; no targets; Goodhart law; what the key results show. Split the rounding idea into the rounding, their own code, and the printed total."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "The developers are the subject of the keep rule. The passives nothing is retyped, is billed, is rounded, is owed are the person words in the concept they accepted as written, so they stay."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "Pronouns written out: They show became The key results show; fixes it became fixes the line; the command named after The command adds."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "No noun made from a verb left to turn back."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Objects sit next to their verbs throughout."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "docs/product-vision.md read to its end as a machine translator; the ranking sentences each read one way, and none at one point more."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "Replaced own programs with own code, spreadsheet lines and a line in the spreadsheet with invoice lines, the team with the accounting team."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No coined term to define."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "Abbreviations O and KR are spelled out by the heading Objectives and key results, where the reader first meets them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "The Concept states in full where the invoice lines come from and that the rate is set at each print and not saved per client."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "Roles and KR1.2 no longer state those facts, so they need no link; O3 and KR3.1 no longer state printing without a developer."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "Each kept name written the same way each time: invoice lines, their own code, the accounting team, the command, the library, update invoicer."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "docs/product-vision.md made: Roles say only who each role is; O3 and KR3.1 count only the one install; the rounding serves O2; all six key results ranked in a numbered list with the keep rule, no targets and Goodhart law as separate sentences; the Concept holds the invoice lines, the rate at each print, and the two new ideas as worded."
     }
   ]
 }
