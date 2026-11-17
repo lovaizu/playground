@@ -1,0 +1,24 @@
+{
+  "decisions": [
+    {"path": "deliverables/0/necessary_conditions/0/decisions/0", "where": "docs/product-vision.md, Roles: the accountant line, who prints a client's invoice at that client's tax rate with invoicer's command; and Concept, the one way."},
+    {"path": "deliverables/0/necessary_conditions/0/decisions/1", "where": "docs/product-vision.md, Roles: the installer line, installing Python and invoicer in place of the accountant."},
+    {"path": "deliverables/0/necessary_conditions/0/decisions/2", "where": "docs/product-vision.md, Roles: the two roles, `accountant` and `installer`."},
+    {"path": "deliverables/0/necessary_conditions/0/decisions/3", "where": "docs/product-vision.md, throughout: `invoicer`, `invoicer`'s command, `accountant`, and the `accountant`'s machine, each named one way."},
+    {"path": "deliverables/0/necessary_conditions/1/decisions/0", "where": "docs/product-vision.md, Objectives and key results: the O1 line."},
+    {"path": "deliverables/0/necessary_conditions/1/decisions/1", "where": "docs/product-vision.md, Objectives and key results: the O2 line."},
+    {"path": "deliverables/0/necessary_conditions/3/decisions/0", "where": "docs/product-vision.md, Objectives and key results: KR1.1 and KR1.2 measure O1's task from the spreadsheet to the printed invoice; KR2.1 and KR2.2 measure O2's task from a bare machine to the command running."},
+    {"path": "deliverables/0/necessary_conditions/3/decisions/1", "where": "docs/product-vision.md, Objectives and key results: the four key result lines, each with Lower is better and no rank note; KR1.1 says without a developer's help; the ranking line, Within O1, KR1.1 comes first, and within O2, KR2.1 comes first; the line after it, that the key results of O1 and O2 have no order between them, as each piece of work serves one objective; and the no-targets line with its plain reason."},
+    {"path": "deliverables/0/necessary_conditions/4/decisions/0", "where": "docs/product-vision.md, Objectives and key results: the line after the ranking line, that each piece of work serves one objective; the pieces themselves are the README's to carry."},
+    {"path": "deliverables/0/necessary_conditions/5/decisions/0", "where": "docs/product-vision.md, Concept: the first sentence, invoicer prints the finished invoice from the invoice lines as the accountant's spreadsheet holds them, plus the client's tax rate."},
+    {"path": "deliverables/0/necessary_conditions/5/decisions/1", "where": "docs/product-vision.md, Concept: the three ideas, The spreadsheet as it is, Nothing wrong prints, and The rate given each time."},
+    {"path": "deliverables/0/necessary_conditions/5/decisions/2", "where": "docs/product-vision.md, Concept: the ideas' lines, the installer has no format to set up and no rates (setup), the accountant gives the lines as they are and the rate each time they print (giving), and a message names what to fix where a line or the rate can't be read (the result)."}
+  ],
+  "more": [
+    {"best_practice": "refactor-doc", "condition": "N4", "where": "docs/product-vision.md, Objectives and key results: the ranking line gives the order within each objective, KR1.1 before KR1.2 and KR2.1 before KR2.2, and the line after it says the key results of O1 and O2 have no order between them, with the reason, so a maintainer reads the whole order there without piecing it together from rank notes, which are gone."},
+    {"best_practice": "refactor-doc", "condition": "N7", "where": "docs/product-vision.md, Objectives and key results: the order is stated in one place, the ranking line and the line after it, which answers that KR2.1 has no order against KR1.2; the ranked after notes on KR1.2 and KR2.2 are gone; KR1.1 now says without a developer's help, as O1 does."}
+  ],
+  "settled": [
+    {"point": "how the ranking line names the first key result of two objectives", "decided": "Within `O1`, `KR1.1` comes first, and within `O2`, `KR2.1` comes first: keep a change that improves a key result only if none before it gets worse.", "ground": "The key results decision states the order once, in the template's ranking line, within each objective. Naming the objective before each first key result keeps the template's fixed words, comes first and the rule after the colon, and replaces the earlier KR1.1 and KR2.1 comes first, which a reader could take as one order across both objectives (refactor-doc N5, N7)."},
+    {"point": "where the reason for no order across objectives goes", "decided": "On the line right after the ranking line: The key results of `O1` and `O2` have no order between them. Each piece of work serves one objective, so a change weighs only that objective's key results.", "ground": "The key results decision says the vision says so where it states the order; refactor-doc N3.5 puts an exception right after its rule, and N5.1 splits it into one point per sentence."}
+  ]
+}
