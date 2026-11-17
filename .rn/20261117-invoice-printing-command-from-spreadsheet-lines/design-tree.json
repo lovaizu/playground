@@ -18,7 +18,7 @@
           "decisions": [
             {
               "about": "the job",
-              "decided": "The product prints a client's invoice from the invoice lines the accounting team keeps in a spreadsheet, at that client's tax rate.",
+              "decided": "invoicer gives the accountant a command that prints a client's invoice from the invoice lines they keep in a spreadsheet, at that client's tax rate.",
               "by": "reasoning"
             },
             {
@@ -28,7 +28,7 @@
             },
             {
               "about": "the roles",
-              "decided": "Two roles: the accountant, one on the accounting team who prints a client's invoice; and the installer, a developer who sets the command up on the accounting team's machines.",
+              "decided": "Two roles: the accountant, one on the accounting team who prints a client's invoice; and the installer, a developer who sets the command up on the accountants' machines. The vision names each thing one way throughout: `invoicer` for the product, invoicer's command for what the accountant runs, `accountant` for one who prints, and the accountant's machine for where it runs.",
               "by": "user"
             }
           ]
@@ -65,7 +65,7 @@
             },
             {
               "about": "the key results",
-              "decided": "O1 KR1: the share of invoices the accountant couldn't print without help or that came out with a wrong total; lower is better. O1 KR2: the time from opening the spreadsheet to the printed invoice, the accountant's own time included; lower is better. O2 KR1: the share of setups after which the command doesn't run for the accountant; lower is better. O2 KR2: the installer's time from starting a setup to the command running; lower is better. KR1 ranks before KR2 in each; no targets.",
+              "decided": "O1 KR1: the share of invoices the accountant couldn't print without help or that came out with a wrong total; lower is better. O1 KR2: the time from opening the spreadsheet to the printed invoice, the accountant's own time included; lower is better. O2 KR1: the share of setups after which the command doesn't run for the accountant; lower is better. O2 KR2: the installer's time from starting a setup to the command running; lower is better. Within each objective KR1 ranks before KR2: KR1.1 before KR1.2, and KR2.1 before KR2.2. No targets, with the plain reason that aiming at a number improves the number in place of the users' result.",
               "by": "reasoning"
             }
           ]
@@ -87,12 +87,12 @@
           "decisions": [
             {
               "about": "the one way",
-              "decided": "The accountant gives the command the invoice lines as they already keep them in their spreadsheet, plus the client's tax rate, and gets the finished invoice back.",
+              "decided": "The accountant gives invoicer's command the invoice lines as they already keep them in their spreadsheet, plus the client's tax rate, and invoicer prints the finished invoice.",
               "by": "user"
             },
             {
               "about": "the ideas",
-              "decided": "Their sheet as it is: the command takes the lines as the accountant already keeps them, so there's no new format to learn. Nothing wrong prints: where a line or the rate can't be read, nothing prints, and the message says which line or value to fix. The rate is given each time an invoice is printed; no rate is remembered per client.",
+              "decided": "Their sheet as it is: the command takes the lines as the accountant already keeps them, so there's no new format to learn. Nothing wrong prints: where a line or the rate can't be read, nothing prints, and the message says which line or value to fix. The rate is given each time an invoice is printed; no rate is remembered per client. Each sentence of an idea states one point.",
               "by": "user"
             },
             {
