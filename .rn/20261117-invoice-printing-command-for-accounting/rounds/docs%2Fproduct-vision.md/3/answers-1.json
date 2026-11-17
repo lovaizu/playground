@@ -1,0 +1,19 @@
+{
+  "good": [
+    {
+      "question": "N5",
+      "lines": [
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "- O2: the developers' own code keeps giving the results it gave before.",
+        "- O3: a developer installs the command once, and the command runs for the accounting team from",
+        "  then on."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N4",
+      "good_when": "A developer whose change speeds up one role's task and slows down another's, such as a faster print for the accounting team but a longer install for a developer, can tell from the vision which of the two key results wins, so they know whether to keep the change. Today the vision ranks KR2.1, KR1.1 and KR3.1 first but says nothing of the order of KR1.2, KR2.2 and KR3.2 among themselves, so such a change is left undecided."
+    }
+  ]
+}
