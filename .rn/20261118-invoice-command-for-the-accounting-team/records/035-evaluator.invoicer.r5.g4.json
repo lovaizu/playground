@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read invoicer: its modules, pyproject.toml and tests, as its maintainers meet them"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N2 to N6 of refactor-code with their reasons and practices"
     }
   ]
 }
