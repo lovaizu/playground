@@ -1,0 +1,36 @@
+{
+  "good": [
+    {
+      "question": "N4",
+      "lines": [
+        "pyproject.toml: # Needs only Python 3.9 or later, with no other package. Install the invoicer command with",
+        "pyproject.toml: # `pipx install <path or URL of this repository>`. Run the tests from this folder with",
+        "pyproject.toml: # `python3 -m unittest discover -s tests`.",
+        "pyproject.toml: requires-python = \">=3.9\"",
+        "tests/test_command.py:         folder = tempfile.TemporaryDirectory()",
+        "tests/test_command.py:         self.addCleanup(folder.cleanup)",
+        "tests/test_command.py:         hasattr(os, \"geteuid\") and os.geteuid() == 0, \"root reads a file whatever its permissions\""
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "tests/test_command.py: from invoicer.command import main",
+        "tests/test_command.py:                 main(list(argv))",
+        "tests/test_lines.py: from invoicer.lines import LineError, parse_lines",
+        "tests/test_totals.py: from invoicer import Line, render, subtotal, total",
+        "tests/test_totals.py: from invoicer.totals import line_amount, tax"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N5",
+      "good_when": "A maintainer finds a test named for each end of each range that a row accepts, on the negative side as well as the positive: a credit line whose quantity or whose amount reaches -1000000000 is refused, and one just inside it is read. They also find a test named for each choice the package offers its callers, such as an invoice printed in a currency other than EUR, and a Line built without a quantity counting as one. When any of these breaks, the failing test's name says which case it was."
+    },
+    {
+      "question": "N7",
+      "good_when": "Breaking any behavior makes a test fail. Today none fails when a row whose quantity cell is left empty stops being refused and the command ends in a traceback; when a credit line whose amount is -1000000000 or below gets printed instead of refused; when render prints EUR whatever currency its caller asks for; when a Line built without a quantity counts as 0 instead of 1; or when a Line no longer shows its description, price and quantity."
+    }
+  ]
+}
