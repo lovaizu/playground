@@ -224,6 +224,191 @@
       "of": "generator",
       "step": 3,
       "gave": "Decided: two roles (accounting team; developer, who calls the library and installs the command once), three objectives O1 to O3 with two ranked key results each, lower is better, no targets, and the concept as decision 5/0 gives it with its three ideas. Every point settled by the decisions or the best practices; nothing to ask."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.4",
+      "gave": "Read O1 to O3 with invoicer taken out: each reads as an end a role reaches (a client billed what they owe, programs giving the invoices they gave before, invoices taking none of the developer time), none as a feature; no rewrite."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N3.1",
+      "gave": "Each sentence asked whether a change inside invoicer with the same result for the users would change it: none would; the rounding is stated as the cent the users see, not the rounding mode or number type in the code, and the rate as not saved per client, which the accounting team sees."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.7",
+      "gave": "Records of an E2E run: KR1.1 each print task a judge marks failed (no invoice, a total that differs from the lines at the set rate, or a developer called); KR1.2 the times at which the team takes the lines and holds the invoice; KR2.1 each existing library call whose result differs from its result before the change; KR2.2 the lines a developer edits in their own code after the update; KR3.1 each install followed by a call to a developer; KR3.2 the times the install starts and the command first runs for the team. Each shows in a run record; no rewrite."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.8",
+      "gave": "Choices no line names, decided by the way and its ideas: at setting the rate, the command takes no rate kept from an earlier print, as the rate idea says each invoice gets its own; at printing, the invoice shows its subtotal, tax, and total so no one redoes the math; at calling the library, a fix to the command never changes what an existing library call gives, as the rounding idea holds the same for both. Each decided one way; no idea rewritten."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings kept from the template (Roles, Objectives and key results, Concept): each is a reference heading that starts with the name of the thing a developer looks for."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "Added a first sentence under Roles (invoicer serves two kinds of people) and under Objectives and key results (each objective is one role end, measured how well and how fast); under Concept the one way comes first as the template asks, followed by a line that says the ideas below keep it holding."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read only headings and first sentences for the developer purposes (whom invoicer serves, how to judge a change, which way a choice leans): each purpose lands on its section and no other; no rewrite."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Each sentence asked which developer purpose needs it: all serve knowing whom invoicer serves, judging a change, or leaning a choice; none marked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "No sentence marked, so no other document sought."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "No sentence to move within the deliverable."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "No sentence to place outside the deliverable, so nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "No marked sentence to cut."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "Each kept sentence asked of each word: changed without Python tooling to without touching Python tooling so it says what the team does not do; no filler word found to cut."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "Articles, that, and the small structural words kept in every sentence."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "docs/product-vision.md read to its end as a developer for each purpose: each finds the roles, the objectives with their measures, and the way with its ideas; nothing a purpose needs is missing."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "The command was first named in the Developer role before it was introduced; the Accounting team role now introduces it as invoicer command, before any sentence that says the command."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "Nothing depends on a source outside the document; Goodhart law is named in the sentence that uses it, with what it says."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "Sentences start from the known role or thing (the accounting team, the developers, invoicer) and end with what is new (what they get, so what follows)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "No instruction carries a condition in this document; the ranking rule states its condition after the instruction as only if, which a reader of every key result needs."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "The one exception, the rate not saved per client, sits in the same sentence as the rule that the rate is set at each print."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "docs/product-vision.md read to its end from the top: the one look-ahead (the command) fixed by N3.1; no other place sends the reader back or ahead."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "Roles, objectives with their key results, and ideas written as list items, one item for each; the ranking and targets rules kept as prose."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence of who passes what to whom in the vision, so no sequence diagram."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "No structure of parts in the vision, which leaves the inside to the architecture, so no structure diagram."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "Each sentence counted: each makes one point; the role clauses are one clause each as the template asks, and each idea gives what it does and what it gives in one sentence joined by so."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "Actors as subjects with active verbs: the accounting team works, sets, bills; invoicer turns, rounds, does not save; a developer installs."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "Replaced They at the start of the last key-results sentence, which could point to targets or key results, with The key results."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "No noun made from a verb where the verb serves: install is used as a verb in O3; the install in KR3.1 and KR3.2 is the counted event, kept as a noun."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Each object stands next to its verb (prints each client invoice, sets the tax rate, rounds the tax)."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "docs/product-vision.md read to its end sentence by sentence as a machine translator: each reads one way; the They fixed by N5.3 was the only one that read two ways."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "Every word is the one chosen in N6.2, in its usual meaning; no replacement needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No term marked to define; the objective and key result names O1 and KR1.1 are explained by the first sentence of their section."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "No abbreviation besides O and KR, which the section heading Objectives and key results spells out where the reader first meets them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "The rounding and the rate stated in full in their Concept ideas; who installs stated in full in the Developer role."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "O2 states the end (programs give the invoices they gave before) and O3 the end (the invoices take none of the developer time), not the facts again, so no link is needed in a page this short."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "Kept names written the same throughout: accounting team, developer, invoice lines, tax rate, the command, invoicer in lowercase as its package name; KR<n>.1 put in code format as the template has it."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "Made docs/product-vision.md from the template: Roles (accounting team; developer, who calls the library and installs the command once), Objectives and key results (O1 to O3, two ranked key results each, lower is better, no targets), and Concept (the one way and three ideas as the person accepted them), then refactored by refactor-doc."
     }
   ]
 }
