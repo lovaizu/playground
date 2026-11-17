@@ -1,0 +1,36 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/0",
+      "where": "Roles, the Developer role: the people who call invoicer's library from their own code; Objectives and key results, O2 with KR2.1 and KR2.2: the developers' own code keeps giving the results it gave before."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/1",
+      "where": "Roles, the Developer role: they install the command once for the accounting team; Objectives and key results, O3 with KR3.1 and KR3.2; Concept: the install takes no idea."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/0",
+      "where": "Roles says only who each role is and the part of the job they come for; Concept, the ideas Invoice lines from the spreadsheet and Tax rate set at each print and never saved per client, alone say where the invoice lines come from and that the rate is set at each print; invoice lines and own code are the one names throughout."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/0",
+      "where": "Objectives and key results, the paragraph after the key results: KR2.1, KR1.1 and KR3.1 come first: keep a change that improves a key result only if none before it gets worse; then the template's sentence on no targets and Goodhart's law, as the template writes it."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/4/decisions/0",
+      "where": "Objectives and key results: O1 and KR1.1 alone count printing without a developer's help; O3 and KR3.1 count only the developer's one install; Concept, the idea Same results for developers' own code, for O2, holds the one rounding of tax."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/0",
+      "where": "Concept: the one way, invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the math, then the three ideas word for word: Invoice lines from the spreadsheet, for O1; Tax rate set at each print and never saved per client, for O1; Same results for developers' own code, for O2. No idea for the install."
+    }
+  ],
+  "more": [],
+  "settled": [
+    {
+      "point": "where the rank's later key results stand",
+      "decided": "The rank paragraph names only KR2.1, KR1.1 and KR3.1 as coming first; KR1.2, KR2.2 and KR3.2 follow in the order the document lists them, as the template's before reads them, and are not written out again.",
+      "ground": "Cut decision N4/0 takes the template's ranking paragraph, which names only the first key results, and the round 2 ground quotes the words to write as KR2.1, KR1.1 and KR3.1 come first, with the rest in the document's order; writing them out would go past the template again."
+    }
+  ]
+}
