@@ -1,0 +1,17 @@
+{
+  "good": [
+    {
+      "question": "N6",
+      "lines": [
+        "`invoicer` prints the finished invoice from the invoice lines as the `accountant`'s spreadsheet holds them, plus the client's tax rate.",
+        "- The spreadsheet as it is, for `O1` and `O2`\\",
+        "  Neither the `accountant` nor the `installer` has a new format to learn or set up.",
+        "- Nothing wrong prints, for `O1`\\",
+        "  Where `invoicer` can't read a line or the rate, it prints no invoice, only a message naming what to fix.",
+        "- The rate given each time, for `O1` and `O2`\\",
+        "  Each time the `accountant` prints an invoice, they give the client's tax rate, so the `installer` sets up no rates."
+      ]
+    }
+  ],
+  "more": []
+}
