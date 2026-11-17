@@ -1,0 +1,26 @@
+{
+  "good": [
+    {
+      "question": "N1",
+      "lines": [
+        "- `accountant`\\",
+        "  One on the accounting team who prints a client's invoice from their spreadsheet, at that client's tax rate.",
+        "- `installer`\\",
+        "  A developer who installs Python and invoicer on the accounting team's machines, so the team installs nothing."
+      ]
+    },
+    {
+      "question": "N2",
+      "lines": [
+        "- `O1`: the accountant sends each client a correct invoice at that client's tax rate without a developer's help.",
+        "- `O2`: the installer gets an accountant's machine ready to print invoices without anyone's further help."
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N3",
+      "good_when": "The maintainers can change what invoicer runs on, such as shipping it without Python, and every line of the vision still holds: the installer's role reads as getting invoicer running on the team's machines so the team installs nothing, not as installing a particular runtime."
+    }
+  ]
+}
