@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "N5 good; N4 more: the ranking leaves the how-fast key results unordered"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group answered; ending with done"
     }
   ]
 }
