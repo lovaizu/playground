@@ -1,0 +1,61 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/0",
+      "where": "Roles: the Developer item, the people who call invoicer's library from their own code; O2 and its key results, which keep the library behavior they rely on as it is."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/1",
+      "where": "Roles: the Developer item, who install the command once for the accounting team; O3 and its key results."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/1/decisions/0",
+      "where": "Objectives and key results: O2, \"after each update of invoicer, the developers get the same results from their own code as before the update, without editing their code\"; O3, \"the developers are left with a command they install once and never need to set up again\"; printing is named only under O1."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/0",
+      "where": "Roles says only who each role is and the part of the job they come for; the Concept alone says where the invoice lines come from and that the rate is set at each print; the names invoice lines and their own code throughout."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/0",
+      "where": "Objectives and key results: the ranking paragraph, \"KR2.1, KR1.1 and KR3.1 come first, then KR1.2, KR2.2 and KR3.2: keep a change that improves a key result only if none before it gets worse.\", and the template's sentence on no targets and Goodhart's law, as the template writes it."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/4/decisions/0",
+      "where": "Objectives and key results: printing without a developer under O1 alone (O1, KR1.1); O3 and KR3.1 and KR3.2 count only the developer's one install; Concept: the one rounding of tax under the idea for O2."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/0",
+      "where": "Concept: the one way sentence and its three ideas as the person worded them, two for O1 and one for O2; no idea for the install."
+    }
+  ],
+  "more": [
+    {
+      "best_practice": "product-vision",
+      "condition": "N2",
+      "where": "Objectives and key results: O2 now has the developers as subject and names what they get in their own work, the same results from their own code without editing it, in place of what their code does; O3 names what the developers are left with, a command they never need to set up again, in place of the install task."
+    },
+    {
+      "best_practice": "refactor-doc",
+      "condition": "N3",
+      "where": "Objectives and key results: O2 says \"as before the update\" right after \"after each update of invoicer\", so before means the results their own code gave before they updated invoicer."
+    }
+  ],
+  "settled": [
+    {
+      "point": "KR3.1 under the reworded O3",
+      "decided": "KR3.1 counts the share of installs that end without the command running for the accounting team, or after which a developer sets the command up again.",
+      "ground": "product-vision N4: the first key result measures the share of the role's tasks that fail to reach the objective's result. O3 now names a command the developers never need to set up again, so an install after which a developer sets it up again misses that result as well, and KR3.1 counts it."
+    },
+    {
+      "point": "the wording of the ranking paragraph",
+      "decided": "\"KR2.1, KR1.1 and KR3.1 come first, then KR1.2, KR2.2 and KR3.2: keep a change that improves a key result only if none before it gets worse.\"",
+      "ground": "The N4 decision names the first key results in the order KR2.1, KR1.1 and KR3.1, then KR1.2, KR2.2 and KR3.2, in the template's paragraph. The earlier line, \"KR2.1, KR1.1, KR3.1 comes first\", left out the second three and read as one key result; the new line names all six, with \"come\" for the plural (refactor-doc N5), and keeps the template's own words after the colon."
+    },
+    {
+      "point": "the name of the role in O2 and O3",
+      "decided": "O2 and O3 name the role \"the developers\", as O1 names \"the accounting team\"; key results that count one person's effort keep \"a developer\".",
+      "ground": "refactor-doc N8: one name for each thing, used the same way throughout. product-vision N2: each objective has its role as subject."
+    }
+  ]
+}
