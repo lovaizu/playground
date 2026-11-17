@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "N4 good: each objective has a failure-share and a time key result, directions given, well ranked before fast. N5 more: two concept ideas are marked as serving both O1 and O2, so a piece of work does not map to one objective."
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group answered, N4 in good and N5 in more; ending with done."
     }
   ]
 }
