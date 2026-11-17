@@ -1,7 +1,7 @@
 {
   "goal": {
     "decided": "The accounting team prints each client's invoice, at that client's tax rate, from the invoice lines they keep in a spreadsheet, without asking a developer.",
-    "by": "reasoning"
+    "by": "user"
   },
   "deliverables": [
     {
