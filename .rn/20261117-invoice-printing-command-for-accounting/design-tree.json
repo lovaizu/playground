@@ -25,12 +25,17 @@
               "about": "who installs the command for the accounting team",
               "decided": "A developer installs the command once for the accounting team, so installing belongs to the developer role; the accounting team never touches Python tooling, and the README tells them only how to run the command.",
               "by": "user"
+            },
+            {
+              "about": "one Developer role, kept as a departure",
+              "decided": "One Developer role covers both calling the library and installing the command, as the person chose, though the best practice prefers a role apart for each job.",
+              "by": "user"
             }
           ]
         },
         {
           "id": "N2",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "each objective with its role as subject",
@@ -47,6 +52,11 @@
               "about": "where each fact and name lives",
               "decided": "Roles says only who each role is and the part of the job they come for; the Concept alone says where the invoice lines come from and that the rate is set at each print; one name for each thing: invoice lines, and their own code.",
               "by": "reasoning"
+            },
+            {
+              "about": "the command line in the concept, kept as a departure",
+              "decided": "The concept keeps 'the command only calls the library', the person's words, though it names how invoicer works inside.",
+              "by": "user"
             }
           ]
         },
@@ -58,6 +68,16 @@
               "about": "the ranking of the key results",
               "decided": "The template's ranking paragraph, naming the first key results in the order KR2.1, KR1.1 and KR3.1 come first, then KR1.2, KR2.2 and KR3.2 in the order the document lists them; the template's sentence on no targets and Goodhart's law stays as the template writes it.",
               "by": "reasoning"
+            },
+            {
+              "about": "KR1.1 wording",
+              "decided": "KR1.1: the share of printed invoices that are wrong or needed a developer's help. Lower is better.",
+              "by": "user"
+            },
+            {
+              "about": "the ranking line, kept as a departure",
+              "decided": "The ranking stays the template's line, which doesn't rank KR1.2, KR2.2 and KR3.2 among themselves, as the person accepts.",
+              "by": "user"
             }
           ]
         },
@@ -79,6 +99,11 @@
             {
               "about": "the concept: the one way and its ideas",
               "decided": "The one way: invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the math. Its three ideas: invoice lines from the spreadsheet, for O1: the accounting team prints from the invoice lines they keep, and the command names any bad line and what's wrong; tax rate set at each print and never saved per client, for O1: the accounting team sets the tax rate anew for each invoice they print, so each client gets their own rate; same results for developers' own code, for O2: the command only calls the library, which rounds tax to the cent the same way every time. The install takes no idea.",
+              "by": "user"
+            },
+            {
+              "about": "no idea for the install, kept as a departure",
+              "decided": "The concept holds no idea for the install, as the person chose.",
               "by": "user"
             }
           ]
