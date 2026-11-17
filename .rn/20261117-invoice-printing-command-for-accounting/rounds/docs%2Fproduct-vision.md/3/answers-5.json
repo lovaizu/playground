@@ -1,0 +1,31 @@
+{
+  "good": [
+    {
+      "question": "N7",
+      "lines": [
+        "  The people who print each client's invoice with invoicer's command.",
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it",
+        "- Invoice lines from the spreadsheet, for O1\\",
+        "- Tax rate set at each print and never saved per client, for O1\\",
+        "  The accounting team sets the tax rate anew for each invoice they print, so each client gets",
+        "- Same results for developers' own code, for O2\\",
+        "  The command only calls the library, which rounds tax to the cent the same way every time."
+      ]
+    },
+    {
+      "question": "N8",
+      "lines": [
+        "- Accounting team\\",
+        "- Developer\\",
+        "  The people who call invoicer's library from their own code, and install the command once for the",
+        "- O2: the developers' own code keeps giving the results it gave before.",
+        "  - KR2.1: the share of library calls in the developers' own code that give a different result",
+        "- O3: a developer installs the command once, and the command runs for the accounting team from",
+        "  The accounting team prints from the invoice lines they keep, and the command names any bad line",
+        "  The accounting team sets the tax rate anew for each invoice they print, so each client gets"
+      ]
+    }
+  ],
+  "more": []
+}
