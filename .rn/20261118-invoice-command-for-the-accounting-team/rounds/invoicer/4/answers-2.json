@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N8",
+      "good_when": "A colleague from accounting who gives the command something it can't be sure of gets no invoice, only a message that tells them what to change, every time. Today three slips still get through or leave them guessing. If they type the rate twice, as in `invoicer lines.csv --rate 19 --rate 7`, the command quietly prints the invoice at 7% and says nothing about the 19 they also gave. If one row has a stray opening quotation mark, as in `\"Big monitor;300.00;1`, they're told `row 2: a row must be <description>;<price>;<quantity>, three fields, not 1: 'Big monitor;300.00;1\\nHosting;10.50;1\\n...'`. They look at row 2, see three fields, and can't tell that a quotation mark with no closing mark has swallowed every row after it. A good message would name that mark in row 2 and say it's never closed. If a description starts with quoted words, as in `\"Big\" monitor;300.00;1`, the quotation marks they typed silently disappear from the printed invoice, which shows `Big monitor`. They should either see the description as they typed it or be told how to write it so it prints that way. Everything else they might get wrong is already refused before anything is printed, with a message they can fix it from: a missing or fraction-like rate, a rate with a comma, a missing or unreadable file, a folder, a file that isn't UTF-8, a heading row, a comma-separated row, an empty description, a price with a comma or a euro sign, and a quantity that isn't a whole number."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N7",
+      "good_when": "A maintainer who changes one rule of the invoice changes it in one place and every behavior follows. Today three rules live twice. The bound on a line's size: changing `_LIMIT = Decimal(1_000_000_000)` in invoicer/lines.py moves the bound on the price and the amount, and the messages that say `between -<limit> and <limit>`, but not the bound on the quantity, which stays in the nine of `_WHOLE = re.compile(r\"-?[0-9]{1,9}\")`, so the command would refuse a quantity that its own message allows. The tax rule: the tax is the subtotal's tax to the cent in `tax()` (`return tax_of(subtotal(lines), rate)`), and `total()` states that rule again (`return stated + tax_of(stated, rate)`) instead of taking the tax from `tax()`, so a maintainer who changes how the tax is worked out, such as per line, changes the Tax row and leaves a Total that no longer adds up to Subtotal plus Tax. Reading a number that someone typed: invoicer/lines.py has `_number`, a finite Decimal or None, while invoicer/command.py `_rate` writes the same Decimal / InvalidOperation / is_finite check again on its own, so a change in what counts as a typed number, such as a comma for the point, reaches the prices and not the rate, or the other way round."
+    },
+    {
+      "question": "N8",
+      "good_when": "A maintainer who learns how one module does a thing reads every module the same way, and each difference they meet tells them of a real one. Today they don't. Type hints: invoicer/lines.py, invoicer/totals.py and invoicer/command.py annotate each function and start with `from __future__ import annotations`, while invoicer/render.py (`def render(lines, rate, currency=\"EUR\"):`) and invoicer/tax.py (`def to_cent(amount):`, `def tax_of(amount, rate):`) annotate nothing, with nothing saying why, so the maintainer can't tell from render's signature whether `rate` is a fraction or a percent, as they can in totals.tax. Docstrings of what the package offers: `main` and `parse_lines` say what they take, give and refuse under Takes / Gives / Refuses, while `render`, `subtotal`, `tax` and `total` say it in running prose, so a maintainer looking for what render refuses has no place to look. Reaching the package: `subtotal`, `total` and `tax_of` come from `invoicer` itself, while `tax` and `line_amount`, of the same module, come only from invoicer.totals, as tests/test_totals.py shows by importing from both, with no word on why the two differ. Checking a typed number: the price is read through `_number`, the rate through its own try / except in `_rate`, two ways for one kind of thing with no reason beside the second."
+    }
+  ]
+}

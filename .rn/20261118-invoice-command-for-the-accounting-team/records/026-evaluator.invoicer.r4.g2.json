@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N8 in the code best practice: refuse a wrong input from outside before acting, with a message to fix it from, and its practices 1 to 7"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N8 in more: a repeated --rate silently takes the last, an unclosed quotation mark gets a three-fields message that hides it, and quoted words at a description start lose their marks"
     }
   ]
 }
