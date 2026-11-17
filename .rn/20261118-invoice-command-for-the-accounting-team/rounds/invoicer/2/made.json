@@ -22,7 +22,7 @@
     },
     {
       "path": "deliverables/0/necessary_conditions/7/decisions/0",
-      "where": "invoicer/command.py main catches IsADirectoryError (`<path>: is a folder; ...`) and PermissionError (`<path>: no permission to read it; ...`) through parser.error; _rate refuses a rate between 0 and 1 written without %, asking for the percent such as 19; invoicer/lines.py _price, _quantity and _line refuse a price, a quantity or an amount not between -1000000000 and 1000000000 (_LIMIT), naming the row, and _line already refuses a row of other than three fields; each exits 2 before anything is printed; tests/test_command.py test_refuses_a_folder_in_place_of_the_file, test_refuses_a_file_that_cannot_be_read, test_refuses_a_price_too_large_to_print, test_refuses_a_row_of_more_than_three_fields, test_refuses_a_rate_below_one_as_a_fraction; tests/test_lines.py test_refuses_a_row_of_four_fields_naming_it, test_refuses_a_price_too_large_to_print, test_refuses_a_price_at_the_limit, test_refuses_a_price_at_the_negative_limit, test_refuses_a_quantity_at_the_limit, test_refuses_an_amount_at_the_limit"
+      "where": "invoicer/command.py main catches IsADirectoryError (`<path>: is a folder; ...`) and PermissionError (`<path>: no permission to read it; ...`) through parser.error; _rate refuses every rate above 0 and below 1, with or without %, asking for the percent such as 19, while 0 and 0% print an invoice with no tax; invoicer/lines.py _price, _quantity and _line refuse a price, a quantity or an amount not between -1000000000 and 1000000000 (_LIMIT), naming the row, and _line already refuses a row of other than three fields; each exits 2 before anything is printed; tests/test_command.py test_refuses_a_folder_in_place_of_the_file, test_refuses_a_file_that_cannot_be_read, test_refuses_a_price_too_large_to_print, test_refuses_a_row_of_more_than_three_fields, test_refuses_a_rate_below_one_as_a_fraction, test_refuses_a_rate_below_one_written_with_a_percent_sign, test_takes_a_rate_of_zero, test_takes_a_rate_of_zero_written_with_a_percent_sign, test_takes_a_rate_of_one; tests/test_lines.py test_refuses_a_row_of_four_fields_naming_it, test_refuses_a_price_too_large_to_print, test_refuses_a_price_at_the_limit, test_refuses_a_price_at_the_negative_limit, test_refuses_a_quantity_at_the_limit, test_refuses_an_amount_at_the_limit"
     }
   ],
   "more": [
@@ -34,7 +34,7 @@
     {
       "best_practice": "code",
       "condition": "N8",
-      "where": "invoicer/command.py main (folder, no permission) and _rate (0.19 refused, asking for 19); invoicer/lines.py _price (1e400 refused by _LIMIT) and _line (more than three fields, refused before; now pinned by tests); tests/test_command.py test_refuses_a_folder_in_place_of_the_file, test_refuses_a_file_that_cannot_be_read, test_refuses_a_price_too_large_to_print, test_refuses_a_row_of_more_than_three_fields, test_refuses_a_rate_below_one_as_a_fraction"
+      "where": "invoicer/command.py main (folder, no permission) and _rate (0.19 and 0.5% refused, asking for the percent such as 19); invoicer/lines.py _price (1e400 refused by _LIMIT) and _line (more than three fields, refused before; now pinned by tests); tests/test_command.py test_refuses_a_folder_in_place_of_the_file, test_refuses_a_file_that_cannot_be_read, test_refuses_a_price_too_large_to_print, test_refuses_a_row_of_more_than_three_fields, test_refuses_a_rate_below_one_as_a_fraction"
     },
     {
       "best_practice": "refactor-code",
@@ -57,11 +57,6 @@
       "point": "how large a number a row may hold",
       "decided": "A price, a quantity and a line's amount (price times quantity) each between -1000000000 and 1000000000; past that the row is refused, naming it, such as `row 1: the price must be between -1000000000 and 1000000000, not '1e400'`",
       "ground": "The decision refuses a number too large to print; a billion is far beyond any line of the team's invoices, so a number past it is a mistyped cell, and below it every sum stays exact to the cent. The quantity's bound also stops a very long string of digits that int() can't read."
-    },
-    {
-      "point": "a rate between 0 and 1 written with %",
-      "decided": "Taken as a percent, such as `--rate 0.5%` for half a percent; without % it is refused, as `0.19` may be meant as 19%",
-      "ground": "The decision refuses a rate that could be meant as a fraction; with the % sign it can't be, so it reads one way and is taken (code N8.3). The refusal's message tells accounting to write 19 for 19%, or the rate with % where it really is below 1 percent."
     },
     {
       "point": "what a file without read permission says",

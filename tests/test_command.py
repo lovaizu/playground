@@ -156,16 +156,23 @@ class CommandTest(unittest.TestCase):
 
         self.assertEqual((code, out), (2, ""))
         self.assertIn(
-            "invoicer: error: argument --rate: the tax rate is a percent, such as 19 for 19%, "
-            "not the fraction '0.19'; write 0.19% for a rate below 1 percent",
+            "invoicer: error: argument --rate: the tax rate must be 0 or a percent from 1 to "
+            "100, as a rate between 0 and 1 may be meant as a fraction; write the percent, "
+            "such as 19 for 19%, not '0.19'",
             err,
         )
 
-    def test_takes_a_rate_below_one_written_with_a_percent_sign(self):
-        code, out, _ = self.run_command(self.saved(LINES), "--rate", "0.5%")
+    def test_refuses_a_rate_below_one_written_with_a_percent_sign(self):
+        code, out, err = self.run_command(self.saved(LINES), "--rate", "0.5%")
+
+        self.assertEqual((code, out), (2, ""))
+        self.assertIn("not '0.5%'", err, "the refused rate is named")
+
+    def test_takes_a_rate_of_zero_written_with_a_percent_sign(self):
+        code, out, _ = self.run_command(self.saved(LINES), "--rate", "0%")
 
         self.assertEqual(code, 0)
-        self.assertIn(row("Tax", "1.05"), out.splitlines(), "210.50 at 0.5% is 1.0525")
+        self.assertEqual(out.splitlines()[-2:], [row("Tax", "0.00"), row("Total", "210.50")])
 
     def test_refuses_a_rate_above_a_hundred(self):
         code, out, err = self.run_command(self.saved(LINES), "--rate", "100.01")

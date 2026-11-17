@@ -259,6 +259,11 @@
       "of": "orchestrator",
       "step": 4,
       "gave": "Round 2 generator stopped at session end after step 7; resumed it with the person words on 0 percent"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Checked round 2 Made: 43 tests pass, cents and refusals hold; sent back as 0.5 percent with a sign is taken against the N8 decision the person confirmed"
     }
   ]
 }

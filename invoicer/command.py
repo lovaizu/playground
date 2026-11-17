@@ -16,13 +16,13 @@ def main(argv: Sequence[str] | None = None) -> None:
     Takes: the command line after `invoicer`, or the process's own where None. LINES is the path
     of a file saved from a spreadsheet as UTF-8 text, a byte order mark allowed, of one row for each
     line, `<description>;<price>;<quantity>`, as `invoicer.lines.parse_lines` reads it. PERCENT is
-    the tax rate in percent, 0 or from 1 to 100, with or without `%`, such as `19` or `7.7%`, and
-    with `%` only where it's between 0 and 1, such as `0.5%`.
+    the tax rate in percent, 0 or from 1 to 100, with or without `%`, such as `19` or `7.7%`.
     Gives: nothing; prints to standard output the invoice text that `invoicer.render` gives for
     the lines at the rate.
     Refuses: SystemExit with code 2, printing nothing to standard output, and to standard error
     the usage and `invoicer: error: <what's wrong>`, where --rate is missing, isn't a percent
-    from 0 to 100, or lies between 0 and 1 without `%`, as it may be a fraction such as 0.19;
+    from 0 to 100, or lies between 0 and 1, with or without `%`, as it may be a fraction such as
+    0.19;
     where LINES doesn't exist, is a folder, is a file that this user has no permission to read,
     isn't UTF-8 text, or holds no line; or where a row is wrong, with the row's number.
     """
@@ -78,10 +78,8 @@ def _parser() -> argparse.ArgumentParser:
 
 
 def _rate(percent: str) -> Decimal:
-    """The tax rate as the fraction that `invoicer.render` takes, of a percent from 0 to 100
-    written with or without `%`, and with `%` where it lies between 0 and 1; argparse names the
-    option in the refusal."""
-    written_as_percent = percent.endswith("%")
+    """The tax rate as the fraction that `invoicer.render` takes, of 0 or a percent from 1 to
+    100 written with or without `%`; argparse names the option in the refusal."""
     try:
         value = Decimal(percent.removesuffix("%"))
     except InvalidOperation:
@@ -91,9 +89,9 @@ def _rate(percent: str) -> Decimal:
             "the tax rate must be a percent from 0 to 100, written with a point, "
             f"such as 19 or 7.7, not {percent!r}"
         )
-    if 0 < value < 1 and not written_as_percent:
+    if 0 < value < 1:
         raise argparse.ArgumentTypeError(
-            f"the tax rate is a percent, such as 19 for 19%, not the fraction {percent!r}; "
-            f"write {percent}% for a rate below 1 percent"
+            "the tax rate must be 0 or a percent from 1 to 100, as a rate between 0 and 1 may "
+            f"be meant as a fraction; write the percent, such as 19 for 19%, not {percent!r}"
         )
     return value / 100

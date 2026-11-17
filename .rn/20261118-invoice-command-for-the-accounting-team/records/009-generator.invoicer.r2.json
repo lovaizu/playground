@@ -489,6 +489,11 @@
       "of": "generator",
       "step": 7,
       "gave": "Resumed: checked the person condition that a rate of 0 still prints an invoice with no tax; tests/test_command.py test_takes_a_rate_of_zero pins it (exit 0, Tax 0.00, Total equal to the subtotal) and passes; tried invoicer at --rate 19, 7.7 and 0 on a file with a credit line, each exit 0. Ending with done."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "Mended on review: _rate in invoicer/command.py now refuses every rate above 0 and below 1, with or without %, asking for the percent such as 19 for 19%; written_as_percent removed. Tests: test_refuses_a_rate_below_one_as_a_fraction message updated; test_refuses_a_rate_below_one_written_with_a_percent_sign pins 0.5% refused; test_takes_a_rate_of_zero_written_with_a_percent_sign added beside test_takes_a_rate_of_zero. Both changed tests failed first for their Then; 44 pass."
     }
   ],
   "kept": {
