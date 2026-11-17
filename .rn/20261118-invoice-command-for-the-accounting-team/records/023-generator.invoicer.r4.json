@@ -99,6 +99,521 @@
       "of": "generator",
       "step": 6,
       "gave": "Made written at .rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/4/made.json: where each of the nine decisions lands, the refactor-code N1 More kept made good in totals.total and its test, and two points settled (render takes a generator; total reckons the subtotal once)."
+    },
+    {
+      "of": "code",
+      "practice": "N1.2",
+      "gave": "Decision left to the code by the generator cases: how total and render read their lines once; total reckons the subtotal once, render lists the lines once. No other decision opens."
+    },
+    {
+      "of": "code",
+      "practice": "N1.3",
+      "gave": "Both decisions stay in the modules that hold them: reading the lines once for the sums in invoicer/totals.py, for the rows and sums of the text in invoicer/render.py; no module added."
+    },
+    {
+      "of": "code",
+      "practice": "N1.4",
+      "gave": "No variant called for: one way of reading lines, so no pattern to name."
+    },
+    {
+      "of": "code",
+      "practice": "N1.5",
+      "gave": "Module openings kept: totals.py says it decides the amounts an invoice states, render.py the layout of the invoice as text; both still hold."
+    },
+    {
+      "of": "code",
+      "practice": "N1.6",
+      "gave": "From first sentences alone: a change to how the total is reckoned names totals.py; a change to the columns names render.py; a new refusal of a row names lines.py; a new option names command.py. Each names one module."
+    },
+    {
+      "of": "code",
+      "practice": "N2.1",
+      "gave": "Offered names unchanged: subtotal, tax, total, line_amount of totals and render are called by other modules or tests; _row stays internal."
+    },
+    {
+      "of": "code",
+      "practice": "N2.2",
+      "gave": "subtotal, tax and total now take Iterable[Line] in place of Sequence[Line], as they read any iterable; render keeps its untyped signature of 1.4.0, which this round does not widen."
+    },
+    {
+      "of": "code",
+      "practice": "N2.4",
+      "gave": "Checked the four new tests against the docstrings: each passes a generator, which the docstrings now state, and asserts figures the docstrings say (subtotal of stated amounts, tax of it, total as their sum)."
+    },
+    {
+      "of": "code",
+      "practice": "N3.3",
+      "gave": "Ran the tests after each body change: 66 pass, none that passed before fails."
+    },
+    {
+      "of": "code",
+      "practice": "N3.4",
+      "gave": "Read totals.py and render.py after: no option, mode, parameter or branch added that no case calls for."
+    },
+    {
+      "of": "code",
+      "practice": "N4.1",
+      "gave": "pyproject.toml already gives the setup (Python 3.9 or later, no other package) and the test command; nothing added this round."
+    },
+    {
+      "of": "code",
+      "practice": "N4.2",
+      "gave": "The new tests build their lines in memory and touch no file, folder or setting."
+    },
+    {
+      "of": "code",
+      "practice": "N4.3",
+      "gave": "The tests run no real tool beyond Python itself, so there is nothing to turn off."
+    },
+    {
+      "of": "code",
+      "practice": "N4.5",
+      "gave": "In a throwaway copy with an empty HOME, installed the package by pip --target from the repository and ran the tests from outside the repository against it: OK."
+    },
+    {
+      "of": "code",
+      "practice": "N5.1",
+      "gave": "Cases designed before the code, each supporting test_prints_a_subtotal_that_adds_up_the_amounts_as_printed: Given a generator of lines, When subtotal, tax, total or render is called, Then it gives the figures of the same lines as a list (0.03, 0.01, 0.04; 23.80 for 20.00 at 19 percent)."
+    },
+    {
+      "of": "code",
+      "practice": "N5.2",
+      "gave": "Each new case supports a unit case the decision names (the package and the printed invoice give the same figures), so nothing to take back."
+    },
+    {
+      "of": "code",
+      "practice": "N5.4",
+      "gave": "Expected values taken from the cases: 0.03, 0.01, 0.04 as reckoned by hand for three lines of 0.005, and 23.80, 20.00 plus 19 percent, as 1.4.0 gave per the More."
+    },
+    {
+      "of": "code",
+      "practice": "N5.5",
+      "gave": "The values each new test turns on are in its own body; only the shared HALF_CENTS lines and RATE come from the module, as other tests share them."
+    },
+    {
+      "of": "code",
+      "practice": "N5.6",
+      "gave": "No loop or branch in the new tests; the generator expressions build the input, they assert nothing in a loop."
+    },
+    {
+      "of": "code",
+      "practice": "N5.7",
+      "gave": "Each new test name and its compared values say what is checked, so no message added."
+    },
+    {
+      "of": "code",
+      "practice": "N6.1",
+      "gave": "The new tests use the real Line and totals, which run fast in memory; no test double."
+    },
+    {
+      "of": "code",
+      "practice": "N6.2",
+      "gave": "The new tests call only subtotal, tax, total, render and Line, names the modules offer; no internal name or field."
+    },
+    {
+      "of": "code",
+      "practice": "N6.3",
+      "gave": "In a throwaway copy, renamed render.py internal _row to _invoice_row and ran the tests: 66 pass, so none rests on it."
+    },
+    {
+      "of": "code",
+      "practice": "N7.1",
+      "gave": "Each new test asserts the whole result: the full figure, or the last three printed rows in full."
+    },
+    {
+      "of": "code",
+      "practice": "N7.3",
+      "gave": "The trace run lists no unrun line in totals.py or render.py, so no line to remove or reach."
+    },
+    {
+      "of": "code",
+      "practice": "N7.4",
+      "gave": "No Test strategy exists for invoicer and none names an interface for property-based tests, so none written."
+    },
+    {
+      "of": "code",
+      "practice": "N7.5",
+      "gave": "No property-based test, so no failing input to weigh."
+    },
+    {
+      "of": "code",
+      "practice": "N7.6",
+      "gave": "The round takes no CI mutation report (the repository runs only lint in CI), so no surviving mutant to list."
+    },
+    {
+      "of": "code",
+      "practice": "N7.7",
+      "gave": "No mutant listed. By hand: undoing total to subtotal(lines)+tax(lines) fails test_total_of_a_generator_of_lines_adds_the_tax, and dropping list(lines) in render fails test_render_of_a_generator_of_lines_prints_their_subtotal_and_total, as the step-4 failing run showed."
+    },
+    {
+      "of": "code",
+      "practice": "N7.8",
+      "gave": "No mutant listed, so none to mark as changing nothing."
+    },
+    {
+      "of": "code",
+      "practice": "N7.9",
+      "gave": "No mutant listed, so no assertion to tighten."
+    },
+    {
+      "of": "code",
+      "practice": "N8.1",
+      "gave": "Inputs from outside: the LINES path and its text, read in command.main and lines.parse_lines, and --rate, read in command._rate. This round adds none; a generator from a calling program is checked by nothing new, as the lines are Line objects."
+    },
+    {
+      "of": "code",
+      "practice": "N8.2",
+      "gave": "The file and rate are still read into Line and Decimal where they come in, before render; unchanged this round."
+    },
+    {
+      "of": "code",
+      "practice": "N8.3",
+      "gave": "A rate between 0 and 1 is still refused rather than guessed; unchanged this round."
+    },
+    {
+      "of": "code",
+      "practice": "N8.4",
+      "gave": "No catch added; command.main still catches each error by its type where it can say what to fix."
+    },
+    {
+      "of": "code",
+      "practice": "N8.5",
+      "gave": "No message added; the messages name invoicer, the file and row, and what is accepted, unchanged."
+    },
+    {
+      "of": "code",
+      "practice": "N8.6",
+      "gave": "No assert used; every check is an if that raises."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.2",
+      "gave": "pyproject.toml gives the command, so no search for a runner was needed; the tests import unittest."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.4",
+      "gave": "Searched the tests for total and render before the change: every call passed a list; reading a generator was reached by no test."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.5",
+      "gave": "Pinned subtotal and tax of a generator, which pass as they stand (0.03, 0.01); total and render of a generator are the behaviors the decision changes, so their tests assert the decided figures, not the wrong ones they gave."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.6",
+      "gave": "Two small steps, each followed by a test run: total reckons the subtotal once; then render lists its lines once."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.7",
+      "gave": "No name renamed, so no test call changed and no expectation touched."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.9",
+      "gave": "The only behavior that looked wrong, total and render quietly dropping the tax for a generator, is the one the Cut decides to change; no other found to ask about."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.1",
+      "gave": "Searched the names in totals.py and render.py: each of line_amount, subtotal, tax, total, render and _row is named beyond its definition; totals.tax stays, as total no longer calls it but render and the tests do."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.2",
+      "gave": "tax only passes on to tax_of of the subtotal, but render and the tests call it as what totals offers, so it stays."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.3",
+      "gave": "No parameter added; render keeps currency, as render is offered by the package to callers outside the repository."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N2.4",
+      "gave": "The one comment added, over lines = list(lines) in render, says why the code reads the lines into a list, which the code cannot say."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N3.1",
+      "gave": "Read the new local name stated in total, where it is used: the subtotal as the invoice states it."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N3.2",
+      "gave": "stated holds subtotal(lines), the stated subtotal, as its use reads; within three lines, so kept."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.1",
+      "gave": "Things this round touches: the lines (lines everywhere), the subtotal, the tax, the total; each has one name."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.2",
+      "gave": "The Cut uses line, subtotal, tax and total, as the code does."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.3",
+      "gave": "No thing has two names, so none merged."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.4",
+      "gave": "No name refers to two things; tax the function and tax_of stay apart, one of lines and one of an amount."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.5",
+      "gave": "No rename needed."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.1",
+      "gave": "total: adds to the stated subtotal its tax. render: lays out a row for each line and the three sums. Each new test: checks one figure for a generator."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.2",
+      "gave": "No line stopped the reading."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.3",
+      "gave": "No sentence joins two tasks a caller could want apart."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.4",
+      "gave": "Each sentence came from the function itself and the names it calls, which say what they give."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.5",
+      "gave": "total and render each stay at one level, calls to the totals and to _row."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N5.6",
+      "gave": "No function added, so none to fold back."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.1",
+      "gave": "Marked list(lines) in render as looking more than it needs, a copy of a list that nothing changes when given a list."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.2",
+      "gave": "No name of a few words says why render copies its lines as well as the comment does, so not extracted."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.4",
+      "gave": "Each odd line has its reason from the Cut, so nothing to ask."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N6.5",
+      "gave": "Docstrings of subtotal, tax, total and render read against their code: each says the lines may be any iterable, read once, which the code now does."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.2",
+      "gave": "The sum of stated amounts is written once in subtotal; total and tax both reach it through subtotal, and render through the three."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.3",
+      "gave": "The reckoning of the sums is kept by invoicer/totals.py, whose opening says it decides the amounts an invoice states."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.4",
+      "gave": "total uses tax_of from tax.py, as tax does, so the tax rule stays written once."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.5",
+      "gave": "No shared function takes a flag that picks a branch."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.6",
+      "gave": "No module uses a name another keeps to itself."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.7",
+      "gave": "Every place reads the one definition in Python; no other language holds the rule."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.1",
+      "gave": "Kinds of thing this round touches: typing a parameter of lines, and reading lines."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.2",
+      "gave": "Lines were typed Sequence[Line] in totals.py and untyped in render.py; read by a for loop in both."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.3",
+      "gave": "No style setting names a way; totals.py now types every lines parameter Iterable[Line], one way within the module."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.4",
+      "gave": "Iterable[Line] is a new way in the code, chosen as it removes the fault that Sequence[Line] stated a narrower contract than callers use, and put in every lines parameter of totals.py."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.5",
+      "gave": "subtotal, tax and total rewritten to Iterable[Line]."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.6",
+      "gave": "render keeps its untyped signature, as the older modules do (the type hints of the older modules stay in the round records as a More not taken in); no caller breaks."
+    },
+    {
+      "of": "generator",
+      "step": 7,
+      "gave": "Ending with done: Made written, every practice of code and refactor-code recorded, tests 66 pass."
+    },
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Second pass, as the first recorded its deciding practices after making. Read again the Cut, invoicer as it now stands (totals.py and render.py read their lines once, four generator tests), and the More kept. Its people: accounting colleagues running invoicer at the client rate, and the code and maintainers calling subtotal and total, after the printed figures."
+    },
+    {
+      "of": "generator",
+      "step": 2,
+      "gave": "Best practices code (with template) and refactor-code read to their end in this session before any change."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.1",
+      "gave": "Test command from pyproject.toml: python3 -m unittest discover -s tests."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.2",
+      "gave": "pyproject.toml gives the command, so no search for a runner; the tests import unittest."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.3",
+      "gave": "Ran it in a throwaway copy at the start of this pass: 66 tests, OK; none fails, so nothing to ask."
+    },
+    {
+      "of": "code",
+      "practice": "N1.1",
+      "gave": "Unit cases for the decision: Given a generator of lines, When subtotal, tax, total or render is called, Then it gives the figures of the same lines as a list; they stand as the four generator tests in tests/test_totals.py."
+    },
+    {
+      "of": "code",
+      "practice": "N1.2",
+      "gave": "Decision the cases leave to the code: how total and render read their lines once; decided that total reckons the subtotal once and adds tax_of of it, and render lists its lines once."
+    },
+    {
+      "of": "code",
+      "practice": "N1.3",
+      "gave": "Each decision stays in the module that holds it: the sums in invoicer/totals.py, the rows and sums of the text in invoicer/render.py; no module added."
+    },
+    {
+      "of": "code",
+      "practice": "N1.4",
+      "gave": "No variant called for: one way of reading lines, so no pattern to name."
+    },
+    {
+      "of": "code",
+      "practice": "N2.1",
+      "gave": "Offered names unchanged: subtotal, tax, total, line_amount and render are called by other modules or tests; _row stays internal."
+    },
+    {
+      "of": "code",
+      "practice": "N3.1",
+      "gave": "No option, mode or branch planned beyond the cases: total reckons once, render lists once."
+    },
+    {
+      "of": "code",
+      "practice": "N5.1",
+      "gave": "Cases, each supporting test_prints_a_subtotal_that_adds_up_the_amounts_as_printed: a generator of three 0.005 lines gives subtotal 0.03, tax 0.01, and render rows 0.03, 0.01, 0.04; a generator of one 20.00 line at 19 percent gives total 23.80."
+    },
+    {
+      "of": "code",
+      "practice": "N5.2",
+      "gave": "Each case supports a unit case the decision names, so nothing to take back."
+    },
+    {
+      "of": "code",
+      "practice": "N8.1",
+      "gave": "Inputs from outside: the LINES path and its text (command.main, lines.parse_lines) and --rate (command._rate); this round adds none."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.1",
+      "gave": "Things this round touches: the lines, the subtotal, the tax, the total; each has one name in the code."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.2",
+      "gave": "The Cut uses line, subtotal, tax and total, as the code does."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.3",
+      "gave": "No thing has two names."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.4",
+      "gave": "No name refers to two things; totals.tax of lines and tax.tax_of of an amount stay apart."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.1",
+      "gave": "Searched for the reckoning of the sums: subtotal in totals.py alone sums the stated amounts; tax_of in tax.py alone rounds the tax."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.2",
+      "gave": "total and tax both reach the sum through subtotal; a change of the sum changes one place."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.3",
+      "gave": "The sums are kept by invoicer/totals.py, whose opening says it decides the amounts an invoice states."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.1",
+      "gave": "Kinds of thing this round touches: typing a parameter of lines, and reading lines."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.2",
+      "gave": "totals.py types every lines parameter Iterable[Line]; render.py is untyped as the older modules; both read lines by a for loop."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.3",
+      "gave": "No style setting names a way; within totals.py one way, Iterable[Line]."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.4",
+      "gave": "Iterable[Line] in place of Sequence[Line] removes the fault that the hint stated a narrower contract than callers use; put in every lines parameter of totals.py."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Decided again: each decision of the Cut taken as it stands; settled that subtotal, tax, total and render read any iterable of lines once (total reckons the subtotal once; render lists once); nothing left open."
     }
   ]
 }
