@@ -339,6 +339,111 @@
       "of": "orchestrator",
       "step": 7,
       "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Sent round-1 decisions and five mores to the tree-keeper"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "No generator asks or lacks"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Read round 1: kept refactor-doc N3 N4 N5 N6 N8; dropped product-vision N3 N5 and the installer rename"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up: mores open"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "ad25c61 fell short on N9 and N6.1; sent the mending change back"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Held the round-2 generator start until the tree agrees, so its Cut is true"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "No new done"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "No point waits for the person"
+    },
+    {
+      "of": "orchestrator",
+      "step": 2,
+      "gave": "Tree-keeper wrote 43693a5; agrees; the they note is left to refactor-doc N5"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Started rn:generator round 2 for docs/product-vision.md with the guard text"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Generator making; nothing to check"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "No round ended"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Nothing to put up"
+    },
+    {
+      "of": "orchestrator",
+      "step": 7,
+      "gave": "Not the case: a run exists"
     }
   ]
 }
