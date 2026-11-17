@@ -9,6 +9,271 @@
       "of": "generator",
       "step": 2,
       "gave": "Read readme best-practice.md with template.md, and refactor-doc best-practice.md, to their end before any change."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.1",
+      "gave": "No product vision file; the Cut and the design tree name the role: a colleague from accounting who keeps an invoice lines in Excel and prints invoices for clients, and writes no Python; plus the developer of the one-time setup."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.2",
+      "gave": "The end they reach: print each client invoice at that client tax rate yourself, without asking a developer, from the goal."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.3",
+      "gave": "The one thing it gives, in accounting words: it prints the invoice of the rows you save from Excel, with subtotal, tax and total at the rate you type."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.4",
+      "gave": "Read pyproject.toml to its end: invoicer 1.5.0, requires-python >=3.9, script invoicer = invoicer.command:main, no license field."
+    },
+    {
+      "of": "readme",
+      "practice": "N1.5",
+      "gave": "The kind: a command that you type in PowerShell, the word accounting meets in the steps."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.1",
+      "gave": "Products of the kind, invoice generators from CSV such as invoice-generator CLIs and spreadsheet invoice templates, give a PDF or a page to print, a currency, the client name, an invoice number and date, and a tax rate per line."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.2",
+      "gave": "The benefit, a printed invoice, leads a reader to expect a paper or PDF invoice with their client details on it."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.3",
+      "gave": "The issue tracker of lovaizu/playground holds no wontfix request about invoicer; its issues are the goals of this work."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.4",
+      "gave": "In command.py and render.py: it prints text to the PowerShell window, no PDF; every amount in EUR, with no option to change it; no client name, number or date; one --rate for all lines. Each not met."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.5",
+      "gave": "Each of the four would turn a reader against it: a client billed in another currency, an invoice that needs number and date, a PDF, mixed tax rates. All four kept."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.6",
+      "gave": "No product vision; the person signed off invoicer as it stands, printing text in EUR at one rate with no client details, and the plan, so these are settled as the signed-off product, not asked; each goes in the Made settled for the person to sign off."
+    },
+    {
+      "of": "readme",
+      "practice": "N2.7",
+      "gave": "All four kept for Non-goals; none moves to a status."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.1",
+      "gave": "Version 1.5.0 in pyproject.toml, above 1.0."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.2",
+      "gave": "The use toward the goal, a run of invoicer on saved lines, is tried in step 5 by pipx install and runs at two rates; tests/test_command.py covers it, and the person signed invoicer off."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.3",
+      "gave": "The repository lovaizu/playground is public, not archived, and kept by the developers."
+    },
+    {
+      "of": "readme",
+      "practice": "N3.4",
+      "gave": "Ready: 1.5.0, the use works, kept up; the README has no status line."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.1",
+      "gave": "The repository holds no license file, and the GitHub API gives license null; by the Cut decision on N4 the person leaves the license out of this pull request."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.2",
+      "gave": "No SPDX identifier to name: the Cut decision says the README names no license."
+    },
+    {
+      "of": "readme",
+      "practice": "N4.3",
+      "gave": "No copied work of others in the repository: invoicer uses only the Python standard library."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.1",
+      "gave": "The use: a colleague from accounting prints one client invoice from rows saved in Excel, the goal."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.2",
+      "gave": "The task, per the Cut decision on N6: three rows, Design 100.00 x 2, Hosting 10.50 x 1, Discount -20.00 x 1, saved as lines.csv, printed at 19 and at 7.7 percent."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.3",
+      "gave": "How well: the invoice text as printed, its tax changing with the rate typed; how fast: the one command line typed, no Python."
+    },
+    {
+      "of": "readme",
+      "practice": "N6.4",
+      "gave": "The cut: the Excel rows, the Excel save steps, the command typed and the full invoice printed at each rate; nothing cut, as the command prints no progress lines."
+    },
+    {
+      "of": "readme",
+      "practice": "N7.1",
+      "gave": "No product vision; the one way, from the goal and the signed-off command: you type the client tax rate on each run, and it turns the saved rows into the invoice at that rate."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.1",
+      "gave": "The problem today, in accounting words: I have to ask a developer each time I need an invoice at a client rate."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.2",
+      "gave": "Doubts: are the totals right to the cent; what if I make a mistake in a row or the rate; will my Excel save the file the way it reads it."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.3",
+      "gave": "The issues of lovaizu/playground hold the goal texts of this work, which raise the same: a rate per client, no Python, no developer to ask; nothing new added."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.4",
+      "gave": "Kept three: totals to the cent, a mistake in a row or rate, Excel separators; the walkthrough settles the rate per client, so that one is not a heading of its own."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.5",
+      "gave": "Ideas that answer them, from the signed-off command: each amount rounded half up to the cent and the subtotal the sum of the printed amounts; a wrong row or rate refused with nothing printed and the row named; rows read as CSV with semicolons and a decimal point."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.6",
+      "gave": "None missing: each doubt has its part in the code."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.7",
+      "gave": "No idea that matters to the users is missing; nothing to ask."
+    },
+    {
+      "of": "readme",
+      "practice": "N8.8",
+      "gave": "No way to make it work is missing; no requirement handed back."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.1",
+      "gave": "From pyproject.toml: Python 3.9 or later, no other package; the install is pipx install of the repository, which is public, so its main.zip URL needs no Git; the script invoicer."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.2",
+      "gave": "On an empty Windows laptop: Python from python.org with its py launcher; pipx, installed by py -m pip; an internet connection; and signing in as the accounting colleague, as pipx installs the command for one Windows account."
+    },
+    {
+      "of": "readme",
+      "practice": "N9.3",
+      "gave": "Checks: whoami shows the colleague account; py --version shows Python 3.9 or later; and after the install, invoicer --help in a new PowerShell window prints its usage line."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.1",
+      "gave": "No docs folder or changelog; pyproject.toml names no URL; the repository lovaizu/playground has issues on."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.2",
+      "gave": "Kept: the issues, for the developers to report a fault or ask for a change; invoicer --help shows the options, given in Installation."
+    },
+    {
+      "of": "readme",
+      "practice": "N10.3",
+      "gave": "Help has a place, the issues; nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.1",
+      "gave": "Read README.md to its end: a two-line stub, a heading Playground and one sentence, for no reader of invoicer."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.2",
+      "gave": "Readers, from the Cut decision on N1: a colleague from accounting who wants an invoice printed at a client rate; the developer who sets invoicer up once on an accounting laptop and wants to see it work."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.3",
+      "gave": "Accounting knows Excel, Save As and client tax rates, and not PowerShell, CSV separators or Python; the developer knows Python and pipx, and not the accounting laptops."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.4",
+      "gave": "Sections by purpose: Requirements and Installation for the developer alone; Walkthrough for accounting, the everyday steps; How it works for both; the template sections hold one topic each."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.5",
+      "gave": "Each doubt that accounting looks for gets its own heading under How it works; the template sets the other headings."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.1",
+      "gave": "Forms: the install commands and the everyday steps as numbered steps and code blocks; Non-goals and Requirements as bulleted lists; the mechanism as an SVG figure; each doubt answer as prose."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.1",
+      "gave": "Words of the readers: Excel names File, Options, Advanced, Use system separators, Decimal separator, Save As and CSV UTF-8 (Comma delimited); Windows names Open in Terminal and PowerShell; the person writes tax rate, line, row, invoice."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.2",
+      "gave": "Chosen: row for an Excel row, line for a line of the invoice, tax rate, PowerShell; CSV written out as comma-separated values where first met; pipx kept for the developer, who knows it."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.1",
+      "gave": "Facts in more than one place: the form of a row, which --help and the walkthrough both show; the usage line, which --help prints."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.2",
+      "gave": "The form of a row is stated in full in the Walkthrough, where accounting looks for it; the options stay with invoicer --help, which Installation names as the sign."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.3",
+      "gave": "No two places state a fact differently; nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.1",
+      "gave": "Names in play: the file of rows as lines.csv; the command as invoicer; the rate as tax rate; Excel rows and invoice lines."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.2",
+      "gave": "One name each: lines.csv for the saved file, invoicer in code format for the command, tax rate for the rate."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.3",
+      "gave": "Row is kept for an Excel row, as the command messages say row 2; line is kept for a line of the invoice."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Took the six Cut decisions as they stand: no License section and no LICENSE file; the developer pipx setup on Windows with invoicer --help as the check; accounting everyday steps in Excel and PowerShell in the Walkthrough, with the decimal point set in Excel Options; a run at 19 and 7.7 percent. Settled: install from the public main.zip URL so no Git is needed; sign in as the colleague, as pipx installs for one account; Non-goals PDF, currency EUR only, no client details, one rate per invoice; help in the repository issues. No asks."
     }
   ]
 }
