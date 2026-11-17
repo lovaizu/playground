@@ -54,7 +54,8 @@
           "decisions": [
             {
               "about": "the concept: the one way and its ideas",
-              "decided": null
+              "decided": "The one way: invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the math. Its ideas: the accounting team works from the lines they already keep in their spreadsheet, so nothing is retyped; they set the tax rate for each invoice when they print it, and it is not saved per client, so each client is billed at their own rate; the tax is rounded to the cent the same way every time, both in the command and for developers calling the library, so the printed total matches what is owed.",
+              "by": "user"
             }
           ]
         }
