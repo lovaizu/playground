@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N8 in the code best practice: refuse a wrong outside input before acting, with a message that names the program, what is wrong, where, and what is accepted; catch only fixable errors by type; checks that survive python -O"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N8 in more: an unclosed quotation mark in the saved file ends in a traceback naming no row in a long file, and in a short one a message that hides the quote; every other wrong input ran is refused before printing, with a fixable message"
     }
   ]
 }

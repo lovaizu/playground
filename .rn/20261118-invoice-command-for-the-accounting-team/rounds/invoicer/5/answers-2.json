@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N8",
+      "good_when": "A colleague from accounting whose saved file has a cell with an opening quotation mark that never closes, such as `\"Travel, train;45.50;1` typed by hand or left by a copy and paste, is told by invoicer which row it starts on and that a quotation mark there is never closed, so they remove or close it and run the command again. As it stands, in a file of a few thousand rows that stray quotation mark stops the command with a Python traceback ending in `_csv.Error: field larger than field limit (131072)`, which names no row and says nothing they can fix. In a short file they get `row 1: a row must be <description>;<price>;<quantity>, three fields, not 1:` followed by the rest of the file without the quotation mark that caused it, so they can't see what to change. Every other wrong input I gave the command was refused before it printed anything, with a message that names invoicer, the file and row, what's wrong, and what it accepts, so those already stand: a missing, repeated, fractional, out-of-range or comma-written --rate; a missing file, a folder, an unreadable file, a file not in UTF-8 or saved as UTF-16; a heading row, Excel's `sep=;` row, a row of other than three fields, an empty description, a price with a comma, a thousands separator, a currency sign or 1e400, a quantity that isn't whole, and a file of blank rows only."
+    }
+  ]
+}
