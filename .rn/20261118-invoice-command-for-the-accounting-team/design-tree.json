@@ -49,7 +49,8 @@
           "decisions": [
             {
               "about": "how accounting gets the command with no Python on their side",
-              "decided": null
+              "decided": "A developer installs the command once on each accounting machine with `pipx install` from the repository, so the package's setup gives an installable command; after that, accounting types the command and never touches Python",
+              "by": "user"
             }
           ]
         },
@@ -97,8 +98,8 @@
           "decisions": [
             {
               "about": "the readers",
-              "decided": "Colleagues from accounting who keep an invoice's lines in a spreadsheet and write no Python",
-              "by": "reasoning"
+              "decided": "Colleagues from accounting who keep an invoice's lines in a spreadsheet and write no Python, for the everyday steps; and the developer who does the one-time setup on each accounting machine",
+              "by": "user"
             }
           ]
         },
@@ -143,7 +144,8 @@
           "decisions": [
             {
               "about": "install steps",
-              "decided": null
+              "decided": "The one-time `pipx install` setup, written for the developer who does it on each accounting machine, with how to see that the command works; then the everyday steps for accounting, with no Python in them",
+              "by": "user"
             }
           ]
         },
