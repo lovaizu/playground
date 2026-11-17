@@ -269,6 +269,36 @@
       "of": "orchestrator",
       "step": 5,
       "gave": "Round 2 resent: 0.5 percent now refused, 44 tests pass; started the six evaluators the guard gave. Found 8 pycache files committed in 314d881, to remove before the PR is ready"
+    },
+    {
+      "of": "orchestrator",
+      "step": 1,
+      "gave": "Reviewed the tree by round 2: the totals split and the package changes came back from round 1, decided again at their root"
+    },
+    {
+      "of": "orchestrator",
+      "step": 6,
+      "gave": "Read invoicer round 2: took in spreadsheet quoting, heading row and empty description refusals, totals in one place, version 1.5.0, no compiled files; left the maintainer-only mores"
+    },
+    {
+      "of": "design-tree",
+      "practice": "N11.3",
+      "gave": "Totals split and package behavior change came back from round 1; decided again: one reckoning of totals, version 1.5.0"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked 45afbf5; sent back: code N1, N4 to false, N8 split into a wrong line (reasoning) and a wrong rate (user), lost quoted-cells more merged; round 3 start waits on it"
+    },
+    {
+      "of": "orchestrator",
+      "step": 3,
+      "gave": "Checked 2dc11d0: code N1, N4 false; N8 split; merged more kept"
+    },
+    {
+      "of": "orchestrator",
+      "step": 4,
+      "gave": "Started rn:generator for invoicer round 3 with the text the guard gave"
     }
   ]
 }

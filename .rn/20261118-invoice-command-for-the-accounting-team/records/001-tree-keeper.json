@@ -724,6 +724,206 @@
       "of": "tree-keeper",
       "step": 4,
       "gave": "Ending with done: e086b0b; doing [] new, invoicer stays doing; refactor-code conditions left for the main conversation."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed after round 2 of invoicer: read the tree at e086b0b and tree.py round invoicer; round 2 holds each more named."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0, commit 45afbf5: five decisions written; of five mores sent, rounds/invoicer/2/more.json keeps four, as it keys a more by best practice and condition and the two code N8 mores collided; the one under the lines form is lost."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit 45afbf5 message holds the grounds of each decision with the person words word for word."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote 45afbf5: invoicer N3 lines form and what it prints, N4 version 1.5.0 and compiled files, N8 a wrong line or rate by user; doing []. One code N8 more (quoted cells, under the lines form) not kept, as tree.py kept only the last code N8 more."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/0 with its N3, N4 and N8, and deliverables/1 (README.md)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "Decisions agree with one another and README.md. Noted: code N4 stays good though two new decisions under it are not carried out yet (N8.4); code N1 stays good though its more is kept (N8.3); N8 by user holds the heading row and empty description that are by reasoning (N6.1)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "Lines form, what it prints and a wrong line or rate written over their old text."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done; none to cut to one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "invoicer stays doing, README.md open; tree.py write marked none new."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Ran tree.py round invoicer: round 2 with good code N4, N6 and refactor-code N5, mores for the rest."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Goods unchanged as the main conversation said: code N1 N2 N4 N6 true, N3 N5 N7 N8 false; noted code N1 has a more taken in."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Decisions changed under code N3, N4 and N8; N3 and N8 stay false; N4 stays true as sent, noted for the main conversation."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No deliverable is done; nothing to reopen."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked invoicer, its N3, N4, N8, and README.md: decisions agree; noted code N4 and N1 goods, N8 by, and the lost more."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: 45afbf5; doing []; one more lost to the key collision, left for the main conversation."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 1,
+      "gave": "Resumed to mend 45afbf5: read the tree at 45afbf5 and rounds.keep_more, which merges a more by its best practice and condition key, so the other three kept mores stay."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.4",
+      "gave": "Order unchanged: invoicer before README.md."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.5",
+      "gave": "tree.py write exit 0 from a mktemp -d folder, files checked first; commit 2dc11d0; more.json keeps four mores, the code N8 one now merged."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N4.6",
+      "gave": "Order holds; no research or meta deliverables."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N6.2",
+      "gave": "Commit 2dc11d0 message holds the grounds of each mend with the person words word for word."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 2,
+      "gave": "Wrote 2dc11d0: code N1 and N4 good false; N8 split into a wrong line (reasoning) and a wrong rate (user); merged code N8 more under N8 decisions/0; doing []."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.1",
+      "gave": "touched: deliverables/0 with its N8, and deliverables/1 (README.md)."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.2",
+      "gave": "All agree: a wrong line with N3 lines form and credit lines; a wrong rate with N3 tax rate; README.md N6 walkthrough at two rates and N9. No node names the old a wrong line or rate."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N9.3",
+      "gave": "Rewrote nothing, so no further pass."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.1",
+      "gave": "N8 decisions written over the old one, so they read as what holds now."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.2",
+      "gave": "No deliverable is done; none to cut to one line."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N10.3",
+      "gave": "No research deliverable in the tree."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.1",
+      "gave": "invoicer stays doing, README.md open; tree.py write marked none new."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.2",
+      "gave": "Round 2 already read; no new round since."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.3",
+      "gave": "Code N1 set false, as its more is kept for round 3; N2 and N6 stay good."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.4",
+      "gave": "Code N4 set false, as two decisions under it changed; N8 stays false after its split."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.5",
+      "gave": "No deliverable is done; nothing to reopen."
+    },
+    {
+      "of": "design-tree",
+      "practice": "N8.6",
+      "gave": "No specific deliverable in the tree."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 3,
+      "gave": "Checked invoicer, its N8, and README.md: all agree with the change."
+    },
+    {
+      "of": "tree-keeper",
+      "step": 4,
+      "gave": "Ending with done: 2dc11d0 mends the three points; doing []."
     }
   ],
   "kept": {

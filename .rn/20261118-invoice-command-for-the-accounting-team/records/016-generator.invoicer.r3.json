@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "of": "generator",
+      "step": 1,
+      "gave": "Read the Cut, invoicer as it stands (command.py, lines.py, render.py, totals.py, tax.py, __init__.py, pyproject.toml 1.4.0, both test files, no .gitignore, 8 compiled files committed under __pycache__), and the four Mores kept. The people: colleagues from accounting, who save an invoice's lines from their spreadsheet and run invoicer with the client's rate to print the invoice, and the maintainers who change the package and the code that calls it."
+    }
+  ]
+}
