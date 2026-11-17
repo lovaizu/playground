@@ -1,7 +1,8 @@
 {
   "record": ".rn/20261118-invoice-command-for-the-accounting-team/records/016-generator.invoicer.r3.json",
-  "step": 2,
+  "step": 3,
   "work": [
-    ".rn/20261118-invoice-command-for-the-accounting-team/records/016-generator.invoicer.r3.json"
+    ".rn/20261118-invoice-command-for-the-accounting-team/records/016-generator.invoicer.r3.json",
+    ".rn/20261118-invoice-command-for-the-accounting-team/rounds/invoicer/3/try.jsonl"
   ]
 }

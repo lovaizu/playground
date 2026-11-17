@@ -9,6 +9,136 @@
       "of": "generator",
       "step": 2,
       "gave": "Read code/best-practice.md with template.md, and refactor-code/best-practice.md, to their end."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.1",
+      "gave": "Took python3 -m unittest discover -s tests, the test command that pyproject.toml gives."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.3",
+      "gave": "Ran the tests before any change in a throwaway copy: 44 tests, OK."
+    },
+    {
+      "of": "code",
+      "practice": "N1.1",
+      "gave": "No architecture holds the part; the request and the Cut's decisions set it. The unit cases are the tests of tests/test_command.py, with new ones written first: test_prints_a_description_saved_in_quotes_as_typed, test_prints_a_description_holding_a_semicolon, test_refuses_a_heading_row_asking_to_leave_it_out, test_refuses_a_row_with_an_empty_description, test_skips_a_row_whose_cells_are_all_empty, and test_prints_the_subtotal_and_total_that_the_package_gives."
+    },
+    {
+      "of": "code",
+      "practice": "N1.2",
+      "gave": "Decisions left to the code: how a row is split into cells (the csv module with ; as the spreadsheet writes it), how a heading row is told from a wrong row (the first row that is not blank, with neither its price nor its quantity a number), whether a row of empty cells is blank (it is, as a spreadsheet saves an empty row as ;;), and where the stated amounts are reckoned (one module)."
+    },
+    {
+      "of": "code",
+      "practice": "N1.3",
+      "gave": "Each decision to one module: lines.py the form of a row and its refusals, tax.py the rounding to the cent, totals.py the amounts that the invoice states (each line to the cent, subtotal, tax, total), render.py only the layout of the text, command.py the command line. No new module."
+    },
+    {
+      "of": "code",
+      "practice": "N1.4",
+      "gave": "No decision has variants that a case calls for now, so no Adapter or other pattern."
+    },
+    {
+      "of": "code",
+      "practice": "N2.1",
+      "gave": "Offered names: lines ROW, Line, LineError, parse_lines; tax to_cent, tax_of; totals line_amount, subtotal, tax, total; render render; command main. Everything else keeps a leading underscore."
+    },
+    {
+      "of": "code",
+      "practice": "N3.1",
+      "gave": "Each planned branch named by its case: the csv reading by the quoted-cell cases, the heading branch by test_refuses_a_heading_row_asking_to_leave_it_out, the empty description by test_refuses_a_row_with_an_empty_description, skipping empty cells by test_skips_a_row_whose_cells_are_all_empty. No strict csv mode or catch of csv.Error, as no case reaches one."
+    },
+    {
+      "of": "code",
+      "practice": "N5.1",
+      "gave": "Cases inside the part, supporting the command cases: in test_lines.py test_reads_a_cell_saved_in_quotes_as_typed, test_reads_a_cell_holding_a_semicolon_saved_in_quotes, test_numbers_a_row_after_a_cell_holding_a_new_row, test_skips_a_row_of_empty_cells, test_refuses_a_heading_row_naming_it, test_refuses_a_wrong_price_on_the_first_row_as_a_price, test_refuses_an_empty_description_naming_the_row; in a new test_totals.py test_states_each_line_amount_to_the_cent, test_subtotal_adds_the_amounts_as_stated, test_total_is_the_subtotal_and_the_tax_as_stated."
+    },
+    {
+      "of": "code",
+      "practice": "N5.2",
+      "gave": "No case needed that supports no case of the part."
+    },
+    {
+      "of": "code",
+      "practice": "N8.1",
+      "gave": "Inputs from outside: the LINES path and the --rate text, first in command.main by argparse; the saved file, opened in command.main; its text, first read into lines by lines.parse_lines."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.1",
+      "gave": "Took python3 -m unittest discover -s tests, the test command that pyproject.toml gives."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.2",
+      "gave": "The manifest gives a command, so no search for a runner was needed; the tests use unittest."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.3",
+      "gave": "Ran the tests before any change in a throwaway copy: 44 tests, OK."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.1",
+      "gave": "Things and their names: a row (text, of the saved file) and a line (Line, of the invoice); a cell/field of a row; an amount (Line.amount, unrounded) and the amount the invoice states; the rate; the subtotal, tax and total."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.2",
+      "gave": "No architecture or README names these; the Cut says line, row, description, price, quantity, subtotal, tax, total, rate."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.3",
+      "gave": "Field and cell name one thing in a row; the messages say field, as the code does, so field is kept."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.4",
+      "gave": "amount named both the unrounded Line.amount and the stated one; the stated one becomes totals.line_amount, documented as to the cent, and Line.amount stays unrounded."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.1",
+      "gave": "Rules written in more than one place: the subtotal and total, in render.py and again in totals.py; the separator and ROW only in lines.py; rounding to the cent only in tax.py."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.2",
+      "gave": "The two subtotals must change together, as the Cut decides one figure for both, so they are one rule."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.3",
+      "gave": "totals.py keeps the subtotal and total, as its opening says it holds the totals; render.py imports them from there, and totals.py imports only tax.py, so no import cycle."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.1",
+      "gave": "Kinds done in many places: refusing a wrong input, reading a number, laying out a module docstring, laying out a test."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.2",
+      "gave": "Refusals: LineError in lines.py, argparse.ArgumentTypeError in command._rate, parser.error in command.main. Numbers: Decimal with InvalidOperation caught, in lines._price and command._rate. Tests: Given/When/Then comments, one assertion of the whole result."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.3",
+      "gave": "No style settings in pyproject.toml; each kind keeps the way the code uses: new refusals in lines.py raise LineError, a new number check reads Decimal as _price does."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.4",
+      "gave": "One new way: rows read by csv.reader in place of str.split, as split breaks a quoted cell, the fault the Cut names; it is the only place that splits a row."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Took each decision of the Cut as it stands. Settled without asking: rows read by the csv module with ; ; a row whose cells are all empty is blank; a heading is the first non-blank row with neither its price nor its quantity a number; the stated amounts live in totals.py (line_amount, subtotal, tax, total), which render uses; pyproject.toml says what 1.5.0 changes from 1.4.0. No point left for the person."
     }
   ]
 }
