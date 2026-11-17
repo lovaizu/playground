@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N8 in code best-practice.md with its reason and practices N8.1 to N8.7"
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N8 in more: empty description, quoted description, sub-cent price print without refusal; semicolon in description and heading row refused without saying what to change"
     }
   ]
 }

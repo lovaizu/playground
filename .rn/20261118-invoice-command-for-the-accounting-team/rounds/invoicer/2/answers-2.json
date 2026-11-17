@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N8",
+      "good_when": "The colleague from accounting never gets a printed invoice with something wrong on it that they didn't see coming, and whenever the command won't print one, its message alone tells them what to change in the spreadsheet. Today most of their mistakes are stopped with a clear message: no --rate, 0.19 or 19,0 or 150 as the rate, a missing file or a folder, a file not saved as CSV UTF-8, a comma as the decimal mark, 1,200.00, a euro sign, a row with two fields or a trailing semicolon, an empty file. But three rows that their spreadsheet saves as they stand still come out as a printed invoice that is wrong for the client: a line whose description cell they left empty prints as a line with no text, only an amount (';100.00;2' gives a blank line of 200.00 EUR); a description holding a quotation mark, which the spreadsheet saves inside quotes, prints with those quotes doubled and around it ('\"Consulting \"\"Phase 1\"\"\";100.00;2' prints '\"Consulting \"\"Phase 1\"\"\"'); and a price typed with more than two decimals, such as 37.035 or 1.005, is billed rounded to 37.04 or 1.01 without a word, so a mistyped price reaches the client. And where the command does stop, two messages leave them guessing what to change: a description holding a semicolon, which the spreadsheet saves quoted, is refused as 'three fields, not 4' though they typed three cells, without telling them that the semicolon in the description is what to take out; and a sheet saved with its heading row is refused as 'row 1: the price must be a number ... not 'Price'' without telling them that the heading row is what to leave out. It's good once each of these either prints the invoice they meant or stops with a message that names the row and tells them, in their spreadsheet's terms, what to change."
+    }
+  ]
+}

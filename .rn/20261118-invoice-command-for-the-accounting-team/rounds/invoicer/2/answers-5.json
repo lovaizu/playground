@@ -1,0 +1,13 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N7",
+      "good_when": "A maintainer who changes how an invoice's subtotal, tax or total is reckoned changes it in one place, and every way of getting the total, the printed invoice and what the package offers as `subtotal` and `total`, gives the same figures afterwards. Today the rule lives twice and the two copies disagree: invoicer/totals.py adds up the unrounded amounts (`amount = subtotal(lines)` / `return amount + tax_of(amount, rate)`), while invoicer/render.py adds up the amounts rounded to the cent (`amounts = [to_cent(line.amount()) for line in lines]` / `subtotal = sum(amounts, Decimal(0))`). For three lines of 0.005 at 19%, `invoicer.total` gives 0.015 while the printed invoice says Total 0.04, so a maintainer or a script that trusts `invoicer.total` gets a figure that isn't on the invoice. The same applies to the line-size limit: a maintainer who changes it in `_LIMIT` should not also have to find the number 1000000000 written out in the parse_lines docstring and the 9 in the `_WHOLE` pattern."
+    },
+    {
+      "question": "N8",
+      "good_when": "A maintainer who has learned one module of invoicer can read any other the same way: functions are annotated the same way throughout, so they can tell what each function takes and gives (a Decimal rate, a list of Line) without opening a caller, and every public function's docstring has the same layout. Today lines.py and command.py annotate every signature and use the Takes/Gives/Refuses form (`def parse_lines(text: str) -> list[Line]:`), while totals.py, tax.py and render.py have no annotations and one-line docstrings (`def total(lines, rate):`, `def tax_of(amount, rate):`, `def render(lines, rate, currency=\"EUR\"):`), and nothing says why they differ. A difference the maintainer does see should mean a real difference. Here the command prefixes a row error with a comma (`parser.error(f\"{path}, {wrong}\")`) where every other error uses a colon (`f\"{path}: no such file; ...\"`), and nothing says why."
+    }
+  ]
+}
