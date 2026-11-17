@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read invoicer/: __init__, command, lines, tax, totals, render, as the accounting colleague meets them"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N2-N6 of refactor-code best-practice.md with their reasons and practices"
     }
   ]
 }

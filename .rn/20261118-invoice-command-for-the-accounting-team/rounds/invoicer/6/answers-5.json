@@ -1,0 +1,13 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N7",
+      "good_when": "Whoever next changes what the invoicer takes as a number changes it in one place, and the command, the rows, and their messages all follow. Today some rules are written in two places that must change together. What counts as a number written with a point is decided once for a price in lines.py (`_number`: `Decimal(text)`, InvalidOperation, `is_finite`) and again for the tax rate in command.py (`_rate`: `Decimal(percent.removesuffix(\"%\"))`, InvalidOperation, `is_finite`). The size limit is kept as `_LIMIT = Decimal(1_000_000_000)` for prices and amounts, but for quantities it is kept as the nine digits of `_WHOLE = re.compile(r\"-?[0-9]{1,9}\")`, and also as the literal `-1000000000 and 1000000000` in parse_lines' docstring. That the tax is taken on the stated subtotal is written in both `tax` (`tax_of(subtotal(lines), rate)`) and `total` (`stated + tax_of(stated, rate)`). Once each rule is written once, a change to the limit, the number form, or how tax is taken can't fix the rows while leaving the rate, the quantity, or the total on the old rule, so the accounting colleague's printed totals and refusals always agree."
+    },
+    {
+      "question": "N8",
+      "good_when": "A maintainer who learns how one module of the invoicer is written can read every module that way, and any difference comes with a reason beside it. Today the same kind of thing is done in different ways with no word on why. command.py, lines.py and totals.py annotate every function and use `from __future__ import annotations`, but `render(lines, rate, currency=\"EUR\")` and all of tax.py (`to_cent(amount)`, `tax_of(amount, rate)`) have no annotations, while `_row` in the same render.py does. A typed number is checked in two ways: `_number` returns None and its callers raise, while `_rate` sets `value = None` inline and raises ArgumentTypeError. The command's refusals name the file as `{path}: ...` everywhere except the row refusal, which is `{path}, {wrong}`. One docstring line in parse_lines (line 62) runs far past the 100-character width every other line keeps. Once these are made the same, or the difference is explained where it stands, every change to how the invoice reads, rounds, or refuses is made in a way the maintainer already knows, and the accounting colleague gets fixes that don't break anything else."
+    }
+  ]
+}
