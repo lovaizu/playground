@@ -15,12 +15,33 @@
         {
           "id": "N1",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the job",
+              "decided": "The product prints a client's invoice from the invoice lines the accounting team keeps in a spreadsheet, at that client's tax rate.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the roles",
+              "decided": "One role, `user`: one on the accounting team who prints a client's invoice.",
+              "by": "reasoning"
+            },
+            {
+              "about": "who sets the command up for the team",
+              "decided": null
+            }
+          ]
         },
         {
           "id": "N2",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the objective",
+              "decided": "O1: the user sends each client a correct invoice at that client's tax rate without a developer's help.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N3",
@@ -30,17 +51,39 @@
         {
           "id": "N4",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the task",
+              "decided": "From the invoice lines in the spreadsheet and the client's tax rate to the printed invoice.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the key results",
+              "decided": "KR1: the share of invoices the user couldn't print without help or that came out with a wrong total; lower is better. KR2: the time from opening the spreadsheet to the printed invoice, the user's own time included; lower is better. KR1 ranks before KR2; no targets.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N5",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the pieces of work and their objective",
+              "decided": "The invoice command and its README, each serving O1.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N6",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "the one way and its ideas",
+              "decided": null
+            }
+          ]
         }
       ]
     },
