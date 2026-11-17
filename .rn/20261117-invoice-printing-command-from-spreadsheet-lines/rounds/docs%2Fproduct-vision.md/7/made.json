@@ -30,7 +30,7 @@
     },
     {
       "path": "deliverables/0/necessary_conditions/3/decisions/1",
-      "where": "Objectives and key results: `KR1.1`, `KR1.2`, `KR2.1`, `KR2.2`, each with Lower is better; the ranking line `KR1.1` and `KR2.1` come first; the template's no-targets and show-whether-a-change-brought-its-objective-closer lines."
+      "where": "Objectives and key results: `KR1.1`, `KR1.2`, `KR2.1`, `KR2.2`, each with Lower is better; the template's ranking line, naming `KR1.1` and `KR2.1`; the template's no-targets and show-whether-a-change-brought-its-objective-closer lines."
     },
     {
       "path": "deliverables/0/necessary_conditions/4/decisions/0",
@@ -42,7 +42,7 @@
     },
     {
       "path": "deliverables/0/necessary_conditions/5/decisions/1",
-      "where": "Concept, the three ideas: Their spreadsheet as it is; Nothing wrong prints, now with the clause that the `accountant` sees the client's tax rate on the tax line, such as `Tax (7%) 7.00 EUR`, so they catch a mistyped one before the invoice goes out; The client's tax rate given each time."
+      "where": "Concept, the three ideas: Their spreadsheet as it is; Nothing wrong prints, now with a second sentence: the `accountant` checks the client's tax rate on the tax line, such as `Tax (7%) 7.00 EUR`, before sending; The client's tax rate given each time."
     },
     {
       "path": "deliverables/0/necessary_conditions/5/decisions/2",
@@ -57,13 +57,8 @@
   "settled": [
     {
       "point": "the wording of the show-the-rate clause",
-      "decided": "It joins the Nothing wrong prints line as the second half of its one sentence: the `accountant` sees the client's tax rate on the tax line, such as `Tax (7%) 7.00 EUR`, so they catch a mistyped one before the invoice goes out.",
-      "ground": "The template gives each idea one short sentence of what it gives, and the Cut puts the clause in this idea; it uses the person's own example and the name the client's tax rate, which the names decision keeps for the rate."
-    },
-    {
-      "point": "the verb of the ranking line",
-      "decided": "`KR1.1` and `KR2.1` come first, in place of comes first.",
-      "ground": "The two key results are a plural subject, so the verb agrees with them (refactor-doc N5.6, read as a translator would); the meaning stays as signed off."
+      "decided": "It is a second sentence on the Nothing wrong prints line, after the message sentence: The `accountant` checks the client's tax rate on the tax line, such as `Tax (7%) 7.00 EUR`, before sending.",
+      "ground": "The Cut puts the clause in this idea. One sentence holding both would make two points in over 20 words (refactor-doc N5.1), so each point gets its own short sentence. Checking the rate before sending is how the accountant spots a mistyped rate before the invoice goes out, in the person's own example. It uses the name the client's tax rate, which the names decision keeps for the rate."
     }
   ]
 }

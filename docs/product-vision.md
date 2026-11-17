@@ -16,7 +16,7 @@
   - `KR2.1`: the share of setups after which `invoicer`'s command doesn't run for the `accountant`. Lower is better.
   - `KR2.2`: the `installer`'s time from starting a setup to `invoicer`'s command running. Lower is better.
 
-`KR1.1` and `KR2.1` come first: keep a change that improves a key result only if none before it gets
+`KR1.1` and `KR2.1` comes first: keep a change that improves a key result only if none before it gets
 worse.
 Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's
 law. They show whether a change brought its objective closer.
@@ -28,6 +28,6 @@ law. They show whether a change brought its objective closer.
 - Their spreadsheet as it is, for `O1`\
   The `accountant` copies no invoice line by hand into a new format; the `installer` sets up none.
 - Nothing wrong prints, for `O1`\
-  The `accountant` gets a message naming the unreadable invoice line or the client's tax rate, never a wrong invoice, and sees the client's tax rate on the tax line, such as `Tax (7%) 7.00 EUR`, so they catch a mistyped one before the invoice goes out.
+  The `accountant` gets a message naming the unreadable invoice line or the client's tax rate, never a wrong invoice. The `accountant` checks the client's tax rate on the tax line, such as `Tax (7%) 7.00 EUR`, before sending.
 - The client's tax rate given each time, for `O1`\
   Since the client's tax rate differs per client, the `accountant` gives it for each invoice; the `installer` sets up none.
