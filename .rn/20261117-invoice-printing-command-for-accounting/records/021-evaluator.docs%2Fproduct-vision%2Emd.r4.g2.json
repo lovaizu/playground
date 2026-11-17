@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N6 in more: no idea keeps the one way holding at the install moment (O3), and the update idea does not say rounding stays the same across updates (O2)"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each condition of the group (N6) answered; ending with done"
     }
   ]
 }

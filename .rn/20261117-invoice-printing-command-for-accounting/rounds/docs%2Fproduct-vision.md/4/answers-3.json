@@ -1,0 +1,38 @@
+{
+  "good": [
+    {
+      "question": "N1",
+      "lines": [
+        "## Roles",
+        "- Accounting team\\",
+        "  The people who print each client's invoice with invoicer's command.",
+        "- Developer\\",
+        "  The people who call invoicer's library from their own code, and install the command once for the",
+        "## Objectives and key results",
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "- O2: after updating invoicer, the developers get the results their own code gave before, without",
+        "- O3: the developers are left with a command they install once and never need to set up again.",
+        "## Concept",
+        "invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the"
+      ]
+    },
+    {
+      "question": "N2",
+      "lines": [
+        "- Accounting team\\",
+        "  The people who print each client's invoice with invoicer's command.",
+        "- Developer\\",
+        "  The people who call invoicer's library from their own code, and install the command once for the",
+        "- O1: the accounting team bills each client what that client owes, without asking a developer.",
+        "- O2: after updating invoicer, the developers get the results their own code gave before, without",
+        "- O3: the developers are left with a command they install once and never need to set up again.",
+        "KR2.1, KR1.1, KR3.1 comes first: keep a change that improves a key result only if none before it",
+        "Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's",
+        "invoicer turns invoice lines into an invoice whose totals are right without anyone redoing the",
+        "- Same results for developers' own code, for O2\\",
+        "  The command only calls the library, which rounds tax to the cent the same way every time."
+      ]
+    }
+  ],
+  "more": []
+}
