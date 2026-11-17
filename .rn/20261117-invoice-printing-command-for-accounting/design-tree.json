@@ -50,7 +50,7 @@
           "decisions": [
             {
               "about": "the ranking of the key results",
-              "decided": "All six key results in one order: KR2.1, KR1.1, KR3.1, KR1.2, KR2.2, KR3.2; the developers keep a change only if no key result ranked above the one it improves gets worse; that key results have no targets, and its reason, Goodhart's law, are two sentences.",
+              "decided": "The template's ranking paragraph, naming the first key results in the order KR2.1, KR1.1 and KR3.1 come first, then KR1.2, KR2.2 and KR3.2 in the order the document lists them; the template's sentence on no targets and Goodhart's law stays as the template writes it.",
               "by": "reasoning"
             }
           ]
@@ -79,6 +79,10 @@
               "about": "the concept's ideas for a failed print, an update of invoicer, and the install",
               "decided": "Two ideas join the concept, as worded: a print that goes wrong tells the team what to fix, in their words: when a line in the spreadsheet can't be read, the command names that line and what's wrong with it, so the team fixes it and prints again without asking a developer; and the command adds to invoicer without changing it: it only calls the library developers already use, so updating invoicer gives their own code the same results as before. The install takes no idea.",
               "by": "user"
+            },
+            {
+              "about": "how the five ideas fit the template's three",
+              "decided": null
             }
           ]
         }
