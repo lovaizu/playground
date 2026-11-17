@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read docs/product-vision.md as the accounting team and the maintainers meet it: two roles, two objectives with key results, and a concept of three ideas."
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N1, N2 and N3 of the product-vision best practice, with their reasons and practices."
     }
   ]
 }
