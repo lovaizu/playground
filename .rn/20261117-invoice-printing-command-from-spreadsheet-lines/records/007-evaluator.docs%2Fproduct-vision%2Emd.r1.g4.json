@@ -4,6 +4,11 @@
       "of": "evaluator",
       "step": 1,
       "gave": "Read docs/product-vision.md as the accounting team and maintainers meet it"
+    },
+    {
+      "of": "evaluator",
+      "step": 2,
+      "gave": "Read N3, N4, N5 and N6 of refactor-doc with their reasons and practices"
     }
   ]
 }
