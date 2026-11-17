@@ -97,7 +97,7 @@
             },
             {
               "about": "the moments of use",
-              "decided": "The setup done by the installer; the accountant gives the command the lines and the client's rate; the invoice prints, or a message says what to fix and the accountant fixes it and runs it again.",
+              "decided": "The installer installs Python and invoicer on an accountant's machine and sees the command run, with nothing to configure, since the command takes the sheet as it is and the rate at each print; the accountant gives the command the lines and the client's rate; the invoice prints, or a message says what to fix and the accountant fixes it and runs it again.",
               "by": "reasoning"
             }
           ]
