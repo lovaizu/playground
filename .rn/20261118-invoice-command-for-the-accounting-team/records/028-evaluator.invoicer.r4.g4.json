@@ -14,6 +14,11 @@
       "of": "evaluator",
       "step": 3,
       "gave": "Answered N2 N5 N6 in good; N3 and N4 in more: line.amount vs line_amount, and lines naming the path and the Line list"
+    },
+    {
+      "of": "evaluator",
+      "step": 4,
+      "gave": "Each of N2-N6 answered in answers-4.json"
     }
   ]
 }
