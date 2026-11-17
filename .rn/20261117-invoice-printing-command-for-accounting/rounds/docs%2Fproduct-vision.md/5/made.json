@@ -1,0 +1,62 @@
+{
+  "decisions": [
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/0",
+      "where": "Roles: the Developer item, the people who call invoicer's library from their own code; O2 and its key results, which keep the library behavior they rely on as it is."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/1",
+      "where": "Roles: the Developer item, who install the command once for the accounting team; O3 and its key results."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/0/decisions/2",
+      "where": "Roles: one Developer item covers both calling the library and installing the command, kept as the person's departure."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/1/decisions/0",
+      "where": "Objectives and key results: O2, \"after updating invoicer, the developers get the results their own code gave before, without editing their code\"; O3, \"the developers are left with a command they install once and never need to set up again\"; printing is named only under O1."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/0",
+      "where": "Roles says only who each role is and the part of the job they come for; the Concept alone says where the invoice lines come from and that the rate is set at each print; the names invoice lines and their own code throughout."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/2/decisions/1",
+      "where": "Concept: the idea for O2 keeps \"The command only calls the library\", the person's words, as their departure."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/0",
+      "where": "Objectives and key results: the template's ranking paragraph, \"KR2.1, KR1.1 and KR3.1 come first: keep a change that improves a key result only if none before it gets worse.\", and the template's sentence on no targets and Goodhart's law, as the template writes it."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/1",
+      "where": "Objectives and key results: KR1.1, \"the share of printed invoices that are wrong or needed a developer's help. Lower is better.\""
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/3/decisions/2",
+      "where": "Objectives and key results: the ranking line names only KR2.1, KR1.1 and KR3.1, and doesn't rank KR1.2, KR2.2 and KR3.2 among themselves, as the person accepts."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/4/decisions/0",
+      "where": "Objectives and key results: printing without a developer under O1 alone (O1, KR1.1); O3 and KR3.1 and KR3.2 count only the developer's one install; Concept: the one rounding of tax under the idea for O2."
+    },
+    {
+      "path": "deliverables/0/necessary_conditions/5/decisions/0",
+      "where": "Concept: the one way sentence and its three ideas as the person worded them, two for O1 and one for O2; no idea for the install."
+    }
+  ],
+  "more": [
+    {
+      "best_practice": "refactor-doc",
+      "condition": "N6",
+      "where": "Objectives and key results: KR1.1 counts \"printed invoices that are wrong or needed a developer's help\" in place of \"print tasks\", so a developer counts the same thing each time: each printed invoice, and whether it was wrong or needed a developer's help."
+    }
+  ],
+  "settled": [
+    {
+      "point": "the verb of the ranking line",
+      "decided": "\"KR2.1, KR1.1 and KR3.1 come first\", with \"and\" before the last id and the plural \"come\".",
+      "ground": "The N4 decision 0 words it so; three key results are the subject, so the verb is plural (refactor-doc N5, the sentence reads one way to a machine translator), and the template's \"comes\" fits its one KR<n>.1."
+    }
+  ]
+}

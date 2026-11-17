@@ -414,6 +414,11 @@
       "of": "generator",
       "step": 5,
       "gave": "Tried in a throwaway copy as a developer looks up KR1.1 and the ranking: grep exit 0, KR1.1 names printed invoices that are wrong or needed a developer help, the ranking line reads KR2.1, KR1.1 and KR3.1 come first, and no template comment is left. Nothing to mend."
+    },
+    {
+      "of": "generator",
+      "step": 6,
+      "gave": "Made written in rounds/docs%2Fproduct-vision.md/5/made.json: a place for each of the eleven Cut decisions, the refactor-doc N6 More made good in KR1.1, and one point settled, the plural come of the ranking line."
     }
   ]
 }
