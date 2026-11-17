@@ -1,0 +1,35 @@
+{
+  "good": [
+    {
+      "question": "N4",
+      "lines": [
+        "pyproject.toml:1: # Needs only Python 3.9 or later, with no other package. Install the invoicer command with",
+        "pyproject.toml:3: # `python3 -m unittest discover -s tests`.",
+        "tests/test_command.py:22:         folder = tempfile.TemporaryDirectory()",
+        "tests/test_command.py:23:         self.addCleanup(folder.cleanup)",
+        "tests/test_command.py:28:         path = os.path.join(self.folder, \"lines.csv\")",
+        "tests/test_command.py:297:         hasattr(os, \"geteuid\") and os.geteuid() == 0, \"root reads a file whatever its permissions\""
+      ]
+    },
+    {
+      "question": "N6",
+      "lines": [
+        "tests/test_command.py:10: from invoicer.command import main",
+        "tests/test_command.py:39:                 main(list(argv))",
+        "tests/test_lines.py:8: from invoicer.lines import LineError, parse_lines",
+        "tests/test_totals.py:8: from invoicer import Line, render, subtotal, total",
+        "tests/test_totals.py:9: from invoicer.totals import line_amount, tax"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "question": "N5",
+      "good_when": "A maintainer finds a test, named for its case, for every case that the docstrings promise, so a break in any of them shows which promise broke: a credit line whose amount reaches minus a billion is refused just as one reaching plus a billion is (today only the positive end of the amount and of the quantity is tested); an invoice rendered with a currency other than EUR shows that currency on every row; the subtotal of no line is a Decimal zero; and a rate such as `19%%` is refused like any other rate that isn't a percent. And each test of reading the rows (such as the limits of the price and the quantity, a quantity that isn't whole, a row of two fields) names which of the command's cases it supports, as about half of them already do, so that a failing one points to what accounting would see go wrong."
+    },
+    {
+      "question": "N7",
+      "good_when": "Breaking any behavior that accounting or a caller of the package relies on makes a test fail. Today each of these breaks passes every test unseen: the amount stops being refused at minus a billion, so a mistyped credit line of a huge negative amount would print; a quantity typed in non-ASCII digits, such as full-width `３`, is taken as 3 when the code means to refuse it; render prints EUR whatever currency its caller asks for; the `%` of the rate is stripped however often it's written, so `--rate 19%%` prints an invoice; the subtotal of no line comes back as a plain integer 0 in place of a Decimal; and a new row of text inside a quoted cell given to parse_lines keeps or loses its carriage return without any test noticing."
+    }
+  ]
+}

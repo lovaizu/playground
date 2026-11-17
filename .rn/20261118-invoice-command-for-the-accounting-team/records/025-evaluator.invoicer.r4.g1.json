@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N4 to N7 of the code best practice with their reasons and practices: tests that pass in any order on a fresh setup, one named test per case, tests through the interfaces only, and a failing test for any broken behavior."
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N4 and N6 in good: 66 tests pass on a fresh copy set up from pyproject.toml alone and in five shuffled orders, each through the public interfaces. N5 and N7 in more: 6 of 15 probe mutants survive, such as the unchecked negative amount limit, render ignoring its currency and a rate of 19%% accepted, and those cases have no named test."
     }
   ]
 }

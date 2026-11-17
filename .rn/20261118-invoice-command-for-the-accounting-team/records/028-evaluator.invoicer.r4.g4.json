@@ -20,5 +20,9 @@
       "step": 4,
       "gave": "Each of N2-N6 answered in answers-4.json"
     }
-  ]
+  ],
+  "kept": {
+    "role": "evaluator",
+    "result": "done"
+  }
 }
