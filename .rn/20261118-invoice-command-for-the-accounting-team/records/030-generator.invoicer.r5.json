@@ -14,6 +14,121 @@
       "of": "generator",
       "step": 3,
       "gave": "Decided: the Cut decisions as they stand. Settled without asking: (1) tax.to_cent reads the amount by Decimal(amount), exact for a whole number, so Line keeps the price it was given, as 1.4.0 did, and render, subtotal, total and tax_of take a whole-number price; (2) --rate is kept by action append and refused in main where given more than once, with the message: argument --rate: the tax rate is given more than once; give it once, such as --rate 19."
+    },
+    {
+      "of": "code",
+      "practice": "N1.1",
+      "gave": "Specification: the unit cases in tests/test_command.py, test_lines.py and test_totals.py, plus the two the Cut adds: render, subtotal and total of a line with a whole-number price, and a rate given twice refused."
+    },
+    {
+      "of": "code",
+      "practice": "N1.2",
+      "gave": "Left to the code: where a whole-number price becomes a Decimal (in Line, or where it is rounded), and how argparse sees a second --rate (append, or an Action of its own)."
+    },
+    {
+      "of": "code",
+      "practice": "N1.3",
+      "gave": "The rounding to the cent stays with tax.py, so the whole-number price is read there; Line keeps the price as given, as 1.4.0 did. The refusal of a second --rate stays with command.py, which decides what the command takes. No module added."
+    },
+    {
+      "of": "code",
+      "practice": "N1.4",
+      "gave": "No decision has variants that the cases call for; no pattern added."
+    },
+    {
+      "of": "code",
+      "practice": "N2.1",
+      "gave": "Offered names unchanged: Line, LineError, parse_lines, render, subtotal, tax_of, total, and main; no name added."
+    },
+    {
+      "of": "code",
+      "practice": "N3.1",
+      "gave": "Each change traces to a case: Decimal(amount) in to_cent to the whole-number price cases, action append with one check in main to the rate given twice. No other option or branch planned."
+    },
+    {
+      "of": "code",
+      "practice": "N5.1",
+      "gave": "Cases designed: test_render_prints_a_line_whose_price_is_a_whole_number, test_subtotal_of_a_line_whose_price_is_a_whole_number, test_total_of_a_line_whose_price_is_a_whole_number, supporting test_prints_the_invoice_of_the_lines_at_the_rate_given; and test_refuses_a_rate_given_twice in test_command.py."
+    },
+    {
+      "of": "code",
+      "practice": "N5.2",
+      "gave": "No case needed that supports no unit case; nothing to ask."
+    },
+    {
+      "of": "code",
+      "practice": "N8.1",
+      "gave": "Inputs from outside: LINES and --rate, read in command.main; --rate is now kept each time it is given, and refused before the file is read where given more than once."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.1",
+      "gave": "Test command from pyproject.toml: python3 -m unittest discover -s tests."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.2",
+      "gave": "pyproject.toml gives the command, so no search for a runner was needed."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N1.3",
+      "gave": "66 tests pass before any change, in a throwaway copy."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.1",
+      "gave": "Things handled: the line, its price, its amount, the rate; each has one name in the code."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.2",
+      "gave": "The Cut says the tax rate and the price, as the code and its messages do."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.3",
+      "gave": "No two names for one thing found; the new message says the tax rate, as the other --rate messages do."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N4.4",
+      "gave": "No name used for two things found."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.1",
+      "gave": "The rounding to the cent is written in tax.to_cent alone; totals.line_amount and tax_of call it."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.2",
+      "gave": "No look-alike places to take apart for these changes."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N7.3",
+      "gave": "tax.py keeps the reading of an amount to round, as it keeps the rounding; nothing written twice."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.1",
+      "gave": "Kinds done in many places: refusing an input of the command, and rounding an amount."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.2",
+      "gave": "Refusals in command.py all go through parser.error or ArgumentTypeError; rounding goes through tax.to_cent."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.3",
+      "gave": "The rate given twice is refused through parser.error with argument --rate:, the way nearest it, as the other rate refusals read."
+    },
+    {
+      "of": "refactor-code",
+      "practice": "N8.4",
+      "gave": "No new way chosen."
     }
   ]
 }
