@@ -40,7 +40,7 @@
         },
         {
           "id": "N2",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "the objective",
@@ -56,12 +56,12 @@
         },
         {
           "id": "N3",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N4",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "the task",
@@ -77,7 +77,7 @@
         },
         {
           "id": "N5",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "the pieces of work and their objective",
@@ -97,12 +97,12 @@
             },
             {
               "about": "the ideas",
-              "decided": "Their sheet as it is: the command takes the lines as the accountant already keeps them, so there's no new format to learn. Nothing wrong prints: where a line or the rate can't be read, nothing prints, and the message says which line or value to fix. The rate is given each time an invoice is printed; no rate is remembered per client.",
+              "decided": "Their sheet as it is: the command takes the invoice lines as the accountant already keeps them, so there's no new format to learn. Nothing wrong prints: where an invoice line or the client's tax rate can't be read, nothing prints, and the message says which invoice line or the client's tax rate to fix. The client's tax rate is given each time an invoice is printed, since each client has their own rate; no rate is remembered per client.",
               "by": "user"
             },
             {
               "about": "the moments of use",
-              "decided": "The installer sets up invoicer's command on an accountant's machine and sees it run, with nothing to configure, since the command takes the sheet as it is and the rate each time the accountant prints an invoice; the accountant gives the command the lines and the client's rate; the invoice prints, or a message says what to fix and the accountant fixes it and runs it again.",
+              "decided": "The installer sets up invoicer's command on an accountant's machine and sees it run, with nothing to configure, since the command takes the sheet as it is and the client's tax rate each time the accountant prints an invoice; the accountant gives the command the invoice lines and the client's tax rate; the invoice prints, or a message says what to fix and the accountant fixes it and runs it again.",
               "by": "reasoning"
             },
             {
