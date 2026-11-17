@@ -1,0 +1,16 @@
+{
+  "record": ".rn/20261118-invoice-command-for-the-accounting-team/records/005-evaluator.invoicer.r1.g2.json",
+  "step": 1,
+  "work": [
+    ".rn/20261118-invoice-command-for-the-accounting-team/records/orchestrator.json",
+    ".rn/20261118-invoice-command-for-the-accounting-team/records/005-evaluator.invoicer.r1.g2.json",
+    "invoicer/__pycache__/__init__.cpython-314.pyc",
+    "invoicer/__pycache__/command.cpython-314.pyc",
+    "invoicer/__pycache__/lines.cpython-314.pyc",
+    "invoicer/__pycache__/render.cpython-314.pyc",
+    "invoicer/__pycache__/tax.cpython-314.pyc",
+    "invoicer/__pycache__/totals.cpython-314.pyc",
+    "tests/__pycache__/test_command.cpython-314.pyc",
+    "tests/__pycache__/test_lines.cpython-314.pyc"
+  ]
+}

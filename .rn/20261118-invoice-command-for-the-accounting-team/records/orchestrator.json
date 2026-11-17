@@ -224,6 +224,11 @@
       "of": "orchestrator",
       "step": 4,
       "gave": "The invoicer generator stopped at the session end after step 3; resumed it to go on from its uncommitted work"
+    },
+    {
+      "of": "orchestrator",
+      "step": 5,
+      "gave": "Checked the invoicer Made against its Cut: 23 tests pass; ran the entry point at 19 and 7.7 percent; refusals name the row; started the evaluator of N1-N3 the guard gave"
     }
   ]
 }
