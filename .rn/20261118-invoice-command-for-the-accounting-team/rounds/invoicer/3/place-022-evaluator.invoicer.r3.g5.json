@@ -1,8 +1,5 @@
 {
   "record": ".rn/20261118-invoice-command-for-the-accounting-team/records/022-evaluator.invoicer.r3.g5.json",
-  "step": 2,
-  "work": [
-    ".rn/20261118-invoice-command-for-the-accounting-team/records/022-evaluator.invoicer.r3.g5.json",
-    ".rn/20261118-invoice-command-for-the-accounting-team/records/021-evaluator.invoicer.r3.g4.json"
-  ]
+  "step": 3,
+  "work": []
 }
