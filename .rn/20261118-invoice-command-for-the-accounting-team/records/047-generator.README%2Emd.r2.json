@@ -9,6 +9,11 @@
       "of": "generator",
       "step": 2,
       "gave": "Read readme best-practice.md N1 to N10 with template.md, and refactor-doc best-practice.md N1 to N8, before any change."
+    },
+    {
+      "of": "generator",
+      "step": 3,
+      "gave": "Decided: every decision of the Cut taken as it stands; the one point open, where accounting opens PowerShell, settled as typing powershell in the address bar of the folder in File Explorer, so the step names PowerShell and opens it in that folder; nothing asks."
     }
   ]
 }
