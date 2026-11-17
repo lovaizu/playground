@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "question": "N1",
+      "good_when": "A maintainer who upgrades a script or other code that already calls invoicer.parse_lines, which the package offers in invoicer 1.4.0, keeps every result it got before, or is told plainly, where they look before upgrading, which results change and why. Today, with nothing telling them and the version still 1.4.0, such code finds that a price that isn't a number, such as 'abc', no longer raises decimal.InvalidOperation, which it may catch, but a LineError that it doesn't catch; that rows it read before, such as a quantity of 0, a negative quantity such as -2 for a credit, a price of Infinity, or a quantity written in non-ASCII digits, are now refused; and that no test pins any of these, so the next change to the reading of rows can move them again unnoticed. The command, the rendering, the totals, and the tax give what they gave before."
+    }
+  ]
+}
