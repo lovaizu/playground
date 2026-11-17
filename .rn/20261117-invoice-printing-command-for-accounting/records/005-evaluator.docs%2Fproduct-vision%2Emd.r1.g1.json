@@ -9,6 +9,11 @@
       "of": "evaluator",
       "step": 2,
       "gave": "Read N4 (key results for how well and how fast, each with a better direction) and N5 (distinct objectives, each piece of work serving one) with their reasons and practices."
+    },
+    {
+      "of": "evaluator",
+      "step": 3,
+      "gave": "Answered N4 in good and N5 in more: O1 and O3 both count the accounting team printing without a developer, and rounding is named for O1 and O2."
     }
   ]
 }
