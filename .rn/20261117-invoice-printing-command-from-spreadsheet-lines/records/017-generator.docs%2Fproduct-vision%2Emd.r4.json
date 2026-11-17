@@ -224,6 +224,191 @@
       "of": "generator",
       "step": 3,
       "gave": "Decided: each Cut decision taken as it stands. The key results decision now asks for no sentence on the order across objectives, so the template ranking line and its fixed lines carry it, and the vision as round 3 left it already holds every decision. No point left open."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N2.4",
+      "gave": "With invoicer taken out, O1 reads as sending each client a correct invoice and O2 as getting a machine ready to print; neither reads as a feature."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N3.1",
+      "gave": "Each sentence says what the accountant or installer does and gets; none would change if invoicer insides changed."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N4.7",
+      "gave": "An E2E run records: KR1.1 each invoice not printed without a developer, or printed with a wrong total; KR1.2 the times the spreadsheet opens and the invoice prints; KR2.1 each setup whose command fails to run; KR2.2 the times a setup starts and the command first runs."
+    },
+    {
+      "of": "product-vision",
+      "practice": "N6.8",
+      "gave": "At the moment a line cannot be read, whether to guess it is decided by nothing wrong prints: invoicer prints nothing and names what to fix; the ideas decide each moment one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.6",
+      "gave": "Headings are the template ones, Roles, Objectives and key results, Concept, each naming the thing a reader looks for."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.7",
+      "gave": "The template takes no opening line under its headings; each first line, the first role, objective or the one way, already says what the section gives."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N1.8",
+      "gave": "Read headings and first lines for each purpose: a maintainer weighing a change finds the order under Objectives and key results; an accountant finds their job under Roles."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.1",
+      "gave": "Each sentence has a reader: roles and Concept for the accountant and the installer, the key results and the ranking and no-targets lines for the maintainer; none marked."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.2",
+      "gave": "No sentence marked, so no other document looked for."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.3",
+      "gave": "No sentence moves to another document in docs/product-vision.md."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.4",
+      "gave": "No sentence states a fact that needs a place outside, so nothing to ask."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.5",
+      "gave": "Nothing to cut: the ranked after notes were cut in round 3, and no sentence on the order across objectives was added."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.6",
+      "gave": "No filler words found within the kept sentences."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.7",
+      "gave": "Articles and that kept in every sentence."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N2.8",
+      "gave": "docs/product-vision.md read to its end as each reader: the maintainer finds the full order in the ranking line, and that a change is weighed against its own objective in the line after it."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.1",
+      "gave": "The ranking line follows the key results it ranks; the roles come before the objectives that name them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.2",
+      "gave": "Nothing depends on a source outside the document."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.3",
+      "gave": "Each sentence opens with what the reader knows, such as each time the accountant prints an invoice before the rate they give."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.4",
+      "gave": "Conditions come first, such as where invoicer cannot read a line and each time the accountant prints."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.5",
+      "gave": "No exception to a rule is stated, so none to place."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N3.6",
+      "gave": "docs/product-vision.md read to its end from the top; no place needed a look back or ahead."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.2",
+      "gave": "Lists kept as bullets, one item for each role, objective, key result and idea; the ranking stays one prose line, as the template sets."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.3",
+      "gave": "No sequence to draw, so no sequence diagram."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N4.4",
+      "gave": "No structure to draw, so no structure diagram."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.1",
+      "gave": "Each sentence makes one point; the ranking line keeps the template wording, which rn check holds fixed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.2",
+      "gave": "Actors are subjects with active verbs, such as the accountant gives the rate and invoicer prints no invoice."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.3",
+      "gave": "Pronouns checked; they in the rate idea refers to the accountant named just before."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.4",
+      "gave": "No noun made from a verb left where the verb reads better."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.5",
+      "gave": "Each object sits next to its verb."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N5.6",
+      "gave": "docs/product-vision.md read to its end as a machine translator; each sentence reads one way."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.3",
+      "gave": "No word differs from the chosen ones; help reads a developer help in O1 and KR1.1."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.4",
+      "gave": "No coined term left to define; the O and KR labels are spelled out by the heading Objectives and key results above them."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N6.5",
+      "gave": "No abbreviation beyond the O and KR labels, which the heading spells out."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.4",
+      "gave": "The order stated in full in the ranking line."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N7.5",
+      "gave": "No other place states the order, so no link needed."
+    },
+    {
+      "of": "refactor-doc",
+      "practice": "N8.4",
+      "gave": "Each kept name written the same way throughout, in code format for invoicer, accountant, installer, and the O and KR labels."
+    },
+    {
+      "of": "generator",
+      "step": 4,
+      "gave": "docs/product-vision.md stands as round 3 left it: every Cut decision already lands, and the key results decision no longer asks for a sentence on the order across objectives, which the template ranking paragraph and its line on a change and its own objective carry. No edit needed."
     }
   ]
 }
