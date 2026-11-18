@@ -1,0 +1,237 @@
+{
+  "goal": {
+    "decided": "Our accounting team prints each client's invoice themselves, at that client's tax rate, from the lines they keep in their spreadsheet, without asking a developer. Once it holds, a colleague from accounting on their Linux laptop saves the invoice lines from LibreOffice Calc, runs one command from the guide alone with the client's tax rate, and gets the invoice, with no Python written and no developer asked.",
+    "by": "reasoning"
+  },
+  "deliverables": [
+    {
+      "name": "A colleague from accounting turns the lines saved from their spreadsheet and the client's tax rate into an invoice with one command",
+      "path": "invoicer/cli.py",
+      "kind": "code",
+      "inputs": [
+        "invoicer/lines.py",
+        "invoicer/render.py"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": [
+            {
+              "about": "what the module alone decides",
+              "decided": "invoicer/cli.py decides how a file of lines saved from a spreadsheet and a tax rate given on the command line become the invoice, leaving parsing, totals and layout to the library",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the command and its arguments",
+              "decided": "`invoice <lines file> --tax-rate <percent>`, installed by a [project.scripts] entry `invoice = \"invoicer.cli:main\"`; main(argv) returns the exit code",
+              "by": "maker"
+            },
+            {
+              "about": "the tax rate's form",
+              "decided": "a percent as accounting writes it, such as 19 or 7.5 (a trailing % allowed), required on every run, turned into the library's fraction",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the lines it reads",
+              "decided": "the form that invoicer.parse_lines reads, one line each `<description>;<price>;<quantity>`, as Calc saves a sheet as Text CSV with ';' as the field separator",
+              "by": "reasoning"
+            },
+            {
+              "about": "the invoice it makes",
+              "decided": "invoicer.render's text with the rate given, in the library's default currency",
+              "by": "reasoning"
+            },
+            {
+              "about": "where the invoice goes",
+              "decided": null
+            }
+          ]
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the test setup",
+              "decided": "tests with the standard library's unittest, run by `python3 -m unittest`, needing nothing installed",
+              "by": "maker"
+            }
+          ]
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": [
+            {
+              "about": "how the tests call the code",
+              "decided": "through main(argv) with a lines file, as the terminal calls it",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the inputs it refuses",
+              "decided": "before printing anything, it refuses a missing or unreadable file, a missing or non-numeric or negative tax rate, a row without three ';'-separated fields (such as a file saved with ',' between fields), a price that isn't a number, and a quantity that isn't a whole number, each with a message naming the row and what to change in Calc or on the command line",
+              "by": "reasoning"
+            },
+            {
+              "about": "decimal comma",
+              "decided": "a price written with a decimal comma, such as 12,50, is read as 12.50",
+              "by": "reasoning"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "A colleague from accounting installs the command and prints a client's invoice from their spreadsheet by the guide alone",
+      "path": "docs/printing-invoices.md",
+      "kind": "readme",
+      "inputs": [
+        "invoicer/cli.py"
+      ],
+      "preconditions": [
+        "invoicer/cli.py"
+      ],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": [
+            {
+              "about": "who it's for and what they achieve",
+              "decided": "the accounting team on Linux laptops with LibreOffice Calc, who print a client's invoice at that client's tax rate without a developer",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": [
+            {
+              "about": "what it doesn't do",
+              "decided": null
+            }
+          ]
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": [
+            {
+              "about": "what isn't ready",
+              "decided": "nothing is held back; the guide says so only where the code leaves a case out",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the license",
+              "decided": "the repository holds no license file and the guide is for staff, so it names none and says it's for internal use",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the order of questions",
+              "decided": "what it does for you, install once, save the lines from Calc, run with the client's rate, get the invoice, fix what it refuses, get help",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the walkthrough",
+              "decided": "a real run on a few typical invoice lines at one client's rate, with the command typed and the invoice it gives",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the one way first",
+              "decided": "you save the sheet's lines as text with ';' between fields, and the command adds the tax at the rate you give and lays out the invoice",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the doubts it answers",
+              "decided": "how to set a different rate for each client, what to do with a header row or comma-separated save, and that prices with a decimal comma work",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N9",
+          "good": false,
+          "decisions": [
+            {
+              "about": "how the laptops get the command",
+              "decided": null
+            }
+          ]
+        },
+        {
+          "id": "N10",
+          "good": false,
+          "decisions": [
+            {
+              "about": "where to get help",
+              "decided": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
