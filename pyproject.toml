@@ -1,0 +1,9 @@
+[project]
+name = "invoicer"
+version = "1.4.0"
+description = "The lines of an invoice, their totals with tax, and the invoice as text."
+requires-python = ">=3.9"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
