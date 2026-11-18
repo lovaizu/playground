@@ -61,7 +61,13 @@
         {
           "id": "N4",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "how the command runs on a fresh laptop",
+              "decided": "As `python3 -m invoicer` from the repository's top folder, on Python 3.9 or later as pyproject.toml says, with the standard library only and nothing to install; its tests run by `python3 -m unittest` from the same folder.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N5",
@@ -108,7 +114,7 @@
         "invoicer/__main__.py"
       ],
       "status": "open",
-      "check": "Following the guide's steps word for word in a fresh shell on Linux, with a lines file saved as the guide tells from LibreOffice Calc and a stand-in `lp` first on PATH that records what it's sent: the showing step writes the invoice with its lines, subtotal, tax at the rate given, and total; the printing step sends `lp` exactly that text; and each refusal the guide names shows the message it quotes, sends `lp` nothing, and the fix it gives works.",
+      "check": "In a fresh shell on Linux, with this branch's ZIP made as GitHub makes it, `git archive --format=zip --prefix=playground-main/ HEAD`, standing in for the download, a lines file saved as the guide tells from LibreOffice Calc, and a stand-in `lp` first on PATH that records what it's sent, following the guide's steps word for word: the showing step writes the invoice with its lines, subtotal, tax at the rate given, and total; the printing step sends `lp` exactly that text; and each refusal the guide names shows the message it quotes, sends `lp` nothing, and the fix it gives works.",
       "good": false,
       "decisions": [
         {
@@ -128,7 +134,7 @@
         },
         {
           "about": "how a colleague gets invoicer onto their laptop",
-          "decided": "From the repository's GitHub page, https://github.com/lovaizu/playground, Code > Download ZIP; unzip it, open a terminal in the unzipped folder, and run `python3 -m invoicer` there, with nothing else to install.",
+          "decided": "From the repository's GitHub page, https://github.com/lovaizu/playground, Code > Download ZIP; unzip it, open a terminal in the unzipped folder `playground-main`, and run `python3 -m invoicer` there, with nothing else to install.",
           "by": "user"
         },
         {
