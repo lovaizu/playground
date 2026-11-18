@@ -21,7 +21,7 @@
           "decisions": [
             {
               "about": "what the module alone decides",
-              "decided": "invoicer/cli.py decides how a file of lines saved from a spreadsheet and a tax rate given on the command line become the invoice, leaving parsing, totals and layout to the library",
+              "decided": "invoicer/cli.py decides how a file of lines saved from a spreadsheet and a tax rate given on the command line become the invoice, and where it goes: the screen, and the default printer with --print; parsing, totals and layout stay with the library",
               "by": "reasoning"
             }
           ]
@@ -32,7 +32,7 @@
           "decisions": [
             {
               "about": "the command and its arguments",
-              "decided": "`invoice <lines file> --tax-rate <percent>`, installed by a [project.scripts] entry `invoice = \"invoicer.cli:main\"`; main(argv) returns the exit code",
+              "decided": "`invoice <lines file> --tax-rate <percent> [--print]`, installed by a [project.scripts] entry `invoice = \"invoicer.cli:main\"`; main(argv) returns the exit code",
               "by": "maker"
             },
             {
@@ -87,6 +87,11 @@
               "about": "how the tests call the code",
               "decided": "through main(argv) with a lines file, as the terminal calls it",
               "by": "reasoning"
+            },
+            {
+              "about": "how tests stand in for lp",
+              "decided": "tests put a stand-in `lp` script on PATH in a temporary folder that keeps what it was given; a failing case uses one that exits non-zero, and another has no `lp` on PATH, so no test needs a printer or reaches paper",
+              "by": "maker"
             }
           ]
         },
@@ -101,7 +106,7 @@
           "decisions": [
             {
               "about": "the inputs it refuses",
-              "decided": "before printing anything, it refuses a missing or unreadable file, a missing or non-numeric or negative tax rate, a row without three ';'-separated fields (such as a file saved with ',' between fields), a price that isn't a number, and a quantity that isn't a whole number, each with a message naming the row and what to change in Calc or on the command line",
+              "decided": "before showing anything, it refuses a missing or unreadable file, a missing or non-numeric or negative tax rate, a row without three ';'-separated fields (such as a file saved with ',' between fields), a price that isn't a number, and a quantity that isn't a whole number, each with a message naming the row and what to change in Calc or on the command line",
               "by": "reasoning"
             },
             {
