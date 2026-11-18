@@ -1,7 +1,7 @@
 {
   "goal": {
     "decided": "The accounting team prints each client's invoice themselves, at that client's tax rate, from the invoice lines they keep in LibreOffice Calc, without writing Python. Once it holds, a colleague from accounting saves an invoice's lines from Calc, runs one command from the guide with the client's tax rate, and gets the invoice printed, with no developer's help.",
-    "by": "reasoning"
+    "by": "user"
   },
   "deliverables": [
     {
