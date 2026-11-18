@@ -1,0 +1,139 @@
+{
+  "goal": {
+    "decided": "The accounting colleagues print each client's invoice themselves, at that client's tax rate, from the invoice lines they keep in LibreOffice Calc, without writing any Python. Once it holds, a colleague of accounting saves an invoice's lines from Calc, runs the one command the guide gives with the client's tax rate, and gets the invoice printed, from the guide alone.",
+    "by": "reasoning"
+  },
+  "deliverables": [
+    {
+      "name": "A colleague of accounting turns a client's lines saved from Calc into that client's invoice at its tax rate with one command",
+      "path": "invoicer/__main__.py",
+      "kind": "code",
+      "inputs": [
+        "invoicer/lines.py",
+        "invoicer/render.py"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": [
+            {
+              "about": "what the command must do",
+              "decided": "Given the path of a lines file saved from Calc as Text CSV with `;` between fields, each row `<description>;<price>;<quantity>`, and `--tax-rate <percent>`, it writes invoicer's render(lines, percent/100) of those lines; a price with a comma as decimal mark, such as `12,50`, reads as 12.50.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the modules",
+              "decided": "invoicer/__main__.py alone holds the command, reading its arguments and the file and calling invoicer's parse_lines form and render; it adds no module, as no decision of it changes apart from the rest.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the names offered",
+              "decided": "main(argv) returns the exit code: 0 once the invoice is out, 2 on a refused input; every other name is internal.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the options",
+              "decided": "The lines file and a required --tax-rate in percent, such as 19 or 7.5; no currency option, as nothing asks to change invoicer's EUR.",
+              "by": "reasoning"
+            },
+            {
+              "about": "where the invoice goes",
+              "decided": null
+            }
+          ]
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the tests",
+              "decided": "tests/test_main.py with the standard library's unittest, one test for each case, its edges and refusals, named by the case.",
+              "by": "maker"
+            }
+          ]
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the inputs from outside",
+              "decided": "The file path, each row of the file, and the tax rate; a missing file, a row that doesn't hold three `;` fields (such as a header row), a price or quantity that isn't a number, and a tax rate that isn't a number or is negative are each refused before anything is printed, with a message naming the row and what to change in the sheet or the command.",
+              "by": "reasoning"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "A colleague of accounting who has never run Python prints a client's invoice from the guide alone",
+      "path": "docs/print-an-invoice.md",
+      "kind": "specific",
+      "inputs": [
+        "invoicer/__main__.py"
+      ],
+      "preconditions": [
+        "invoicer/__main__.py"
+      ],
+      "status": "open",
+      "check": "Following the guide's steps word for word in a fresh shell on Linux, with a lines file saved as the guide tells from LibreOffice Calc, prints the invoice with its lines, subtotal, tax at the rate given, and total; and each refusal the guide names shows the message it quotes and the fix it gives works.",
+      "good": false,
+      "decisions": [
+        {
+          "about": "the people",
+          "decided": "Colleagues of the accounting team on Linux laptops, who keep invoice lines in LibreOffice Calc and open a terminal when a guide tells them how, and write no Python.",
+          "by": "user"
+        },
+        {
+          "about": "the sheet's layout and how to save it",
+          "decided": "One sheet per invoice with three columns, description, price, quantity, and no header row, saved by File > Save As as Text CSV with `;` as field delimiter, as invoicer's parse_lines reads.",
+          "by": "reasoning"
+        },
+        {
+          "about": "setting the tax rate per invoice",
+          "decided": "The guide shows the client's rate given as --tax-rate in percent on each run.",
+          "by": "reasoning"
+        },
+        {
+          "about": "how a colleague gets invoicer onto their laptop",
+          "decided": null
+        },
+        {
+          "about": "where the invoice goes",
+          "decided": null
+        }
+      ]
+    }
+  ]
+}
