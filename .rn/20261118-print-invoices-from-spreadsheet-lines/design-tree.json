@@ -90,7 +90,7 @@
           "decisions": [
             {
               "about": "the inputs from outside",
-              "decided": "The file path, each row of the file, and the tax rate; a missing file, a row that doesn't hold three `;` fields (such as a header row), a price or quantity that isn't a number, and a tax rate that isn't a number or is negative are each refused before anything is printed, with a message naming the row and what to change in the sheet or the command.",
+              "decided": "The file path, each row of the file, and the tax rate; a missing file, a row that doesn't hold three `;` fields (such as a header row), a price or quantity that isn't a number, and a tax rate that isn't a number or is negative are each refused before anything is written to standard output, with a message on standard error naming the row and what to change in the sheet or the command, so a refused run piped to `lp` prints no page.",
               "by": "reasoning"
             }
           ]
@@ -108,7 +108,7 @@
         "invoicer/__main__.py"
       ],
       "status": "open",
-      "check": "Following the guide's steps word for word in a fresh shell on Linux, with a lines file saved as the guide tells from LibreOffice Calc, prints the invoice with its lines, subtotal, tax at the rate given, and total; and each refusal the guide names shows the message it quotes and the fix it gives works.",
+      "check": "Following the guide's steps word for word in a fresh shell on Linux, with a lines file saved as the guide tells from LibreOffice Calc and a stand-in `lp` first on PATH that records what it's sent: the showing step writes the invoice with its lines, subtotal, tax at the rate given, and total; the printing step sends `lp` exactly that text; and each refusal the guide names shows the message it quotes, sends `lp` nothing, and the fix it gives works.",
       "good": false,
       "decisions": [
         {
