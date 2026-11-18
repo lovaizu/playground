@@ -1,0 +1,157 @@
+{
+  "goal": {
+    "decided": "Our accounting colleagues print each client's invoice themselves, from the invoice lines they keep in LibreOffice Calc and that client's tax rate, without asking a developer. Once it holds, a colleague from accounting saves the lines from Calc, follows the guide in a terminal on their Linux laptop, gives the client's tax rate, and gets the invoice with its subtotal, tax and total, without writing Python or asking a developer.",
+    "by": "reasoning"
+  },
+  "deliverables": [
+    {
+      "name": "Accounting turns the lines saved from their spreadsheet and a client's tax rate into that client's invoice with one command",
+      "path": "invoicer/command.py",
+      "kind": "code",
+      "inputs": [
+        "invoicer/lines.py",
+        "invoicer/render.py"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": [
+            {
+              "about": "what the command does",
+              "decided": "A command installed with invoicer, run as `<command> <lines file> --rate <percent>`, reads the lines file saved from LibreOffice Calc in the form that invoicer's parse_lines reads, `<description>;<price>;<quantity>` one per row, and writes to the terminal the invoice text that invoicer's render gives at that rate, with the subtotal, tax and total.",
+              "by": "reasoning"
+            },
+            {
+              "about": "how the rate is given",
+              "decided": "The tax rate is given for each invoice on the command line as a percent, such as `19` for 19 %, and passed to render as the fraction.",
+              "by": "reasoning"
+            },
+            {
+              "about": "what printing means",
+              "decided": "Printing writes the invoice text to the terminal, as render gives it; the command adds no printer or file format of its own.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": [
+            {
+              "about": "wrong input from outside",
+              "decided": "A missing or unreadable lines file, a row that isn't three fields, a price or quantity that isn't a number, or a missing or wrong rate is refused before any invoice is written, with a message in plain words naming the file or row number and what to change, no Python trace, and a nonzero exit.",
+              "by": "reasoning"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "A colleague from accounting prints a client's invoice from their spreadsheet by the guide alone",
+      "path": "docs/printing-invoices.md",
+      "kind": "readme",
+      "inputs": [
+        "invoicer/command.py"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": [
+            {
+              "about": "who the guide is for",
+              "decided": "The guide is for colleagues from accounting who keep invoice lines in LibreOffice Calc on Linux laptops, don't write Python, and open a terminal when the guide tells them to.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the form of the lines",
+              "decided": "The guide shows how to lay out the lines in Calc, description, price and quantity in three columns, and save them as CSV with `;` as the field separator, the form that invoicer's parse_lines reads, then run the command with the client's rate and see the invoice.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N9",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N10",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    }
+  ]
+}
