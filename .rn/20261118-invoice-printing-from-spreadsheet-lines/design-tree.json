@@ -58,7 +58,8 @@
             },
             {
               "about": "where the invoice goes",
-              "decided": null
+              "decided": "Shown on screen by default so they can check it; with `--print`, also sent to the laptop's default printer through `lp`",
+              "by": "user"
             }
           ]
         },
@@ -93,7 +94,7 @@
           "decisions": [
             {
               "about": "refusals",
-              "decided": "Before it prints anything, the command refuses a missing file, a malformed row (naming the row's number and what it holds), and a missing or wrong rate, each with a message in accounting's words that says how to fix it, and exits non-zero",
+              "decided": "Before it prints anything, the command refuses a missing file, a malformed row (naming the row's number and what it holds), and a missing or wrong rate, each with a message in accounting's words that says how to fix it, and exits non-zero; with `--print`, where `lp` is missing or fails, such as no default printer, it says so in those words, after showing the invoice on screen, and exits non-zero",
               "by": "reasoning"
             }
           ]
@@ -152,7 +153,7 @@
           "decisions": [
             {
               "about": "the walkthrough",
-              "decided": "A real run: the lines in Calc, saved as Text CSV with `;`, the command with a client's rate, and the invoice it prints shown whole",
+              "decided": "A real run: the lines in Calc, saved as Text CSV with `;`, the command with a client's rate showing the invoice on screen whole to check, then the same command with `--print` sending it to the default printer",
               "by": "reasoning"
             }
           ]
