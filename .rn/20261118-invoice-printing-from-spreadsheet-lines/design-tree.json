@@ -22,7 +22,7 @@
           "decisions": [
             {
               "about": "the unit cases",
-              "decided": "Written first as tests named by Given/When/Then: the usual lines file with a rate; a rate with a percent sign and a decimal rate such as 7.7; a rate of 0; blank rows skipped; and the refusals: a missing file, a row without three `;` fields, a price or quantity that isn't a number, and a missing or non-numeric or negative rate",
+              "decided": "Written first as tests named by Given/When/Then: the usual lines file with a rate, shown on screen and not sent to a printer; the same with `--print`, also handed to `lp`; a rate with a percent sign and a decimal rate such as 7.7; a rate of 0; blank rows skipped; and the refusals: a missing file, a row without three `;` fields, a price or quantity that isn't a number, a missing or non-numeric or negative rate, and with `--print` an `lp` that is missing or fails",
               "by": "reasoning"
             },
             {
@@ -38,7 +38,7 @@
           "decisions": [
             {
               "about": "the command's form",
-              "decided": "`invoicer <lines file> --tax <percent>`, installed as the console script `invoicer` from pyproject.toml [project.scripts] at invoicer.cli:main",
+              "decided": "`invoicer <lines file> --tax <percent> [--print]`, installed as the console script `invoicer` from pyproject.toml [project.scripts] at invoicer.cli:main",
               "by": "reasoning"
             },
             {
