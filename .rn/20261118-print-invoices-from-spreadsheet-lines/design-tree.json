@@ -128,7 +128,8 @@
         },
         {
           "about": "how a colleague gets invoicer onto their laptop",
-          "decided": null
+          "decided": "From the repository's GitHub page, https://github.com/lovaizu/playground, Code > Download ZIP; unzip it, open a terminal in the unzipped folder, and run `python3 -m invoicer` there, with nothing else to install.",
+          "by": "user"
         },
         {
           "about": "where the invoice goes",
