@@ -53,7 +53,8 @@
             },
             {
               "about": "where the invoice goes",
-              "decided": null
+              "decided": "The command writes the invoice's text to standard output, so it shows in the terminal; it doesn't print it itself.",
+              "by": "user"
             }
           ]
         },
@@ -131,7 +132,8 @@
         },
         {
           "about": "where the invoice goes",
-          "decided": null
+          "decided": "The guide runs the command first to show the invoice in the terminal for the colleague to check, then the same command with `| lp` to send it to the laptop's default printer.",
+          "by": "user"
         }
       ]
     }
