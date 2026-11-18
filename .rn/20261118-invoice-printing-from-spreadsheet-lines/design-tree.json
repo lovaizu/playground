@@ -1,0 +1,183 @@
+{
+  "goal": {
+    "decided": "The accounting team prints each client's invoice themselves, at that client's tax rate, from the invoice lines they keep in LibreOffice Calc, without writing Python. Once it holds, a colleague from accounting saves an invoice's lines from Calc, runs one command from the guide with the client's tax rate, and gets the invoice printed, with no developer's help.",
+    "by": "reasoning"
+  },
+  "deliverables": [
+    {
+      "name": "A colleague from accounting turns an invoice's lines saved from Calc into the printed invoice at the client's tax rate with one command",
+      "path": "invoicer/cli.py",
+      "kind": "code",
+      "inputs": [
+        "invoicer/lines.py",
+        "invoicer/render.py",
+        "pyproject.toml"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the unit cases",
+              "decided": "Written first as tests named by Given/When/Then: the usual lines file with a rate; a rate with a percent sign and a decimal rate such as 7.7; a rate of 0; blank rows skipped; and the refusals: a missing file, a row without three `;` fields, a price or quantity that isn't a number, and a missing or non-numeric or negative rate",
+              "by": "reasoning"
+            },
+            {
+              "about": "the module",
+              "decided": "One new module, invoicer/cli.py, alone decides how the command reads its arguments and its lines file and where it writes the invoice. Parsing lines and rendering stay in invoicer/lines.py and invoicer/render.py",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the command's form",
+              "decided": "`invoicer <lines file> --tax <percent>`, installed as the console script `invoicer` from pyproject.toml [project.scripts] at invoicer.cli:main",
+              "by": "reasoning"
+            },
+            {
+              "about": "the lines file",
+              "decided": "The CSV file that Calc saves with field delimiter `;` and no header row, one line a row, `<description>;<price>;<quantity>`, read by invoicer's parse_lines",
+              "by": "reasoning"
+            },
+            {
+              "about": "the tax rate",
+              "decided": "Given for each invoice as a percent, such as 19 or 19%, and turned into the fraction that render takes",
+              "by": "reasoning"
+            },
+            {
+              "about": "the currency",
+              "decided": "invoicer's default, EUR",
+              "by": "reasoning"
+            },
+            {
+              "about": "where the invoice goes",
+              "decided": null
+            }
+          ]
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": [
+            {
+              "about": "refusals",
+              "decided": "Before it prints anything, the command refuses a missing file, a malformed row (naming the row's number and what it holds), and a missing or wrong rate, each with a message in accounting's words that says how to fix it, and exits non-zero",
+              "by": "reasoning"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "A colleague from accounting prints an invoice from the guide alone, from installing the command to the printed invoice",
+      "path": "docs/print-an-invoice.md",
+      "kind": "readme",
+      "inputs": [
+        "invoicer/cli.py"
+      ],
+      "preconditions": [],
+      "status": "open",
+      "necessary_conditions": [
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the people",
+              "decided": "Colleagues from accounting who keep invoice lines in LibreOffice Calc on Linux laptops, open a terminal when the guide says so, and write no Python",
+              "by": "reasoning"
+            },
+            {
+              "about": "what they achieve",
+              "decided": "Print each client's invoice themselves, at that client's tax rate",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": [
+            {
+              "about": "the walkthrough",
+              "decided": "A real run: the lines in Calc, saved as Text CSV with `;`, the command with a client's rate, and the invoice it prints shown whole",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N9",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N10",
+          "good": false,
+          "decisions": []
+        }
+      ]
+    }
+  ]
+}
