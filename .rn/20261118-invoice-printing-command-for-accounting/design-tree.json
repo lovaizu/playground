@@ -58,7 +58,8 @@
             },
             {
               "about": "where the invoice goes",
-              "decided": null
+              "decided": "always shown on screen; with --print the same text also goes to the laptop's default printer by `lp`, so accounting checks the totals before it goes out on paper",
+              "by": "user"
             }
           ]
         },
@@ -107,6 +108,11 @@
               "about": "decimal comma",
               "decided": "a price written with a decimal comma, such as 12,50, is read as 12.50",
               "by": "reasoning"
+            },
+            {
+              "about": "printer failure",
+              "decided": "with --print, where `lp` is missing or fails, such as with no default printer set, it says so after showing the invoice and exits non-zero with a message naming what to set up",
+              "by": "reasoning"
             }
           ]
         }
@@ -141,7 +147,8 @@
           "decisions": [
             {
               "about": "what it doesn't do",
-              "decided": null
+              "decided": "one tax rate per invoice, not per line; no list of clients or their rates kept, the rate given each run; plain text in EUR, no PDF or letterhead; no reading of the .ods itself, the lines saved as text first",
+              "by": "reasoning"
             }
           ]
         },
@@ -206,7 +213,7 @@
           "decisions": [
             {
               "about": "the doubts it answers",
-              "decided": "how to set a different rate for each client, what to do with a header row or comma-separated save, and that prices with a decimal comma work",
+              "decided": "how to set a different rate for each client, what to do with a header row or a comma-separated save, that prices with a decimal comma work, and what to do when --print doesn't print",
               "by": "reasoning"
             }
           ]
