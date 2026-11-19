@@ -24,7 +24,7 @@
   - `KR2.2`: the time from lines and rate in hand to totals and text in their code, docs reading
     included. Lower is better.
 
-`KR1.1` and `KR2.1` comes first: keep a change that improves a key result only if none before it
+`KR1.1` and `KR2.1` come first: keep a change that improves a key result only if none before it
 gets worse.
 Key results have no targets, as a measure made a target stops being a good measure, by Goodhart's
 law. They show whether a change brought its objective closer.
