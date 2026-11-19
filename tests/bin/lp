@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+"""The stand-in for CUPS's lp, first on the path in the tests, so that no paper prints.
+
+It appends what it was given, its arguments and its input, as one JSON line to the file that
+LP_STANDIN_LOG names. LP_STANDIN_STATE sets how CUPS answers, with the words CUPS's lp prints:
+takes, the default, where the default printer takes the job; no-default, where no default
+printer is set; and refuses, where the printer refuses the job.
+"""
+
+import json
+import os
+import sys
+
+text = sys.stdin.read()
+log = os.environ.get("LP_STANDIN_LOG")
+if log:
+    with open(log, "a", encoding="utf-8") as record:
+        record.write(json.dumps({"args": sys.argv[1:], "input": text}) + "\n")
+state = os.environ.get("LP_STANDIN_STATE", "takes")
+if state == "takes":
+    print("request id is Office-17 (0 file(s))")
+    sys.exit(0)
+if state == "no-default":
+    print("lp: Error - no default destination available.", file=sys.stderr)
+    sys.exit(1)
+if state == "refuses":
+    print('lp: Error - Destination "Office" is not accepting jobs.', file=sys.stderr)
+    sys.exit(1)
+print(f"stand-in lp: no state {state!r}", file=sys.stderr)
+sys.exit(2)
