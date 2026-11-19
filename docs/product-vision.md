@@ -40,5 +40,8 @@ and the client's rate.
   No client's rate is assumed for another.
 - A stop before printing on a wrong line or rate, for `O1`\
   It says which row or value to fix, so they mend it alone.
-- The same sums as the library, for `O1`\
-  The totals it prints are the ones the developers already get from invoicer and trust.
+- The same sums to the cent, for `O1`\
+  Its subtotal, tax, and total match what invoicer gives anywhere else, so they trust the sums.
+- Ready in one step, for `O1`\
+  The guide's one command installs invoicer and prints a sample, so they see it work before their
+  own sheet.
