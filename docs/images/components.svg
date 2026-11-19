@@ -60,9 +60,9 @@
   <rect class="box" x="440" y="460" width="300" height="100" rx="0"/>
   <text class="name mid" x="590" y="506" text-anchor="middle">invoice</text>
   <text class="kind mid" x="590" y="526" text-anchor="middle">[Python module]</text>
-  <rect class="box" x="860" y="460" width="300" height="100" rx="0"/>
-  <text class="name mid" x="1010" y="506" text-anchor="middle">library</text>
-  <text class="kind mid" x="1010" y="526" text-anchor="middle">[Python package, unchanged]</text>
+  <rect class="box" x="900" y="460" width="260" height="100" rx="0"/>
+  <text class="name mid" x="1030" y="506" text-anchor="middle">library</text>
+  <text class="kind mid" x="1030" y="526" text-anchor="middle">[Python package, unchanged]</text>
   <rect class="ext" x="40" y="660" width="300" height="100" rx="6"/>
   <text class="name mid" x="190" y="706" text-anchor="middle">CUPS</text>
   <text class="kind mid" x="190" y="726" text-anchor="middle">[printing system, with its default printer]</text>
@@ -78,15 +78,16 @@
   <path class="line" d="M590,260 L590,144" marker-end="url(#arrow)"/>
   <text class="label small start" x="600" y="190" text-anchor="start">reads</text>
   <text class="data start" x="600" y="206" text-anchor="start">Spreadsheet</text>
-  <path class="line" d="M740,330 L870,456" marker-end="url(#arrow)"/>
-  <text class="label small start" x="806" y="380" text-anchor="start">makes each</text>
-  <text class="data start" x="806" y="396" text-anchor="start">Line</text>
+  <path class="line" d="M740,330 L910,456" marker-end="url(#arrow)"/>
+  <text class="label small start" x="836" y="380" text-anchor="start">makes each</text>
+  <text class="data start" x="836" y="396" text-anchor="start">Line</text>
   <path class="line" d="M300,360 L470,456" marker-end="url(#arrow)"/>
   <text class="label small halo end" x="362" y="400" text-anchor="end">has made</text>
   <text class="data halo end" x="362" y="416" text-anchor="end">Line, Details</text>
-  <path class="line" d="M740,510 L856,510" marker-end="url(#arrow)"/>
-  <text class="label small halo mid" x="798" y="496" text-anchor="middle">renders</text>
-  <text class="data halo mid" x="798" y="530" text-anchor="middle">Line, Details' rate</text>
+  <path class="line" d="M740,510 L896,510" marker-end="url(#arrow)"/>
+  <text class="label small halo mid" x="820" y="480" text-anchor="middle">renders at</text>
+  <text class="label small halo mid" x="820" y="496" text-anchor="middle">the rate as a fraction</text>
+  <text class="data halo mid" x="820" y="530" text-anchor="middle">Line, Details' rate</text>
   <path class="line" d="M190,360 L190,456" marker-end="url(#arrow)"/>
   <text class="label small start" x="200" y="400" text-anchor="start">has printed</text>
   <text class="data start" x="200" y="416" text-anchor="start">Invoice</text>

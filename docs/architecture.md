@@ -2,7 +2,7 @@
 
 ## User stories
 
-- `S1`: one from accounting wants to print a client's invoice unaided, at its tax rate, named, numbered, and dated today.
+- `S1`: one from accounting wants their kept lines printed unaided as a client's numbered invoice at its rate, dated today.
 - `S2`: one from accounting wants a sample invoice printed after setting up, to know printing works before a client's invoice.
 - `S3`: one from accounting wants to learn which line or value to fix when one is wrong, with nothing printed.
 - `S4`: one who builds invoices in Python wants an invoice's sums and text from its lines and rate, as before.
@@ -61,7 +61,7 @@ Strategies:
 ![invoicer's components](images/components.svg)
 
 - command (console script)\
-  Answers for each run giving one from accounting their printed invoice, the sample, or what to fix.
+  Answers for each run giving its invoice, the sample, or what to fix, and the rate the library counts with.
 - spreadsheet reader (Python module)\
   Answers for the lines exactly as the spreadsheet keeps them, or the file, column, or row to fix.
 - invoice (Python module)\
@@ -74,17 +74,21 @@ Strategies:
 Strategies:
 
 - The command checks the client's name, the invoice number, and the rate before it reads the file. [P3.1]\
-  Intent: a wrong value stops the run before the spreadsheet is read.
+  Intent: a wrong value costs one from accounting no read of the file.
 - The command refuses an empty name or number, and a rate that isn't a number from 0 to 100. [P3.2]\
   Intent: every invoice is named, numbered, and taxed at a rate that can be right.
 - Only `invoicer --sample` prints the sample, and a run with no file and no `--sample` refuses, naming the file it needs. [P5.2]\
   Intent: a command typed by mistake never prints the sample in place of a client's invoice.
+- The command alone turns the rate in percent into the library's fraction, such as 19 into 0.19. [P4.1]\
+  Intent: the tax comes out at the client's own rate, never at a hundred times it.
 - Only the command writes to the terminal and sets the exit status. [P3.3]\
   Intent: every refusal reaches one from accounting the same way.
 - The command hands the invoice today's date, and the invoice takes the date it's given. [P2.3]\
   Intent: each invoice is dated the day it prints, and a test can fix the date.
 - The command holds the sample's lines and details. [P5.2]\
   Intent: one from accounting sees invoicer print before they give it their own file.
+- The command shows the invoice in the terminal before it hands the invoice to the printer. [S1]\
+  Intent: one from accounting has the invoice in front of them, even where the printer fails.
 - The spreadsheet reader reads the .ods file that LibreOffice Calc saves, and refuses any other form. [P1.1]\
   Intent: accounting's file reads as they keep it, with no export on the way.
 - The spreadsheet reader finds the three columns by their names in row 1, wherever they stand. [P1.2]\
@@ -95,9 +99,11 @@ Strategies:
   Intent: each line's amount comes out as the library counts it, to the cent.
 - The spreadsheet reader names each row by its number as Calc shows it. [P3.2]\
   Intent: one from accounting finds the cell to fix at once.
+- The spreadsheet reader turns each row into the library's Line. [P4.1]\
+  Intent: a row's amount is the one the library gives for the same line in Python code.
 - The spreadsheet reader reads the file with Python's standard library alone. [P5.1]\
   Intent: the install brings nothing beside invoicer.
-- The invoice hands the library the lines and rate, and heads its unchanged rows and sums with the details. [P4.1]\
+- The invoice hands the library the lines and rate as a fraction, and heads the unchanged text with the details. [P4.1]\
   Intent: the printed sums are the library's own, at the client's rate.
 - The printer hands the invoice's text to CUPS's lp command, with no printer named. [P5.3]\
   Intent: the invoice comes out of the printer that one from accounting already uses.
@@ -123,8 +129,8 @@ sequenceDiagram
   C->>R: has the lines read (Spreadsheet) [P1.1]
   R->>L: makes each row a line (Line) [P1.2]
   R-->>C: gives the lines (Line) [P3.1]
-  C->>I: has the invoice made, dated today (Line, Details) [P2.3]
-  I->>L: has the rows and sums rendered at the client's rate (Line, Details) [P4.1]
+  C->>I: has the invoice made, dated today, at the rate as a fraction (Line, Details) [P2.3, P4.1]
+  I->>L: has the rows and sums rendered at the rate as a fraction (Line, Details' rate) [P4.1]
   L-->>I: gives the rows and sums as text [P4.1]
   I-->>C: gives the invoice (Invoice) [S1]
   C->>U: shows the invoice (Invoice) [S1]
@@ -161,8 +167,8 @@ sequenceDiagram
   participant P as printer
   participant Q as CUPS
   U->>C: asks for the sample, with no file and no values [S2, P5.2]
-  C->>I: has the invoice made, dated today (Sample) [P5.2]
-  I->>L: has the rows and sums rendered at the sample's rate (Line, Details) [P4.1]
+  C->>I: has the invoice made, dated today, at the rate as a fraction (Sample) [P5.2, P4.1]
+  I->>L: has the rows and sums rendered at the rate as a fraction (Line, Details' rate) [P4.1]
   L-->>I: gives the rows and sums as text [P4.1]
   I-->>C: gives the invoice (Invoice) [S2]
   C->>U: shows the invoice (Invoice) [S2]
@@ -220,7 +226,7 @@ sequenceDiagram
 sequenceDiagram
   actor D as one who builds invoices in Python
   participant L as library
-  D->>L: hands the lines and a tax rate (Line) [S4, P4.2]
+  D->>L: hands the lines and a tax rate as a fraction (Line) [S4, P4.2]
   L-->>D: gives the subtotal, tax, total, and text [S4, P4.2]
 ```
 
@@ -240,8 +246,12 @@ Strategies:
   Intent: invoicer needs only the laptop and its printer once it's set up.
 - The command reads the spreadsheet at the path it's given, from the folder it runs in. [P1.1]\
   Intent: one from accounting runs it where they keep the file.
-- The pull request's checks run every test in a fresh environment, with a stand-in for lp. [S1]\
-  Intent: each change is known to print the right invoice before it merges.
+- A developer's clone runs the repository's text checks on each commit, before the commit is made. [S1]\
+  Intent: a wrong line in a text, such as the guide, stops on the developer's own laptop.
+- GitHub runs the same text checks on each push, from the Lint workflow that lovaizu/repofiles keeps. [S1]\
+  Intent: a change from a clone without the checks, or from GitHub itself, meets them too.
+- GitHub runs every test on each pull request, in a fresh environment with a stand-in for lp. [S1]\
+  Intent: each change prints the right invoice before it merges.
 
 ### Directory structure
 
@@ -256,14 +266,19 @@ invoicer/            the package that pipx installs: the command, its parts, and
   ods.py             the spreadsheet reader
   invoice.py         the invoice, with the details given for it
   printer.py         the printer
-  refusal.py         the refusal, which each new part gives and the command shows
+  refusal.py         the refusal, which the command, the spreadsheet reader, and the printer give
 tests/               the unit, integration, and end-to-end tests
   bin/lp             the stand-in lp, which records what it was given
 docs/                the product vision and this architecture, for the developers
   images/            this architecture's figures
 images/              the README's figures
 pyproject.toml       the package, with invoicer as its console script, Python 3.9 or later, and no dependency
-.github/workflows/   the pull request's checks
+.github/workflows/   the checks that GitHub runs
+  lint.yml           the text checks on each push, which setup.sh of lovaizu/repofiles puts and overwrites
+  tests.yml          the tests on each pull request, the product's own
+.claude/             the settings and hooks of Claude Code for those who work on this repository
+lefthook.yml         the text checks on each commit, which setup.sh of lovaizu/repofiles puts and overwrites
+lefthook-repo.yml    this repository's settings of those checks, which setup.sh never writes
 ```
 
 Strategies:
@@ -276,6 +291,8 @@ Strategies:
   Intent: the joined parts run as on the laptop, with no paper printed.
 - The end-to-end test installs the package fresh, then runs the sample and one invoice with the stand-in lp. [S1, S2]\
   Intent: the install and both runs work as the README says.
+- A change to the repository's checks goes in lefthook-repo.yml or tests.yml, never in lint.yml or lefthook.yml. [S1]\
+  Intent: the change outlasts the next run of setup.sh.
 
 ## Test strategy
 
@@ -288,12 +305,12 @@ Strategies:
 | Code coverage | Parts | Quality | 100% statement (C0) and branch (C1) coverage of each part, the library included. |
 | Property-based testing | Parts | Quality | 0 counterexamples, such as an invoice whose sums differ from the library's for the same lines and rate. |
 | Mutation testing | Parts | Quality | 0 surviving mutants. |
-| Characterization testing | Parts | Quality | Every case passes: the library gives invoicer 1.4.0's sums and text for the same lines and rate. The library has no test yet. |
+| Characterization testing | Parts | Quality | Every case passes: the library gives invoicer 1.4.0's sums and text for the same lines and rate. |
 | Data compatibility testing | Parts | Quality | The spreadsheet reader reads, without loss, each kind of cell that LibreOffice Calc saves in a line. |
-| Integration testing | Architecture | Quality | Every case passes. |
+| Integration testing | Architecture | Quality | Every case passes. The command, given the walkthrough's three lines at 19%, gives a tax of 304.10 EUR. Its subtotal is 1600.50 EUR, and its total 1904.60 EUR. |
 | Contract testing | Architecture | Quality | For each recorded step, the real printing system gives the same result as its stand-in. |
 | Traceability | Architecture | Quality | Each story, principle item, component, and data has an integration test. Each test names an element or case one level up that exists. A review finds 0 tests that miss what their element says. |
 | Scenario testing | Product | Quality | Every case passes. |
-| Installation testing | Product | Quality | The README's install command installs invoicer on a fresh system, and the sample then prints. The README documents no update or uninstall, so none is checked. |
+| Installation testing | Product | Quality | The README's install command installs invoicer on a fresh system, and the sample then prints. |
 | Configuration testing | Product | Quality | Every case passes on Python 3.9 and on the newest Python. |
 | Usability testing | Product | Benchmark | The share of invoices that one from accounting prints unaided and right. The time from the lines ready to the invoice printed, README included. |
