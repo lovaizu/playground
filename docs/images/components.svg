@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 880">
+  <title>invoicer's components</title>
+  <style>
+    svg { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, 'Hiragino Sans', 'Noto Sans CJK JP', 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif; }
+    .bg { fill: #ffffff; }
+    .box { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.5; }
+    .store { fill: #fff8c5; stroke: #9a6700; stroke-width: 1.5; }
+    .ext { fill: #eaeef2; stroke: #d0d7de; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .frame-name { fill: #0969da; font-size: 13px; font-weight: 600; }
+    .name { fill: #1f2328; font-size: 15px; font-weight: 600; text-anchor: middle; }
+    .kind { fill: #59636e; font-size: 12px; text-anchor: middle; }
+    .label { fill: #1f2328; font-size: 13px; }
+    .small { font-size: 12px; }
+    .data { fill: #8250df; font-size: 12px; font-style: italic; }
+    .line { fill: none; stroke: #59636e; stroke-width: 1.5; }
+    .head { fill: #59636e; }
+    .halo { stroke: #ffffff; stroke-width: 7; stroke-linejoin: round; paint-order: stroke; }
+    .mid { text-anchor: middle; }
+    .start { text-anchor: start; }
+    .end { text-anchor: end; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .box { fill: #161b22; stroke: #3d444d; }
+      .store { fill: #2e2a1a; stroke: #d29922; }
+      .ext { fill: #21262d; stroke: #3d444d; }
+      .frame-name { fill: #4493f8; }
+      .name, .label { fill: #f0f6fc; }
+      .kind { fill: #9198a1; }
+      .data { fill: #c297ff; }
+      .line { stroke: #9198a1; }
+      .head { fill: #9198a1; }
+      .halo { stroke: #0d1117; }
+    }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path class="head" d="M0,0 L10,5 L0,10 z"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1200" height="880"/>
+  <circle class="ext" cx="190" cy="40" r="11"/>
+  <rect class="ext" x="40" y="50" width="300" height="90" rx="22"/>
+  <text class="name mid" x="190" y="90" text-anchor="middle">one from accounting</text>
+  <text class="kind mid" x="190" y="110" text-anchor="middle">[prints clients' invoices]</text>
+  <rect class="store" x="440" y="50" width="300" height="90" rx="0"/>
+  <text class="name mid" x="590" y="100" text-anchor="middle">Spreadsheet</text>
+  <circle class="ext" cx="1010" cy="40" r="11"/>
+  <rect class="ext" x="860" y="50" width="300" height="90" rx="22"/>
+  <text class="name mid" x="1010" y="90" text-anchor="middle">one who builds invoices in Python</text>
+  <text class="kind mid" x="1010" y="110" text-anchor="middle">[calls the library in their code]</text>
+  <rect class="box" x="40" y="260" width="300" height="100" rx="0"/>
+  <text class="name mid" x="190" y="306" text-anchor="middle">command</text>
+  <text class="kind mid" x="190" y="326" text-anchor="middle">[console script]</text>
+  <rect class="box" x="440" y="260" width="300" height="100" rx="0"/>
+  <text class="name mid" x="590" y="306" text-anchor="middle">spreadsheet reader</text>
+  <text class="kind mid" x="590" y="326" text-anchor="middle">[Python module]</text>
+  <rect class="box" x="40" y="460" width="300" height="100" rx="0"/>
+  <text class="name mid" x="190" y="506" text-anchor="middle">printer</text>
+  <text class="kind mid" x="190" y="526" text-anchor="middle">[Python module]</text>
+  <rect class="box" x="440" y="460" width="300" height="100" rx="0"/>
+  <text class="name mid" x="590" y="506" text-anchor="middle">invoice</text>
+  <text class="kind mid" x="590" y="526" text-anchor="middle">[Python module]</text>
+  <rect class="box" x="860" y="460" width="300" height="100" rx="0"/>
+  <text class="name mid" x="1010" y="506" text-anchor="middle">library</text>
+  <text class="kind mid" x="1010" y="526" text-anchor="middle">[Python package, unchanged]</text>
+  <rect class="ext" x="40" y="660" width="300" height="100" rx="6"/>
+  <text class="name mid" x="190" y="706" text-anchor="middle">CUPS</text>
+  <text class="kind mid" x="190" y="726" text-anchor="middle">[printing system, with its default printer]</text>
+  <path class="line" d="M150,140 L150,256" marker-end="url(#arrow)"/>
+  <text class="label small end" x="140" y="190" text-anchor="end">asks for an invoice</text>
+  <text class="data end" x="140" y="206" text-anchor="end">Spreadsheet, Details</text>
+  <path class="line" d="M230,260 L230,144" marker-end="url(#arrow)"/>
+  <text class="label small start" x="240" y="190" text-anchor="start">shows</text>
+  <text class="data start" x="240" y="206" text-anchor="start">Invoice, Refusal</text>
+  <path class="line" d="M340,310 L436,310" marker-end="url(#arrow)"/>
+  <text class="label small halo mid" x="388" y="296" text-anchor="middle">has read</text>
+  <text class="data halo mid" x="388" y="330" text-anchor="middle">Spreadsheet</text>
+  <path class="line" d="M590,260 L590,144" marker-end="url(#arrow)"/>
+  <text class="label small start" x="600" y="190" text-anchor="start">reads</text>
+  <text class="data start" x="600" y="206" text-anchor="start">Spreadsheet</text>
+  <path class="line" d="M740,330 L870,456" marker-end="url(#arrow)"/>
+  <text class="label small start" x="806" y="380" text-anchor="start">makes each</text>
+  <text class="data start" x="806" y="396" text-anchor="start">Line</text>
+  <path class="line" d="M300,360 L470,456" marker-end="url(#arrow)"/>
+  <text class="label small halo end" x="362" y="400" text-anchor="end">has made</text>
+  <text class="data halo end" x="362" y="416" text-anchor="end">Line, Details</text>
+  <path class="line" d="M740,510 L856,510" marker-end="url(#arrow)"/>
+  <text class="label small halo mid" x="798" y="496" text-anchor="middle">renders</text>
+  <text class="data halo mid" x="798" y="530" text-anchor="middle">Line, Details' rate</text>
+  <path class="line" d="M190,360 L190,456" marker-end="url(#arrow)"/>
+  <text class="label small start" x="200" y="400" text-anchor="start">has printed</text>
+  <text class="data start" x="200" y="416" text-anchor="start">Invoice</text>
+  <path class="line" d="M190,560 L190,656" marker-end="url(#arrow)"/>
+  <text class="label small start" x="200" y="600" text-anchor="start">sends to the default printer</text>
+  <text class="data start" x="200" y="616" text-anchor="start">Invoice</text>
+  <path class="line" d="M1010,140 L1010,456" marker-end="url(#arrow)"/>
+  <text class="label small start" x="1020" y="290" text-anchor="start">gets the sums and text of</text>
+  <text class="data start" x="1020" y="306" text-anchor="start">Line</text>
+  <text class="frame-name start" x="40" y="845" text-anchor="start">Legend</text>
+  <rect class="box" x="110" y="830" width="36" height="22" rx="0"/>
+  <text class="label small start" x="154" y="845" text-anchor="start">component</text>
+  <rect class="store" x="240" y="830" width="36" height="22" rx="0"/>
+  <text class="label small start" x="284" y="845" text-anchor="start">store of data</text>
+  <rect class="ext" x="400" y="830" width="36" height="22" rx="6"/>
+  <text class="label small start" x="444" y="845" text-anchor="start">outside the product, with a head: a role of the product vision</text>
+  <text class="label small start" x="860" y="837" text-anchor="start">a box: name and [type], or a store by its data</text>
+  <text class="data start" x="860" y="853" text-anchor="start">data handed on, named as in Data model</text>
+</svg>

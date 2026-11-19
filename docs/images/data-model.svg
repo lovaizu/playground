@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 630">
+  <title>invoicer's data</title>
+  <style>
+    svg { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, 'Hiragino Sans', 'Noto Sans CJK JP', 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif; }
+    .bg { fill: #ffffff; }
+    .box { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.5; }
+    .name { fill: #1f2328; font-size: 15px; font-weight: 600; text-anchor: middle; }
+    .label { fill: #1f2328; font-size: 13px; }
+    .small { font-size: 12px; }
+    .frame-name { fill: #0969da; font-size: 13px; font-weight: 600; }
+    .line { fill: none; stroke: #59636e; stroke-width: 1.5; }
+    .head { fill: #59636e; }
+    .halo { stroke: #ffffff; stroke-width: 7; stroke-linejoin: round; paint-order: stroke; }
+    .mid { text-anchor: middle; }
+    .start { text-anchor: start; }
+    .end { text-anchor: end; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .box { fill: #161b22; stroke: #3d444d; }
+      .frame-name { fill: #4493f8; }
+      .name, .label { fill: #f0f6fc; }
+      .line { stroke: #9198a1; }
+      .head { fill: #9198a1; }
+      .halo { stroke: #0d1117; }
+    }
+  </style>
+  <rect class="bg" x="0" y="0" width="1000" height="630"/>
+  <rect class="box" x="40" y="60" width="220" height="72" rx="0"/>
+  <text class="name mid" x="150" y="101" text-anchor="middle">Refusal</text>
+  <rect class="box" x="740" y="60" width="220" height="72" rx="0"/>
+  <text class="name mid" x="850" y="101" text-anchor="middle">Details</text>
+  <rect class="box" x="40" y="250" width="220" height="72" rx="0"/>
+  <text class="name mid" x="150" y="291" text-anchor="middle">Spreadsheet</text>
+  <rect class="box" x="390" y="250" width="220" height="72" rx="0"/>
+  <text class="name mid" x="500" y="291" text-anchor="middle">Line</text>
+  <rect class="box" x="740" y="250" width="220" height="72" rx="0"/>
+  <text class="name mid" x="850" y="291" text-anchor="middle">Sample</text>
+  <rect class="box" x="390" y="440" width="220" height="72" rx="0"/>
+  <text class="name mid" x="500" y="481" text-anchor="middle">Invoice</text>
+  <path class="line" d="M278,286 L390,286"/>
+  <path class="head" d="M260,286 L269,280 L278,286 L269,292 Z"/>
+  <text class="label small halo mid" x="288" y="306" text-anchor="middle">1</text>
+  <text class="label small halo mid" x="366" y="306" text-anchor="middle">0..*</text>
+  <text class="label small halo mid" x="325" y="276" text-anchor="middle">holds</text>
+  <path class="line" d="M610,286 L722,286"/>
+  <path class="head" d="M740,286 L731,280 L722,286 L731,292 Z"/>
+  <text class="label small halo mid" x="634" y="306" text-anchor="middle">1..*</text>
+  <text class="label small halo mid" x="712" y="306" text-anchor="middle">1</text>
+  <text class="label small halo mid" x="675" y="276" text-anchor="middle">holds</text>
+  <path class="line" d="M850,232 L850,132"/>
+  <path class="head" d="M850,250 L844,241 L850,232 L856,241 Z"/>
+  <text class="label small halo start" x="862" y="152" text-anchor="start">1</text>
+  <text class="label small halo start" x="862" y="230" text-anchor="start">1</text>
+  <text class="label small halo start" x="862" y="194" text-anchor="start">holds</text>
+  <path class="line" d="M500,440 L500,322"/>
+  <text class="label small halo start" x="512" y="344" text-anchor="start">1..*</text>
+  <text class="label small halo start" x="512" y="432" text-anchor="start">0..1</text>
+  <text class="label small halo start" x="512" y="388" text-anchor="start">lists</text>
+  <path class="line" d="M610,452 L790,132"/>
+  <text class="label small halo start" x="800" y="154" text-anchor="start">1</text>
+  <text class="label small halo start" x="628" y="440" text-anchor="start">0..1</text>
+  <text class="label small halo start" x="668" y="376" text-anchor="start">is headed by</text>
+  <path class="line" d="M150,132 L150,250"/>
+  <text class="label small halo start" x="160" y="152" text-anchor="start">0..1</text>
+  <text class="label small halo start" x="160" y="242" text-anchor="start">0..1</text>
+  <text class="label small halo start" x="160" y="197" text-anchor="start">names</text>
+  <path class="line" d="M260,124 L430,250"/>
+  <text class="label small halo start" x="292" y="138" text-anchor="start">0..1</text>
+  <text class="label small halo end" x="404" y="222" text-anchor="end">0..1</text>
+  <text class="label small halo start" x="356" y="180" text-anchor="start">names</text>
+  <path class="line" d="M260,96 L740,96"/>
+  <text class="label small halo mid" x="284" y="113" text-anchor="middle">0..1</text>
+  <text class="label small halo mid" x="714" y="113" text-anchor="middle">0..1</text>
+  <text class="label small halo mid" x="500" y="86" text-anchor="middle">names</text>
+  <path class="line" d="M40,110 L20,110 L20,490 L390,490"/>
+  <text class="label small halo start" x="26" y="152" text-anchor="start">0..1</text>
+  <text class="label small halo end" x="382" y="508" text-anchor="end">0..1</text>
+  <text class="label small halo mid" x="205" y="480" text-anchor="middle">stands in for the printout of</text>
+  <text class="frame-name start" x="40" y="595" text-anchor="start">Legend</text>
+  <text class="label small start" x="115" y="595" text-anchor="start">a number at a line's end: how many of the data at that end the other joins</text>
+  <path class="head" d="M590,590 L599,584 L608,590 L599,596 Z"/>
+  <path class="line" d="M608,590 L640,590"/>
+  <text class="label small start" x="650" y="595" text-anchor="start">at the whole, which holds its parts</text>
+</svg>
