@@ -13,8 +13,8 @@
 
 - `O1`: with no developer, one from accounting prints right invoices at each client's tax rate,
   named, numbered, and dated today.
-  - `KR1.1`: the share of invoices one from accounting printed wrong, or not alone: name, number,
-    date, line, subtotal, tax, total. Lower is better.
+  - `KR1.1`: the share of invoices not printed unaided, or with a wrong name, number, date, line,
+    subtotal, tax, or total. Lower is better.
   - `KR1.2`: the time from the spreadsheet's lines ready to the invoice printed, reading the
     README's guide included. Lower is better.
 - `O2`: one who builds invoices in Python gets subtotal, tax, total, and text from an invoice's
