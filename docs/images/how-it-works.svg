@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" font-family="sans-serif" font-size="14">
+  <title>How invoicer works</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="760" height="420" fill="#ffffff"/>
+  <text x="20" y="28" font-size="12.5" font-weight="bold">You run one command on the sheet you keep, give the client's tax rate, and your printer prints the invoice.</text>
+
+  <!-- The flow -->
+  <rect x="20" y="55" width="300" height="60" rx="8" fill="#e8f0fe" stroke="#3367d6"/>
+  <text x="170" y="80" text-anchor="middle" font-weight="bold">Your sheet, saved in Calc</text>
+  <text x="170" y="100" text-anchor="middle">nordwind-2026-11.ods</text>
+
+  <line x1="170" y1="115" x2="170" y2="150" stroke="#333" marker-end="url(#arrow)"/>
+
+  <rect x="20" y="150" width="300" height="60" rx="8" fill="#e8f0fe" stroke="#3367d6"/>
+  <text x="170" y="175" text-anchor="middle" font-weight="bold">One command with the client's rate</text>
+  <text x="170" y="195" text-anchor="middle">invoicer print ... --rate 19</text>
+
+  <line x1="170" y1="210" x2="170" y2="245" stroke="#333" marker-end="url(#arrow)"/>
+
+  <rect x="20" y="245" width="300" height="60" rx="8" fill="#e8f0fe" stroke="#3367d6"/>
+  <text x="170" y="270" text-anchor="middle" font-weight="bold">Every line and the rate checked</text>
+  <text x="170" y="290" text-anchor="middle">a wrong cell: nothing printed</text>
+
+  <line x1="170" y1="305" x2="170" y2="340" stroke="#333" marker-end="url(#arrow)"/>
+
+  <rect x="20" y="340" width="300" height="60" rx="8" fill="#e6f4ea" stroke="#188038"/>
+  <text x="170" y="365" text-anchor="middle" font-weight="bold">The invoice from your printer</text>
+  <text x="170" y="385" text-anchor="middle">ready to hand to the client</text>
+
+  <!-- Doubts and what you get -->
+  <line x1="320" y1="85" x2="400" y2="85" stroke="#999" stroke-dasharray="4 3"/>
+  <rect x="400" y="55" width="340" height="60" rx="8" fill="#fef7e0" stroke="#f9ab00"/>
+  <text x="415" y="78" font-style="italic">Does the sheet need exporting first?</text>
+  <text x="415" y="100">No: you save the sheet, and that's all.</text>
+
+  <line x1="320" y1="180" x2="400" y2="180" stroke="#999" stroke-dasharray="4 3"/>
+  <rect x="400" y="150" width="340" height="60" rx="8" fill="#fef7e0" stroke="#f9ab00"/>
+  <text x="415" y="173" font-style="italic">Is the tax right for each client?</text>
+  <text x="415" y="195">You give its rate each time; none carries over.</text>
+
+  <line x1="320" y1="275" x2="400" y2="275" stroke="#999" stroke-dasharray="4 3"/>
+  <rect x="400" y="245" width="340" height="60" rx="8" fill="#fef7e0" stroke="#f9ab00"/>
+  <text x="415" y="268" font-style="italic">Can a mistake in the sheet reach the client?</text>
+  <text x="415" y="290">No: you're told the row to fix instead.</text>
+</svg>

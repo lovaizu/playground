@@ -1,4 +1,5 @@
-"""invoicer: the lines of an invoice, their totals with tax, and the invoice as text."""
+"""invoicer's library for developers, its names as 1.4.0 offered them: the lines of an invoice,
+their totals with tax, and the invoice as text. The `invoicer print` command is cli.py's."""
 
 from invoicer.lines import Line, parse_lines
 from invoicer.render import render
