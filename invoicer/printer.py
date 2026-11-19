@@ -5,6 +5,12 @@ from __future__ import annotations
 import subprocess
 
 from invoicer.invoice import Invoice
+from invoicer.refusal import Refusal
+
+_CUPS_CLIENT = (
+    "cups-client, from sudo apt install cups-client or sudo dnf install cups-client"
+)
+_DEFAULT_PRINTER = "lpstat -d shows system default destination: and its name"
 
 
 def lp(text: str) -> subprocess.CompletedProcess[str]:
@@ -15,7 +21,9 @@ def lp(text: str) -> subprocess.CompletedProcess[str]:
     Changes: hands a job to the default printer where lp takes it.
     Refuses: FileNotFoundError where no lp is on the path.
     """
-    raise NotImplementedError("printer.lp")
+    return subprocess.run(
+        ["lp"], input=text, capture_output=True, encoding="utf-8", check=False
+    )
 
 
 def send(invoice: Invoice) -> None:
@@ -28,4 +36,22 @@ def send(invoice: Invoice) -> None:
     cups-client to install; where no default printer is set, naming `lpstat -d`; and where CUPS
     refuses the job, with CUPS's own reason.
     """
-    raise NotImplementedError("printer.send")
+    try:
+        done = lp(invoice.text)
+    except FileNotFoundError:
+        raise Refusal(
+            "lp, the print command of CUPS, isn't on this laptop, so the invoice didn't print.",
+            check=_CUPS_CLIENT,
+        ) from None
+    if done.returncode == 0:
+        return
+    reason = done.stderr.strip()
+    if "no default destination" in reason.lower():
+        raise Refusal(
+            f"no default printer is set, so the invoice didn't print. CUPS says: {reason}",
+            check=_DEFAULT_PRINTER,
+        )
+    raise Refusal(
+        f"the printer didn't take the invoice, so it didn't print. CUPS says: {reason}",
+        check=_DEFAULT_PRINTER,
+    )

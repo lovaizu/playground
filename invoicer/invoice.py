@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from datetime import date
 from decimal import Decimal
 
+from invoicer import render
 from invoicer.lines import Line
 
 
@@ -43,4 +44,10 @@ def make(lines: Sequence[Line], details: Details, today: date) -> Invoice:
     Changes: nothing.
     Refuses: nothing, as the command and the spreadsheet reader have checked each value.
     """
-    raise NotImplementedError("invoice.make")
+    heading = (
+        f"Invoice {details.number}\n"
+        f"Client: {details.client}\n"
+        f"Date: {today.isoformat()}\n"
+        f"Tax rate: {details.rate_typed}%"
+    )
+    return Invoice(f"{heading}\n\n{render(lines, details.rate, 'EUR')}")

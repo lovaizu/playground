@@ -216,6 +216,38 @@ class MainTest(unittest.TestCase):
             with self.subTest(option=option):
                 self.assert_refused(["--sample", option, value], option)
 
+    def test_an_option_with_no_value_after_it_is_refused(self) -> None:
+        """Supports: test_s3_names_the_value_before_reading_the_file.
+
+        Given the walkthrough's command line ending with --rate, its value left out.
+        When cli.main runs it.
+        Then it names --rate, reads no file, and gives 1.
+        """
+        self.assert_refused(list(WALKTHROUGH_ARGS[:-1]), "--rate")
+
+    def test_an_option_given_twice_is_refused(self) -> None:
+        """Supports: test_s3_names_the_value_before_reading_the_file.
+
+        Given the walkthrough's command line with --rate 7 after its --rate 19.
+        When cli.main runs it.
+        Then it names --rate, reads no file, and gives 1, taking neither rate.
+        """
+        self.assert_refused(list(WALKTHROUGH_ARGS) + ["--rate", "7"], "--rate")
+
+    def test_an_option_that_invoicer_lacks_is_refused(self) -> None:
+        """Supports: test_s3_names_the_value_before_reading_the_file.
+
+        Given the walkthrough's command line with --rat 19 in place of --rate 19.
+        When cli.main runs it.
+        Then it names --rat, reads no file, and gives 1.
+        """
+        code, out, err = self.main(argv_without("rate") + ["--rat", "19"])
+        self.assertRegex(out + err, r"--rat\b", "--rat is named, not only --rate")
+        self.read.assert_not_called()
+        self.make.assert_not_called()
+        self.send.assert_not_called()
+        self.assertEqual(code, 1)
+
     def test_the_values_are_checked_before_the_file_is_read(self) -> None:
         """Supports: test_s3_names_the_value_before_reading_the_file.
 

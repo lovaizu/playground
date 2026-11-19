@@ -16,6 +16,12 @@ Each case builds a real .ods file, and reads what the terminal and the stand-in 
 
 Each part has its file: [test_cli.py](../tests/test_cli.py), [test_ods.py](../tests/test_ods.py), [test_invoice.py](../tests/test_invoice.py), [test_printer.py](../tests/test_printer.py), and [test_refusal.py](../tests/test_refusal.py).
 [test_library.py](../tests/test_library.py) holds the library's cases, which pin invoicer 1.4.0's sums and text.
+The command's file holds a case for each wrong command line that `cli.main` refuses before it reads the file, naming the option:
+
+- `test_an_option_with_no_value_after_it_is_refused`: the command line ends with `--rate` and no value.
+- `test_an_option_given_twice_is_refused`: `--rate 7` follows `--rate 19`.
+- `test_an_option_that_invoicer_lacks_is_refused`: `--rat 19` stands in place of `--rate 19`.
+
 No part keeps what came before, as `P2.2` holds, so no case is a transition.
 Run every case with `python3 -m unittest discover -s tests` from the repository's root.
 
