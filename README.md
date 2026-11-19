@@ -84,7 +84,7 @@ As invoicer reads your own file, it names the row or value to fix before printin
 
 ### Can you set it up yourself?
 
-As invoicer needs only your file and three values, nothing waits to set up after one install command. Its sample invoice shows it print before you give it your own spreadsheet.
+Once your laptop meets the [Requirements](#requirements), one install command is all it takes. Its sample invoice shows it print before you give it your own file and three values.
 
 ## Documentation
 
