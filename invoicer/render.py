@@ -3,8 +3,11 @@
 from invoicer.tax import tax_of
 from invoicer.totals import subtotal
 
+# The currency of every invoice, written after each amount.
+INVOICE_CURRENCY = "EUR"
 
-def render(lines, rate, currency="EUR"):
+
+def render(lines, rate, currency=INVOICE_CURRENCY):
     """The invoice's text: a row for each line, then the subtotal, the tax, and the total."""
     rows = [f"{line.description:<30}{line.amount():>12} {currency}" for line in lines]
     amount = subtotal(lines)
