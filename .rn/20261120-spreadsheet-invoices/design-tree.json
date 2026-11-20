@@ -511,6 +511,10 @@
               "about": "a damaged file",
               "decided": "A file that is a zip but not a readable spreadsheet, or holds no sheet, is refused with one invoicer line saying it can't be read as a Calc spreadsheet and to save it again from Calc as .ods, never with a Python traceback.",
               "by": "reasoning"
+            },
+            {
+              "about": "cells that look right but print wrong",
+              "decided": null
             }
           ]
         }
@@ -556,6 +560,12 @@
     }
   ],
   "work": [
+    {
+      "do": "decide",
+      "path": "invoicer/",
+      "condition": "N8",
+      "about": "cells that look right but print wrong"
+    },
     {
       "do": "make",
       "path": "invoicer/"

@@ -1,0 +1,45 @@
+{
+  "good": [
+    {
+      "condition": "N4",
+      "lines": [
+        "pyproject.toml:5",
+        "tests/_ods.py:80",
+        "tests/_ods.py:84",
+        "tests/_ods.py:85",
+        "tests/test_command.py:22",
+        "tests/test_command.py:24",
+        "tests/test_command.py:45"
+      ]
+    },
+    {
+      "condition": "N5",
+      "lines": [
+        "tests/test_sheet.py:20",
+        "tests/test_sheet.py:221",
+        "tests/test_sheet.py:386",
+        "tests/test_sheet.py:462",
+        "tests/test_main.py:132",
+        "tests/test_main.py:207",
+        "tests/test_main.py:227",
+        "tests/test_command.py:155"
+      ]
+    },
+    {
+      "condition": "N6",
+      "lines": [
+        "tests/test_sheet.py:8",
+        "tests/test_main.py:9",
+        "tests/test_main.py:38",
+        "tests/test_command.py:45",
+        "tests/test_command.py:186"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "condition": "N7",
+      "good_when": "A maintainer who changes how a cell's text is read sees a test fail when a description Calc saved with a web address it turned into a link, or with one word made bold, comes out cut short, such as \"Domain www.example.com\" printed as \"Domain \" on the invoice. Today the reader gets it right (invoicer/sheet.py:129), but reading only the cell's first run of text passes all 69 tests, so a colleague could print an invoice with a cut-off line and no test would have warned."
+    }
+  ]
+}

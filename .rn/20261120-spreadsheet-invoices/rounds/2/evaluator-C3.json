@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "condition": "N8",
+      "good_when": "A colleague whose Price or Quantity column was formatted as text, so that Calc shows 100.00 or 2 just as a number, is told that the cell holds text and how to make it a number in Calc. Today they read \"holds \\\"100.00\\\", not a number; enter the price as a number, such as 12.50\" or \"holds \\\"2\\\" ... enter how many, such as 2\", and are stuck, since they did enter a number. A colleague whose price cells are in another currency, such as $100.00 in USD, is stopped before printing, not handed an invoice that reads 200 EUR. A colleague whose price is a formula that Calc shows as 33.33 is stopped, or gets the 33.33 they see, not an invoice that prints 33.3333333333333 EUR and a total of 39.6633333333333 EUR."
+    }
+  ]
+}
