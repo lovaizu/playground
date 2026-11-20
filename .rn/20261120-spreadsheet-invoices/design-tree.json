@@ -488,7 +488,7 @@
           "decisions": [
             {
               "about": "what the tests pin",
-              "decided": "A test fails when a refusal's row number miscounts the blank rows that Calc saves as one repeated row, when a cell that Calc saves as repeated fills fewer columns than it repeats, so a price or quantity equal to its neighbour is lost, and when spaces around a header or a description stop being trimmed.",
+              "decided": "A test fails when a refusal's row number miscounts the blank rows that Calc saves as one repeated row, when a cell that Calc saves as repeated fills fewer columns than it repeats, so a price or quantity equal to its neighbour is lost, and when spaces around a header or a description stop being trimmed. A test also fails when a description that Calc saved with a link or a bold word is read only to its first run of text.",
               "by": "reasoning"
             }
           ]
@@ -514,7 +514,8 @@
             },
             {
               "about": "cells that look right but print wrong",
-              "decided": null
+              "decided": "A price or quantity cell formatted as text is refused with a line saying the cell is formatted as text and how to make it a number in Calc. A price cell in any currency other than EUR is refused, naming that currency, as all invoices are in EUR. A price with more than two decimals, such as a formula's 33.333..., is rounded half up to the cent, as Calc shows it. A test fails when a description holding a link or a bold word is read short.",
+              "by": "user"
             }
           ]
         }
@@ -560,12 +561,6 @@
     }
   ],
   "work": [
-    {
-      "do": "decide",
-      "path": "invoicer/",
-      "condition": "N8",
-      "about": "cells that look right but print wrong"
-    },
     {
       "do": "make",
       "path": "invoicer/"
