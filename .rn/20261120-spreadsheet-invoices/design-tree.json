@@ -442,7 +442,8 @@
       "name": "A colleague from accounting prints a client's invoice from their spreadsheet with one command and that client's tax rate",
       "path": "invoicer/",
       "more_paths": [
-        "tests/"
+        "tests/",
+        "docs/print-an-invoice.md"
       ],
       "kind": "code",
       "inputs": [
@@ -454,7 +455,7 @@
       "necessary_conditions": [
         {
           "id": "N1",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "each rule written once",
@@ -463,38 +464,39 @@
             },
             {
               "about": "the texts pass the repository's English check",
-              "decided": null
+              "decided": "Every text of invoicer/, tests/, and docs/print-an-invoice.md passes the repository's English check as it stands (`lefthook run pre-commit` on them gives 0), by rewriting each flagged comment, docstring, and guide sentence for its reader. lefthook-repo.yml and the repository's rules stay as they are; each message the command writes, and what it does, stay the same, and every test still passes.",
+              "by": "user"
             }
           ]
         },
         {
           "id": "N2",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N3",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N4",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N5",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N6",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N7",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "what the tests pin",
@@ -510,7 +512,7 @@
         },
         {
           "id": "N8",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "a rate written as a fraction",
@@ -540,59 +542,13 @@
       "name": "A colleague from accounting gets from a fresh terminal to a client's printed invoice by the guide alone",
       "path": "docs/print-an-invoice.md",
       "kind": "light",
-      "inputs": [
-        "invoicer/",
-        "docs/architecture.md"
-      ],
-      "status": "open",
-      "necessary_conditions": [
-        {
-          "id": "N1",
-          "good": false,
-          "decisions": [
-            {
-              "about": "The check",
-              "decided": "Someone who has never run invoicer follows the guide alone on a Linux machine with python3 and LibreOffice: they save a sheet of lines, run each command the guide gives, in order, with a client's tax rate, and get that client's invoice with the subtotal, tax, and total counted by hand. Shown by running the guide's commands in order on a fresh copy of the folder and a sheet laid out as the guide says.",
-              "by": "reasoning"
-            },
-            {
-              "about": "the print step",
-              "decided": "After the invoice shows in the terminal and its totals are checked, the guide gives the same command ending in `| lp` to send it to the laptop's default printer.",
-              "by": "user"
-            },
-            {
-              "about": "the texts pass the repository's English check",
-              "decided": null
-            }
-          ]
-        },
-        {
-          "id": "N2",
-          "good": false,
-          "decisions": []
-        },
-        {
-          "id": "N3",
-          "good": false,
-          "decisions": []
-        }
-      ]
+      "status": "done"
     }
   ],
   "work": [
     {
-      "do": "decide",
-      "path": "invoicer/",
-      "condition": "N1",
-      "about": "the texts pass the repository's English check"
-    },
-    {
       "do": "make",
       "path": "invoicer/"
-    },
-    {
-      "do": "make",
-      "path": "docs/print-an-invoice.md"
     }
   ]
 }
