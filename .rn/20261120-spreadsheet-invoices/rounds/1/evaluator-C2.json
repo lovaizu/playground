@@ -1,0 +1,51 @@
+{
+  "good": [
+    {
+      "condition": "N4",
+      "lines": [
+        "pyproject.toml:5",
+        "tests/__init__.py:1",
+        "tests/__init__.py:4",
+        "tests/_ods.py:80",
+        "tests/_ods.py:83",
+        "tests/_ods.py:85",
+        "tests/test_command.py:21",
+        "tests/test_command.py:23",
+        "tests/test_command.py:164"
+      ]
+    },
+    {
+      "condition": "N5",
+      "lines": [
+        "tests/test_main.py:83",
+        "tests/test_main.py:97",
+        "tests/test_main.py:111",
+        "tests/test_main.py:120",
+        "tests/test_main.py:147",
+        "tests/test_sheet.py:306",
+        "tests/test_sheet.py:370",
+        "tests/test_sheet.py:383",
+        "tests/test_sheet.py:409",
+        "tests/test_command.py:93",
+        "tests/test_command.py:121"
+      ]
+    },
+    {
+      "condition": "N6",
+      "lines": [
+        "tests/test_main.py:9",
+        "tests/test_main.py:34",
+        "tests/test_sheet.py:8",
+        "tests/test_sheet.py:16",
+        "tests/test_command.py:46",
+        "tests/test_command.py:47"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "condition": "N7",
+      "good_when": "A maintainer who breaks any behavior that invoicer/ holds sees a test fail. Today all 51 tests still pass when a row number in a refusal stops counting blank rows that Calc saves as one repeated row (sheet.py:88), so the refusal names the wrong row; when a run of identical adjacent cells that Calc saves as one repeated cell fills only its first column (sheet.py:105), so a price or quantity beside an equal value is lost; when spaces around a header name or a description stop being trimmed (sheet.py:115, sheet.py:153); and when parse_lines drops the quantity or total drops the tax (lines.py:28, totals.py:16), which invoicer still offers in its __all__."
+    }
+  ]
+}

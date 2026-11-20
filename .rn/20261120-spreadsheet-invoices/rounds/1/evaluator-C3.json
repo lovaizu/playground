@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "condition": "N8",
+      "good_when": "A colleague from accounting who writes a client's rate the way they might guess it, as 0.19 for 19%, is told what to fix before anything prints, instead of getting a printed invoice with 0.48 EUR tax on 250.99 EUR that looks right enough to send. One whose invoice lines sit on a second sheet, after a sheet of clients, reads in the message that invoicer read the first sheet, named as their Calc tab shows it, instead of 'the header row, row 1, has no column headed Description' while the sheet they look at has Description in row 1. And one whose .ods is damaged or has no sheet reads one invoicer line saying the file can't be read as a spreadsheet and what to do, instead of a Python traceback (AttributeError, ParseError) that tells them nothing they can act on. Every other wrong input tried (a missing or misspelt file, a .csv or .xlsx, a rate of 7,5 or 190 or abc, a missing --tax-rate, a price typed as text, a quantity of 0, 1.5, or two, an empty description, a missing or doubled header, a sheet with no lines) already gives one line naming the file, row, column, and what to enter, and nothing reaches the printer."
+    }
+  ]
+}

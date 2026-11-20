@@ -454,43 +454,65 @@
       "necessary_conditions": [
         {
           "id": "N1",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N2",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N3",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N4",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N5",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N6",
-          "good": false,
+          "good": true,
           "decisions": []
         },
         {
           "id": "N7",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "what the tests pin",
+              "decided": "A test fails when a refusal's row number miscounts the blank rows that Calc saves as one repeated row, when a cell that Calc saves as repeated fills fewer columns than it repeats, so a price or quantity equal to its neighbour is lost, and when spaces around a header or a description stop being trimmed.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N8",
           "good": false,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "a rate written as a fraction",
+              "decided": "A rate above 0 and below 1, such as 0.19, is refused before any invoice, with a line telling the user to write 19 for 19 %, as no client's rate lies below 1 % while 0.19 for 19 % is a likely slip that would print a wrong invoice.",
+              "by": "reasoning"
+            },
+            {
+              "about": "which tab was read",
+              "decided": "Each refusal about the header or a cell names the tab it read by its name as Calc shows it, so a user whose lines sit on a later tab sees that only the first tab is read.",
+              "by": "reasoning"
+            },
+            {
+              "about": "a damaged file",
+              "decided": "A file that is a zip but not a readable spreadsheet, or holds no sheet, is refused with one invoicer line saying it can't be read as a Calc spreadsheet and to save it again from Calc as .ods, never with a Python traceback.",
+              "by": "reasoning"
+            }
+          ]
         }
       ]
     },

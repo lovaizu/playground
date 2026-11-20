@@ -1,0 +1,17 @@
+{
+  "good": [],
+  "more": [
+    {
+      "condition": "N1",
+      "good_when": "A maintainer reading only the first sentence of each module names one module for any change. Today invoicer/__main__.py:1 and invoicer/sheet.py:1 say what they decide, but invoicer/lines.py:1 ('The lines of an invoice.') hides that it also decides a second way of reading lines, the semicolon text of parse_lines (invoicer/lines.py:21-22). So 'change how lines are read' points at both sheet.py and lines.py. And invoicer/tax.py:1 ('The tax of an amount.') leaves out the rounding rule, half up to the cent, which only that module decides."
+    },
+    {
+      "condition": "N2",
+      "good_when": "A maintainer can call each offered name from its signature and doc comment alone, the way main and read_lines can be called today. Now render (invoicer/render.py:7-8), tax_of (invoicer/tax.py:8-9), subtotal and total (invoicer/totals.py:8-16), Line and Line.amount (invoicer/lines.py:6-15), and parse_lines (invoicer/lines.py:21-22) carry no types. Nothing says that rate is a fraction such as 0.19 and not a percent: the only hint is a private helper in __main__.py, 'the fraction that render takes'. Nothing says what subtotal gives for no lines, how render lays out or rounds the amounts, or how parse_lines refuses a malformed row."
+    },
+    {
+      "condition": "N3",
+      "good_when": "Every behavior in invoicer/ answers a case that a test names, so the maintainer carries no code that nothing checks. The command, the sheet reader, and render trace fully to named cases. But parse_lines and its semicolon text format (invoicer/lines.py:21-29), total (invoicer/totals.py:12-16), Line.__repr__ (invoicer/lines.py:17-18), and render's currency parameter (invoicer/render.py:7) are run by no test, and no Traces line names a case for them. tests/test_trace.py's ELEMENTS and CASES list none of them either, so a maintainer can't tell whether they are still asked for or whether they still work."
+    }
+  ]
+}
