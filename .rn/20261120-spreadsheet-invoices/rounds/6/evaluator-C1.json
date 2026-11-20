@@ -1,0 +1,41 @@
+{
+  "good": [
+    {
+      "condition": "N1",
+      "lines": [
+        "docs/print-an-invoice.md:11",
+        "docs/print-an-invoice.md:13",
+        "docs/print-an-invoice.md:25",
+        "docs/print-an-invoice.md:32",
+        "docs/print-an-invoice.md:38",
+        "docs/print-an-invoice.md:46",
+        "docs/print-an-invoice.md:57",
+        "docs/print-an-invoice.md:66"
+      ]
+    },
+    {
+      "condition": "N2",
+      "lines": [
+        "docs/print-an-invoice.md:3",
+        "docs/print-an-invoice.md:6",
+        "docs/print-an-invoice.md:9",
+        "docs/print-an-invoice.md:27",
+        "docs/print-an-invoice.md:41",
+        "docs/print-an-invoice.md:53",
+        "docs/print-an-invoice.md:61"
+      ]
+    },
+    {
+      "condition": "N3",
+      "lines": [
+        "docs/print-an-invoice.md:13",
+        "docs/print-an-invoice.md:15",
+        "docs/print-an-invoice.md:16",
+        "docs/print-an-invoice.md:38",
+        "invoicer/__main__.py:16",
+        "invoicer/sheet.py:226"
+      ]
+    }
+  ],
+  "more": []
+}

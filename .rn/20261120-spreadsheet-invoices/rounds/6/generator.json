@@ -1,0 +1,32 @@
+{
+  "result": "made",
+  "carried_out": [
+    {"path": "docs/print-an-invoice.md", "condition": "N1", "about": "The check", "at": "docs/print-an-invoice.md:43"},
+    {"path": "docs/print-an-invoice.md", "condition": "N1", "about": "the print step", "at": "docs/print-an-invoice.md:63"},
+    {"path": "docs/architecture.md", "condition": "N1", "about": "the one idea", "at": "docs/print-an-invoice.md:35"},
+    {"path": "docs/architecture.md", "condition": "N2", "about": "the user stories", "at": "docs/print-an-invoice.md:57"},
+    {"path": "docs/architecture.md", "condition": "N2", "about": "what printing gives the user", "at": "docs/print-an-invoice.md:43"},
+    {"path": "docs/architecture.md", "condition": "N3", "about": "the trace", "at": "tests/test_trace.py:11"},
+    {"path": "docs/architecture.md", "condition": "N4", "about": "the principles", "at": "docs/print-an-invoice.md:11"},
+    {"path": "docs/architecture.md", "condition": "N5", "about": "the components", "at": "invoicer/sheet.py:47"},
+    {"path": "docs/architecture.md", "condition": "N5", "about": "the hard decisions", "at": "invoicer/__main__.py:14"},
+    {"path": "docs/architecture.md", "condition": "N6", "about": "the types", "at": "docs/print-an-invoice.md:38"},
+    {"path": "docs/architecture.md", "condition": "N7", "about": "the data", "at": "docs/print-an-invoice.md:14"},
+    {"path": "docs/architecture.md", "condition": "N8", "about": "the sequence of S1 and S2", "at": "docs/print-an-invoice.md:57"},
+    {"path": "docs/architecture.md", "condition": "N9", "about": "the agreement", "at": "docs/print-an-invoice.md:25"},
+    {"path": "docs/architecture.md", "condition": "N10", "about": "the environments", "at": "docs/print-an-invoice.md:6"},
+    {"path": "docs/architecture.md", "condition": "N11", "about": "the folders", "at": "docs/print-an-invoice.md:1"},
+    {"path": "docs/architecture.md", "condition": "N12", "about": "the checks", "at": "docs/print-an-invoice.md:45"},
+    {"path": "docs/architecture.md", "condition": "N13", "about": "the gaps", "at": "invoicer/__main__.py:25"},
+    {"path": "docs/architecture.md", "condition": "N14", "about": "the parts that hold each behavior", "at": "invoicer/__main__.py:52"},
+    {"path": "docs/architecture.md", "condition": "N15", "about": "the strategies", "at": "docs/print-an-invoice.md:35"},
+    {"path": "docs/architecture.md", "condition": "N16", "about": "what the document holds", "at": "invoicer/sheet.py:1"}
+  ],
+  "settled": [
+    {"about": "who meets the guide and what they do", "decided": "A colleague from accounting, alone at their Linux laptop with python3, LibreOffice Calc, a CUPS printer, and the invoicer folder on it: they save the client's lines, run the command with the client's rate, check the invoice on screen, and send it to lp.", "at": "docs/print-an-invoice.md:6"},
+    {"about": "the command that shows the check met", "decided": "On a fresh copy of the folder (git archive of HEAD plus the command's new modules) at ~/invoicer's place, and a sheet built as Calc saves the guide's example (Consulting 120 x 3, Travel 45.25 with an empty quantity), the guide's commands ran in order: the invoice matched the guide's block byte for byte and the totals counted by hand (360 + 45.25 = 405.25, 19 % = 76.9975 to 77.00, total 482.25); the quoted name with a space gave the same invoice; 0.19 gave a refusal naming the fix. The pipe to lp carries what the terminal shows, as test_i_print pins; all 86 tests pass. No lp was installed here, so the printer itself was not reached.", "at": "docs/print-an-invoice.md:45"},
+    {"about": "where the folder comes from", "decided": "The guide starts from the invoicer folder on the laptop, as the check starts from a fresh copy of the folder; it names ~/invoicer and tells the colleague to use the folder's own place where it lies elsewhere. Nothing is installed, by P3.", "at": "docs/print-an-invoice.md:7"},
+    {"about": "a file name with spaces", "decided": "The guide quotes the name only, after the ~/ part, since a quoted ~ is not expanded; an unquoted name with a space would get the usage refusal, which names no fix in the sheet.", "at": "docs/print-an-invoice.md:41"},
+    {"about": "the worked example", "decided": "One small sheet and its invoice, with amounts the colleague can count by hand, so they see the layout the command takes and what a right invoice looks like before checking their own.", "at": "docs/print-an-invoice.md:20"}
+  ]
+}

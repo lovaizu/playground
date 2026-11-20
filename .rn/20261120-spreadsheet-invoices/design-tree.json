@@ -451,45 +451,8 @@
       "name": "A colleague from accounting gets from a fresh terminal to a client's printed invoice by the guide alone",
       "path": "docs/print-an-invoice.md",
       "kind": "light",
-      "inputs": [
-        "invoicer/",
-        "docs/architecture.md"
-      ],
-      "status": "open",
-      "necessary_conditions": [
-        {
-          "id": "N1",
-          "good": false,
-          "decisions": [
-            {
-              "about": "The check",
-              "decided": "Someone who has never run invoicer follows the guide alone on a Linux machine with python3 and LibreOffice: they save a sheet of lines, run each command the guide gives, in order, with a client's tax rate, and get that client's invoice with the subtotal, tax, and total counted by hand. Shown by running the guide's commands in order on a fresh copy of the folder and a sheet laid out as the guide says.",
-              "by": "reasoning"
-            },
-            {
-              "about": "the print step",
-              "decided": "After the invoice shows in the terminal and its totals are checked, the guide gives the same command ending in `| lp` to send it to the laptop's default printer.",
-              "by": "user"
-            }
-          ]
-        },
-        {
-          "id": "N2",
-          "good": false,
-          "decisions": []
-        },
-        {
-          "id": "N3",
-          "good": false,
-          "decisions": []
-        }
-      ]
+      "status": "done"
     }
   ],
-  "work": [
-    {
-      "do": "make",
-      "path": "docs/print-an-invoice.md"
-    }
-  ]
+  "work": []
 }

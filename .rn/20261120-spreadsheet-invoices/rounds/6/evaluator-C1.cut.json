@@ -1,0 +1,16 @@
+{
+  "role": "evaluator",
+  "deliverable": {
+    "name": "A colleague from accounting gets from a fresh terminal to a client's printed invoice by the guide alone",
+    "path": "docs/print-an-invoice.md",
+    "kind": "light"
+  },
+  "best_practice": "light",
+  "goal": "The user lets their accounting team print each client's invoice themselves, from the invoice lines they keep in a LibreOffice Calc spreadsheet and at that client's tax rate, without writing Python. Once it holds, a colleague from accounting, on their Linux laptop, follows a guide to run one invoicer command in a terminal on their spreadsheet's lines with the client's tax rate, and gets the invoice printed, with no one writing code for them.",
+  "group": "C1",
+  "conditions": [
+    "N1",
+    "N2",
+    "N3"
+  ]
+}
