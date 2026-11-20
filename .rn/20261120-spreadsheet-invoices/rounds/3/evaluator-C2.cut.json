@@ -1,0 +1,20 @@
+{
+  "role": "evaluator",
+  "deliverable": {
+    "name": "A colleague from accounting prints a client's invoice from their spreadsheet with one command and that client's tax rate",
+    "path": "invoicer/",
+    "kind": "code",
+    "more_paths": [
+      "tests/"
+    ]
+  },
+  "best_practice": "code",
+  "goal": "The user lets their accounting team print each client's invoice themselves, from the invoice lines they keep in a LibreOffice Calc spreadsheet and at that client's tax rate, without writing Python. Once it holds, a colleague from accounting, on their Linux laptop, follows a guide to run one invoicer command in a terminal on their spreadsheet's lines with the client's tax rate, and gets the invoice printed, with no one writing code for them.",
+  "group": "C2",
+  "conditions": [
+    "N4",
+    "N5",
+    "N6",
+    "N7"
+  ]
+}

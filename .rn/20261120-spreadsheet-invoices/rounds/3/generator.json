@@ -1,0 +1,68 @@
+{
+  "result": "made",
+  "carried_out": [
+    {"path": "invoicer/", "condition": "N7", "about": "what the tests pin", "at": "tests/test_sheet.py:274"},
+    {"path": "invoicer/", "condition": "N8", "about": "a rate written as a fraction", "at": "invoicer/__main__.py:59"},
+    {"path": "invoicer/", "condition": "N8", "about": "which tab was read", "at": "invoicer/sheet.py:62"},
+    {"path": "invoicer/", "condition": "N8", "about": "a damaged file", "at": "invoicer/sheet.py:83"},
+    {"path": "invoicer/", "condition": "N8", "about": "cells that look right but print wrong", "at": "invoicer/sheet.py:175"},
+    {"path": "docs/architecture.md", "condition": "N1", "about": "the one idea", "at": "invoicer/__main__.py:1"},
+    {"path": "docs/architecture.md", "condition": "N2", "about": "the user stories", "at": "invoicer/__main__.py:21"},
+    {"path": "docs/architecture.md", "condition": "N2", "about": "what printing gives the user", "at": "invoicer/__main__.py:37"},
+    {"path": "docs/architecture.md", "condition": "N3", "about": "the trace", "at": "tests/test_trace.py:34"},
+    {"path": "docs/architecture.md", "condition": "N4", "about": "the principles", "at": "invoicer/sheet.py:44"},
+    {"path": "docs/architecture.md", "condition": "N5", "about": "the components", "at": "invoicer/sheet.py:1"},
+    {"path": "docs/architecture.md", "condition": "N5", "about": "the hard decisions", "at": "invoicer/sheet.py:1"},
+    {"path": "docs/architecture.md", "condition": "N6", "about": "the types", "at": "invoicer/__main__.py:66"},
+    {"path": "docs/architecture.md", "condition": "N7", "about": "the data", "at": "invoicer/sheet.py:44"},
+    {"path": "docs/architecture.md", "condition": "N8", "about": "the sequence of S1 and S2", "at": "invoicer/__main__.py:21"},
+    {"path": "docs/architecture.md", "condition": "N9", "about": "the agreement", "at": "invoicer/__main__.py:1"},
+    {"path": "docs/architecture.md", "condition": "N10", "about": "the environments", "at": "tests/test_command.py:186"},
+    {"path": "docs/architecture.md", "condition": "N11", "about": "the folders", "at": "invoicer/sheet.py:1"},
+    {"path": "docs/architecture.md", "condition": "N12", "about": "the checks", "at": "tests/test_command.py:82"},
+    {"path": "docs/architecture.md", "condition": "N13", "about": "the gaps", "at": "invoicer/sheet.py:44"},
+    {"path": "docs/architecture.md", "condition": "N14", "about": "the parts that hold each behavior", "at": "invoicer/sheet.py:1"},
+    {"path": "docs/architecture.md", "condition": "N15", "about": "the strategies", "at": "invoicer/sheet.py:90"},
+    {"path": "docs/architecture.md", "condition": "N16", "about": "what the document holds", "at": "invoicer/sheet.py:1"},
+    {"path": "docs/software-design.md", "condition": "N1", "about": "the modules", "at": "invoicer/sheet.py:1"},
+    {"path": "docs/software-design.md", "condition": "N2", "about": "the sheet's columns", "at": "invoicer/sheet.py:151"},
+    {"path": "docs/software-design.md", "condition": "N2", "about": "read_lines", "at": "invoicer/sheet.py:44"},
+    {"path": "docs/software-design.md", "condition": "N2", "about": "main", "at": "invoicer/__main__.py:21"},
+    {"path": "docs/software-design.md", "condition": "N3", "about": "the prompts", "at": "invoicer/__main__.py:21"},
+    {"path": "docs/software-design.md", "condition": "N4", "about": "the gaps", "at": "invoicer/__main__.py:21"},
+    {"path": "docs/test-design.md", "condition": "N1", "about": "the E2E cases", "at": "tests/test_command.py:83"},
+    {"path": "docs/test-design.md", "condition": "N2", "about": "the integration cases", "at": "tests/test_command.py:82"},
+    {"path": "docs/test-design.md", "condition": "N3", "about": "the unit cases", "at": "tests/test_sheet.py:479"},
+    {"path": "docs/test-design.md", "condition": "N7", "about": "the properties", "at": "tests/test_main.py:256"},
+    {"path": "docs/test-design.md", "condition": "N4", "about": "the cases as tests", "at": "tests/test_sheet.py:479"},
+    {"path": "docs/test-design.md", "condition": "N5", "about": "the trace", "at": "tests/test_trace.py:34"},
+    {"path": "docs/test-design.md", "condition": "N6", "about": "the gaps", "at": "tests/test_trace.py:45"}
+  ],
+  "settled": [
+    {
+      "about": "which text counts as a number formatted as text",
+      "decided": "A text cell whose trimmed text is a plain number, with an optional sign and a decimal point or comma (12.50, 12,50, 2), gets the formatted-as-text refusal; other text, such as \"12,50 EUR\" or \"twelve\", keeps the not-a-number refusal. Calc saves a text-formatted number and an apostrophe-typed one alike, and the fix given (set the category Number, type the value again) mends both, so reading the cell's style adds nothing the colleague gets.",
+      "at": "invoicer/sheet.py:23"
+    },
+    {
+      "about": "the fix a formatted-as-text refusal gives",
+      "decided": "Select the cell, choose Format > Cells, pick Number under Category on the Numbers tab, and type the price or quantity again, since Calc keeps an already-typed value as text when only the format changes.",
+      "at": "invoicer/sheet.py:179"
+    },
+    {
+      "about": "which prices are rounded",
+      "decided": "Only a price of more than two decimals is rounded half up to the cent; a price of two decimals or fewer, such as 15.5, is kept as stored, so the invoices the earlier rounds print stay the same text, as the decision names only prices of more than two decimals.",
+      "at": "invoicer/sheet.py:208"
+    },
+    {
+      "about": "the currency refusal",
+      "decided": "A currency cell whose currency isn't EUR is refused naming what the cell shows and its currency code, telling the colleague invoices are in EUR and to enter the price in EUR; a plain number cell is taken as EUR.",
+      "at": "invoicer/sheet.py:192"
+    },
+    {
+      "about": "the property under rounding",
+      "decided": "The property's subtotal is the exact sum of each cell's price rounded half up to the cent times its quantity, as read_lines now rounds prices of more than two decimals.",
+      "at": "tests/test_main.py:257"
+    }
+  ]
+}

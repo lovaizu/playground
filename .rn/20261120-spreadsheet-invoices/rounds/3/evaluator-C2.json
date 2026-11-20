@@ -1,0 +1,41 @@
+{
+  "good": [
+    {
+      "condition": "N4",
+      "lines": [
+        "pyproject.toml:1",
+        "tests/_ods.py:82",
+        "tests/_ods.py:85",
+        "tests/test_command.py:307",
+        "tests/test_command.py:471"
+      ]
+    },
+    {
+      "condition": "N5",
+      "lines": [
+        "tests/test_sheet.py:257",
+        "tests/test_sheet.py:330",
+        "tests/test_sheet.py:479",
+        "tests/test_sheet.py:507",
+        "tests/test_main.py:132",
+        "tests/test_main.py:207",
+        "tests/test_command.py:368"
+      ]
+    },
+    {
+      "condition": "N6",
+      "lines": [
+        "tests/test_sheet.py:8",
+        "tests/test_main.py:9",
+        "tests/test_main.py:38",
+        "tests/test_command.py:330"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "condition": "N7",
+      "good_when": "A maintainer who breaks how the sheet reader reads a cell sees a test fail, so the invoice and refusals a colleague gets stay as they are. Today these breaks all pass: a description typed over two lines in one cell (Ctrl+Enter) printed with its words run together, a price cell formatted as text holding a negative number such as \"-10\" (a credit line) getting the plain not-a-number refusal in place of the formatted-as-text one that says how to fix the cell, and a refusal for a column past Z naming the wrong column letter."
+    }
+  ]
+}

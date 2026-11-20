@@ -484,7 +484,7 @@
         },
         {
           "id": "N7",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "what the tests pin",
@@ -495,7 +495,7 @@
         },
         {
           "id": "N8",
-          "good": false,
+          "good": true,
           "decisions": [
             {
               "about": "a rate written as a fraction",

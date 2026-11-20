@@ -1,0 +1,26 @@
+{
+  "good": [
+    {
+      "condition": "N8",
+      "lines": [
+        "invoicer/__main__.py:31",
+        "invoicer/__main__.py:34",
+        "invoicer/__main__.py:44",
+        "invoicer/__main__.py:58",
+        "invoicer/__main__.py:61",
+        "invoicer/sheet.py:68",
+        "invoicer/sheet.py:83",
+        "invoicer/sheet.py:94",
+        "invoicer/sheet.py:100",
+        "invoicer/sheet.py:153",
+        "invoicer/sheet.py:161",
+        "invoicer/sheet.py:177",
+        "invoicer/sheet.py:185",
+        "invoicer/sheet.py:189",
+        "invoicer/sheet.py:193",
+        "invoicer/sheet.py:203"
+      ]
+    }
+  ],
+  "more": []
+}
