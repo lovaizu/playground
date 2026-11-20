@@ -1,0 +1,43 @@
+{
+  "good": [
+    {
+      "condition": "N2",
+      "lines": [
+        "invoicer/sheet.py:21",
+        "invoicer/sheet.py:103",
+        "invoicer/sheet.py:145",
+        "invoicer/sheet.py:214",
+        "invoicer/__main__.py:58",
+        "invoicer/__main__.py:67",
+        "invoicer/tax.py:8"
+      ]
+    },
+    {
+      "condition": "N3",
+      "lines": [
+        "invoicer/sheet.py:36",
+        "invoicer/sheet.py:47",
+        "invoicer/sheet.py:122",
+        "invoicer/sheet.py:137",
+        "invoicer/sheet.py:242",
+        "invoicer/__main__.py:45",
+        "invoicer/__main__.py:52",
+        "invoicer/tax.py:8"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "condition": "N4",
+      "good_when": "A maintainer who reads render in invoicer/render.py meets one name for one thing: today `amount` there is the subtotal of all lines (lines 13-17), while `line.amount()` one line above (line 12) is a single line's price times quantity, and the subtotal also goes by `subtotal`. So a maintainer who changes how a line's amount is worked out, or how the subtotal is taxed, can't tell from the name which of the two each line of render touches."
+    },
+    {
+      "condition": "N5",
+      "good_when": "A maintainer reading the tests once from the top can say what each test function does without stopping to untangle a line: today traces() in tests/test_trace.py stops them at line 27, which finds a test's method by splitting its id, and at line 29, which slices, strips, and splits the Traces line in one comprehension; and the property test in tests/test_main.py stops them at line 262, which picks the label and the amount out of each invoice row by slicing at 30 in one comprehension."
+    },
+    {
+      "condition": "N6",
+      "good_when": "A maintainer who meets odd-looking code learns right there why it is so: today tests/test_main.py:262 cuts each invoice row at character 30 with nothing saying that 30 is the label width render pads to, so a maintainer who widens render's label column sees the property test fail with no pointer to why; and invoicer/render.py:10 lets render take any currency while invoicer/sheet.py:207 refuses every price not in EUR, with nothing at render saying why the parameter is kept, so a maintainer may take it as support for other currencies, or drop it and break a caller of the library."
+    }
+  ]
+}

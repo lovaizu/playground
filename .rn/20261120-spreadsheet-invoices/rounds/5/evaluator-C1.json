@@ -1,0 +1,9 @@
+{
+  "good": [],
+  "more": [
+    {
+      "condition": "N1",
+      "good_when": "A maintainer who changes how tax_of rounds sees a test fail. Today no test does: with tax_of rounding half to even instead of half up, all 86 tests still pass. Yet a client line of 100.50 at --tax-rate 1 then prints a tax of 1.00 EUR and a total of 101.50 EUR, not the 1.01 EUR and 101.51 EUR the command prints now. Accounting would send that invoice a cent short, and no test would warn. The random property test in tests/test_main.py does not reliably land on an exact half cent, and every fixed case either has no half cent or goes through the price rounding in the reader. A smaller gap is in the refusals that now take the header names from one table: no test refuses a sheet whose headers are typed in another letter case, such as 'price' or 'PRICE'. So nothing pins that such a refusal names the column as Price. The two-Price-columns refusal could name the header as the colleague typed it, and all tests would still pass."
+    }
+  ]
+}

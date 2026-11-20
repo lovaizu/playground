@@ -1,0 +1,43 @@
+{
+  "good": [
+    {
+      "condition": "N7",
+      "lines": [
+        "invoicer/render.py:7",
+        "invoicer/sheet.py:14",
+        "invoicer/sheet.py:207",
+        "invoicer/sheet.py:210",
+        "invoicer/tax.py:8",
+        "invoicer/tax.py:10",
+        "invoicer/tax.py:15",
+        "invoicer/sheet.py:15",
+        "invoicer/sheet.py:213",
+        "invoicer/sheet.py:23",
+        "invoicer/sheet.py:74",
+        "invoicer/sheet.py:184",
+        "invoicer/__main__.py:14",
+        "invoicer/__main__.py:16",
+        "invoicer/__main__.py:64"
+      ]
+    },
+    {
+      "condition": "N8",
+      "lines": [
+        "invoicer/__main__.py:21",
+        "invoicer/__main__.py:38",
+        "invoicer/__main__.py:39",
+        "invoicer/sheet.py:30",
+        "invoicer/sheet.py:103",
+        "invoicer/sheet.py:204",
+        "invoicer/sheet.py:221",
+        "invoicer/sheet.py:231",
+        "invoicer/sheet.py:242",
+        "invoicer/sheet.py:214",
+        "invoicer/sheet.py:145",
+        "invoicer/__main__.py:58",
+        "invoicer/__main__.py:67"
+      ]
+    }
+  ],
+  "more": []
+}
