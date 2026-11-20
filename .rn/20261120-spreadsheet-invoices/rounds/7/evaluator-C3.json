@@ -1,0 +1,13 @@
+{
+  "good": [],
+  "more": [
+    {
+      "condition": "N7",
+      "good_when": "A maintainer who changes how an invoice row is laid out, its label width of 30, its amount width of 12, or the EUR written after each amount, changes it in one place and every test that checks an invoice follows. Today they find the same row layout written as invoice_row in both tests/test_command.py:26-28 and tests/test_main.py:15-17, the label width again in the slice of tests/test_main.py:262, and the 30 and 12 four times over in invoicer/render.py:125-130. A change made in one of these places leaves the others still describing the old invoice."
+    },
+    {
+      "condition": "N8",
+      "good_when": "A maintainer who has learned how one test module writes an expected refusal reads every test module the same way, and where a test departs from that way, it says why right there. Today tests/test_main.py builds refusals with helpers at its top (rate_refused, fraction_refused at lines 26-34), yet writes one fraction refusal out in full at lines 130-133, beside the helper, with nothing saying that the % sign in the given rate is the reason. tests/test_command.py writes the same rate refusals out in full (lines 105, 119, 152). tests/test_sheet.py keeps its refusal helpers at the bottom of the file (lines 970-1015). Some of these helpers have a docstring and others have none, so the maintainer can't tell whether the differences mean anything."
+    }
+  ]
+}

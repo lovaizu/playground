@@ -1,0 +1,20 @@
+{
+  "good": [
+    {
+      "condition": "N1",
+      "lines": [
+        "tests/test_command.py:92",
+        "tests/test_command.py:136",
+        "tests/test_main.py:112",
+        "tests/test_main.py:121",
+        "tests/test_main.py:143",
+        "tests/test_sheet.py:255",
+        "tests/test_sheet.py:284",
+        "tests/test_sheet.py:507",
+        "tests/test_sheet.py:590",
+        "tests/test_sheet.py:716"
+      ]
+    }
+  ],
+  "more": []
+}

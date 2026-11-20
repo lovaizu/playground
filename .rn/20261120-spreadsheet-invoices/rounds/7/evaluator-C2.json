@@ -1,0 +1,53 @@
+{
+  "good": [
+    {
+      "condition": "N2",
+      "lines": [
+        "invoicer/sheet.py:21",
+        "invoicer/sheet.py:145",
+        "invoicer/sheet.py:214",
+        "invoicer/__main__.py:58",
+        "tests/test_command.py:31",
+        "tests/test_command.py:70"
+      ]
+    },
+    {
+      "condition": "N3",
+      "lines": [
+        "invoicer/sheet.py:231",
+        "invoicer/sheet.py:242",
+        "invoicer/sheet.py:247",
+        "invoicer/__main__.py:45",
+        "invoicer/tax.py:8",
+        "tests/test_main.py:26",
+        "tests/test_command.py:58"
+      ]
+    },
+    {
+      "condition": "N4",
+      "lines": [
+        "invoicer/sheet.py:65",
+        "invoicer/sheet.py:184",
+        "invoicer/sheet.py:213",
+        "invoicer/__main__.py:46",
+        "invoicer/__main__.py:57"
+      ]
+    },
+    {
+      "condition": "N5",
+      "lines": [
+        "invoicer/__main__.py:25",
+        "invoicer/__main__.py:52",
+        "invoicer/sheet.py:247",
+        "tests/test_main.py:38",
+        "tests/test_main.py:239"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "condition": "N6",
+      "good_when": "A maintainer reading render's currency parameter beside the comment that calls EUR the currency of every invoice (invoicer/render.py:6 and :10), while the sheet reader refuses any price not in EUR, learns right there why render still takes a currency no call in the repository passes, so they don't drop it and break a caller of the published invoicer package. And a maintainer reading the property test's prices from -50.000 up (tests/test_main.py:253) learns right there why invoices are tried with negative prices, so they neither take it for a slip nor narrow it away."
+    }
+  ]
+}
