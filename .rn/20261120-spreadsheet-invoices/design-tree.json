@@ -15,45 +15,81 @@
           "id": "N1",
           "good": true,
           "decisions": [
-            {"about": "the job", "decided": "invoicer's command turns the invoice lines of a client, kept in a LibreOffice Calc spreadsheet, into that client's invoice at the client's tax rate, for people who don't write Python.", "by": "reasoning"},
-            {"about": "the roles", "decided": "One role, `user`: a colleague from accounting who prints a client's invoice from their spreadsheet on their Linux laptop, by a guide, in a terminal. No one else's job is needed for it, as the guide has the user set the command up.", "by": "reasoning"}
+            {
+              "about": "the job",
+              "decided": "invoicer's command turns the invoice lines of a client, kept in a LibreOffice Calc spreadsheet, into that client's invoice at the client's tax rate, for people who don't write Python.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the roles",
+              "decided": "One role, `user`: a colleague from accounting who prints a client's invoice from their spreadsheet on their Linux laptop, by a guide, in a terminal. No one else's job is needed for it, as the guide has the user set the command up.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N2",
           "good": true,
           "decisions": [
-            {"about": "the objectives", "decided": "O1: The user prints each client's invoice from the lines in their spreadsheet, at that client's tax rate, without anyone writing code for them.", "by": "reasoning"}
+            {
+              "about": "the objectives",
+              "decided": "O1: The user prints each client's invoice from the lines in their spreadsheet, at that client's tax rate, without anyone writing code for them.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N3",
           "good": true,
           "decisions": [
-            {"about": "what the vision describes", "decided": "The vision names only what the user does and gets: the spreadsheet they keep, the tax rate they give, and the invoice they get.", "by": "reasoning"}
+            {
+              "about": "what the vision describes",
+              "decided": "The vision names only what the user does and gets: the spreadsheet they keep, the tax rate they give, and the invoice they get.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N4",
           "good": true,
           "decisions": [
-            {"about": "the task", "decided": "From the client's lines saved in the spreadsheet to the client's invoice printed with the right subtotal, tax, and total.", "by": "reasoning"},
-            {"about": "the key results", "decided": "KR1.1: the share of invoices the user prints by the guide alone whose lines, tax, and total are right. Higher is better. KR1.2: the time from opening the guide, with the lines saved, to the printed invoice, the user's own time included. Lower is better. KR1.1 ranks before KR1.2.", "by": "reasoning"}
+            {
+              "about": "the task",
+              "decided": "From the client's lines saved in the spreadsheet to the client's invoice printed with the right subtotal, tax, and total.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the key results",
+              "decided": "KR1.1: the share of invoices the user prints by the guide alone whose lines, tax, and total are right. Higher is better. KR1.2: the time from opening the guide, with the lines saved, to the printed invoice, the user's own time included. Lower is better. KR1.1 ranks before KR1.2.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N5",
           "good": true,
           "decisions": [
-            {"about": "the pieces of work", "decided": "Reading the spreadsheet's lines, taking the tax rate for each invoice, printing the invoice, and the guide each serve O1, the one objective.", "by": "reasoning"}
+            {
+              "about": "the pieces of work",
+              "decided": "Reading the spreadsheet's lines, taking the tax rate for each invoice, printing the invoice, and the guide each serve O1, the one objective.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N6",
           "good": true,
           "decisions": [
-            {"about": "the one way", "decided": "The user prints a client's invoice with one command on the spreadsheet they already keep, giving the client's tax rate with it.", "by": "reasoning"},
-            {"about": "the ideas", "decided": "The command reads the spreadsheet as saved from Calc, so the user exports nothing. The tax rate is given with each command as a percentage, as accounting states it, so each client's rate is used for that client alone. A wrong sheet or rate stops the command before any invoice, with a message naming what to fix in the sheet or the command, so the user never prints a wrong invoice and needs no one to read code.", "by": "reasoning"}
+            {
+              "about": "the one way",
+              "decided": "The user prints a client's invoice with one command on the spreadsheet they already keep, giving the client's tax rate with it.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the ideas",
+              "decided": "The command reads the spreadsheet as saved from Calc, so the user exports nothing. The tax rate is given with each command as a percentage, as accounting states it, so each client's rate is used for that client alone. A wrong sheet or rate stops the command before any invoice, with a message naming what to fix in the sheet or the command, so the user never prints a wrong invoice and needs no one to read code.",
+              "by": "reasoning"
+            }
           ]
         }
       ]
@@ -63,121 +99,192 @@
       "path": "docs/architecture.md",
       "kind": "architecture",
       "file": false,
-      "inputs": ["docs/product-vision.md", "README.md"],
-      "status": "open",
+      "status": "done",
       "necessary_conditions": [
         {
           "id": "N1",
           "good": true,
           "decisions": [
-            {"about": "the one idea", "decided": "One command turns the spreadsheet the user keeps into the client's invoice, at the tax rate given with it.", "by": "reasoning"}
+            {
+              "about": "the one idea",
+              "decided": "One command turns the spreadsheet the user keeps into the client's invoice, at the tax rate given with it.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N2",
-          "good": false,
+          "good": true,
           "decisions": [
-            {"about": "the user stories", "decided": "S1: As a colleague from accounting, I get a client's invoice from the lines in my spreadsheet, at that client's tax rate. S2: As a colleague from accounting, when my sheet or rate is wrong, I learn what to fix before any invoice comes out.", "by": "reasoning"},
-            {"about": "what printing gives the user", "decided": null}
+            {
+              "about": "the user stories",
+              "decided": "S1: As a colleague from accounting, I get a client's invoice from the lines in my spreadsheet, at that client's tax rate. S2: As a colleague from accounting, when my sheet or rate is wrong, I learn what to fix before any invoice comes out.",
+              "by": "reasoning"
+            },
+            {
+              "about": "what printing gives the user",
+              "decided": "The command shows the invoice in the terminal, so the user checks the lines and totals on screen; the guide then gives the one command that sends the same invoice to their printer. The command itself never sends anything to a printer.",
+              "by": "user"
+            }
           ]
         },
         {
           "id": "N3",
           "good": true,
           "decisions": [
-            {"about": "the trace", "decided": "S1 carries O1 and KR1.1; S2 carries KR1.1 and KR1.2, as a wrong invoice caught early costs neither a reprint nor a developer's time. P1 to P3 trace to the ideas of the vision's concept.", "by": "reasoning"}
+            {
+              "about": "the trace",
+              "decided": "S1 carries O1 and KR1.1; S2 carries KR1.1 and KR1.2, as a wrong invoice caught early costs neither a reprint nor a developer's time. P1 to P3 trace to the ideas of the vision's concept.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N4",
           "good": true,
           "decisions": [
-            {"about": "the principles", "decided": "P1 The sheet as they keep it: the command reads the .ods file saved from Calc, its first sheet, with a header row naming the columns. P2 No wrong invoice: the command checks the whole sheet and the rate before it writes any line of the invoice, and a refusal names the row and column or the argument to fix. P3 Nothing to install: the command uses Python's standard library alone and runs as `python3 -m invoicer` from the invoicer folder.", "by": "reasoning"}
+            {
+              "about": "the principles",
+              "decided": "P1 The sheet as they keep it: the command reads the .ods file saved from Calc, its first sheet, with a header row naming the columns. P2 No wrong invoice: the command checks the whole sheet and the rate before it writes any line of the invoice, and a refusal names the row and column or the argument to fix. P3 Nothing to install: the command uses Python's standard library alone and runs as `python3 -m invoicer` from the invoicer folder.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N5",
           "good": true,
           "decisions": [
-            {"about": "the components", "decided": "The command takes the spreadsheet's path and the tax rate, and hands back the invoice or a refusal. The sheet reader turns the .ods file into the invoice's lines, and alone knows the file's layout. The existing render, tax, and totals parts make the invoice's text from the lines and the rate, unchanged.", "by": "reasoning"},
-            {"about": "the hard decisions", "decided": "The .ods layout and the columns belong to the sheet reader; the form of the arguments, the percentage, and what a refusal looks like belong to the command; the invoice's text layout stays with render.", "by": "reasoning"}
+            {
+              "about": "the components",
+              "decided": "The command takes the spreadsheet's path and the tax rate, and hands back the invoice or a refusal. The sheet reader turns the .ods file into the invoice's lines, and alone knows the file's layout. The existing render, tax, and totals parts make the invoice's text from the lines and the rate, unchanged.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the hard decisions",
+              "decided": "The .ods layout and the columns belong to the sheet reader; the form of the arguments, the percentage, and what a refusal looks like belong to the command; the invoice's text layout stays with render.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N6",
           "good": true,
           "decisions": [
-            {"about": "the types", "decided": "Each component is a Python module of the invoicer package; the command is the package's `__main__` module, run as `python3 -m invoicer`.", "by": "reasoning"}
+            {
+              "about": "the types",
+              "decided": "Each component is a Python module of the invoicer package; the command is the package's `__main__` module, run as `python3 -m invoicer`.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N7",
           "good": true,
           "decisions": [
-            {"about": "the data", "decided": "The spreadsheet holds one or more lines of one invoice. The tax rate is one for each invoice. The invoice holds each line, its subtotal, its tax at the rate, and its total. A refusal names one fault of the spreadsheet or the rate.", "by": "reasoning"}
+            {
+              "about": "the data",
+              "decided": "The spreadsheet holds one or more lines of one invoice. The tax rate is one for each invoice. The invoice holds each line, its subtotal, its tax at the rate, and its total. A refusal names one fault of the spreadsheet or the rate.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N8",
           "good": true,
           "decisions": [
-            {"about": "the sequence of S1 and S2", "decided": "The user runs the command with the spreadsheet's path and the rate; the command checks the rate; the command asks the sheet reader for the lines; the sheet reader reads the .ods file and gives the lines; the command hands the lines and the rate to render, which gives the invoice's text; the command writes it out. Where the rate or the sheet is wrong, the command writes the refusal to the terminal's error output and ends with a failing status, and writes no invoice.", "by": "reasoning"}
+            {
+              "about": "the sequence of S1 and S2",
+              "decided": "The user runs the command with the spreadsheet's path and the rate; the command checks the rate; the command asks the sheet reader for the lines; the sheet reader reads the .ods file and gives the lines; the command hands the lines and the rate to render, which gives the invoice's text; the command writes it out. Where the rate or the sheet is wrong, the command writes the refusal to the terminal's error output and ends with a failing status, and writes no invoice.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N9",
           "good": true,
           "decisions": [
-            {"about": "the agreement", "decided": "The stories, principles, components, data, and sequence name the same parts and the same .ods file, rate, and invoice.", "by": "reasoning"}
+            {
+              "about": "the agreement",
+              "decided": "The stories, principles, components, data, and sequence name the same parts and the same .ods file, rate, and invoice.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N10",
           "good": true,
           "decisions": [
-            {"about": "the environments", "decided": "The user's Linux laptop, with python3 3.9 or later and LibreOffice Calc, runs the command from the invoicer folder on a spreadsheet file kept on the laptop. GitHub's CI runs the tests. No service outside the laptop is needed.", "by": "reasoning"}
+            {
+              "about": "the environments",
+              "decided": "The user's Linux laptop, with python3 3.9 or later, LibreOffice Calc, and its printer set up through CUPS, runs the command from the invoicer folder on a spreadsheet file kept on the laptop; the guide's `lp` sends the shown invoice to that printer. GitHub's CI runs the tests. No other service is needed.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N11",
           "good": true,
           "decisions": [
-            {"about": "the folders", "decided": "invoicer/: the package, with __main__.py for the command and sheet.py for the sheet reader beside the existing modules. tests/: the unit and integration tests, which build their .ods files themselves. docs/print-an-invoice.md: the accounting team's guide.", "by": "reasoning"}
+            {
+              "about": "the folders",
+              "decided": "invoicer/: the package, with __main__.py for the command and sheet.py for the sheet reader beside the existing modules. tests/: the unit and integration tests, which build their .ods files themselves. docs/print-an-invoice.md: the accounting team's guide.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N12",
           "good": true,
           "decisions": [
-            {"about": "the checks", "decided": "Unit tests with Python's unittest try the sheet reader and the command against their contracts, during the work. Integration tests run `python3 -m invoicer` as a process on .ods files that the tests build, for each path of the sequence, during the work. An end-to-end check follows the guide's commands on a fresh copy of the folder and compares the invoice with totals counted by hand, before sign-off. Criterion: every test passes on each run. The trace: each story, principle item, component, and data has an integration test.", "by": "reasoning"}
+            {
+              "about": "the checks",
+              "decided": "Unit tests with Python's unittest try the sheet reader and the command against their contracts, during the work. Integration tests run `python3 -m invoicer` as a process on .ods files that the tests build, for each path of the sequence, during the work. An end-to-end check follows the guide's commands on a fresh copy of the folder and compares the invoice with totals counted by hand, before sign-off. Criterion: every test passes on each run. The trace: each story, principle item, component, and data has an integration test.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N13",
           "good": true,
           "decisions": [
-            {"about": "the gaps", "decided": "No gap of the software design or the test design is known yet; each one found goes back into this design before the code is made.", "by": "reasoning"}
+            {
+              "about": "the gaps",
+              "decided": "No gap of the software design or the test design is known yet; each one found goes back into this design before the code is made.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N14",
           "good": true,
           "decisions": [
-            {"about": "the parts that hold each behavior", "decided": "Reading the sheet: the sheet reader. Taking and checking the rate, refusing, and writing out: the command. The invoice's text and sums: render, tax, and totals. Each is a module that a unit test calls.", "by": "reasoning"}
+            {
+              "about": "the parts that hold each behavior",
+              "decided": "Reading the sheet: the sheet reader. Taking and checking the rate, refusing, and writing out: the command. The invoice's text and sums: render, tax, and totals. Each is a module that a unit test calls.",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N15",
           "good": true,
           "decisions": [
-            {"about": "the strategies", "decided": "The .ods file is read with zipfile and xml.etree of the standard library (P1, P3). Money stays Decimal from the cell's value to the total (S1). The rate is given as a percentage, such as 19 for 19 %, and becomes the fraction that tax_of takes (S1). The checks of P2 run before render is called (S2).", "by": "reasoning"}
+            {
+              "about": "the strategies",
+              "decided": "The .ods file is read with zipfile and xml.etree of the standard library (P1, P3). Money stays Decimal from the cell's value to the total (S1). The rate is given as a percentage, such as 19 for 19 %, and becomes the fraction that tax_of takes (S1). The checks of P2 run before render is called (S2).",
+              "by": "reasoning"
+            }
           ]
         },
         {
           "id": "N16",
           "good": true,
           "decisions": [
-            {"about": "what the document holds", "decided": "Only what holds while the vision and the principles stay; module names appear in the folders alone.", "by": "reasoning"}
+            {
+              "about": "what the document holds",
+              "decided": "Only what holds while the vision and the principles stay; module names appear in the folders alone.",
+              "by": "reasoning"
+            }
           ]
         }
       ]
@@ -187,13 +294,62 @@
       "path": "docs/software-design.md",
       "kind": "software-design",
       "file": false,
-      "inputs": ["docs/architecture.md"],
-      "status": "open",
+      "status": "done",
       "necessary_conditions": [
-        {"id": "N1", "good": false, "decisions": []},
-        {"id": "N2", "good": false, "decisions": []},
-        {"id": "N3", "good": false, "decisions": []},
-        {"id": "N4", "good": false, "decisions": []}
+        {
+          "id": "N1",
+          "good": true,
+          "decisions": [
+            {
+              "about": "the modules",
+              "decided": "invoicer/sheet.py hides the .ods layout and the columns: which sheet, which row is the header, how a cell's value is read. invoicer/__main__.py hides the command's arguments, the percentage, and how a refusal is written and ends the run. render, tax, totals, and lines stay as they are.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N2",
+          "good": true,
+          "decisions": [
+            {
+              "about": "the sheet's columns",
+              "decided": "The first sheet's first non-empty row is the header. The columns are found by their header text, Description, Price, and Quantity, in any order and any letter case, and other columns are ignored. An empty Quantity counts as 1. Each later non-empty row is one line.",
+              "by": "reasoning"
+            },
+            {
+              "about": "read_lines",
+              "decided": "`read_lines(path) -> list[Line]` in invoicer/sheet.py takes the path of a .ods file and gives its lines in sheet order, price as Decimal from the cell's stored value, quantity as int. It refuses with `SheetError`, whose message names the file, and the row number and column header as Calc shows them where a cell is at fault: a missing or unreadable file, a file that isn't .ods, a header row lacking Description or Price, a row with no description, a price that isn't a number, a quantity that isn't a whole number of 1 or more, and a sheet with no lines.",
+              "by": "reasoning"
+            },
+            {
+              "about": "main",
+              "decided": "`main(argv, stdout, stderr) -> int` in invoicer/__main__.py takes `<spreadsheet.ods> --tax-rate <percent>`, the percent a number from 0 to 100 written as `19`, `7.5`, or `19%`. It writes the text of render(lines, percent / 100) to stdout and gives 0. On a wrong argument or a SheetError it writes one line `invoicer: <what to fix>` to stderr, writes nothing to stdout, and gives 2. `python3 -m invoicer` runs it and exits with what it gives.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N3",
+          "good": true,
+          "decisions": [
+            {
+              "about": "the prompts",
+              "decided": "No part holds a prompt.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N4",
+          "good": true,
+          "decisions": [
+            {
+              "about": "the gaps",
+              "decided": "None: each arrow of the sequence reaches main, read_lines, or render, and each decision of the architecture lies in one module.",
+              "by": "reasoning"
+            }
+          ]
+        }
       ]
     },
     {
@@ -201,60 +357,190 @@
       "path": "docs/test-design.md",
       "kind": "test-design",
       "file": false,
-      "inputs": ["docs/product-vision.md", "README.md", "docs/architecture.md", "docs/software-design.md"],
-      "status": "open",
+      "status": "done",
       "necessary_conditions": [
-        {"id": "N1", "good": false, "decisions": []},
-        {"id": "N2", "good": false, "decisions": []},
-        {"id": "N3", "good": false, "decisions": []},
-        {"id": "N7", "good": false, "decisions": []},
-        {"id": "N4", "good": false, "decisions": []},
-        {"id": "N5", "good": false, "decisions": []},
-        {"id": "N6", "good": false, "decisions": []}
+        {
+          "id": "N1",
+          "good": true,
+          "decisions": [
+            {
+              "about": "the E2E cases",
+              "decided": "E2E-1 (KR1.1, KR1.2): on a fresh copy of the folder, the guide's commands run in order on a sheet of three lines laid out as the guide says, with --tax-rate 19, show the invoice whose subtotal, tax, and total match the sums counted by hand, and the guide's print step hands that same text to `lp`; the time of the run is recorded.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N2",
+          "good": true,
+          "decisions": [
+            {
+              "about": "the integration cases",
+              "decided": "Each runs `python3 -m invoicer` as a process on a .ods file that the test builds. I-S1: a sheet of lines and a rate give the invoice on stdout and status 0. I-S2-rate: a rate that isn't a number, or is out of range, gives one stderr line naming --tax-rate, empty stdout, status 2. I-S2-sheet: a price cell holding text gives one stderr line naming its row and the Price column, empty stdout, status 2. I-P1: headers in another order, in other letter case, with an extra column, give the same invoice. I-P3: the command runs with `python3 -I` from the folder with nothing installed. I-print: the text written to a pipe is the same as the text shown in the terminal.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N3",
+          "good": true,
+          "decisions": [
+            {
+              "about": "the unit cases",
+              "decided": "read_lines: typical sheet; repeated columns and rows of the .ods format; empty rows skipped; empty quantity is 1; a currency-formatted price read from its stored value exactly; a header row below empty rows; refusals for a missing file, a non-.ods file, a missing Description or Price header, a row with no description, a text price, a quantity of 0 or 1.5, and a sheet with no lines, each message naming row and column where a cell is at fault. main: `19`, `7.5`, and `19%` become 0.19, 0.075, and 0.19; 0 and 100 accepted; -1, 101, and `abc` refused; a missing path or missing --tax-rate refused with the usage; a SheetError written as one line with status 2.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N7",
+          "good": true,
+          "decisions": [
+            {
+              "about": "the properties",
+              "decided": "For any lines read, the invoice's total equals its subtotal plus tax_of(subtotal, rate), and the subtotal equals the exact Decimal sum of price times quantity of the sheet's cells.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N4",
+          "good": true,
+          "decisions": [
+            {
+              "about": "the cases as tests",
+              "decided": "Each case above becomes a unittest test under tests/ when the code is made, named for its case, its Given, When, and Then in its docstring, calling only read_lines, main, or the command as a process, and failing against an empty body.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N5",
+          "good": true,
+          "decisions": [
+            {
+              "about": "the trace",
+              "decided": "tests/test_trace.py fails unless each element S1, S2, P1, P2, P3 and each component has a test naming it, and each test names an element or a case.",
+              "by": "reasoning"
+            }
+          ]
+        },
+        {
+          "id": "N6",
+          "good": true,
+          "decisions": [
+            {
+              "about": "the gaps",
+              "decided": "None found.",
+              "by": "reasoning"
+            }
+          ]
+        }
       ]
     },
     {
       "name": "A colleague from accounting prints a client's invoice from their spreadsheet with one command and that client's tax rate",
       "path": "invoicer/",
-      "more_paths": ["tests/"],
+      "more_paths": [
+        "tests/"
+      ],
       "kind": "code",
-      "inputs": ["docs/architecture.md", "docs/software-design.md", "docs/test-design.md"],
+      "inputs": [
+        "docs/architecture.md",
+        "docs/software-design.md",
+        "docs/test-design.md"
+      ],
       "status": "open",
       "necessary_conditions": [
-        {"id": "N1", "good": false, "decisions": []},
-        {"id": "N2", "good": false, "decisions": []},
-        {"id": "N3", "good": false, "decisions": []},
-        {"id": "N4", "good": false, "decisions": []},
-        {"id": "N5", "good": false, "decisions": []},
-        {"id": "N6", "good": false, "decisions": []},
-        {"id": "N7", "good": false, "decisions": []},
-        {"id": "N8", "good": false, "decisions": []}
+        {
+          "id": "N1",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N4",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N5",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N6",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N7",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N8",
+          "good": false,
+          "decisions": []
+        }
       ]
     },
     {
       "name": "A colleague from accounting gets from a fresh terminal to a client's printed invoice by the guide alone",
       "path": "docs/print-an-invoice.md",
       "kind": "light",
-      "inputs": ["invoicer/", "docs/architecture.md"],
+      "inputs": [
+        "invoicer/",
+        "docs/architecture.md"
+      ],
       "status": "open",
       "necessary_conditions": [
         {
           "id": "N1",
           "good": false,
           "decisions": [
-            {"about": "The check", "decided": "Someone who has never run invoicer follows the guide alone on a Linux machine with python3 and LibreOffice: they save a sheet of lines, run each command the guide gives, in order, with a client's tax rate, and get that client's invoice with the subtotal, tax, and total counted by hand. Shown by running the guide's commands in order on a fresh copy of the folder and a sheet laid out as the guide says.", "by": "reasoning"}
+            {
+              "about": "The check",
+              "decided": "Someone who has never run invoicer follows the guide alone on a Linux machine with python3 and LibreOffice: they save a sheet of lines, run each command the guide gives, in order, with a client's tax rate, and get that client's invoice with the subtotal, tax, and total counted by hand. Shown by running the guide's commands in order on a fresh copy of the folder and a sheet laid out as the guide says.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the print step",
+              "decided": "After the invoice shows in the terminal and its totals are checked, the guide gives the same command ending in `| lp` to send it to the laptop's default printer.",
+              "by": "user"
+            }
           ]
         },
-        {"id": "N2", "good": false, "decisions": []},
-        {"id": "N3", "good": false, "decisions": []}
+        {
+          "id": "N2",
+          "good": false,
+          "decisions": []
+        },
+        {
+          "id": "N3",
+          "good": false,
+          "decisions": []
+        }
       ]
     }
   ],
   "work": [
-    {"do": "decide", "path": "docs/architecture.md", "condition": "N2", "about": "what printing gives the user"},
-    {"do": "decide", "path": "docs/software-design.md"},
-    {"do": "decide", "path": "docs/test-design.md"},
-    {"do": "make", "path": "invoicer/"},
-    {"do": "make", "path": "docs/print-an-invoice.md"}
+    {
+      "do": "make",
+      "path": "invoicer/"
+    },
+    {
+      "do": "make",
+      "path": "docs/print-an-invoice.md"
+    }
   ]
 }
