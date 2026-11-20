@@ -1,0 +1,13 @@
+{
+  "good": [],
+  "more": [
+    {
+      "condition": "N7",
+      "good_when": "A maintainer who changes a rule of the invoice changes it in one place, and nowhere else falls out of step with it. Today the invoice currency is written twice: render writes EUR after each amount (invoicer/render.py:7), and the reader refuses any price not in EUR from its own copy (invoicer/sheet.py:26), whose comment admits it must match render; changing the currency in render alone prints invoices in a currency the reader still refuses. The column names live in _HEADERS (invoicer/sheet.py:22), yet the refusals spell them out again by hand (invoicer/sheet.py:76, invoicer/sheet.py:172), so renaming a header leaves refusals naming the old one. Rounding money to the cent shares CENT but writes its half-up rounding separately for the tax (invoicer/tax.py:10) and the price (invoicer/sheet.py:211). In the tests, the invoice row layout is copied in two modules (tests/test_command.py:26, tests/test_main.py:15), the folder root in two (tests/test_command.py:17, tests/test_trace.py:9), and the damaged .ods file cut off mid-tag is built by hand in two (tests/test_command.py:163, tests/test_sheet.py:728), so a change to the layout or to how a test .ods is made has to be found and made in each copy."
+    },
+    {
+      "condition": "N8",
+      "good_when": "A maintainer who has learned how the tests and the reader do a thing once reads it the same way everywhere, and each difference tells them of a real one. Today the tests build .ods files two ways: through _ods.write_tables (tests/_ods.py:74) and by opening a ZipFile by hand and writing the mimetype themselves (tests/test_sheet.py:728, tests/test_sheet.py:744, tests/test_sheet.py:773, tests/test_sheet.py:791, tests/test_command.py:163), with nothing saying why. The expected refusal texts are kept three ways: as helpers at the foot of the module (tests/test_sheet.py:801 to tests/test_sheet.py:846), as helpers at its head (tests/test_main.py:26), and written out inline, often the same text again beside a helper that already exists for its kind (tests/test_sheet.py:129, tests/test_command.py:136, tests/test_main.py:233); and some of these helpers carry a docstring while their neighbours have none (tests/test_main.py:26, tests/test_sheet.py:801 beside tests/test_main.py:15). In the reader, every function states its return type but _rows (invoicer/sheet.py:123), and the price's accepted value types are a named constant (invoicer/sheet.py:24) while the quantity's is a bare literal (invoicer/sheet.py:220)."
+    }
+  ]
+}

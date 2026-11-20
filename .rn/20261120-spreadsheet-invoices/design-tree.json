@@ -455,7 +455,13 @@
         {
           "id": "N1",
           "good": true,
-          "decisions": []
+          "decisions": [
+            {
+              "about": "each rule written once",
+              "decided": "The invoice's currency, EUR, is written once and read both by render and by the reader's refusal of other currencies; the column headers are written once and the refusals take their names from there; rounding to the cent half up is written once and used for the tax and for the price.",
+              "by": "reasoning"
+            }
+          ]
         },
         {
           "id": "N2",
@@ -489,6 +495,11 @@
             {
               "about": "what the tests pin",
               "decided": "A test fails when a refusal's row number miscounts the blank rows that Calc saves as one repeated row, when a cell that Calc saves as repeated fills fewer columns than it repeats, so a price or quantity equal to its neighbour is lost, and when spaces around a header or a description stop being trimmed. A test also fails when a description that Calc saved with a link or a bold word is read only to its first run of text.",
+              "by": "reasoning"
+            },
+            {
+              "about": "the behaviours of the reader that accounting meets",
+              "decided": "A test fails when any of these changes: a two-line Description cell read as one line joined by a space; a negative or space-padded number in a text-formatted cell refused with how to make it a number; a Quantity cell formatted as currency or percent refused as not a whole number; a Price cell formatted as percent refused as not a number; the column past Z named by its letters, such as AA; a path that exists but can't be opened refused with its reason. Each line whose purpose isn't plain from it, such as the space between a cell's paragraphs, the column-letter counting, and a cause dropped from a refusal, says why beside it.",
               "by": "reasoning"
             }
           ]

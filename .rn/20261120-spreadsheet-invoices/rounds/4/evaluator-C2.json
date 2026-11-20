@@ -1,0 +1,34 @@
+{
+  "good": [
+    {
+      "condition": "N2",
+      "lines": [
+        "invoicer/sheet.py:20",
+        "invoicer/sheet.py:23",
+        "invoicer/sheet.py:25",
+        "invoicer/sheet.py:27",
+        "invoicer/sheet.py:212",
+        "invoicer/__main__.py:58",
+        "invoicer/__main__.py:67"
+      ]
+    }
+  ],
+  "more": [
+    {
+      "condition": "N3",
+      "good_when": "A maintainer reading invoicer/sheet.py and the tests knows from the name alone what each holds where it is used: that `place` in read_lines, _columns, and _line is the file-and-tab start of a refusal, that `where` passed to _description, _price, _quantity, and _refuse_number_as_text is the row-and-column label of the cell a refusal names, that `self.hundred()` in tests/test_main.py:44 is the path of a sheet of one line priced 100, and that `found(...)` in tests/test_sheet.py:12 turns lines into (description, price, quantity) tuples, without the docstrings that today repeat 'place names the file and the sheet' beside each function to make up for the name."
+    },
+    {
+      "condition": "N4",
+      "good_when": "A maintainer meets one name for each thing and one thing for each name: `where` in invoicer/sheet.py is today both the inner function of _line (line 181) and the string it gives that the cell readers take; `amount` in invoicer/render.py:10 and invoicer/totals.py:15 is the subtotal of all lines while Line.amount() in invoicer/lines.py:14 is one line's amount; and 'sheet' in the tests names an .ods file's path (`self.sheet(...)`, tests/_ods.py:99) while in invoicer/sheet.py and every refusal it names one tab, whose XML the tests call `table` (tests/_ods.py:69). With these apart, a change to the subtotal, to a refusal's cell label, or to how a tab is read reaches every place it should and no other."
+    },
+    {
+      "condition": "N5",
+      "good_when": "A maintainer reads each function once from the top and can say what it does without stopping to unpick a line: today the nested join of paragraph texts in _cells (invoicer/sheet.py:146), the generator with a fallback and the filtered split that pull the names off a Traces line in traces() (tests/test_trace.py:27-28), and the dict comprehension that slices each invoice row into label and amount in the property test (tests/test_main.py:262) each need a second reading to see what they give."
+    },
+    {
+      "condition": "N6",
+      "good_when": "A maintainer who meets odd-looking code finds why it is there right beside it, so they don't straighten it and undo its purpose: why the reader joins a cell's paragraphs with a space (invoicer/sheet.py:146), so a description typed on two lines in one cell prints as one invoice row; why the missing-file refusal drops its cause with `from None` (invoicer/sheet.py:104); why _letter adds one and takes one away before each divmod (invoicer/sheet.py:248-250), the A-to-Z-then-AA counting that has no zero; and why overwrite_content seeks five bytes past the name content.xml (tests/test_sheet.py:816), which a maintainer can't tell lands inside the member's data and not its header."
+    }
+  ]
+}
