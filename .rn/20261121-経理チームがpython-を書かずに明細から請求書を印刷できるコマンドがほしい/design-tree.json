@@ -109,7 +109,13 @@
     {
      "id": "N2",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "適格請求書の登録番号と税率ごとの消費税額",
+       "decided": "invoice が印刷する請求書は、インボイス制度の適格請求書として、発行者の登録番号と税率ごとの対象額・消費税額を載せる。請求書の中身は .rn/best-practices/invoice/ に従い、invoice/templates/ が形にする。README の「できないこと」には挙げない。",
+       "by": "reasoning"
+      }
+     ]
     },
     {
      "id": "N3",
