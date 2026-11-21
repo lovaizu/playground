@@ -26,51 +26,7 @@
    "name": "\u8acb\u6c42\u66f8\u3092\u4f5c\u308b\u4eba\u304c\u3001\u53d6\u5f15\u5148\u306b\u305d\u306e\u307e\u307e\u51fa\u305b\u308b\u8acb\u6c42\u66f8\u306e\u6c7a\u307e\u308a\u3054\u3068\u3092\u4e00\u3064\u305a\u3064\u78ba\u304b\u3081\u306a\u304c\u3089\u4f5c\u308c\u308b",
    "path": ".rn/best-practices/invoice/",
    "kind": "meta",
-   "inputs": [],
-   "status": "open",
-   "necessary_conditions": [
-    {
-     "id": "N1",
-     "good": true,
-     "decisions": []
-    },
-    {
-     "id": "N2",
-     "good": true,
-     "decisions": []
-    },
-    {
-     "id": "N3",
-     "good": true,
-     "decisions": []
-    },
-    {
-     "id": "N4",
-     "good": true,
-     "decisions": []
-    },
-    {
-     "id": "N5",
-     "good": true,
-     "decisions": [
-      {
-       "about": "単価の税抜・税込が分からないとき",
-       "decided": "明細の見出しにも手元の書類にも、単価が税抜か税込かが示されていないときは、請求書を作る人が推測で決めずにユーザーに尋ね、その答えで請求書の全体を税抜か税込かにそろえる。宛先や振込先が分からないときと同じ手順にする。",
-       "by": "reasoning"
-      }
-     ]
-    },
-    {
-     "id": "N7",
-     "good": true,
-     "decisions": []
-    },
-    {
-     "id": "N6",
-     "good": true,
-     "decisions": []
-    }
-   ]
+   "status": "done"
   },
   {
    "name": "\u5370\u5237\u3057\u305f\u8acb\u6c42\u66f8\u3092\u3001\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u305d\u306e\u307e\u307e\u53d6\u5f15\u5148\u306b\u51fa\u305b\u308b",
@@ -83,15 +39,51 @@
    ],
    "status": "open",
    "necessary_conditions": [
-    {"id": "N1", "good": false, "decisions": []},
-    {"id": "N2", "good": false, "decisions": []},
-    {"id": "N3", "good": false, "decisions": []},
-    {"id": "N4", "good": false, "decisions": []},
-    {"id": "N5", "good": false, "decisions": []},
-    {"id": "N6", "good": false, "decisions": []},
-    {"id": "N7", "good": false, "decisions": []},
-    {"id": "N8", "good": false, "decisions": []},
-    {"id": "N9", "good": false, "decisions": []}
+    {
+     "id": "N1",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N2",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N3",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N4",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N5",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N6",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N7",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N8",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N9",
+     "good": false,
+     "decisions": []
+    }
    ]
   },
   {
@@ -433,10 +425,6 @@
   {
    "do": "make",
    "path": "invoice/docs/product-vision.md"
-  },
-  {
-   "do": "make",
-   "path": ".rn/best-practices/invoice/"
   },
   {
    "do": "make",
