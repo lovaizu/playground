@@ -52,7 +52,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     受け取る: コマンドラインの引数。明細のファイルのパス一つか、`--version`。
         None のときは sys.argv[1:] を使う。
     返す: 終了コード。
-        0: 印刷を頼み終え、請求書ごとの番号と金額と、印刷した枚数を示した (P2.6)。
+        0: 印刷を頼み終え、請求書ごとの番号と金額と、送った既定のプリンターの名前と、
+           印刷した枚数を示した (P2.6)。
            `--version` では版を示した (S2)。
         1: 直すところを示して止まった (P1.2)。
         2: 引数が明細のファイル一つでも `--version` でもなく、使い方を示した。
@@ -102,7 +103,8 @@ class Customer:
     name: str
     """取引先の正式な名称。明細の「取引先」の列のまま。"""
     honorific: Literal["御中", "様"]
-    """宛名の敬称。名称が法人や部署なら「御中」、個人なら「様」。
+    """宛名の敬称。名称に法人格があれば「御中」、なければ「様」。
+    例: `株式会社青葉商事` は「御中」、`山田太郎` は「様」。
     明細の「取引先」の列の名称から、このモジュールが読み取る。"""
 
 
@@ -119,11 +121,11 @@ class LedgerRow:
     description: str
     """品目。明細の「品目」の列。"""
     quantity: int
-    """数量。"""
+    """数量。正の整数。"""
     unit: str
     """単位。明細の「単位」の列。例: `箱`。空なら数量だけを載せる。"""
     unit_price: int
-    """単価。円の整数。"""
+    """単価。円の正の整数。"""
     tax_rate: TaxRate
     """消費税率。"""
     tax_included: bool
@@ -180,6 +182,10 @@ def read(path: Path) -> tuple[LedgerRow, ...]:
     受け取る: 明細のファイルのパス。見出しは、取引先、取引日、品目、数量、単位、
         `単価(税抜)` か `単価(税込)`、税率の七つの列。
     返す: 明細のすべての行を、ファイルの順に明細行として。一行以上。
+        各値は、全角の数字・英字・記号を半角に、半角カナを全角に読み替えてから確かめ、
+        読み替えた値を明細行に持つ。
+        取引日は `2026-11-05` か `2026/11/05` の形を、数量と単価は正の整数を、
+        税率は `10%` か `8%` を受け付ける。
         取引先の名称からは、宛名の敬称も読み取る。
     ほかに変えるもの: なし。明細のファイルを読むだけで、書かない。
     断るとき:
@@ -379,6 +385,8 @@ def check(item: IssuerItem, answer: str) -> Answer:
 
     受け取る: 尋ねた事柄と、利用者の答えの文字列。
     返す: 確かめ終えた答え。支払条件は三つの値に読み取る (P3.10)。
+        答えは、全角の数字・英字・記号を半角に、半角カナを全角に読み替えてから確かめ、
+        読み替えた値を返す。
     ほかに変えるもの: なし。何も残さない (P2.4)。
     断るとき:
         AnswerRefused: 答えが事柄の形に合わないとき。支払条件では、
@@ -509,7 +517,8 @@ class Invoice:
     tax_included: bool
     """明細の単価が税込なら True、税抜なら False (P3.3)。"""
     lines: tuple[InvoiceLine, ...]
-    """明細に載せる行と金額。取引日が締めの期間に入る明細行を、明細の順に (P3.8)。"""
+    """明細に載せる行と金額。取引日が締めの期間に入る明細行を (P3.8)、
+    取引日の順に並べ、同じ取引日の行は明細のファイルの順に保つ。"""
     totals: tuple[RateTotal, ...]
     """税率ごとの合計。一つ以上。"""
     amount: int
@@ -521,8 +530,8 @@ def bill(rows: Sequence[LedgerRow], issuer: Issuer) -> tuple[Invoice, ...]:
 
     受け取る: 直すところのない明細行と、発行者情報。
     返す: 取引先と締めの期間ごとに一枚ずつの請求書 (P3.4)。
-        日付は periods.dates_of に、番号は numbering.number に、
-        取引先の名称を渡して求める。
+        日付は periods.dates_of に求め、番号は numbering.number に、
+        取引先の名称と、dates_of が返した締めの期間と発行日を渡して求める。
         各行の金額、税率ごとの対象額と消費税額、請求額を決めるのは、
         このモジュールだけ (P3.1)。
     ほかに変えるもの: 番号の採番を通して、発行記録に番号を残させる。
@@ -539,15 +548,20 @@ def bill(rows: Sequence[LedgerRow], issuer: Issuer) -> tuple[Invoice, ...]:
 
 from __future__ import annotations
 
+import datetime
+
 from invoice.periods import Period
 
 
-def number(customer_name: str, period: Period) -> str:
+def number(customer_name: str, period: Period, issue_date: datetime.date) -> str:
     """番号を求める (S1)。
 
-    受け取る: 請求書の取引先の名称と締めの期間。置き場の場所は place.folder から受け取る。
+    受け取る: 請求書の取引先の名称と締めの期間と、periods.dates_of が決めた発行日。
+        置き場の場所は place.folder から受け取る。
     返す: その組の請求書番号。前に付けた組には、前と同じ番号 (P3.5, P1.4)。
         初めての組には、ほかの組に付けていない番号。
+        番号は「<発行年>-<発行月2桁>-<連番3桁>」の形で、例: `2026-11-001`。
+        連番は発行日の月ごとに 001 から数え、その月に付けた番号の次とする。
     ほかに変えるもの: 初めての組なら、その番号を発行記録に残してから返す。
         発行記録を読み書きするのは、このモジュールだけ (P3.5)。
     断るとき:
@@ -590,7 +604,8 @@ def typeset(invoices: Sequence[Invoice]) -> tuple[PrintDocument, ...]:
             account_number、account_holder。
         請求書番号と日付: number、issue_date、due_date。
         明細: 各 lines の row の date、description、quantity、unit、unit_price、
-            tax_rate と、その行の amount。単価と金額の税込か税抜は tax_included。
+            tax_rate と、その行の amount を、lines の順に。
+            date は「2026年11月5日」の形で載せる。単価と金額の税込か税抜は tax_included。
             tax_rate が 8 の行には、軽減税率の旨を添える。
         税率ごとの合計: 各 totals の rate、base、tax。
         ご請求金額と合計(税込): amount。
@@ -634,11 +649,22 @@ class PrintRefused(Exception):
         self.fix = fix
 
 
-def print_documents(documents: Sequence[PrintDocument]) -> int:
+@dataclass(frozen=True)
+class Printed:
+    """印刷を頼み終えた結果: 送った先と、送った枚数 (P2.6)。"""
+
+    printer: str
+    """送った既定のプリンターの名前。印刷システムが示すまま。"""
+    sheets: int
+    """送った用紙の枚数。"""
+
+
+def print_documents(documents: Sequence[PrintDocument]) -> Printed:
     """印刷させる (S1, S4)。
 
     受け取る: 印刷用の文書。
-    返す: 送った用紙の枚数 (P2.6)。
+    返す: 送った既定のプリンターの名前と、送った用紙の枚数 (P2.6)。
+        名前は send が返したもの。
     ほかに変えるもの: 文書を受け取った順に、send で既定のプリンターに送る。
     断るとき:
         PrintRefused: 既定のプリンターがないとき、一つも送らずに上がる。
@@ -647,12 +673,12 @@ def print_documents(documents: Sequence[PrintDocument]) -> int:
     raise NotImplementedError("printing.print_documents")
 
 
-def send(document: PrintDocument) -> None:
+def send(document: PrintDocument) -> str:
     """既定のプリンターに送る (S1, S4)。印刷システムへの矢印を運ぶ。
 
     印刷システムに触れるのは、この関数だけ (P2.3)。テストでは代役に替える。
     受け取る: 一つの印刷用の文書。
-    返す: なし。
+    返す: 送った既定のプリンターの名前。
     ほかに変えるもの: 印刷システムに、既定のプリンターでの印刷を頼む。
     断るとき:
         PrintRefused: 既定のプリンターがないとき、または印刷システムが断ったとき。
@@ -666,3 +692,8 @@ def send(document: PrintDocument) -> None:
 - コンポーネント: `place.py` が決める置き場の場所を受け持つコンポーネントがない。どのコンポーネントの決めごとかを、コンポーネントに足す必要がある。
 - S3 の「ないと返す」: この矢印にデータがない。`issuer.load` は尋ねる事柄を返すので、矢印に尋ねる事柄を足す必要がある。
 - S1 と S3: 発行者情報や発行記録を読めない、または残せないときの分かれ道がない。インターフェースは `place.StoreRefused` で断るので、その分かれ道を足す必要がある。
+- S1 と S4 の「送った枚数を返す」: この矢印に既定のプリンターの名前がない。`printing.print_documents` は名前と枚数を返し、コマンドはその名前も示すので、矢印と P2.6 に名前を足す必要がある。
+- S1 の「番号を求める」: この矢印は請求書を運ぶが、`numbering.number` は請求書ではなく、取引先の名称と締めの期間と発行日を受け取る。番号は発行月ごとの連番で、請求書の額は要らないので、矢印のデータをこの三つに改める必要がある。
+- コンポーネントの図の請求の計算から番号の採番への「番号を求める」: この矢印も、S1 の矢印と同じく請求書を運ぶ。`numbering.number` は取引先の名称と締めの期間と発行日を受け取るので、図の矢印のデータもこの三つに改める必要がある。
+- コンポーネントの図の「印刷させる」: 印刷への矢印が返すものに、既定のプリンターの名前がない。`printing.print_documents` は名前と枚数を返すので、図にも名前を足す必要がある。
+- コンポーネントの図の「求める、確かめさせる、残させる」: この矢印が返すものに、尋ねる事柄がない。`issuer.load` は発行者情報がまだなければ尋ねる事柄を返すので、図にも足す必要がある。

@@ -1,0 +1,57 @@
+{
+ "result": "judged",
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "\"\"\"明細のファイルを、どの形なら受け付け、各列をどう読んで明細行にするか。\"\"\"",
+    "\"\"\"請求書の額を、消費税と合計の決まりに沿ってどう出すか。\"\"\"",
+    "\"\"\"取引先と締めの期間の組に、どの請求書番号を付けるか。\"\"\"",
+    "\"\"\"紙面を、ノートPCの印刷システムにどう届けるか。\"\"\"",
+    "\"\"\"部品の結果と直すところを、利用者に端末でどう示すか。\"\"\""
+   ]
+  },
+  {
+   "condition": "N2",
+   "lines": [
+    "    受け取る: 明細のファイルのパス。UTF-8 の CSV で、先頭の BOM はあってもよい。",
+    "    返す: その組の請求書番号。前に付けた組には、前と同じ番号 (P3.5, P1.4)。",
+    "        place.StoreRefused: numbering.number が断ったとき、そのまま上げる。"
+   ]
+  },
+  {
+   "condition": "N6",
+   "lines": [
+    "    印刷システムに触れるのは、この関数だけ (P2.3)。テストでは代役に替える。",
+    "    monkeypatch.setattr(printing, \"send\", double.send)"
+   ]
+  },
+  {
+   "condition": "N8",
+   "lines": [
+    "                f\"- {fix.path} の {fix.line} 行目、「{fix.column}」の列: {given}。\"",
+    "    _EXCLUDED: _positive(\"2800\", \"単価は、円の 1 以上の整数で、カンマを付けずに書きます。\"),",
+    "                print(f\"{said}{fix.rule}たとえば「{fix.expected}」のように答えてください。\")",
+    "                \"種類を「テキスト CSV (.csv)」、文字セットを「Unicode (UTF-8)」にして保存し直してください。\""
+   ]
+  }
+ ],
+ "more": [
+  {
+   "condition": "N3",
+   "good_when": "A maintainer who reads the branch's specification finds there every behavior the command has: the full-width to half-width reading of statement values and answers, the 2026/11/20 date form, invoice lines in trade-date order, and the honorific read from the company forms. Today the software design still says lines follow the statement's order, and its test design still lists these as open gaps, so a maintainer can't tell which of the two is the behavior to keep."
+  },
+  {
+   "condition": "N4",
+   "good_when": "A maintainer on a fresh machine runs uv sync and uv run pytest as the manifest's opening says, and gets the exact versions the tests last passed with, from a uv.lock the branch carries. Today the branch has no uv.lock. uv sync makes a new one from the newest versions (here Python 3.15.2, pytest 9.2.0, hypothesis 6.170.17), and it shows up as an untracked file, so a passing run today doesn't promise a passing run on the next machine."
+  },
+  {
+   "condition": "N5",
+   "good_when": "A maintainer who looks up a case from the test design by its name finds the one test that has that name, and finds no test whose case the design doesn't hold. Today three of the design's 93 names have no test (for example test_取引先と締めの期間の組ごとに一枚ずつ明細の順の行で返す, which runs as a test that says the opposite, 取引日の順). Another 28 tests, such as test_取引日は年と月と日をスラッシュで区切っても読む and test_全角の数字と英字と記号は半角に読み替える, have no case in the design."
+  },
+  {
+   "condition": "N7",
+   "good_when": "A maintainer who changes what the command shows, or what it sends to the printer, sees a test fail whenever the result moves away from its case. Today many cases check only a fragment. For example, the no-default-printer case checks only that the word プリンター appears and that one sheet was sent, the second-run case checks only that 1 枚を印刷しました。 appears, and the unreadable-file case checks only for the words UTF-8 and CSV. A broken fix instruction in any of these still passes."
+  }
+ ]
+}

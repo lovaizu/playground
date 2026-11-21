@@ -1,0 +1,50 @@
+{
+ "result": "judged",
+ "good": [
+  {
+   "condition": "N2",
+   "lines": [
+    "各インターフェースは、シーケンスの矢印を一つずつ運ぶ。",
+    "本体は呼ぶと失敗し、そのインターフェースの名前を示す。",
+    "S2 で invoice のコードに届く矢印は、版を尋ねる `invoice --version` だけである。",
+    "    \"\"\"明細のファイルを渡す (S1, S3, S4)、版を尋ねる (S2)。",
+    "    \"\"\"明細を読ませる (S1, S3, S4)。",
+    "    \"\"\"残した情報を求める (S1, S3)。",
+    "    \"\"\"答えを確かめさせる (S3)。",
+    "    \"\"\"すべての答えを残させる (S3)。",
+    "    \"\"\"請求書にさせる (S1)。",
+    "    \"\"\"番号を求める (S1)。",
+    "    \"\"\"紙面にさせる (S1)。",
+    "    \"\"\"印刷させる (S1, S4)。",
+    "    \"\"\"既定のプリンターに送る (S1, S4)。印刷システムへの矢印を運ぶ。"
+   ]
+  },
+  {
+   "condition": "N3",
+   "lines": [
+    "型は Python の注釈で書き、契約は docstring に書く。",
+    "S2 のインストーラーは uv であり、invoice のコードではない。"
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "- ディレクトリ構成: `periods.py` と `place.py` がない。請求の計算の二つのモジュールと置き場の場所の決めごとを、構成と方針に足す必要がある。",
+    "- コンポーネント: `place.py` が決める置き場の場所を受け持つコンポーネントがない。どのコンポーネントの決めごとかを、コンポーネントに足す必要がある。",
+    "- S3 の「ないと返す」: この矢印にデータがない。`issuer.load` は尋ねる事柄を返すので、矢印に尋ねる事柄を足す必要がある。",
+    "- S1 と S3: 発行者情報や発行記録を読めない、または残せないときの分かれ道がない。インターフェースは `place.StoreRefused` で断るので、その分かれ道を足す必要がある。",
+    "- S1 と S4 の「送った枚数を返す」: この矢印に既定のプリンターの名前がない。`printing.print_documents` は名前と枚数を返し、コマンドはその名前も示すので、矢印と P2.6 に名前を足す必要がある。",
+    "- S1 の「番号を求める」: この矢印は請求書を運ぶが、`numbering.number` は請求書ではなく、取引先の名称と締めの期間と発行日を受け取る。番号は発行月ごとの連番で、請求書の額は要らないので、矢印のデータをこの三つに改める必要がある。",
+    "- コンポーネントの図の請求の計算から番号の採番への「番号を求める」: この矢印も、S1 の矢印と同じく請求書を運ぶ。`numbering.number` は取引先の名称と締めの期間と発行日を受け取るので、図の矢印のデータもこの三つに改める必要がある。",
+    "- コンポーネントの図の「印刷させる」: 印刷への矢印が返すものに、既定のプリンターの名前がない。`printing.print_documents` は名前と枚数を返すので、図にも名前を足す必要がある。",
+    "- コンポーネントの図の「求める、確かめさせる、残させる」: この矢印が返すものに、尋ねる事柄がない。`issuer.load` は発行者情報がまだなければ尋ねる事柄を返すので、図にも足す必要がある。"
+   ]
+  }
+ ],
+ "more": [
+  {
+   "condition": "N1",
+   "good_when": "A developer who changes how full-width digits, letters and symbols and half-width kana are read finds that rule in one module, for both the statement's values and the issuer's answers. Today the same rule is written in both ledger.read and issuer.check, so the two builders each implement it and a change must be made twice. In the same way, a developer finds who makes the store's folder in one module, not in 'whichever module saves', which is both issuer and numbering. The branch's code already keeps the reading rule in one place, width.py, which the skeleton's module list doesn't name."
+  }
+ ]
+}
