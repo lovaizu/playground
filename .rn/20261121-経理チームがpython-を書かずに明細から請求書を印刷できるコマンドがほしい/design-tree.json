@@ -122,11 +122,6 @@
        "about": "三つの図の置き方",
        "decided": "データ、コンポーネント、デプロイの三つの図は、invoice/docs/images/ に data-model.svg、components.svg、deployment.svg のファイルとして置き、architecture.md から開く。",
        "by": "reasoning"
-      },
-      {
-       "about": "Lane が図のフォルダへの書き込みを拒む",
-       "decided": "Lane を直しました。再開した作業者が、作業の中身にある書き込み先を読み直すようになっています。続けてください",
-       "by": "user"
       }
      ]
     },
