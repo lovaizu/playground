@@ -116,7 +116,7 @@
    "necessary_conditions": [
     {
      "id": "N1",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "三つの図の置き方",
@@ -125,81 +125,61 @@
       }
      ]
     },
-    {
-     "id": "N2",
-     "good": false,
-     "decisions": []
-    },
-    {
-     "id": "N3",
-     "good": false,
-     "decisions": []
-    },
+    {"id": "N2", "good": true, "decisions": []},
+    {"id": "N3", "good": true, "decisions": []},
     {
      "id": "N4",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "締めの期間と支払期限の決め方",
+       "decided": "発行者の支払条件は、invoice/README.md のとおり初回に「締め日と支払条件(例: 月末締め翌月末払い)」の一問で尋ね、「<締め日>締め<当月|翌月|翌々月><支払日>払い」の形だけを受け付ける。締め日と支払日は 1〜28 日か月末とし、この形でない答えは例を示して尋ね直す。読み取った締め日、支払の月、支払日の三つの値を保つ。請求の計算は、発行日を含む締めの期間に入る明細行を一枚にまとめ、支払期限をその三つの値だけから決める。原則の各項目は一つの決めごとだけを持つ。",
+       "by": "reasoning"
+      }
+     ]
     },
-    {
-     "id": "N5",
-     "good": false,
-     "decisions": []
-    },
-    {
-     "id": "N6",
-     "good": false,
-     "decisions": []
-    },
-    {
-     "id": "N7",
-     "good": false,
-     "decisions": []
-    },
-    {
-     "id": "N8",
-     "good": false,
-     "decisions": []
-    },
+    {"id": "N5", "good": true, "decisions": []},
+    {"id": "N6", "good": true, "decisions": []},
+    {"id": "N7", "good": true, "decisions": []},
+    {"id": "N8", "good": true, "decisions": []},
     {
      "id": "N9",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "初回の順番と部品の返すもの",
+       "decided": "初回は、まず明細を確かめ、直すところがなければ発行者に尋ねる。S1 と S3 の流れはこの順番でそろえ、明細に誤りのある初回の利用者に質問へ答えさせてから直させることはしない。コンポーネントの図は、発行者情報の保管が発行者情報を、印刷が送った枚数を返すと、流れと同じに示す。",
+       "by": "reasoning"
+      }
+     ]
     },
-    {
-     "id": "N10",
-     "good": false,
-     "decisions": []
-    },
-    {
-     "id": "N11",
-     "good": false,
-     "decisions": []
-    },
-    {
-     "id": "N12",
-     "good": false,
-     "decisions": []
-    },
+    {"id": "N10", "good": true, "decisions": []},
+    {"id": "N11", "good": true, "decisions": []},
+    {"id": "N12", "good": true, "decisions": []},
     {
      "id": "N13",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "途中で止まった初回",
+       "decided": "発行者への質問の途中で止まった初回は、何も保たず、次の初回で最初から尋ね直す。S3 の流れにこれを示す。",
+       "by": "reasoning"
+      }
+     ]
     },
-    {
-     "id": "N14",
-     "good": false,
-     "decisions": []
-    },
+    {"id": "N14", "good": true, "decisions": []},
     {
      "id": "N15",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "ディレクトリ構成の方針",
+       "decided": "ディレクトリ構成にもほかの図と同じく方針を、タグと意図を付けて書く。番号の採番を独立した部品にする理由と、S1 で印刷の前に明細を確かめる理由も、それぞれ書く。",
+       "by": "reasoning"
+      }
+     ]
     },
-    {
-     "id": "N16",
-     "good": false,
-     "decisions": []
-    }
+    {"id": "N16", "good": true, "decisions": []}
    ]
   },
   {
