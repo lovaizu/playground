@@ -184,7 +184,8 @@
       },
       {
        "about": "つまずいたときの問い合わせ先",
-       "decided": null
+       "decided": "このリポジトリの Issues にしてください",
+       "by": "user"
       }
      ]
     }
