@@ -12,14 +12,15 @@ _FILE = "numbers.json"
 """置き場の中の、発行記録のファイルの名前。"""
 
 
-def number(customer_name: str, period: Period) -> str:
+def number(customer_name: str, period: Period, issue_date: datetime.date) -> str:
     """番号を求める (S1)。
 
-    受け取る: 請求書の取引先の名称と締めの期間。置き場の場所は place.folder から受け取る。
+    受け取る: 請求書の取引先の名称と締めの期間と、periods.dates_of が決めた発行日。
+        置き場の場所は place.folder から受け取る。
     返す: その組の請求書番号。前に付けた組には、前と同じ番号 (P3.5, P1.4)。
-        初めての組には、「<発行年>-<発行月2桁>-<連番3桁>」の番号。例: `2026-11-001`。
-        発行年月は締めの期間の締め日の年月で、連番はその年月に付けた番号の数に 1 を足したもの。
-        連番は年月ごとに 001 から数え、ほかの組に付けていない番号になる。
+        初めての組には、ほかの組に付けていない番号。
+        番号は「<発行年>-<発行月2桁>-<連番3桁>」の形で、例: `2026-11-001`。
+        連番は発行日の月ごとに 001 から数え、その月に付けた番号の次とする。
     ほかに変えるもの: 初めての組なら、その番号を発行記録に残してから返す。
         発行記録を読み書きするのは、このモジュールだけ (P3.5)。
     断るとき:
@@ -31,7 +32,7 @@ def number(customer_name: str, period: Period) -> str:
     for record in records:
         if {name: record[name] for name in key} == key:
             return str(record["number"])
-    month = f"{period.end.year}-{period.end.month:02}-"
+    month = f"{issue_date.year}-{issue_date.month:02}-"
     count = sum(1 for record in records if str(record["number"]).startswith(month))
     found = f"{month}{count + 1:03}"
     place.write(_FILE, {"version": 1, "records": [*records, {**key, "number": found}]})
@@ -44,12 +45,6 @@ def _records() -> list[dict[str, Any]]:
     if stored is None:
         return []
     try:
-        records = stored["records"]
-        for record in records:
-            datetime.date.fromisoformat(record["start"])
-            datetime.date.fromisoformat(record["end"])
-            if not isinstance(record["customer"], str) or not isinstance(record["number"], str):
-                raise TypeError(record)
-    except (KeyError, TypeError, ValueError) as error:
+        return list(stored["records"])
+    except (KeyError, TypeError) as error:
         raise place.broken(_FILE, f"発行記録の形に合わない: {error!r}") from error
-    return list(records)

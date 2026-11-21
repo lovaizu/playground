@@ -20,7 +20,10 @@ from invoice.issuer import BankAccount, Issuer, IssuerItem, PaymentTerms
 from invoice.ledger import Customer, LedgerRow, TaxRate
 from invoice.periods import Period
 
-HEADER = "取引先,取引日,品目,数量,単位,単価(税抜),税率"
+COLUMNS = ("取引先", "取引日", "品目", "数量", "単位", "単価(税抜)", "税率")
+"""税抜の明細の見出しの列。"""
+
+HEADER = ",".join(COLUMNS)
 """税抜の明細の見出しの行。"""
 
 INCLUDED_HEADER = "取引先,取引日,品目,数量,単位,単価(税込),税率"
@@ -91,6 +94,12 @@ AOBA = Issuer(
 
 MINATO = Customer(name="株式会社みなと商事", honorific="御中")
 """ガイドの「使ってみる」の取引先。"""
+
+MINATO_TOKYO = Customer(name="株式会社みなと商事東京支店", honorific="御中")
+"""MINATO と名前の似た、別の取引先。"""
+
+HIKARI = Customer(name="株式会社ひかり設計", honorific="御中")
+"""あおば事務用品の、もう一つの取引先。"""
 
 NOVEMBER = Period(start=datetime.date(2026, 11, 1), end=datetime.date(2026, 11, 30))
 """月末締めの、2026 年 11 月の締めの期間。"""
@@ -166,14 +175,19 @@ README_PAPER = (
 )
 """ガイドの「使ってみる」で、プリンターから出る請求書に載る行を、空白を一つにつめて。
 
-明細の取引日は、invoice/templates/ のテンプレートのとおり年月日で載る。
+明細の取引日は、layout.typeset の契約のとおり「2026年11月5日」の形で載る。
 """
+
+
+def checked(**changed: str) -> dict[IssuerItem, issuer.Answer]:
+    """ガイドの答えを、changed の事柄だけ替えて確かめさせた、事柄ごとの答え。何も残さない。"""
+    answers = dict(zip(ITEMS, AOBA_ANSWERS, strict=True)) | changed
+    return {item: issuer.check(item, answers[item]) for item in ITEMS}
 
 
 def save_aoba(**changed: str) -> Issuer:
     """ガイドの答えを、changed の事柄だけ替えて確かめさせ、発行者情報として残させる。"""
-    answers = dict(zip(ITEMS, AOBA_ANSWERS, strict=True)) | changed
-    return issuer.save({item: issuer.check(item, answers[item]) for item in ITEMS})
+    return issuer.save(checked(**changed))
 
 
 def paper(document: layout.PrintDocument) -> str:
@@ -199,11 +213,144 @@ def billed(out: str) -> dict[str, tuple[str, str]]:
     return {name: (number, amount) for name, number, amount in found}
 
 
+def printed(sheets: int) -> str:
+    """ガイドのとおりに、送った既定のプリンターの名前と印刷した枚数を示す行。"""
+    return f"既定のプリンター「経理室プリンター」で {sheets} 枚を印刷しました。"
+
+
 def files(folder: Path) -> dict[Path, bytes]:
     """フォルダーの中のすべてのファイルと、その中身。フォルダーがなければ空。"""
     if not folder.exists():
         return {}
     return {each: each.read_bytes() for each in sorted(folder.rglob("*")) if each.is_file()}
+
+
+FIRST_TIME = "はじめて使うので、発行者の情報を伺います。次からは聞きません。\n"
+"""初回に、事柄を尋ねる前に端末に示す行。"""
+
+
+def prompts(*labels: str) -> str:
+    """事柄の名前を、尋ねた順に端末に示した文。代役の端末は、利用者の答えを画面に示さない。"""
+    return "".join(f"{label}: " for label in labels)
+
+
+ASKED = FIRST_TIME + prompts(*AOBA_LABELS) + "\n"
+"""初回に、ガイドの事柄を一度ずつ尋ね終えて、行を改めるまでに端末に示す文。"""
+
+
+def bill_line(name: str, number: str, amount: str) -> str:
+    """端末に示す、一枚の請求書の宛名と請求書番号とご請求金額の行。"""
+    return f"{name}: 請求書番号 {number}、ご請求金額 {amount} 円\n"
+
+
+LEDGER_STOPPED = (
+    "invoice: 明細を請求書にできませんでした。次のところを直して保存し、同じコマンドを打ち直してください。\n"
+    "何も印刷していません。\n"
+)
+"""明細に直すところがあるとき、直すところより前に端末に示す行。"""
+
+
+def bad_value(path: Path, line: int, column: str, given: str | None, rule: str, expected: str) -> str:
+    """端末に示す、受け付けない一つの値の直し方の行。"""
+    said = f"「{given}」は受け付けられません" if given is not None else "値がありません"
+    return f"- {path} の {line} 行目、「{column}」の列: {said}。{rule}たとえば「{expected}」と書きます。\n"
+
+
+DATE_RULE = "取引日は 2026-11-20 か 2026/11/20 の形の、ある日付で書きます。"
+QUANTITY_RULE = "数量は、1 以上の整数で書きます。"
+RATE_RULE = "税率は 10% か、軽減税率の品目なら 8% と書きます。"
+
+
+def store_stopped(path: Path) -> str:
+    """置き場のファイルで止まったとき、直し方より前に端末に示す行。"""
+    return f"invoice: 発行者の情報と請求書番号を残すファイル {path} で止まりました。何も印刷していません。\n"
+
+
+NO_PRINTER = (
+    "invoice: 既定のプリンターが見つからないため、印刷できませんでした。"
+    "「設定」の「プリンター」でプリンターを足して既定にし、端末で lpstat -d を打って"
+    "名前が出ることを確かめてから、同じコマンドを打ち直してください。請求書番号は変わりません。\n"
+)
+"""既定のプリンターがないとき、端末に示すプリンターの整え方。"""
+
+
+def send_failed(detail: str) -> str:
+    """既定のプリンターに送れなかったとき、端末に示すプリンターの整え方。"""
+    return (
+        f"invoice: 既定のプリンターに送れませんでした ({detail})。"
+        "プリンターの電源と用紙と接続を確かめてから、同じコマンドを打ち直してください。"
+        "すでに出た請求書も、同じ番号でもう一度印刷されます。\n"
+    )
+
+
+def sheet(
+    name: str,
+    number: str,
+    issued: str,
+    amount: str,
+    due: str,
+    lines: tuple[str, ...],
+    totals: tuple[str, ...],
+    basis: str = "税抜",
+) -> str:
+    """あおば事務用品の請求書の紙面に載る文字の全体を、paper と同じく空白を一つにつめて。
+
+    見出しの並びは、invoice/templates/invoice.md.j2 のとおり。
+    """
+    return " ".join(
+        (
+            "請求書",
+            "宛先",
+            name,
+            "発行者",
+            "株式会社あおば事務用品",
+            "登録番号: T1234567890123",
+            "請求書番号と発行日",
+            f"請求書番号: {number}",
+            f"発行日: {issued}",
+            "ご請求金額とお支払い",
+            f"ご請求金額(税込): {amount} 円",
+            f"お支払期限: {due}",
+            "お振込先: さくら銀行 本店営業部 普通 1234567 カ)アオバジムヨウヒン",
+            "明細",
+            f"取引日 品目 数量 単価({basis}) 税率 金額({basis})",
+            *lines,
+            "税率ごとの合計",
+            f"税率 対象額({basis}) 消費税額",
+            *totals,
+            f"合計(税込): {amount} 円",
+        )
+    )
+
+
+README_LINES = README_PAPER[10:13]
+"""ガイドの請求書の、明細の三つの行。"""
+
+README_TOTALS = README_PAPER[14:16]
+"""ガイドの請求書の、税率ごとの合計の二つの行。"""
+
+
+def sheets(
+    name: str,
+    number: str,
+    issued: str,
+    amount: str,
+    due: str,
+    lines: tuple[str, ...],
+    totals: tuple[str, ...],
+    basis: str = "税抜",
+) -> set[str]:
+    """sheet の紙面を、税率ごとの合計の行がどちらの順に並んでも。行の順は契約で決まっていない。"""
+    return {
+        sheet(name, number, issued, amount, due, lines, totals, basis),
+        sheet(name, number, issued, amount, due, lines, totals[::-1], basis),
+    }
+
+
+README_SHEETS = sheets(
+    "株式会社みなと商事 御中", "2026-11-001", "2026年11月30日", "51,980", "2026年12月31日", README_LINES, README_TOTALS
+)
+"""ガイドの「使ってみる」で、プリンターから出る請求書の紙面の全体。"""
 
 
 @contextmanager

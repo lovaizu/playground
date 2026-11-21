@@ -14,7 +14,7 @@ from pypdf import PdfReader
 from invoice import layout
 from invoice.billing import Invoice, InvoiceLine, RateTotal
 from invoice.ledger import Customer
-from tests.given import README_INVOICE, README_PAPER, pages, paper, row
+from tests.given import HIKARI, README_INVOICE, README_LINES, README_SHEETS, README_TOTALS, pages, paper, row, sheets
 
 supports = pytest.mark.supports
 
@@ -34,9 +34,7 @@ def test_一枚の請求書からガイドのとおりの紙面を一つ返す(m
     # Then
     assert document.pdf.startswith(b"%PDF")
     assert document.sheets == pages(document) == 1
-    for line in README_PAPER:
-        assert line in paper(document)
-    assert "10%(軽減税率)" not in paper(document)
+    assert paper(document) in README_SHEETS
     assert all(embedded(font) for font in fonts(document))
 
 
@@ -73,7 +71,7 @@ def test_請求書がなければ紙面を返さない() -> None:
 def test_いくつかの請求書から受け取った順に紙面を一つずつ返す() -> None:
     # Given: 宛先と番号の違う三枚の請求書。
     invoices = [
-        replaced(customer=Customer("株式会社ひかり設計", "御中"), number="A-1"),
+        replaced(customer=HIKARI, number="A-1"),
         README_INVOICE,
         replaced(customer=Customer("山田 太郎", "様"), number="A-3"),
     ]
@@ -81,9 +79,15 @@ def test_いくつかの請求書から受け取った順に紙面を一つず�
     documents = layout.typeset(invoices)
     # Then
     assert len(documents) == 3
-    assert "株式会社ひかり設計 御中" in paper(documents[0]) and "請求書番号: A-1" in paper(documents[0])
-    assert "株式会社みなと商事 御中" in paper(documents[1])
-    assert "山田 太郎 様" in paper(documents[2]) and "請求書番号: A-3" in paper(documents[2])
+    for document, name, number in zip(
+        documents,
+        ("株式会社ひかり設計 御中", "株式会社みなと商事 御中", "山田 太郎 様"),
+        ("A-1", "2026-11-001", "A-3"),
+        strict=True,
+    ):
+        assert paper(document) in sheets(
+            name, number, "2026年11月30日", "51,980", "2026年12月31日", README_LINES, README_TOTALS
+        ), f"{name} の紙面"
 
 
 @supports("test_税込の単価の明細では税込の合計から消費税額が出る")
@@ -93,10 +97,16 @@ def test_税込の請求書は単価と金額と対象額を税込と示す() ->
     # When
     [document] = layout.typeset([invoice])
     # Then
-    text = paper(document)
-    assert "取引日 品目 数量 単価(税込) 税率 金額(税込)" in text
-    assert "税率 対象額(税込) 消費税額" in text
-    assert "税抜" not in text
+    assert paper(document) in sheets(
+        "株式会社みなと商事 御中",
+        "2026-11-001",
+        "2026年11月30日",
+        "51,980",
+        "2026年12月31日",
+        README_LINES,
+        README_TOTALS,
+        basis="税込",
+    )
 
 
 @supports("test_画面と紙面の金額は請求の計算が決めた額と同じ")
@@ -106,11 +116,15 @@ def test_額は請求書のものをそのまま載せ計算し直さない() ->
     # When
     [document] = layout.typeset([invoice])
     # Then
-    text = paper(document)
-    assert "ご請求金額(税込): 99,999 円" in text
-    assert "合計(税込): 99,999 円" in text
-    assert "10% 1 2" in text
-    assert "8%(軽減税率) 3 4" in text
+    assert paper(document) in sheets(
+        "株式会社みなと商事 御中",
+        "2026-11-001",
+        "2026年11月30日",
+        "99,999",
+        "2026年12月31日",
+        README_LINES,
+        ("10% 1 2", "8%(軽減税率) 3 4"),
+    )
 
 
 @supports("test_明細から請求書が印刷され番号と金額と枚数が示される")
@@ -121,7 +135,15 @@ def test_単位の空の行は数量だけを載せる() -> None:
     # When
     [document] = layout.typeset([invoice])
     # Then
-    assert "2026年11月5日 コピー用紙 A4 500枚 10 2,800 10% 28,000" in paper(document)
+    assert paper(document) in sheets(
+        "株式会社みなと商事 御中",
+        "2026-11-001",
+        "2026年11月30日",
+        "51,980",
+        "2026年12月31日",
+        ("2026年11月5日 コピー用紙 A4 500枚 10 2,800 10% 28,000",),
+        README_TOTALS,
+    )
 
 
 @supports("test_明細から請求書が印刷され番号と金額と枚数が示される")
@@ -136,19 +158,7 @@ def test_用紙の枚数は紙面のページの数ですべての行を載せ�
     [document] = layout.typeset([invoice])
     # Then
     assert document.sheets == pages(document) >= 1
-    for i in range(count):
-        assert f"品目 {i:03}" in paper(document)
-
-
-@supports("test_明細から請求書が印刷され番号と金額と枚数が示される")
-@pytest.mark.parametrize("mark", ["#", "|", "\\", "---"])
-@pytest.mark.parametrize("tax_included", [False, True])
-def test_紙面には見出しと表と改行のMarkdownの印が出ない(tax_included: bool, mark: str) -> None:
-    # Given: 税抜か税込の、ガイドの請求書。
-    invoice = replaced(tax_included=tax_included)
-    # When
-    [document] = layout.typeset([invoice])
-    # Then
     text = paper(document)
-    assert mark not in text, f"紙面に {mark} が出ている"
-    assert "合計(税込): 51,980 円" in text
+    places = [text.find(f"{day}日 品目 {i:03} 1 個 100 10% 100") for i, day in ((i, 1 + i % 30) for i in range(count))]
+    assert -1 not in places, "すべての行が載る"
+    assert places == sorted(places), "行は受け取った順に載る"

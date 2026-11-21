@@ -25,6 +25,7 @@ class Customer:
     """取引先の正式な名称。明細の「取引先」の列を、全角の英数字と記号を半角に読み替えたもの。"""
     honorific: Literal["御中", "様"]
     """宛名の敬称。名称に株式会社や合同会社などの法人格があれば「御中」、なければ「様」。
+    例: `株式会社青葉商事` は「御中」、`山田太郎` は「様」。
     明細の「取引先」の列の名称から、このモジュールが読み取る。"""
 
 
@@ -116,15 +117,8 @@ _CORPORATE = (
     "相互会社",
     "法人",
     "組合",
-    "(株)",
-    "(有)",
-    "(同)",
-    "(名)",
-    "(資)",
-    "㈱",
-    "㈲",
 )
-"""取引先の名称にあれば、法人とみなす法人格と、その略記。"""
+"""取引先の名称にあれば、法人とみなす法人格。略した書き方は含めない。"""
 
 
 class _Bad(Exception):
@@ -144,7 +138,7 @@ def read(path: Path) -> tuple[LedgerRow, ...]:
         七つの列をこの順に。見出しとそれぞれの値は、全角の数字・英字・記号を半角に、
         半角カナを全角に読み替えてから確かめる。
         取引日は YYYY-MM-DD か YYYY/MM/DD、数量と単価は正の整数、税率は 10% か 8%。
-        取引先と品目は空でない文字列、単位は空でもよい。
+        取引先は空でない文字列。品目と単位は、空でもそのまま読む。
     返す: 明細のすべての行を、ファイルの順に明細行として。一行以上。
         取引先の名称からは、宛名の敬称も読み取る。
     ほかに変えるもの: なし。明細のファイルを読むだけで、書かない。
@@ -175,10 +169,7 @@ def read(path: Path) -> tuple[LedgerRow, ...]:
 
 
 def _records(path: Path) -> list[tuple[int, list[str]]]:
-    """明細のファイルの、値のある行を、見出しを 1 とした行の番号と、列の値の並びとして。
-
-    表計算ソフトが書き出す、空の行と、すべての列が空の行は、明細の行としない。
-    """
+    """明細のファイルの各行を、見出しを 1 とした行の番号と、列の値の並びとして。"""
     try:
         data = path.read_bytes()
     except FileNotFoundError as error:
@@ -192,7 +183,7 @@ def _records(path: Path) -> list[tuple[int, list[str]]]:
             path, "unreadable", f"先頭から {error.start + 1} バイト目が、UTF-8 の字ではありません"
         ) from error
     records = list(csv.reader(io.StringIO(text, newline="")))
-    return [(number, record) for number, record in enumerate(records, start=1) if any(record)]
+    return list(enumerate(records, start=1))
 
 
 def _refused(path: Path, problem: LedgerProblem, detail: str | None) -> LedgerRefused:
@@ -255,13 +246,7 @@ def _date(cell: str) -> datetime.date:
         raise bad from error
 
 
-def _description(cell: str) -> str:
-    if cell == "":
-        raise _Bad("コピー用紙 A4 500枚", "品目は、取引先の発注書や納品書にある品名で書きます。")
-    return cell
-
-
-def _unit(cell: str) -> str:
+def _text(cell: str) -> str:
     return cell
 
 
@@ -284,9 +269,9 @@ def _rate(cell: str) -> TaxRate:
 _READERS: dict[str, Callable[[str], object]] = {
     "取引先": _customer,
     "取引日": _date,
-    "品目": _description,
+    "品目": _text,
     "数量": _positive("10", "数量は、1 以上の整数で書きます。"),
-    "単位": _unit,
+    "単位": _text,
     _EXCLUDED: _positive("2800", "単価は、円の 1 以上の整数で、カンマを付けずに書きます。"),
     "税率": _rate,
 }

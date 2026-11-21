@@ -1,0 +1,96 @@
+{
+ "result": "made",
+ "files": [
+  "invoice/pyproject.toml",
+  "invoice/uv.lock",
+  "invoice/src/invoice/billing.py",
+  "invoice/src/invoice/command.py",
+  "invoice/src/invoice/issuer.py",
+  "invoice/src/invoice/ledger.py",
+  "invoice/src/invoice/numbering.py",
+  "invoice/src/invoice/printing.py",
+  "invoice/tests/given.py",
+  "invoice/tests/e2e/test_scenarios.py",
+  "invoice/tests/integration/test_issuer.py",
+  "invoice/tests/integration/test_print.py",
+  "invoice/tests/integration/test_recover.py",
+  "invoice/tests/unit/test_billing.py",
+  "invoice/tests/unit/test_command.py",
+  "invoice/tests/unit/test_issuer.py",
+  "invoice/tests/unit/test_layout.py",
+  "invoice/tests/unit/test_ledger.py",
+  "invoice/tests/unit/test_numbering.py",
+  "invoice/tests/unit/test_printing.py",
+  "invoice/tests/unit/test_properties.py"
+ ],
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "\"\"\"請求書の額を、消費税と合計の決まりに沿ってどう出すか。\"\"\"",
+    "\"\"\"明細のファイルを、どの形なら受け付け、各列をどう読んで明細行にするか。\"\"\"",
+    "\"\"\"請求書の値を、テンプレートのどの名前と形に移して紙面に描くか。\"\"\"",
+    "\"\"\"テンプレートが描いた Markdown を、用紙の上にどう配置して PDF にするか。\"\"\"",
+    "\"\"\"全角と半角の入り混じった入力を、確かめる前にどの字に読み替えるか。\"\"\""
+   ]
+  },
+  {
+   "condition": "N2",
+   "lines": [
+    "def number(customer_name: str, period: Period, issue_date: datetime.date) -> str:",
+    "        連番は発行日の月ごとに 001 から数え、その月に付けた番号の次とする。",
+    "    \"\"\"明細に載せる行と金額。取引日が締めの期間に入る明細行を、取引日の順に。"
+   ]
+  },
+  {
+   "condition": "N3",
+   "lines": [
+    "    for row in sorted(rows, key=lambda each: each.date):",
+    "    month = f\"{issue_date.year}-{issue_date.month:02}-\"",
+    "    return list(enumerate(records, start=1))",
+    "    return line.rstrip(\"\\r\\n\")",
+    "\"\"\"取引先の名称にあれば、法人とみなす法人格。略した書き方は含めない。\"\"\""
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "#   uv sync --locked # リポジトリの uv.lock に固めた版のとおりに、Python と依存を .venv に入れる",
+    "requires-python = \">=3.11\"",
+    "    \"pytest-randomly>=3.16\","
+   ]
+  },
+  {
+   "condition": "N5",
+   "lines": [
+    "def test_取引先と締めの期間の組ごとに一枚ずつ取引日の順の行で返す(home: Path) -> None:",
+    "def test_全角の英数字と記号の明細と見出しは半角に読み替えて読む(ledger: Callable[..., Path]) -> None:",
+    "def test_取引日は年と月と日をスラッシュで区切っても読む(ledger: Callable[..., Path]) -> None:",
+    "def test_初めての組には発行日の年月と年月ごとに001から数えた連番の番号を付ける(home: Path) -> None:"
+   ]
+  },
+  {
+   "condition": "N6",
+   "lines": [
+    "    monkeypatch.setattr(printing, \"send\", double.send)"
+   ]
+  },
+  {
+   "condition": "N7",
+   "lines": [
+    "    assert capsys.readouterr() == (\"\", USAGE)",
+    "    assert out == LEDGER_STOPPED + bad_value(path, 2, column, given, rule, example)",
+    "    assert out == NO_PRINTER",
+    "    assert paper(document) in README_SHEETS",
+    "    \"--cov-fail-under=100\","
+   ]
+  },
+  {
+   "condition": "N8",
+   "lines": [
+    "    found = re.fullmatch(r\"([0-9]{4})([-/])([0-9]{2})\\2([0-9]{2})\", cell)",
+    "                print(f\"{said}{fix.rule}たとえば「{fix.expected}」のように答えてください。\")"
+   ]
+  }
+ ]
+}

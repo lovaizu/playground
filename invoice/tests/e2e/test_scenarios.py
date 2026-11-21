@@ -11,15 +11,21 @@ from invoice import command, issuer
 from tests.given import (
     AOBA,
     AOBA_ANSWERS,
-    AOBA_LABELS,
-    README_PAPER,
+    ASKED,
+    DATE_RULE,
+    LEDGER_STOPPED,
+    QUANTITY_RULE,
     README_ROWS,
+    README_SHEETS,
     Printer,
     Terminal,
-    asked,
+    bad_value,
+    bill_line,
     billed,
     csv,
     paper,
+    printed,
+    sheets,
 )
 
 supports = pytest.mark.supports
@@ -43,37 +49,62 @@ MONTH_ROWS = (
 """あおば事務用品が三つの取引先に売った、11 月分の明細の行。"""
 
 MONTH_PAPERS = {
-    "株式会社みなと商事 御中": ("61,220", "10% 42,400 4,240", "8%(軽減税率) 13,500 1,080"),
-    "株式会社ひかり設計 御中": ("61,218", "10% 49,880 4,988", "8%(軽減税率) 5,880 470"),
-    "株式会社やまびこ食品 御中": ("31,345", "10% 11,550 1,155", "8%(軽減税率) 17,260 1,380"),
+    "株式会社みなと商事 御中": (
+        "61,220",
+        (
+            "2026年11月5日 コピー用紙 A4 500枚 10 箱 2,800 10% 28,000",
+            "2026年11月12日 ドリップコーヒー 100袋入 3 箱 4,500 8%(軽減税率) 13,500",
+            "2026年11月20日 ボールペン 黒 10本入 5 箱 1,200 10% 6,000",
+            "2026年11月25日 クリアファイル A4 100枚入 4 箱 1,350 10% 5,400",
+            "2026年11月26日 ホッチキス針 No.10 20箱入 2 箱 1,500 10% 3,000",
+        ),
+        ("10% 42,400 4,240", "8%(軽減税率) 13,500 1,080"),
+    ),
+    "株式会社ひかり設計 御中": (
+        "61,218",
+        (
+            "2026年11月2日 トナーカートリッジ 黒 2 本 12,800 10% 25,600",
+            "2026年11月9日 コピー用紙 A3 500枚 3 箱 4,200 10% 12,600",
+            "2026年11月13日 プリンター用紙 B4 500枚 2 箱 3,600 10% 7,200",
+            "2026年11月16日 緑茶ティーバッグ 50袋入 6 箱 980 8%(軽減税率) 5,880",
+            "2026年11月27日 付箋 75mm 10冊入 7 箱 640 10% 4,480",
+        ),
+        ("10% 49,880 4,988", "8%(軽減税率) 5,880 470"),
+    ),
+    "株式会社やまびこ食品 御中": (
+        "31,345",
+        (
+            "2026年11月4日 ミネラルウォーター 2L 6本入 7 箱 1,180 8%(軽減税率) 8,260",
+            "2026年11月18日 ドリップコーヒー 100袋入 2 箱 4,500 8%(軽減税率) 9,000",
+            "2026年11月24日 紙コップ 205ml 100個入 10 袋 450 10% 4,500",
+            "2026年11月30日 段ボール箱 120サイズ 10枚入 3 束 2,350 10% 7,050",
+        ),
+        ("10% 11,550 1,155", "8%(軽減税率) 17,260 1,380"),
+    ),
 }
-"""11 月分の明細から、取引先ごとに出る請求書のご請求金額と、税率ごとの合計の行。"""
+"""11 月分の明細から、取引先ごとに出る請求書のご請求金額と、明細の行と、税率ごとの合計の行。"""
 
 
-def printed_month(out: str, printer: Printer) -> None:
-    """11 月分の明細から、三つの取引先の請求書が、それぞれ正しい額で一枚ずつ出たこと。"""
+def printed_month(out: str, printer: Printer, before: str) -> None:
+    """11 月分の明細から、三つの取引先の請求書が、それぞれ正しい額で一枚ずつ出たこと。
+
+    端末には before のあとに請求書ごとの行と枚数の行だけが出る。請求書の順は契約で決まっていない。
+    """
     shown = billed(out)
     assert {name: amount for name, (_, amount) in shown.items()} == {
         name: amount for name, (amount, *_) in MONTH_PAPERS.items()
     }
-    assert len({number for number, _ in shown.values()}) == 3
-    assert "既定のプリンター「経理室プリンター」で 3 枚を印刷しました。" in out
-    assert len(printer.sent) == 3
-    for name, (amount, *totals) in MONTH_PAPERS.items():
-        [text] = [paper(each) for each in printer.sent if f"{name}" in paper(each)]
-        number, _ = shown[name]
-        for line in (
-            "株式会社あおば事務用品",
-            "登録番号: T1234567890123",
-            f"請求書番号: {number}",
-            "発行日: 2026年11月30日",
-            f"ご請求金額(税込): {amount} 円",
-            "お支払期限: 2026年12月31日",
-            "お振込先: さくら銀行 本店営業部 普通 1234567 カ)アオバジムヨウヒン",
-            *totals,
-            f"合計(税込): {amount} 円",
-        ):
-            assert line in text
+    assert {number for number, _ in shown.values()} == {"2026-11-001", "2026-11-002", "2026-11-003"}
+    assert out.startswith(before), "請求書の行より前の文"
+    assert sorted(out[len(before) :].splitlines(keepends=True)) == sorted(
+        [*(bill_line(name, number, amount) for name, (number, amount) in shown.items()), printed(3) + "\n"]
+    )
+    assert out.endswith(printed(3) + "\n")
+    texts = [paper(each) for each in printer.sent]
+    assert len(texts) == 3
+    for name, (amount, lines, totals) in MONTH_PAPERS.items():
+        expected = sheets(name, shown[name][0], "2026年11月30日", amount, "2026年12月31日", lines, totals)
+        assert len([text for text in texts if text in expected]) == 1, f"{name} の紙面が一枚"
 
 
 @supports("KR1.1")
@@ -92,8 +123,7 @@ def test_初めての月に一か月分の明細から取引先ごとの請求�
     # Then: 事柄を一度ずつ尋ね、取引先ごとの請求書を印刷し、発行者情報を残す。
     out = capsys.readouterr().out
     assert code == 0
-    assert asked(out) == list(AOBA_LABELS)
-    printed_month(out, printer)
+    printed_month(out, printer, ASKED)
     assert issuer.load() == AOBA
 
 
@@ -113,14 +143,14 @@ def test_明細の誤りを示されたとおりに直して打ち直すと印�
     terminal()
     # When: 利用者がコマンドを打つ。
     first = command.main([str(path)])
-    # Then: 誤りの行と列と値をすべて示し、何も尋ねず、何も印刷しない。
+    # Then: 誤りの行と列と値と直し方をすべて示し、何も尋ねず、何も印刷しない。
     out = capsys.readouterr().out
     assert first == 1
-    for line, column, given in ((5, "取引日", "2026-11-31"), (14, "数量", "七")):
-        assert str(line) in out
-        assert column in out
-        assert given in out
-    assert asked(out) == []
+    assert out == (
+        LEDGER_STOPPED
+        + bad_value(path, 5, "取引日", "2026-11-31", DATE_RULE, "2026-11-20")
+        + bad_value(path, 14, "数量", "七", QUANTITY_RULE, "10")
+    )
     assert printer.sent == []
     # When: 利用者が示されたとおりに直し、同じコマンドを打ち直す。
     path.write_text(csv(*MONTH_ROWS), encoding="utf-8")
@@ -129,7 +159,7 @@ def test_明細の誤りを示されたとおりに直して打ち直すと印�
     # Then: はじめから正しく打ったときと同じく、取引先ごとの請求書が出る。
     out = capsys.readouterr().out
     assert second == 0
-    printed_month(out, printer)
+    printed_month(out, printer, ASKED)
 
 
 @supports("KR1.2")
@@ -143,9 +173,9 @@ def test_翌月からは明細を渡すコマンド一つで何も尋ねずに�
     # Given: 11 月分を、初回の答えとともに印刷したあと。
     terminal(*AOBA_ANSWERS)
     assert command.main([str(ledger(csv(*README_ROWS)))]) == 0
-    november = billed(capsys.readouterr().out)["株式会社みなと商事 御中"]
-    assert november == ("2026-11-001", "51,980")
-    assert all(line in paper(printer.sent[0]) for line in README_PAPER)
+    november = bill_line("株式会社みなと商事 御中", "2026-11-001", "51,980")
+    assert capsys.readouterr().out == ASKED + november + printed(1) + "\n"
+    assert paper(printer.sent[0]) in README_SHEETS
     printer.sent.clear()
     december = ledger(
         csv(
@@ -157,20 +187,20 @@ def test_翌月からは明細を渡すコマンド一つで何も尋ねずに�
     terminal()
     # When: 利用者が 12 月分の明細を渡して、コマンドを一つ打つ。
     code = command.main([str(december)])
-    # Then: 何も尋ねずに、11 月と別の番号の請求書を一枚印刷する。
+    # Then: 何も尋ねずに、12 月の最初の番号の請求書を一枚印刷する。
     out = capsys.readouterr().out
     assert code == 0
-    assert asked(out) == []
-    number, amount = billed(out)["株式会社みなと商事 御中"]
-    assert (number != november[0], amount) == (True, "34,360")
-    assert "既定のプリンター「経理室プリンター」で 1 枚を印刷しました。" in out
+    assert out == bill_line("株式会社みなと商事 御中", "2026-12-001", "34,360") + printed(1) + "\n"
     [document] = printer.sent
-    for line in (
-        f"請求書番号: {number}",
-        "発行日: 2026年12月31日",
-        "お支払期限: 2027年1月31日",
-        "10% 22,400 2,240",
-        "8%(軽減税率) 9,000 720",
-        "合計(税込): 34,360 円",
-    ):
-        assert line in paper(document)
+    assert paper(document) in sheets(
+        "株式会社みなと商事 御中",
+        "2026-12-001",
+        "2026年12月31日",
+        "34,360",
+        "2027年1月31日",
+        (
+            "2026年12月3日 コピー用紙 A4 500枚 8 箱 2,800 10% 22,400",
+            "2026年12月10日 ドリップコーヒー 100袋入 2 箱 4,500 8%(軽減税率) 9,000",
+        ),
+        ("10% 22,400 2,240", "8%(軽減税率) 9,000 720"),
+    )

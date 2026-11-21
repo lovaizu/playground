@@ -1,0 +1,66 @@
+{
+ "result": "judged",
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "\"\"\"明細のファイルを、どの形なら受け付け、各列をどう読んで明細行にするか。\"\"\"",
+    "\"\"\"請求書の額を、消費税と合計の決まりに沿ってどう出すか。\"\"\"",
+    "\"\"\"取引先と締めの期間の組に、どの請求書番号を付けるか。\"\"\"",
+    "\"\"\"部品の結果と直すところを、利用者に端末でどう示すか。\"\"\""
+   ]
+  },
+  {
+   "condition": "N2",
+   "lines": [
+    "    \"\"\"明細を読ませる (S1, S3, S4)。",
+    "    受け取る: 明細のファイルのパス。UTF-8 の CSV で、先頭の BOM はあってもよい。",
+    "        place.StoreRefused: numbering.number が断ったとき、そのまま上げる。",
+    "        PrintRefused: 既定のプリンターがないとき、一つも送らずに上がる。"
+   ]
+  },
+  {
+   "condition": "N3",
+   "lines": [
+    "        ledger.LedgerRefused: すべての直すところを、その problem ごとに示し、",
+    "            何も尋ねず、何も印刷せずに 1 を返す (P1.3, P2.5)。",
+    "    \"\"\"一つの税率の対象額と、その対象額から一度だけ切り捨てた消費税額 (P3.2, P3.3)。\"\"\"",
+    "\"\"\"「20日締め翌月10日払い」の形の支払条件 (P3.10)。\"\"\""
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "#   uv sync --locked # リポジトリの uv.lock に固めた版のとおりに、Python と依存を .venv に入れる",
+    "    \"pytest-randomly>=3.16\",",
+    "    \"--cov-branch\","
+   ]
+  },
+  {
+   "condition": "N5",
+   "lines": [
+    "def test_見出しだけの明細は行がないことと一行の例を返す(ledger: Callable[..., Path]) -> None:",
+    "def test_ないパスはその直すところ一つだけを返す(tmp_path: Path) -> None:",
+    "def test_読めないファイルはその直すところ一つだけを返す(tmp_path: Path, ledger: Callable[..., Path], kind: str) -> None:",
+    "def test_税込の見出しの明細は単価を税込として読む(ledger: Callable[..., Path]) -> None:"
+   ]
+  },
+  {
+   "condition": "N6",
+   "lines": [
+    "    monkeypatch.setattr(printing, \"send\", double.send)",
+    "    code = command.main([str(ledger(csv(*README_ROWS)))])"
+   ]
+  }
+ ],
+ "more": [
+  {
+   "condition": "N7",
+   "good_when": "A maintainer who changes how invoice reaches the printer learns from the tests that run on every `uv run pytest` whether a laptop with no default printer, or a printer that turns the job away, still stops with the message the accounting member got in the trial (「既定のプリンターが見つからないため、印刷できませんでした。…」). Today that step is left out of coverage, and its only case, the `--host` one, checks just that some printer name came back."
+  },
+  {
+   "condition": "N8",
+   "good_when": "The accounting member whose saved statement ends in an empty row (a bare `,,,,,,` line or a blank line, as a spreadsheet leaves after a row's cells are cleared) learns from the message that the row is empty and can come out. Today they are told five times to write a customer, a date, a quantity, a price and a tax rate into line 5, a row they never meant to bill."
+  }
+ ]
+}

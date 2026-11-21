@@ -1,6 +1,7 @@
 # invoice の配布物の名前と版と、コマンドの入口。
 # 開発者は invoice のフォルダーで次を打って整え、テストを走らせる。
-#   uv sync          # uv.lock のとおりに、Python と依存を .venv に入れる
+#   uv sync --locked # リポジトリの uv.lock に固めた版のとおりに、Python と依存を .venv に入れる
+#                    # uv.lock が pyproject.toml と合わなければ、何も入れずに止まる
 #   uv run pytest    # すべてのテストを、乱した順で走らせる (順の種を示す)
 #   uv run pytest --host   # 本物の印刷システムを動かすケースも走らせる
 

@@ -163,7 +163,7 @@ def load() -> Issuer | tuple[Question, ...]:
         return _QUESTIONS
     try:
         return _issuer({item: check(item, _stored_answer(stored, item)) for item in _ITEMS})
-    except (AnswerRefused, KeyError, TypeError, ValueError) as error:
+    except (AnswerRefused, KeyError, TypeError) as error:
         raise place.broken(_FILE, f"発行者情報の形に合わない: {error!r}") from error
 
 
@@ -328,13 +328,6 @@ def _stored_answer(stored: Any, item: IssuerItem) -> Any:
 def _said(terms: Any) -> str:
     """残した三つの値の支払条件を、「20日締め翌月10日払い」の形で。"""
     names = {value: name for name, value in _MONTHS.items()}
-    closing = "月末" if terms["closing_day"] == "month_end" else f"{_whole(terms['closing_day'])}日"
-    payment = "末" if terms["payment_day"] == "month_end" else f"{_whole(terms['payment_day'])}日"
+    closing = "月末" if terms["closing_day"] == "month_end" else f"{terms['closing_day']}日"
+    payment = "末" if terms["payment_day"] == "month_end" else f"{terms['payment_day']}日"
     return f"{closing}締め{names[terms['month']]}{payment}払い"
-
-
-def _whole(value: Any) -> int:
-    """残した日の値。整数でなければ ValueError。"""
-    if type(value) is not int:
-        raise ValueError(value)
-    return value

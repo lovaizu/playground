@@ -34,8 +34,8 @@ class PrintRefused(Exception):
 class Printed:
     """印刷を頼み終えた結果: どのプリンターに、何枚の用紙を送ったか (P2.6)。"""
 
-    printer: str | None
-    """送った既定のプリンターの名前。一つも送らなければ None。"""
+    printer: str
+    """送った既定のプリンターの名前。印刷システムが示すまま。"""
     sheets: int
     """送った用紙の枚数。"""
 
@@ -47,23 +47,24 @@ _DEFAULT = re.compile(r"^system default destination: (\S+)$", re.M)
 def print_documents(documents: Sequence[PrintDocument]) -> Printed:
     """印刷させる (S1, S4)。
 
-    受け取る: 印刷用の文書。
+    受け取る: 一つ以上の印刷用の文書。明細には一行以上あるので、文書も一つ以上ある。
     返す: 送った既定のプリンターの名前と、送った用紙の枚数 (P2.6)。
+        名前は send が返したもの。
     ほかに変えるもの: 文書を受け取った順に、send で既定のプリンターに送る。
     断るとき:
         PrintRefused: 既定のプリンターがないとき、一つも送らずに上がる。
             途中で送れなくなったとき、そこで上がる (S4)。
     """
-    printer = None
-    for document in documents:
-        printer = send(document)
-    return Printed(printer=printer, sheets=sum(document.sheets for document in documents))
+    names = [send(document) for document in documents]
+    return Printed(printer=names[-1], sheets=sum(document.sheets for document in documents))
 
 
-def send(document: PrintDocument) -> str:
+def send(document: PrintDocument) -> str:  # pragma: no cover
     """既定のプリンターに送る (S1, S4)。印刷システムへの矢印を運ぶ。
 
     印刷システムに触れるのは、この関数だけ (P2.3)。テストでは代役に替える。
+    本物の印刷システムを動かすのは `uv run pytest --host` のケースだけなので、
+    いつものテストの網羅からは外す。
     受け取る: 一つの印刷用の文書。
     返す: 送った既定のプリンターの名前。`lpstat -d` が示すもの。
     ほかに変えるもの: 印刷システム (CUPS) に、`lp` で既定のプリンターでの印刷を頼む。

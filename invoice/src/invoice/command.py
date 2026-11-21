@@ -28,9 +28,7 @@ def main(argv: Sequence[str] | None = None) -> int:
            印刷した枚数を示した (P2.6)。`--version` では版を示した (S2)。
         1: 直すところを示して止まった (P1.2)。
         2: 引数が明細のファイル一つでも `--version` でもなく、使い方を示した。
-           `-` で始まる引数は、`--version` のほかは明細のファイルとしない。
-        130: 発行者情報を尋ねる途中で、利用者が答えずに止めた (P2.4)。
-            Ctrl+C のほか、Ctrl+D で入力が尽きたときも。
+        130: 発行者情報を尋ねる途中で、利用者が Ctrl+C で答えずに止めた (P2.4)。
     ほかに変えるもの:
         端末で尋ね、示す。利用者と言葉を交わすのは、このモジュールだけ (P1.2)。
         明細に直すところがないときにだけ、発行者情報を求め、印刷に進む (P2.5)。
@@ -54,7 +52,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args == ["--version"]:
         print(f"invoice {metadata.version('invoice')}")
         return 0
-    if len(args) != 1 or args[0].startswith("-"):
+    if len(args) != 1:
         sys.stderr.write(_USAGE)
         return 2
     try:
@@ -99,6 +97,8 @@ def _ask(questions: tuple[issuer.Question, ...]) -> issuer.Issuer:
                 fix = refused.fix
                 said = f"「{fix.given}」は受け付けられません。" if fix.given else ""
                 print(f"{said}{fix.rule}たとえば「{fix.expected}」のように答えてください。")
+    # 端末でない入力では答えが画面に出ず、最後の問いの行が閉じないので、ここで行を改める。
+    print()
     return issuer.save(answers)
 
 
@@ -110,13 +110,7 @@ def _answer(label: str) -> str:
         line = sys.stdin.readline()
     except KeyboardInterrupt as error:
         raise _Stopped from error
-    if line == "":
-        raise _Stopped
-    answer = line.rstrip("\r\n")
-    if not sys.stdin.isatty():
-        # 端末なら利用者の打った答えが画面に出る。端末でない入力でも、画面の文を同じにする。
-        print(answer)
-    return answer
+    return line.rstrip("\r\n")
 
 
 def _show_ledger(fixes: tuple[ledger.LedgerFix, ...]) -> None:

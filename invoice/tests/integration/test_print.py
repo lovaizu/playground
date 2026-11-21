@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import datetime
 import os
 import subprocess
 from collections.abc import Callable
@@ -12,21 +11,25 @@ import pytest
 
 from invoice import billing, command, issuer, layout, ledger as ledger_module, numbering, printing
 from invoice.issuer import Issuer
-from invoice.periods import Period
 from tests.given import (
     AOBA,
     AOBA_ANSWERS,
+    ASKED,
     INCLUDED_HEADER,
-    README_LEDGER_ROWS,
-    README_PAPER,
+    MINATO,
+    NOVEMBER,
+    README_INVOICE,
     README_ROWS,
+    README_SHEETS,
     Printer,
     Terminal,
-    asked,
+    bill_line,
     billed,
     csv,
     paper,
+    printed,
     save_aoba,
+    sheets,
 )
 
 supports = pytest.mark.supports
@@ -63,16 +66,13 @@ def test_明細から請求書が印刷され番号と金額と枚数が示さ�
     terminal()
     # When: 利用者が明細のファイルを渡す。
     code = command.main([str(path)])
-    # Then: 一枚の請求書を既定のプリンターに送り、番号と金額と枚数を示す。
+    # Then: 一枚の請求書を既定のプリンターに送り、番号と金額と、プリンターの名前と枚数を示す。
     out = capsys.readouterr().out
     assert code == 0
-    assert asked(out) == []
-    assert billed(out) == {"株式会社みなと商事 御中": ("2026-11-001", "51,980")}
-    assert out.endswith("既定のプリンター「経理室プリンター」で 1 枚を印刷しました。\n")
+    assert out == bill_line("株式会社みなと商事 御中", "2026-11-001", "51,980") + printed(1) + "\n"
     [document] = printer.sent
     assert document.sheets == 1
-    for line in README_PAPER:
-        assert line in paper(document)
+    assert paper(document) in README_SHEETS
 
 
 @supports("S1", "P3.4", "P3.6", "P3.7", "P3.8", "P3.9")
@@ -95,43 +95,48 @@ def test_取引先と締めの期間ごとに一枚ずつ印刷される(
     terminal()
     # When: 利用者が明細のファイルを渡す。
     code = command.main([str(path)])
-    # Then: 取引先と締めの期間の組ごとに一枚ずつ、その期間の行だけを載せて印刷する。
+    # Then: 取引先と締めの期間の組ごとに一枚ずつ、その期間の行だけを載せ、発行日の月ごとの番号で印刷する。
     out = capsys.readouterr().out
     assert code == 0
-    assert "3 枚を印刷しました。" in out
     texts = [paper(each) for each in printer.sent]
+    numbers = [each.split("請求書番号: ")[1].split()[0] for each in texts]
+    assert sorted(numbers) == ["2026-11-001", "2026-11-002", "2026-12-001"]
     expected = (
         (
             "株式会社みなと商事 御中",
             "2026年11月20日",
             "2026年12月10日",
             "30,800",
-            "コピー用紙 A4 500枚",
-            "ボールペン 黒 10本入",
+            ("2026年11月20日 コピー用紙 A4 500枚 10 箱 2,800 10% 28,000",),
+            ("10% 28,000 2,800",),
         ),
         (
             "株式会社みなと商事 御中",
             "2026年12月20日",
             "2027年1月10日",
             "6,600",
-            "ボールペン 黒 10本入",
-            "コピー用紙 A4 500枚",
+            ("2026年11月21日 ボールペン 黒 10本入 5 箱 1,200 10% 6,000",),
+            ("10% 6,000 600",),
         ),
         (
             "株式会社ひかり設計 御中",
             "2026年11月20日",
             "2026年12月10日",
             "28,160",
-            "トナーカートリッジ 黒",
-            "コピー用紙 A4 500枚",
+            ("2026年11月5日 トナーカートリッジ 黒 2 本 12,800 10% 25,600",),
+            ("10% 25,600 2,560",),
         ),
     )
-    for name, issued, due, amount, kept, left in expected:
-        [text] = [each for each in texts if name in each and f"発行日: {issued}" in each]
-        assert f"お支払期限: {due}" in text
-        assert f"ご請求金額(税込): {amount} 円" in text
-        assert kept in text
-        assert left not in text
+    assert len(texts) == 3
+    shown = []
+    for name, issued, due, amount, lines, totals in expected:
+        [(text, number)] = [
+            (each, number) for each, number in zip(texts, numbers, strict=True) if name in each and issued in each
+        ]
+        assert text in sheets(name, number, issued, amount, due, lines, totals)
+        shown.append(bill_line(name, number, amount))
+    assert sorted(out.splitlines(keepends=True)) == sorted([*shown, printed(3) + "\n"])
+    assert out.endswith(printed(3) + "\n")
 
 
 @supports("S1", "P3.2", "税率ごとの合計")
@@ -155,10 +160,17 @@ def test_消費税額は税率ごとに一度だけ切り捨てて載る(
     code = command.main([str(path)])
     # Then: 消費税額は税率ごとの対象額から一度だけ切り捨てた 266 円になる。
     assert code == 0
-    assert billed(capsys.readouterr().out) == {"株式会社みなと商事 御中": ("2026-11-001", "3,599")}
-    text = paper(printer.sent[0])
-    assert "8%(軽減税率) 3,333 266" in text
-    assert "合計(税込): 3,599 円" in text
+    assert capsys.readouterr().out == bill_line("株式会社みなと商事 御中", "2026-11-001", "3,599") + printed(1) + "\n"
+    [document] = printer.sent
+    assert paper(document) in sheets(
+        "株式会社みなと商事 御中",
+        "2026-11-001",
+        "2026年11月30日",
+        "3,599",
+        "2026年12月31日",
+        tuple(f"2026年11月{day}日 緑茶ティーバッグ 50袋入 1 箱 1,111 8%(軽減税率) 1,111" for day in (2, 9, 16)),
+        ("8%(軽減税率) 3,333 266",),
+    )
 
 
 @supports("S1", "P3.3")
@@ -183,16 +195,22 @@ def test_税込の単価の明細では税込の合計から消費税額が出�
     code = command.main([str(path)])
     # Then: 税率ごとの税込の対象額から消費税額を出し、税込の対象額の和を請求する。
     assert code == 0
-    assert billed(capsys.readouterr().out) == {"株式会社みなと商事 御中": ("2026-11-001", "5,380")}
-    text = paper(printer.sent[0])
-    for line in (
-        "取引日 品目 数量 単価(税込) 税率 金額(税込)",
-        "税率 対象額(税込) 消費税額",
-        "10% 4,300 390",
-        "8%(軽減税率) 1,080 80",
-        "合計(税込): 5,380 円",
-    ):
-        assert line in text
+    assert capsys.readouterr().out == bill_line("株式会社みなと商事 御中", "2026-11-001", "5,380") + printed(1) + "\n"
+    [document] = printer.sent
+    assert paper(document) in sheets(
+        "株式会社みなと商事 御中",
+        "2026-11-001",
+        "2026年11月30日",
+        "5,380",
+        "2026年12月31日",
+        (
+            "2026年11月5日 コピー用紙 A4 500枚 3 箱 1,100 10% 3,300",
+            "2026年11月12日 ドリップコーヒー 100袋入 1 箱 1,080 8%(軽減税率) 1,080",
+            "2026年11月20日 ボールペン 黒 10本入 1 箱 1,000 10% 1,000",
+        ),
+        ("10% 4,300 390", "8%(軽減税率) 1,080 80"),
+        basis="税込",
+    )
 
 
 @supports("S1", "P3.1", "請求の計算", "請求書の組版")
@@ -209,13 +227,17 @@ def test_画面と紙面の金額は請求の計算が決めた額と同じ(
     # When: 利用者が明細のファイルを渡す。
     code = command.main([str(path)])
     # Then: 画面と紙面に、請求の計算が決めた番号と額がそのまま載る。
-    shown = billed(capsys.readouterr().out)
+    out = capsys.readouterr().out
     decided = {
         f"{each.customer.name} {each.customer.honorific}": (each.number, f"{each.amount:,}")
         for each in billing.bill(ledger_module.read(path), aoba)
     }
     assert code == 0
-    assert shown == decided
+    assert billed(out) == decided
+    assert sorted(out.splitlines(keepends=True)) == sorted(
+        [*(bill_line(name, number, amount) for name, (number, amount) in decided.items()), printed(2) + "\n"]
+    )
+    assert len(printer.sent) == len(decided) == 2
     for name, (number, amount) in decided.items():
         [text] = [paper(each) for each in printer.sent if name in paper(each)]
         assert f"請求書番号: {number}" in text
@@ -242,10 +264,11 @@ def test_同じ明細を二度印刷しても同じ請求書番号になる(
     # Then: 前と同じ番号の、同じ中身の請求書が出る。
     second = capsys.readouterr().out
     assert code == 0
-    assert billed(second) == billed(first) == {"株式会社みなと商事 御中": ("2026-11-001", "51,980")}
+    assert second == first == bill_line("株式会社みなと商事 御中", "2026-11-001", "51,980") + printed(1) + "\n"
+    assert len(printer.sent) == 2
     assert paper(printer.sent[1]) == paper(printer.sent[0])
-    november = Period(datetime.date(2026, 11, 1), datetime.date(2026, 11, 30))
-    assert numbering.number("株式会社みなと商事", november) == "2026-11-001"
+    assert paper(printer.sent[1]) in README_SHEETS
+    assert numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end) == "2026-11-001"
 
 
 @supports("S1", "P2.3", "印刷")
@@ -271,7 +294,8 @@ def test_印刷システムに触れるのは印刷だけ(
     code = command.main([str(ledger(csv(*README_ROWS)))])
     # Then: ほかの部品は印刷システムに触れず、紙面は代役にだけ届く。
     assert code == 0
-    assert len(printer.sent) == 1
+    [document] = printer.sent
+    assert paper(document) in README_SHEETS
 
 
 @supports("S1", "P2.2", "発行者情報", "発行記録")
@@ -294,7 +318,8 @@ def test_どのフォルダーで打っても同じ発行者情報と番号を�
     monkeypatch.chdir(november)
     terminal(*AOBA_ANSWERS)
     assert command.main(["明細.csv"]) == 0
-    first = billed(capsys.readouterr().out)
+    first = capsys.readouterr().out
+    assert first == ASKED + bill_line("株式会社みなと商事 御中", "2026-11-001", "51,980") + printed(1) + "\n"
     # When: 利用者が別のフォルダーで、12 月分の明細を渡す。
     monkeypatch.chdir(december)
     terminal()
@@ -302,8 +327,7 @@ def test_どのフォルダーで打っても同じ発行者情報と番号を�
     # Then: 何も尋ねず、11 月と重ならない番号で印刷する。
     out = capsys.readouterr().out
     assert code == 0
-    assert asked(out) == []
-    assert billed(out)["株式会社みなと商事 御中"][0] != first["株式会社みなと商事 御中"][0]
+    assert out == bill_line("株式会社みなと商事 御中", "2026-12-001", "24,640") + printed(1) + "\n"
     assert issuer.load() == AOBA
 
 
@@ -326,9 +350,4 @@ def test_利用者と言葉を交わすのはコマンドだけ(
     printing.print_documents(layout.typeset(invoices))
     # Then: どの部品も、端末に何も示さない。
     assert capsys.readouterr() == ("", "")
-    assert [each.lines for each in invoices] == [
-        tuple(
-            billing.InvoiceLine(row, amount)
-            for row, amount in zip(README_LEDGER_ROWS, (28000, 13500, 6000), strict=True)
-        )
-    ]
+    assert [each.lines for each in invoices] == [README_INVOICE.lines]

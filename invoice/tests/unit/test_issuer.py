@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import os
 from pathlib import Path
 
@@ -10,13 +9,9 @@ import pytest
 
 from invoice import issuer, place
 from invoice.issuer import AnswerFix, IssuerItem, PaymentTerms
-from tests.given import AOBA, AOBA_ANSWERS, AOBA_LABELS, ITEMS, files, save_aoba
+from tests.given import AOBA, AOBA_LABELS, ITEMS, checked, files, save_aoba
 
 supports = pytest.mark.supports
-
-
-def checked() -> dict[IssuerItem, issuer.Answer]:
-    return {item: issuer.check(item, answer) for item, answer in zip(ITEMS, AOBA_ANSWERS, strict=True)}
 
 
 @supports("test_初回は事柄を順に尋ねすべての答えがそろってから残す")
@@ -49,6 +44,22 @@ def test_発行者情報のファイルが壊れていれば壊れていると�
     broken = list(files(place.folder()))
     for each in broken:
         each.write_bytes(b"\x00broken")
+    # When
+    with pytest.raises(place.StoreRefused) as refused:
+        issuer.load()
+    # Then
+    assert refused.value.fix.problem == "broken"
+    assert refused.value.fix.path in broken
+
+
+@supports("test_置き場のファイルが壊れていると直し方を示し何も印刷しない")
+@pytest.mark.parametrize("content", ["{}", "[]", '"株式会社あおば事務用品"'])
+def test_発行者情報のファイルが読めても発行者情報の形に合わなければ壊れていると断る(home: Path, content: str) -> None:
+    # Given: 発行者情報のファイルが、JSON としては読めるが、八つの事柄を持たない状態。
+    save_aoba()
+    broken = list(files(place.folder()))
+    for each in broken:
+        each.write_text(content, encoding="utf-8")
     # When
     with pytest.raises(place.StoreRefused) as refused:
         issuer.load()
@@ -210,44 +221,3 @@ def test_書けない置き場には書けないと断り何も残さない(home
         assert files(place.folder()) == {}
     finally:
         home.chmod(0o700)
-
-
-STORED = {
-    "name": "株式会社あおば事務用品",
-    "registration_number": "T1234567890123",
-    "payment_terms": {"closing_day": "month_end", "month": 1, "payment_day": "month_end"},
-    "bank": {
-        "name": "さくら銀行",
-        "branch": "本店営業部",
-        "account_type": "普通",
-        "account_number": "1234567",
-        "account_holder": "カ)アオバジムヨウヒン",
-    },
-}
-"""ガイドの答えで残した発行者情報のファイルの中身。"""
-
-
-@supports("test_置き場のファイルが壊れていると直し方を示し何も印刷しない")
-@pytest.mark.parametrize(
-    "content",
-    [
-        [],
-        {**STORED, "payment_terms": {"closing_day": "20", "month": 1, "payment_day": 10}},
-        {**STORED, "payment_terms": {"closing_day": 20, "month": 3, "payment_day": 10}},
-        {**STORED, "bank": {**STORED["bank"], "account_number": "123"}},  # type: ignore[dict-item]
-        {**STORED, "name": 1},
-    ],
-)
-def test_発行者情報のファイルが読めても残したときの形に合わなければ壊れていると断る(
-    home: Path, content: object
-) -> None:
-    # Given: 発行者情報のファイルが、JSON としては読めるが、残したときの形でない状態。
-    save_aoba()
-    [path] = files(place.folder())
-    assert json.loads(path.read_text(encoding="utf-8")) == STORED
-    path.write_text(json.dumps(content, ensure_ascii=False), encoding="utf-8")
-    # When
-    with pytest.raises(place.StoreRefused) as refused:
-        issuer.load()
-    # Then
-    assert (refused.value.fix.path, refused.value.fix.problem) == (path, "broken")

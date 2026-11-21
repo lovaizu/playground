@@ -11,14 +11,20 @@ import pytest
 from invoice import billing, numbering, place
 from invoice.billing import Invoice, InvoiceLine, RateTotal
 from invoice.issuer import PaymentTerms
-from invoice.ledger import Customer
 from invoice.periods import Period
-from tests.given import AOBA, MINATO, NOVEMBER, README_INVOICE, README_LEDGER_ROWS, files, row
+from tests.given import (
+    AOBA,
+    HIKARI,
+    MINATO,
+    MINATO_TOKYO,
+    NOVEMBER,
+    README_INVOICE,
+    README_LEDGER_ROWS,
+    files,
+    row,
+)
 
 supports = pytest.mark.supports
-
-HIKARI = Customer("株式会社ひかり設計", "御中")
-MINATO_TOKYO = Customer("株式会社みなと商事東京支店", "御中")
 
 
 def by_customer(invoices: tuple[Invoice, ...]) -> dict[tuple[str, Period], Invoice]:
@@ -31,7 +37,7 @@ def test_一つの取引先の一つの期間の税抜の明細から一枚の�
     # When
     [invoice] = billing.bill(README_LEDGER_ROWS, AOBA)
     # Then
-    assert invoice.number == numbering.number("株式会社みなと商事", NOVEMBER)
+    assert invoice.number == numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end) == "2026-11-001"
     assert set(invoice.totals) == set(README_INVOICE.totals) and len(invoice.totals) == 2
     assert invoice == dataclasses.replace(README_INVOICE, number=invoice.number, totals=invoice.totals)
 
@@ -80,6 +86,7 @@ def test_税込の明細は税率ごとの税込の対象額から消費税額�
 @supports("test_取引先と締めの期間ごとに一枚ずつ印刷される")
 def test_取引先と締めの期間の組ごとに一枚ずつ取引日の順の行で返す(home: Path) -> None:
     # Given: 20日締めの発行者と、名前の似た取引先を含む三つの取引先の、締め日の前後の行。
+    #   みなと商事の前の期間には、取引日が前後する行と、同じ取引日の二つの行がある。
     issuer = dataclasses.replace(AOBA, payment_terms=PaymentTerms(20, 1, 10))
     rows = (
         row(2, date(2026, 11, 21), "ボールペン 黒 10本入", 5, "箱", 1200, 10),
@@ -87,13 +94,14 @@ def test_取引先と締めの期間の組ごとに一枚ずつ取引日の順�
         row(4, date(2026, 11, 5), "トナーカートリッジ 黒", 2, "本", 12800, 10, customer=HIKARI),
         row(5, date(2026, 11, 1), "クリアファイル A4 100枚入", 4, "箱", 1350, 10),
         row(6, date(2026, 11, 6), "付箋 75mm 10冊入", 7, "箱", 640, 10, customer=MINATO_TOKYO),
+        row(7, date(2026, 11, 1), "えんぴつ HB 12本入", 1, "箱", 640, 10),
     )
     first, second = Period(date(2026, 10, 21), date(2026, 11, 20)), Period(date(2026, 11, 21), date(2026, 12, 20))
     # When
     invoices = by_customer(billing.bill(rows, issuer))
-    # Then
+    # Then: 行は取引日の順で、同じ取引日の行は明細の順のまま。
     assert {key: [line.row.line for line in each.lines] for key, each in invoices.items()} == {
-        ("株式会社みなと商事", first): [5, 3],
+        ("株式会社みなと商事", first): [5, 7, 3],
         ("株式会社みなと商事", second): [2],
         ("株式会社ひかり設計", first): [4],
         ("株式会社みなと商事東京支店", first): [6],
@@ -105,11 +113,12 @@ def test_取引先と締めの期間の組ごとに一枚ずつ取引日の順�
         ("株式会社みなと商事東京支店", first): (date(2026, 11, 20), date(2026, 12, 10)),
     }
     assert {key: each.amount for key, each in invoices.items()} == {
-        ("株式会社みなと商事", first): 36740,
+        ("株式会社みなと商事", first): 37444,
         ("株式会社みなと商事", second): 6600,
         ("株式会社ひかり設計", first): 28160,
         ("株式会社みなと商事東京支店", first): 4928,
     }
+    assert {key[1]: each.number[:8] for key, each in invoices.items()} == {first: "2026-11-", second: "2026-12-"}
     assert len({each.number for each in invoices.values()}) == 4
     assert all(each.issuer == issuer for each in invoices.values())
 
@@ -148,18 +157,3 @@ def test_明細の行の金額は数量と単価の積(home: Path) -> None:
     assert invoice.totals == (RateTotal(10, 9999 * 999999, 9999 * 999999 // 10),)
     assert invoice.amount == 9999 * 999999 + 9999 * 999999 // 10
     assert invoice.customer == MINATO
-
-
-@supports("test_取引先と締めの期間ごとに一枚ずつ印刷される")
-def test_請求書は最も早い取引日の順に並び税率ごとの合計は10パーセントを先に並ぶ(home: Path) -> None:
-    # Given: 軽減税率の行が先に出る、二つの取引先の明細行。
-    rows = (
-        row(2, date(2026, 11, 12), "ドリップコーヒー 100袋入", 3, "箱", 4500, 8),
-        row(3, date(2026, 11, 3), "トナーカートリッジ 黒", 2, "本", 12800, 10, customer=HIKARI),
-        row(4, date(2026, 11, 20), "ボールペン 黒 10本入", 5, "箱", 1200, 10),
-    )
-    # When
-    invoices = billing.bill(rows, AOBA)
-    # Then: ひかり設計が先で番号も先、みなと商事の合計は 10% が先。
-    assert [(each.customer, each.number) for each in invoices] == [(HIKARI, "2026-11-001"), (MINATO, "2026-11-002")]
-    assert invoices[1].totals == (RateTotal(10, 6000, 600), RateTotal(8, 13500, 1080))

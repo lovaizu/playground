@@ -70,9 +70,8 @@ def bill(rows: Sequence[LedgerRow], issuer: Issuer) -> tuple[Invoice, ...]:
 
     受け取る: 直すところのない明細行と、発行者情報。単価の税込か税抜は、すべての行で同じ。
     返す: 取引先と締めの期間ごとに一枚ずつの請求書 (P3.4)。
-        請求書の順は、最も早い取引日の順で、同じ日なら明細で先に出る取引先の順。
-        日付は periods.dates_of に、番号は numbering.number に、
-        取引先の名称を渡して、この順に求める。
+        日付は periods.dates_of に求め、番号は numbering.number に、
+        取引先の名称と、dates_of が返した締めの期間と発行日を渡して求める。
         各行の金額、税率ごとの対象額と消費税額、請求額を決めるのは、
         このモジュールだけ (P3.1)。
     ほかに変えるもの: 番号の採番を通して、発行記録に番号を残させる。
@@ -91,7 +90,7 @@ def _invoice(customer: Customer, dates: periods.Dates, rows: list[LedgerRow], is
     totals = tuple(_total(rate, lines, tax_included) for rate in _RATES if any(row.tax_rate == rate for row in rows))
     taxes = 0 if tax_included else sum(total.tax for total in totals)
     return Invoice(
-        number=numbering.number(customer.name, dates.period),
+        number=numbering.number(customer.name, dates.period, dates.issue_date),
         customer=customer,
         period=dates.period,
         issue_date=dates.issue_date,

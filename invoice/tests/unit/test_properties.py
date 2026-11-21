@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import calendar
+import dataclasses
 import random
 import tempfile
 from collections.abc import Sequence
@@ -15,9 +16,9 @@ from hypothesis import given, strategies as st
 from invoice import billing, issuer, ledger, numbering, periods
 from invoice.billing import Invoice
 from invoice.issuer import BankAccount, Day, Issuer, PaymentTerms
-from invoice.ledger import Customer, LedgerRow
+from invoice.ledger import LedgerRow
 from invoice.periods import Dates, Period
-from tests.given import AOBA, ITEMS, csv, fresh_home
+from tests.given import AOBA, COLUMNS, HIKARI, ITEMS, MINATO, MINATO_TOKYO, README_ROWS, csv, fresh_home
 
 supports = pytest.mark.supports
 
@@ -71,11 +72,8 @@ def model(day: date, terms: PaymentTerms) -> Dates:
     return Dates(period=Period(start=before + ONE_DAY, end=end), issue_date=end, due_date=due)
 
 
-CUSTOMERS = (
-    Customer("株式会社みなと商事", "御中"),
-    Customer("株式会社みなと商事東京支店", "御中"),
-    Customer("株式会社ひかり設計", "御中"),
-)
+CUSTOMERS = (MINATO, MINATO_TOKYO, HIKARI)
+"""明細の取引先。名前の似た二つを含む。"""
 
 
 @st.composite
@@ -135,6 +133,11 @@ def summary(invoices: Sequence[Invoice]) -> dict[tuple[str, Period], dict[str, o
     }
 
 
+def amounts(invoices: Sequence[Invoice]) -> dict[tuple[str, Period], tuple[int, frozenset[object]]]:
+    """取引先と期間ごとの、請求額と税率ごとの合計。並びの順によらない。"""
+    return {(each.customer.name, each.period): (each.amount, frozenset(each.totals)) for each in invoices}
+
+
 @supports("P3.6", "P3.7", "P3.9")
 @given(day=DAYS_OF_USE, terms=TERMS)
 def test_締めの期間と発行日と支払期限は支払条件のとおりに決まる(day: date, terms: PaymentTerms) -> None:
@@ -188,7 +191,7 @@ def test_請求書の額は取引先と期間ごとに税率ごとの対象額�
 ) -> None:
     """モデルに基づくプロパティ。"""
     # Given any: 一つの明細の明細行と、受け付ける支払条件。
-    issuer_info = Issuer(AOBA.name, AOBA.registration_number, terms, AOBA.bank)
+    issuer_info = dataclasses.replace(AOBA, payment_terms=terms)
     # When
     with fresh_home():
         invoices = billing.bill(rows, issuer_info)
@@ -209,11 +212,7 @@ def test_明細の行の順を入れ替えても取引先と期間ごとの額�
         first = billing.bill(rows, AOBA)
     with fresh_home():
         second = billing.bill(shuffled, AOBA)
-
     # Then
-    def amounts(invoices: Sequence[Invoice]) -> dict[tuple[str, Period], tuple[int, frozenset[object]]]:
-        return {(each.customer.name, each.period): (each.amount, frozenset(each.totals)) for each in invoices}
-
     assert amounts(first) == amounts(second)
 
 
@@ -245,21 +244,26 @@ PERIODS = (
         max_size=20,
     )
 )
-def test_同じ組には同じ番号を別の組には別の番号を付ける(requests: list[tuple[str, Period]]) -> None:
-    """モデルに基づくプロパティ。モデルは、組から初めに付けた番号への辞書。"""
-    # Given any: 取引先と締めの期間の組を、繰り返しも含めて並べた求め。
+def test_同じ組には同じ番号を別の組には発行月ごとの次の番号を付ける(requests: list[tuple[str, Period]]) -> None:
+    """モデルに基づくプロパティ。モデルは、組から初めに付けた番号への辞書と、発行月ごとに付けた数。"""
+    # Given any: 取引先と締めの期間の組を、繰り返しも含めて並べた求め。発行日は締めの期間の締め日 (P3.6)。
     # When
     with fresh_home():
-        numbers = [numbering.number(customer, period) for customer, period in requests]
+        numbers = [numbering.number(customer, period, period.end) for customer, period in requests]
     # Then
     first: dict[tuple[str, Period], str] = {}
-    for pair, number in zip(requests, numbers, strict=True):
-        assert number == first.setdefault(pair, number)
+    counted: dict[tuple[int, int], int] = {}
+    for (customer, period), number in zip(requests, numbers, strict=True):
+        if (customer, period) not in first:
+            month = (period.end.year, period.end.month)
+            counted[month] = counted.get(month, 0) + 1
+            first[(customer, period)] = f"{month[0]}-{month[1]:02}-{counted[month]:03}"
+        assert number == first[(customer, period)]
     assert len(set(first.values())) == len(first)
 
 
 REFUSED = {"取引日": "2026-11-31", "数量": "十", "単価(税抜)": "二千八百", "税率": "5%"}
-COLUMNS = ("取引先", "取引日", "品目", "数量", "単位", "単価(税抜)", "税率")
+"""明細の列ごとの、受け付けない値。"""
 
 
 @supports("P1.3", "直すところ")
@@ -271,7 +275,7 @@ def test_明細の誤りはすべての行を読んでから一度に示され�
     broken = data.draw(st.sets(st.tuples(st.integers(0, count - 1), st.sampled_from(tuple(REFUSED))), min_size=1))
     rows = []
     for i in range(count):
-        cells = ["株式会社みなと商事", "2026-11-05", "コピー用紙 A4 500枚", "10", "箱", "2800", "10%"]
+        cells = README_ROWS[0].split(",")
         for at, column in broken:
             if at == i:
                 cells[COLUMNS.index(column)] = REFUSED[column]
@@ -289,7 +293,7 @@ def test_明細の誤りはすべての行を読んでから一度に示され�
 
 
 WIDTH_FORMS = "".join(chr(code) for code in range(0xFF01, 0xFFA0))
-"""読み替える全角の英数字と記号、半角カナ。読み替えは test_width.py と test_issuer.py が確かめる。"""
+"""読み替える全角の英数字と記号、半角カナ。読み替えは test_ledger.py と test_issuer.py が確かめる。"""
 TEXT = st.text(st.characters(categories=("L", "N"), exclude_characters=WIDTH_FORMS), min_size=1, max_size=30)
 """読み替えずにそのまま残る、利用者が答える名前。"""
 KANA = (
