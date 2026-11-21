@@ -99,117 +99,7 @@
     "invoice/images/"
    ],
    "kind": "readme",
-   "inputs": [
-    "invoice/docs/product-vision.md"
-   ],
-   "status": "open",
-   "necessary_conditions": [
-    {
-     "id": "N1",
-     "good": true,
-     "decisions": []
-    },
-    {
-     "id": "N2",
-     "good": true,
-     "decisions": [
-      {
-       "about": "適格請求書の登録番号と税率ごとの消費税額",
-       "decided": "載せる",
-       "by": "user"
-      }
-     ]
-    },
-    {
-     "id": "N3",
-     "good": true,
-     "decisions": []
-    },
-    {
-     "id": "N4",
-     "good": true,
-     "decisions": [
-      {
-       "about": "invoice のライセンス",
-       "decided": "社内だけで使うので付けない",
-       "by": "user"
-      }
-     ]
-    },
-    {
-     "id": "N5",
-     "good": true,
-     "decisions": []
-    },
-    {
-     "id": "N6",
-     "good": true,
-     "decisions": [
-      {
-       "about": "使ってみるの実行例",
-       "decided": "使ってみるの実行例は、Linux の端末で、LibreOffice Calc から CSV で書き出した明細を invoice に渡す流れにする。",
-       "by": "reasoning"
-      }
-     ]
-    },
-    {
-     "id": "N7",
-     "good": true,
-     "decisions": [
-      {
-       "about": "しくみの図と最初の一文",
-       "decided": "しくみの図は invoice/images/how-it-works.svg に置き、README から開ける。しくみの最初の一文は「このガイドだけを頼りに、コマンド一つで明細のファイルから印刷された請求書まで進む」という一つのやり方を、経理チームの言葉で言う。",
-       "by": "reasoning"
-      }
-     ]
-    },
-    {
-     "id": "N8",
-     "good": true,
-     "decisions": []
-    },
-    {
-     "id": "N9",
-     "good": false,
-     "decisions": [
-      {
-       "about": "リリース前のインストール手順",
-       "decided": "invoice はまだリリースされていないので、インストールの手順はリリースがとる手順として書き、冒頭で開発中でまだ印刷できないと示す。手順は invoice/src/ のリリースができてから、書いたとおりに実行して確かめる。",
-       "by": "reasoning"
-      },
-      {
-       "about": "経理チームの環境と手順",
-       "decided": "経理チームは Linux のノートPCを使っていて、明細は LibreOffice Calc で管理しています。Windows の PowerShell ではなく、Linux の端末で動く手順にしてください",
-       "by": "user"
-      },
-      {
-       "about": "どの端末でも通るインストールの行",
-       "decided": "インストールの各行は、uv の置き場所 ~/.local/bin がすでにパスにある端末でも、ない端末でも、エラーを出さずに進む。uv の設定ファイルがないときに失敗する行は使わない。",
-       "by": "reasoning"
-      },
-      {
-       "about": "インストールの三行目が通り invoice 0.1.0 と出る",
-       "decided": null
-      }
-     ]
-    },
-    {
-     "id": "N10",
-     "good": true,
-     "decisions": [
-      {
-       "about": "ほかの資料のリンク",
-       "decided": "ほかの資料には、経理チームが開けるページだけを載せる。.rn/ の下のベストプラクティスへのリンクは載せない。",
-       "by": "reasoning"
-      },
-      {
-       "about": "つまずいたときの問い合わせ先",
-       "decided": "このリポジトリの Issues にしてください",
-       "by": "user"
-      }
-     ]
-    }
-   ]
+   "status": "done"
   },
   {
    "name": "\u660e\u7d30\u306e\u8aad\u307f\u8fbc\u307f\u304b\u3089\u8acb\u6c42\u66f8\u306e\u5370\u5237\u307e\u3067\u306e\u90e8\u54c1\u3068\u6d41\u308c\u304c\u5b9a\u307e\u3063\u3066\u3044\u308b",
@@ -399,7 +289,8 @@
     "invoice/docs/software-design.md",
     "invoice/docs/test-design.md",
     ".rn/best-practices/invoice/",
-    "invoice/templates/"
+    "invoice/templates/",
+    "invoice/README.md"
    ],
    "status": "open",
    "necessary_conditions": [
@@ -421,7 +312,13 @@
     {
      "id": "N4",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "ガイドどおりに入る配布物",
+       "decided": "invoice は、invoice/README.md のインストールの四行を Linux の端末に貼り付けると入り、invoice --version が invoice 0.1.0 と出す配布物として作る。",
+       "by": "reasoning"
+      }
+     ]
     },
     {
      "id": "N5",
@@ -447,10 +344,6 @@
   }
  ],
  "work": [
-  {
-   "do": "make",
-   "path": "invoice/README.md"
-  },
   {
    "do": "make",
    "path": "invoice/docs/architecture.md"
