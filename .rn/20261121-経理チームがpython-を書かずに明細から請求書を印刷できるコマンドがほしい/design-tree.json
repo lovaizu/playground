@@ -89,36 +89,22 @@
       }
      ]
     },
-    {
-     "id": "N2",
-     "good": false,
-     "decisions": []
-    },
+    {"id": "N2", "good": true, "decisions": []},
     {
      "id": "N3",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "\u660e\u7d30\u304c\u8aad\u3081\u306a\u3044\u30fb\u884c\u304c\u306a\u3044\u3068\u304d\u306b\u793a\u3059\u3053\u3068",
+       "decided": "command.main \u306e\u5358\u4f53\u30b1\u30fc\u30b9\u306b\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u304c\u8aad\u3081\u306a\u3044\u3068\u304d(Shift_JIS \u3067\u4fdd\u5b58\u3057\u305f\u306a\u3069)\u306b UTF-8 \u306e CSV \u3067\u4fdd\u5b58\u3057\u76f4\u3059\u624b\u9806\u3092\u793a\u3059\u30b1\u30fc\u30b9\u3068\u3001\u898b\u51fa\u3057\u306e\u884c\u3057\u304b\u306a\u3044\u3068\u304d\u306b\u4e00\u884c\u306e\u4f8b\u3092\u793a\u3059\u30b1\u30fc\u30b9\u3092\u52a0\u3048\u308b\u3002\u3069\u3061\u3089\u3082\u4f55\u3082\u5c0b\u306d\u305a\u3001\u4f55\u3082\u5370\u5237\u3057\u306a\u3044\u3053\u3068\u3092\u78ba\u304b\u3081\u308b\u3002",
+       "by": "reasoning"
+      }
+     ]
     },
-    {
-     "id": "N7",
-     "good": false,
-     "decisions": []
-    },
-    {
-     "id": "N4",
-     "good": false,
-     "decisions": []
-    },
-    {
-     "id": "N5",
-     "good": false,
-     "decisions": []
-    },
-    {
-     "id": "N6",
-     "good": false,
-     "decisions": []
-    }
+    {"id": "N7", "good": true, "decisions": []},
+    {"id": "N4", "good": true, "decisions": []},
+    {"id": "N5", "good": true, "decisions": []},
+    {"id": "N6", "good": true, "decisions": []}
    ]
   },
   {
