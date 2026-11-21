@@ -122,13 +122,8 @@
     },
     {
      "id": "N3",
-     "good": false,
-     "decisions": [
-      {
-       "about": "冒頭でインストールもまだ通らないと示す",
-       "decided": null
-      }
-     ]
+     "good": true,
+     "decisions": []
     },
     {
      "id": "N4",
@@ -148,8 +143,14 @@
     },
     {
      "id": "N6",
-     "good": true,
-     "decisions": []
+     "good": false,
+     "decisions": [
+      {
+       "about": "使ってみるの実行例",
+       "decided": "使ってみるの実行例は、Linux の端末で、LibreOffice Calc から CSV で書き出した明細を invoice に渡す流れにする。",
+       "by": "reasoning"
+      }
+     ]
     },
     {
      "id": "N7",
@@ -177,8 +178,9 @@
        "by": "reasoning"
       },
       {
-       "about": "インストールの行が通り invoice 0.1.0 と出る",
-       "decided": null
+       "about": "経理チームの環境と手順",
+       "decided": "経理チームは Linux のノートPCを使っていて、明細は LibreOffice Calc で管理しています。Windows の PowerShell ではなく、Linux の端末で動く手順にしてください",
+       "by": "user"
       }
      ]
     },
