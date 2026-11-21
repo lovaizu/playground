@@ -107,7 +107,7 @@
     },
     {
      "id": "N3",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "\u4ed5\u69d8\u306b\u6c7a\u3081\u3054\u3068\u3092\u5165\u308c\u76f4\u3059",
@@ -148,7 +148,7 @@
     },
     {
      "id": "N4",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "\u30ac\u30a4\u30c9\u3069\u304a\u308a\u306b\u5165\u308b\u914d\u5e03\u7269",
@@ -174,7 +174,7 @@
     },
     {
      "id": "N5",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "\u30c6\u30b9\u30c8\u3092\u4ed5\u69d8\u306e\u30b1\u30fc\u30b9\u3068\u305d\u308d\u3048\u308b",
@@ -196,13 +196,22 @@
        "about": "\u30b1\u30fc\u30b9\u306e\u7d50\u679c\u3092\u307e\u308b\u3054\u3068\u78ba\u304b\u3081\u308b",
        "decided": "\u5404\u30c6\u30b9\u30c8\u306f\u3001\u305d\u306e\u30b1\u30fc\u30b9\u306e\u7d50\u679c\u3092\u307e\u308b\u3054\u3068\u78ba\u304b\u3081\u308b\u3002\u30b3\u30de\u30f3\u30c9\u304c\u793a\u3059\u6587\u306f\u76f4\u3057\u65b9\u3092\u542b\u3080\u5168\u6587\u3092\u3001\u30d7\u30ea\u30f3\u30bf\u30fc\u306b\u9001\u308b\u7d19\u9762\u306f\u679a\u6570\u3060\u3051\u3067\u306a\u304f\u4e2d\u8eab\u3092\u78ba\u304b\u3081\u3001\u8a9e\u306e\u4e00\u90e8\u3060\u3051\u3092\u63a2\u3059\u78ba\u304b\u3081\u65b9\u306f\u3057\u306a\u3044\u3002",
        "by": "reasoning"
+      },
+      {
+       "about": "印刷システムに届ける段もいつものテストで確かめる",
+       "decided": null
       }
      ]
     },
     {
      "id": "N8",
-     "good": true,
-     "decisions": []
+     "good": false,
+     "decisions": [
+      {
+       "about": "明細の末尾の空の行",
+       "decided": null
+      }
+     ]
     }
    ]
   }
