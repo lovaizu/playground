@@ -9,16 +9,16 @@
    "closes": [],
    "refs": []
   },
-  "pr": null
+  "pr": "https://github.com/lovaizu/playground/pull/38"
  },
  "goal": {
-  "decided": "経理チームが、開発者の手を借りずに、明細から請求書を自分たちで印刷できる。経理チームのメンバーは、ガイドだけを頼りに、明細のファイルからコマンド一つで請求書を印刷する。",
+  "decided": "\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u3001\u958b\u767a\u8005\u306e\u624b\u3092\u501f\u308a\u305a\u306b\u3001\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u81ea\u5206\u305f\u3061\u3067\u5370\u5237\u3067\u304d\u308b\u3002\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u306f\u3001\u30ac\u30a4\u30c9\u3060\u3051\u3092\u983c\u308a\u306b\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u304b\u3089\u30b3\u30de\u30f3\u30c9\u4e00\u3064\u3067\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3059\u308b\u3002",
   "by": "user"
  },
  "deliverables": [
   {
-   "name": "経理チームが明細から請求書を印刷できるまでの計画",
-   "path": ".rn/20261121-経理チームがpython-を書かずに明細から請求書を印刷できるコマンドがほしい/design-tree.json",
+   "name": "\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u307e\u3067\u306e\u8a08\u753b",
+   "path": ".rn/20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044/design-tree.json",
    "kind": "design-tree",
    "inputs": [],
    "status": "open",
@@ -33,8 +33,8 @@
      "good": true,
      "decisions": [
       {
-       "about": "請求書のベストプラクティス",
-       "decided": "はい",
+       "about": "\u8acb\u6c42\u66f8\u306e\u30d9\u30b9\u30c8\u30d7\u30e9\u30af\u30c6\u30a3\u30b9",
+       "decided": "\u306f\u3044",
        "by": "user"
       }
      ]
@@ -67,38 +67,90 @@
    ]
   },
   {
-   "name": "請求書を作る人が、取引先にそのまま出せる請求書の決まりごとを一つずつ確かめながら作れる",
+   "name": "\u8acb\u6c42\u66f8\u3092\u4f5c\u308b\u4eba\u304c\u3001\u53d6\u5f15\u5148\u306b\u305d\u306e\u307e\u307e\u51fa\u305b\u308b\u8acb\u6c42\u66f8\u306e\u6c7a\u307e\u308a\u3054\u3068\u3092\u4e00\u3064\u305a\u3064\u78ba\u304b\u3081\u306a\u304c\u3089\u4f5c\u308c\u308b",
    "path": ".rn/best-practices/invoice/",
    "kind": "meta",
    "inputs": [],
    "status": "open",
    "necessary_conditions": [
-    {"id": "N1", "good": false, "decisions": []},
-    {"id": "N2", "good": false, "decisions": []},
-    {"id": "N3", "good": false, "decisions": []},
-    {"id": "N4", "good": false, "decisions": []},
-    {"id": "N5", "good": false, "decisions": []},
-    {"id": "N7", "good": false, "decisions": []},
-    {"id": "N6", "good": false, "decisions": []}
+    {
+     "id": "N1",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N2",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N3",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N4",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N5",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N7",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N6",
+     "good": false,
+     "decisions": []
+    }
    ]
   },
   {
-   "name": "経理チームが何のために、どこまでできれば足りるかが定まっている",
+   "name": "\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u4f55\u306e\u305f\u3081\u306b\u3001\u3069\u3053\u307e\u3067\u3067\u304d\u308c\u3070\u8db3\u308a\u308b\u304b\u304c\u5b9a\u307e\u3063\u3066\u3044\u308b",
    "path": "invoice/docs/product-vision.md",
    "kind": "product-vision",
    "inputs": [],
    "status": "open",
    "necessary_conditions": [
-    {"id": "N1", "good": false, "decisions": []},
-    {"id": "N2", "good": false, "decisions": []},
-    {"id": "N3", "good": false, "decisions": []},
-    {"id": "N4", "good": false, "decisions": []},
-    {"id": "N5", "good": false, "decisions": []},
-    {"id": "N6", "good": false, "decisions": []}
+    {
+     "id": "N1",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N2",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N3",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N4",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N5",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N6",
+     "good": false,
+     "decisions": []
+    }
    ]
   },
   {
-   "name": "経理チームのメンバーが、ガイドだけを見てコマンドを準備し、明細から請求書を印刷できる",
+   "name": "\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u304c\u3001\u30ac\u30a4\u30c9\u3060\u3051\u3092\u898b\u3066\u30b3\u30de\u30f3\u30c9\u3092\u6e96\u5099\u3057\u3001\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b",
    "path": "invoice/README.md",
    "kind": "readme",
    "inputs": [
@@ -106,20 +158,60 @@
    ],
    "status": "open",
    "necessary_conditions": [
-    {"id": "N1", "good": false, "decisions": []},
-    {"id": "N2", "good": false, "decisions": []},
-    {"id": "N3", "good": false, "decisions": []},
-    {"id": "N4", "good": false, "decisions": []},
-    {"id": "N5", "good": false, "decisions": []},
-    {"id": "N6", "good": false, "decisions": []},
-    {"id": "N7", "good": false, "decisions": []},
-    {"id": "N8", "good": false, "decisions": []},
-    {"id": "N9", "good": false, "decisions": []},
-    {"id": "N10", "good": false, "decisions": []}
+    {
+     "id": "N1",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N2",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N3",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N4",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N5",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N6",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N7",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N8",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N9",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N10",
+     "good": false,
+     "decisions": []
+    }
    ]
   },
   {
-   "name": "明細の読み込みから請求書の印刷までの部品と流れが定まっている",
+   "name": "\u660e\u7d30\u306e\u8aad\u307f\u8fbc\u307f\u304b\u3089\u8acb\u6c42\u66f8\u306e\u5370\u5237\u307e\u3067\u306e\u90e8\u54c1\u3068\u6d41\u308c\u304c\u5b9a\u307e\u3063\u3066\u3044\u308b",
    "path": "invoice/docs/architecture.md",
    "kind": "architecture",
    "inputs": [
@@ -128,26 +220,90 @@
    ],
    "status": "open",
    "necessary_conditions": [
-    {"id": "N1", "good": false, "decisions": []},
-    {"id": "N2", "good": false, "decisions": []},
-    {"id": "N3", "good": false, "decisions": []},
-    {"id": "N4", "good": false, "decisions": []},
-    {"id": "N5", "good": false, "decisions": []},
-    {"id": "N6", "good": false, "decisions": []},
-    {"id": "N7", "good": false, "decisions": []},
-    {"id": "N8", "good": false, "decisions": []},
-    {"id": "N9", "good": false, "decisions": []},
-    {"id": "N10", "good": false, "decisions": []},
-    {"id": "N11", "good": false, "decisions": []},
-    {"id": "N12", "good": false, "decisions": []},
-    {"id": "N13", "good": false, "decisions": []},
-    {"id": "N14", "good": false, "decisions": []},
-    {"id": "N15", "good": false, "decisions": []},
-    {"id": "N16", "good": false, "decisions": []}
+    {
+     "id": "N1",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N2",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N3",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N4",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N5",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N6",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N7",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N8",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N9",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N10",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N11",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N12",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N13",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N14",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N15",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N16",
+     "good": false,
+     "decisions": []
+    }
    ]
   },
   {
-   "name": "コマンドの各部品が何を決め、どう呼ばれるかが定まっている",
+   "name": "\u30b3\u30de\u30f3\u30c9\u306e\u5404\u90e8\u54c1\u304c\u4f55\u3092\u6c7a\u3081\u3001\u3069\u3046\u547c\u3070\u308c\u308b\u304b\u304c\u5b9a\u307e\u3063\u3066\u3044\u308b",
    "path": "invoice/docs/software-design.md",
    "kind": "software-design",
    "inputs": [
@@ -156,14 +312,30 @@
    "status": "open",
    "file": false,
    "necessary_conditions": [
-    {"id": "N1", "good": false, "decisions": []},
-    {"id": "N2", "good": false, "decisions": []},
-    {"id": "N3", "good": false, "decisions": []},
-    {"id": "N4", "good": false, "decisions": []}
+    {
+     "id": "N1",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N2",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N3",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N4",
+     "good": false,
+     "decisions": []
+    }
    ]
   },
   {
-   "name": "明細から請求書を作るときに守るべき振る舞いが、確かめられるケースとして並んでいる",
+   "name": "\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u4f5c\u308b\u3068\u304d\u306b\u5b88\u308b\u3079\u304d\u632f\u308b\u821e\u3044\u304c\u3001\u78ba\u304b\u3081\u3089\u308c\u308b\u30b1\u30fc\u30b9\u3068\u3057\u3066\u4e26\u3093\u3067\u3044\u308b",
    "path": "invoice/docs/test-design.md",
    "kind": "test-design",
    "inputs": [
@@ -175,17 +347,45 @@
    ],
    "status": "open",
    "necessary_conditions": [
-    {"id": "N1", "good": false, "decisions": []},
-    {"id": "N2", "good": false, "decisions": []},
-    {"id": "N3", "good": false, "decisions": []},
-    {"id": "N7", "good": false, "decisions": []},
-    {"id": "N4", "good": false, "decisions": []},
-    {"id": "N5", "good": false, "decisions": []},
-    {"id": "N6", "good": false, "decisions": []}
+    {
+     "id": "N1",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N2",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N3",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N7",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N4",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N5",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N6",
+     "good": false,
+     "decisions": []
+    }
    ]
   },
   {
-   "name": "経理チームのメンバーが、明細のファイルを渡すだけで、印刷できる請求書を得る",
+   "name": "\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u304c\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u3092\u6e21\u3059\u3060\u3051\u3067\u3001\u5370\u5237\u3067\u304d\u308b\u8acb\u6c42\u66f8\u3092\u5f97\u308b",
    "path": "invoice/src/",
    "more_paths": [
     "invoice/tests/",
@@ -200,14 +400,46 @@
    ],
    "status": "open",
    "necessary_conditions": [
-    {"id": "N1", "good": false, "decisions": []},
-    {"id": "N2", "good": false, "decisions": []},
-    {"id": "N3", "good": false, "decisions": []},
-    {"id": "N4", "good": false, "decisions": []},
-    {"id": "N5", "good": false, "decisions": []},
-    {"id": "N6", "good": false, "decisions": []},
-    {"id": "N7", "good": false, "decisions": []},
-    {"id": "N8", "good": false, "decisions": []}
+    {
+     "id": "N1",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N2",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N3",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N4",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N5",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N6",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N7",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N8",
+     "good": false,
+     "decisions": []
+    }
    ]
   }
  ],
