@@ -30,11 +30,12 @@
     },
     {
      "id": "N2",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "請求書のベストプラクティス",
-       "decided": null
+       "decided": "はい",
+       "by": "user"
       }
      ]
     },
@@ -63,6 +64,22 @@
      "good": true,
      "decisions": []
     }
+   ]
+  },
+  {
+   "name": "請求書を作る人が、取引先にそのまま出せる請求書の決まりごとを一つずつ確かめながら作れる",
+   "path": ".rn/best-practices/invoice/",
+   "kind": "meta",
+   "inputs": [],
+   "status": "open",
+   "necessary_conditions": [
+    {"id": "N1", "good": false, "decisions": []},
+    {"id": "N2", "good": false, "decisions": []},
+    {"id": "N3", "good": false, "decisions": []},
+    {"id": "N4", "good": false, "decisions": []},
+    {"id": "N5", "good": false, "decisions": []},
+    {"id": "N7", "good": false, "decisions": []},
+    {"id": "N6", "good": false, "decisions": []}
    ]
   },
   {
@@ -153,7 +170,8 @@
     "invoice/docs/product-vision.md",
     "invoice/README.md",
     "invoice/docs/architecture.md",
-    "invoice/docs/software-design.md"
+    "invoice/docs/software-design.md",
+    ".rn/best-practices/invoice/"
    ],
    "status": "open",
    "necessary_conditions": [
@@ -177,7 +195,8 @@
    "inputs": [
     "invoice/docs/architecture.md",
     "invoice/docs/software-design.md",
-    "invoice/docs/test-design.md"
+    "invoice/docs/test-design.md",
+    ".rn/best-practices/invoice/"
    ],
    "status": "open",
    "necessary_conditions": [
@@ -194,14 +213,12 @@
  ],
  "work": [
   {
-   "do": "decide",
-   "path": ".rn/20261121-経理チームがpython-を書かずに明細から請求書を印刷できるコマンドがほしい/design-tree.json",
-   "condition": "N2",
-   "about": "請求書のベストプラクティス"
+   "do": "make",
+   "path": "invoice/docs/product-vision.md"
   },
   {
    "do": "make",
-   "path": "invoice/docs/product-vision.md"
+   "path": ".rn/best-practices/invoice/"
   },
   {
    "do": "make",
