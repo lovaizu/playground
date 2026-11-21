@@ -1,0 +1,4 @@
+{
+ "result": "point",
+ "point": "請求書の見本の Round が試しに作ったファイルを、リポジトリのチェックの対象から外しますか、それとも見本の登録番号の書き方を直しますか?\nI recommend 試しのファイルをチェックの対象から外すこと, as それらは成果物ではなく、その Round が試すために置いたものにすぎないからです。\nrepository.py checks が exit 1 で止まり、Vale の Google.Colons が「'T1234567890123' should be in lowercase.」と指摘しています。指摘の場所は rounds/invoice%2Ftemplates%2F/content-1/try/invoice-税抜.md、同 invoice-税込.md、refactor-2/rendered.md のそれぞれ 10 行目です。invoice/docs/software-design.md 自身への指摘はなく、ほかの成果物の Round のファイルなので、この Round では直せません。"
+}

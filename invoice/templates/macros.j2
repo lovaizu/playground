@@ -1,0 +1,24 @@
+{#-
+  請求書の紙面 invoice.md.j2 が使う書き方をまとめる。
+  invoice.md.j2 は Jinja2 の trim_blocks と lstrip_blocks を有効にして描く。
+  額は請求の計算が決めた値をそのまま載せ、ここでは書き方だけを決める。
+
+  invoice.md.j2 には次の値を渡す。
+    invoice.customer.name            取引先の正式な名称
+    invoice.customer.honorific       敬称。法人や部署には「御中」、個人には「様」
+    invoice.issuer.name              発行者の正式な名称
+    invoice.issuer.registration_number  T と 13 桁の数字の登録番号
+    invoice.issuer.bank.name / .branch / .account_type / .account_number / .account_holder
+    invoice.number                   請求書番号
+    invoice.issue_date               発行日 (date)
+    invoice.due_date                 支払期限 (date)
+    invoice.tax_included             単価が税込なら true、税抜なら false
+    invoice.lines[]                  date, item, quantity, unit, unit_price, tax_rate, reduced, amount
+    invoice.tax_summaries[]          tax_rate, reduced, base, tax
+    invoice.total                    税込の合計。ご請求金額と同じ
+-#}
+{% macro yen(amount) %}{{ "{:,}".format(amount) }}{% endmacro %}
+{% macro ymd(day) %}{{ day.year }}年{{ day.month }}月{{ day.day }}日{% endmacro %}
+{% macro basis(tax_included) %}{{ "税込" if tax_included else "税抜" }}{% endmacro %}
+{% macro rate(tax_rate, reduced) %}{{ tax_rate }}%{{ "(軽減税率)" if reduced else "" }}{% endmacro %}
+{% macro quantity(amount, unit) %}{{ amount }}{{ " " ~ unit if unit else "" }}{% endmacro %}
