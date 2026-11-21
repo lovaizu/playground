@@ -62,13 +62,69 @@
    "name": "\u30b3\u30de\u30f3\u30c9\u306e\u5404\u90e8\u54c1\u304c\u4f55\u3092\u6c7a\u3081\u3001\u3069\u3046\u547c\u3070\u308c\u308b\u304b\u304c\u5b9a\u307e\u3063\u3066\u3044\u308b",
    "path": "invoice/docs/software-design.md",
    "kind": "software-design",
-   "status": "done"
+   "inputs": [
+    "invoice/docs/architecture.md"
+   ],
+   "status": "open",
+   "necessary_conditions": [
+    {"id": "N1", "good": true, "decisions": []},
+    {
+     "id": "N2",
+     "good": false,
+     "decisions": [
+      {
+       "about": "コマンドに入った振る舞いを契約に書く",
+       "decided": "各インターフェースの契約に、コマンドが持つ次の振る舞いを書く。明細と発行者の答えの全角の数字・英字・記号は半角に、半角カナは全角に読み替えてから確かめる。取引日は YYYY-MM-DD と YYYY/MM/DD を、数量と単価は正の整数を、税率は 10% と 8% を受け付ける。請求書の明細の行は取引日の順に並べ、同じ日は明細のファイルの順に保つ。宛先の敬称は取引先名に法人格があれば「御中」、なければ「様」とする。請求書番号は「<発行年>-<発行月2桁>-<連番3桁>」で、連番は発行月ごとに 001 から数える。印刷は既定のプリンターの名前と送った枚数を返す。明細の行の取引日は「2026年11月5日」の形で紙面に載せる。",
+       "by": "reasoning"
+      }
+     ]
+    },
+    {"id": "N3", "good": true, "decisions": []},
+    {"id": "N4", "good": true, "decisions": []}
+   ]
   },
   {
    "name": "\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u4f5c\u308b\u3068\u304d\u306b\u5b88\u308b\u3079\u304d\u632f\u308b\u821e\u3044\u304c\u3001\u78ba\u304b\u3081\u3089\u308c\u308b\u30b1\u30fc\u30b9\u3068\u3057\u3066\u4e26\u3093\u3067\u3044\u308b",
    "path": "invoice/docs/test-design.md",
    "kind": "test-design",
-   "status": "done"
+   "inputs": [
+    "invoice/docs/product-vision.md",
+    "invoice/README.md",
+    "invoice/docs/architecture.md",
+    "invoice/docs/software-design.md",
+    ".rn/best-practices/invoice/",
+    "invoice/templates/"
+   ],
+   "status": "open",
+   "necessary_conditions": [
+    {"id": "N1", "good": true, "decisions": []},
+    {"id": "N2", "good": true, "decisions": []},
+    {
+     "id": "N3",
+     "good": false,
+     "decisions": [
+      {
+       "about": "コマンドに入った振る舞いのケース",
+       "decided": "invoice/docs/software-design.md の契約に書いた振る舞いごとに単体ケースを置く。全角・半角カナの読み替え、取引日の二つの形、数量・単価・税率の受け付ける形と断る形、取引日順の行の並び、敬称の決め方、請求書番号の形と発行月ごとの連番、プリンターの名前と枚数、紙面の取引日の書き方である。いまの invoice/tests/ にあってケースのないテストは、ケースにするか消すかを決め、ケースの名前と同じ名前のテストが一つずつあるようにする。",
+       "by": "reasoning"
+      }
+     ]
+    },
+    {"id": "N7", "good": true, "decisions": []},
+    {"id": "N4", "good": true, "decisions": []},
+    {"id": "N5", "good": true, "decisions": []},
+    {
+     "id": "N6",
+     "good": false,
+     "decisions": [
+      {
+       "about": "決まった抜けを抜けの一覧から外す",
+       "decided": "抜けの一覧から、請求書番号の形、行の並び、受け付ける形、プリンターの名前など、いまは契約に書かれた点を外す。",
+       "by": "reasoning"
+      }
+     ]
+    }
+   ]
   },
   {
    "name": "\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u304c\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u3092\u6e21\u3059\u3060\u3051\u3067\u3001\u5370\u5237\u3067\u304d\u308b\u8acb\u6c42\u66f8\u3092\u5f97\u308b",
@@ -111,7 +167,8 @@
      "decisions": [
       {
        "about": "\u4ed5\u69d8\u306b\u6c7a\u3081\u3054\u3068\u3092\u5165\u308c\u76f4\u3059",
-       "decided": null
+       "decided": "\u4f5c\u308a\u76f4\u3057\u3066\u304f\u3060\u3055\u3044",
+       "by": "user"
       },
       {
        "about": "\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u306e\u5024\u3068\u8acb\u6c42\u66f8\u306e\u5024\u306e\u5bfe\u5fdc",
@@ -201,6 +258,14 @@
   }
  ],
  "work": [
+  {
+   "do": "make",
+   "path": "invoice/docs/software-design.md"
+  },
+  {
+   "do": "make",
+   "path": "invoice/docs/test-design.md"
+  },
   {
    "do": "make",
    "path": "invoice/src/"
