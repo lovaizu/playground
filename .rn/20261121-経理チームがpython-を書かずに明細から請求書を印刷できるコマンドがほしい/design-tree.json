@@ -1,0 +1,65 @@
+{
+ "context": {
+  "rn": "0.9.0",
+  "languages": {
+   "deliverables": "Japanese",
+   "conversation": "Japanese"
+  },
+  "issues": {
+   "closes": [],
+   "refs": []
+  },
+  "pr": null
+ },
+ "goal": {
+  "decided": "\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u3001\u958b\u767a\u8005\u306e\u624b\u3092\u501f\u308a\u305a\u306b\u3001\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u81ea\u5206\u305f\u3061\u3067\u5370\u5237\u3067\u304d\u308b\u3002\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u306f\u3001\u30ac\u30a4\u30c9\u3060\u3051\u3092\u983c\u308a\u306b\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u304b\u3089\u30b3\u30de\u30f3\u30c9\u4e00\u3064\u3067\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3059\u308b\u3002",
+  "by": "reasoning"
+ },
+ "deliverables": [
+  {
+   "name": "\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u3001\u958b\u767a\u8005\u306e\u624b\u3092\u501f\u308a\u305a\u306b\u3001\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u81ea\u5206\u305f\u3061\u3067\u5370\u5237\u3067\u304d\u308b\u3002\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u306f\u3001\u30ac\u30a4\u30c9\u3060\u3051\u3092\u983c\u308a\u306b\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u304b\u3089\u30b3\u30de\u30f3\u30c9\u4e00\u3064\u3067\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3059\u308b\u3002",
+   "path": ".rn/20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044/design-tree.json",
+   "kind": "design-tree",
+   "inputs": [],
+   "status": "open",
+   "necessary_conditions": [
+    {
+     "id": "N1",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N2",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N7",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N3",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N4",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N5",
+     "good": false,
+     "decisions": []
+    },
+    {
+     "id": "N6",
+     "good": false,
+     "decisions": []
+    }
+   ]
+  }
+ ],
+ "work": []
+}
