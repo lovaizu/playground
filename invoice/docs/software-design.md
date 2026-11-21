@@ -4,13 +4,24 @@
 
 各モジュールは、自分だけが隠す一つの決めごとを、ファイルの冒頭の docstring に書く。
 
-- `src/invoice/command.py`: 利用者と端末で交わすやりとりを、何をどの順に尋ねて示すかまで決める。
-- `src/invoice/ledger.py`: 明細のファイルのうち、どの形を請求書にできる明細として受け付けるか。
-- `src/invoice/issuer.py`: 発行者情報の形を、尋ねる事柄から残すファイルの中身まで決める。
-- `src/invoice/billing.py`: 明細行から、取引先と締めの期間ごとの請求書の中身をどう決めるか。
+- `src/invoice/command.py`: 部品の結果と直すところを、利用者に端末でどう示すか。
+- `src/invoice/ledger.py`: 明細のファイルを、どの形なら受け付け、各列をどう読んで明細行にするか。
+- `src/invoice/place.py`: invoice が残すファイルを、ノートPCのどこに置くか。
+- `src/invoice/issuer.py`: 発行者情報の形を、尋ねる事柄とその順と名前から、残すファイルの中身まで決める。
+- `src/invoice/billing.py`: 請求書の額を、消費税と合計の決まりに沿ってどう出すか。
+- `src/invoice/periods.py`: 取引日と支払条件から、締めの期間と発行日と支払期限をどう決めるか。
 - `src/invoice/numbering.py`: 取引先と締めの期間の組に、どの請求書番号を付けるか。
 - `src/invoice/layout.py`: 請求書を、用紙の上にどう配置するか。
 - `src/invoice/printing.py`: 紙面を、ノートPCの印刷システムにどう届けるか。
+
+請求の計算のコンポーネントは、billing.py と periods.py の二つのモジュールに分ける。
+消費税の決まりと、締めの期間と支払期限の決まりは、別のわけで変わるからである。
+置き場の場所は place.py だけが決め、issuer.py と numbering.py はそこから受け取る。
+初回に尋ねる発行者の事柄と、その順と名前は、issuer.py だけが決める。
+command.py は、受け取った事柄を受け取った順に尋ねるだけである。
+取引先の敬称は、明細の「取引先」の列の読み方として ledger.py が決める。
+S2 のインストーラーは uv であり、invoice のコードではない。
+S2 で invoice のコードに届く矢印は、版を尋ねる `invoice --version` だけである。
 
 ## インターフェース
 
@@ -28,7 +39,7 @@ invoice = "invoice.command:main"
 `src/invoice/command.py` は、利用者からの矢印を受ける。
 
 ```python
-"""利用者と端末で交わすやりとりを、何をどの順に尋ねて示すかまで決める。"""
+"""部品の結果と直すところを、利用者に端末でどう示すか。"""
 
 from __future__ import annotations
 
@@ -49,12 +60,16 @@ def main(argv: Sequence[str] | None = None) -> int:
     ほかに変えるもの:
         端末で尋ね、示す。利用者と言葉を交わすのは、このモジュールだけ (P1.2)。
         明細に直すところがないときにだけ、発行者情報を求め、印刷に進む (P2.5)。
+        発行者情報がないときは、issuer.load が返した事柄を、受け取った順に、
+        その名前と例のとおりに尋ねるだけ。何をどの順に尋ねるかは決めない。
         初回は、すべての答えがそろったときにだけ発行者情報を残させる (P2.4)。
         番号の採番を通して発行記録を、印刷を通して既定のプリンターを動かす。
     断るとき:
         ledger.LedgerRefused: すべての直すところを行と直し方で示し、何も尋ねず、
             何も印刷せずに 1 を返す (P1.3, P2.5)。
         issuer.AnswerRefused: 受け付ける形の例を示し、同じ事柄を尋ね直す (P1.5)。
+        place.StoreRefused: どのファイルの何が問題かと直し方を示し、
+            何も印刷せずに 1 を返す。
         printing.PrintRefused: プリンターの整え方を示して 1 を返す (S4)。
     """
     raise NotImplementedError("command.main")
@@ -63,7 +78,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 `src/invoice/ledger.py` は、明細を読ませる矢印を受ける。
 
 ```python
-"""明細のファイルのうち、どの形を請求書にできる明細として受け付けるか。"""
+"""明細のファイルを、どの形なら受け付け、各列をどう読んで明細行にするか。"""
 
 from __future__ import annotations
 
@@ -77,19 +92,32 @@ TaxRate = Literal[8, 10]
 
 
 @dataclass(frozen=True)
+class Customer:
+    """取引先: 請求書の宛先。"""
+
+    name: str
+    """取引先の正式な名称。明細の「取引先」の列のまま。"""
+    honorific: Literal["御中", "様"]
+    """宛名の敬称。名称が法人や部署なら「御中」、個人なら「様」。
+    明細の「取引先」の列の名称から、このモジュールが読み取る。"""
+
+
+@dataclass(frozen=True)
 class LedgerRow:
     """明細行: 一つの取引を表し、請求書の明細の一行になる。"""
 
     line: int
     """明細のファイルでの行の番号。1 から数える。"""
-    customer: str
-    """取引先の名称。"""
+    customer: Customer
+    """取引先。"""
     date: datetime.date
     """取引日。"""
     description: str
-    """取引の内容。"""
+    """品目。明細の「品目」の列。"""
     quantity: int
     """数量。"""
+    unit: str
+    """単位。明細の「単位」の列。例: `箱`。空なら数量だけを載せる。"""
     unit_price: int
     """単価。円の整数。"""
     tax_rate: TaxRate
@@ -126,8 +154,10 @@ class LedgerRefused(Exception):
 def read(path: Path) -> tuple[LedgerRow, ...]:
     """明細を読ませる (S1, S3, S4)。
 
-    受け取る: 明細のファイルのパス。
+    受け取る: 明細のファイルのパス。見出しは、取引先、取引日、品目、数量、単位、
+        `単価(税抜)` か `単価(税込)`、税率の七つの列。
     返す: 明細のすべての行を、ファイルの順に明細行として。一行以上。
+        取引先の名称からは、宛名の敬称も読み取る。
     ほかに変えるもの: なし。明細のファイルを読むだけで、書かない。
     断るとき:
         LedgerRefused: ファイルを読めない、行が一つもない、または一行でも
@@ -137,10 +167,57 @@ def read(path: Path) -> tuple[LedgerRow, ...]:
     raise NotImplementedError("ledger.read")
 ```
 
+`src/invoice/place.py` は、発行者情報の保管と番号の採番が呼ぶ。
+置き場の場所と、そこで読み書きできないときの直すところを渡す。
+
+```python
+"""invoice が残すファイルを、ノートPCのどこに置くか。"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Literal
+
+
+@dataclass(frozen=True)
+class StoreFix:
+    """直すところ: 置き場のファイルの一つを読めない、または残せないわけ。
+
+    コマンドはこの値だけから、どのファイルの何をどう直すかを日本語で示す。
+    """
+
+    path: Path
+    """問題のファイル。"""
+    problem: Literal["unreadable", "broken", "unwritable"]
+    """読めない、中身が壊れている、または書けない。"""
+    detail: str
+    """ファイルシステムか読み取りが返したわけ。なければ空。"""
+
+
+class StoreRefused(Exception):
+    """置き場のファイルを読めない、または残せないときに上がり、直すところを持つ。"""
+
+    def __init__(self, fix: StoreFix) -> None:
+        super().__init__(fix)
+        self.fix = fix
+
+
+def folder() -> Path:
+    """invoice の置き場のフォルダー。利用者のホームフォルダーの中にある (P2.2)。
+
+    受け取る: なし。
+    返す: 置き場のフォルダーのパス。どのフォルダーで打っても同じパス。
+    ほかに変えるもの: なし。フォルダーを作るのは、残す側のモジュール。
+    断るとき: なし。
+    """
+    raise NotImplementedError("place.folder")
+```
+
 `src/invoice/issuer.py` は、残した情報を求める矢印、答えを確かめさせる矢印、すべての答えを残させる矢印を受ける。
 
 ```python
-"""発行者情報の形を、尋ねる事柄から残すファイルの中身まで決める。"""
+"""発行者情報の形を、尋ねる事柄とその順と名前から、残すファイルの中身まで決める。"""
 
 from __future__ import annotations
 
@@ -148,8 +225,18 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Literal, TypeAlias
 
-IssuerItem: TypeAlias = Literal["name", "registration_number", "payment_terms"]
-"""発行者情報の事柄。名称、登録番号、支払条件 (P3.1, P3.9)。"""
+IssuerItem: TypeAlias = Literal[
+    "name",
+    "registration_number",
+    "payment_terms",
+    "bank_name",
+    "bank_branch",
+    "account_type",
+    "account_number",
+    "account_holder",
+]
+"""発行者情報の事柄。名称、登録番号、支払条件 (P3.1, P3.9) と、
+お振込先の銀行名、支店名、口座種別、口座番号、口座名義。"""
 
 Day: TypeAlias = int | Literal["month_end"]
 """締め日か支払日。1 から 28 の日か、月末 (P3.12)。"""
@@ -168,7 +255,23 @@ class PaymentTerms:
 
 
 Answer: TypeAlias = str | PaymentTerms
-"""確かめ終えた一つの答え。名称と登録番号は str、支払条件は PaymentTerms。"""
+"""確かめ終えた一つの答え。支払条件は PaymentTerms、ほかの事柄は str。"""
+
+
+@dataclass(frozen=True)
+class BankAccount:
+    """お振込先: 取引先が請求額を振り込む、発行者の口座。"""
+
+    name: str
+    """銀行名。例: `さくら銀行`。"""
+    branch: str
+    """支店名。例: `本店営業部`。"""
+    account_type: Literal["普通", "当座"]
+    """口座種別。"""
+    account_number: str
+    """口座番号。7 桁の数字。"""
+    account_holder: str
+    """口座名義。カナ。例: `カ)アオバジムヨウヒン`。"""
 
 
 @dataclass(frozen=True)
@@ -181,6 +284,23 @@ class Issuer:
     """適格請求書発行事業者の登録番号。T と 13 桁の数字。"""
     payment_terms: PaymentTerms
     """支払条件。"""
+    bank: BankAccount
+    """お振込先。請求書にそのまま載せる。"""
+
+
+@dataclass(frozen=True)
+class Question:
+    """尋ねる一つの事柄。コマンドはこの値だけから問いを示す。
+
+    尋ねる事柄、その順、利用者に見せる名前と例を決めるのは、このモジュールだけ。
+    """
+
+    item: IssuerItem
+    """事柄。"""
+    label: str
+    """利用者に見せる事柄の名前。例: `登録番号(T と 13 桁の数字)`。"""
+    example: str
+    """受け付ける形の例。例: `T1234567890123`。"""
 
 
 @dataclass(frozen=True)
@@ -211,13 +331,17 @@ class AnswersIncomplete(Exception):
         self.missing = missing
 
 
-def load() -> Issuer | None:
+def load() -> Issuer | tuple[Question, ...]:
     """残した情報を求める (S1, S3)。
 
-    受け取る: なし。
-    返す: 残した発行者情報。まだ残していなければ None (P2.1)。
+    受け取る: なし。置き場の場所は place.folder から受け取る。
+    返す: 残した発行者情報。
+        まだ残していなければ、尋ねる事柄を尋ねる順に (P2.1)。
+        名称、登録番号、支払条件、銀行名、支店名、口座種別、口座番号、口座名義の順。
+        尋ねる事柄の一覧とその順と名前を持つのは、このモジュールだけ。
     ほかに変えるもの: なし。
-    断るとき: なし。読めない場合はギャップに挙げる。
+    断るとき:
+        place.StoreRefused: 発行者情報のファイルが読めない、または壊れているとき。
     """
     raise NotImplementedError("issuer.load")
 
@@ -233,6 +357,9 @@ def check(item: IssuerItem, answer: str) -> Answer:
             「20日締め翌月10日払い」の形でないとき (P3.10)、
             締め日か支払日が 1 から 28 の日でも月末でもないとき (P3.12)、
             当月払いで支払日が締め日より後でないとき (P3.11)。
+            お振込先では、口座種別が「普通」でも「当座」でもないとき、
+            口座番号が 7 桁の数字でないとき、口座名義がカナでないとき。
+            どの事柄でも、答えが空のとき。
     """
     raise NotImplementedError("issuer.check")
 
@@ -242,26 +369,25 @@ def save(answers: Mapping[IssuerItem, Answer]) -> Issuer:
 
     受け取る: check が返した答えを、事柄ごとに。
     返す: 残した発行者情報。
-    ほかに変えるもの: 発行者情報を、すべて一度に残す (P2.4)。
+    ほかに変えるもの: 発行者情報を、place.folder の中に、すべて一度に残す (P2.4)。
     断るとき:
         AnswersIncomplete: 欠けた事柄があるとき。何も残さない (P2.4)。
+        place.StoreRefused: 発行者情報のファイルを書けないとき。何も残さない (P2.4)。
     """
     raise NotImplementedError("issuer.save")
 ```
 
-`src/invoice/billing.py` は、請求書にさせる矢印を受ける。
+`src/invoice/periods.py` は、請求の計算のコンポーネントの中で billing.py が呼ぶ。
 
 ```python
-"""明細行から、取引先と締めの期間ごとの請求書の中身をどう決めるか。"""
+"""取引日と支払条件から、締めの期間と発行日と支払期限をどう決めるか。"""
 
 from __future__ import annotations
 
 import datetime
-from collections.abc import Sequence
 from dataclasses import dataclass
 
-from invoice.issuer import Issuer
-from invoice.ledger import LedgerRow, TaxRate
+from invoice.issuer import PaymentTerms
 
 
 @dataclass(frozen=True)
@@ -272,6 +398,56 @@ class Period:
     """期間の最初の日。"""
     end: datetime.date
     """締め日。"""
+
+
+@dataclass(frozen=True)
+class Dates:
+    """一枚の請求書の日付: 締めの期間、発行日、支払期限。"""
+
+    period: Period
+    """締めの期間。"""
+    issue_date: datetime.date
+    """発行日。締めの期間の締め日 (P3.6)。"""
+    due_date: datetime.date
+    """支払期限 (P3.9)。"""
+
+
+def dates_of(day: datetime.date, terms: PaymentTerms) -> Dates:
+    """取引日を含む締めの期間と、その請求書の発行日と支払期限。
+
+    受け取る: 明細行の取引日と、発行者情報の支払条件。
+    返す: 取引日を含む締めの期間と、その発行日と支払期限 (P3.6 から P3.9)。
+        同じ期間に入る取引日には、同じ値を返す。
+    ほかに変えるもの: なし。
+    断るとき: なし。支払条件は issuer.check が確かめ終えている。
+    """
+    raise NotImplementedError("periods.dates_of")
+```
+
+`src/invoice/billing.py` は、請求書にさせる矢印を受ける。
+
+```python
+"""請求書の額を、消費税と合計の決まりに沿ってどう出すか。"""
+
+from __future__ import annotations
+
+import datetime
+from collections.abc import Sequence
+from dataclasses import dataclass
+
+from invoice.issuer import Issuer
+from invoice.ledger import Customer, LedgerRow, TaxRate
+from invoice.periods import Period
+
+
+@dataclass(frozen=True)
+class InvoiceLine:
+    """請求書の明細の一行: 一つの明細行と、その金額。"""
+
+    row: LedgerRow
+    """明細行。取引日、品目、数量、単位、単価、税率はこのまま載せる。"""
+    amount: int
+    """金額。数量と単価の積の円の整数で、単価と同じく税込か税抜 (P3.2)。"""
 
 
 @dataclass(frozen=True)
@@ -294,22 +470,24 @@ class Invoice:
 
     number: str
     """請求書番号 (P3.5)。"""
-    customer: str
-    """取引先の名称。"""
+    customer: Customer
+    """宛先の取引先。名称と敬称。"""
     period: Period
     """締めの期間。"""
     issue_date: datetime.date
-    """発行日。締めの期間の締め日 (P3.6)。"""
+    """発行日。periods.dates_of が決めたもの。"""
     due_date: datetime.date
-    """支払期限 (P3.9)。"""
+    """支払期限。periods.dates_of が決めたもの。"""
     issuer: Issuer
-    """発行者として載せる発行者情報。"""
-    rows: tuple[LedgerRow, ...]
-    """明細に載せる明細行。取引日が締めの期間に入るもの (P3.8)。"""
+    """発行者として載せる発行者情報。お振込先を含む。"""
+    tax_included: bool
+    """明細の単価が税込なら True、税抜なら False (P3.3)。"""
+    lines: tuple[InvoiceLine, ...]
+    """明細に載せる行と金額。取引日が締めの期間に入る明細行を、明細の順に (P3.8)。"""
     totals: tuple[RateTotal, ...]
     """税率ごとの合計。一つ以上。"""
     amount: int
-    """請求額。税込の円の整数。"""
+    """請求額。税込の円の整数。ご請求金額と合計(税込)に載せる。"""
 
 
 def bill(rows: Sequence[LedgerRow], issuer: Issuer) -> tuple[Invoice, ...]:
@@ -317,9 +495,13 @@ def bill(rows: Sequence[LedgerRow], issuer: Issuer) -> tuple[Invoice, ...]:
 
     受け取る: 直すところのない明細行と、発行者情報。
     返す: 取引先と締めの期間ごとに一枚ずつの請求書 (P3.4)。
-        額と日付を決めるのは、このモジュールだけ (P3.1)。
+        日付は periods.dates_of に、番号は numbering.number に、
+        取引先の名称を渡して求める。
+        各行の金額、税率ごとの対象額と消費税額、請求額を決めるのは、
+        このモジュールだけ (P3.1)。
     ほかに変えるもの: 番号の採番を通して、発行記録に番号を残させる。
-    断るとき: なし。明細行の形は ledger.read が確かめ終えている。
+    断るとき:
+        place.StoreRefused: numbering.number が断ったとき、そのまま上げる。
     """
     raise NotImplementedError("billing.bill")
 ```
@@ -331,21 +513,20 @@ def bill(rows: Sequence[LedgerRow], issuer: Issuer) -> tuple[Invoice, ...]:
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from invoice.billing import Period
+from invoice.periods import Period
 
 
 def number(customer: str, period: Period) -> str:
     """番号を求める (S1)。
 
-    受け取る: 請求書の取引先と締めの期間。
+    受け取る: 請求書の取引先と締めの期間。置き場の場所は place.folder から受け取る。
     返す: その組の請求書番号。前に付けた組には、前と同じ番号 (P3.5, P1.4)。
         初めての組には、ほかの組に付けていない番号。
     ほかに変えるもの: 初めての組なら、その番号を発行記録に残してから返す。
         発行記録を読み書きするのは、このモジュールだけ (P3.5)。
-    断るとき: なし。読めない場合と残せない場合はギャップに挙げる。
+    断るとき:
+        place.StoreRefused: 発行記録のファイルが読めない、壊れている、
+            または書けないとき。発行記録は前のまま残す。
     """
     raise NotImplementedError("numbering.number")
 ```
@@ -376,7 +557,17 @@ class PrintDocument:
 def typeset(invoices: Sequence[Invoice]) -> tuple[PrintDocument, ...]:
     """紙面にさせる (S1)。
 
-    受け取る: 請求書。
+    受け取る: 請求書。紙面に載せる値は、すべて請求書の中にある。
+        宛先: customer.name と customer.honorific。
+        発行者: issuer.name、issuer.registration_number、
+            お振込先の issuer.bank の name、branch、account_type、
+            account_number、account_holder。
+        請求書番号と日付: number、issue_date、due_date。
+        明細: 各 lines の row の date、description、quantity、unit、unit_price、
+            tax_rate と、その行の amount。単価と金額の税込か税抜は tax_included。
+            tax_rate が 8 の行には、軽減税率の旨を添える。
+        税率ごとの合計: 各 totals の rate、base、tax。
+        ご請求金額と合計(税込): amount。
     返す: 請求書ごとに一つの印刷用の文書を、受け取った順に。
         額は請求書のものをそのまま載せ、計算しない (P3.1)。
     ほかに変えるもの: なし。
@@ -445,8 +636,7 @@ def send(document: PrintDocument) -> None:
 
 ## ギャップ
 
-- S3 の「ないと返す」: この矢印はデータを持たず、尋ねる事柄がコマンドに届かない。事柄の一覧が、発行者情報の保管とコマンドの二か所に分かれる。
-- 請求の計算: 消費税の決まりと、締めの期間と支払期限の決まりは、別のわけで変わる。ディレクトリ構成は両方を billing.py 一つに置き、一文で一つの決めごとを名指せない。
-- デプロイの方針 [P2.2]: invoice の置き場の場所を決めるコンポーネントがない。発行者情報の保管と番号の採番が、同じ場所をそれぞれに持つことになる。
-- S1 と S3: 発行者情報や発行記録を読めない、または残せないときの分かれ道がない。そのため load、save、number は断り方を持てず、利用者に直し方も示せない。
-- S2 のインストーラー: コンポーネントにもディレクトリ構成にもなく、置き場のないものである。そのため「入れさせる」と「取り寄せる」の矢印を運ぶインターフェースを置けない。
+- ディレクトリ構成: `periods.py` と `place.py` がない。請求の計算の二つのモジュールと置き場の場所の決めごとを、構成と方針に足す必要がある。
+- コンポーネント: `place.py` が決める置き場の場所を受け持つコンポーネントがない。どのコンポーネントの決めごとかを、コンポーネントに足す必要がある。
+- S3 の「ないと返す」: この矢印にデータがない。`issuer.load` は尋ねる事柄を返すので、矢印に尋ねる事柄を足す必要がある。
+- S1 と S3: 発行者情報や発行記録を読めない、または残せないときの分かれ道がない。インターフェースは `place.StoreRefused` で断るので、その分かれ道を足す必要がある。

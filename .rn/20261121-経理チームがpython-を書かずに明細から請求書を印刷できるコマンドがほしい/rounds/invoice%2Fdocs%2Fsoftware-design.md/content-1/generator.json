@@ -1,4 +1,50 @@
 {
- "result": "point",
- "point": "請求書の見本の Round が試しに作ったファイルを、リポジトリのチェックの対象から外しますか、それとも見本の登録番号の書き方を直しますか?\nI recommend 試しのファイルをチェックの対象から外すこと, as それらは成果物ではなく、その Round が試すために置いたものにすぎないからです。\nrepository.py checks が exit 1 で止まり、Vale の Google.Colons が「'T1234567890123' should be in lowercase.」と指摘しています。指摘の場所は rounds/invoice%2Ftemplates%2F/content-1/try/invoice-税抜.md、同 invoice-税込.md、refactor-2/rendered.md のそれぞれ 10 行目です。invoice/docs/software-design.md 自身への指摘はなく、ほかの成果物の Round のファイルなので、この Round では直せません。"
+ "result": "made",
+ "files": [
+  "invoice/docs/software-design.md"
+ ],
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "- `src/invoice/command.py`: 利用者と端末で交わすやりとりを、何をどの順に尋ねて示すかまで決める。",
+    "- `src/invoice/ledger.py`: 明細のファイルのうち、どの形を請求書にできる明細として受け付けるか。",
+    "- `src/invoice/place.py`: invoice が残すファイルを、ノートPCのどこに置くか。",
+    "- `src/invoice/issuer.py`: 発行者情報の形を、尋ねる事柄から残すファイルの中身まで決める。",
+    "- `src/invoice/billing.py`: 請求書の額を、消費税と合計の決まりに沿ってどう出すか。",
+    "- `src/invoice/periods.py`: 取引日と支払条件から、締めの期間と発行日と支払期限をどう決めるか。",
+    "- `src/invoice/numbering.py`: 取引先と締めの期間の組に、どの請求書番号を付けるか。",
+    "- `src/invoice/layout.py`: 請求書を、用紙の上にどう配置するか。",
+    "- `src/invoice/printing.py`: 紙面を、ノートPCの印刷システムにどう届けるか。"
+   ]
+  },
+  {
+   "condition": "N2",
+   "lines": [
+    "def main(argv: Sequence[str] | None = None) -> int:",
+    "def read(path: Path) -> tuple[LedgerRow, ...]:",
+    "def folder() -> Path:",
+    "def load() -> Issuer | tuple[Question, ...]:",
+    "def check(item: IssuerItem, answer: str) -> Answer:",
+    "def save(answers: Mapping[IssuerItem, Answer]) -> Issuer:",
+    "def dates_of(day: datetime.date, terms: PaymentTerms) -> Dates:",
+    "def bill(rows: Sequence[LedgerRow], issuer: Issuer) -> tuple[Invoice, ...]:",
+    "def number(customer: str, period: Period) -> str:",
+    "def typeset(invoices: Sequence[Invoice]) -> tuple[PrintDocument, ...]:",
+    "def print_documents(documents: Sequence[PrintDocument]) -> int:",
+    "def send(document: PrintDocument) -> None:",
+    "        place.StoreRefused: 発行記録のファイルが読めない、壊れている、",
+    "    raise NotImplementedError(\"numbering.number\")"
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "- ディレクトリ構成: `periods.py` と `place.py` がない。請求の計算の二つのモジュールと置き場の場所の決めごとを、構成と方針に足す必要がある。",
+    "- コンポーネント: `place.py` が決める置き場の場所を受け持つコンポーネントがない。どのコンポーネントの決めごとかを、コンポーネントに足す必要がある。",
+    "- S3 の「ないと返す」: この矢印にデータがない。`issuer.load` は尋ねる事柄を返すので、矢印に尋ねる事柄を足す必要がある。",
+    "- S1 と S3: 発行者情報や発行記録を読めない、または残せないときの分かれ道がない。インターフェースは `place.StoreRefused` で断るので、その分かれ道を足す必要がある。"
+   ]
+  }
+ ]
 }
