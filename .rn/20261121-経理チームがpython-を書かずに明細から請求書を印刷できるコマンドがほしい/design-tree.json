@@ -85,7 +85,7 @@
    "necessary_conditions": [
     {
      "id": "N1",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "尋ねる発行者の項目の持ち主",
@@ -117,6 +117,10 @@
        "about": "組版が受け取る値",
        "decided": "請求書の組版が受け取る値は、invoice/templates/invoice.md.j2 と invoice/README.md の見本の請求書が載せる値をすべて含む。発行者の振込先(銀行名、支店名、口座種別、口座番号、口座名義)、各行の単位と金額、取引先の敬称(御中か様)である。組版は額を計算しない。発行者の項目には README の初回の質問にある振込先の各項目を含め、明細の読み取りは各行に README の「単位」の列を持つ。",
        "by": "reasoning"
+      },
+      {
+       "about": "明細が読めないときの断りの種類",
+       "decided": null
       },
       {
        "about": "読めない・保てないときの断り",
