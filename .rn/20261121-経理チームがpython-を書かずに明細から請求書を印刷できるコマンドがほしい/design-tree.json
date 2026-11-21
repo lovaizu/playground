@@ -82,22 +82,53 @@
     "invoice/docs/architecture.md"
    ],
    "status": "open",
-   "file": false,
    "necessary_conditions": [
     {
      "id": "N1",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "尋ねる発行者の項目の持ち主",
+       "decided": "初回に尋ねる発行者の項目の一覧は発行者情報の保管だけが持つ。保存された発行者情報がないとき、発行者情報の保管は尋ねる項目の一覧を返し、コマンドはそれを順に尋ねるだけにする。",
+       "by": "reasoning"
+      },
+      {
+       "about": "請求の計算の中の分け方",
+       "decided": "請求の計算の部品は、消費税と合計の決まりを持つモジュールと、締めの期間と支払期限の決まりを持つモジュールに分ける。二つは別の理由で変わるため。",
+       "by": "reasoning"
+      },
+      {
+       "about": "データの置き場の持ち主",
+       "decided": "発行者情報と発行記録を置くフォルダーの場所は、一つのモジュールだけが決め、発行者情報の保管と番号の採番はそこから場所を受け取る。",
+       "by": "reasoning"
+      },
+      {
+       "about": "インストーラー",
+       "decided": "インストーラーは uv であり invoice のコードではないので、モジュールにもインターフェースにもしない。S2 の流れのうち invoice のコードに届く矢印は invoice --version だけとする。",
+       "by": "reasoning"
+      }
+     ]
     },
     {
      "id": "N2",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "読めない・保てないときの断り",
+       "decided": "発行者情報と発行記録の読み込み・保存・採番は、ファイルが読めない、壊れている、書けないときに、どのファイルの何が問題かと直し方を示して断り、コマンドはそれを日本語で利用者に示して何も印刷せずに止まる。",
+       "by": "reasoning"
+      }
+     ]
     },
     {
      "id": "N3",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "ほかの成果物の試しの出力が検査を止める",
+       "decided": null
+      }
+     ]
     },
     {
      "id": "N4",
