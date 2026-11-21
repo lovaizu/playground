@@ -67,7 +67,16 @@
    ],
    "status": "open",
    "necessary_conditions": [
-    {"id": "N1", "good": true, "decisions": []},
+    {
+     "id": "N1",
+     "good": false,
+     "decisions": [
+      {
+       "about": "読み替えと置き場を作る決めごとを一か所に",
+       "decided": null
+      }
+     ]
+    },
     {
      "id": "N2",
      "good": true,
@@ -82,7 +91,7 @@
     {"id": "N3", "good": true, "decisions": []},
     {
      "id": "N4",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "コンポーネントの図の食い違いも抜けに挙げる",
