@@ -51,7 +51,7 @@
     },
     {
      "id": "N5",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "単価の税抜・税込が分からないとき",
@@ -70,6 +70,28 @@
      "good": true,
      "decisions": []
     }
+   ]
+  },
+  {
+   "name": "\u5370\u5237\u3057\u305f\u8acb\u6c42\u66f8\u3092\u3001\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u305d\u306e\u307e\u307e\u53d6\u5f15\u5148\u306b\u51fa\u305b\u308b",
+   "path": "invoice/templates/",
+   "kind": "invoice",
+   "inputs": [
+    ".rn/best-practices/invoice/",
+    "invoice/docs/product-vision.md",
+    "invoice/docs/architecture.md"
+   ],
+   "status": "open",
+   "necessary_conditions": [
+    {"id": "N1", "good": false, "decisions": []},
+    {"id": "N2", "good": false, "decisions": []},
+    {"id": "N3", "good": false, "decisions": []},
+    {"id": "N4", "good": false, "decisions": []},
+    {"id": "N5", "good": false, "decisions": []},
+    {"id": "N6", "good": false, "decisions": []},
+    {"id": "N7", "good": false, "decisions": []},
+    {"id": "N8", "good": false, "decisions": []},
+    {"id": "N9", "good": false, "decisions": []}
    ]
   },
   {
@@ -305,7 +327,8 @@
     "invoice/README.md",
     "invoice/docs/architecture.md",
     "invoice/docs/software-design.md",
-    ".rn/best-practices/invoice/"
+    ".rn/best-practices/invoice/",
+    "invoice/templates/"
    ],
    "status": "open",
    "necessary_conditions": [
@@ -358,7 +381,8 @@
     "invoice/docs/architecture.md",
     "invoice/docs/software-design.md",
     "invoice/docs/test-design.md",
-    ".rn/best-practices/invoice/"
+    ".rn/best-practices/invoice/",
+    "invoice/templates/"
    ],
    "status": "open",
    "necessary_conditions": [
@@ -425,6 +449,10 @@
   {
    "do": "make",
    "path": "invoice/docs/software-design.md"
+  },
+  {
+   "do": "make",
+   "path": "invoice/templates/"
   },
   {
    "do": "make",
