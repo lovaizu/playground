@@ -65,8 +65,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         初回は、すべての答えがそろったときにだけ発行者情報を残させる (P2.4)。
         番号の採番を通して発行記録を、印刷を通して既定のプリンターを動かす。
     断るとき:
-        ledger.LedgerRefused: すべての直すところを行と直し方で示し、何も尋ねず、
-            何も印刷せずに 1 を返す (P1.3, P2.5)。
+        ledger.LedgerRefused: すべての直すところを、その problem ごとに示し、
+            何も尋ねず、何も印刷せずに 1 を返す (P1.3, P2.5)。
+            not_found: そのパスにファイルがないことと、パスの確かめ方を示す。
+            unreadable: そのファイルを読めないことと、UTF-8 の CSV での保存し直し方を示す。
+            no_rows: 明細に行が一つもないことと、一行の例を示す。
+            bad_value: 行と列と書かれていた値と、受け付ける形の例を示す。
         issuer.AnswerRefused: 受け付ける形の例を示し、同じ事柄を尋ね直す (P1.5)。
         place.StoreRefused: どのファイルの何が問題かと直し方を示し、
             何も印刷せずに 1 を返す。
@@ -85,7 +89,7 @@ from __future__ import annotations
 import datetime
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Literal
+from typing import Literal, TypeAlias
 
 TaxRate = Literal[8, 10]
 """明細行の消費税率 (%)。8 は軽減税率で、請求書にその旨を載せる。"""
@@ -126,21 +130,40 @@ class LedgerRow:
     """単価が税込なら True (P3.3)。"""
 
 
+LedgerProblem: TypeAlias = Literal["not_found", "unreadable", "no_rows", "bad_value"]
+"""明細を請求書にできないわけの種類。
+
+not_found: 渡されたパスに、ファイルがない。
+unreadable: ファイルはあるが、読めない。読む権限がない、フォルダーである、
+    または UTF-8 の CSV として読めないとき。
+no_rows: 見出しの行のほかに、明細の行が一つもない。
+bad_value: 明細の行か見出しの列に、受け付けない値がある。
+"""
+
+
 @dataclass(frozen=True)
 class LedgerFix:
-    """直すところ: 明細の一か所の誤りと、受け付ける形の例。
+    """直すところ: 明細を請求書にできない一つのわけと、受け付ける形の例。
 
-    コマンドはこの値だけから、どの行の何をどう直すかを日本語で示す (P1.2)。
+    コマンドはこの値だけから、どのファイルの、どの行の何をどう直すかを、
+    problem ごとに日本語で示す (P1.2)。
     """
 
+    path: Path
+    """渡された明細のファイルのパス。"""
+    problem: LedgerProblem
+    """わけの種類。"""
     line: int | None
-    """誤りの行の番号。ファイル全体の誤りなら None。"""
+    """誤りの行の番号。見出しの行は 1。problem が bad_value でなければ None。"""
     column: str | None
-    """誤りの列の見出し。行全体やファイル全体の誤りなら None。"""
+    """誤りの列の見出し。problem が bad_value でなければ None。"""
     given: str | None
-    """明細に書かれていた値。値がないなら None。"""
+    """明細に書かれていた値。値がない、または problem が bad_value でなければ None。"""
     expected: str
-    """受け付ける形の例。例: `2026-11-20`。"""
+    """受け付ける形の例。bad_value では値の例。例: `2026-11-20`。
+    no_rows では明細の一行の例。not_found と unreadable では空。"""
+    detail: str
+    """ファイルシステムか CSV の読み取りが返したわけ。なければ空。"""
 
 
 class LedgerRefused(Exception):
@@ -160,9 +183,14 @@ def read(path: Path) -> tuple[LedgerRow, ...]:
         取引先の名称からは、宛名の敬称も読み取る。
     ほかに変えるもの: なし。明細のファイルを読むだけで、書かない。
     断るとき:
-        LedgerRefused: ファイルを読めない、行が一つもない、または一行でも
-            請求書にできない行があるとき。すべての行を読み終えてから、
-            すべての直すところを持って上がる (P1.3)。
+        LedgerRefused: 明細を請求書にできないとき。直すところの problem で、
+            どのわけかを分ける。
+            not_found: パスにファイルがないとき。その直すところ一つだけを持って上がる。
+            unreadable: ファイルを読めないとき。その直すところ一つだけを持って上がる。
+            no_rows: 見出しのほかに行が一つもないとき。見出しに bad_value が
+                あれば、それらとともに持って上がる。
+            bad_value: 一行でも請求書にできない行か、受け付けない見出しがあるとき。
+                すべての行を読み終えてから、すべての直すところを持って上がる (P1.3)。
     """
     raise NotImplementedError("ledger.read")
 ```
@@ -304,7 +332,7 @@ class Question:
 
 
 @dataclass(frozen=True)
-class IssuerFix:
+class AnswerFix:
     """直すところ: 形に合わない一つの答えと、受け付ける形の例。"""
 
     item: IssuerItem
@@ -318,7 +346,7 @@ class IssuerFix:
 class AnswerRefused(Exception):
     """答えが形に合わないときに上がり、直すところを持つ。"""
 
-    def __init__(self, fix: IssuerFix) -> None:
+    def __init__(self, fix: AnswerFix) -> None:
         super().__init__(fix)
         self.fix = fix
 
@@ -456,10 +484,8 @@ class RateTotal:
 
     rate: TaxRate
     """税率。"""
-    tax_included: bool
-    """対象額が税込なら True (P3.3)。"""
     base: int
-    """税率ごとの対象額。円の整数。"""
+    """税率ごとの対象額。円の整数。税込か税抜は、請求書の tax_included のとおり。"""
     tax: int
     """消費税額。円未満を一度だけ切り捨てた円の整数 (P3.2)。"""
 
@@ -516,10 +542,10 @@ from __future__ import annotations
 from invoice.periods import Period
 
 
-def number(customer: str, period: Period) -> str:
+def number(customer_name: str, period: Period) -> str:
     """番号を求める (S1)。
 
-    受け取る: 請求書の取引先と締めの期間。置き場の場所は place.folder から受け取る。
+    受け取る: 請求書の取引先の名称と締めの期間。置き場の場所は place.folder から受け取る。
     返す: その組の請求書番号。前に付けた組には、前と同じ番号 (P3.5, P1.4)。
         初めての組には、ほかの組に付けていない番号。
     ほかに変えるもの: 初めての組なら、その番号を発行記録に残してから返す。
@@ -594,7 +620,7 @@ from invoice.layout import PrintDocument
 class PrintFix:
     """直すところ: 紙面が既定のプリンターに届かないわけ (S4)。"""
 
-    kind: Literal["no_default_printer", "send_failed"]
+    problem: Literal["no_default_printer", "send_failed"]
     """既定のプリンターがない、または送れない。"""
     detail: str
     """印刷システムが返したわけ。なければ空。"""
