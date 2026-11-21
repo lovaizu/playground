@@ -125,7 +125,12 @@
     {
      "id": "N4",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "invoice のライセンス",
+       "decided": null
+      }
+     ]
     },
     {
      "id": "N5",
