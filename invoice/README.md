@@ -1,4 +1,4 @@
-# invoice
+# `invoice`
 
 invoice は、明細の CSV ファイルを渡すと、請求書を作ってプリンターから印刷するコマンドラインのツールです。
 
@@ -12,20 +12,22 @@ invoice は、経理チームで、取引先に出す請求書を明細のファ
 
 ## 必要なもの
 
-- Windows 10 か 11 のパソコンにつないだ既定のプリンター: PowerShell で `Get-CimInstance Win32_Printer -Filter "Default=True"` を打つと、その名前が出ます。
+- Linux のノートPCの端末: アプリの一覧で「端末」を開くか `Ctrl` + `Alt` + `T` を押すと、文字を打てる画面が出ます。
+- curl: 端末で `curl --version` を打つと版が出て、出ないときは `sudo apt install curl` で入ります。
+- 既定のプリンター: 端末で `lpstat -d` を打つと、既定のプリンターの名前が出ます。
 
 ## インストール
 
 ```console
-PS> # スタートで「PowerShell」と打って開き、次の行を一行ずつ貼り付けて Enter を押します。
-PS> powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-PS> # ここで PowerShell をいったん閉じて、開き直します。
-PS> uv tool install https://github.com/lovaizu/playground/releases/download/invoice-v0.1.0/invoice-0.1.0-py3-none-any.whl
-PS> invoice --version
-invoice 0.1.0
+# 端末を開き、# で始まらない行を一行ずつ貼り付けて Enter を押します。
+curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
+# invoice のリリースまでは、次の行は 404 Not Found と出て止まります。
+uv tool install https://github.com/lovaizu/playground/releases/download/invoice-v0.1.0/invoice-0.1.0-py3-none-any.whl
+invoice --version
 ```
 
-最後の行に `invoice 0.1.0` と出れば、インストールできています。
+最後に `invoice 0.1.0` と出れば、インストールできています。
 
 ## 使ってみる
 
@@ -33,7 +35,13 @@ invoice 0.1.0
 
 株式会社あおば事務用品の経理担当が、株式会社みなと商事への 11 月分の請求書を印刷する例です。
 
-販売管理から書き出した明細の CSV ファイル `2026年11月分明細.csv` は、次のとおりです。
+LibreOffice Calc で付けている 11 月分の明細を、CSV で保存します。
+
+「ファイル」→「名前を付けて保存」で、種類は「テキスト CSV (.csv)」を選びます。
+
+文字セットは「Unicode (UTF-8)」にして、`2026年11月分明細.csv` として保存します。
+
+中身は次のとおりです。
 
 ```csv
 取引先,取引日,品目,数量,単位,単価(税抜),税率
@@ -44,14 +52,14 @@ invoice 0.1.0
 
 明細には、取引先、取引日、品目、数量、単位、単価、税率の七つの列が要ります。
 
-単価の見出しには、税抜なら「単価(税抜)」、税込なら「単価(税込)」と書きます。
+単価の見出しには、税抜なら `単価(税抜)`、税込なら `単価(税込)` と書きます。
 
-エクスプローラーでこのファイルのあるフォルダーを開き、アドレス欄に powershell と打って Enter を押します。
+ファイルマネージャーでこのファイルを保存したフォルダーを開き、何もないところを右クリックして「端末で開く」を選びます。
 
-開いた PowerShell で、コマンドを一つ打ちます。
+開いた端末で、コマンドを一つ打ちます。
 
 ```console
-PS> invoice 2026年11月分明細.csv
+$ invoice 2026年11月分明細.csv
 はじめて使うので、発行者の情報を伺います。次からは聞きません。
 発行者の正式名称: 株式会社あおば事務用品
 登録番号(T と 13 桁の数字): T1234567890123
@@ -105,7 +113,7 @@ PS> invoice 2026年11月分明細.csv
 
 ### コマンドを使ったことがなくても、自分たちだけで準備できる?
 
-準備はこのガイドのコマンドを三つ貼り付けるだけで、Python を書くことも入れることもいりません。
+準備はこのガイドの四行を端末に貼り付けるだけで、Python を書くことも入れることもいりません。
 
 ### 毎月の請求書に手間はかからない?
 

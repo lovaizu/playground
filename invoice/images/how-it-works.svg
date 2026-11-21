@@ -29,7 +29,7 @@
   <!-- step 1 -->
   <rect x="20" y="124" width="380" height="84" rx="8" fill="#f7f7f7" stroke="#666"/>
   <text x="40" y="154" class="step">1. ガイドのとおりに準備する</text>
-  <text x="40" y="180" class="note">インストールのコマンドを三つ貼り付けるだけ</text>
+  <text x="40" y="180" class="note">インストールの四行を端末に貼り付けるだけ</text>
   <text x="40" y="199" class="note">Python を書くことも入れることもいりません</text>
   <line x1="400" y1="166" x2="430" y2="166" stroke="#999" stroke-dasharray="4 3"/>
   <rect x="430" y="124" width="510" height="84" rx="8" fill="#fff8f0" stroke="#d08a4a"/>
@@ -42,7 +42,7 @@
   <!-- step 2 -->
   <rect x="20" y="238" width="380" height="84" rx="8" fill="#f7f7f7" stroke="#666"/>
   <text x="40" y="268" class="step">2. 明細を指定してコマンドを一つ打つ</text>
-  <text x="40" y="294" class="note">PS&gt; invoice 2026年11月分明細.csv</text>
+  <text x="40" y="294" class="note">$ invoice 2026年11月分明細.csv</text>
   <text x="40" y="313" class="note">発行者の情報を聞くのは初回だけ</text>
   <line x1="400" y1="280" x2="430" y2="280" stroke="#999" stroke-dasharray="4 3"/>
   <rect x="430" y="238" width="510" height="84" rx="8" fill="#fff8f0" stroke="#d08a4a"/>

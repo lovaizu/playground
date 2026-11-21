@@ -1,0 +1,14 @@
+downloading uv 0.13.9 aarch64-unknown-linux-gnu
+installing to /tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-rn-rebuild/75be1bff-9b4b-4d82-a24f-55cc85521035/scratchpad/rnrun/tmp/tmp.oxeEtkcf8U/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+error: Failed to download `invoice @ https://github.com/lovaizu/playground/releases/download/invoice-v0.1.0/invoice-0.1.0-py3-none-any.whl`
+  cause: Failed to fetch: https://github.com/lovaizu/playground/releases/download/invoice-v0.1.0/invoice-0.1.0-py3-none-any.whl
+  cause: HTTP status client error (404 Not Found) for url (https://github.com/lovaizu/playground/releases/download/invoice-v0.1.0/invoice-0.1.0-py3-none-any.whl)
+bash: line 1: invoice: command not found

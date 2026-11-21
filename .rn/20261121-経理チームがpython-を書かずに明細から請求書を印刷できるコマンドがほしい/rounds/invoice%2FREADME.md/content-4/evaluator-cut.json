@@ -1,0 +1,92 @@
+{
+ "goal": "\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u3001\u958b\u767a\u8005\u306e\u624b\u3092\u501f\u308a\u305a\u306b\u3001\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u81ea\u5206\u305f\u3061\u3067\u5370\u5237\u3067\u304d\u308b\u3002\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u306f\u3001\u30ac\u30a4\u30c9\u3060\u3051\u3092\u983c\u308a\u306b\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u304b\u3089\u30b3\u30de\u30f3\u30c9\u4e00\u3064\u3067\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3059\u308b\u3002",
+ "deliverable": {
+  "name": "\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u304c\u3001\u30ac\u30a4\u30c9\u3060\u3051\u3092\u898b\u3066\u30b3\u30de\u30f3\u30c9\u3092\u6e96\u5099\u3057\u3001\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b",
+  "path": "invoice/README.md",
+  "more_paths": [
+   "invoice/images/"
+  ]
+ },
+ "judges_by": {
+  "what": "A newcomer decides from the README alone whether the product fits their work, and if it does, starts using it, as the README holds only what brings them to that decision and that start.",
+  "critical_success_factors": [
+   {
+    "id": "C1",
+    "what": "The reader knows whether the product fits their work.",
+    "necessary_conditions": [
+     {
+      "id": "N1",
+      "about": "the opening",
+      "what": "Does the opening say what the product is, who it's for, and what it lets them achieve?"
+     },
+     {
+      "id": "N2",
+      "about": "Non-goals",
+      "what": "Does the README list what readers might expect the product to do but it doesn't?"
+     },
+     {
+      "id": "N3",
+      "about": "the opening",
+      "what": "Does the README say at the top where the product isn't ready for use yet?"
+     },
+     {
+      "id": "N4",
+      "about": "License",
+      "what": "Does the README name the license and link its full text?"
+     },
+     {
+      "id": "N5",
+      "about": "the whole",
+      "what": "Does the README answer each question in the order a reader comes to ask it?"
+     }
+    ]
+   },
+   {
+    "id": "C2",
+    "what": "The reader learns what they get from the product in work like their own.",
+    "necessary_conditions": [
+     {
+      "id": "N6",
+      "about": "Walkthrough",
+      "what": "Does the walkthrough show a real run on typical work that delivers what the product vision's key results promise, in a form the reader can see?"
+     }
+    ]
+   },
+   {
+    "id": "C3",
+    "what": "The reader understands why the product can give it, and trusts that it does.",
+    "necessary_conditions": [
+     {
+      "id": "N7",
+      "about": "How it works",
+      "what": "Does How it works state first, in the reader's words, the one way that the product vision's concept puts first, and build the rest of its explanation from it?"
+     },
+     {
+      "id": "N8",
+      "about": "How it works",
+      "what": "Does How it works answer the problems and doubts that bring readers to the product, each by the part of the product that answers it and how that part follows from the one way?"
+     }
+    ]
+   },
+   {
+    "id": "C4",
+    "what": "The reader installs the product and starts using it without help.",
+    "necessary_conditions": [
+     {
+      "id": "N9",
+      "about": "Requirements, Installation",
+      "what": "Can a reader with nothing set up install the product by the README alone, and see that it works?"
+     },
+     {
+      "id": "N10",
+      "about": "Documentation",
+      "what": "Does the README link where to go for fuller use and for help?"
+     }
+    ]
+   }
+  ]
+ },
+ "worktree": ".claude/worktrees/rn-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044",
+ "trial": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-rn-rebuild/75be1bff-9b4b-4d82-a24f-55cc85521035/scratchpad/rnrun/tmp/rn-trial-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044-invoice%2FREADME.md-content-4/",
+ "round": ".claude/worktrees/rn-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044/.rn/20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044/rounds/invoice%2FREADME.md/content-4"
+}
