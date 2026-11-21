@@ -31,37 +31,43 @@
    "necessary_conditions": [
     {
      "id": "N1",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N2",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N3",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N4",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N5",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "単価の税抜・税込が分からないとき",
+       "decided": "明細の見出しにも手元の書類にも、単価が税抜か税込かが示されていないときは、請求書を作る人が推測で決めずにユーザーに尋ね、その答えで請求書の全体を税抜か税込かにそろえる。宛先や振込先が分からないときと同じ手順にする。",
+       "by": "reasoning"
+      }
+     ]
     },
     {
      "id": "N7",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N6",
-     "good": false,
+     "good": true,
      "decisions": []
     }
    ]
