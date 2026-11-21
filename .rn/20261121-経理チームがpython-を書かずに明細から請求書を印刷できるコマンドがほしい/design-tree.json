@@ -128,7 +128,8 @@
      "decisions": [
       {
        "about": "invoice のライセンス",
-       "decided": null
+       "decided": "社内だけで使うので付けない",
+       "by": "user"
       }
      ]
     },
