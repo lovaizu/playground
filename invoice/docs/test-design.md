@@ -35,7 +35,10 @@ from invoice.issuer import BankAccount, Issuer, IssuerItem, PaymentTerms
 from invoice.ledger import Customer, LedgerRow, TaxRate
 from invoice.periods import Period
 
-HEADER = "取引先,取引日,品目,数量,単位,単価(税抜),税率"
+COLUMNS = ("取引先", "取引日", "品目", "数量", "単位", "単価(税抜)", "税率")
+"""税抜の明細の見出しの列。"""
+
+HEADER = ",".join(COLUMNS)
 """税抜の明細の見出しの行。"""
 
 INCLUDED_HEADER = "取引先,取引日,品目,数量,単位,単価(税込),税率"
@@ -107,6 +110,12 @@ AOBA = Issuer(
 MINATO = Customer(name="株式会社みなと商事", honorific="御中")
 """ガイドの「使ってみる」の取引先。"""
 
+MINATO_TOKYO = Customer(name="株式会社みなと商事東京支店", honorific="御中")
+"""MINATO と名前の似た、別の取引先。"""
+
+HIKARI = Customer(name="株式会社ひかり設計", honorific="御中")
+"""あおば事務用品の、もう一つの取引先。"""
+
 NOVEMBER = Period(start=datetime.date(2026, 11, 1), end=datetime.date(2026, 11, 30))
 """月末締めの、2026 年 11 月の締めの期間。"""
 
@@ -171,21 +180,29 @@ README_PAPER = (
     "お支払期限: 2026年12月31日",
     "お振込先: さくら銀行 本店営業部 普通 1234567 カ)アオバジムヨウヒン",
     "取引日 品目 数量 単価(税抜) 税率 金額(税抜)",
-    "2026/11/05 コピー用紙 A4 500枚 10 箱 2,800 10% 28,000",
-    "2026/11/12 ドリップコーヒー 100袋入 3 箱 4,500 8%(軽減税率) 13,500",
-    "2026/11/20 ボールペン 黒 10本入 5 箱 1,200 10% 6,000",
+    "2026年11月5日 コピー用紙 A4 500枚 10 箱 2,800 10% 28,000",
+    "2026年11月12日 ドリップコーヒー 100袋入 3 箱 4,500 8%(軽減税率) 13,500",
+    "2026年11月20日 ボールペン 黒 10本入 5 箱 1,200 10% 6,000",
     "税率 対象額(税抜) 消費税額",
     "10% 34,000 3,400",
     "8%(軽減税率) 13,500 1,080",
     "合計(税込): 51,980 円",
 )
-"""ガイドの「使ってみる」で、プリンターから出る請求書に載る行を、空白を一つにつめて。"""
+"""ガイドの「使ってみる」で、プリンターから出る請求書に載る行を、空白を一つにつめて。
+
+明細の取引日は、layout.typeset の契約のとおり「2026年11月5日」の形で載る。
+"""
+
+
+def checked(**changed: str) -> dict[IssuerItem, issuer.Answer]:
+    """ガイドの答えを、changed の事柄だけ替えて確かめさせた、事柄ごとの答え。何も残さない。"""
+    answers = dict(zip(ITEMS, AOBA_ANSWERS, strict=True)) | changed
+    return {item: issuer.check(item, answers[item]) for item in ITEMS}
 
 
 def save_aoba(**changed: str) -> Issuer:
     """ガイドの答えを、changed の事柄だけ替えて確かめさせ、発行者情報として残させる。"""
-    answers = dict(zip(ITEMS, AOBA_ANSWERS, strict=True)) | changed
-    return issuer.save({item: issuer.check(item, answers[item]) for item in ITEMS})
+    return issuer.save(checked(**changed))
 
 
 def paper(document: layout.PrintDocument) -> str:
@@ -209,6 +226,11 @@ def billed(out: str) -> dict[str, tuple[str, str]]:
     """端末に示された請求書ごとの行を、宛名から請求書番号とご請求金額へ。"""
     found = re.findall(r"^(.+): 請求書番号 (\S+)、ご請求金額 ([0-9,]+) 円$", out, re.M)
     return {name: (number, amount) for name, number, amount in found}
+
+
+def printed(sheets: int) -> str:
+    """ガイドのとおりに、送った既定のプリンターの名前と印刷した枚数を示す行。"""
+    return f"既定のプリンター「経理室プリンター」で {sheets} 枚を印刷しました。"
 
 
 def files(folder: Path) -> dict[Path, bytes]:
@@ -253,7 +275,7 @@ class Terminal:
 
 @dataclass
 class Printer:
-    """既定のプリンターの代役。printing.send に替わり、受け取った紙面を順に持つ。
+    """既定のプリンターの代役。printing.send に替わり、受け取った紙面を順に持ち、名前を返す。
 
     refuse_at を置くと、その数の紙面を受け取ったあとは、problem のわけで断る。
     """
@@ -261,11 +283,13 @@ class Printer:
     sent: list[layout.PrintDocument] = field(default_factory=list)
     refuse_at: int | None = None
     problem: str = "send_failed"
+    name: str = "経理室プリンター"
 
-    def send(self, document: layout.PrintDocument) -> None:
+    def send(self, document: layout.PrintDocument) -> str:
         if self.refuse_at is not None and len(self.sent) >= self.refuse_at:
             raise printing.PrintRefused(printing.PrintFix(self.problem, "代役が断った"))  # type: ignore[arg-type]
         self.sent.append(document)
+        return self.name
 ```
 
 `invoice/tests/conftest.py` は、ケースが受け取る置き場と代役を渡す。
@@ -375,6 +399,7 @@ from tests.given import (
     billed,
     csv,
     paper,
+    printed,
 )
 
 supports = pytest.mark.supports
@@ -411,11 +436,11 @@ def printed_month(out: str, printer: Printer) -> None:
     assert {name: amount for name, (_, amount) in shown.items()} == {
         name: amount for name, (amount, *_) in MONTH_PAPERS.items()
     }
-    assert len({number for number, _ in shown.values()}) == 3
-    assert "3 枚を印刷しました。" in out
+    assert {number for number, _ in shown.values()} == {"2026-11-001", "2026-11-002", "2026-11-003"}
+    assert printed(3) in out
     assert len(printer.sent) == 3
     for name, (amount, *totals) in MONTH_PAPERS.items():
-        [text] = [paper(each) for each in printer.sent if f"{name}" in paper(each)]
+        [text] = [paper(each) for each in printer.sent if name in paper(each)]
         number, _ = shown[name]
         for line in (
             "株式会社あおば事務用品",
@@ -512,16 +537,15 @@ def test_翌月からは明細を渡すコマンド一つで何も尋ねずに�
     terminal()
     # When: 利用者が 12 月分の明細を渡して、コマンドを一つ打つ。
     code = command.main([str(december)])
-    # Then: 何も尋ねずに、11 月と別の番号の請求書を一枚印刷する。
+    # Then: 何も尋ねずに、12 月の最初の番号の請求書を一枚印刷する。
     out = capsys.readouterr().out
     assert code == 0
     assert asked(out) == []
-    number, amount = billed(out)["株式会社みなと商事 御中"]
-    assert (number != november[0], amount) == (True, "34,360")
-    assert "1 枚を印刷しました。" in out
+    assert billed(out) == {"株式会社みなと商事 御中": ("2026-12-001", "34,360")}
+    assert printed(1) in out
     [document] = printer.sent
     for line in (
-        f"請求書番号: {number}",
+        "請求書番号: 2026-12-001",
         "発行日: 2026年12月31日",
         "お支払期限: 2027年1月31日",
         "10% 22,400 2,240",
@@ -544,7 +568,6 @@ def test_翌月からは明細を渡すコマンド一つで何も尋ねずに�
 
 from __future__ import annotations
 
-import datetime
 import os
 import subprocess
 from collections.abc import Callable
@@ -554,20 +577,22 @@ import pytest
 
 from invoice import billing, command, issuer, layout, ledger as ledger_module, numbering, printing
 from invoice.issuer import Issuer
-from invoice.periods import Period
 from tests.given import (
     AOBA,
     AOBA_ANSWERS,
-    README_LEDGER_ROWS,
+    INCLUDED_HEADER,
+    MINATO,
+    NOVEMBER,
+    README_INVOICE,
     README_PAPER,
     README_ROWS,
-    INCLUDED_HEADER,
     Printer,
     Terminal,
     asked,
     billed,
     csv,
     paper,
+    printed,
     save_aoba,
 )
 
@@ -591,12 +616,12 @@ def test_明細から請求書が印刷され番号と金額と枚数が示さ�
     terminal()
     # When: 利用者が明細のファイルを渡す。
     code = command.main([str(path)])
-    # Then: 一枚の請求書を既定のプリンターに送り、番号と金額と枚数を示す。
+    # Then: 一枚の請求書を既定のプリンターに送り、番号と金額と、プリンターの名前と枚数を示す。
     out = capsys.readouterr().out
     assert code == 0
     assert asked(out) == []
     assert billed(out) == {"株式会社みなと商事 御中": ("2026-11-001", "51,980")}
-    assert "1 枚を印刷しました。" in out
+    assert out.endswith(printed(1) + "\n")
     [document] = printer.sent
     assert document.sheets == 1
     for line in README_PAPER:
@@ -623,16 +648,18 @@ def test_取引先と締めの期間ごとに一枚ずつ印刷される(
     terminal()
     # When: 利用者が明細のファイルを渡す。
     code = command.main([str(path)])
-    # Then: 取引先と締めの期間の組ごとに一枚ずつ、その期間の行だけを載せて印刷する。
+    # Then: 取引先と締めの期間の組ごとに一枚ずつ、その期間の行だけを載せ、発行日の月ごとの番号で印刷する。
     out = capsys.readouterr().out
     assert code == 0
-    assert "3 枚を印刷しました。" in out
+    assert printed(3) in out
     texts = [paper(each) for each in printer.sent]
     expected = (
-        ("株式会社みなと商事 御中", "2026年11月20日", "2026年12月10日", "30,800", "2026/11/20", "2026/11/21"),
-        ("株式会社みなと商事 御中", "2026年12月20日", "2027年1月10日", "6,600", "2026/11/21", "2026/11/20"),
-        ("株式会社ひかり設計 御中", "2026年11月20日", "2026年12月10日", "28,160", "2026/11/05", "2026/11/20"),
+        ("株式会社みなと商事 御中", "2026年11月20日", "2026年12月10日", "30,800", "コピー用紙", "ボールペン"),
+        ("株式会社みなと商事 御中", "2026年12月20日", "2027年1月10日", "6,600", "ボールペン", "コピー用紙"),
+        ("株式会社ひかり設計 御中", "2026年11月20日", "2026年12月10日", "28,160", "トナーカートリッジ", "コピー用紙"),
     )
+    assert len(texts) == 3
+    assert {each.split("請求書番号: ")[1].split()[0] for each in texts} == {"2026-11-001", "2026-11-002", "2026-12-001"}
     for name, issued, due, amount, kept, left in expected:
         [text] = [each for each in texts if name in each and f"発行日: {issued}" in each]
         assert f"お支払期限: {due}" in text
@@ -753,8 +780,7 @@ def test_同じ明細を二度印刷しても同じ請求書番号になる(
     assert code == 0
     assert billed(second) == billed(first) == {"株式会社みなと商事 御中": ("2026-11-001", "51,980")}
     assert paper(printer.sent[1]) == paper(printer.sent[0])
-    november = Period(datetime.date(2026, 11, 1), datetime.date(2026, 11, 30))
-    assert numbering.number("株式会社みなと商事", november) == "2026-11-001"
+    assert numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end) == "2026-11-001"
 
 
 @supports("S1", "P2.3", "印刷")
@@ -835,9 +861,7 @@ def test_利用者と言葉を交わすのはコマンドだけ(
     printing.print_documents(layout.typeset(invoices))
     # Then: どの部品も、端末に何も示さない。
     assert capsys.readouterr() == ("", "")
-    assert [each.lines for each in invoices] == [
-        tuple(billing.InvoiceLine(row, amount) for row, amount in zip(README_LEDGER_ROWS, (28000, 13500, 6000)))
-    ]
+    assert [each.lines for each in invoices] == [README_INVOICE.lines]
 ```
 
 `invoice/tests/integration/test_start.py` は、S2 の道筋を確かめる。
@@ -1263,6 +1287,9 @@ def test_置き場のファイルが壊れていると直し方を示し何も�
 
 from __future__ import annotations
 
+import os
+import re
+import sys
 from collections.abc import Callable
 from pathlib import Path
 
@@ -1274,13 +1301,16 @@ from tests.given import (
     AOBA,
     AOBA_ANSWERS,
     AOBA_LABELS,
+    ITEMS,
     README_ROWS,
     Printer,
     Terminal,
     asked,
     billed,
+    checked,
     csv,
     files,
+    printed,
 )
 
 supports = pytest.mark.supports
@@ -1291,6 +1321,20 @@ def test_版を尋ねると版だけを示して0を返す(home: Path, capsys: p
     # Given: 何も残していないノートPC。
     # When
     code = command.main(["--version"])
+    # Then
+    assert code == 0
+    assert capsys.readouterr() == ("invoice 0.1.0\n", "")
+    assert files(place.folder()) == {}
+
+
+@supports("test_版を尋ねると版が示される")
+def test_引数を渡さずに呼ぶとコマンドラインの引数を使う(
+    home: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    # Given: 利用者が端末で `invoice --version` と打った状態。
+    monkeypatch.setattr(sys, "argv", ["invoice", "--version"])
+    # When
+    code = command.main()
     # Then
     assert code == 0
     assert capsys.readouterr() == ("invoice 0.1.0\n", "")
@@ -1378,6 +1422,45 @@ def test_見出しの行しかない明細では行がないことと一行の�
     assert printer.sent == []
 
 
+@supports("test_明細の直すところをすべて示し何も印刷しない")
+@pytest.mark.parametrize(
+    "wrong",
+    [
+        "株式会社みなと商事,2026-11-31,コピー用紙 A4 500枚,10,箱,2800,10%",
+        "株式会社みなと商事,2026-11-05,コピー用紙 A4 500枚,,箱,2800,10%",
+    ],
+)
+def test_受け付けない値の行がある明細ではその行と列と値と受け付ける例を示し何も尋ねずに1を返す(
+    home: Path,
+    ledger: Callable[..., Path],
+    terminal: Callable[..., Terminal],
+    printer: Printer,
+    wrong: str,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    # Given: 発行者情報をまだ残していないノートPCと、二行目の取引日にない日付を書いたか、数量を空にした明細。
+    path = ledger(csv(wrong))
+    with pytest.raises(ledger_module.LedgerRefused) as refused:
+        ledger_module.read(path)
+    [fix] = refused.value.fixes
+    terminal()
+    # When
+    code = command.main([str(path)])
+    # Then: その行と列と、書かれていた値と、受け付ける形の例を示し、何も尋ねず、何も残さず、何も印刷しない。
+    out = capsys.readouterr().out
+    assert (fix.problem, fix.line) == ("bad_value", 2)
+    assert code == 1
+    assert str(path) in out
+    rest = out.replace(str(path), "").replace(fix.given or "", "").replace(fix.expected, "")
+    assert re.search(r"(?<![0-9])2(?![0-9])", rest), "誤りの行の番号 2 を示す"
+    assert fix.column is not None and fix.column in out
+    assert fix.given is None or fix.given in out
+    assert fix.expected != "" and fix.expected in out
+    assert asked(out) == []
+    assert files(place.folder()) == {}
+    assert printer.sent == []
+
+
 @supports("test_初回は事柄を順に尋ねすべての答えがそろってから残す")
 def test_発行者情報がない状態で明細を渡すとloadの事柄を順に尋ねて残す(
     home: Path, ledger: Callable[..., Path], terminal: Callable[..., Terminal], printer: Printer,
@@ -1410,7 +1493,8 @@ def test_発行者情報がある状態で明細を渡すと何も尋ねずに�
     out = capsys.readouterr().out
     assert code == 0
     assert asked(out) == []
-    assert "1 枚を印刷しました。" in out
+    assert billed(out) == {"株式会社みなと商事 御中": ("2026-11-001", "51,980")}
+    assert out.endswith(printed(1) + "\n")
     assert issuer.load() == AOBA
     assert len(printer.sent) == 1
 
@@ -1433,20 +1517,21 @@ def test_尋ねる途中で止めると何も残さず130を返す(
 
 
 @supports("test_形に合わない答えは例を示して同じ事柄を尋ね直す")
+@pytest.mark.parametrize(("at", "wrong"), [(6, "123456"), (0, "")])
 def test_断られた答えのあとは同じ事柄だけを尋ね直す(
     home: Path, ledger: Callable[..., Path], terminal: Callable[..., Terminal], printer: Printer,
-    capsys: pytest.CaptureFixture[str],
+    at: int, wrong: str, capsys: pytest.CaptureFixture[str],
 ) -> None:
-    # Given: 口座番号に 6 桁を答えてから、7 桁を答える利用者。
-    terminal(*AOBA_ANSWERS[:6], "123456", *AOBA_ANSWERS[6:])
+    # Given: 口座番号に 6 桁を答えるか、名称に何も打たずに Enter を押してから、正しく答える利用者。
+    terminal(*AOBA_ANSWERS[:at], wrong, *AOBA_ANSWERS[at:])
     with pytest.raises(issuer.AnswerRefused) as refused:
-        issuer.check("account_number", "123456")
+        issuer.check(ITEMS[at], wrong)
     # When
     code = command.main([str(ledger(csv(*README_ROWS)))])
     # Then
     out = capsys.readouterr().out
     assert code == 0
-    assert asked(out) == [*AOBA_LABELS[:7], *AOBA_LABELS[6:]]
+    assert asked(out) == [*AOBA_LABELS[: at + 1], *AOBA_LABELS[at:]]
     assert refused.value.fix.expected in out
     assert issuer.load() == AOBA
 
@@ -1476,6 +1561,59 @@ def test_発行記録が壊れているとそのファイルを示して1を返�
     assert printer.sent == []
 
 
+@supports("test_置き場のファイルが壊れていると直し方を示し何も印刷しない")
+def test_発行者情報のファイルを読めないとそのファイルを示し何も尋ねず何も印刷せずに1を返す(
+    aoba: Issuer, ledger: Callable[..., Path], terminal: Callable[..., Terminal], printer: Printer,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    # Given: 発行者情報を残したあと、そのファイルを読む権限がなくなった状態。
+    if os.geteuid() == 0:
+        pytest.skip("root はどのファイルも読める")
+    locked = list(files(place.folder()))
+    for each in locked:
+        each.chmod(0)
+    with pytest.raises(place.StoreRefused) as refused:
+        issuer.load()
+    terminal()
+    # When
+    code = command.main([str(ledger(csv(*README_ROWS)))])
+    # Then: 読めないファイルを示し、何も尋ねず、何も印刷せずに止まる。
+    out = capsys.readouterr().out
+    assert refused.value.fix.problem == "unreadable"
+    assert code == 1
+    assert str(refused.value.fix.path) in out
+    assert asked(out) == []
+    assert printer.sent == []
+
+
+@supports("test_置き場のファイルが壊れていると直し方を示し何も印刷しない")
+def test_置き場に書けないと書けないことと直し方を示し何も残さず1を返す(
+    home: Path, ledger: Callable[..., Path], terminal: Callable[..., Terminal], printer: Printer,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    # Given: ホームフォルダーに書く権限がない、初めてのノートPCと、初回の答えをすべて打つ利用者。
+    if os.geteuid() == 0:
+        pytest.skip("root はどこにでも書ける")
+    path = ledger(csv(*README_ROWS))
+    home.chmod(0o500)
+    try:
+        with pytest.raises(place.StoreRefused) as refused:
+            issuer.save(checked())
+        terminal(*AOBA_ANSWERS)
+        # When
+        code = command.main([str(path)])
+        # Then: すべての事柄を尋ねたあと、書けないファイルを示し、何も残さず、何も印刷せずに止まる。
+        out = capsys.readouterr().out
+        assert refused.value.fix.problem == "unwritable"
+        assert code == 1
+        assert asked(out) == list(AOBA_LABELS)
+        assert str(refused.value.fix.path) in out
+        assert files(place.folder()) == {}
+        assert printer.sent == []
+    finally:
+        home.chmod(0o700)
+
+
 @supports("test_既定のプリンターがないと整え方を示し整えて打ち直すと同じ番号で出る")
 @pytest.mark.parametrize("problem", ["no_default_printer", "send_failed"])
 def test_印刷を断られるとプリンターの整え方を示して1を返す(
@@ -1493,6 +1631,7 @@ def test_印刷を断られるとプリンターの整え方を示して1を返�
     assert "プリンター" in out
     assert "印刷しました" not in out
     assert printer.sent == []
+    assert issuer.load() == AOBA
 ```
 
 `invoice/tests/unit/test_ledger.py` は、`ledger.read` を確かめる。
@@ -1502,32 +1641,26 @@ def test_印刷を断られるとプリンターの整え方を示して1を返�
 
 from __future__ import annotations
 
+import dataclasses
 import datetime
 import os
+from collections.abc import Callable
 from pathlib import Path
+from typing import Literal
 
 import pytest
 
-from invoice import ledger
+from invoice import ledger as ledger_module
 from invoice.ledger import Customer, LedgerFix, LedgerRefused
-from tests.given import HEADER, INCLUDED_HEADER, README_LEDGER_ROWS, README_ROWS, csv, row
+from tests.given import COLUMNS, HEADER, HIKARI, INCLUDED_HEADER, README_LEDGER_ROWS, README_ROWS, csv, row
 
 supports = pytest.mark.supports
-
-COLUMNS = ("取引先", "取引日", "品目", "数量", "単位", "単価(税抜)", "税率")
-"""税抜の明細の見出しの列。"""
-
-
-def write(folder: Path, text: str, encoding: str = "utf-8") -> Path:
-    path = folder / "2026年11月分明細.csv"
-    path.write_bytes(text.encode(encoding))
-    return path
 
 
 def refused(path: Path) -> tuple[LedgerFix, ...]:
     """明細を読ませたときの、すべての直すところ。"""
     with pytest.raises(LedgerRefused) as caught:
-        ledger.read(path)
+        ledger_module.read(path)
     return caught.value.fixes
 
 
@@ -1542,57 +1675,55 @@ def with_cell(column: str, value: str) -> str:
 @pytest.mark.parametrize("newline", ["\n", "\r\n"])
 @pytest.mark.parametrize("bom", ["", "﻿"])
 def test_表計算ソフトが書き出した税抜の明細はすべての行をファイルの順に明細行にする(
-    tmp_path: Path, newline: str, bom: str
+    ledger: Callable[..., Path], newline: str, bom: str
 ) -> None:
     # Given: LibreOffice Calc か Excel が書き出した、ガイドの明細。
-    path = write(tmp_path, bom + csv(*README_ROWS, newline=newline))
+    path = ledger(bom + csv(*README_ROWS, newline=newline))
     # When
-    rows = ledger.read(path)
+    rows = ledger_module.read(path)
     # Then
     assert rows == README_LEDGER_ROWS
 
 
 @supports("test_税込の単価の明細では税込の合計から消費税額が出る")
-def test_税込の見出しの明細は単価を税込として読む(tmp_path: Path) -> None:
+def test_税込の見出しの明細は単価を税込として読む(ledger: Callable[..., Path]) -> None:
     # Given
-    path = write(tmp_path, csv(README_ROWS[0], header=INCLUDED_HEADER))
+    path = ledger(csv(README_ROWS[0], header=INCLUDED_HEADER))
     # When
-    rows = ledger.read(path)
+    rows = ledger_module.read(path)
     # Then
     assert rows == (row(2, datetime.date(2026, 11, 5), "コピー用紙 A4 500枚", 10, "箱", 2800, 10, True),)
 
 
 @supports("test_取引先と締めの期間ごとに一枚ずつ印刷される")
-def test_取引日の順でない行もファイルの順のまま読み取引先ごとの名称と敬称を読む(tmp_path: Path) -> None:
+def test_取引日の順でない行もファイルの順のまま読み取引先ごとの名称と敬称を読む(ledger: Callable[..., Path]) -> None:
     # Given: 取引日が前後し、二つの取引先と単位の空の行がある明細。
-    path = write(
-        tmp_path,
+    path = ledger(
         csv(
             "株式会社ひかり設計,2026-11-27,付箋 75mm 10冊入,7,,640,10%",
             README_ROWS[0],
         ),
     )
     # When
-    rows = ledger.read(path)
+    rows = ledger_module.read(path)
     # Then
-    hikari = Customer(name="株式会社ひかり設計", honorific="御中")
     assert rows == (
-        row(2, datetime.date(2026, 11, 27), "付箋 75mm 10冊入", 7, "", 640, 10, customer=hikari),
+        row(2, datetime.date(2026, 11, 27), "付箋 75mm 10冊入", 7, "", 640, 10, customer=HIKARI),
         row(3, datetime.date(2026, 11, 5), "コピー用紙 A4 500枚", 10, "箱", 2800, 10),
     )
 
 
 @supports("test_明細の直すところをすべて示し何も印刷しない")
-def test_見出しだけの明細は行がないことと一行の例を返す(tmp_path: Path) -> None:
+def test_見出しだけの明細は行がないことと一行の例を返す(ledger: Callable[..., Path]) -> None:
     # Given
-    path = write(tmp_path, csv())
+    path = ledger(csv())
     # When
     [fix] = refused(path)
     # Then
     assert (fix.path, fix.problem, fix.line, fix.column, fix.given, fix.detail) == (
         path, "no_rows", None, None, None, ""
     )
-    assert len(ledger.read(write(tmp_path, csv(fix.expected)))) == 1
+    assert len(ledger_module.read(ledger(csv(fix.expected)))) == 1
 
 
 @supports("test_明細の直すところをすべて示し何も印刷しない")
@@ -1609,17 +1740,17 @@ def test_ないパスはその直すところ一つだけを返す(tmp_path: Pat
 
 @supports("test_明細の直すところをすべて示し何も印刷しない")
 @pytest.mark.parametrize("kind", ["folder", "shift_jis", "no_permission"])
-def test_読めないファイルはその直すところ一つだけを返す(tmp_path: Path, kind: str) -> None:
+def test_読めないファイルはその直すところ一つだけを返す(tmp_path: Path, ledger: Callable[..., Path], kind: str) -> None:
     # Given: フォルダー、Shift_JIS で保存した明細、または読む権限のない明細。
     if kind == "folder":
         path = tmp_path / "明細"
         path.mkdir()
     elif kind == "shift_jis":
-        path = write(tmp_path, csv(*README_ROWS), encoding="shift_jis")
+        path = ledger(csv(*README_ROWS), encoding="shift_jis")
     else:
         if os.geteuid() == 0:
             pytest.skip("root はどのファイルも読める")
-        path = write(tmp_path, csv(*README_ROWS))
+        path = ledger(csv(*README_ROWS))
         path.chmod(0)
     # When
     [fix] = refused(path)
@@ -1635,34 +1766,44 @@ def test_読めないファイルはその直すところ一つだけを返す(t
     [
         ("取引先", ""),
         ("取引日", "2026-11-31"),
+        ("取引日", "2026/11/31"),
         ("取引日", ""),
+        ("取引日", "2026/11/5"),
+        ("取引日", "2026-11/05"),
+        ("取引日", "11/05"),
         ("数量", "十"),
         ("数量", ""),
+        ("数量", "0"),
+        ("数量", "-1"),
+        ("数量", "1.5"),
         ("単価(税抜)", "二千八百"),
         ("単価(税抜)", ""),
+        ("単価(税抜)", "0"),
         ("税率", "5%"),
         ("税率", ""),
+        ("税率", "10"),
     ],
 )
 def test_受け付けない値の行はその行と列と値と受け付ける例を返す(
-    tmp_path: Path, column: str, value: str
+    ledger: Callable[..., Path], column: str, value: str
 ) -> None:
     # Given
-    path = write(tmp_path, csv(with_cell(column, value)))
+    path = ledger(csv(with_cell(column, value)))
     # When
     [fix] = refused(path)
     # Then
     assert (fix.path, fix.problem, fix.line, fix.column, fix.given) == (
         path, "bad_value", 2, column, value or None
     )
-    assert len(ledger.read(write(tmp_path, csv(with_cell(column, fix.expected))))) == 1
+    assert len(ledger_module.read(ledger(csv(with_cell(column, fix.expected))))) == 1
 
 
 @supports("test_明細の直すところをすべて示し何も印刷しない")
-def test_誤りのある行がいくつあってもすべての行を読み終えてすべての直すところを返す(tmp_path: Path) -> None:
+def test_誤りのある行がいくつあってもすべての行を読み終えてすべての直すところを返す(
+    ledger: Callable[..., Path]
+) -> None:
     # Given: 一行目と三行目に誤りがあり、三行目には二つの誤りがある明細。
-    path = write(
-        tmp_path,
+    path = ledger(
         csv(
             with_cell("取引日", "2026-11-31"),
             README_ROWS[1],
@@ -1684,16 +1825,16 @@ def test_誤りのある行がいくつあってもすべての行を読み終�
     ("header", "column", "given"),
     [
         ("取引先,取引日,品目,数量,単位,単価,税率", "単価", "単価"),
-        ("取引先,取引日,品目,数量,単位,単価（税抜）,税率", "単価（税抜）", "単価（税抜）"),
+        ("取引先,取引日,品目,数量,単位,単価(税別),税率", "単価(税別)", "単価(税別)"),
         ("取引先,取引日,品目,数量,単位,単価(税抜)", "税率", None),
     ],
 )
 def test_受け付けない見出しは見出しの行の直すところを返す(
-    tmp_path: Path, header: str, column: str, given: str | None
+    ledger: Callable[..., Path], header: str, column: str, given: str | None
 ) -> None:
-    # Given: 単価が税抜か税込かを示さない見出し、全角の括弧の見出し、または税率の列のない見出し。
+    # Given: 単価が税抜か税込かを示さない見出し、税抜とも税込とも書かない見出し、または税率の列のない見出し。
     rows = [",".join(each.split(",")[: header.count(",") + 1]) for each in README_ROWS]
-    path = write(tmp_path, csv(*rows, header=header))
+    path = ledger(csv(*rows, header=header))
     # When
     fixes = refused(path)
     # Then
@@ -1703,9 +1844,9 @@ def test_受け付けない見出しは見出しの行の直すところを返�
 
 
 @supports("test_明細の直すところをすべて示し何も印刷しない")
-def test_見出しに誤りがあり行もない明細は両方の直すところを返す(tmp_path: Path) -> None:
+def test_見出しに誤りがあり行もない明細は両方の直すところを返す(ledger: Callable[..., Path]) -> None:
     # Given
-    path = write(tmp_path, csv(header="取引先,取引日,品目,数量,単位,単価,税率"))
+    path = ledger(csv(header="取引先,取引日,品目,数量,単位,単価,税率"))
     # When
     fixes = refused(path)
     # Then
@@ -1713,15 +1854,87 @@ def test_見出しに誤りがあり行もない明細は両方の直すとこ�
 
 
 @supports("test_明細の直すところをすべて示し何も印刷しない")
-def test_明細のファイルを書き換えない(tmp_path: Path) -> None:
+def test_明細のファイルを書き換えない(ledger: Callable[..., Path]) -> None:
     # Given
-    path = write(tmp_path, csv(*README_ROWS))
+    path = ledger(csv(*README_ROWS))
     before = path.read_bytes()
     # When
-    ledger.read(path)
+    ledger_module.read(path)
     # Then
     assert path.read_bytes() == before
     assert HEADER in before.decode("utf-8")
+
+
+@supports("test_明細から請求書が印刷され番号と金額と枚数が示される")
+def test_取引日は年と月と日をスラッシュで区切っても読む(ledger: Callable[..., Path]) -> None:
+    # Given: 取引日を 2026/11/05 と書いた明細。
+    path = ledger(csv(with_cell("取引日", "2026/11/05")))
+    # When
+    rows = ledger_module.read(path)
+    # Then
+    assert rows == (README_LEDGER_ROWS[0],)
+
+
+@supports("test_明細から請求書が印刷され番号と金額と枚数が示される")
+@pytest.mark.parametrize(("column", "value"), [("数量", "1"), ("単価(税抜)", "1")])
+def test_数量と単価は1から受け付ける(ledger: Callable[..., Path], column: str, value: str) -> None:
+    # Given: 数量か単価を、受け付ける最も小さい 1 とした明細。
+    path = ledger(csv(with_cell(column, value)))
+    # When
+    [read_row] = ledger_module.read(path)
+    # Then
+    expected = {"数量": {"quantity": 1}, "単価(税抜)": {"unit_price": 1}}[column]
+    assert read_row == dataclasses.replace(README_LEDGER_ROWS[0], **expected)  # type: ignore[arg-type]
+
+
+@supports("test_明細から請求書が印刷され番号と金額と枚数が示される")
+def test_全角の英数字と記号の明細と見出しは半角に読み替えて読む(ledger: Callable[..., Path]) -> None:
+    # Given: 見出しの括弧と、取引日、品目、数量、単価、税率を全角で書いた明細。
+    path = ledger(
+        csv(
+            "株式会社みなと商事,２０２６－１１－０５,コピー用紙 Ａ４ ５００枚,１０,箱,２８００,１０％",
+            header="取引先,取引日,品目,数量,単位,単価（税抜）,税率",
+        ),
+    )
+    # When
+    rows = ledger_module.read(path)
+    # Then
+    assert rows == (README_LEDGER_ROWS[0],)
+
+
+@supports("test_明細から請求書が印刷され番号と金額と枚数が示される")
+def test_半角カナの品目と単位は全角に読み替えて読む(ledger: Callable[..., Path]) -> None:
+    # Given: 品目と単位を半角カナで書いた明細。
+    path = ledger(csv("株式会社みなと商事,2026-11-12,ﾄﾞﾘｯﾌﾟｺｰﾋｰ 100袋入,3,ｹｰｽ,4500,8%"))
+    # When
+    rows = ledger_module.read(path)
+    # Then
+    assert rows == (row(2, datetime.date(2026, 11, 12), "ドリップコーヒー 100袋入", 3, "ケース", 4500, 8),)
+
+
+@supports("test_明細から請求書が印刷され番号と金額と枚数が示される")
+@pytest.mark.parametrize(
+    ("name", "honorific"),
+    [
+        ("株式会社みなと商事", "御中"),
+        ("みなと商事株式会社", "御中"),
+        ("合同会社かもめ設計", "御中"),
+        ("有限会社やまと食品", "御中"),
+        ("一般社団法人あおい会", "御中"),
+        ("山田 太郎", "様"),
+        ("山田太郎", "様"),
+        ("みなと商事", "様"),
+    ],
+)
+def test_取引先の名称に法人格があれば御中なければ様と読む(
+    ledger: Callable[..., Path], name: str, honorific: Literal["御中", "様"]
+) -> None:
+    # Given: 法人格のある名称か、ない名称の取引先の明細。
+    path = ledger(csv(with_cell("取引先", name)))
+    # When
+    [read_row] = ledger_module.read(path)
+    # Then
+    assert read_row.customer == Customer(name=name, honorific=honorific)
 ```
 
 `invoice/tests/unit/test_place.py` は、`place.folder` を確かめる。
@@ -1788,14 +2001,10 @@ from pathlib import Path
 import pytest
 
 from invoice import issuer, place
-from invoice.issuer import AnswerFix, Issuer, IssuerItem, PaymentTerms
-from tests.given import AOBA, AOBA_ANSWERS, AOBA_LABELS, ITEMS, files, save_aoba
+from invoice.issuer import AnswerFix, IssuerItem, PaymentTerms
+from tests.given import AOBA, AOBA_LABELS, ITEMS, checked, files, save_aoba
 
 supports = pytest.mark.supports
-
-
-def checked() -> dict[IssuerItem, issuer.Answer]:
-    return {item: issuer.check(item, answer) for item, answer in zip(ITEMS, AOBA_ANSWERS, strict=True)}
 
 
 @supports("test_初回は事柄を順に尋ねすべての答えがそろってから残す")
@@ -1805,7 +2014,7 @@ def test_残していなければ尋ねる事柄をガイドの順と名前で�
     questions = issuer.load()
     # Then
     assert isinstance(questions, tuple)
-    assert [(question.item, question.label) for question in questions] == list(zip(ITEMS, AOBA_LABELS))
+    assert [(question.item, question.label) for question in questions] == list(zip(ITEMS, AOBA_LABELS, strict=True))
     for question in questions:
         issuer.check(question.item, question.example)
     assert files(place.folder()) == {}
@@ -1828,6 +2037,22 @@ def test_発行者情報のファイルが壊れていれば壊れていると�
     broken = list(files(place.folder()))
     for each in broken:
         each.write_bytes(b"\x00broken")
+    # When
+    with pytest.raises(place.StoreRefused) as refused:
+        issuer.load()
+    # Then
+    assert refused.value.fix.problem == "broken"
+    assert refused.value.fix.path in broken
+
+
+@supports("test_置き場のファイルが壊れていると直し方を示し何も印刷しない")
+@pytest.mark.parametrize("content", ["{}", "[]", '"株式会社あおば事務用品"'])
+def test_発行者情報のファイルが読めても発行者情報の形に合わなければ壊れていると断る(home: Path, content: str) -> None:
+    # Given: 発行者情報のファイルが、JSON としては読めるが、八つの事柄を持たない状態。
+    save_aoba()
+    broken = list(files(place.folder()))
+    for each in broken:
+        each.write_text(content, encoding="utf-8")
     # When
     with pytest.raises(place.StoreRefused) as refused:
         issuer.load()
@@ -1866,9 +2091,12 @@ def test_発行者情報のファイルが読めなければ読めないと断�
         ("account_number", "1234567", "1234567"),
         ("account_number", "0000000", "0000000"),
         ("account_holder", "カ)アオバジムヨウヒン", "カ)アオバジムヨウヒン"),
+        ("registration_number", "Ｔ１２３４５６７８９０１２３", "T1234567890123"),
+        ("account_number", "１２３４５６７", "1234567"),
+        ("account_holder", "ｶ)ｱｵﾊﾞｼﾞﾑﾖｳﾋﾝ", "カ)アオバジムヨウヒン"),
     ],
 )
-def test_形に合う答えはそのまま返し何も残さない(
+def test_形に合う答えは全角の英数字を半角に半角カナを全角に読み替えて返し何も残さない(
     home: Path, item: IssuerItem, answer: str, expected: str
 ) -> None:
     # Given: 何も残していない状態。
@@ -1892,6 +2120,7 @@ def test_形に合う答えはそのまま返し何も残さない(
         ("27日締め当月末払い", PaymentTerms(27, 0, "month_end")),
         ("1日締め翌月1日払い", PaymentTerms(1, 1, 1)),
         ("28日締め翌月28日払い", PaymentTerms(28, 1, 28)),
+        ("２０日締め翌月１０日払い", PaymentTerms(20, 1, 10)),
     ],
 )
 def test_形どおりの支払条件は締め日と支払の月と支払日に読み取る(
@@ -2029,9 +2258,21 @@ END_NEXT_END = PaymentTerms("month_end", 1, "month_end")
         (date(2028, 2, 29), PaymentTerms(28, 1, 10), date(2028, 2, 29), date(2028, 3, 28), date(2028, 4, 10)),
         (date(2026, 3, 1), PaymentTerms(28, 1, 10), date(2026, 3, 1), date(2026, 3, 28), date(2026, 4, 10)),
         (date(2026, 11, 5), PaymentTerms(10, 0, 25), date(2026, 10, 11), date(2026, 11, 10), date(2026, 11, 25)),
-        (date(2026, 11, 5), PaymentTerms(10, 0, "month_end"), date(2026, 10, 11), date(2026, 11, 10), date(2026, 11, 30)),
+        (
+            date(2026, 11, 5),
+            PaymentTerms(10, 0, "month_end"),
+            date(2026, 10, 11),
+            date(2026, 11, 10),
+            date(2026, 11, 30),
+        ),
         (date(2026, 12, 25), PaymentTerms(20, 2, 10), date(2026, 12, 21), date(2027, 1, 20), date(2027, 3, 10)),
-        (date(2026, 12, 31), PaymentTerms("month_end", 2, "month_end"), date(2026, 12, 1), date(2026, 12, 31), date(2027, 2, 28)),
+        (
+            date(2026, 12, 31),
+            PaymentTerms("month_end", 2, "month_end"),
+            date(2026, 12, 1),
+            date(2026, 12, 31),
+            date(2027, 2, 28),
+        ),
         (date(2026, 11, 1), PaymentTerms(1, 1, 1), date(2026, 10, 2), date(2026, 11, 1), date(2026, 12, 1)),
         (date(2026, 11, 2), PaymentTerms(1, 1, 1), date(2026, 11, 2), date(2026, 12, 1), date(2027, 1, 1)),
         (date(2026, 1, 31), PaymentTerms("month_end", 1, 28), date(2026, 1, 1), date(2026, 1, 31), date(2026, 2, 28)),
@@ -2073,14 +2314,20 @@ import pytest
 from invoice import billing, numbering, place
 from invoice.billing import Invoice, InvoiceLine, RateTotal
 from invoice.issuer import PaymentTerms
-from invoice.ledger import Customer
 from invoice.periods import Period
-from tests.given import AOBA, MINATO, NOVEMBER, README_LEDGER_ROWS, README_INVOICE, files, row
+from tests.given import (
+    AOBA,
+    HIKARI,
+    MINATO,
+    MINATO_TOKYO,
+    NOVEMBER,
+    README_INVOICE,
+    README_LEDGER_ROWS,
+    files,
+    row,
+)
 
 supports = pytest.mark.supports
-
-HIKARI = Customer("株式会社ひかり設計", "御中")
-MINATO_TOKYO = Customer("株式会社みなと商事東京支店", "御中")
 
 
 def by_customer(invoices: tuple[Invoice, ...]) -> dict[tuple[str, Period], Invoice]:
@@ -2093,7 +2340,7 @@ def test_一つの取引先の一つの期間の税抜の明細から一枚の�
     # When
     [invoice] = billing.bill(README_LEDGER_ROWS, AOBA)
     # Then
-    assert invoice.number == numbering.number("株式会社みなと商事", NOVEMBER)
+    assert invoice.number == numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end) == "2026-11-001"
     assert set(invoice.totals) == set(README_INVOICE.totals) and len(invoice.totals) == 2
     assert invoice == dataclasses.replace(README_INVOICE, number=invoice.number, totals=invoice.totals)
 
@@ -2140,8 +2387,9 @@ def test_税込の明細は税率ごとの税込の対象額から消費税額�
 
 
 @supports("test_取引先と締めの期間ごとに一枚ずつ印刷される")
-def test_取引先と締めの期間の組ごとに一枚ずつ明細の順の行で返す(home: Path) -> None:
+def test_取引先と締めの期間の組ごとに一枚ずつ取引日の順の行で返す(home: Path) -> None:
     # Given: 20日締めの発行者と、名前の似た取引先を含む三つの取引先の、締め日の前後の行。
+    #   みなと商事の前の期間には、取引日が前後する行と、同じ取引日の二つの行がある。
     issuer = dataclasses.replace(AOBA, payment_terms=PaymentTerms(20, 1, 10))
     rows = (
         row(2, date(2026, 11, 21), "ボールペン 黒 10本入", 5, "箱", 1200, 10),
@@ -2149,13 +2397,14 @@ def test_取引先と締めの期間の組ごとに一枚ずつ明細の順の�
         row(4, date(2026, 11, 5), "トナーカートリッジ 黒", 2, "本", 12800, 10, customer=HIKARI),
         row(5, date(2026, 11, 1), "クリアファイル A4 100枚入", 4, "箱", 1350, 10),
         row(6, date(2026, 11, 6), "付箋 75mm 10冊入", 7, "箱", 640, 10, customer=MINATO_TOKYO),
+        row(7, date(2026, 11, 1), "えんぴつ HB 12本入", 1, "箱", 640, 10),
     )
     first, second = Period(date(2026, 10, 21), date(2026, 11, 20)), Period(date(2026, 11, 21), date(2026, 12, 20))
     # When
     invoices = by_customer(billing.bill(rows, issuer))
-    # Then
+    # Then: 行は取引日の順で、同じ取引日の行は明細の順のまま。
     assert {key: [line.row.line for line in each.lines] for key, each in invoices.items()} == {
-        ("株式会社みなと商事", first): [3, 5],
+        ("株式会社みなと商事", first): [5, 7, 3],
         ("株式会社みなと商事", second): [2],
         ("株式会社ひかり設計", first): [4],
         ("株式会社みなと商事東京支店", first): [6],
@@ -2167,11 +2416,12 @@ def test_取引先と締めの期間の組ごとに一枚ずつ明細の順の�
         ("株式会社みなと商事東京支店", first): (date(2026, 11, 20), date(2026, 12, 10)),
     }
     assert {key: each.amount for key, each in invoices.items()} == {
-        ("株式会社みなと商事", first): 36740,
+        ("株式会社みなと商事", first): 37444,
         ("株式会社みなと商事", second): 6600,
         ("株式会社ひかり設計", first): 28160,
         ("株式会社みなと商事東京支店", first): 4928,
     }
+    assert {key[1]: each.number[:8] for key, each in invoices.items()} == {first: "2026-11-", second: "2026-12-"}
     assert len({each.number for each in invoices.values()}) == 4
     assert all(each.issuer == issuer for each in invoices.values())
 
@@ -2227,34 +2477,78 @@ import pytest
 
 from invoice import numbering, place
 from invoice.periods import Period
-from tests.given import files
+from tests.given import HIKARI, MINATO, MINATO_TOKYO, NOVEMBER, files
 
 supports = pytest.mark.supports
 
 OCTOBER = Period(date(2026, 10, 1), date(2026, 10, 31))
-NOVEMBER = Period(date(2026, 11, 1), date(2026, 11, 30))
-MINATO = "株式会社みなと商事"
+"""月末締めの、2026 年 10 月の締めの期間。"""
 
 
 @supports("test_同じ明細を二度印刷しても同じ請求書番号になる")
 def test_発行記録がない状態で初めての組には番号を付け発行記録に残す(home: Path) -> None:
     # Given: 発行記録のない状態。
     # When
-    number = numbering.number(MINATO, NOVEMBER)
+    number = numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end)
     # Then
-    assert number != ""
+    assert number == "2026-11-001"
     assert files(place.folder()) != {}
+
+
+@supports("test_同じ明細を二度印刷しても同じ請求書番号になる")
+def test_初めての組には発行日の年月と年月ごとに001から数えた連番の番号を付ける(home: Path) -> None:
+    # Given: 発行記録のない状態。
+    # When: 11 月 30 日発行の二つの組、10 月 31 日発行の組、11 月 20 日発行の組、前の組の順に番号を求める。
+    numbers = [
+        numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end),
+        numbering.number(HIKARI.name, NOVEMBER, NOVEMBER.end),
+        numbering.number(MINATO.name, OCTOBER, OCTOBER.end),
+        numbering.number(MINATO.name, Period(date(2026, 10, 21), date(2026, 11, 20)), date(2026, 11, 20)),
+        numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end),
+    ]
+    # Then: 発行月ごとに 001 から数え、前に付けた組は数え直さない。
+    assert numbers == ["2026-11-001", "2026-11-002", "2026-10-001", "2026-11-003", "2026-11-001"]
+
+
+@supports("test_同じ明細を二度印刷しても同じ請求書番号になる")
+@pytest.mark.parametrize(
+    ("issue_date", "expected"),
+    [
+        (date(2026, 12, 1), "2026-12-001"),
+        (date(2026, 12, 31), "2026-12-001"),
+        (date(2027, 1, 31), "2027-01-001"),
+        (date(2026, 9, 30), "2026-09-001"),
+    ],
+)
+def test_番号の年と月は発行日の年と2桁の月(home: Path, issue_date: date, expected: str) -> None:
+    # Given: 発行記録のない状態と、月の初めか終わりか、年の変わり目か、一桁の月の発行日。
+    period = Period(issue_date.replace(day=1), issue_date)
+    # When
+    number = numbering.number(MINATO.name, period, issue_date)
+    # Then
+    assert number == expected
+
+
+@supports("test_取引先と締めの期間ごとに一枚ずつ印刷される")
+def test_同じ月の十番目の組には3桁の連番010を付ける(home: Path) -> None:
+    # Given: 11 月発行の九つの組に番号を付けた状態。
+    before = [numbering.number(f"取引先 {i}", NOVEMBER, NOVEMBER.end) for i in range(1, 10)]
+    # When
+    tenth = numbering.number("取引先 10", NOVEMBER, NOVEMBER.end)
+    # Then
+    assert before[-1] == "2026-11-009"
+    assert tenth == "2026-11-010"
 
 
 @supports("test_同じ明細を二度印刷しても同じ請求書番号になる")
 def test_前に付けた組にはいくつの組のあとでも前と同じ番号を返し発行記録を変えない(home: Path) -> None:
     # Given: 三つの組に番号を付けた状態。
-    first = numbering.number(MINATO, NOVEMBER)
-    numbering.number(MINATO, OCTOBER)
-    numbering.number("株式会社ひかり設計", NOVEMBER)
+    first = numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end)
+    numbering.number(MINATO.name, OCTOBER, OCTOBER.end)
+    numbering.number(HIKARI.name, NOVEMBER, NOVEMBER.end)
     kept = files(place.folder())
     # When
-    again = numbering.number(MINATO, NOVEMBER)
+    again = numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end)
     # Then
     assert again == first
     assert files(place.folder()) == kept
@@ -2264,36 +2558,53 @@ def test_前に付けた組にはいくつの組のあとでも前と同じ番�
 @pytest.mark.parametrize(
     ("customer", "period"),
     [
-        ("株式会社ひかり設計", NOVEMBER),
-        ("株式会社みなと商事東京支店", NOVEMBER),
+        (HIKARI.name, NOVEMBER),
+        (MINATO_TOKYO.name, NOVEMBER),
         ("株式会社みなと", NOVEMBER),
-        (MINATO, OCTOBER),
-        (MINATO, Period(date(2026, 10, 21), date(2026, 11, 20))),
-        (MINATO, Period(date(2026, 11, 1), date(2026, 11, 29))),
+        (MINATO.name, OCTOBER),
+        (MINATO.name, Period(date(2026, 10, 21), date(2026, 11, 20))),
+        (MINATO.name, Period(date(2026, 11, 1), date(2026, 11, 29))),
     ],
 )
 def test_取引先か期間が違えば近い組にもほかの組に付けていない番号を付ける(
     home: Path, customer: str, period: Period
 ) -> None:
     # Given: みなと商事の 11 月分に番号を付けた状態。
-    first = numbering.number(MINATO, NOVEMBER)
+    first = numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end)
     # When
-    other = numbering.number(customer, period)
+    other = numbering.number(customer, period, period.end)
     # Then
     assert other != first
-    assert numbering.number(MINATO, NOVEMBER) == first
+    assert numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end) == first
 
 
 @supports("test_置き場のファイルが壊れていると直し方を示し何も印刷しない")
 def test_発行記録が壊れていれば壊れていると断り発行記録を前のまま残す(home: Path) -> None:
     # Given: 発行記録が壊れた状態。
-    numbering.number(MINATO, NOVEMBER)
+    numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end)
     for each in files(place.folder()):
         each.write_bytes(b"\x00broken")
     kept = files(place.folder())
     # When
     with pytest.raises(place.StoreRefused) as refused:
-        numbering.number(MINATO, OCTOBER)
+        numbering.number(MINATO.name, OCTOBER, OCTOBER.end)
+    # Then
+    assert refused.value.fix.problem == "broken"
+    assert refused.value.fix.path in kept
+    assert files(place.folder()) == kept
+
+
+@supports("test_置き場のファイルが壊れていると直し方を示し何も印刷しない")
+@pytest.mark.parametrize("content", ['"2026-11-001"', "1"])
+def test_発行記録が読めても発行記録の形に合わなければ壊れていると断り前のまま残す(home: Path, content: str) -> None:
+    # Given: 発行記録のファイルが、JSON としては読めるが、組と番号を持たない状態。
+    numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end)
+    for each in files(place.folder()):
+        each.write_text(content, encoding="utf-8")
+    kept = files(place.folder())
+    # When
+    with pytest.raises(place.StoreRefused) as refused:
+        numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end)
     # Then
     assert refused.value.fix.problem == "broken"
     assert refused.value.fix.path in kept
@@ -2305,16 +2616,16 @@ def test_書けない発行記録では前に付けた組には番号を返し�
     # Given: 一つの組に番号を付けたあと、置き場に書けなくなった状態。
     if os.geteuid() == 0:
         pytest.skip("root はどこにでも書ける")
-    first = numbering.number(MINATO, NOVEMBER)
+    first = numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end)
     kept = files(place.folder())
-    locked = [place.folder(), *[each for each in place.folder().rglob("*")]]
+    locked = [place.folder(), *place.folder().rglob("*")]
     for each in locked:
         each.chmod(0o500 if each.is_dir() else 0o400)
     try:
         # When
-        again = numbering.number(MINATO, NOVEMBER)
+        again = numbering.number(MINATO.name, NOVEMBER, NOVEMBER.end)
         with pytest.raises(place.StoreRefused) as refused:
-            numbering.number(MINATO, OCTOBER)
+            numbering.number(MINATO.name, OCTOBER, OCTOBER.end)
         # Then
         assert again == first
         assert refused.value.fix.problem == "unwritable"
@@ -2343,7 +2654,7 @@ from pypdf import PdfReader
 from invoice import layout
 from invoice.billing import Invoice, InvoiceLine, RateTotal
 from invoice.ledger import Customer
-from tests.given import README_INVOICE, README_PAPER, pages, paper, row
+from tests.given import HIKARI, README_INVOICE, README_PAPER, pages, paper, row
 
 supports = pytest.mark.supports
 
@@ -2402,7 +2713,7 @@ def test_請求書がなければ紙面を返さない() -> None:
 def test_いくつかの請求書から受け取った順に紙面を一つずつ返す() -> None:
     # Given: 宛先と番号の違う三枚の請求書。
     invoices = [
-        replaced(customer=Customer("株式会社ひかり設計", "御中"), number="A-1"),
+        replaced(customer=HIKARI, number="A-1"),
         README_INVOICE,
         replaced(customer=Customer("山田 太郎", "様"), number="A-3"),
     ]
@@ -2450,7 +2761,7 @@ def test_単位の空の行は数量だけを載せる() -> None:
     # When
     [document] = layout.typeset([invoice])
     # Then
-    assert "2026/11/05 コピー用紙 A4 500枚 10 2,800 10% 28,000" in paper(document)
+    assert "2026年11月5日 コピー用紙 A4 500枚 10 2,800 10% 28,000" in paper(document)
 
 
 @supports("test_明細から請求書が印刷され番号と金額と枚数が示される")
@@ -2481,6 +2792,7 @@ import pytest
 
 from invoice import layout, printing
 from invoice.layout import PrintDocument
+from invoice.printing import Printed
 from tests.given import README_INVOICE, Printer
 
 supports = pytest.mark.supports
@@ -2491,14 +2803,18 @@ def documents(*sheets: int) -> list[PrintDocument]:
 
 
 @supports("test_明細から請求書が印刷され番号と金額と枚数が示される")
-@pytest.mark.parametrize("sheets", [(), (2,), (1, 3, 1)])
-def test_紙面を受け取った順に送り送った用紙の枚数を返す(printer: Printer, sheets: tuple[int, ...]) -> None:
-    # Given: 紙面がない、一つ、またはいくつか。
+@pytest.mark.parametrize("sheets", [(1,), (2,), (1, 3, 1)])
+def test_紙面を受け取った順に送り既定のプリンターの名前と送った用紙の枚数を返す(
+    printer: Printer, sheets: tuple[int, ...]
+) -> None:
+    # Given: 一枚か二枚の紙面が一つ、またはいくつかの紙面。明細には一行以上あるので、紙面は一つ以上ある。
+    #   既定のプリンターの名前は、ガイドの例と違う「2階の複合機」。
+    printer.name = "2階の複合機"
     given = documents(*sheets)
     # When
     sent = printing.print_documents(given)
     # Then
-    assert sent == sum(sheets)
+    assert sent == Printed(printer="2階の複合機", sheets=sum(sheets))
     assert printer.sent == given
 
 
@@ -2533,8 +2849,9 @@ def test_本物の印刷システムは既定のプリンターへの印刷を�
     # Given: 既定のプリンターのある印刷システムと、ガイドの請求書の紙面。
     [document] = layout.typeset([README_INVOICE])
     # When
-    printing.send(document)
-    # Then: 印刷システムが断らずに受け付け、PrintRefused が上がらない。
+    name = printing.send(document)
+    # Then: 印刷システムが断らずに受け付け、PrintRefused が上がらず、既定のプリンターの名前を返す。
+    assert name != ""
 ```
 
 ## プロパティ
@@ -2551,6 +2868,7 @@ def test_本物の印刷システムは既定のプリンターへの印刷を�
 from __future__ import annotations
 
 import calendar
+import dataclasses
 import random
 import tempfile
 from collections.abc import Sequence
@@ -2563,9 +2881,9 @@ from hypothesis import given, strategies as st
 from invoice import billing, issuer, ledger, numbering, periods
 from invoice.billing import Invoice
 from invoice.issuer import BankAccount, Day, Issuer, PaymentTerms
-from invoice.ledger import Customer, LedgerRow
+from invoice.ledger import LedgerRow
 from invoice.periods import Dates, Period
-from tests.given import AOBA, ITEMS, csv, fresh_home
+from tests.given import AOBA, COLUMNS, HIKARI, ITEMS, MINATO, MINATO_TOKYO, README_ROWS, csv, fresh_home
 
 supports = pytest.mark.supports
 
@@ -2619,11 +2937,8 @@ def model(day: date, terms: PaymentTerms) -> Dates:
     return Dates(period=Period(start=before + ONE_DAY, end=end), issue_date=end, due_date=due)
 
 
-CUSTOMERS = (
-    Customer("株式会社みなと商事", "御中"),
-    Customer("株式会社みなと商事東京支店", "御中"),
-    Customer("株式会社ひかり設計", "御中"),
-)
+CUSTOMERS = (MINATO, MINATO_TOKYO, HIKARI)
+"""明細の取引先。名前の似た二つを含む。"""
 
 
 @st.composite
@@ -2650,9 +2965,12 @@ def ledger_rows(draw: st.DrawFn) -> tuple[LedgerRow, ...]:
 
 
 def model_bill(rows: Sequence[LedgerRow], terms: PaymentTerms) -> dict[tuple[str, Period], dict[str, object]]:
-    """P3.2 から P3.4 と P3.8 をそのまま書いた、取引先と期間ごとの請求書の額のモデル。"""
+    """P3.2 から P3.4 と P3.8 をそのまま書いた、取引先と期間ごとの請求書の額のモデル。
+
+    明細の行は、取引日の順に、同じ日は明細の順のまま並ぶ。
+    """
     groups: dict[tuple[str, Period], list[LedgerRow]] = {}
-    for each in rows:
+    for each in sorted(rows, key=lambda row: row.date):
         groups.setdefault((each.customer.name, model(each.date, terms).period), []).append(each)
     found = {}
     for key, group in groups.items():
@@ -2678,6 +2996,11 @@ def summary(invoices: Sequence[Invoice]) -> dict[tuple[str, Period], dict[str, o
         }
         for each in invoices
     }
+
+
+def amounts(invoices: Sequence[Invoice]) -> dict[tuple[str, Period], tuple[int, frozenset[object]]]:
+    """取引先と期間ごとの、請求額と税率ごとの合計。並びの順によらない。"""
+    return {(each.customer.name, each.period): (each.amount, frozenset(each.totals)) for each in invoices}
 
 
 @supports("P3.6", "P3.7", "P3.9")
@@ -2735,7 +3058,7 @@ def test_請求書の額は取引先と期間ごとに税率ごとの対象額�
 ) -> None:
     """モデルに基づくプロパティ。"""
     # Given any: 一つの明細の明細行と、受け付ける支払条件。
-    issuer_info = Issuer(AOBA.name, AOBA.registration_number, terms, AOBA.bank)
+    issuer_info = dataclasses.replace(AOBA, payment_terms=terms)
     # When
     with fresh_home():
         invoices = billing.bill(rows, issuer_info)
@@ -2759,9 +3082,6 @@ def test_明細の行の順を入れ替えても取引先と期間ごとの額�
     with fresh_home():
         second = billing.bill(shuffled, AOBA)
     # Then
-    def amounts(invoices: Sequence[Invoice]) -> dict[tuple[str, Period], tuple[int, frozenset[object]]]:
-        return {(each.customer.name, each.period): (each.amount, frozenset(each.totals)) for each in invoices}
-
     assert amounts(first) == amounts(second)
 
 
@@ -2793,21 +3113,26 @@ PERIODS = (
         max_size=20,
     )
 )
-def test_同じ組には同じ番号を別の組には別の番号を付ける(requests: list[tuple[str, Period]]) -> None:
-    """モデルに基づくプロパティ。モデルは、組から初めに付けた番号への辞書。"""
-    # Given any: 取引先と締めの期間の組を、繰り返しも含めて並べた求め。
+def test_同じ組には同じ番号を別の組には発行月ごとの次の番号を付ける(requests: list[tuple[str, Period]]) -> None:
+    """モデルに基づくプロパティ。モデルは、組から初めに付けた番号への辞書と、発行月ごとに付けた数。"""
+    # Given any: 取引先と締めの期間の組を、繰り返しも含めて並べた求め。発行日は締めの期間の締め日 (P3.6)。
     # When
     with fresh_home():
-        numbers = [numbering.number(customer, period) for customer, period in requests]
+        numbers = [numbering.number(customer, period, period.end) for customer, period in requests]
     # Then
     first: dict[tuple[str, Period], str] = {}
-    for pair, number in zip(requests, numbers, strict=True):
-        assert number == first.setdefault(pair, number)
+    counted: dict[tuple[int, int], int] = {}
+    for (customer, period), number in zip(requests, numbers, strict=True):
+        if (customer, period) not in first:
+            month = (period.end.year, period.end.month)
+            counted[month] = counted.get(month, 0) + 1
+            first[(customer, period)] = f"{month[0]}-{month[1]:02}-{counted[month]:03}"
+        assert number == first[(customer, period)]
     assert len(set(first.values())) == len(first)
 
 
 REFUSED = {"取引日": "2026-11-31", "数量": "十", "単価(税抜)": "二千八百", "税率": "5%"}
-COLUMNS = ("取引先", "取引日", "品目", "数量", "単位", "単価(税抜)", "税率")
+"""明細の列ごとの、受け付けない値。"""
 
 
 @supports("P1.3", "直すところ")
@@ -2821,7 +3146,7 @@ def test_明細の誤りはすべての行を読んでから一度に示され�
     )
     rows = []
     for i in range(count):
-        cells = ["株式会社みなと商事", "2026-11-05", "コピー用紙 A4 500枚", "10", "箱", "2800", "10%"]
+        cells = README_ROWS[0].split(",")
         for at, column in broken:
             if at == i:
                 cells[COLUMNS.index(column)] = REFUSED[column]
@@ -2838,8 +3163,14 @@ def test_明細の誤りはすべての行を読んでから一度に示され�
     )
 
 
-TEXT = st.text(st.characters(categories=("L", "N")), min_size=1, max_size=30)
-KANA = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポー"
+WIDTH_FORMS = "".join(chr(code) for code in range(0xFF01, 0xFFA0))
+"""読み替える全角の英数字と記号、半角カナ。読み替えは test_ledger.py と test_issuer.py が確かめる。"""
+TEXT = st.text(st.characters(categories=("L", "N"), exclude_characters=WIDTH_FORMS), min_size=1, max_size=30)
+"""読み替えずにそのまま残る、利用者が答える名前。"""
+KANA = (
+    "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン"
+    "ガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポー"
+)
 HOLDERS = st.builds(
     lambda prefix, name: prefix + name,
     st.sampled_from(("", "カ)", "ユ)")),
@@ -2992,16 +3323,18 @@ if __name__ == "__main__":
 
 - 請求書の組版: `invoice/templates/invoice.md.j2` が読む値の名前が、`billing.Invoice` と合わない。テンプレートは `invoice.total`、`line.item`、`line.reduced`、`invoice.tax_summaries` を読む。間を運ぶインターフェースがなく、ケースはテンプレートを通した紙面を確かめられない。
 - 請求書の組版: テンプレートは Markdown を描くが、`layout.typeset` は PDF を返す。Markdown を PDF にする部品がなく、ケースはその間を確かめられない。
-- S1 の「番号と金額と枚数を示す」: ガイドは既定のプリンターの名前も示す。`printing.print_documents` は枚数だけを返し、ケースは名前を確かめられない。
-- 番号の採番: `numbering.number` の契約に、番号の形がない。ガイドの `2026-11-001` の年月の元と、同じ月の連番の順も決まっていない。ケースはガイドの一枚目の番号だけを確かめ、ほかは重ならないことを確かめる。
-- 請求の計算: `Invoice.lines` は明細の順だが、invoice のベストプラクティスの N4 は取引日の順を求める。ケースは契約の明細の順で書いた。
-- 請求の計算: `billing.bill` が返す請求書の順と、`totals` の税率の順が決まっていない。ケースは順によらずに比べ、紙面の税率の行の順も確かめない。
-- 明細の読み取り: 取引日の `2026/11/05` や、数量の 0 と負の数と小数を受け付けるかが決まっていない。単価の `2,800` や税率の `10` も同じで、ケースはこれらのクラスを書けない。
-- 明細の読み取り: 見出しの列の順の違い、余分な列、空のファイル、品目の空の行も決まっておらず、ケースを書けない。
-- 明細の読み取り: 取引先の名称から個人を見分ける決まりがなく、`ledger.read` の「様」のケースを書けない。
-- 発行者情報の保管: 全角の数字、半角カナの口座名義、答えの前後の空白を受け付けるかが決まっていない。日本語の入力で起きやすいが、`issuer.check` のケースを書けない。
+- S1 の「番号を求める (請求書)」: この矢印は請求書を運ぶが、`numbering.number` は取引先の名称と締めの期間と発行日を受け取る。ケースはスケルトンの三つの値で書き、矢印のデータとは合わない。
+- S1 と S4 の「送った枚数を返す」と P2.6: 矢印と原則に既定のプリンターの名前がないが、`printing.print_documents` と `command.main` の契約は名前も示す。ケースはガイドと契約のとおりに名前を確かめ、矢印と原則とは合わない。
+- S3 の「ないと返す」: この矢印にデータがないが、`issuer.load` は尋ねる事柄を返す。ケースは返った事柄のとおりに尋ねることを確かめ、矢印とは合わない。
+- 請求書の組版: 紙面の取引日の形が、契約とガイドで違う。`layout.typeset` の契約は「2026年11月5日」の形で載せる。ガイドの「使ってみる」の紙面は「2026/11/05」と示す。ケースは契約の形で書き、ガイドの形は確かめない。
+- 請求の計算: `billing.bill` が返す請求書の順と、`totals` の税率の順が決まっていない。同じ発行月のどの請求書が 001 になるかも、この順で決まる。ケースは順によらずに比べ、番号は発行月ごとの番号の集まりで確かめる。紙面の税率の行の順も確かめない。
+- 明細の読み取り: 単価の `2,800` のような桁区切りを受け付けるかが決まっておらず、ケースを書けない。
+- 明細の読み取り: 見出しの列の順の違い、余分な列、空のファイルも決まっていない。空の行、すべての列が空の行、品目の空の行も同じで、ケースを書けない。
+- 明細の読み取り: 取引先の名称の「法人格」に、`(株)` のような略した書き方が入るかが決まっていない。`ledger.read` の敬称のケースは、略さない法人格と、法人格のない名称でだけ書いた。
+- 発行者情報の保管: 答えの前後の空白を受け付けるかが決まっていない。日本語の入力で起きやすいが、`issuer.check` のケースを書けない。
 - コマンド: 直すところの文言は契約になく、ケースは行と列と値と例が示されることだけを確かめる。読めない明細では、UTF-8 の CSV で保存し直す手順の文言もなく、ケースはパスと `UTF-8` と `CSV` の語が示されることだけを確かめる。
-- コマンド: 尋ねる途中で利用者が `Ctrl` + `D` を押して入力が尽きたときの終わり方が決まっておらず、ケースを書けない。
+- コマンド: 尋ねる途中で利用者が `Ctrl` + `D` を押して入力が尽きたときの終わり方が決まっておらず、ケースを書けない。本体にその分かれ道があれば、単体ケースだけでは分岐網羅の 100% に届かない。
+- コマンド: 端末でない入力から答えを受けたときに、答えを画面に示し直すかが決まっておらず、ケースを書けない。
 - 印刷: `printing.send` が印刷システムにどう頼むかが決まっておらず、契約テストの手順を書けない。
 - 印刷: 途中で送れなくなったあとの打ち直しで、送れた紙面をまた送るかが決まっていない。ケースは打ち直しの枚数を確かめられない。
 - 発行者情報の保管と番号の採番: 残すファイルの形が決まっておらず、データ互換性テストの前の版のファイルを作れない。

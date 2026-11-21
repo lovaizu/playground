@@ -1,0 +1,84 @@
+{
+ "result": "judged",
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "E2E ケースは、ガイドの「使ってみる」のとおりに、一か月分の明細で invoice を通しで動かす。",
+    "@supports(\"KR1.1\")",
+    "def test_初めての月に一か月分の明細から取引先ごとの請求書を自分たちで印刷できる(",
+    "@supports(\"KR1.2\")",
+    "def test_翌月からは明細を渡すコマンド一つで何も尋ねずに印刷まで進む("
+   ]
+  },
+  {
+   "condition": "N2",
+   "lines": [
+    "結合ケースは、部品をスケルトンのインターフェースどうしでつなぎ、既定のプリンターだけを代役に替える。",
+    "各ケースは、確かめるストーリー、原則の項目、データ、コンポーネントを `supports` で名指しする。",
+    "`invoice/tests/integration/test_print.py` は、S1 の道筋と、その原則と決めごとを確かめる。",
+    "`invoice/tests/integration/test_start.py` は、S2 の道筋を確かめる。",
+    "`invoice/tests/integration/test_issuer.py` は、S3 の道筋と、その原則と決めごとを確かめる。",
+    "`invoice/tests/integration/test_recover.py` は、S4 の道筋と、その原則と決めごとを確かめる。",
+    "@supports(\"P1.2\", \"コマンド\")"
+   ]
+  },
+  {
+   "condition": "N3",
+   "lines": [
+    "単体ケースは、スケルトンの各インターフェースを、契約が分けるクラスと状態の移りごとに確かめる。",
+    "各ケースは、支える結合ケースを `supports` で名指しする。",
+    "`invoice/tests/unit/test_command.py` は、`command.main` を確かめる。",
+    "`invoice/tests/unit/test_ledger.py` は、`ledger.read` を確かめる。",
+    "`invoice/tests/unit/test_place.py` は、`place.folder` を確かめる。",
+    "`invoice/tests/unit/test_issuer.py` は、`issuer.load`、`issuer.check`、`issuer.save` を確かめる。",
+    "`invoice/tests/unit/test_periods.py` は、`periods.dates_of` を確かめる。",
+    "`invoice/tests/unit/test_billing.py` は、`billing.bill` を確かめる。",
+    "`invoice/tests/unit/test_numbering.py` は、`numbering.number` を確かめる。",
+    "`invoice/tests/unit/test_layout.py` は、`layout.typeset` を確かめる。",
+    "`invoice/tests/unit/test_printing.py` は、`printing.print_documents` と `printing.send` を確かめる。"
+   ]
+  },
+  {
+   "condition": "N7",
+   "lines": [
+    "プロパティは、要件だけから取った決まりを、使い方がもたらすどの入力にも確かめる。",
+    "各プロパティは、Hughes の種類と、拠る要素を名指しする。",
+    "@supports(\"P3.6\", \"P3.7\", \"P3.9\")",
+    "@supports(\"P3.10\", \"P3.11\", \"P3.12\")",
+    "@supports(\"P3.2\", \"P3.3\", \"P3.4\", \"P3.8\", \"請求の計算\")",
+    "@supports(\"P3.5\", \"発行記録\")",
+    "@supports(\"P1.3\", \"直すところ\")",
+    "@supports(\"P2.2\", \"P2.4\", \"発行者情報\")"
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "ケースは、ここに挙げるテストのコードだけで述べる。",
+    "結合ケースは、部品をスケルトンのインターフェースどうしでつなぎ、既定のプリンターだけを代役に替える。",
+    "単体ケースは、スケルトンの各インターフェースを、契約が分けるクラスと状態の移りごとに確かめる。",
+    "ケースは、`invoice` のフォルダーで `uv run pytest` と打って走らせる。"
+   ]
+  },
+  {
+   "condition": "N5",
+   "lines": [
+    "トレースは、`invoice/tests/trace.py` が確かめる。",
+    "リポジトリの一番上で `python3 invoice/tests/trace.py check invoice` と打つと、不備がなければ 0 を返す。"
+   ]
+  },
+  {
+   "condition": "N6",
+   "lines": [
+    "- S1 の「番号を求める (請求書)」: この矢印は請求書を運ぶが、`numbering.number` は取引先の名称と締めの期間と発行日を受け取る。ケースはスケルトンの三つの値で書き、矢印のデータとは合わない。",
+    "- S1 と S4 の「送った枚数を返す」と P2.6: 矢印と原則に既定のプリンターの名前がないが、`printing.print_documents` と `command.main` の契約は名前も示す。ケースはガイドと契約のとおりに名前を確かめ、矢印と原則とは合わない。",
+    "- S3 の「ないと返す」: この矢印にデータがないが、`issuer.load` は尋ねる事柄を返す。ケースは返った事柄のとおりに尋ねることを確かめ、矢印とは合わない。",
+    "- S1 と S3: 置き場のファイルを読めないか残せないときの分かれ道がない。ケースは `place.StoreRefused` のとおりに書き、S1 と S3 を名指しした。",
+    "- S2 の「配布物がまだない」: この分かれ道は uv とリリースの置き場の間だけにあり、持つ部品が invoice にない。空の本体でも通るケースしか書けず、結合ケースを置かない。",
+    "- ディレクトリ構成: トレースを確かめるスクリプトの置き場がなく、`invoice/tests/trace.py` に置いた。"
+   ]
+  }
+ ],
+ "more": []
+}
