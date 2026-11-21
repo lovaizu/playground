@@ -1,0 +1,128 @@
+{
+ "goal": "\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u3001\u958b\u767a\u8005\u306e\u624b\u3092\u501f\u308a\u305a\u306b\u3001\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u81ea\u5206\u305f\u3061\u3067\u5370\u5237\u3067\u304d\u308b\u3002\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u306f\u3001\u30ac\u30a4\u30c9\u3060\u3051\u3092\u983c\u308a\u306b\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u304b\u3089\u30b3\u30de\u30f3\u30c9\u4e00\u3064\u3067\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3059\u308b\u3002",
+ "deliverable": {
+  "name": "\u660e\u7d30\u306e\u8aad\u307f\u8fbc\u307f\u304b\u3089\u8acb\u6c42\u66f8\u306e\u5370\u5237\u307e\u3067\u306e\u90e8\u54c1\u3068\u6d41\u308c\u304c\u5b9a\u307e\u3063\u3066\u3044\u308b",
+  "path": "invoice/docs/architecture.md",
+  "more_paths": [
+   "invoice/docs/images/"
+  ]
+ },
+ "judges_by": {
+  "what": "The developers build and change the parts of the product so that together they deliver what the README promises the users, each part putting its work on what brings the users there.",
+  "critical_success_factors": [
+   {
+    "id": "C1",
+    "what": "The developers know what each part must do, for the users or for the product's development and operation, and why.",
+    "necessary_conditions": [
+     {
+      "id": "N1",
+      "about": "Solution strategy, Principles",
+      "what": "Does Principles state first, in one sentence, the one idea by which the product delivers what its README promises?"
+     },
+     {
+      "id": "N2",
+      "about": "User stories",
+      "what": "Does each user story state a value that it brings its role on its own, in the role's words and without the product's means, and do the stories together cover each objective of the product vision and each promise of the README?"
+     },
+     {
+      "id": "N3",
+      "about": "Principles, User stories, Components, Data model, Sequences",
+      "what": "Does each principle item, user story, component, and data trace to what the README promises the users, or to a need of the product's development or operation?"
+     }
+    ]
+   },
+   {
+    "id": "C2",
+    "what": "Parts that different developers build fit together.",
+    "necessary_conditions": [
+     {
+      "id": "N4",
+      "about": "Principles",
+      "what": "Does each principle name what it values, and each of its items one decision, with no name that a later section decides, from which two developers decide a case that no line names the same way?"
+     },
+     {
+      "id": "N5",
+      "about": "User stories, Components",
+      "what": "Does each component state its expected role, what it answers for toward the users' aim, and does each decision that the stories need belong to exactly one component?"
+     },
+     {
+      "id": "N6",
+      "about": "Components",
+      "what": "Does each component state its type?"
+     },
+     {
+      "id": "N7",
+      "about": "Data model",
+      "what": "Does Data model say what each data is for, and show how the data relate, without their fields or any role's name?"
+     },
+     {
+      "id": "N8",
+      "about": "User stories, Components, Data model, Sequences",
+      "what": "Does each user story have a sequence that shows, one action on each arrow, which component hands what to which and where the story branches, with each arrow and each branch condition tagged with the story or principle item that it carries out?"
+     },
+     {
+      "id": "N9",
+      "about": "the whole",
+      "what": "Do the figures, lists, and sentences agree with one another, and with the architecture that the product builds on, on what each part does?"
+     }
+    ]
+   },
+   {
+    "id": "C3",
+    "what": "The developers can place, set up, and start every part without asking anyone.",
+    "necessary_conditions": [
+     {
+      "id": "N10",
+      "about": "Components, Data model, Deployment",
+      "what": "Does Deployment show each environment the product runs in, what runs in it, each store of data, each service outside the product, and how the product starts?"
+     },
+     {
+      "id": "N11",
+      "about": "Components, Data model, Directory structure",
+      "what": "Does Directory structure show the folders, with only the vital few files, and beside each top folder its purpose?"
+     }
+    ]
+   },
+   {
+    "id": "C4",
+    "what": "The developers find each gap between the parts before they build any part, and know, as they build, that the product does what the document and the product vision say.",
+    "necessary_conditions": [
+     {
+      "id": "N12",
+      "about": "Test strategy",
+      "what": "Does Test strategy give, in its table alone, only the checks that the product's purpose needs, picked from the test strategy guide, each with its test target, its kind, when it runs, and for a quality its criterion or for a benchmark what it measures?"
+     },
+     {
+      "id": "N13",
+      "about": "the whole",
+      "what": "Is each gap that the software design and the test design found from the document mended in it, so that the two designs, made again from it, find none?"
+     },
+     {
+      "id": "N14",
+      "about": "Components, Test strategy",
+      "what": "Does each thing that the document says the product does rest on a part that a unit or integration test can check?"
+     }
+    ]
+   },
+   {
+    "id": "C5",
+    "what": "The developers can change the product without making the document wrong.",
+    "necessary_conditions": [
+     {
+      "id": "N15",
+      "about": "Components, Data model, Sequences, Deployment, Directory structure",
+      "what": "Does each view's Strategies give each decision of the view, tagged with the story or principle item that it carries out, with its intent?"
+     },
+     {
+      "id": "N16",
+      "about": "the whole",
+      "what": "Does the document hold only what stays true while the product vision and Principles stay, with no name of the implementation outside Directory structure?"
+     }
+    ]
+   }
+  ]
+ },
+ "worktree": ".claude/worktrees/rn-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044",
+ "trial": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-rn-rebuild/75be1bff-9b4b-4d82-a24f-55cc85521035/scratchpad/rnrun/tmp/rn-trial-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044-invoice%2Fdocs%2Farchitecture.md-content-2/",
+ "round": ".claude/worktrees/rn-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044/.rn/20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044/rounds/invoice%2Fdocs%2Farchitecture.md/content-2"
+}

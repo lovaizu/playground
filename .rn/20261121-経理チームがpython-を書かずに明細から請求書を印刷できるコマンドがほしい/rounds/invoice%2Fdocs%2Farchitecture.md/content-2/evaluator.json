@@ -1,0 +1,126 @@
+{
+ "result": "judged",
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "invoice は、利用者がガイドだけを頼りに、明細のファイルからコマンド一つで請求書を印刷できるようにする。"
+   ]
+  },
+  {
+   "condition": "N2",
+   "lines": [
+    "- S1: 利用者は、明細のファイルから、取引先にそのまま渡せる請求書を印刷したい。",
+    "- S2: 利用者は、開発者に頼らず、自分たちだけで使い始められるようにしたい。",
+    "- S3: 利用者は、発行者の情報を一度伝えたら、毎月は伝え直さずに済ませたい。",
+    "- S4: 利用者は、つまずいたとき、何を直せばよいかを知り、自分で直して印刷まで進みたい。"
+   ]
+  },
+  {
+   "condition": "N3",
+   "lines": [
+    "  - P3.1: 請求書には、適格請求書に要る事項を、登録番号と税率ごとの対象額と消費税額まで載せる。",
+    "  - P2.1: 発行者の情報は、初回に一度だけ尋ねる。",
+    "  付けた請求書番号を取引先と締めの期間ごとに保ち、同じ請求書に同じ番号を付け直させる。",
+    "  紙面を既定のプリンターに届け、届かないときはそのわけを直し方とともに返す。"
+   ]
+  },
+  {
+   "condition": "N5",
+   "lines": [
+    "  一つのコマンドで、明細のファイルから請求書の印刷までを利用者に通す。",
+    "  明細が請求書にできる形かを決め、できないところを直し方とともに返す。",
+    "- 支払条件の答えを読み取るのは発行者情報の保管だけで、請求の計算は読み取った値から期間と期限を決める。[P3.10]\\",
+    "- 請求書の額は請求の計算だけが決め、組版は決まった額をそのまま載せる。[P3.1]\\",
+    "- 番号の採番は請求の計算と分けた部品とし、発行記録を読み書きするのは番号の採番だけとする。[P3.5]\\"
+   ]
+  },
+  {
+   "condition": "N6",
+   "lines": [
+    "- コマンド (コマンドラインのプログラム)\\",
+    "- 明細の読み取り (モジュール)\\",
+    "- 印刷 (モジュール)\\"
+   ]
+  },
+  {
+   "condition": "N7",
+   "lines": [
+    "![invoice のデータ](images/data-model.svg)",
+    "  一つの取引を表し、請求書の明細の一行になる。",
+    "  一枚の請求書の中の一つの税率について、対象額と消費税額をまとめる。"
+   ]
+  },
+  {
+   "condition": "N8",
+   "lines": [
+    "  C->>B: 請求書にさせる (明細行, 発行者情報) [P3.4]",
+    "  alt 明細に直すところがある [S4]",
+    "        opt 答えが形に合わない、または当月払いの支払日が締め日より後でない [P3.10] [P3.11] [P3.12]",
+    "  alt 既定のプリンターがない、または送れない [S4]"
+   ]
+  },
+  {
+   "condition": "N9",
+   "lines": [
+    "- 印刷システムに触れるのは印刷だけとする。[P2.3]\\",
+    "  P->>O: 既定のプリンターに送る (印刷用の文書) [P2.3]",
+    "- invoice は、インストーラーが用意する invoice だけの環境に入れる。[P1.1]\\"
+   ]
+  },
+  {
+   "condition": "N10",
+   "lines": [
+    "![invoice のデプロイ](images/deployment.svg)",
+    "利用者が端末で明細のファイルを指定して invoice を打つと始まり、印刷を頼み終えると止まる。",
+    "- 発行者情報と発行記録は、利用者のホームフォルダーの中の invoice の置き場に残す。[P2.2]\\"
+   ]
+  },
+  {
+   "condition": "N11",
+   "lines": [
+    ".github/workflows/invoice.yml  invoice のテストとリリースを CI で動かす",
+    "invoice/                       invoice の一式",
+    "  src/invoice/                 利用者に配る invoice の本体"
+   ]
+  },
+  {
+   "condition": "N12",
+   "lines": [
+    "| 確かめること | テストの対象 | 種類 | いつ | 合格の基準または測るもの |",
+    "| プロパティベーステスト | 単体テストで確かめる部品 | 品質 | 作業中 | 消費税の端数と合計の決まり、締めの期間と支払期限の決まりに、反例が 0 件 |",
+    "| 適合性テスト | E2E テストで確かめるプロダクト | 品質 | 段階ごと | 印刷した請求書に、適格請求書の記載事項と端数の決まりへの不備が 0 件 |",
+    "| ユーザビリティテスト | E2E テストで確かめるプロダクト | ベンチマーク | 作業とは別、経理チームの予定に合わせるため | ガイドだけで印刷まで進めた人の割合と、明細を手にしてから印刷までの時間で、人数は一人足しても結果が変わらなくなるまで足す |"
+   ]
+  },
+  {
+   "condition": "N14",
+   "lines": [
+    "- 利用者と言葉を交わすのはコマンドだけで、ほかの部品は結果か直すところを返す。[P1.2]\\",
+    "  意図: プリンターのないところでも、ほかの部品をすべて確かめられるようにするため。",
+    "| 契約テスト | 結合テストで確かめるアーキテクチャ | 品質 | 作業とは別、印刷システムの新しい版は別の予定で来るため | 記録した各手順で、本物の印刷システムが代役と同じ結果を返す |"
+   ]
+  },
+  {
+   "condition": "N16",
+   "lines": [
+    "- 紙面に使う書体は invoice とともに配り、ノートPCの書体に頼らない。[P1.1]\\",
+    "- 印刷は、ノートPCの印刷システムに既定のプリンターで頼む。[P2.3]\\"
+   ]
+  }
+ ],
+ "more": [
+  {
+   "condition": "N4",
+   "good_when": "the developers who build the numbering and the layout give every invoice a number of the same form, like the README's 請求書番号 2026-11-001, and agree on what the number counts and when it starts again, without asking one another"
+  },
+  {
+   "condition": "N13",
+   "good_when": "the developers who design and test the numbering and the printing find no open case. They know the form of each invoice number. They also know what the accounting team gets back when the printer stops after some invoices of one run have already gone out, including whether rerunning the same command prints those invoices again"
+  },
+  {
+   "condition": "N15",
+   "good_when": "a developer who changes where the code or the tests lie finds, beside each such decision, the story, principle item, or development need that it serves. Today one file per component is tagged [S1] and the split into unit, integration, and E2E folders is tagged [S2], though their intents speak only of the developers' own work"
+  }
+ ]
+}

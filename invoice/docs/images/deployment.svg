@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 780">
+  <title>invoice のデプロイ</title>
+  <style>
+    svg { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, 'Hiragino Sans', 'Noto Sans CJK JP', 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif; }
+    .bg { fill: #ffffff; }
+    .ext { fill: #eaeef2; stroke: #d0d7de; stroke-width: 1.5; stroke-dasharray: 5 4; }
+    .unit { fill: #ddf4ff; fill-opacity: 0.35; stroke: #0969da; stroke-width: 1.2; }
+    .frame { fill: none; stroke: #0969da; stroke-width: 1.5; stroke-dasharray: 6 4; }
+    .frame-name { fill: #0969da; font-size: 13px; font-weight: 600; }
+    .name { fill: #1f2328; font-size: 15px; font-weight: 600; text-anchor: middle; }
+    .kind { fill: #59636e; font-size: 12px; text-anchor: middle; }
+    .label { fill: #1f2328; font-size: 13px; }
+    .small { font-size: 12px; }
+    .data { fill: #8250df; font-size: 12px; font-style: italic; }
+    .line { fill: none; stroke: #59636e; stroke-width: 1.5; }
+    .head { fill: #59636e; }
+    .halo { stroke: #ffffff; stroke-width: 7; stroke-linejoin: round; paint-order: stroke; }
+    .mid { text-anchor: middle; }
+    .start { text-anchor: start; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .ext { fill: #21262d; stroke: #3d444d; }
+      .unit { fill: #0c2d6b; stroke: #4493f8; }
+      .frame { stroke: #4493f8; }
+      .frame-name { fill: #4493f8; }
+      .name, .label { fill: #f0f6fc; }
+      .kind { fill: #9198a1; }
+      .data { fill: #c297ff; }
+      .line { stroke: #9198a1; }
+      .head { fill: #9198a1; }
+      .halo { stroke: #0d1117; }
+    }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path class="head" d="M0,0 L10,5 L0,10 z"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1300" height="780"/>
+
+  <!-- the user's laptop -->
+  <rect class="frame" x="20" y="20" width="900" height="540" rx="8"/>
+  <text class="frame-name start" x="34" y="42">利用者のノートPC</text>
+  <text class="kind start" x="160" y="42">[Linux、端末]</text>
+
+  <rect class="unit" x="60" y="80" width="380" height="130" rx="6"/>
+  <text class="name mid" x="250" y="110">invoice</text>
+  <text class="kind mid" x="250" y="130">[invoice だけの環境、Python]</text>
+  <text class="label small mid" x="250" y="152">コマンド、明細の読み取り、発行者情報の保管、</text>
+  <text class="label small mid" x="250" y="170">請求の計算、番号の採番、請求書の組版、印刷</text>
+  <text class="label small mid" x="250" y="192">とともに配る紙面の書体</text>
+
+  <rect class="unit" x="500" y="80" width="360" height="130" rx="6"/>
+  <text class="name mid" x="680" y="125">invoice の置き場</text>
+  <text class="kind mid" x="680" y="145">[ホームフォルダーの中のファイル]</text>
+  <text class="data mid" x="680" y="175">発行者情報、発行記録</text>
+
+  <rect class="ext" x="60" y="290" width="380" height="90" rx="6"/>
+  <text class="name mid" x="250" y="330">インストーラー</text>
+  <text class="kind mid" x="250" y="352">[uv]</text>
+
+  <rect class="ext" x="500" y="290" width="360" height="90" rx="6"/>
+  <text class="name mid" x="680" y="330">印刷システム</text>
+  <text class="kind mid" x="680" y="352">[Linux の印刷サービス]</text>
+
+  <rect class="unit" x="60" y="440" width="380" height="90" rx="6"/>
+  <text class="name mid" x="250" y="475">利用者のフォルダー</text>
+  <text class="kind mid" x="250" y="495">[ファイル]</text>
+  <text class="data mid" x="250" y="515">明細</text>
+
+  <!-- CI -->
+  <rect class="frame" x="20" y="590" width="900" height="110" rx="8"/>
+  <text class="frame-name start" x="34" y="612">CI</text>
+  <text class="kind start" x="60" y="612">[GitHub Actions]</text>
+  <rect class="unit" x="60" y="625" width="380" height="60" rx="6"/>
+  <text class="name mid" x="250" y="650">テストとリリース</text>
+  <text class="label small mid" x="250" y="672">作業中のテスト、配布物を作る</text>
+
+  <!-- services outside the product -->
+  <rect class="ext" x="1000" y="80" width="270" height="70" rx="6"/>
+  <text class="name mid" x="1135" y="121">インストーラーの配布元</text>
+  <rect class="ext" x="1000" y="300" width="270" height="70" rx="6"/>
+  <text class="name mid" x="1135" y="341">既定のプリンター</text>
+  <rect class="ext" x="1000" y="440" width="270" height="80" rx="6"/>
+  <text class="name mid" x="1135" y="475">invoice のリリース</text>
+  <text class="kind mid" x="1135" y="497">[GitHub のリリース]</text>
+
+  <!-- what invoice does in the laptop -->
+  <path class="line" d="M440,145 L496,145" marker-end="url(#arrow)"/>
+  <text class="label small halo mid" x="468" y="135">読み書きする</text>
+
+  <path class="line" d="M60,180 L40,180 L40,485 L56,485" marker-end="url(#arrow)"/>
+  <text class="label small halo start" x="70" y="425">明細を読む</text>
+
+  <path class="line" d="M440,195 L520,286" marker-end="url(#arrow)"/>
+  <text class="label small halo start" x="490" y="245">紙面を送る</text>
+
+  <path class="line" d="M250,290 L250,214" marker-end="url(#arrow)"/>
+  <text class="label small halo start" x="260" y="255">入れる</text>
+
+  <!-- what is used outside -->
+  <path class="line" d="M860,335 L996,335" marker-end="url(#arrow)"/>
+  <text class="label small halo mid" x="930" y="325">印刷させる</text>
+
+  <path class="line" d="M440,305 L475,305 L475,58 L960,58 L960,115 L996,115" marker-end="url(#arrow)"/>
+  <text class="label small halo mid" x="720" y="62">インストーラーを取り寄せる</text>
+
+  <path class="line" d="M440,365 L470,365 L470,420 L960,420 L960,470 L996,470" marker-end="url(#arrow)"/>
+  <text class="label small halo mid" x="720" y="424">配布物を取り寄せる</text>
+
+  <path class="line" d="M440,655 L1135,655 L1135,524" marker-end="url(#arrow)"/>
+  <text class="label small halo mid" x="720" y="645">配布物を置く</text>
+
+  <!-- legend -->
+  <text class="frame-name start" x="40" y="750">凡例</text>
+  <rect class="frame" x="90" y="735" width="36" height="22" rx="4"/>
+  <text class="label small start" x="134" y="750">環境 [技術]</text>
+  <rect class="unit" x="230" y="735" width="36" height="22" rx="4"/>
+  <text class="label small start" x="274" y="750">動くもの、または置き場 [技術]: そのコンポーネント</text>
+  <text class="data start" x="640" y="750">残すデータ</text>
+  <rect class="ext" x="730" y="735" width="36" height="22" rx="4"/>
+  <text class="label small start" x="774" y="750">invoice の外にあるもの、矢印: 何を使うか</text>
+</svg>

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600">
+  <title>invoice のデータ</title>
+  <style>
+    svg { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, 'Hiragino Sans', 'Noto Sans CJK JP', 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif; }
+    .bg { fill: #ffffff; }
+    .box { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.5; }
+    .frame-name { fill: #0969da; font-size: 13px; font-weight: 600; }
+    .name { fill: #1f2328; font-size: 15px; font-weight: 600; text-anchor: middle; }
+    .label { fill: #1f2328; font-size: 13px; }
+    .small { font-size: 12px; }
+    .line { fill: none; stroke: #59636e; stroke-width: 1.5; }
+    .head { fill: #59636e; }
+    .halo { stroke: #ffffff; stroke-width: 7; stroke-linejoin: round; paint-order: stroke; }
+    .mid { text-anchor: middle; }
+    .start { text-anchor: start; }
+    .end { text-anchor: end; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .box { fill: #161b22; stroke: #3d444d; }
+      .frame-name { fill: #4493f8; }
+      .name, .label { fill: #f0f6fc; }
+      .line { stroke: #9198a1; }
+      .head { fill: #9198a1; }
+      .halo { stroke: #0d1117; }
+    }
+  </style>
+  <rect class="bg" x="0" y="0" width="1100" height="600"/>
+
+  <!-- data -->
+  <rect class="box" x="440" y="60" width="220" height="72"/>
+  <text class="name mid" x="550" y="101">発行者情報</text>
+  <rect class="box" x="840" y="60" width="220" height="72"/>
+  <text class="name mid" x="950" y="101">発行記録</text>
+  <rect class="box" x="40" y="240" width="220" height="72"/>
+  <text class="name mid" x="150" y="281">明細</text>
+  <rect class="box" x="440" y="240" width="220" height="72"/>
+  <text class="name mid" x="550" y="281">請求書</text>
+  <rect class="box" x="840" y="240" width="220" height="72"/>
+  <text class="name mid" x="950" y="281">税率ごとの合計</text>
+  <rect class="box" x="40" y="420" width="220" height="72"/>
+  <text class="name mid" x="150" y="461">明細行</text>
+  <rect class="box" x="440" y="420" width="220" height="72"/>
+  <text class="name mid" x="550" y="461">直すところ</text>
+  <rect class="box" x="840" y="420" width="220" height="72"/>
+  <text class="name mid" x="950" y="461">印刷用の文書</text>
+
+  <!-- 明細 holds 明細行 -->
+  <path class="head" d="M150,312 L156,321 L150,330 L144,321 Z"/>
+  <path class="line" d="M150,330 L150,420"/>
+  <text class="label small halo start" x="162" y="346">1</text>
+  <text class="label small halo start" x="162" y="410">1..*</text>
+  <text class="label small halo start" x="162" y="378">行として持つ</text>
+
+  <!-- 明細 to 請求書 -->
+  <path class="line" d="M260,276 L440,276"/>
+  <text class="label small halo mid" x="278" y="294">1</text>
+  <text class="label small halo mid" x="418" y="294">0..*</text>
+  <text class="label small halo mid" x="350" y="266">から作る</text>
+
+  <!-- 請求書 to 明細行 -->
+  <path class="line" d="M470,312 L260,430"/>
+  <text class="label small halo mid" x="488" y="336">0..1</text>
+  <text class="label small halo mid" x="290" y="400">1..*</text>
+  <text class="label small halo start" x="380" y="372">明細に載せる</text>
+
+  <!-- 直すところ to 明細行 -->
+  <path class="line" d="M440,466 L260,466"/>
+  <text class="label small halo mid" x="418" y="484">0..*</text>
+  <text class="label small halo mid" x="282" y="484">0..1</text>
+  <text class="label small halo mid" x="350" y="456">誤りの行を指す</text>
+
+  <!-- 請求書 holds 税率ごとの合計 -->
+  <path class="head" d="M660,276 L669,270 L678,276 L669,282 Z"/>
+  <path class="line" d="M678,276 L840,276"/>
+  <text class="label small halo mid" x="690" y="294">1</text>
+  <text class="label small halo mid" x="818" y="294">1..*</text>
+  <text class="label small halo mid" x="760" y="266">税率ごとに持つ</text>
+
+  <!-- 請求書 to 発行者情報 -->
+  <path class="line" d="M550,240 L550,132"/>
+  <text class="label small halo start" x="560" y="230">0..*</text>
+  <text class="label small halo start" x="560" y="150">1</text>
+  <text class="label small halo end" x="540" y="190">発行者として載せる</text>
+
+  <!-- 発行記録 to 請求書 -->
+  <path class="line" d="M900,132 L640,240"/>
+  <text class="label small halo mid" x="900" y="154">1</text>
+  <text class="label small halo mid" x="680" y="236">0..*</text>
+  <text class="label small halo start" x="790" y="196">番号を付ける</text>
+
+  <!-- 請求書 to 印刷用の文書 -->
+  <path class="line" d="M640,312 L860,420"/>
+  <text class="label small halo mid" x="640" y="336">1</text>
+  <text class="label small halo mid" x="842" y="402">1</text>
+  <text class="label small halo start" x="760" y="352">紙面にする</text>
+
+  <!-- legend -->
+  <text class="frame-name start" x="40" y="560">凡例</text>
+  <text class="label small start" x="90" y="560">線の端の数: その端のデータを、もう一方がいくつ結ぶか</text>
+  <path class="head" d="M560,555 L569,549 L578,555 L569,561 Z"/>
+  <path class="line" d="M578,555 L610,555"/>
+  <text class="label small start" x="620" y="560">ひし形の側が全体で、部分を持つ</text>
+</svg>
