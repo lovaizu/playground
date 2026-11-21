@@ -1,0 +1,69 @@
+{
+ "result": "judged",
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "E2E ケースは、ガイドの「使ってみる」のとおりに、一か月分の明細で invoice を通しで動かす。",
+    "@supports(\"KR1.1\")",
+    "def test_初めての月に一か月分の明細から取引先ごとの請求書を自分たちで印刷できる(",
+    "    # When: 利用者が明細のファイルを渡してコマンドを一つ打ち、尋ねられた事柄に答える。",
+    "@supports(\"KR1.2\")",
+    "def test_翌月からは明細を渡すコマンド一つで何も尋ねずに印刷まで進む("
+   ]
+  },
+  {
+   "condition": "N2",
+   "lines": [
+    "結合ケースは、部品をスケルトンのインターフェースどうしでつなぎ、既定のプリンターだけを代役に替える。",
+    "各ケースは、確かめるストーリー、原則の項目、データ、コンポーネントを `supports` で名指しする。",
+    "@supports(\"S1\", \"P3.4\", \"P3.6\", \"P3.7\", \"P3.8\", \"P3.9\")",
+    "@supports(\"S3\", \"P2.5\")",
+    "@supports(\"S3\", \"P1.5\", \"P3.10\", \"P3.11\", \"P3.12\", \"直すところ\")",
+    "@supports(\"S4\", \"P1.2\", \"P1.3\", \"直すところ\", \"明細の読み取り\")"
+   ]
+  },
+  {
+   "condition": "N7",
+   "lines": [
+    "プロパティは、要件だけから取った決まりを、使い方がもたらすどの入力にも確かめる。",
+    "各プロパティは、Hughes の種類と、拠る要素を名指しする。",
+    "@supports(\"P3.2\", \"P3.3\", \"P3.4\", \"P3.8\", \"請求の計算\")",
+    "@supports(\"P3.7\", \"P3.8\")",
+    "@supports(\"P3.10\", \"P3.11\", \"P3.12\")",
+    "@supports(\"P1.3\", \"直すところ\")"
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "ケースは、ここに挙げるテストのコードだけで述べる。",
+    "    # Given: 取引日と数量を打ち間違えた、11 月分の明細。",
+    "    # When: 利用者が明細のファイルを渡してコマンドを一つ打ち、尋ねられた事柄に答える。",
+    "    # Then: 誤りの行と列と値をすべて示し、何も尋ねず、何も印刷しない。"
+   ]
+  },
+  {
+   "condition": "N5",
+   "lines": [
+    "リポジトリの一番上で `python3 invoice/tests/trace.py check invoice` と打つと、不備がなければ 0 を返す。",
+    "def faults(product: Path) -> list[str]:"
+   ]
+  },
+  {
+   "condition": "N6",
+   "lines": [
+    "- 請求書の組版: テンプレートは Markdown を描くが、`layout.typeset` は PDF を返す。Markdown を PDF にする部品がなく、ケースはその間を確かめられない。",
+    "- 番号の採番: `numbering.number` の契約に、番号の形がない。ガイドの `2026-11-001` の年月の元と、同じ月の連番の順も決まっていない。ケースはガイドの一枚目の番号だけを確かめ、ほかは重ならないことを確かめる。",
+    "- 明細の読み取り: 取引日の `2026/11/05` や、数量の 0 と負の数と小数を受け付けるかが決まっていない。単価の `2,800` や税率の `10` も同じで、ケースはこれらのクラスを書けない。",
+    "- S2 の「配布物がまだない」: この分かれ道は uv とリリースの置き場の間だけにあり、持つ部品が invoice にない。空の本体でも通るケースしか書けず、結合ケースを置かない。"
+   ]
+  }
+ ],
+ "more": [
+  {
+   "condition": "N3",
+   "good_when": "A developer who builds command.main and gets wrong what it shows for a statement file it can't read (such as one saved in Shift_JIS instead of UTF-8, with the way to save it again as a UTF-8 CSV) or for a file with only the header row (with the one-row example) sees a case fail. Today the only case for command.main's statement refusals is the missing file, and no case at any level checks what the command shows for unreadable or no_rows. A command that shows nothing useful there passes every case."
+  }
+ ]
+}
