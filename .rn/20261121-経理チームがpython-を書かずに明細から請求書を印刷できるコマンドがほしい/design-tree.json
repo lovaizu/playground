@@ -106,12 +106,12 @@
    "necessary_conditions": [
     {
      "id": "N1",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N2",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "適格請求書の登録番号と税率ごとの消費税額",
@@ -122,12 +122,12 @@
     },
     {
      "id": "N3",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N4",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "invoice のライセンス",
@@ -138,33 +138,55 @@
     },
     {
      "id": "N5",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N6",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N7",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "しくみの図と最初の一文",
+       "decided": "しくみの図は invoice/images/how-it-works.svg に置き、README から開ける。しくみの最初の一文は「このガイドだけを頼りに、コマンド一つで明細のファイルから印刷された請求書まで進む」という一つのやり方を、経理チームの言葉で言う。",
+       "by": "reasoning"
+      }
+     ]
     },
     {
      "id": "N8",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N9",
-     "good": false,
-     "decisions": []
+     "good": true,
+     "decisions": [
+      {
+       "about": "リリース前のインストール手順",
+       "decided": "invoice はまだリリースされていないので、インストールの手順はリリースがとる手順として書き、冒頭で開発中でまだ印刷できないと示す。手順は invoice/src/ のリリースができてから、書いたとおりに実行して確かめる。",
+       "by": "reasoning"
+      }
+     ]
     },
     {
      "id": "N10",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "ほかの資料のリンク",
+       "decided": "ほかの資料には、経理チームが開けるページだけを載せる。.rn/ の下のベストプラクティスへのリンクは載せない。",
+       "by": "reasoning"
+      },
+      {
+       "about": "つまずいたときの問い合わせ先",
+       "decided": null
+      }
+     ]
     }
    ]
   },
