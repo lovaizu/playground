@@ -104,6 +104,9 @@
   {
    "name": "\u660e\u7d30\u306e\u8aad\u307f\u8fbc\u307f\u304b\u3089\u8acb\u6c42\u66f8\u306e\u5370\u5237\u307e\u3067\u306e\u90e8\u54c1\u3068\u6d41\u308c\u304c\u5b9a\u307e\u3063\u3066\u3044\u308b",
    "path": "invoice/docs/architecture.md",
+   "more_paths": [
+    "invoice/docs/images/"
+   ],
    "kind": "architecture",
    "inputs": [
     "invoice/docs/product-vision.md",
@@ -114,7 +117,13 @@
     {
      "id": "N1",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "三つの図の置き方",
+       "decided": "データ、コンポーネント、デプロイの三つの図は、invoice/docs/images/ に data-model.svg、components.svg、deployment.svg のファイルとして置き、architecture.md から開く。",
+       "by": "reasoning"
+      }
+     ]
     },
     {
      "id": "N2",
