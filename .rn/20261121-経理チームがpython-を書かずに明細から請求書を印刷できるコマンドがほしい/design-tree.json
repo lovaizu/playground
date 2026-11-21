@@ -232,7 +232,13 @@
     {
      "id": "N5",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "テストを仕様のケースとそろえる",
+       "decided": "invoice/tests/ のテストは invoice/docs/test-design.md のケースと名前で一対一にそろえ、ケースのないテスト(test_width.py、test_sheet.py などのうち契約にない振る舞いのもの)は消す。numbering.number は契約のとおり発行日を受け取る。契約にない分かれ道(Ctrl+D、端末への書き戻しなど)は、どのケースも求めないなら取り除く。",
+       "by": "reasoning"
+      }
+     ]
     },
     {
      "id": "N6",
