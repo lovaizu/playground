@@ -214,7 +214,13 @@
     {
      "id": "N1",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "宛先の敬称",
+       "decided": "テンプレートが求める宛先の敬称 invoice.customer.honorific は、明細の取引先名に株式会社・合同会社・有限会社などの法人格があれば「御中」、なければ「様」とし、請求の計算が取引先ごとに決めてテンプレートに渡す。",
+       "by": "reasoning"
+      }
+     ]
     },
     {
      "id": "N2",
@@ -233,6 +239,11 @@
       {
        "about": "\u30ac\u30a4\u30c9\u3069\u304a\u308a\u306b\u5165\u308b\u914d\u5e03\u7269",
        "decided": "invoice \u306f\u3001invoice/README.md \u306e\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u306e\u56db\u884c\u3092 Linux \u306e\u7aef\u672b\u306b\u8cbc\u308a\u4ed8\u3051\u308b\u3068\u5165\u308a\u3001invoice --version \u304c invoice 0.1.0 \u3068\u51fa\u3059\u914d\u5e03\u7269\u3068\u3057\u3066\u4f5c\u308b\u3002",
+       "by": "reasoning"
+      },
+      {
+       "about": "\u8acb\u6c42\u66f8\u306e\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3092\u63cf\u304f\u4ed5\u7d44\u307f",
+       "decided": "invoice/templates/ \u306e Jinja2 \u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3092 trim_blocks \u3068 lstrip_blocks \u3092\u6709\u52b9\u306b\u3057\u3066\u63cf\u304f\u305f\u3081\u3001Jinja2 \u3092\u914d\u5e03\u7269\u306e\u4f9d\u5b58\u306b\u5165\u308c\u308b\u3002",
        "by": "reasoning"
       }
      ]
