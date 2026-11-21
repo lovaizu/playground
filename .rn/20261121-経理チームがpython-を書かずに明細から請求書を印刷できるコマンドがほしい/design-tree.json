@@ -122,8 +122,13 @@
     },
     {
      "id": "N3",
-     "good": true,
-     "decisions": []
+     "good": false,
+     "decisions": [
+      {
+       "about": "冒頭でインストールもまだ通らないと示す",
+       "decided": null
+      }
+     ]
     },
     {
      "id": "N4",
@@ -148,7 +153,7 @@
     },
     {
      "id": "N7",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "しくみの図と最初の一文",
@@ -164,18 +169,22 @@
     },
     {
      "id": "N9",
-     "good": true,
+     "good": false,
      "decisions": [
       {
        "about": "リリース前のインストール手順",
        "decided": "invoice はまだリリースされていないので、インストールの手順はリリースがとる手順として書き、冒頭で開発中でまだ印刷できないと示す。手順は invoice/src/ のリリースができてから、書いたとおりに実行して確かめる。",
        "by": "reasoning"
+      },
+      {
+       "about": "インストールの行が通り invoice 0.1.0 と出る",
+       "decided": null
       }
      ]
     },
     {
      "id": "N10",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "ほかの資料のリンク",
