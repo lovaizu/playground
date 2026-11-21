@@ -12,54 +12,216 @@
   "pr": null
  },
  "goal": {
-  "decided": "\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u3001\u958b\u767a\u8005\u306e\u624b\u3092\u501f\u308a\u305a\u306b\u3001\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u81ea\u5206\u305f\u3061\u3067\u5370\u5237\u3067\u304d\u308b\u3002\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u306f\u3001\u30ac\u30a4\u30c9\u3060\u3051\u3092\u983c\u308a\u306b\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u304b\u3089\u30b3\u30de\u30f3\u30c9\u4e00\u3064\u3067\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3059\u308b\u3002",
-  "by": "reasoning"
+  "decided": "経理チームが、開発者の手を借りずに、明細から請求書を自分たちで印刷できる。経理チームのメンバーは、ガイドだけを頼りに、明細のファイルからコマンド一つで請求書を印刷する。",
+  "by": "user"
  },
  "deliverables": [
   {
-   "name": "\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u3001\u958b\u767a\u8005\u306e\u624b\u3092\u501f\u308a\u305a\u306b\u3001\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u81ea\u5206\u305f\u3061\u3067\u5370\u5237\u3067\u304d\u308b\u3002\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u306f\u3001\u30ac\u30a4\u30c9\u3060\u3051\u3092\u983c\u308a\u306b\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u304b\u3089\u30b3\u30de\u30f3\u30c9\u4e00\u3064\u3067\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3059\u308b\u3002",
-   "path": ".rn/20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044/design-tree.json",
+   "name": "経理チームが明細から請求書を印刷できるまでの計画",
+   "path": ".rn/20261121-経理チームがpython-を書かずに明細から請求書を印刷できるコマンドがほしい/design-tree.json",
    "kind": "design-tree",
    "inputs": [],
    "status": "open",
    "necessary_conditions": [
     {
      "id": "N1",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N2",
      "good": false,
-     "decisions": []
+     "decisions": [
+      {
+       "about": "請求書のベストプラクティス",
+       "decided": null
+      }
+     ]
     },
     {
      "id": "N7",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N3",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N4",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N5",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N6",
-     "good": false,
+     "good": true,
      "decisions": []
     }
    ]
+  },
+  {
+   "name": "経理チームが何のために、どこまでできれば足りるかが定まっている",
+   "path": "invoice/docs/product-vision.md",
+   "kind": "product-vision",
+   "inputs": [],
+   "status": "open",
+   "necessary_conditions": [
+    {"id": "N1", "good": false, "decisions": []},
+    {"id": "N2", "good": false, "decisions": []},
+    {"id": "N3", "good": false, "decisions": []},
+    {"id": "N4", "good": false, "decisions": []},
+    {"id": "N5", "good": false, "decisions": []},
+    {"id": "N6", "good": false, "decisions": []}
+   ]
+  },
+  {
+   "name": "経理チームのメンバーが、ガイドだけを見てコマンドを準備し、明細から請求書を印刷できる",
+   "path": "invoice/README.md",
+   "kind": "readme",
+   "inputs": [
+    "invoice/docs/product-vision.md"
+   ],
+   "status": "open",
+   "necessary_conditions": [
+    {"id": "N1", "good": false, "decisions": []},
+    {"id": "N2", "good": false, "decisions": []},
+    {"id": "N3", "good": false, "decisions": []},
+    {"id": "N4", "good": false, "decisions": []},
+    {"id": "N5", "good": false, "decisions": []},
+    {"id": "N6", "good": false, "decisions": []},
+    {"id": "N7", "good": false, "decisions": []},
+    {"id": "N8", "good": false, "decisions": []},
+    {"id": "N9", "good": false, "decisions": []},
+    {"id": "N10", "good": false, "decisions": []}
+   ]
+  },
+  {
+   "name": "明細の読み込みから請求書の印刷までの部品と流れが定まっている",
+   "path": "invoice/docs/architecture.md",
+   "kind": "architecture",
+   "inputs": [
+    "invoice/docs/product-vision.md",
+    "invoice/README.md"
+   ],
+   "status": "open",
+   "necessary_conditions": [
+    {"id": "N1", "good": false, "decisions": []},
+    {"id": "N2", "good": false, "decisions": []},
+    {"id": "N3", "good": false, "decisions": []},
+    {"id": "N4", "good": false, "decisions": []},
+    {"id": "N5", "good": false, "decisions": []},
+    {"id": "N6", "good": false, "decisions": []},
+    {"id": "N7", "good": false, "decisions": []},
+    {"id": "N8", "good": false, "decisions": []},
+    {"id": "N9", "good": false, "decisions": []},
+    {"id": "N10", "good": false, "decisions": []},
+    {"id": "N11", "good": false, "decisions": []},
+    {"id": "N12", "good": false, "decisions": []},
+    {"id": "N13", "good": false, "decisions": []},
+    {"id": "N14", "good": false, "decisions": []},
+    {"id": "N15", "good": false, "decisions": []},
+    {"id": "N16", "good": false, "decisions": []}
+   ]
+  },
+  {
+   "name": "コマンドの各部品が何を決め、どう呼ばれるかが定まっている",
+   "path": "invoice/docs/software-design.md",
+   "kind": "software-design",
+   "inputs": [
+    "invoice/docs/architecture.md"
+   ],
+   "status": "open",
+   "file": false,
+   "necessary_conditions": [
+    {"id": "N1", "good": false, "decisions": []},
+    {"id": "N2", "good": false, "decisions": []},
+    {"id": "N3", "good": false, "decisions": []},
+    {"id": "N4", "good": false, "decisions": []}
+   ]
+  },
+  {
+   "name": "明細から請求書を作るときに守るべき振る舞いが、確かめられるケースとして並んでいる",
+   "path": "invoice/docs/test-design.md",
+   "kind": "test-design",
+   "inputs": [
+    "invoice/docs/product-vision.md",
+    "invoice/README.md",
+    "invoice/docs/architecture.md",
+    "invoice/docs/software-design.md"
+   ],
+   "status": "open",
+   "necessary_conditions": [
+    {"id": "N1", "good": false, "decisions": []},
+    {"id": "N2", "good": false, "decisions": []},
+    {"id": "N3", "good": false, "decisions": []},
+    {"id": "N7", "good": false, "decisions": []},
+    {"id": "N4", "good": false, "decisions": []},
+    {"id": "N5", "good": false, "decisions": []},
+    {"id": "N6", "good": false, "decisions": []}
+   ]
+  },
+  {
+   "name": "経理チームのメンバーが、明細のファイルを渡すだけで、印刷できる請求書を得る",
+   "path": "invoice/src/",
+   "more_paths": [
+    "invoice/tests/",
+    "invoice/pyproject.toml"
+   ],
+   "kind": "code",
+   "inputs": [
+    "invoice/docs/architecture.md",
+    "invoice/docs/software-design.md",
+    "invoice/docs/test-design.md"
+   ],
+   "status": "open",
+   "necessary_conditions": [
+    {"id": "N1", "good": false, "decisions": []},
+    {"id": "N2", "good": false, "decisions": []},
+    {"id": "N3", "good": false, "decisions": []},
+    {"id": "N4", "good": false, "decisions": []},
+    {"id": "N5", "good": false, "decisions": []},
+    {"id": "N6", "good": false, "decisions": []},
+    {"id": "N7", "good": false, "decisions": []},
+    {"id": "N8", "good": false, "decisions": []}
+   ]
   }
  ],
- "work": []
+ "work": [
+  {
+   "do": "decide",
+   "path": ".rn/20261121-経理チームがpython-を書かずに明細から請求書を印刷できるコマンドがほしい/design-tree.json",
+   "condition": "N2",
+   "about": "請求書のベストプラクティス"
+  },
+  {
+   "do": "make",
+   "path": "invoice/docs/product-vision.md"
+  },
+  {
+   "do": "make",
+   "path": "invoice/README.md"
+  },
+  {
+   "do": "make",
+   "path": "invoice/docs/architecture.md"
+  },
+  {
+   "do": "make",
+   "path": "invoice/docs/software-design.md"
+  },
+  {
+   "do": "make",
+   "path": "invoice/docs/test-design.md"
+  },
+  {
+   "do": "make",
+   "path": "invoice/src/"
+  }
+ ]
 }
