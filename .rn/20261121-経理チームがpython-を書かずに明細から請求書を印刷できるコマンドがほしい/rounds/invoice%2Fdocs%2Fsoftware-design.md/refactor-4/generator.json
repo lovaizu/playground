@@ -1,0 +1,39 @@
+{
+ "result": "made",
+ "files": ["invoice/docs/software-design.md"],
+ "good": [
+  {"condition": "N1", "lines": [
+   "- `src/invoice/command.py`: 部品の結果と直すところを、利用者に端末でどう示すか。",
+   "- `src/invoice/place.py`: invoice が残すファイルを、ノートPCのどこに置くか。",
+   "- `src/invoice/issuer.py`: 発行者情報の形を、尋ねる事柄とその順と名前から、残すファイルの中身まで決める。",
+   "- `src/invoice/billing.py`: 請求書の額を、消費税と合計の決まりに沿ってどう出すか。",
+   "- `src/invoice/periods.py`: 取引日と支払条件から、締めの期間と発行日と支払期限をどう決めるか。",
+   "- `src/invoice/numbering.py`: 取引先と締めの期間の組に、どの請求書番号を付けるか。",
+   "置き場の場所は place.py だけが決め、issuer.py と numbering.py はそこから受け取る。",
+   "初回に尋ねる発行者の事柄と、その順と名前は、issuer.py だけが決める。",
+   "command.py は、受け取った事柄を受け取った順に尋ねるだけである。"
+  ]},
+  {"condition": "N2", "lines": [
+   "def main(argv: Sequence[str] | None = None) -> int:",
+   "def read(path: Path) -> tuple[LedgerRow, ...]:",
+   "def load() -> Issuer | tuple[Question, ...]:",
+   "def number(customer_name: str, period: Period) -> str:",
+   "    受け取る: 請求書の取引先の名称と締めの期間。置き場の場所は place.folder から受け取る。",
+   "def typeset(invoices: Sequence[Invoice]) -> tuple[PrintDocument, ...]:",
+   "def print_documents(documents: Sequence[PrintDocument]) -> int:",
+   "    problem: LedgerProblem",
+   "    problem: Literal[\"unreadable\", \"broken\", \"unwritable\"]",
+   "    problem: Literal[\"no_default_printer\", \"send_failed\"]",
+   "class AnswerFix:",
+   "class AnswerRefused(Exception):",
+   "    \"\"\"税率ごとの対象額。円の整数。税込か税抜は、請求書の tax_included のとおり。\"\"\"",
+   "    honorific: Literal[\"御中\", \"様\"]",
+   "    unit: str",
+   "    bank: BankAccount"
+  ]},
+  {"condition": "N4", "lines": [
+   "- ディレクトリ構成: `periods.py` と `place.py` がない。請求の計算の二つのモジュールと置き場の場所の決めごとを、構成と方針に足す必要がある。",
+   "- S1 と S3: 発行者情報や発行記録を読めない、または残せないときの分かれ道がない。インターフェースは `place.StoreRefused` で断るので、その分かれ道を足す必要がある。"
+  ]}
+ ]
+}

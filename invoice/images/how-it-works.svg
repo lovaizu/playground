@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="700" viewBox="0 0 960 700" role="img" aria-labelledby="title desc">
+  <title id="title">invoice のしくみ</title>
+  <desc id="desc">このガイドだけを頼りに、明細のファイルを指定してコマンドを一つ打てば、invoice が請求書を作ってそのまま印刷します。左に準備から印刷までの流れ、右にそれぞれの段階で浮かぶ心配と、その段階であなたが得るものを示します。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+    <style>
+      text { font-family: "Yu Gothic UI", "Yu Gothic", "Meiryo", "Hiragino Sans", "Noto Sans CJK JP", sans-serif; fill: #222; }
+      .head { font-size: 20px; font-weight: bold; }
+      .step { font-size: 17px; font-weight: bold; }
+      .note { font-size: 14px; }
+      .doubt { font-size: 15px; font-weight: bold; fill: #8a3b00; }
+      .gets { font-size: 14px; fill: #1f4d2b; }
+      .col { font-size: 14px; fill: #555; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="700" fill="#ffffff"/>
+
+  <!-- the one way -->
+  <rect x="20" y="16" width="920" height="64" rx="10" fill="#eef4fb" stroke="#3d6fa8" stroke-width="2"/>
+  <text x="480" y="44" class="head" text-anchor="middle">このガイドだけを頼りに、明細のファイルを指定してコマンドを一つ打てば、</text>
+  <text x="480" y="68" class="head" text-anchor="middle">invoice が請求書を作ってそのまま印刷します</text>
+
+  <text x="40" y="112" class="col">あなたの手順と invoice の動き</text>
+  <text x="440" y="112" class="col">浮かぶ心配 → この段階であなたが得るもの</text>
+
+  <!-- step 1 -->
+  <rect x="20" y="124" width="380" height="84" rx="8" fill="#f7f7f7" stroke="#666"/>
+  <text x="40" y="154" class="step">1. ガイドのとおりに準備する</text>
+  <text x="40" y="180" class="note">インストールの四行を端末に貼り付けるだけ</text>
+  <text x="40" y="199" class="note">Python を書くことも入れることもいりません</text>
+  <line x1="400" y1="166" x2="430" y2="166" stroke="#999" stroke-dasharray="4 3"/>
+  <rect x="430" y="124" width="510" height="84" rx="8" fill="#fff8f0" stroke="#d08a4a"/>
+  <text x="448" y="154" class="doubt">コマンドを使ったことがなくても、自分たちだけで準備できる?</text>
+  <text x="448" y="182" class="gets">→ 貼り付けて Enter を押すだけで、開発者に頼まずに準備が終わり、</text>
+  <text x="448" y="200" class="gets">　 最後に invoice 0.1.0 と出れば使えます。</text>
+
+  <line x1="210" y1="208" x2="210" y2="236" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- step 2 -->
+  <rect x="20" y="238" width="380" height="84" rx="8" fill="#f7f7f7" stroke="#666"/>
+  <text x="40" y="268" class="step">2. 明細を指定してコマンドを一つ打つ</text>
+  <text x="40" y="294" class="note">$ invoice 2026年11月分明細.csv</text>
+  <text x="40" y="313" class="note">発行者の情報を聞くのは初回だけ</text>
+  <line x1="400" y1="280" x2="430" y2="280" stroke="#999" stroke-dasharray="4 3"/>
+  <rect x="430" y="238" width="510" height="84" rx="8" fill="#fff8f0" stroke="#d08a4a"/>
+  <text x="448" y="268" class="doubt">毎月の請求書に手間はかからない?</text>
+  <text x="448" y="296" class="gets">→ 初回に一度答えれば、翌月からは明細を渡すコマンド一つで</text>
+  <text x="448" y="314" class="gets">　 印刷まで進みます。</text>
+
+  <line x1="210" y1="322" x2="210" y2="350" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- step 3 -->
+  <rect x="20" y="352" width="380" height="84" rx="8" fill="#f7f7f7" stroke="#666"/>
+  <text x="40" y="382" class="step">3. invoice が明細を確かめる</text>
+  <text x="40" y="408" class="note">止まるときは、明細のどの行の何を直すかを</text>
+  <text x="40" y="427" class="note">日本語で示します</text>
+  <line x1="400" y1="394" x2="430" y2="394" stroke="#999" stroke-dasharray="4 3"/>
+  <rect x="430" y="352" width="510" height="84" rx="8" fill="#fff8f0" stroke="#d08a4a"/>
+  <text x="448" y="382" class="doubt">つまずいたら開発者に聞くしかないのでは</text>
+  <text x="448" y="410" class="gets">→ 示されたとおり直して打ち直せば進めます。それでも進めないときは</text>
+  <text x="448" y="428" class="gets">　 リポジトリの Issues で尋ねられます。</text>
+
+  <line x1="210" y1="436" x2="210" y2="464" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- step 4 -->
+  <rect x="20" y="466" width="380" height="84" rx="8" fill="#f7f7f7" stroke="#666"/>
+  <text x="40" y="496" class="step">4. invoice が請求書を作る</text>
+  <text x="40" y="522" class="note">登録番号と、税率ごとの対象額・消費税額を載せ、</text>
+  <text x="40" y="541" class="note">端数は税率ごとに一度だけ切り捨てます</text>
+  <line x1="400" y1="508" x2="430" y2="508" stroke="#999" stroke-dasharray="4 3"/>
+  <rect x="430" y="466" width="510" height="84" rx="8" fill="#fff8f0" stroke="#d08a4a"/>
+  <text x="448" y="496" class="doubt">取引先にそのまま出せる請求書になる? 計算は合っている?</text>
+  <text x="448" y="524" class="gets">→ 適格請求書に要る記載がそろい、消費税額は税率ごとに</text>
+  <text x="448" y="542" class="gets">　 正しく計算されます。</text>
+
+  <line x1="210" y1="550" x2="210" y2="578" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- step 5 -->
+  <rect x="20" y="580" width="380" height="84" rx="8" fill="#eaf6ec" stroke="#3c8a50" stroke-width="2"/>
+  <text x="40" y="610" class="step">5. 既定のプリンターから印刷される</text>
+  <text x="40" y="636" class="note">取引先にそのまま渡せる請求書が出てきます</text>
+  <text x="40" y="655" class="note">開発者に頼ったところはありません</text>
+</svg>

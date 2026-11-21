@@ -1,0 +1,74 @@
+{
+ "result": "judged",
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "## 宛先",
+    "{{ invoice.customer.name }} {{ invoice.customer.honorific }}"
+   ]
+  },
+  {
+   "condition": "N2",
+   "lines": [
+    "## 発行者",
+    "{{ invoice.issuer.name }}\\"
+   ]
+  },
+  {
+   "condition": "N3",
+   "lines": [
+    "請求書番号: {{ invoice.number }}\\",
+    "発行日: {{ ymd(invoice.issue_date) }}",
+    "{% macro ymd(day) %}{{ day.year }}年{{ day.month }}月{{ day.day }}日{% endmacro %}"
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "| 取引日 | 品目 | 数量 | 単価({{ basis(invoice.tax_included) }}) | 税率 | 金額({{ basis(invoice.tax_included) }}) |",
+    "| {{ ymd(line.date) }} | {{ line.item }} | {{ quantity(line.quantity, line.unit) }} | {{ yen(line.unit_price) }} | {{ rate(line.tax_rate, line.reduced) }} | {{ yen(line.amount) }} |"
+   ]
+  },
+  {
+   "condition": "N5",
+   "lines": [
+    "## ご請求金額とお支払い",
+    "ご請求金額(税込): {{ yen(invoice.total) }} 円\\",
+    "## 明細"
+   ]
+  },
+  {
+   "condition": "N6",
+   "lines": [
+    "| {{ ymd(line.date) }} | {{ line.item }} | {{ quantity(line.quantity, line.unit) }} | {{ yen(line.unit_price) }} | {{ rate(line.tax_rate, line.reduced) }} | {{ yen(line.amount) }} |",
+    "| {{ rate(summary.tax_rate, summary.reduced) }} | {{ yen(summary.base) }} | {{ yen(summary.tax) }} |",
+    "合計(税込): {{ yen(invoice.total) }} 円",
+    "{% macro yen(amount) %}{{ \"{:,}\".format(amount) }}{% endmacro %}"
+   ]
+  },
+  {
+   "condition": "N7",
+   "lines": [
+    "お支払期限: {{ ymd(invoice.due_date) }}\\",
+    "お振込先: {{ invoice.issuer.bank.name }} {{ invoice.issuer.bank.branch }} {{ invoice.issuer.bank.account_type }} {{ invoice.issuer.bank.account_number }} {{ invoice.issuer.bank.account_holder }}"
+   ]
+  },
+  {
+   "condition": "N8",
+   "lines": [
+    "{{ invoice.issuer.name }}\\",
+    "登録番号: {{ invoice.issuer.registration_number }}"
+   ]
+  },
+  {
+   "condition": "N9",
+   "lines": [
+    "{% macro rate(tax_rate, reduced) %}{{ tax_rate }}%{{ \"(軽減税率)\" if reduced else \"\" }}{% endmacro %}",
+    "| 税率 | 対象額({{ basis(invoice.tax_included) }}) | 消費税額 |",
+    "| {{ rate(summary.tax_rate, summary.reduced) }} | {{ yen(summary.base) }} | {{ yen(summary.tax) }} |"
+   ]
+  }
+ ],
+ "more": []
+}

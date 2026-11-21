@@ -1,0 +1,79 @@
+# invoice の配布物の名前と版と、コマンドの入口。
+# 開発者は invoice のフォルダーで次を打って整え、テストを走らせる。
+#   uv sync          # uv.lock のとおりに、Python と依存を .venv に入れる
+#   uv run pytest    # すべてのテストを、乱した順で走らせる (順の種を示す)
+#   uv run pytest --host   # 本物の印刷システムを動かすケースも走らせる
+
+[project]
+name = "invoice"
+version = "0.1.0"
+description = "明細の CSV ファイルから請求書を作り、既定のプリンターで印刷するコマンド"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # invoice/templates/ の Jinja2 テンプレートを描く。
+    "jinja2>=3.1,<4",
+    # 描いた請求書を、書体を埋め込んだ PDF にする。
+    "fpdf2>=2.8,<3",
+]
+
+[project.scripts]
+invoice = "invoice.command:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "pytest-randomly>=3.16",
+    "hypothesis>=6.120",
+    "pypdf>=5.1",
+    "ruff>=0.8",
+    "mypy>=1.13",
+]
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/invoice"]
+
+[tool.hatch.build.targets.wheel.force-include]
+# 請求書のテンプレートは invoice の一式の templates/ にあり、配布物には本体の中に入れる。
+"templates" = "invoice/templates"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = [
+    "--strict-markers",
+    "--cov=invoice",
+    "--cov-branch",
+    "--cov-report=term-missing",
+    "--cov-fail-under=100",
+]
+
+[tool.coverage.run]
+source = ["invoice"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+# 本体とテストのコードだけを確かめ、資料の Markdown の中のコードには触れない。
+include = ["src/**/*.py", "tests/**/*.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "C90", "SIM", "RUF"]
+# テストの名前とメッセージは日本語で、全角の字を含む。
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+mypy_path = "src"
+packages = ["invoice"]

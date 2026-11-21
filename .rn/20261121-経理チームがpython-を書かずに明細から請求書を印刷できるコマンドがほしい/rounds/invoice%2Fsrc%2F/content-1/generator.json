@@ -1,0 +1,118 @@
+{
+ "result": "made",
+ "files": [
+  "invoice/src/invoice/__init__.py",
+  "invoice/src/invoice/billing.py",
+  "invoice/src/invoice/command.py",
+  "invoice/src/invoice/fonts/IPA_Font_License_Agreement_v1.0.txt",
+  "invoice/src/invoice/fonts/ipaexg.ttf",
+  "invoice/src/invoice/issuer.py",
+  "invoice/src/invoice/layout.py",
+  "invoice/src/invoice/ledger.py",
+  "invoice/src/invoice/numbering.py",
+  "invoice/src/invoice/periods.py",
+  "invoice/src/invoice/place.py",
+  "invoice/src/invoice/printing.py",
+  "invoice/src/invoice/py.typed",
+  "invoice/src/invoice/sheet.py",
+  "invoice/src/invoice/width.py",
+  "invoice/tests/__init__.py",
+  "invoice/tests/conftest.py",
+  "invoice/tests/e2e/__init__.py",
+  "invoice/tests/e2e/test_scenarios.py",
+  "invoice/tests/given.py",
+  "invoice/tests/integration/__init__.py",
+  "invoice/tests/integration/test_issuer.py",
+  "invoice/tests/integration/test_print.py",
+  "invoice/tests/integration/test_recover.py",
+  "invoice/tests/integration/test_start.py",
+  "invoice/tests/trace.py",
+  "invoice/tests/unit/__init__.py",
+  "invoice/tests/unit/test_billing.py",
+  "invoice/tests/unit/test_command.py",
+  "invoice/tests/unit/test_issuer.py",
+  "invoice/tests/unit/test_layout.py",
+  "invoice/tests/unit/test_ledger.py",
+  "invoice/tests/unit/test_numbering.py",
+  "invoice/tests/unit/test_periods.py",
+  "invoice/tests/unit/test_place.py",
+  "invoice/tests/unit/test_printing.py",
+  "invoice/tests/unit/test_properties.py",
+  "invoice/tests/unit/test_sheet.py",
+  "invoice/tests/unit/test_width.py",
+  "invoice/pyproject.toml"
+ ],
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "\"\"\"請求書の額を、消費税と合計の決まりに沿ってどう出すか。\"\"\"",
+    "\"\"\"明細のファイルを、どの形なら受け付け、各列をどう読んで明細行にするか。\"\"\"",
+    "\"\"\"請求書の値を、テンプレートのどの名前と形に移して紙面に描くか。\"\"\"",
+    "\"\"\"テンプレートが描いた Markdown を、用紙の上にどう配置して PDF にするか。\"\"\"",
+    "\"\"\"全角と半角の入り混じった入力を、確かめる前にどの字に読み替えるか。\"\"\""
+   ]
+  },
+  {
+   "condition": "N2",
+   "lines": [
+    "def number(customer_name: str, period: Period) -> str:",
+    "        初めての組には、「<発行年>-<発行月2桁>-<連番3桁>」の番号。例: `2026-11-001`。",
+    "def print_documents(documents: Sequence[PrintDocument]) -> Printed:",
+    "    返す: 送った既定のプリンターの名前と、送った用紙の枚数 (P2.6)。",
+    "        請求書の順は、最も早い取引日の順で、同じ日なら明細で先に出る取引先の順。"
+   ]
+  },
+  {
+   "condition": "N3",
+   "lines": [
+    "    for row in sorted(rows, key=lambda each: each.date):",
+    "    month = f\"{period.end.year}-{period.end.month:02}-\"",
+    "    print(f\"既定のプリンター「{printed.printer}」で {printed.sheets} 枚を印刷しました。\")"
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "    \"jinja2>=3.1,<4\",",
+    "    \"fpdf2>=2.8,<3\",",
+    "    \"pytest-randomly>=3.16\",",
+    "\"templates\" = \"invoice/templates\"",
+    "    monkeypatch.setenv(\"HOME\", str(folder))"
+   ]
+  },
+  {
+   "condition": "N5",
+   "lines": [
+    "def test_初めての組には締め日の年月と年月ごとに001から数えた連番の番号を付ける(home: Path) -> None:",
+    "def test_取引先の名称に法人格があれば御中なければ様と読む(tmp_path: Path, name: str, honorific: str) -> None:",
+    "def test_紙面には見出しと表と改行のMarkdownの印が出ない(tax_included: bool, mark: str) -> None:",
+    "def test_尋ねる途中で入力が尽きると何も残さず130を返す("
+   ]
+  },
+  {
+   "condition": "N6",
+   "lines": [
+    "    monkeypatch.setattr(printing, \"send\", double.send)",
+    "    monkeypatch.setenv(\"PATH\", str(bin_folder))"
+   ]
+  },
+  {
+   "condition": "N7",
+   "lines": [
+    "    \"--cov-branch\",",
+    "    \"--cov-fail-under=100\",",
+    "    assert invoices[1].totals == (RateTotal(10, 6000, 600), RateTotal(8, 13500, 1080))"
+   ]
+  },
+  {
+   "condition": "N8",
+   "lines": [
+    "    found = re.fullmatch(r\"([0-9]{4})([-/])([0-9]{2})\\2([0-9]{2})\", cell)",
+    "                f\"- {fix.path} の {fix.line} 行目、「{fix.column}」の列: {given}。\"",
+    "                print(f\"{said}{fix.rule}たとえば「{fix.expected}」のように答えてください。\")",
+    "        raise _refused(item, answer, \"当月払いでは、支払日を締め日より後の日にしてください。\", \"10日締め当月25日払い\")"
+   ]
+  }
+ ]
+}

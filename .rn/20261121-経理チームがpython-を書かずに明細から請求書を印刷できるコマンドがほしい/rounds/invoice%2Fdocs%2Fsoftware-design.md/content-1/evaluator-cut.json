@@ -1,0 +1,53 @@
+{
+ "goal": "\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u3001\u958b\u767a\u8005\u306e\u624b\u3092\u501f\u308a\u305a\u306b\u3001\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u81ea\u5206\u305f\u3061\u3067\u5370\u5237\u3067\u304d\u308b\u3002\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u306f\u3001\u30ac\u30a4\u30c9\u3060\u3051\u3092\u983c\u308a\u306b\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u304b\u3089\u30b3\u30de\u30f3\u30c9\u4e00\u3064\u3067\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3059\u308b\u3002",
+ "deliverable": {
+  "name": "\u30b3\u30de\u30f3\u30c9\u306e\u5404\u90e8\u54c1\u304c\u4f55\u3092\u6c7a\u3081\u3001\u3069\u3046\u547c\u3070\u308c\u308b\u304b\u304c\u5b9a\u307e\u3063\u3066\u3044\u308b",
+  "path": "invoice/docs/software-design.md"
+ },
+ "judges_by": {
+  "what": "The developers see, before anyone writes a body, whether the parts that the architecture draws fit together, and the architecture's maker mends each place where they don't.",
+  "critical_success_factors": [
+   {
+    "id": "C1",
+    "what": "Each decision that the architecture gives a part has one place in the code.",
+    "necessary_conditions": [
+     {
+      "id": "N1",
+      "about": "Module opening",
+      "what": "Does each module state at its top the one decision that it alone hides, and does each decision that the architecture gives a component lie in exactly one module?"
+     }
+    ]
+   },
+   {
+    "id": "C2",
+    "what": "Each handoff between the parts has an interface that both sides build to.",
+    "necessary_conditions": [
+     {
+      "id": "N2",
+      "about": "Interface",
+      "what": "Does each arrow of Sequences that reaches a part have an interface that states what it takes, what it gives, and each way it refuses, with its body left empty?"
+     },
+     {
+      "id": "N3",
+      "about": "Prompt",
+      "what": "Does each part that holds a prompt have a file that states when to use the prompt, what it gives, and the form of what it takes and gives, with its steps left empty?"
+     }
+    ]
+   },
+   {
+    "id": "C3",
+    "what": "Each place where the architecture can't be built reaches its maker before anyone builds around it.",
+    "necessary_conditions": [
+     {
+      "id": "N4",
+      "about": "Gaps",
+      "what": "Does the list of gaps name each place where the skeleton can't follow the architecture, each with the element of the architecture that it bears on?"
+     }
+    ]
+   }
+  ]
+ },
+ "worktree": ".claude/worktrees/rn-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044",
+ "trial": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-rn-rebuild/75be1bff-9b4b-4d82-a24f-55cc85521035/scratchpad/rnrun/tmp/rn-trial-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044-invoice%2Fdocs%2Fsoftware-design.md-content-1/",
+ "round": ".claude/worktrees/rn-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044/.rn/20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044/rounds/invoice%2Fdocs%2Fsoftware-design.md/content-1"
+}

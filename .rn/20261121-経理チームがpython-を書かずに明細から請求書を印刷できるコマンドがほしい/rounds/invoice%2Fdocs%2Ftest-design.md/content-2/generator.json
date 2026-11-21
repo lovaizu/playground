@@ -1,0 +1,46 @@
+{
+ "result": "made",
+ "files": [
+  "invoice/docs/test-design.md"
+ ],
+ "good": [
+  {
+   "condition": "N3",
+   "lines": [
+    "def test_読めない明細のファイルではそのパスとUTF8のCSVでの保存し直し方を示し何も尋ねずに1を返す(",
+    "    path = ledger(csv(*README_ROWS), encoding=\"shift_jis\")",
+    "    assert \"UTF-8\" in out",
+    "    assert \"CSV\" in out",
+    "def test_見出しの行しかない明細では行がないことと一行の例を示し何も尋ねずに1を返す(",
+    "    assert fix.expected != \"\" and fix.expected in out",
+    "    assert asked(out) == []"
+   ]
+  },
+  {
+   "condition": "N1",
+   "lines": [
+    "E2E ケースは、ガイドの「使ってみる」のとおりに、一か月分の明細で invoice を通しで動かす。",
+    "@supports(\"KR1.1\")",
+    "def test_初めての月に一か月分の明細から取引先ごとの請求書を自分たちで印刷できる(",
+    "@supports(\"KR1.2\")",
+    "def test_翌月からは明細を渡すコマンド一つで何も尋ねずに印刷まで進む("
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "    # Given: 発行者情報をまだ残していないノートPCと、Shift_JIS で保存したガイドの明細。",
+    "    # Then: ファイルを読めないことと、UTF-8 の CSV で保存し直す手順を示し、何も尋ねず、何も残さず、何も印刷しない。",
+    "    # Given: 発行者情報をまだ残していないノートPCと、見出しの行だけを保存した明細。",
+    "    # Then: 明細に行がないことを、そのまま書き足せる一行の例とともに示し、何も尋ねず、何も残さず、何も印刷しない。"
+   ]
+  },
+  {
+   "condition": "N5",
+   "lines": [
+    "リポジトリの一番上で `python3 invoice/tests/trace.py check invoice` と打つと、不備がなければ 0 を返す。",
+    "    return 1 if found else 0"
+   ]
+  }
+ ]
+}

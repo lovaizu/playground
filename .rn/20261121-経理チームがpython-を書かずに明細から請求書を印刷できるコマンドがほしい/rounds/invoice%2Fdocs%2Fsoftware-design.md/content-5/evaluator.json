@@ -1,0 +1,54 @@
+{
+ "result": "judged",
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "各モジュールは、自分だけが隠す一つの決めごとを、ファイルの冒頭の docstring に書く。",
+    "- `src/invoice/command.py`: 部品の結果と直すところを、利用者に端末でどう示すか。",
+    "- `src/invoice/ledger.py`: 明細のファイルを、どの形なら受け付け、各列をどう読んで明細行にするか。",
+    "- `src/invoice/place.py`: invoice が残すファイルを、ノートPCのどこに置くか。",
+    "- `src/invoice/issuer.py`: 発行者情報の形を、尋ねる事柄とその順と名前から、残すファイルの中身まで決める。",
+    "- `src/invoice/billing.py`: 請求書の額を、消費税と合計の決まりに沿ってどう出すか。",
+    "- `src/invoice/periods.py`: 取引日と支払条件から、締めの期間と発行日と支払期限をどう決めるか。",
+    "- `src/invoice/numbering.py`: 取引先と締めの期間の組に、どの請求書番号を付けるか。",
+    "- `src/invoice/layout.py`: 請求書を、用紙の上にどう配置するか。",
+    "- `src/invoice/printing.py`: 紙面を、ノートPCの印刷システムにどう届けるか。",
+    "請求の計算のコンポーネントは、billing.py と periods.py の二つのモジュールに分ける。",
+    "置き場の場所は place.py だけが決め、issuer.py と numbering.py はそこから受け取る。",
+    "初回に尋ねる発行者の事柄と、その順と名前は、issuer.py だけが決める。"
+   ]
+  },
+  {
+   "condition": "N2",
+   "lines": [
+    "各インターフェースは、シーケンスの矢印を一つずつ運ぶ。",
+    "本体は呼ぶと失敗し、そのインターフェースの名前を示す。",
+    "def main(argv: Sequence[str] | None = None) -> int:",
+    "def read(path: Path) -> tuple[LedgerRow, ...]:",
+    "def load() -> Issuer | tuple[Question, ...]:",
+    "def check(item: IssuerItem, answer: str) -> Answer:",
+    "def save(answers: Mapping[IssuerItem, Answer]) -> Issuer:",
+    "def bill(rows: Sequence[LedgerRow], issuer: Issuer) -> tuple[Invoice, ...]:",
+    "def number(customer_name: str, period: Period, issue_date: datetime.date) -> str:",
+    "def typeset(invoices: Sequence[Invoice]) -> tuple[PrintDocument, ...]:",
+    "def print_documents(documents: Sequence[PrintDocument]) -> Printed:",
+    "def send(document: PrintDocument) -> str:",
+    "S2 で invoice のコードに届く矢印は、版を尋ねる `invoice --version` だけである。"
+   ]
+  },
+  {
+   "condition": "N3",
+   "lines": [
+    "型は Python の注釈で書き、契約は docstring に書く。",
+    "S2 のインストーラーは uv であり、invoice のコードではない。"
+   ]
+  }
+ ],
+ "more": [
+  {
+   "condition": "N4",
+   "good_when": "the architecture's maker, mending the architecture from the gap list alone, also brings the component drawing into line with the skeleton. In that drawing, 番号を求める still carries 請求書, 印刷させる still returns only 送った枚数 with no printer name, and 求める for 発行者情報の保管 still returns 発行者情報 or 直すところ with no questions to ask. A developer who builds to that drawing then meets no arrow that the skeleton contradicts."
+  }
+ ]
+}

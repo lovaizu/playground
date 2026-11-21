@@ -1,0 +1,33 @@
+{
+ "result": "made",
+ "files": [
+  "invoice/docs/test-design.md"
+ ],
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "@supports(\"KR1.1\")",
+    "def test_初めての月に一か月分の明細から取引先ごとの請求書を自分たちで印刷できる(",
+    "def test_明細の誤りを示されたとおりに直して打ち直すと印刷できる(",
+    "@supports(\"KR1.2\")",
+    "def test_翌月からは明細を渡すコマンド一つで何も尋ねずに印刷まで進む("
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "    # Given: 発行者情報を残したあとの、ガイドの 11 月分の明細。",
+    "    # When: 利用者が明細のファイルを渡す。",
+    "    # Then: 一枚の請求書を既定のプリンターに送り、番号と金額と枚数を示す。"
+   ]
+  },
+  {
+   "condition": "N5",
+   "lines": [
+    "リポジトリの一番上で `python3 invoice/tests/trace.py check invoice` と打つと、不備がなければ 0 を返す。",
+    "    return 1 if found else 0"
+   ]
+  }
+ ]
+}

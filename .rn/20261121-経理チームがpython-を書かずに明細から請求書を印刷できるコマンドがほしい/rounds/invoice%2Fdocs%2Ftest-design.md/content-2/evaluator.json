@@ -1,0 +1,61 @@
+{
+ "result": "judged",
+ "good": [
+  {
+   "condition": "N2",
+   "lines": [
+    "@supports(\"S1\", \"P3.4\", \"P3.6\", \"P3.7\", \"P3.8\", \"P3.9\")",
+    "@supports(\"S3\", \"P1.5\", \"P3.10\", \"P3.11\", \"P3.12\", \"直すところ\")",
+    "@supports(\"S4\", \"P1.2\", \"P1.3\", \"直すところ\", \"明細の読み取り\")",
+    "@supports(\"P1.2\", \"コマンド\")",
+    "@supports(\"S1\", \"P2.3\", \"印刷\")",
+    "@supports(\"S2\", \"P1.1\")"
+   ]
+  },
+  {
+   "condition": "N7",
+   "lines": [
+    "@supports(\"P3.6\", \"P3.7\", \"P3.9\")",
+    "@supports(\"P3.10\", \"P3.11\", \"P3.12\")",
+    "@supports(\"P3.2\", \"P3.3\", \"P3.4\", \"P3.8\", \"請求の計算\")",
+    "@supports(\"P3.5\", \"発行記録\")",
+    "@supports(\"P1.3\", \"直すところ\")"
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "ケースは、ここに挙げるテストのコードだけで述べる。",
+    "結合ケースは、部品をスケルトンのインターフェースどうしでつなぎ、既定のプリンターだけを代役に替える。",
+    "単体ケースは、スケルトンの各インターフェースを、契約が分けるクラスと状態の移りごとに確かめる。",
+    "    # Given: 何も残していない状態。"
+   ]
+  },
+  {
+   "condition": "N5",
+   "lines": [
+    "トレースは、`invoice/tests/trace.py` が確かめる。",
+    "リポジトリの一番上で `python3 invoice/tests/trace.py check invoice` と打つと、不備がなければ 0 を返す。"
+   ]
+  },
+  {
+   "condition": "N6",
+   "lines": [
+    "- S1 の「番号と金額と枚数を示す」: ガイドは既定のプリンターの名前も示す。`printing.print_documents` は枚数だけを返し、ケースは名前を確かめられない。",
+    "- 番号の採番: `numbering.number` の契約に、番号の形がない。ガイドの `2026-11-001` の年月の元と、同じ月の連番の順も決まっていない。ケースはガイドの一枚目の番号だけを確かめ、ほかは重ならないことを確かめる。",
+    "- 印刷: `printing.send` が印刷システムにどう頼むかが決まっておらず、契約テストの手順を書けない。",
+    "- S1 と S3: 置き場のファイルを読めないか残せないときの分かれ道がない。ケースは `place.StoreRefused` のとおりに書き、S1 と S3 を名指しした。"
+   ]
+  }
+ ],
+ "more": [
+  {
+   "condition": "N1",
+   "good_when": "The developers see KR1.2's case run the month after the first at a real month's size: the team hands over a full month's statement for all three customers with one command, and each customer's invoice prints without a question, with the right amount and a number apart from the first month's. Today that case's second month holds two rows for one customer, so a fault that shows only when several customers are billed in a later month passes it."
+  },
+  {
+   "condition": "N3",
+   "good_when": "A developer building command.main has a unit case that fails until it shows the stop the accounting team meets most: a wrong value in a row, shown with its line, column, the value written, and the accepted example, with nothing asked and nothing printed. A second unit case fails until a first run whose issuer information can't be saved names the file and stops with 1, printing nothing. With those cases, the unit run alone reaches each branch of command.main that the strategy's 100% statement and branch coverage asks for. Today the unit cases for command.main cover not_found, unreadable and no_rows but not bad_value, and cover a broken record but not an unwritable save."
+  }
+ ]
+}

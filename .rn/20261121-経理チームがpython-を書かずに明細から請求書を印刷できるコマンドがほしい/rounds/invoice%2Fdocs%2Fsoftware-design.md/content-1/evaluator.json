@@ -1,0 +1,31 @@
+{
+ "result": "judged",
+ "good": [
+  {
+   "condition": "N3",
+   "lines": [
+    "各インターフェースは、シーケンスの矢印を一つずつ運ぶ。",
+    "型は Python の注釈で書き、契約は docstring に書く。"
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "- ディレクトリ構成: `periods.py` と `place.py` がない。請求の計算の二つのモジュールと置き場の場所の決めごとを、構成と方針に足す必要がある。",
+    "- コンポーネント: `place.py` が決める置き場の場所を受け持つコンポーネントがない。どのコンポーネントの決めごとかを、コンポーネントに足す必要がある。",
+    "- S3 の「ないと返す」: この矢印にデータがない。`issuer.load` は尋ねる事柄を返すので、矢印に尋ねる事柄を足す必要がある。",
+    "- S1 と S3: 発行者情報や発行記録を読めない、または残せないときの分かれ道がない。インターフェースは `place.StoreRefused` で断るので、その分かれ道を足す必要がある。"
+   ]
+  }
+ ],
+ "more": [
+  {
+   "condition": "N1",
+   "good_when": "A developer who changes which issuer questions the first run asks, their order, or the Japanese words shown for them finds the one module that decides it. Today command.py's opening says it decides what to ask and in what order, while issuer.py's opening and issuer.load say the issuer module alone holds the questions and their order, and issuer.Question carries the Japanese label shown to the user."
+  },
+  {
+   "condition": "N2",
+   "good_when": "The developer writing the page step finds, in what layout.typeset takes, every value that invoice/templates/invoice.md.j2 and the guide's sample invoice print: the issuer's bank account (bank, branch, account type, number, holder), each row's unit and its amount, and the customer's honorific (御中 or 様). The page step can then print them without working out an amount itself. The developer writing the first-run questions also finds the guide's bank-account questions among the issuer items, and the developer writing ledger.read finds a place in its rows for the guide's 単位 column."
+ }
+ ]
+}

@@ -1,0 +1,40 @@
+# 請求書
+{% from "macros.j2" import yen, ymd, basis, rate, quantity %}
+
+## 宛先
+
+{{ invoice.customer.name }} {{ invoice.customer.honorific }}
+
+## 発行者
+
+{{ invoice.issuer.name }}\
+登録番号: {{ invoice.issuer.registration_number }}
+
+## 請求書番号と発行日
+
+請求書番号: {{ invoice.number }}\
+発行日: {{ ymd(invoice.issue_date) }}
+
+## ご請求金額とお支払い
+
+ご請求金額(税込): {{ yen(invoice.total) }} 円\
+お支払期限: {{ ymd(invoice.due_date) }}\
+お振込先: {{ invoice.issuer.bank.name }} {{ invoice.issuer.bank.branch }} {{ invoice.issuer.bank.account_type }} {{ invoice.issuer.bank.account_number }} {{ invoice.issuer.bank.account_holder }}
+
+## 明細
+
+| 取引日 | 品目 | 数量 | 単価({{ basis(invoice.tax_included) }}) | 税率 | 金額({{ basis(invoice.tax_included) }}) |
+| --- | --- | --- | --- | --- | --- |
+{% for line in invoice.lines %}
+| {{ ymd(line.date) }} | {{ line.item }} | {{ quantity(line.quantity, line.unit) }} | {{ yen(line.unit_price) }} | {{ rate(line.tax_rate, line.reduced) }} | {{ yen(line.amount) }} |
+{% endfor %}
+
+## 税率ごとの合計
+
+| 税率 | 対象額({{ basis(invoice.tax_included) }}) | 消費税額 |
+| --- | --- | --- |
+{% for summary in invoice.tax_summaries %}
+| {{ rate(summary.tax_rate, summary.reduced) }} | {{ yen(summary.base) }} | {{ yen(summary.tax) }} |
+{% endfor %}
+
+合計(税込): {{ yen(invoice.total) }} 円

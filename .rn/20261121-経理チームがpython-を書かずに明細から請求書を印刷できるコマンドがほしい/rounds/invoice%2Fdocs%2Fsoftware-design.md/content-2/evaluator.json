@@ -1,0 +1,45 @@
+{
+ "result": "judged",
+ "good": [
+  {
+   "condition": "N1",
+   "lines": [
+    "各モジュールは、自分だけが隠す一つの決めごとを、ファイルの冒頭の docstring に書く。",
+    "- `src/invoice/command.py`: 部品の結果と直すところを、利用者に端末でどう示すか。",
+    "- `src/invoice/ledger.py`: 明細のファイルを、どの形なら受け付け、各列をどう読んで明細行にするか。",
+    "- `src/invoice/place.py`: invoice が残すファイルを、ノートPCのどこに置くか。",
+    "- `src/invoice/issuer.py`: 発行者情報の形を、尋ねる事柄とその順と名前から、残すファイルの中身まで決める。",
+    "- `src/invoice/billing.py`: 請求書の額を、消費税と合計の決まりに沿ってどう出すか。",
+    "- `src/invoice/periods.py`: 取引日と支払条件から、締めの期間と発行日と支払期限をどう決めるか。",
+    "- `src/invoice/numbering.py`: 取引先と締めの期間の組に、どの請求書番号を付けるか。",
+    "- `src/invoice/layout.py`: 請求書を、用紙の上にどう配置するか。",
+    "- `src/invoice/printing.py`: 紙面を、ノートPCの印刷システムにどう届けるか。",
+    "請求の計算のコンポーネントは、billing.py と periods.py の二つのモジュールに分ける。",
+    "置き場の場所は place.py だけが決め、issuer.py と numbering.py はそこから受け取る。",
+    "初回に尋ねる発行者の事柄と、その順と名前は、issuer.py だけが決める。"
+   ]
+  },
+  {
+   "condition": "N3",
+   "lines": [
+    "各インターフェースは、シーケンスの矢印を一つずつ運ぶ。",
+    "型は Python の注釈で書き、契約は docstring に書く。"
+   ]
+  },
+  {
+   "condition": "N4",
+   "lines": [
+    "- ディレクトリ構成: `periods.py` と `place.py` がない。請求の計算の二つのモジュールと置き場の場所の決めごとを、構成と方針に足す必要がある。",
+    "- コンポーネント: `place.py` が決める置き場の場所を受け持つコンポーネントがない。どのコンポーネントの決めごとかを、コンポーネントに足す必要がある。",
+    "- S3 の「ないと返す」: この矢印にデータがない。`issuer.load` は尋ねる事柄を返すので、矢印に尋ねる事柄を足す必要がある。",
+    "- S1 と S3: 発行者情報や発行記録を読めない、または残せないときの分かれ道がない。インターフェースは `place.StoreRefused` で断るので、その分かれ道を足す必要がある。"
+   ]
+  }
+ ],
+ "more": [
+  {
+   "condition": "N2",
+   "good_when": "the developers of the command and of the ledger reader take from the 明細を読ませる interface the same meaning for each way the ledger is refused as a whole, so that a user who gave a ledger path that doesn't exist, a file that can't be read, or a ledger with no rows is told in Japanese which of these happened and what to fix, just as the store and print refusals already tell the command which problem they are"
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "goal": "\u7d4c\u7406\u30c1\u30fc\u30e0\u304c\u3001\u958b\u767a\u8005\u306e\u624b\u3092\u501f\u308a\u305a\u306b\u3001\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u81ea\u5206\u305f\u3061\u3067\u5370\u5237\u3067\u304d\u308b\u3002\u7d4c\u7406\u30c1\u30fc\u30e0\u306e\u30e1\u30f3\u30d0\u30fc\u306f\u3001\u30ac\u30a4\u30c9\u3060\u3051\u3092\u983c\u308a\u306b\u3001\u660e\u7d30\u306e\u30d5\u30a1\u30a4\u30eb\u304b\u3089\u30b3\u30de\u30f3\u30c9\u4e00\u3064\u3067\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3059\u308b\u3002",
+ "deliverable": {
+  "name": "\u8acb\u6c42\u66f8\u3092\u4f5c\u308b\u4eba\u304c\u3001\u53d6\u5f15\u5148\u306b\u305d\u306e\u307e\u307e\u51fa\u305b\u308b\u8acb\u6c42\u66f8\u306e\u6c7a\u307e\u308a\u3054\u3068\u3092\u4e00\u3064\u305a\u3064\u78ba\u304b\u3081\u306a\u304c\u3089\u4f5c\u308c\u308b",
+  "path": ".rn/best-practices/invoice/"
+ },
+ "judges_by": {
+  "what": "A maker who follows a best practice piles up in each deliverable the vital few that bring its people to their aim, and cuts the trivial many.",
+  "critical_success_factors": [
+   {
+    "id": "C1",
+    "what": "The best practice names the vital few: the few states of the deliverable that bring its people to their aim.",
+    "necessary_conditions": [
+     {
+      "id": "N1",
+      "about": "goal",
+      "what": "Does the goal state, in one sentence, who uses the deliverable and what purpose it serves for them?"
+     },
+     {
+      "id": "N2",
+      "about": "critical_success_factors",
+      "what": "Do the critical success factors name the few things that must all hold for the users to reach the goal?"
+     },
+     {
+      "id": "N3",
+      "about": "necessary_conditions",
+      "what": "Does each necessary condition ask, as a yes-or-no question, whether the deliverable holds a state that its factor needs?"
+     }
+    ]
+   },
+   {
+    "id": "C2",
+    "what": "Following the best practice, the maker thinks from the people's aim toward each of those states, and piles up those alone.",
+    "necessary_conditions": [
+     {
+      "id": "N4",
+      "about": "template",
+      "what": "Does the template place each necessary condition in a section, and give each slot a note on what it holds and in what form?"
+     },
+     {
+      "id": "N5",
+      "about": "why, items",
+      "what": "Does each practice lead its maker toward its condition's state from what the people are after, by the steps that practitioners of the kind take on site, each an act on something at hand with the question to think through, and, where there are options, the criterion that picks the one bringing the people closer?"
+     },
+     {
+      "id": "N7",
+      "about": "the whole",
+      "what": "Does following the best practice put into the deliverable only the vital few, the things without which its users fail their goal?"
+     }
+    ]
+   },
+   {
+    "id": "C3",
+    "what": "Each deliverable stays consistent with the deliverables it builds on and the deliverables built on it.",
+    "necessary_conditions": [
+     {
+      "id": "N6",
+      "about": "inputs",
+      "what": "Does the best practice name each kind of deliverable that this kind rests on, with the sections of it that this kind takes, and a condition that carries each of their vital few that its users need?"
+     }
+    ]
+   }
+  ]
+ },
+ "worktree": ".claude/worktrees/rn-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044",
+ "trial": "/tmp/claude-1000/-Users-kiyo-work-lovaizu-ccpm--claude-worktrees-rn-rebuild/75be1bff-9b4b-4d82-a24f-55cc85521035/scratchpad/rnrun/tmp/rn-trial-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044-.rn%2Fbest-practices%2Finvoice%2F-content-1/",
+ "round": ".claude/worktrees/rn-20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044/.rn/20261121-\u7d4c\u7406\u30c1\u30fc\u30e0\u304cpython-\u3092\u66f8\u304b\u305a\u306b\u660e\u7d30\u304b\u3089\u8acb\u6c42\u66f8\u3092\u5370\u5237\u3067\u304d\u308b\u30b3\u30de\u30f3\u30c9\u304c\u307b\u3057\u3044/rounds/.rn%2Fbest-practices%2Finvoice%2F/content-1"
+}
