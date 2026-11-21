@@ -143,7 +143,7 @@
     },
     {
      "id": "N6",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "使ってみるの実行例",
@@ -181,6 +181,11 @@
        "about": "経理チームの環境と手順",
        "decided": "経理チームは Linux のノートPCを使っていて、明細は LibreOffice Calc で管理しています。Windows の PowerShell ではなく、Linux の端末で動く手順にしてください",
        "by": "user"
+      },
+      {
+       "about": "どの端末でも通るインストールの行",
+       "decided": "インストールの各行は、uv の置き場所 ~/.local/bin がすでにパスにある端末でも、ない端末でも、エラーを出さずに進む。uv の設定ファイルがないときに失敗する行は使わない。",
+       "by": "reasoning"
       }
      ]
     },
