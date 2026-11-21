@@ -112,7 +112,8 @@
      "decisions": [
       {
        "about": "適格請求書の登録番号と税率ごとの消費税額",
-       "decided": null
+       "decided": "載せる",
+       "by": "user"
       }
      ]
     },
