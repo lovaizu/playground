@@ -111,7 +111,7 @@
     },
     {
      "id": "N2",
-     "good": false,
+     "good": true,
      "decisions": [
       {
        "about": "組版が受け取る値",
