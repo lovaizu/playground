@@ -75,32 +75,32 @@
    "necessary_conditions": [
     {
      "id": "N1",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N2",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N3",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N4",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N5",
-     "good": false,
+     "good": true,
      "decisions": []
     },
     {
      "id": "N6",
-     "good": false,
+     "good": true,
      "decisions": []
     }
    ]
