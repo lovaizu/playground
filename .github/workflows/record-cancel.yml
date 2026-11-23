@@ -1,0 +1,17 @@
+name: Record cancel
+
+on: push
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  cancels:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: gh run cancel "$RUN" --repo "$REPO" && sleep 60
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN: ${{ github.run_id }}
+          REPO: ${{ github.repository }}
