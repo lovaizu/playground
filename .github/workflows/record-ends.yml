@@ -1,0 +1,21 @@
+name: Record ends
+
+on: push
+
+permissions:
+  contents: read
+
+jobs:
+  passes:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo passes
+  fails:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: exit 1
+  times-out:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
+    steps:
+      - run: sleep 300

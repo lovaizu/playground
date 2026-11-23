@@ -1,0 +1,12 @@
+name: Record cancel
+
+on: push
+
+permissions:
+  contents: read
+
+jobs:
+  cancelled:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: sleep 600
